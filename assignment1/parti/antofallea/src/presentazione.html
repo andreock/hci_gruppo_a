@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Assignment 1 – Valutazione euristica di IdeaGinger × Università di Torino (parte 1 di 4)</title>
+<style>
+  @page { size: 1280px 720px; margin: 0; }
+  :root {
+    --ink: #172033; --muted: #5b6577; --line: #dfe3ea; --bg: #ffffff; --soft: #f4f6fa;
+    --accent: #1d3fd8; --accent-soft: #e8ecfd; --warm: #f28c00;
+    --s1: #8a94a6; --s2: #e0a100; --s3: #e2570c; --s4: #b3141c; --ok: #1a8a4a;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #cfd4dc; }
+  body { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); font-size: 16px; line-height: 1.4; }
+  .slide { width: 1280px; height: 720px; background: var(--bg); position: relative; overflow: hidden; page-break-after: always; break-after: page; padding: 32px 44px 40px; display: flex; flex-direction: column; }
+  @media screen { .slide { margin: 16px auto; box-shadow: 0 2px 14px rgba(0,0,0,.25); } }
+  .foot { position: absolute; left: 44px; right: 44px; bottom: 12px; display: flex; justify-content: space-between; font-size: 10.5px; color: var(--muted); }
+  .kicker { font-size: 11.5px; letter-spacing: .09em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 3px; }
+  h1 { font-size: 27px; line-height: 1.15; margin: 0 0 14px; font-weight: 700; letter-spacing: -.01em; }
+  h2 { font-size: 18px; margin: 0 0 7px; }
+  p { margin: 0 0 8px; }
+  ul { margin: 0; padding-left: 18px; } li { margin-bottom: 4px; }
+  .grow { flex: 1; min-height: 0; }
+  .cols { display: grid; gap: 22px; }
+  .muted { color: var(--muted); }
+  .small { font-size: 13.5px; }
+
+  .cover { background: linear-gradient(135deg, #14235e 0%, #1d3fd8 62%, #3b6bff 100%); color: #fff; justify-content: center; padding: 60px 80px; }
+  .cover h1 { font-size: 46px; margin-bottom: 14px; }
+  .cover .sub { font-size: 20px; opacity: .92; max-width: 860px; }
+  .cover .meta { margin-top: 44px; display: grid; grid-template-columns: repeat(4, auto); gap: 34px; justify-content: start; font-size: 13px; }
+  .cover .meta b { display: block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; opacity: .7; font-weight: 600; margin-bottom: 2px; }
+  .cover .tag { display: inline-block; background: var(--warm); color: #1b1300; font-weight: 700; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; margin-bottom: 22px; align-self: flex-start; }
+
+  .card { background: var(--soft); border: 1px solid var(--line); border-radius: 10px; padding: 13px 15px; }
+  .card h2 { font-size: 16.5px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+  th { text-align: left; font-size: 10.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--ink); padding: 5px 8px; }
+  td { border-bottom: 1px solid var(--line); padding: 6px 8px; vertical-align: top; }
+  .sev { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; border-radius: 6px; color: #fff; font-weight: 700; font-size: 12.5px; padding: 0 6px; }
+  .sev1 { background: var(--s1); } .sev2 { background: var(--s2); color: #2a1e00; } .sev3 { background: var(--s3); } .sev4 { background: var(--s4); } .sev0 { background: #c9ced8; color: #333; }
+  .pill { display: inline-block; border-radius: 20px; padding: 2px 9px; font-size: 11px; font-weight: 600; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+  .pill.ok { background: #e2f5ea; color: var(--ok); } .pill.warn { background: #fdf1d2; color: #7a5600; } .pill.bad { background: #fde4d9; color: #a53a00; }
+  .id { font-family: Consolas, "Courier New", monospace; font-weight: 700; color: var(--accent); }
+
+  /* schede problema */
+  .prob { display: grid; grid-template-columns: 640px 1fr; gap: 24px; }
+  .figs { display: flex; flex-direction: column; gap: 10px; min-height: 0; }
+  .figs.row { flex-direction: row; align-items: flex-start; gap: 14px; }
+  figure { margin: 0; min-height: 0; display: flex; flex-direction: column; flex: none; }
+  figure img { max-width: 100%; object-fit: contain; object-position: top left; border: 1px solid var(--line); border-radius: 6px; align-self: flex-start; }
+  .figs.n1 img { max-height: 540px; } .figs.n2 img { max-height: 250px; } .figs.row img { max-height: 540px; }
+  figcaption { font-size: 11.5px; color: var(--muted); margin-top: 4px; }
+  figcaption b { color: var(--ink); }
+  .ptitle { display: flex; gap: 10px; align-items: baseline; margin-bottom: 7px; }
+  .ptitle h2 { font-size: 19px; line-height: 1.2; margin: 0; }
+  .where { font-size: 12.3px; color: var(--muted); margin-bottom: 9px; }
+  .where b { color: var(--ink); font-weight: 600; }
+  dl { margin: 0; display: grid; grid-template-columns: 1fr; gap: 8px; }
+  dl > div { border-left: 3px solid var(--line); padding-left: 10px; }
+  dt { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: var(--muted); }
+  dd { margin: 1px 0 0; font-size: 14.6px; line-height: 1.36; }
+  dl > div.heur { border-color: var(--accent); } dl > div.fix { border-color: var(--ok); background: #f1faf4; padding: 6px 10px; border-radius: 0 6px 6px 0; }
+  dl > div.s1 { border-color: var(--s1); } dl > div.s2 { border-color: var(--s2); } dl > div.s3 { border-color: var(--s3); }
+  .fip { display: flex; gap: 6px; margin: 3px 0 4px; flex-wrap: wrap; }
+  .fip span { font-size: 11px; border: 1px solid var(--line); border-radius: 20px; padding: 1px 8px; color: var(--muted); background: #fff; }
+  .fip b { color: var(--ink); }
+
+  .apx .sev { height: 17px; min-width: 17px; font-size: 11px; border-radius: 4px; padding: 0 4px; }
+  .bars { display: grid; grid-template-columns: 300px 1fr 30px; gap: 9px 10px; align-items: center; font-size: 14px; }
+  .bar { display: flex; height: 18px; gap: 2px; }
+  .bar span { display: block; height: 100%; border-radius: 3px; }
+
+  /* schemi di riprogettazione */
+  .mock { border: 1px solid #c8cfdb; border-radius: 10px; background: #fff; overflow: hidden; font-size: 13.5px; box-shadow: 0 1px 5px rgba(0,0,0,.08); align-self: start; }
+  .mock .bar-top { background: #f28c00; height: 8px; }
+  .mock .mhead { display: flex; justify-content: space-between; align-items: center; padding: 7px 12px; border-bottom: 1px solid #eee; font-size: 11px; font-weight: 600; }
+  .mock .mbody { padding: 12px 14px; }
+  .btn { display: inline-block; background: #05b81f; color: #fff; font-weight: 700; padding: 7px 14px; border-radius: 20px; font-size: 12px; }
+  .btn.alt { background: #fff; color: #1d3fd8; border: 2px solid #1d3fd8; }
+  .btn.or { background: #f28c00; }
+  .note { font-size: 12.5px; color: var(--muted); margin-top: 6px; }
+  .phones { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; align-self: start; }
+  .phones figure img { border-radius: 12px; border: 2px solid #222; max-height: 420px; }
+</style>
+</head>
+<body>
+<div id="deck"></div>
+<script>
+const H = {
+  1: 'Visibilità dello stato del sistema', 2: 'Corrispondenza tra sistema e mondo reale', 3: 'Controllo e libertà dell’utente',
+  4: 'Coerenza e standard', 5: 'Prevenzione degli errori', 6: 'Riconoscimento anziché ricordo', 7: 'Flessibilità ed efficienza d’uso',
+  8: 'Design estetico e minimalista', 9: 'Aiutare a riconoscere, diagnosticare e correggere gli errori', 10: 'Aiuto e documentazione'
+};
+const PG = {
+  partner: 'Partner UniTo, scheda «Partnership» (/partner/universita-di-torino.html)', lista: 'Partner UniTo, scheda «Progetti» (/partner-progetti/universita-di-torino.html)',
+  fbr: 'Progetto «Fai Brillare la Ricerca!»', bright: 'Progetto «BRIGHT»', milk: 'Campagna attiva «MILK-ACT»',
+  checkout: 'Modulo di donazione (…/milk-act-…/donazione.html)', e404: 'Pagina 404', cerca: 'Ricerca progetti (menu «Cerca progetti»)', help: '«Come funziona» e FAQ', menu: 'Menu globale «Partner»', signup: '«Lancia una campagna» (/areaprogettisti/signup.html)'
+};
+const T = {
+  1: 'T1 Capire Funds TOgether', 2: 'T2 Trovare e scegliere un progetto', 3: 'T3 Obiettivi, proponenti, uso dei fondi', 4: 'T4 Stato della campagna',
+  5: 'T5 Sostenere un progetto', 6: 'T6 Chiarimenti sul crowdfunding', 7: 'T7 Candidare un progetto di ricerca', 8: 'T8 Recupero da indirizzo errato'
+};
+const LV = { A: 'alta', M: 'media', B: 'bassa' }, LVI = { A: 'alto', M: 'medio', B: 'basso' };
+
+// ---------------------------------------------------------------- problemi
+// figs: [file, didascalia, larghezza % (solo layout affiancato)] · f: [frequenza, impatto, persistenza]
+const P = [
+ { id:'P01', h:1, sev:3, f:['A','A','A'], title:'Non si capisce se la call 2026 è aperta, chiusa o in corso', page:['partner','lista'], task:[7,1],
+   figs:[['partner_fasi.jpg','Le quattro fasi sono descritte al futuro e senza date.'],['partner_blog.jpg','Gli «aggiornamenti più recenti» sono del 2021 e del 2022.']],
+   prob:`La pagina descrive l’edizione al futuro («verranno selezionati», «potranno candidare») e non riporta alcuna data: né apertura o scadenza delle candidature, né periodo delle campagne. Intanto la scheda «Progetti» mostra cinque campagne UniTo in corso, con 29–37 giorni rimasti, e il blocco «aggiornamenti più recenti» propone due articoli del 01/12/2021 e del 27/01/2022. Un ricercatore non capisce se può ancora candidarsi; un cittadino dubita che l’iniziativa sia attiva.`,
+   heur:`Il sistema non dice in che punto del ciclo si trova l’iniziativa: lo stato va dedotto incrociando due schede e contenuti datati.`,
+   sevj:`Riguarda tutti gli utenti di T7 a ogni visita e l’informazione mancante decide se proseguire. Non è 4 perché il dato è recuperabile sul sito unito.it.`,
+   fix:`Fascia di stato sotto il titolo, con date («Candidature chiuse il … · campagne attive fino al …»), e timeline delle quattro fasi con quella corrente evidenziata. Blocco del blog intitolato «La storia di Funds TOgether» o nascosto se non aggiornato.` },
+ { id:'P02', h:1, sev:3, f:['A','A','A'], title:'Sui progetti conclusi il box «SOSTIENI» sembra ancora attivo', page:['bright','fbr'], task:[5,4], row:true,
+   figs:[['bright_status.jpg','BRIGHT: «progetto concluso» in piccolo; sotto, l’intestazione «SOSTIENI» e il pallino rosso.',38],['fbr_faitu.jpg','Fai Brillare la Ricerca!: campo importo «FAI TU» ancora compilabile.',38]],
+   prob:`Le due campagne sono chiuse (05/11/2024 e 15/01/2022), ma la colonna destra mantiene il titolo arancione «SOSTIENI» e l’elenco delle ricompense con i prezzi (11 su BRIGHT, 9 su Fai Brillare la Ricerca!). I pulsanti non ci sono, ma in «FAI TU» resta un campo importo in cui si può scrivere. Nessun testo dice che la raccolta è chiusa: l’unico indizio è un pallino rosso senza legenda. Chi cerca come donare non trova il comando e non sa se è un errore.`,
+   heur:`Lo stato «non si può più donare» non è visibile nel punto in cui l’utente agisce; l’interfaccia suggerisce il contrario.`,
+   sevj:`Verificato su entrambi i progetti conclusi analizzati; i conclusi sono 13 dei 18 in elenco. Porta a un vicolo cieco su un task centrale, senza alternative proposte.`,
+   fix:`Sostituire il box con un pannello «Raccolta conclusa il …», ricompense in sola lettura sotto «Ricompense assegnate», campo importo rimosso e link «Scopri le campagne UniTo attive».` },
+ { id:'P03', h:1, sev:2, f:['A','B','M'], title:'Il modulo di donazione non indica i passi né l’effetto di «Dona adesso!»', page:['checkout'], task:[5],
+   figs:[['checkout_end.jpg','Fine del modulo: l’unico comando è «DONA ADESSO! – DONATE!».']],
+   prob:`La pagina «Checkout» è un unico modulo, senza indicatore di avanzamento. Il pulsante finale «DONA ADESSO! – DONATE!» fa pensare a un addebito immediato; in realtà, come dice solo il testo descrittivo di ciascun metodo, si viene reindirizzati a PayPal o Satispay oppure si ricevono le coordinate per il bonifico. L’importo compare soltanto nel primo campo in cima al modulo, lontano dal pulsante.`,
+   heur:`L’utente non sa a che punto del processo si trova né che cosa accadrà premendo il comando principale.`,
+   sevj:`Crea esitazione nel momento più delicato, quello in cui si impegna denaro, per ogni donatore. Il percorso resta completabile.`,
+   fix:`Indicatore «1 Dati → 2 Pagamento → 3 Conferma»; etichetta del pulsante legata al metodo scelto («Continua su PayPal», «Ricevi le coordinate»); riga di riepilogo «Stai donando € 15 a MILK-ACT» accanto al pulsante.` },
+ { id:'P04', h:2, sev:2, f:['A','M','B'], title:'I giorni rimanenti sono scritti come numero negativo («-36 giorni»)', page:['lista','milk','cerca'], task:[4,2],
+   figs:[['lista_cards.jpg','Schede delle campagne in corso: «-36 giorni», «-37 giorni».'],['milk_days.jpg','Pagina MILK-ACT: «-36» è uno dei numeri più evidenti del riquadro.']],
+   prob:`Il tempo residuo è espresso con il segno meno («-36 giorni», «-37 giorni», «-29 giorni»), come in un conto alla rovescia tecnico. Nel linguaggio comune «-36 giorni» si legge «scaduto da 36 giorni»: una campagna attiva sembra chiusa, proprio accanto a quelle davvero concluse.`,
+   heur:`Il sistema usa una notazione interna al posto dell’espressione che l’utente userebbe («mancano 36 giorni»).`,
+   sevj:`Compare su ogni campagna attiva, in elenco, nei risultati di ricerca e nella pagina progetto. L’equivoco si scioglie notando «Scade il 17/11/2026» sotto il titolo della pagina progetto, quindi dopo la prima volta pesa meno.`,
+   fix:`Scrivere «36 giorni rimasti» (e «ultimo giorno») e riportare la data di scadenza anche nelle schede dell’elenco.` },
+ { id:'P05', h:2, sev:2, f:['M','M','M'], title:'Gli aggiornamenti precedono la presentazione del progetto', page:['bright'], task:[3],
+   figs:[['bright_order.jpg','BRIGHT, scheda «Progetto»: dopo il sommario, il primo blocco è «NUOVO OBIETTIVO – Aggiornamento».']],
+   prob:`Nella scheda «Progetto» di BRIGHT i blocchi «Nuovo obiettivo» («Aggiornamento», poi «Secondo obiettivo») stanno prima del testo che presenta il team e l’idea, e sono in ordine cronologico inverso. La presentazione («Buongiorno, avventurieri!») inizia circa 3.700 px dopo la barra delle schede: quasi cinque schermate a 1366 × 768. Chi arriva per la prima volta legge del terzo obiettivo e delle cuffie fNIRS prima di sapere che cosa sia il progetto.`,
+   heur:`L’informazione non segue l’ordine naturale per un nuovo visitatore: prima che cos’è, poi come sta andando.`,
+   sevj:`Aumenta lo sforzo su T3 nei progetti che rilanciano l’obiettivo. Il sommario in testa attenua il problema e il contenuto resta reperibile scorrendo.`,
+   fix:`In alto una sola riga di stato («2 obiettivi aggiuntivi raggiunti – dettagli»); i blocchi di aggiornamento dopo la presentazione oppure nella scheda «News».` },
+ { id:'P06', h:2, sev:1, f:['A','B','B'], title:'Termini inglesi e gergo interno in un sito in italiano', page:['lista','partner','checkout','bright'], task:[2,5],
+   figs:[['checkout_top.jpg','Modulo di donazione: titolo «Checkout», etichette «Total amount €», «Notes backer».']],
+   prob:`Diverse etichette sono in inglese o in gergo di piattaforma: «by» davanti al proponente, «Overfunding» tra i contatori, «Checkout» e «Notes backer» nel modulo, «i gloriosi GINGERs» nell’elenco dei sostenitori, «Partnership» come nome della scheda che descrive l’iniziativa. Funds TOgether si rivolge anche a cittadini che non conoscono il crowdfunding.`,
+   heur:`Parole del dominio della piattaforma al posto di quelle dell’utente.`,
+   sevj:`Termini isolati, quasi sempre comprensibili dal contesto: l’effetto è cumulativo ma lieve.`,
+   fix:`«di» al posto di «by»; «Raccolto in media il 369% dell’obiettivo»; «Completa la donazione»; «L’iniziativa» al posto di «Partnership».` },
+ { id:'P07', h:3, sev:2, f:['A','B','A'], title:'Un link interno apre una nuova scheda del browser e «Indietro» non funziona', page:['partner'], task:[2],
+   figs:[['partner_cta.jpg','«Scopri tutti i progetti!» e la voce «Progetti» portano alla stessa pagina, ma solo il pulsante apre una nuova scheda.']],
+   prob:`Il pulsante «Scopri tutti i progetti!» porta alla scheda «Progetti» dello stesso sito ma con target="_blank": si apre una nuova scheda del browser e il tasto Indietro non riporta alla descrizione. La voce «Progetti» della barra, con la stessa destinazione, apre invece nella scheda corrente. Anche «Scopri la guida dell’iniziativa» apre unito.it in una nuova scheda senza l’icona di link esterno che il footer usa per «Cookies» e «Blog».`,
+   heur:`L’uscita naturale da un passo (Indietro) non è disponibile e il cambio di contesto non è annunciato.`,
+   sevj:`È il pulsante principale del percorso T1→T2, quindi lo incontrano quasi tutti; il danno è un disorientamento breve, più marcato su mobile dove le schede aperte non si vedono.`,
+   fix:`Aprire i link interni nella stessa scheda; per quelli esterni aggiungere l’icona e il nome del sito di destinazione («su unito.it»).` },
+ { id:'P08', h:3, sev:2, f:['M','M','M'], title:'Dal modulo di donazione non si può cambiare ricompensa né annullare', page:['checkout'], task:[5],
+   figs:[['checkout_summary.jpg','Il riepilogo a destra è in sola lettura: nessun comando «Modifica» o «Annulla».']],
+   prob:`La ricompensa scelta è riepilogata a destra, ma il riquadro non contiene alcun comando: niente «Cambia ricompensa», «Annulla» o «Torna al progetto». L’unico pulsante della pagina è «Dona adesso!»; per uscire restano il breadcrumb o il tasto Indietro del browser. L’importo è modificabile ma con minimo pari alla ricompensa (15 €): chi vuole donare meno o scegliere un’altra ricompensa deve tornare indietro e ripartire.`,
+   heur:`Manca un’uscita chiaramente segnalata da un processo che molti aprono solo per vedere come funziona.`,
+   sevj:`Il recupero richiede pochi clic, ma avviene in un punto in cui un abbandono significa una donazione persa.`,
+   fix:`Link «Modifica» accanto alla ricompensa, con l’elenco delle ricompense disponibili, e «← Torna al progetto» accanto al pulsante principale.` },
+ { id:'P09', h:4, sev:2, f:['A','M','A'], title:'«Come verranno usati i fondi» non ha una collocazione fissa', page:['fbr','bright'], task:[3],
+   figs:[['fbr_fondi.jpg','Fai Brillare la Ricerca!: la ripartizione del budget è un’immagine, senza testo alternativo.'],['bright_fondi.jpg','BRIGHT: la stessa informazione è in un paragrafo intitolato «Di cosa abbiamo bisogno».']],
+   prob:`Le descrizioni sono testi liberi molto lunghi, senza sezioni standard né indice (Fai Brillare la Ricerca!: 7.597 px su desktop; BRIGHT: 18.030 px su mobile). L’uso dei fondi è in «Di cosa abbiamo bisogno» in BRIGHT; in Fai Brillare la Ricerca! è dentro «Perché abbiamo bisogno di te?» e in un grafico inserito come immagine, privo di testo alternativo. Ciò che si impara su una pagina non aiuta a orientarsi nella successiva.`,
+   heur:`Pagine dello stesso tipo non seguono una convenzione comune per le informazioni che ogni donatore cerca.`,
+   sevj:`Per confrontare due progetti bisogna leggere per intero entrambe le descrizioni; vale per ogni campagna.`,
+   fix:`Modello di pagina con sezioni fisse e ancore («In breve · Il team · Obiettivi · Uso dei fondi · Ricompense») e una tabella del budget in testo, non in immagine.` },
+ { id:'P10', h:4, sev:2, f:['B','M','A'], title:'La pagina 404 è fuori dal modello del sito e non si adatta allo smartphone', page:['e404'], task:[8], row:true,
+   figs:[['e404.jpg','404 su desktop: nessun logo, menu o footer di Ginger.',74],['m_404.jpg','404 su smartphone: testo troppo piccolo.',22]],
+   prob:`La pagina 404 ha una grafica scura estranea all’identità di Ginger e non contiene logo, menu, ricerca né footer: sembra di essere usciti dal sito. Manca il meta viewport, quindi su smartphone viene resa a 980 px di larghezza e il testo risulta minuscolo.`,
+   heur:`Rompe la coerenza interna (stessa intestazione in ogni pagina) e lo standard di adattarsi allo schermo, rispettato dal resto del sito.`,
+   sevj:`Evento poco frequente, ma in quel momento l’utente è già in difficoltà e perde ogni punto di riferimento; si ripete identico a ogni indirizzo errato.`,
+   fix:`Generare la pagina 404 dentro il modello standard, con intestazione, ricerca e footer, e con lo stesso layout responsive.` },
+ { id:'P11', h:5, sev:2, f:['M','M','M'], title:'Il modulo di donazione non previene gli errori di compilazione', page:['checkout'], task:[5],
+   figs:[['checkout_fields.jpg','I campi obbligatori sono segnalati solo dall’asterisco; l’email è un campo di testo generico.']],
+   prob:`Dall’ispezione del modulo, che non abbiamo inviato: nessun campo obbligatorio è dichiarato tale al browser, l’email è un campo di testo generico senza controllo di formato né seconda digitazione, nessun metodo di pagamento è preselezionato e il reCAPTCHA è l’ultimo elemento. Un errore di battitura nell’email, a cui arriva ogni comunicazione sulla donazione, non viene intercettato durante la compilazione.`,
+   heur:`Il design non elimina le condizioni che portano all’errore, in particolare per il dato più critico.`,
+   sevj:`Un’email errata ha conseguenze reali per il donatore. Non avendo inviato il modulo non conosciamo i controlli successivi, quindi non andiamo oltre 2.`,
+   fix:`Campo email con controllo di formato in linea, messaggi accanto al campo all’uscita, metodo più usato preselezionato, email riportata nel riepilogo prima della conferma.` },
+ { id:'P12', h:6, sev:2, f:['M','M','M'], title:'Per ritrovare Funds TOgether bisogna ricordare che è un «Partner»', page:['menu'], task:[2,1],
+   figs:[['menu_partner.jpg','Menu «Partner»: 25 voci in ordine non alfabetico; «Funds TOgether» non compare.']],
+   prob:`Da qualsiasi pagina la sezione UniTo si raggiunge solo aprendo «Partner» e scorrendo 25 nomi in ordine non alfabetico e in colori diversi. La voce è «Università di Torino»: il nome dell’iniziativa non compare in alcun menu e la ricerca non lo trova (P18).`,
+   heur:`L’utente deve ricordare come la piattaforma classifica l’iniziativa, invece di riconoscere una voce esplicita.`,
+   sevj:`Rallenta chi torna sul sito senza un link diretto; il percorso esiste e funziona.`,
+   fix:`Partner raggruppati per tipo (Università, Banche, Enti) e in ordine alfabetico; voce «Università di Torino – Funds TOgether».` },
+ { id:'P13', h:6, sev:1, f:['A','B','B'], title:'Titoli dei progetti troncati nelle schede dell’elenco', page:['lista','cerca'], task:[2],
+   figs:[['lista_titoli.jpg','«CultMeat - coltiviamo la carne per un …», «BRIGHT: Brain Research in Interactive …».']],
+   prob:`Nelle schede i titoli sono tagliati con «…» e il link non ha un titolo alternativo che mostri il testo completo. Spesso la parte tagliata è quella che dice di che cosa si occupa il progetto («MILK-ACT: Proteggere i più piccoli dai …», «RePatch | il cerotto per il cuore: …»). Per saperlo bisogna aprire ogni pagina.`,
+   heur:`L’informazione utile alla scelta non è visibile nel punto in cui si sceglie.`,
+   sevj:`Costa un clic in più per progetto; immagine e nome del team aiutano in parte.`,
+   fix:`Titolo su tre righe, oppure una riga di sottotitolo con l’ambito del progetto.` },
+ { id:'P14', h:7, sev:2, f:['M','M','A'], title:'Nessun filtro o ordinamento; «ALTRI» non dice quanti progetti restano', page:['lista'], task:[2],
+   figs:[['lista_altri.jpg','Dopo quattro progetti conclusi, l’unico comando è «ALTRI».']],
+   prob:`I 18 progetti sono divisi solo in «in corso» e «conclusi». Non si può filtrare per categoria o obiettivo di sostenibilità, dati che ogni pagina progetto riporta, né per edizione, né ordinare per scadenza. Dei 13 conclusi se ne vedono 4: il pulsante «ALTRI» ne aggiunge quattro per volta, senza indicare quanti ne restano, e servono tre clic per vederli tutti.`,
+   heur:`Mancano acceleratori per chi ha già un criterio di scelta, per esempio «progetti sulla salute».`,
+   sevj:`Con 18 progetti scorrere tutto è ancora praticabile, ma il costo cresce a ogni nuova edizione.`,
+   fix:`Filtri per edizione, categoria e obiettivo ONU; ordinamento «In scadenza»; pulsante «Mostra altri 9 progetti conclusi».` },
+ { id:'P15', h:7, sev:2, f:['A','B','A'], title:'Il comando per sostenere è lontano dal punto in cui si decide', page:['milk'], task:[5], row:true,
+   figs:[['milk_top.jpg','Desktop: nella prima schermata della campagna attiva non c’è alcun pulsante per donare.',70],['m_milk.jpg','Mobile: «Sostieni il progetto» è in alto, ma non segue lo scorrimento.',24]],
+   prob:`Su desktop (1366 × 768) la prima schermata di una campagna attiva non contiene alcun pulsante per donare: il box «Sostieni» inizia a 924 px, sotto la piega, e non resta fisso durante lo scorrimento. Finita la descrizione bisogna risalire. Su mobile c’è il pulsante «Sostieni il progetto» in alto, scelta corretta, ma non segue lo scorrimento e le ricompense iniziano a 9.472 px su 13.999.`,
+   heur:`Manca una scorciatoia sempre disponibile per l’azione più importante della pagina.`,
+   sevj:`Aggiunge scorrimento a ogni donazione, soprattutto su mobile; l’azione resta raggiungibile.`,
+   fix:`Pulsante «Sostieni» nel riquadro dei numeri e sempre visibile: colonna fissa su desktop, barra in basso su mobile.` },
+ { id:'P16', h:8, sev:1, f:['A','B','B'], title:'La prima schermata non dice che cos’è Funds TOgether', page:['partner'], task:[1],
+   figs:[['partner_first.jpg','Prima schermata a 1366 × 768: banner, schede e il titolo «Università di Torino».']],
+   prob:`A 1366 × 768 la prima schermata mostra solo il banner «Lasci o raddoppi?», le due schede e il titolo «Università di Torino»: nessuna frase spiega l’iniziativa. Seguono sei paragrafi, i primi due resi come titoli, prima della sintesi in quattro fasi, che è il contenuto più chiaro e inizia a circa 1.460 px. La regola del raddoppio «fino a 10.000 euro» è scritta in grassetto due volte a breve distanza.`,
+   heur:`Elementi decorativi e ripetizioni occupano lo spazio più visibile e ritardano l’informazione essenziale.`,
+   sevj:`Allunga la lettura, ma il contenuto è corretto e comprensibile una volta raggiunto.`,
+   fix:`Aprire con il nome dell’iniziativa e una frase di sintesi, subito seguite dalle quattro fasi; il resto in un blocco «Approfondisci».` },
+ { id:'P17', h:8, sev:2, f:['A','B','A'], title:'Modulo di donazione con ogni testo in doppia lingua', page:['checkout'], task:[5],
+   figs:[['checkout_pay.jpg','Metodi di pagamento e consensi: ogni testo è ripetuto in italiano e in inglese.']],
+   prob:`Il modulo è bilingue riga per riga: etichette, istruzioni, descrizione dei metodi di pagamento, consensi e pulsante. Il testo da leggere raddoppia e i due consensi diventano blocchi di più righe difficili da distinguere. Il resto dell’interfaccia è in italiano. La pagina misura 1.811 px su desktop e 3.387 px su mobile.`,
+   heur:`Metà del testo è irrilevante per ciascun utente e riduce la leggibilità dell’altra metà.`,
+   sevj:`Appesantisce il passaggio più delicato del percorso per ogni donatore, a ogni donazione.`,
+   fix:`Selettore di lingua IT/EN in testa al modulo, con una sola lingua visibile per volta.` },
+ { id:'P18', h:9, sev:3, f:['M','A','A'], title:'La ricerca senza risultati restituisce una pagina vuota', page:['cerca'], task:[2],
+   figs:[['search_empty.jpg','Ricerca di «funds together»: solo l’eco del termine, poi il footer.']],
+   prob:`Cercando «funds together», cioè il nome dell’iniziativa, la pagina mostra soltanto «STAI CERCANDO: "funds together"» e subito dopo il footer. Nessun messaggio dice che non ci sono risultati, nessun suggerimento, nessun rimando alla pagina partner. Lo stesso accade con una stringa casuale. L’utente non capisce se la ricerca è fallita, se sta ancora caricando o se quei progetti non esistono.`,
+   heur:`La condizione di errore non è dichiarata in linguaggio chiaro né accompagnata da una via d’uscita.`,
+   sevj:`Chi usa la ricerca per T2 conclude che non esistono progetti legati a Funds TOgether, e accade a ogni ricerca senza esito. Non è 4 perché resta il percorso dal menu «Partner».`,
+   fix:`Messaggio «Nessun progetto per “…”» con suggerimenti (controlla l’ortografia, sfoglia per categoria) e ricerca estesa ai nomi di partner e iniziative.` },
+ { id:'P19', h:9, sev:2, f:['B','M','A'], title:'Il messaggio 404 è in inglese, con refusi, e offre solo il ritorno alla home', page:['e404'], task:[8],
+   figs:[['e404_msg.jpg','«Opps! page not found … mistyped the adress»; unico comando «Back to www.ideaginger.it».']],
+   prob:`In un sito in italiano il messaggio d’errore è in inglese e contiene due refusi («Opps!», «adress»); per chi non legge l’inglese resta solo il codice «404». L’unico comando riporta alla home: chi è arrivato da un link errato a un progetto o alla pagina UniTo deve rifare tutto il percorso, senza ricerca, senza link ai progetti e senza un contatto per segnalare il problema.`,
+   heur:`L’errore non è espresso nella lingua dell’utente e non propone una soluzione legata a ciò che stava cercando.`,
+   sevj:`Occorrenza rara; quando accade costringe a ripartire da zero (home → Partner → Università di Torino → Progetti).`,
+   fix:`«Pagina non trovata. L’indirizzo potrebbe essere errato o la pagina è stata spostata», con campo di ricerca e link a «Progetti attivi», «Partner» e «Segnala il problema».` },
+ { id:'P20', h:10, sev:3, f:['M','A','A'], title:'Nessuna indicazione operativa su come candidare un progetto', page:['partner','signup','help'], task:[7],
+   figs:[['signup.jpg','«Lancia una campagna» apre una registrazione generica, senza riferimenti a Funds TOgether.'],['come_fee.jpg','«Come funziona» cita una quota di 350 € + IVA senza dire se riguarda le iniziative dei partner.']],
+   prob:`La pagina partner spiega le fasi ma non dice chi può candidarsi, entro quando, con quale modulo né chi contattare. L’unico rimando è «Scopri la guida dell’iniziativa», che apre il sito unito.it. Le voci che sembrano pertinenti portano altrove: «Lancia una campagna» apre una registrazione generica che non nomina l’iniziativa, e «Come funziona» indica una quota di accesso di 350 € + IVA senza precisare se vale per i progetti cofinanziati dai partner.`,
+   heur:`La documentazione necessaria al task non è nel contesto, non è orientata al compito e non elenca passi concreti.`,
+   sevj:`T7 non si completa restando sul sito e i percorsi che sembrano pertinenti danno informazioni non riferite a Funds TOgether. Riguarda solo i ricercatori, ma per loro è l’intero task.`,
+   fix:`Riquadro «Sei un ricercatore UniTo?» con requisiti, scadenza, contatto dell’ufficio e pulsante «Vai al bando su unito.it»; nota esplicita su costi e registrazione.` },
+ { id:'P21', h:10, sev:2, f:['M','M','M'], title:'«O tutto o niente» è spiegato solo in un tooltip', page:['bright','fbr','milk'], task:[6,4],
+   figs:[['bright_tooltip.jpg','La spiegazione compare solo portando il puntatore sul link.']],
+   prob:`La regola che decide la restituzione del denaro è spiegata solo nel tooltip del link «O tutto o niente!», che appare al passaggio del puntatore. Nulla segnala che il link è un aiuto; punta a «#», quindi non porta a una pagina di spiegazione, e il testo resta al futuro («se questo progetto non raggiungerà il budget…») anche a campagna conclusa. La regola non è richiamata nel modulo di donazione.`,
+   heur:`L’aiuto esiste ma è difficile da scoprire e manca nel punto in cui serve, prima di pagare.`,
+   sevj:`Riguarda la tutela del donatore su tutte le campagne; l’informazione è comunque reperibile in «Come funziona» e nelle FAQ.`,
+   fix:`Icona «?» con pannello che si apre al clic, testo adattato allo stato della campagna, link alla FAQ e richiamo nel modulo di donazione.` },
+ { id:'P22', h:10, sev:2, f:['M','M','A'], title:'«Come funziona» e FAQ non sono organizzate per chi vuole sostenere', page:['help'], task:[6],
+   figs:[['come.jpg','«Come funziona» si apre con: «Se sei qui è perché stai pensando di lanciare una campagna…».'],['faq.jpg','FAQ: 25 domande in un unico elenco, senza categorie né ricerca.']],
+   prob:`«Come funziona» si rivolge a chi lancia una campagna. Le FAQ sono 25 domande in un solo elenco, senza categorie né campo di ricerca: le risposte utili a un donatore (restituzione se l’obiettivo non è raggiunto, anonimato) ci sono, ma mescolate a quelle per i progettisti. Nessuna domanda riguarda il cofinanziamento dei partner o Funds TOgether. Le FAQ citano il sistema «PayWay», che non è tra i metodi del modulo di donazione, e non citano Satispay, che invece c’è.`,
+   heur:`La documentazione non è organizzata sul compito dell’utente, non è facile da consultare e non è allineata all’interfaccia.`,
+   sevj:`T6 riesce solo leggendo l’intero elenco. I contatti (email e telefono) sono ben visibili e attenuano il problema.`,
+   fix:`FAQ divise in «Voglio sostenere» e «Voglio lanciare una campagna», con ricerca; sezione su Funds TOgether collegata dalla pagina partner; metodi di pagamento aggiornati.` },
+];
+const byId = Object.fromEntries(P.map(p => [p.id, p]));
+
+// ---------------------------------------------------------------- render
+const deck = document.getElementById('deck');
+let n = 0, fig = 0;
+const FOOT = 'Valutazione euristica · IdeaGinger × Università di Torino (Funds TOgether) · Gruppo A · parte 1 di 4 (antofallea)';
+function slide(cls, html) { n++; const s = document.createElement('section'); s.className = 'slide ' + cls; s.innerHTML = html + (cls.includes('cover') ? '' : `<div class="foot"><span>${FOOT}</span><span>${n}</span></div>`); deck.appendChild(s); return s; }
+const sev = s => `<span class="sev sev${s}">${s}</span>`;
+function figHtml(f, row) { fig++; return `<figure${row ? ` style="width:${f[2]}%"` : ''}><img src="img/${f[0]}"><figcaption><b>Fig. ${fig}</b> — ${f[1]}</figcaption></figure>`; }
+function probSlide(p) {
+  slide('', `<div class="kicker">Problemi riscontrati · Euristica ${p.h} – ${H[p.h]}</div>
+  <div class="prob grow"><div class="figs ${p.row ? 'row' : 'n' + p.figs.length}">${p.figs.map(f => figHtml(f, p.row)).join('')}</div>
+  <div><div class="ptitle"><span class="id">${p.id}</span>${sev(p.sev)}<h2>${p.title}</h2></div>
+   <div class="where"><b>Dove:</b> ${p.page.map(k => PG[k]).join(' · ')}<br><b>Task:</b> ${p.task.map(k => T[k]).join(' · ')}</div>
+   <dl>
+    <div><dt>Problema e conseguenze</dt><dd>${p.prob}</dd></div>
+    <div class="heur"><dt>Euristica ${p.h} — ${H[p.h]}</dt><dd>${p.heur}</dd></div>
+    <div class="s${p.sev}"><dt>Severità ${p.sev}</dt><div class="fip"><span>Frequenza <b>${LV[p.f[0]]}</b></span><span>Impatto <b>${LVI[p.f[1]]}</b></span><span>Persistenza <b>${LV[p.f[2]]}</b></span></div><dd>${p.sevj}</dd></div>
+    <div class="fix"><dt>Proposta</dt><dd>${p.fix}</dd></div></dl></div></div>`);
+}
+
+// 1 copertina
+slide('cover', `<span class="tag">HCI · Assignment 1 · Gruppo A · Parte 1 di 4</span><h1>Valutazione euristica di IdeaGinger<br>× Università di Torino</h1>
+<div class="sub">La sezione Funds TOgether e i percorsi collegati, analizzati con le 10 euristiche di Nielsen.</div>
+<div class="meta"><div><b>Autore di questa parte</b>antofallea (Gruppo A)</div><div><b>Data della valutazione</b>12 ottobre 2026</div><div><b>Pagina di partenza</b>ideaginger.it/partner/universita-di-torino.html</div><div><b>Pagine analizzate</b>4, più i percorsi collegati</div></div>`);
+
+// 2 obiettivo e metodo
+slide('', `<div class="kicker">1 · Obiettivo e metodo</div><h1>Cosa è stato valutato e come</h1>
+<div class="cols grow" style="grid-template-columns: 1.05fr 1fr 0.95fr;">
+ <div><h2>Obiettivo</h2><p>Individuare i problemi di usabilità della sezione di IdeaGinger dedicata all’Università di Torino, spiegare che cosa comportano per chi usa il sito e proporre correzioni realizzabili.</p>
+  <p><b>Perimetro:</b> parte 1 di 4 del lavoro del Gruppo A. Copre 4 pagine; le altre sono analizzate dagli altri componenti.</p>
+  <p><b>Motivazione della scelta:</b> capire come funziona la collaborazione tra Ateneo e piattaforma e come vengono sostenuti i progetti di ricerca.</p>
+  <h2 style="margin-top:10px">Procedura</h2><ul>
+   <li>8 task realistici per tre profili di utente.</li>
+   <li>Ogni task percorso su desktop e poi su mobile, con screenshot degli ostacoli.</li>
+   <li>Una sola euristica prevalente per problema; severità motivata con frequenza, impatto e persistenza.</li>
+   <li>Un problema che si ripete è descritto una volta, con le pagine in cui compare.</li>
+   <li>Nessun pagamento e nessun modulo inviato.</li></ul></div>
+ <div><h2>Le 10 euristiche di Nielsen</h2><table>${Object.entries(H).map(([k, v]) => `<tr><td style="width:36px"><b>H${k}</b></td><td>${v}</td></tr>`).join('')}</table></div>
+ <div><h2>Scala di severità</h2><table>
+  <tr><td>${sev(0)}</td><td>Non è un problema di usabilità</td></tr>
+  <tr><td>${sev(1)}</td><td><b>Cosmetico</b> — priorità bassa</td></tr>
+  <tr><td>${sev(2)}</td><td><b>Minore</b> — difficoltà limitate, da correggere</td></tr>
+  <tr><td>${sev(3)}</td><td><b>Grave</b> — ostacola in modo significativo il task</td></tr>
+  <tr><td>${sev(4)}</td><td><b>Critico</b> — impedisce un task essenziale</td></tr></table>
+  <p class="small muted" style="margin-top:10px">In ogni scheda la severità è accompagnata da tre indicatori: <b>frequenza</b> (quanti utenti incontrano il problema), <b>impatto</b> sul task e <b>persistenza</b> (si ripresenta anche a chi lo conosce?).</p>
+  <p class="small muted">Colori, illustrazioni e stile dei banner non sono stati valutati in sé: sono citati solo dove incidono su un task.</p></div>
+</div>`);
+
+// 3 contesto
+slide('', `<div class="kicker">1 · Obiettivo e metodo</div><h1>Data, dispositivi e limiti della valutazione</h1>
+<div class="cols grow" style="grid-template-columns: 1fr 1fr 1fr; align-content:start">
+ <div class="card"><h2>Quando</h2><p><b>12 ottobre 2026.</b></p><p>Quel giorno la scheda «Progetti» elencava 18 progetti: 5 campagne in corso, con scadenze tra il 10 e il 18 novembre 2026, e 13 concluse. Importi, giorni rimasti e numero di sostenitori citati nelle slide sono quelli visibili in quella data e cambieranno.</p></div>
+ <div class="card"><h2>Con cosa</h2><table>
+  <tr><td><b>Desktop</b></td><td>PC Windows 10, Google Chrome 155, finestra 1366 × 768 px</td></tr>
+  <tr><td><b>Mobile</b></td><td>Emulazione smartphone di Chrome: 390 × 844 px, touch, user-agent iPhone</td></tr>
+  <tr><td><b>Cookie</b></td><td>Banner chiuso con «Rifiuto»</td></tr>
+  <tr><td><b>Account</b></td><td>Nessuno: navigazione da utente non registrato</td></tr></table></div>
+ <div class="card"><h2>Limiti dichiarati</h2><ul>
+  <li>Il mobile è emulato: nessuna prova su telefono fisico o su altri browser.</li>
+  <li>Il modulo di donazione non è stato inviato: i messaggi dopo l’invio e le pagine di PayPal e Satispay non sono stati osservati.</li>
+  <li>L’area riservata ai progettisti, dopo la registrazione, non è stata esplorata.</li>
+  <li>Il contenuto della guida su unito.it non rientra nella valutazione.</li>
+  <li>Non è stato usato uno screen reader.</li></ul></div>
+</div>`);
+
+// 4 task
+const taskRows = [
+ [1,'Capire in cosa consiste Funds TOgether e il ruolo dell’Università','Cittadino','ok','Completato','P01 P16'],
+ [2,'Trovare i progetti collegati all’Università e sceglierne uno','Cittadino','warn','Completato con ostacoli','P04 P07 P12 P13 P14 P18'],
+ [3,'Capire obiettivi del progetto, chi lo propone e come userà i fondi','Donatore','warn','Completato con ostacoli','P05 P09'],
+ [4,'Individuare lo stato della campagna e i dati sulla raccolta','Donatore','warn','Completato con ostacoli','P02 P04'],
+ [5,'Capire come sostenere un progetto, senza pagare','Donatore','warn','Completato fino al modulo','P02 P03 P08 P11 P15 P17'],
+ [6,'Trovare chiarimenti sul crowdfunding e sulle modalità di sostegno','Donatore','warn','Completato con ostacoli','P21 P22'],
+ [7,'Capire come partecipare con un proprio progetto di ricerca','Ricercatore','bad','Non completabile sul sito','P01 P20'],
+ [8,'Recuperare il percorso dopo un indirizzo errato (pagina 404)','Chiunque','warn','Completato con ostacoli','P10 P19'],
+];
+slide('', `<div class="kicker">2 · Task analizzati</div><h1>Otto task, tre profili di utente</h1>
+<table style="font-size:15.5px"><tr><th>#</th><th>Task</th><th>Profilo</th><th>Esito</th><th>Problemi incontrati</th></tr>
+${taskRows.map(r => `<tr><td><b>T${r[0]}</b></td><td>${r[1]}</td><td>${r[2]}</td><td><span class="pill ${r[3]}">${r[4]}</span></td><td class="id" style="font-weight:600;font-size:12.5px">${r[5]}</td></tr>`).join('')}</table>
+<p class="small muted" style="margin-top:12px">T1–T7 derivano dalla consegna; T8 copre la pagina 404. T5 è stato svolto sulla campagna attiva MILK-ACT, perché i due progetti assegnati sono conclusi e non accettano più donazioni: questo fatto è all’origine del problema P02.</p>`);
+
+// 5 pagine
+slide('', `<div class="kicker">3 · Pagine valutate</div><h1>Quattro pagine assegnate e i percorsi che le collegano</h1>
+<div class="cols grow" style="grid-template-columns: 1.15fr 1fr;">
+ <div><table><tr><th>Pagina</th><th>Indirizzo (ideaginger.it)</th><th>Task</th></tr>
+  <tr><td><b>1. Partner UniTo</b>, schede «Partnership» e «Progetti»</td><td class="small">/partner/universita-di-torino.html<br>/partner-progetti/universita-di-torino.html</td><td>T1 T2 T7</td></tr>
+  <tr><td><b>2. Fai Brillare la Ricerca!</b> (conclusa il 15/01/2022)</td><td class="small">/progetti/fai-brillare-la-ricerca.html</td><td>T3 T4 T5</td></tr>
+  <tr><td><b>3. BRIGHT</b> (conclusa il 05/11/2024)</td><td class="small">/progetti/bright-brain-research-in-interactive-game-based-hypertraining.html</td><td>T3 T4 T5 T6</td></tr>
+  <tr><td><b>4. Pagina 404</b></td><td class="small">/pagina-che-non-esiste.html (indirizzo inesistente)</td><td>T8</td></tr>
+  <tr><td colspan="3" style="background:var(--soft);font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)">Percorsi aggiuntivi esplorati</td></tr>
+  <tr><td>Campagna attiva MILK-ACT e modulo di donazione</td><td class="small">/progetti/milk-act-…html → …/donazione.html</td><td>T5</td></tr>
+  <tr><td>Ricerca progetti e menu «Partner»</td><td class="small">menu globale → /progetti.html</td><td>T2</td></tr>
+  <tr><td>«Come funziona» e FAQ</td><td class="small">/ginger_come-funziona.html · /faq.html</td><td>T6 T7</td></tr>
+  <tr><td>«Lancia una campagna»</td><td class="small">/areaprogettisti/signup.html</td><td>T7</td></tr></table></div>
+ <div class="card" style="align-self:start"><h2>Mappa dei percorsi seguiti</h2>
+  <svg viewBox="0 0 520 430" style="width:100%;height:auto;font-family:Segoe UI,Arial;font-size:12px">
+   <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5b6577"/></marker></defs>
+   <g fill="#fff" stroke="#172033" stroke-width="1.5">
+    <rect x="170" y="8" width="180" height="40" rx="8" fill="#e8ecfd"/><rect x="20" y="96" width="170" height="40" rx="8" stroke-dasharray="5 3"/><rect x="330" y="96" width="170" height="40" rx="8" fill="#e8ecfd"/>
+    <rect x="20" y="190" width="150" height="40" rx="8" fill="#e8ecfd"/><rect x="185" y="190" width="150" height="40" rx="8" fill="#e8ecfd"/><rect x="350" y="190" width="150" height="40" rx="8" stroke-dasharray="5 3"/>
+    <rect x="350" y="280" width="150" height="40" rx="8" stroke-dasharray="5 3"/><rect x="20" y="280" width="150" height="40" rx="8" stroke-dasharray="5 3"/><rect x="185" y="280" width="150" height="40" rx="8" stroke-dasharray="5 3"/>
+    <rect x="185" y="372" width="150" height="40" rx="8" fill="#e8ecfd"/></g>
+   <g text-anchor="middle" fill="#172033">
+    <text x="260" y="33" font-weight="700">Partner UniTo · Partnership</text><text x="105" y="121">unito.it (guida, esterno)</text><text x="415" y="121" font-weight="700">Partner UniTo · Progetti</text>
+    <text x="95" y="215" font-weight="700">Fai Brillare la Ricerca!</text><text x="260" y="215" font-weight="700">BRIGHT</text><text x="425" y="215">MILK-ACT (attiva)</text>
+    <text x="425" y="305">Modulo di donazione</text><text x="95" y="305">Ricerca · menu Partner</text><text x="260" y="305">Come funziona · FAQ</text><text x="260" y="397" font-weight="700">Pagina 404</text></g>
+   <g stroke="#5b6577" stroke-width="1.5" fill="none" marker-end="url(#a)">
+    <path d="M215 48L130 94"/><path d="M305 48L390 94"/><path d="M380 136L120 188"/><path d="M400 136L290 188"/><path d="M425 136L425 188"/><path d="M425 230L425 278"/>
+    <path d="M95 280L95 232"/><path d="M260 230L260 278"/></g>
+  </svg>
+  <p class="note">Riquadri colorati: pagine assegnate. Tratteggiati: percorsi aggiuntivi. La pagina 404 è stata raggiunta digitando un indirizzo inesistente.</p></div>
+</div>`);
+
+// 6 quadro d'insieme
+const cnt = {}; for (const p of P) { cnt[p.h] = cnt[p.h] || {1:0,2:0,3:0,4:0}; cnt[p.h][p.sev]++; }
+const tot = s => P.filter(p => p.sev === s).length;
+slide('', `<div class="kicker">4 · Problemi riscontrati</div><h1>Quadro d’insieme: ${P.length} problemi, nessuno critico, ${tot(3)} gravi</h1>
+<div class="cols grow" style="grid-template-columns: 1.25fr 1fr;">
+ <div><h2>Problemi per euristica e severità</h2>
+  <div class="bars" style="margin-top:10px">${Object.keys(H).map(h => { const c = cnt[h] || {1:0,2:0,3:0,4:0}; const t = c[1]+c[2]+c[3]+c[4];
+    return `<div><b>H${h}</b> ${H[h]}</div><div class="bar">${[3,2,1].map(s => c[s] ? `<span style="width:${c[s]*70}px;background:var(--s${s})"></span>` : '').join('')}</div><div><b>${t}</b></div>`; }).join('')}</div>
+  <p class="small" style="margin-top:14px"><span class="sev sev3">3</span> grave &nbsp; <span class="sev sev2">2</span> minore &nbsp; <span class="sev sev1">1</span> cosmetico</p>
+  <p class="small muted">Ogni problema è assegnato all’euristica che ne spiega meglio la causa. Le osservazioni che non reggevano a una verifica sulla pagina sono state scartate: per esempio le icone di condivisione, che hanno un’etichetta al passaggio del puntatore.</p></div>
+ <div><div class="cols" style="grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px">
+   <div class="card" style="text-align:center"><div style="font-size:34px;font-weight:800;color:var(--s3)">${tot(3)}</div>gravi</div>
+   <div class="card" style="text-align:center"><div style="font-size:34px;font-weight:800;color:var(--s2)">${tot(2)}</div>minori</div>
+   <div class="card" style="text-align:center"><div style="font-size:34px;font-weight:800;color:var(--s1)">${tot(1)}</div>cosmetici</div></div>
+  <div class="card"><h2>Che cosa emerge</h2><ul>
+   <li><b>Lo stato va dedotto</b> (H1): edizione aperta o chiusa, campagna conclusa, passi della donazione.</li>
+   <li><b>Quando qualcosa va storto il sito non aiuta</b> (H9): ricerca vuota e pagina 404.</li>
+   <li><b>L’aiuto è pensato per chi lancia una campagna</b> (H10): ricercatori UniTo e donatori devono cercare altrove.</li>
+   <li><b>Perché nessun 4:</b> donare a una campagna attiva, il task essenziale della piattaforma, riesce. Il task che non si completa sul sito (T7) ha uno sbocco su unito.it.</li></ul></div></div>
+</div>`);
+
+// schede problema
+P.forEach(probSlide);
+
+// confronto desktop / mobile
+slide('', `<div class="kicker">Oltre il richiesto · Confronto desktop / mobile</div><h1>Su smartphone: cosa migliora, cosa peggiora</h1>
+<div class="cols grow" style="grid-template-columns: 1.2fr 1fr;">
+ <div class="phones">${[['m_partner.jpg','Partner'],['m_lista.jpg','Elenco progetti'],['m_milk.jpg','Campagna attiva'],['m_bright_box.jpg','BRIGHT, box «Sostieni»'],['m_checkout.jpg','Modulo di donazione']].map(f => { fig++; return `<figure><img src="img/${f[0]}"><figcaption><b>Fig. ${fig}</b> — ${f[1]}</figcaption></figure>`; }).join('')}</div>
+ <div><table style="font-size:13.5px"><tr><th>Aspetto</th><th>Desktop</th><th>Mobile</th></tr>
+  <tr><td>Pulsante per donare (P15)</td><td>Assente nella prima schermata</td><td><span class="pill ok">Meglio</span> «Sostieni il progetto» in alto, ma non fisso</td></tr>
+  <tr><td>Lunghezza pagina MILK-ACT (P09, P15)</td><td>8.702 px</td><td><span class="pill bad">Peggio</span> 13.999 px; ricompense da 9.472 px</td></tr>
+  <tr><td>Box «Sostieni» su progetto concluso (P02)</td><td>Colonna laterale</td><td><span class="pill warn">Uguale</span> stesso titolo e pallino rosso, a 12.217 px su 18.030</td></tr>
+  <tr><td>Breadcrumb</td><td>Completo</td><td><span class="pill warn">Ridotto</span> voci troncate («Prog… / Universi…»)</td></tr>
+  <tr><td>Menu globale</td><td>Barra con due pannelli</td><td><span class="pill ok">Adeguato</span> menu a comparsa con le stesse cinque voci</td></tr>
+  <tr><td>Modulo bilingue (P17)</td><td>1.811 px</td><td><span class="pill bad">Peggio</span> 3.387 px, circa quattro schermate</td></tr>
+  <tr><td>Pagina 404 (P10)</td><td>Leggibile</td><td><span class="pill bad">Peggio</span> non responsive, testo minuscolo</td></tr></table>
+  <p class="note">Il layout a colonna singola regge e i contenuti restano leggibili. I problemi che si aggravano dipendono dalla lunghezza delle pagine e dalle informazioni affidate al puntatore, non dall’impaginazione.</p></div>
+</div>`);
+
+// aspetti positivi
+slide('', `<div class="kicker">Oltre il richiesto · Aspetti positivi</div><h1>Cosa funziona e va conservato</h1>
+<div class="cols grow" style="grid-template-columns: repeat(3, 1fr); align-content:start">
+ ${[
+  ['Le quattro fasi (H2, H8)','La sezione «Funds TOgether in sintesi» spiega il percorso in quattro punti brevi, con il concetto chiave in grassetto: è il contenuto più chiaro della pagina partner.'],
+  ['Breadcrumb sulle pagine progetto (H1, H3)','«Home / Progetti / Università di Torino / titolo» dice sempre dove ci si trova e riporta all’elenco UniTo con un clic.'],
+  ['Barra delle schede sempre visibile (H6, H7)','Progetto, News, Commenti, Sostenitori e Condividi restano agganciate in alto durante lo scorrimento, con i contatori accanto.'],
+  ['Donazione senza registrazione (H7)','Per sostenere bastano nome, email e metodo di pagamento: nessun account da creare. I tre metodi sono descritti uno per uno.'],
+  ['Riepilogo nel modulo di donazione (H6)','Progetto e ricompensa scelti restano visibili accanto al modulo: l’utente non deve ricordare che cosa ha selezionato.'],
+  ['Banner dei cookie equilibrato (H3)','«Rifiuto» e «Accetto» hanno lo stesso peso visivo e stanno affiancati; il footer ha la voce «Preferenze cookie» per tornare sulla scelta.'],
+ ].map(c => `<div class="card"><h2>${c[0]}</h2><p style="margin:0">${c[1]}</p></div>`).join('')}
+</div>`);
+
+// priorità
+slide('', `<div class="kicker">5 · Problemi più gravi e proposte</div><h1>Le quattro priorità di intervento</h1>
+<table style="font-size:14px"><tr><th>ID</th><th>Sev.</th><th>Problema</th><th>Task</th><th>Intervento proposto</th><th>Tipo di intervento</th></tr>
+${[['P02','Modello della pagina progetto, in base allo stato della campagna'],['P18','Stato «zero risultati» della ricerca; indice esteso ai partner'],['P01','Contenuto redazionale: una fascia di stato con le date'],['P20','Contenuto redazionale: un riquadro con requisiti, scadenza e contatto']].map(([id, eff]) => { const p = byId[id]; return `<tr><td class="id">${p.id}</td><td>${sev(p.sev)}</td><td><b>${p.title}</b><br><span class="small muted">H${p.h} · ${H[p.h]}</span></td><td>${p.task.map(t => 'T'+t).join(', ')}</td><td>${p.fix}</td><td class="small">${eff}</td></tr>`; }).join('')}</table>
+<div class="cols" style="grid-template-columns:1fr 1fr;margin-top:12px">
+ <div class="card"><h2>Subito dopo: correzioni di testo o di una riga</h2><p style="margin:0"><span class="id">P04</span> «36 giorni rimasti» al posto di «-36 giorni» · <span class="id">P07</span> link interni nella stessa scheda · <span class="id">P19</span> messaggio 404 in italiano · <span class="id">P06</span> etichette tradotte · <span class="id">P13</span> titoli completi nelle schede.</p></div>
+ <div class="card"><h2>Interventi strutturali</h2><p style="margin:0"><span class="id">P09</span> modello di pagina progetto con sezioni fisse · <span class="id">P22</span> FAQ per profilo · <span class="id">P17</span> selettore di lingua nel modulo · <span class="id">P14</span> filtri sull’elenco · <span class="id">P15</span> pulsante «Sostieni» sempre visibile.</p></div>
+</div>`);
+
+// riprogettazione 1
+slide('', `<div class="kicker">Oltre il richiesto · Proposta di riprogettazione 1</div><h1>Pagina partner: stato dell’edizione e due ingressi distinti</h1>
+<div class="cols grow" style="grid-template-columns: 1.35fr 1fr;">
+ <div class="mock"><div class="bar-top"></div><div class="mhead"><span>GINGER</span><span style="font-weight:400">Cerca progetti · Lancia una campagna · Partner · Servizi</span></div>
+  <div style="background:#1d3fd8;color:#fff;padding:14px 16px"><div style="font-size:11px;opacity:.8">Università di Torino × Ginger</div><div style="font-size:21px;font-weight:800;margin:2px 0 4px">Funds TOgether – il crowdfunding della ricerca UniTo</div><div style="font-size:13px">Se una campagna raggiunge l’obiettivo, l’Ateneo raddoppia i fondi fino a 10.000 €.</div></div>
+  <div style="background:#fff7e6;border-bottom:1px solid #f1d9a6;padding:8px 16px;font-size:12.5px"><b>Edizione 2026 · Fase 4 di 4:</b> campagne in raccolta fino al [data] · candidature chiuse il [data]</div>
+  <div class="mbody"><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:12px;font-size:11.5px;text-align:center">
+    <div style="border:1px solid #dfe3ea;border-radius:6px;padding:6px;color:#8a94a6">1 Formazione<br>✓ conclusa</div><div style="border:1px solid #dfe3ea;border-radius:6px;padding:6px;color:#8a94a6">2 Selezione<br>✓ conclusa</div><div style="border:1px solid #dfe3ea;border-radius:6px;padding:6px;color:#8a94a6">3 Accompagnamento<br>✓ concluso</div><div style="border:2px solid #1d3fd8;border-radius:6px;padding:5px;font-weight:700;color:#1d3fd8;background:#e8ecfd">4 Raccolta e raddoppio<br>in corso</div></div>
+   <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div style="border:1px solid #dfe3ea;border-radius:8px;padding:10px"><b>Vuoi sostenere la ricerca?</b><p style="margin:4px 0 8px">Scopri le campagne in corso e quelle concluse.</p><span class="btn">Vedi le campagne attive</span></div>
+    <div style="border:1px solid #dfe3ea;border-radius:8px;padding:10px"><b>Sei un ricercatore UniTo?</b><p style="margin:4px 0 8px">Chi può candidarsi, scadenze e contatti dell’ufficio.</p><span class="btn alt">Come candidarsi ↗ unito.it</span></div></div></div></div>
+ <div><h2>Problemi affrontati</h2><table>
+  <tr><td class="id">P01</td><td>Fascia di stato con fase corrente e date; timeline delle quattro fasi con quella attiva evidenziata.</td></tr>
+  <tr><td class="id">P20</td><td>Ingresso dedicato ai ricercatori, con la destinazione esterna dichiarata nell’etichetta.</td></tr>
+  <tr><td class="id">P16</td><td>Nome dell’iniziativa e frase di sintesi nella prima schermata, seguiti dalle fasi.</td></tr>
+  <tr><td class="id">P07</td><td>Pulsanti interni nella stessa scheda; il link esterno è marcato con ↗.</td></tr>
+  <tr><td class="id">P06</td><td>«Funds TOgether» sostituisce «Partnership» come nome della sezione.</td></tr></table>
+  <p class="note">Schema a bassa fedeltà: mostra struttura e contenuti, non lo stile grafico. La fase indicata e le voci tra parentesi quadre sono segnaposto, da compilare con i dati reali dell’edizione.</p></div>
+</div>`);
+
+// riprogettazione 2
+slide('', `<div class="kicker">Oltre il richiesto · Proposta di riprogettazione 2</div><h1>Pagina progetto: stato leggibile, in corso e concluso</h1>
+<div class="cols grow" style="grid-template-columns: 1fr 1fr 1fr;">
+ <div><h2>Scheda in elenco (P04, P06, P13)</h2><div class="mock"><div class="mbody">
+   <div style="display:flex;justify-content:space-between;align-items:center"><span class="pill ok">In corso</span><span style="font-size:11.5px;color:#5b6577">Scienza e ricerca · Salute</span></div>
+   <div style="font-weight:700;font-size:15px;margin:8px 0 2px;color:#1d3fd8">MILK-ACT: Proteggere i più piccoli dai virus di domani</div>
+   <div style="font-size:12px;color:#5b6577;margin-bottom:8px">di VIRMOLAB – UniTo</div>
+   <div style="font-weight:700">€ 9.442 su € 8.000</div>
+   <div style="font-size:12.5px;margin-top:4px">195 donatori · <b>36 giorni rimasti</b> (fino al 17/11/2026)</div></div></div>
+  <p class="note">Titolo completo, «di» al posto di «by», giorni rimasti senza segno meno e con la data, stato scritto in chiaro. Dati della scheda MILK-ACT al 12/10/2026.</p></div>
+ <div><h2>Campagna attiva (P15, P21)</h2><div class="mock"><div class="mbody">
+   <div style="font-size:22px;font-weight:800;color:#1d3fd8">€ 9.442 <span style="font-size:12px;font-weight:400;color:#5b6577">raccolti su € 8.000</span></div>
+   <div style="font-size:12.5px;margin:6px 0">195 sostenitori · 36 giorni rimasti</div>
+   <div style="font-size:12.5px;border:1px solid #dfe3ea;border-radius:6px;padding:7px;margin-bottom:10px"><b>Tutto o niente ⓘ</b> – se l’obiettivo non viene raggiunto la donazione torna ai sostenitori. <u>Come funziona</u></div>
+   <span class="btn or" style="display:block;text-align:center">Sostieni questo progetto</span></div></div>
+  <p class="note">Il pulsante sta nel riquadro dei numeri e resta visibile durante lo scorrimento; la regola è scritta in chiaro e rimanda alla spiegazione completa.</p></div>
+ <div><h2>Campagna conclusa (P02)</h2><div class="mock"><div class="mbody">
+   <div style="background:#e2f5ea;color:#12663a;border-radius:6px;padding:8px;font-weight:700">Raccolta conclusa il 05/11/2024 – obiettivo raggiunto</div>
+   <div style="font-size:12.5px;color:#5b6577;margin:8px 0">Non è più possibile donare a questa campagna.</div>
+   <span class="btn" style="display:block;text-align:center;margin-bottom:6px">Scopri le campagne UniTo attive</span>
+   <span class="btn alt" style="display:block;text-align:center">Leggi gli aggiornamenti del team</span>
+   <div style="margin-top:10px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#5b6577;font-weight:700">Ricompense assegnate</div>
+   <div style="font-size:12.5px;color:#5b6577">€ 25 Sii il protagonista! · 28 sostenitori<br>€ 100 Combatti per la scienza! · 5 sostenitori</div></div></div>
+  <p class="note">Spariscono il titolo «Sostieni», il pallino rosso e il campo importo; l’utente riceve una spiegazione e due vie d’uscita utili. Dati della pagina BRIGHT.</p></div>
+</div>`);
+
+// riprogettazione 3
+slide('', `<div class="kicker">Oltre il richiesto · Proposta di riprogettazione 3</div><h1>Quando qualcosa non va: ricerca senza risultati e pagina 404</h1>
+<div class="cols grow" style="grid-template-columns: 1fr 1fr;">
+ <div><h2>Ricerca senza risultati (P18, P12)</h2><div class="mock"><div class="bar-top"></div><div class="mhead"><span>GINGER</span><span style="font-weight:400">Cerca progetti · Lancia una campagna · Partner · Servizi</span></div><div class="mbody">
+   <div style="border:1px solid #c8cfdb;border-radius:20px;padding:6px 12px;margin-bottom:10px">funds together</div>
+   <div style="font-weight:700;font-size:16px">Nessun progetto contiene «funds together»</div>
+   <div style="background:#e8ecfd;border-radius:8px;padding:10px;margin:10px 0"><b>Forse cercavi l’iniziativa:</b><br>Funds TOgether – Università di Torino<br><span class="btn" style="margin-top:6px">Vai all’iniziativa</span></div>
+   <div style="font-size:13px"><b>Prova anche a:</b> controllare l’ortografia · usare meno parole · sfogliare per <u>categoria</u> o per <u>partner</u></div></div></div>
+  <p class="note">Il sistema dichiara l’esito, riconosce il nome di un’iniziativa e offre tre modi per proseguire.</p></div>
+ <div><h2>Pagina 404 (P10, P19)</h2><div class="mock"><div class="bar-top"></div><div class="mhead"><span>GINGER</span><span style="font-weight:400">Cerca progetti · Lancia una campagna · Partner · Servizi</span></div><div class="mbody" style="text-align:center">
+   <div style="font-weight:800;font-size:20px;margin-top:4px">Pagina non trovata</div>
+   <div style="font-size:13.5px;margin:6px 0 10px">L’indirizzo potrebbe contenere un errore, oppure la pagina è stata spostata o rinominata.</div>
+   <div style="border:1px solid #c8cfdb;border-radius:20px;padding:6px 12px;margin:0 40px 10px;color:#8a94a6;text-align:left">Cerca un progetto…</div>
+   <span class="btn">Progetti attivi</span> <span class="btn alt">Partner e iniziative</span> <span class="btn alt">← Pagina precedente</span>
+   <div style="font-size:12px;color:#5b6577;margin-top:10px">Sei arrivato qui da un link del sito? <u>Segnalacelo</u> · codice errore 404</div></div>
+   <div style="background:#b4b4b4;color:#fff;font-size:11px;padding:6px 12px">Home · Chi siamo · Contatti · FAQ · Privacy</div></div>
+  <p class="note">Stessa intestazione e stesso footer del sito, testo in italiano, codice tecnico in secondo piano, più vie d’uscita, layout responsive.</p></div>
+</div>`);
+
+// conclusioni
+slide('', `<div class="kicker">6 · Conclusioni e raccomandazioni generali</div><h1>Il percorso di donazione funziona; mancano stato, recupero e aiuto</h1>
+<div class="cols grow" style="grid-template-columns: 1fr 1fr;">
+ <div><p style="font-size:16.5px">La sezione UniTo di IdeaGinger spiega bene <b>perché</b> sostenere la ricerca e permette di donare senza registrarsi. Le difficoltà nascono quando l’utente deve capire <b>a che punto sono le cose</b> o <b>come proseguire</b> quando il percorso previsto non è disponibile.</p>
+  <div class="card" style="margin-top:10px"><h2>Per profilo di utente</h2><ul>
+   <li><b>Donatore:</b> arriva al modulo di donazione, ma sui progetti conclusi, che sono la maggioranza, trova un box «Sostieni» che non può usare (P02).</li>
+   <li><b>Ricercatore UniTo:</b> dal sito non scopre se e come candidarsi (P01, P20); è il task con l’esito peggiore.</li>
+   <li><b>Chi sbaglia strada:</b> ricerca vuota e pagina 404 non offrono appigli (P18, P19).</li></ul></div></div>
+ <div><h2>Cinque raccomandazioni generali</h2><table style="font-size:15px">
+  <tr><td><b>1</b></td><td><b>Dichiarare sempre lo stato</b> con parole e date: fase dell’edizione, campagna aperta o chiusa, passo della donazione.</td></tr>
+  <tr><td><b>2</b></td><td><b>Progettare gli stati vuoti e di errore</b>: campagna conclusa, zero risultati e pagina inesistente devono spiegare e proporre un passo successivo.</td></tr>
+  <tr><td><b>3</b></td><td><b>Separare i contenuti per profilo</b>: sostenitore, progettista, ricercatore UniTo, nella pagina partner, in «Come funziona» e nelle FAQ.</td></tr>
+  <tr><td><b>4</b></td><td><b>Parlare la lingua dell’utente</b>: un termine per concetto, italiano semplice, date al posto dei conti alla rovescia.</td></tr>
+  <tr><td><b>5</b></td><td><b>Tenere a portata l’azione principale e le sue regole</b>: pulsante «Sostieni» sempre visibile, «tutto o niente» scritto in chiaro.</td></tr></table>
+  <p class="note" style="margin-top:10px">Passo successivo consigliato: un test con utenti sui task T4, T5 e T7, per verificare le severità assegnate, in particolare quella di P02.</p></div>
+</div>`);
+
+// appendice
+slide('', `<div class="kicker">Appendice · Registro dei problemi</div><h1 style="font-size:21px;margin-bottom:6px">Elenco completo dei ${P.length} problemi</h1>
+<table class="apx" style="font-size:12px;line-height:1.15"><tr><th>ID</th><th>Problema</th><th>Dove</th><th>Eur.</th><th>Sev.</th><th>Task</th></tr>${P.map(p => `<tr><td class="id" style="padding:2px 8px">${p.id}</td><td style="padding:2px 8px">${p.title}</td><td style="padding:2px 8px">${p.page.map(k => PG[k].replace(/ \(.*\)$/, '').replace('Partner UniTo, scheda ', 'Partner ').replace('Progetto ', '').replace('Campagna attiva ', '')).join('; ')}</td><td style="padding:2px 8px">H${p.h}</td><td style="padding:2px 8px">${sev(p.sev)}</td><td style="padding:2px 8px">${p.task.map(t => 'T'+t).join(' ')}</td></tr>`).join('')}</table>`);
+</script>
+</body>
+</html>
