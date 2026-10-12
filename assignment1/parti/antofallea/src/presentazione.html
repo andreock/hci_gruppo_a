@@ -115,7 +115,7 @@ const P = [
    fix:`Fascia di stato sotto il titolo, con date («Candidature chiuse il … · campagne attive fino al …»), e timeline delle quattro fasi con quella corrente evidenziata. Blocco del blog intitolato «La storia di Funds TOgether» o nascosto se non aggiornato.` },
  { id:'P02', h:1, sev:3, f:['A','A','A'], title:'Sui progetti conclusi il box «SOSTIENI» sembra ancora attivo', page:['bright','fbr'], task:[5,4], row:true,
    figs:[['bright_status.jpg','BRIGHT: «progetto concluso» in piccolo; sotto, l’intestazione «SOSTIENI» e il pallino rosso.',38],['fbr_faitu.jpg','Fai Brillare la Ricerca!: campo importo «FAI TU» ancora compilabile.',38]],
-   prob:`Le due campagne sono chiuse (05/11/2024 e 15/01/2022), ma la colonna destra mantiene il titolo arancione «SOSTIENI» e l’elenco delle ricompense con i prezzi (11 su BRIGHT, 9 su Fai Brillare la Ricerca!). I pulsanti non ci sono, ma in «FAI TU» resta un campo importo in cui si può scrivere. Nessun testo dice che la raccolta è chiusa: l’unico indizio è un pallino rosso senza legenda. Chi cerca come donare non trova il comando e non sa se è un errore.`,
+   prob:`Le due campagne sono chiuse (05/11/2024 e 15/01/2022), ma la colonna destra mantiene il titolo arancione «SOSTIENI» e l’elenco delle ricompense con i prezzi (11 voci su BRIGHT, 9 su Fai Brillare la Ricerca!, compresa la donazione libera «FAI TU»). I pulsanti non ci sono, ma in «FAI TU» resta un campo importo in cui si può scrivere. Nessun testo dice che la raccolta è chiusa: l’unico indizio è un pallino rosso senza legenda. Chi cerca come donare non trova il comando e non sa se è un errore.`,
    heur:`Lo stato «non si può più donare» non è visibile nel punto in cui l’utente agisce; l’interfaccia suggerisce il contrario.`,
    sevj:`Verificato su entrambi i progetti conclusi analizzati; i conclusi sono 13 dei 18 in elenco. Porta a un vicolo cieco su un task centrale, senza alternative proposte.`,
    fix:`Sostituire il box con un pannello «Raccolta conclusa il …», ricompense in sola lettura sotto «Ricompense assegnate», campo importo rimosso e link «Scopri le campagne UniTo attive».` },
@@ -169,9 +169,9 @@ const P = [
    fix:`Generare la pagina 404 dentro il modello standard, con intestazione, ricerca e footer, e con lo stesso layout responsive.` },
  { id:'P11', h:5, sev:2, f:['M','M','M'], title:'Il modulo di donazione non previene gli errori di compilazione', page:['checkout'], task:[5],
    figs:[['checkout_fields.jpg','I campi obbligatori sono segnalati solo dall’asterisco; l’email è un campo di testo generico.']],
-   prob:`Dall’ispezione del modulo, che non abbiamo inviato: nessun campo obbligatorio è dichiarato tale al browser, l’email è un campo di testo generico senza controllo di formato né seconda digitazione, nessun metodo di pagamento è preselezionato e il reCAPTCHA è l’ultimo elemento. Un errore di battitura nell’email, a cui arriva ogni comunicazione sulla donazione, non viene intercettato durante la compilazione.`,
+   prob:`Dall’ispezione del modulo, che non abbiamo inviato: nessun campo obbligatorio è dichiarato tale al browser, l’email è un campo di testo generico senza controllo di formato né seconda digitazione, nessun metodo di pagamento è preselezionato e il reCAPTCHA è l’ultimo elemento. Un errore di battitura nell’email, l’unico recapito chiesto al donatore, non viene intercettato durante la compilazione.`,
    heur:`Il design non elimina le condizioni che portano all’errore, in particolare per il dato più critico.`,
-   sevj:`Un’email errata ha conseguenze reali per il donatore. Non avendo inviato il modulo non conosciamo i controlli successivi, quindi non andiamo oltre 2.`,
+   sevj:`Con un’email errata il donatore non è più raggiungibile. Il modulo non è stato inviato, quindi i controlli successivi non sono noti: per questo la severità non supera 2.`,
    fix:`Campo email con controllo di formato in linea, messaggi accanto al campo all’uscita, metodo più usato preselezionato, email riportata nel riepilogo prima della conferma.` },
  { id:'P12', h:6, sev:2, f:['M','M','M'], title:'Per ritrovare Funds TOgether bisogna ricordare che è un «Partner»', page:['menu'], task:[2,1],
    figs:[['menu_partner.jpg','Menu «Partner»: 25 voci in ordine non alfabetico; «Funds TOgether» non compare.']],
@@ -187,7 +187,7 @@ const P = [
    fix:`Titolo su tre righe, oppure una riga di sottotitolo con l’ambito del progetto.` },
  { id:'P14', h:7, sev:2, f:['M','M','A'], title:'Nessun filtro o ordinamento; «ALTRI» non dice quanti progetti restano', page:['lista'], task:[2],
    figs:[['lista_altri.jpg','Dopo quattro progetti conclusi, l’unico comando è «ALTRI».']],
-   prob:`I 18 progetti sono divisi solo in «in corso» e «conclusi». Non si può filtrare per categoria o obiettivo di sostenibilità, dati che ogni pagina progetto riporta, né per edizione, né ordinare per scadenza. Dei 13 conclusi se ne vedono 4: il pulsante «ALTRI» ne aggiunge quattro per volta, senza indicare quanti ne restano, e servono tre clic per vederli tutti.`,
+   prob:`I 18 progetti sono divisi solo in «in corso» e «conclusi». Non si può filtrare per categoria o obiettivo di sostenibilità, dati che ogni pagina progetto riporta, né per edizione, né ordinare per scadenza. Dei 13 conclusi se ne vedono 4: il pulsante «ALTRI» ne aggiunge fino a quattro per volta, senza indicare quanti ne restano, e servono tre clic per vederli tutti.`,
    heur:`Mancano acceleratori per chi ha già un criterio di scelta, per esempio «progetti sulla salute».`,
    sevj:`Con 18 progetti scorrere tutto è ancora praticabile, ma il costo cresce a ogni nuova edizione.`,
    fix:`Filtri per edizione, categoria e obiettivo ONU; ordinamento «In scadenza»; pulsante «Mostra altri 9 progetti conclusi».` },
@@ -274,10 +274,10 @@ slide('', `<div class="kicker">1 · Obiettivo e metodo</div><h1>Cosa è stato va
   <p><b>Motivazione della scelta:</b> capire come funziona la collaborazione tra Ateneo e piattaforma e come vengono sostenuti i progetti di ricerca.</p>
   <h2 style="margin-top:10px">Procedura</h2><ul>
    <li>8 task realistici per tre profili di utente.</li>
-   <li>Ogni task percorso su desktop e poi su mobile, con screenshot degli ostacoli.</li>
+   <li>Task percorsi su desktop; le pagine principali ricontrollate su mobile. Screenshot di ogni ostacolo.</li>
    <li>Una sola euristica prevalente per problema; severità motivata con frequenza, impatto e persistenza.</li>
    <li>Un problema che si ripete è descritto una volta, con le pagine in cui compare.</li>
-   <li>Nessun pagamento e nessun modulo inviato.</li></ul></div>
+   <li>Nessun pagamento: il modulo di donazione non è stato inviato.</li></ul></div>
  <div><h2>Le 10 euristiche di Nielsen</h2><table>${Object.entries(H).map(([k, v]) => `<tr><td style="width:36px"><b>H${k}</b></td><td>${v}</td></tr>`).join('')}</table></div>
  <div><h2>Scala di severità</h2><table>
   <tr><td>${sev(0)}</td><td>Non è un problema di usabilità</td></tr>
@@ -292,7 +292,7 @@ slide('', `<div class="kicker">1 · Obiettivo e metodo</div><h1>Cosa è stato va
 // 3 contesto
 slide('', `<div class="kicker">1 · Obiettivo e metodo</div><h1>Data, dispositivi e limiti della valutazione</h1>
 <div class="cols grow" style="grid-template-columns: 1fr 1fr 1fr; align-content:start">
- <div class="card"><h2>Quando</h2><p><b>12 ottobre 2026.</b></p><p>Quel giorno la scheda «Progetti» elencava 18 progetti: 5 campagne in corso, con scadenze tra il 10 e il 18 novembre 2026, e 13 concluse. Importi, giorni rimasti e numero di sostenitori citati nelle slide sono quelli visibili in quella data e cambieranno.</p></div>
+ <div class="card"><h2>Quando</h2><p><b>12 ottobre 2026.</b></p><p>Quel giorno la scheda «Progetti» elencava 18 progetti: 5 campagne in corso, con scadenza il 10, il 17 o il 18 novembre 2026, e 13 concluse. Importi, giorni rimasti e numero di sostenitori citati nelle slide sono quelli visibili in quella data e cambieranno.</p></div>
  <div class="card"><h2>Con cosa</h2><table>
   <tr><td><b>Desktop</b></td><td>PC Windows 10, Google Chrome 155, finestra 1366 × 768 px</td></tr>
   <tr><td><b>Mobile</b></td><td>Emulazione smartphone di Chrome: 390 × 844 px, touch, user-agent iPhone</td></tr>
@@ -390,7 +390,7 @@ slide('', `<div class="kicker">Oltre il richiesto · Confronto desktop / mobile<
   <tr><td>Menu globale</td><td>Barra con due pannelli</td><td><span class="pill ok">Adeguato</span> menu a comparsa con le stesse cinque voci</td></tr>
   <tr><td>Modulo bilingue (P17)</td><td>1.811 px</td><td><span class="pill bad">Peggio</span> 3.387 px, circa quattro schermate</td></tr>
   <tr><td>Pagina 404 (P10)</td><td>Leggibile</td><td><span class="pill bad">Peggio</span> non responsive, testo minuscolo</td></tr></table>
-  <p class="note">Il layout a colonna singola regge e i contenuti restano leggibili. I problemi che si aggravano dipendono dalla lunghezza delle pagine e dalle informazioni affidate al puntatore, non dall’impaginazione.</p></div>
+  <p class="note">Il layout a colonna singola regge e i contenuti restano leggibili. I problemi che si aggravano dipendono soprattutto dalla lunghezza delle pagine, non dall’impaginazione.</p></div>
 </div>`);
 
 // aspetti positivi
