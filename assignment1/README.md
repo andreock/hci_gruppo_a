@@ -17,6 +17,7 @@ assignment1/
     │   ├── valutazione_antofallea.pdf
     │   ├── problemi_antofallea.csv
     │   └── src/                  sorgente HTML + screenshot
+    ├── antofallea2/              approfondimento di antofallea – completato (stessa struttura)
     └── <nome>/                   parti 2, 3, 4 – stessa struttura
 ```
 
@@ -25,6 +26,7 @@ assignment1/
 | Parte | Componente | Pagine analizzate | Stato |
 |---|---|---|---|
 | 1 | antofallea | Pagina partner UniTo (schede «Partnership» e «Progetti») · Fai Brillare la Ricerca! · BRIGHT · Pagina 404 | Completata: 22 problemi |
+| 1 bis | antofallea | Menu «Partner» · Servizi · Come funziona (cartella `antofallea2`) | Completata: 16 problemi |
 | 2 | _da compilare_ | _da compilare_ | Da fare |
 | 3 | _da compilare_ | _da compilare_ | Da fare |
 | 4 | _da compilare_ | _da compilare_ | Da fare |
@@ -52,6 +54,13 @@ assignment1/
 
 Per rigenerare il PDF dopo una modifica: aprire `parti/antofallea/src/presentazione.html` in Chrome e stampare
 in PDF (formato 1280 × 720 px, senza margini, grafica di sfondo attiva).
+
+## Approfondimento (cartella `antofallea2`) in breve
+
+- Data: 13 ottobre 2026 · stessi dispositivi della parte 1.
+- 6 task, 16 problemi: 1 grave (severità 3), 11 minori, 4 cosmetici, nessuno critico.
+- Non ripete i problemi della parte 1: dove un tema era già stato registrato, la scheda lo richiama.
+- Oltre il richiesto: confronto desktop/mobile e tre proposte di riprogettazione illustrate.
 
 ## Consegna finale
 

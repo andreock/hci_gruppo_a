@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Assignment 1 – Valutazione euristica di IdeaGinger: Partner, Servizi, Come funziona</title>
+<style>
+  @page { size: 1280px 720px; margin: 0; }
+  :root {
+    --ink: #172033; --muted: #5b6577; --line: #dfe3ea; --bg: #ffffff; --soft: #f4f6fa;
+    --accent: #1d3fd8; --accent-soft: #e8ecfd; --warm: #f28c00;
+    --s1: #8a94a6; --s2: #e0a100; --s3: #e2570c; --s4: #b3141c; --ok: #1a8a4a;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #cfd4dc; }
+  body { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); font-size: 16px; line-height: 1.4; }
+  .slide { width: 1280px; height: 720px; background: var(--bg); position: relative; overflow: hidden; page-break-after: always; break-after: page; padding: 32px 44px 40px; display: flex; flex-direction: column; }
+  @media screen { .slide { margin: 16px auto; box-shadow: 0 2px 14px rgba(0,0,0,.25); } }
+  .foot { position: absolute; left: 44px; right: 44px; bottom: 12px; display: flex; justify-content: space-between; font-size: 10.5px; color: var(--muted); }
+  .kicker { font-size: 11.5px; letter-spacing: .09em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 3px; }
+  h1 { font-size: 27px; line-height: 1.15; margin: 0 0 14px; font-weight: 700; letter-spacing: -.01em; }
+  h2 { font-size: 18px; margin: 0 0 7px; }
+  p { margin: 0 0 8px; }
+  ul { margin: 0; padding-left: 18px; } li { margin-bottom: 4px; }
+  .grow { flex: 1; min-height: 0; }
+  .cols { display: grid; gap: 22px; }
+  .muted { color: var(--muted); }
+  .small { font-size: 13.5px; }
+
+  .cover { background: linear-gradient(135deg, #14235e 0%, #1d3fd8 62%, #3b6bff 100%); color: #fff; justify-content: center; padding: 60px 80px; }
+  .cover h1 { font-size: 46px; margin-bottom: 14px; }
+  .cover .sub { font-size: 20px; opacity: .92; max-width: 860px; }
+  .cover .meta { margin-top: 44px; display: grid; grid-template-columns: repeat(4, auto); gap: 34px; justify-content: start; font-size: 13px; }
+  .cover .meta b { display: block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; opacity: .7; font-weight: 600; margin-bottom: 2px; }
+  .cover .tag { display: inline-block; background: var(--warm); color: #1b1300; font-weight: 700; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; margin-bottom: 22px; align-self: flex-start; }
+
+  .card { background: var(--soft); border: 1px solid var(--line); border-radius: 10px; padding: 13px 15px; }
+  .card h2 { font-size: 16.5px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+  th { text-align: left; font-size: 10.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--ink); padding: 5px 8px; }
+  td { border-bottom: 1px solid var(--line); padding: 6px 8px; vertical-align: top; }
+  .sev { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; border-radius: 6px; color: #fff; font-weight: 700; font-size: 12.5px; padding: 0 6px; }
+  .sev1 { background: var(--s1); } .sev2 { background: var(--s2); color: #2a1e00; } .sev3 { background: var(--s3); } .sev4 { background: var(--s4); } .sev0 { background: #c9ced8; color: #333; }
+  .pill { display: inline-block; border-radius: 20px; padding: 2px 9px; font-size: 11px; font-weight: 600; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+  .pill.ok { background: #e2f5ea; color: var(--ok); } .pill.warn { background: #fdf1d2; color: #7a5600; } .pill.bad { background: #fde4d9; color: #a53a00; }
+  .id { font-family: Consolas, "Courier New", monospace; font-weight: 700; color: var(--accent); }
+
+  /* schede problema */
+  .prob { display: grid; grid-template-columns: 640px 1fr; gap: 24px; }
+  .figs { display: flex; flex-direction: column; gap: 10px; min-height: 0; }
+  .figs.row { flex-direction: row; align-items: flex-start; gap: 14px; }
+  figure { margin: 0; min-height: 0; display: flex; flex-direction: column; flex: none; }
+  figure img { max-width: 100%; object-fit: contain; object-position: top left; border: 1px solid var(--line); border-radius: 6px; align-self: flex-start; }
+  .figs.n1 img { max-height: 540px; } .figs.n2 img { max-height: 250px; } .figs.row img { max-height: 540px; }
+  figcaption { font-size: 11.5px; color: var(--muted); margin-top: 4px; }
+  figcaption b { color: var(--ink); }
+  .ptitle { display: flex; gap: 10px; align-items: baseline; margin-bottom: 7px; }
+  .ptitle h2 { font-size: 19px; line-height: 1.2; margin: 0; }
+  .where { font-size: 12.3px; color: var(--muted); margin-bottom: 9px; }
+  .where b { color: var(--ink); font-weight: 600; }
+  dl { margin: 0; display: grid; grid-template-columns: 1fr; gap: 8px; }
+  dl > div { border-left: 3px solid var(--line); padding-left: 10px; }
+  dt { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: var(--muted); }
+  dd { margin: 1px 0 0; font-size: 14.6px; line-height: 1.36; }
+  dl > div.heur { border-color: var(--accent); } dl > div.fix { border-color: var(--ok); background: #f1faf4; padding: 6px 10px; border-radius: 0 6px 6px 0; }
+  dl > div.s1 { border-color: var(--s1); } dl > div.s2 { border-color: var(--s2); } dl > div.s3 { border-color: var(--s3); }
+  .fip { display: flex; gap: 6px; margin: 3px 0 4px; flex-wrap: wrap; }
+  .fip span { font-size: 11px; border: 1px solid var(--line); border-radius: 20px; padding: 1px 8px; color: var(--muted); background: #fff; }
+  .fip b { color: var(--ink); }
+
+  .apx .sev { height: 17px; min-width: 17px; font-size: 11px; border-radius: 4px; padding: 0 4px; }
+  .ev { align-self: start; border: 1px solid var(--line); border-radius: 10px; background: var(--soft); padding: 16px 18px; }
+  .evt { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: var(--muted); margin-bottom: 8px; }
+  .evi { font-size: 14.5px; padding: 9px 0; border-top: 1px solid var(--line); }
+  .bars { display: grid; grid-template-columns: 300px 1fr 30px; gap: 9px 10px; align-items: center; font-size: 14px; }
+  .bar { display: flex; height: 18px; gap: 2px; }
+  .bar span { display: block; height: 100%; border-radius: 3px; }
+
+  /* schemi di riprogettazione */
+  .mock { border: 1px solid #c8cfdb; border-radius: 10px; background: #fff; overflow: hidden; font-size: 13.5px; box-shadow: 0 1px 5px rgba(0,0,0,.08); align-self: start; }
+  .mock .bar-top { background: #f28c00; height: 8px; }
+  .mock .mhead { display: flex; justify-content: space-between; align-items: center; padding: 7px 12px; border-bottom: 1px solid #eee; font-size: 11px; font-weight: 600; }
+  .mock .mbody { padding: 12px 14px; }
+  .btn { display: inline-block; background: #05b81f; color: #fff; font-weight: 700; padding: 7px 14px; border-radius: 20px; font-size: 12px; }
+  .btn.alt { background: #fff; color: #1d3fd8; border: 2px solid #1d3fd8; }
+  .btn.or { background: #f28c00; }
+  .note { font-size: 12.5px; color: var(--muted); margin-top: 6px; }
+  .phones { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; align-self: start; }
+  .phones figure img { border-radius: 12px; border: 2px solid #222; max-height: 420px; }
+</style>
+</head>
+<body>
+<div id="deck"></div>
+<script>
+const H = {
+  1: 'Visibilità dello stato del sistema', 2: 'Corrispondenza tra sistema e mondo reale', 3: 'Controllo e libertà dell’utente',
+  4: 'Coerenza e standard', 5: 'Prevenzione degli errori', 6: 'Riconoscimento anziché ricordo', 7: 'Flessibilità ed efficienza d’uso',
+  8: 'Design estetico e minimalista', 9: 'Aiutare a riconoscere, diagnosticare e correggere gli errori', 10: 'Aiuto e documentazione'
+};
+const PG = {
+  menu: 'Menu globale «Partner» (pannello aperto dalla barra, da ogni pagina)', collab: '«Collaborazioni» (/collaborazioni.html)',
+  servizi: '«Servizi» (/servizi.html)', come: '«Come funziona» (/ginger_come-funziona.html)', contatti: '«Contatti» (/ginger_contatti.html)',
+  ext: 'Destinazioni dei pulsanti di «Servizi» (gingeracademy.it, gingercrowdfunding.it)', form: '«Formazione» (/ginger_formazione.html)', ppage: 'Pagine dei partner (/partner/…)'
+};
+const T = {
+  1: 'T1 Trovare un partner e aprirne la pagina', 2: 'T2 Capire quali partner fanno al caso proprio', 3: 'T3 Servizi offerti e costi',
+  4: 'T4 Trovare il prossimo corso di formazione', 5: 'T5 Capire i passi per lanciare una campagna', 6: 'T6 Costo di pubblicazione e contatti'
+};
+const LV = { A: 'alta', M: 'media', B: 'bassa' }, LVI = { A: 'alto', M: 'medio', B: 'basso' };
+
+const P = [
+ { id:'P01', h:1, sev:2, f:['A','M','M'], title:'Nel menu «Partner» l’elenco continua oltre lo schermo senza alcun segnale', page:['menu'], task:[1,2],
+   figs:[['menu_d.jpg','Menu «Partner» a 1366 × 768: l’ultima voce visibile è «BCC Busto Garolfo e Buguggiate»; ne seguono altre sette.']],
+   prob:`Il menu si apre come pannello a tutto schermo con 25 voci. A 1366 × 768 le ultime sette («Comune di Forlì», «Federcasse», «Top Metro Fa Bene», le due Federazioni, le due Fondazioni) restano sotto il bordo: il contenuto del pannello è alto 1.030 px e scorre, ma non compare una barra di scorrimento e in basso c’è solo una decorazione. Chi cerca uno di quei partner può concludere che non c’è.`,
+   heur:`Il sistema non mostra che una parte dell’elenco è nascosta: lo stato del pannello (scorribile) non è visibile.`,
+   sevj:`Riguarda chiunque apra il menu su uno schermo da portatile; il danno tocca chi cerca uno degli ultimi sette partner. Una volta scoperto lo scorrimento il problema si attenua.`,
+   fix:`Elenco su più colonne, in modo che stia in una schermata, oppure barra di scorrimento sempre visibile e sfumatura sul bordo inferiore.` },
+ { id:'P02', h:1, sev:2, f:['A','B','A'], title:'Né la barra né il menu indicano che ci si trova nella sezione Partner', page:['menu','ppage','servizi'], task:[1],
+   figs:[['nav_partner.jpg','Pagina partner dell’Università di Torino: «PARTNER» ha lo stesso colore delle altre voci.'],['nav_servizi.jpg','Pagina «Servizi»: la voce corrente è evidenziata in arancione.']],
+   prob:`Sulla pagina «Servizi» la voce di menu corrente è evidenziata in arancione; sulla pagina di un partner la voce «PARTNER» resta grigio scuro come le altre. Anche dentro il pannello la voce del partner che si sta guardando non è distinta dalle altre 24. Chi passa da un partner all’altro deve ricordare quali ha già aperto.`,
+   heur:`La posizione dell’utente nel sito è segnalata in una sezione e non nell’altra; nell’elenco manca l’indicazione «sei qui».`,
+   sevj:`Tocca ogni visita alla sezione, ma il titolo della pagina dice comunque dove ci si trova: l’effetto è un rallentamento.`,
+   fix:`Evidenziare «PARTNER» nella barra quando si è in una pagina partner e marcare nell’elenco la voce corrente.` },
+ { id:'P03', h:1, sev:1, f:['A','B','A'], title:'Il titolo della scheda del browser è lo stesso della home in «Servizi» e «Collaborazioni»', page:['servizi','collab'], task:[3,2],
+   ev:['Titolo della scheda in «Servizi» e in «Collaborazioni»:<br><b>«GINGER: la piattaforma di crowdfunding con il più alto tasso di successo in Italia!»</b>','Titolo della scheda in «Come funziona»: <b>«Come funziona»</b>','Titolo della scheda nella pagina partner dell’Università di Torino: <b>«Università di Torino»</b>'],
+   prob:`«Servizi» e «Collaborazioni» hanno lo stesso titolo della home, mentre «Come funziona» e le pagine partner hanno un titolo proprio. Poiché molti link del sito aprono nuove schede del browser (P05, P10), chi ne ha più d’una aperta non le distingue; lo stesso vale per cronologia e preferiti.`,
+   heur:`Il titolo della scheda è il primo indicatore di «dove sono» fuori dalla pagina, e qui non lo dice.`,
+   sevj:`Fastidio lieve, che non blocca alcun task.`,
+   fix:`Titoli specifici: «Servizi – Ginger», «Collaborazioni – Ginger».` },
+ { id:'P04', h:2, sev:2, f:['M','M','A'], title:'La pagina «Servizi» non dice quali sono i servizi né quanto costano', page:['servizi','ext'], task:[3],
+   figs:[['servizi_top.jpg','«Servizi», prima schermata a 1366 × 768: l’illustrazione occupa quasi tutto lo spazio.'],['servizi_text.jpg','Il blocco «Formazione»: un testo promozionale e un pulsante.']],
+   prob:`La voce «Servizi» fa attendere un elenco di servizi con contenuti e prezzi. La pagina contiene due blocchi, «Formazione» e «Pacchetti Ginger», ciascuno con un testo promozionale e un pulsante. Non compare alcuna cifra, e dei pacchetti si legge soltanto «preferiremmo che fossi tu a raccontarcelo». Nemmeno la pagina di destinazione del pulsante («Management», su un altro sito) riporta prezzi. Su desktop il primo testo inizia a 647 px, dopo un’illustrazione alta circa 500 px.`,
+   heur:`L’etichetta promette un’informazione concreta che la pagina non dà: il contenuto non corrisponde a ciò che l’utente si aspetta da quella parola.`,
+   sevj:`Chi valuta se affidarsi a Ginger non ottiene il dato che cerca e deve scrivere o telefonare. Riguarda solo i futuri progettisti.`,
+   fix:`Una scheda per servizio con che cosa comprende, a chi serve e il prezzo (o «da … €» e «su preventivo»), seguita dal pulsante di approfondimento.` },
+ { id:'P05', h:3, sev:2, f:['M','M','A'], title:'I pulsanti di «Servizi» portano su altri siti, in una nuova scheda, senza avviso', page:['servizi','ext'], task:[3,4],
+   figs:[['servizi_pack.jpg','«Scopri i pacchetti Ginger»: nessun segno che il pulsante porti fuori dal sito.'],['ext_management.jpg','La destinazione: pagina «Management» su gingercrowdfunding.it, con un altro menu.']],
+   prob:`«Scopri il prossimo evento» e «Scopri i pacchetti Ginger» aprono una nuova scheda del browser su domini diversi: il primo arriva alla home di gingeracademy.it, il secondo a gingercrowdfunding.it. I pulsanti non hanno l’icona di link esterno che il footer usa per «Cookies» e «Blog». Sulla pagina «Management» il menu è un altro e non c’è alcun link verso ideaginger.it: per tornare bisogna ritrovare la scheda precedente.`,
+   heur:`Il cambio di sito non è annunciato e dalla destinazione manca un’uscita chiara verso il punto di partenza.`,
+   sevj:`Capita a chiunque approfondisca i servizi. Il rimedio (chiudere la scheda) esiste, ma non è evidente, soprattutto su smartphone.`,
+   fix:`Icona e dicitura «si apre su gingeracademy.it» sui pulsanti; nelle pagine di destinazione un link «Torna a Ideaginger.it».` },
+ { id:'P06', h:3, sev:1, f:['A','B','A'], title:'Il menu «Partner» a tutto schermo si chiude solo con la X', page:['menu'], task:[1],
+   figs:[['menu_close.jpg','L’unico comando di chiusura è la X in alto a destra.']],
+   prob:`Il pannello copre l’intera finestra. Il tasto Esc non lo chiude e nemmeno un clic su un’area vuota: l’unica via è la X in alto a destra, lontana dall’elenco che sta a sinistra. La X non ha un’etichetta testuale. Chi ha aperto il menu per sbaglio o solo per dare un’occhiata deve attraversare lo schermo con il puntatore.`,
+   heur:`Per uscire da uno stato aperto magari per errore c’è un solo comando, senza le alternative abituali.`,
+   sevj:`Un secondo in più a ogni apertura; la X è grande (55 × 58 px) e ben visibile.`,
+   fix:`Chiusura anche con Esc e con clic fuori dall’elenco; etichetta «Chiudi» accanto alla X.` },
+ { id:'P07', h:4, sev:2, f:['M','M','A'], title:'La stessa cosa ha nomi e destinazioni diversi: «Formazione», «Pacchetti», «Management»', page:['servizi','come','form','ext'], task:[4,3],
+   figs:[['ext_academy.jpg','«Scopri il prossimo evento» porta alla home di Ginger Academy, non a un evento.'],['formazione_int.jpg','La voce «Formazione» della colonna laterale apre invece una pagina interna.']],
+   prob:`Per la formazione esistono tre ingressi con tre destinazioni: il pulsante «Scopri il prossimo evento» di «Servizi» apre la home di gingeracademy.it; il link «qui» di «Come funziona» apre una pagina dei corsi dello stesso sito; la voce «Formazione» della colonna laterale apre una pagina interna, che a sua volta rimanda alla home di Academy. Il pulsante «Scopri i pacchetti Ginger» apre una pagina intitolata «Management». L’utente non sa se sta guardando la stessa offerta.`,
+   heur:`Parole diverse per la stessa cosa e la stessa parola per destinazioni diverse: l’utente deve chiedersi se indicano lo stesso contenuto.`,
+   sevj:`Rallenta T4: «prossimo evento» non porta a una data ma a una home da esplorare. Si ripresenta a ogni accesso.`,
+   fix:`Un solo percorso per la formazione, con la stessa etichetta ovunque e destinazione diretta al calendario dei corsi; stesso nome per pulsante e pagina dei pacchetti.` },
+ { id:'P08', h:4, sev:2, f:['M','M','A'], title:'«Partner» e «Collaborazioni» sono due elenchi di organizzazioni non collegati tra loro', page:['menu','collab'], task:[2],
+   figs:[['collab.jpg','«Collaborazioni»: 54 loghi senza nome in testo e non cliccabili.']],
+   prob:`Il menu «Partner» elenca 25 nomi in testo, ciascuno con la sua pagina. La pagina «Collaborazioni», raggiungibile dal footer, mostra 54 loghi: nessuno è un link e non c’è testo. Molte organizzazioni compaiono in entrambi, con nomi scritti in modo diverso («Università di Torino» nel menu, «Università degli Studi di Torino» tra i loghi). Nelle tre visite l’ordine dei loghi era ogni volta diverso. Non è spiegata la differenza tra «partner» e «collaborazione».`,
+   heur:`Due elenchi simili, con nomi, forma e comportamento diversi, senza che sia chiaro se indicano la stessa cosa.`,
+   sevj:`Chi riconosce il logo della propria banca non può arrivare alla sua pagina e deve tornare al menu. Non blocca, ma disorienta a ogni visita.`,
+   fix:`Un’unica pagina «Partner e collaborazioni» con logo e nome, link alla pagina del partner dove esiste e ordine stabile.` },
+ { id:'P09', h:4, sev:2, f:['A','M','A'], title:'Contrasto insufficiente: nomi colorati nel menu «Partner», testo bianco su arancione in «Servizi»', page:['menu','servizi'], task:[1,3],
+   figs:[['menu_d_scrolled.jpg','Menu «Partner»: quattro delle voci con il contrasto più basso.'],['servizi_pack.jpg','«Servizi»: testo bianco di 14,4 px su fondo arancione.']],
+   prob:`Nel menu ogni partner ha un colore diverso, 25 in tutto, senza legenda né significato apparente. Calcolando il contrasto con il bianco dai colori dichiarati nella pagina, 14 voci su 25 restano sotto 4,5:1 e 7 sotto 3:1; il minimo è 1,8:1 («Federazione BCC dell’Emilia-Romagna», giallo). In «Servizi» il testo è bianco, a 14,4 px, su arancione: 2,4:1. I pulsanti verdi con scritta bianca arrivano a 2,1:1. Alcuni nomi e interi paragrafi risultano faticosi da leggere.`,
+   heur:`Non è rispettato lo standard di leggibilità più diffuso sul web (WCAG 2.1, livello AA: 4,5:1 per il testo normale) e il colore è usato senza una convenzione.`,
+   sevj:`Colpisce tutti, di più chi ha vista ridotta o uno schermo poco luminoso; il testo resta decifrabile con sforzo.`,
+   fix:`Un solo colore scuro per i nomi dei partner (il colore del marchio solo come pallino o logo); in «Servizi» testo scuro su fondo chiaro o arancione più scuro.` },
+ { id:'P10', h:4, sev:2, f:['A','B','A'], title:'In «Come funziona» tre link si chiamano «qui» e un invito non è cliccabile', page:['come'], task:[5,4],
+   figs:[['come_qui.jpg','Due dei tre link «qui»: portano a due pagine diverse.'],['come_servizi.jpg','«Scopri i servizi aggiuntivi!» è testo semplice, senza link.']],
+   prob:`La pagina contiene tre link con testo «qui», che portano a tre destinazioni diverse (registrazione, pagina dei corsi di Ginger Academy, home di Ginger Academy) e aprono tutti una nuova scheda. Per capire dove porta ciascuno bisogna rileggere la frase. Al contrario, la frase «Scopri i servizi aggiuntivi!» sembra un invito all’azione ma non è un link, anche se la pagina «Servizi» esiste.`,
+   heur:`È disattesa la convenzione per cui il testo di un link ne descrive la destinazione e ciò che invita a un’azione è cliccabile.`,
+   sevj:`Piccolo costo a ogni lettura; nessun task è impedito, perché «Servizi» è anche nella barra.`,
+   fix:`Testi descrittivi («apri un profilo», «calendario dei corsi», «iniziative dei partner») e link su «servizi aggiuntivi».` },
+ { id:'P11', h:4, sev:1, f:['M','B','A'], title:'Orari di contatto diversi tra «Come funziona» e «Contatti»', page:['come','contatti'], task:[6],
+   figs:[['come_orari.jpg','«Come funziona»: dalle 9:30 alle 16:30.'],['contatti_orari.jpg','«Contatti»: dalle 09:30 alle 13:00 e dalle 14:00 alle 16:30.']],
+   prob:`«Come funziona» indica che il team risponde «dal lunedì al venerdì dalle 9:30 alle 16:30»; «Contatti» indica «dalle 09:30 alle 13:00 e dalle 14:00 alle 16:30». Chi ha letto solo la prima pagina può telefonare tra le 13 e le 14 senza trovare nessuno.`,
+   heur:`La stessa informazione è riportata in due modi diversi in due pagine dello stesso sito.`,
+   sevj:`Riguarda un’ora al giorno e solo chi telefona.`,
+   fix:`Scrivere gli orari in un unico punto e richiamarli dalle altre pagine con lo stesso testo.` },
+ { id:'P12', h:6, sev:3, f:['M','A','A'], title:'Il menu «Partner» mostra solo nomi: per sapere che cosa offre un partner bisogna aprirli uno a uno', page:['menu'], task:[2],
+   figs:[['menu_plain.jpg','Menu «Partner»: 25 nomi, senza tipo di ente, territorio o stato delle iniziative.']],
+   prob:`L’elenco riporta soltanto i nomi: non dice se il partner è una banca, un’università o un ente, in quale territorio opera, né se ha un’iniziativa aperta. Le voci non sono raggruppate e non sono in ordine alfabetico (l’ordine era già segnalato nella parte 1, P12). «Come funziona» invita a verificare se «il tuo territorio o settore è di pertinenza di uno dei nostri partner», ma per rispondere bisogna aprire fino a 25 pagine e ricordarne il contenuto.`,
+   heur:`Le informazioni necessarie alla scelta non sono visibili nel punto in cui si sceglie: l’utente deve ricordarle da una pagina all’altra.`,
+   sevj:`Il task T2 richiede di esplorare l’intero elenco e si ripete identico a ogni visita. Non è 4 perché il sito suggerisce un’alternativa, telefonare.`,
+   fix:`Per ogni partner: tipo di ente, territorio e stato («bando aperto fino al …»); elenco raggruppato per tipo e filtrabile.` },
+ { id:'P13', h:7, sev:2, f:['M','M','A'], title:'Non esiste una pagina dei partner: la voce di menu non ha indirizzo né ricerca', page:['menu'], task:[2,1],
+   ev:['La voce «PARTNER» della barra ha come destinazione <b>javascript:void(0)</b>: apre il pannello, non una pagina.','Nel pannello non c’è alcun campo di ricerca o filtro.','L’unico elenco con un proprio indirizzo è «Collaborazioni», i cui loghi non sono cliccabili (P08).'],
+   prob:`«Partner» non è una pagina ma un pannello. Non ha un indirizzo da salvare tra i preferiti o da inviare a un collega e non si può aprire in un’altra scheda per confrontare due partner. Nel pannello non c’è un campo per filtrare i 25 nomi. Chi torna spesso sul sito ripete ogni volta gli stessi passaggi.`,
+   heur:`Mancano le scorciatoie che un utente abituale si aspetta: indirizzo diretto, apertura in più schede, filtro.`,
+   sevj:`Pesa su chi confronta più partner o lavora in gruppo; l’utente occasionale lo nota poco.`,
+   fix:`Pagina /partner con il proprio indirizzo, filtro per tipo e territorio; il pannello può restare come anteprima con un link «Vedi tutti i partner».` },
+ { id:'P14', h:7, sev:2, f:['A','M','A'], title:'«Come funziona»: sette passi senza indice, con i titoli solo dentro le illustrazioni', page:['come'], task:[5,6],
+   figs:[['come_step.jpg','Il titolo del passo 3, «Formazione», esiste solo nell’immagine.']],
+   prob:`La pagina descrive sette passi ed è lunga 5.763 px su desktop (circa sette schermate e mezza) e 6.438 px su mobile. L’unico titolo in testo è «Come funziona»: i nomi dei passi («Hai un’idea!», «Contattaci», «Formazione», «Campaign Manager», «Lancia la tua campagna», «Raccolta fondi», «Obiettivo raggiunto») sono disegnati nelle illustrazioni, che hanno testi alternativi non descrittivi («900-pixel-forma»). Non c’è un indice né un modo per saltare a un passo.`,
+   heur:`Chi cerca un punto preciso, per esempio costi o durata, non ha acceleratori e deve scorrere tutto.`,
+   sevj:`Aumenta il tempo per ogni consultazione mirata; la lettura dall’inizio alla fine funziona bene.`,
+   fix:`Indice dei sette passi in testa alla pagina, con ancore; titoli dei passi in testo e testi alternativi descrittivi per le illustrazioni.` },
+ { id:'P15', h:8, sev:2, f:['M','M','M'], title:'Il costo di pubblicazione è nel punto meno visibile di «Come funziona»', page:['come','servizi'], task:[6],
+   figs:[['come_fee.jpg','La quota di 350 € + IVA: carattere più piccolo, in coda a un elenco, al passo 5.']],
+   prob:`La quota per pubblicare un progetto, 350 € + IVA, compare una sola volta: al passo 5, a circa 4.000 px dall’inizio, in un paragrafo con carattere più piccolo del resto (14,4 px contro 16) e dopo un elenco di vantaggi. Non è riportata in «Servizi» né nelle FAQ. È un dato che decide se proseguire, ma ha meno evidenza delle illustrazioni e dei testi promozionali che lo circondano.`,
+   heur:`Gli elementi accessori hanno più peso visivo dell’informazione che serve a decidere.`,
+   sevj:`Chi non la trova la scopre solo al contatto con il team. Riguarda i futuri progettisti, alla prima visita.`,
+   fix:`Riquadro «Quanto costa» subito dopo l’introduzione, con la quota in evidenza, ripreso in «Servizi» e nelle FAQ.` },
+ { id:'P16', h:8, sev:1, f:['A','B','A'], title:'Su smartphone una colonna di nove link precede il contenuto di «Come funziona»', page:['come','collab'], task:[5], row:true,
+   figs:[['m_come.jpg','Mobile: il titolo «Come funziona» inizia a 387 px, sotto i nove link.',30],['m_collab.jpg','Lo stesso accade in «Collaborazioni».',30]],
+   prob:`La colonna laterale delle pagine informative contiene nove link, dai documenti legali («Condizioni d’uso», «Privacy», «Cookies») alle pagine di aiuto. Su smartphone la colonna passa sopra il contenuto: il titolo della pagina inizia a 387 px su 844 e quasi metà della prima schermata è occupata da link che non riguardano ciò che l’utente ha chiesto. Quasi tutte queste voci sono già nel footer o nella barra superiore.`,
+   heur:`Informazione poco rilevante occupa lo spazio più visibile e ritarda il contenuto cercato.`,
+   sevj:`Uno scorrimento in più a ogni pagina informativa; nulla è nascosto.`,
+   fix:`Su mobile spostare la colonna in fondo alla pagina o chiuderla in un menu «Altre pagine».` },
+];
+const byId = Object.fromEntries(P.map(p => [p.id, p]));
+
+const deck = document.getElementById('deck');
+let n = 0, fig = 0;
+const FOOT = 'Valutazione euristica · IdeaGinger: menu Partner, Servizi, Come funziona · Gruppo A · antofallea, seconda parte';
+function slide(cls, html) { n++; const s = document.createElement('section'); s.className = 'slide ' + cls; s.innerHTML = html + (cls.includes('cover') ? '' : `<div class="foot"><span>${FOOT}</span><span>${n}</span></div>`); deck.appendChild(s); return s; }
+const sev = s => `<span class="sev sev${s}">${s}</span>`;
+function figHtml(f, row) { fig++; return `<figure${row ? ` style="width:${f[2]}%"` : ''}><img src="img/${f[0]}"><figcaption><b>Fig. ${fig}</b> — ${f[1]}</figcaption></figure>`; }
+function probSlide(p) {
+  const left = p.figs ? `<div class="figs ${p.row ? 'row' : 'n' + p.figs.length}">${p.figs.map(f => figHtml(f, p.row)).join('')}</div>`
+    : `<div class="ev"><div class="evt">Evidenza rilevata sulla pagina</div>${p.ev.map(e => `<div class="evi">${e}</div>`).join('')}</div>`;
+  slide('', `<div class="kicker">Problemi riscontrati · Euristica ${p.h} – ${H[p.h]}</div>
+  <div class="prob grow">${left}
+  <div><div class="ptitle"><span class="id">${p.id}</span>${sev(p.sev)}<h2>${p.title}</h2></div>
+   <div class="where"><b>Dove:</b> ${p.page.map(k => PG[k]).join(' · ')}<br><b>Task:</b> ${p.task.map(k => T[k]).join(' · ')}</div>
+   <dl>
+    <div><dt>Problema e conseguenze</dt><dd>${p.prob}</dd></div>
+    <div class="heur"><dt>Euristica ${p.h} — ${H[p.h]}</dt><dd>${p.heur}</dd></div>
+    <div class="s${p.sev}"><dt>Severità ${p.sev}</dt><div class="fip"><span>Frequenza <b>${LV[p.f[0]]}</b></span><span>Impatto <b>${LVI[p.f[1]]}</b></span><span>Persistenza <b>${LV[p.f[2]]}</b></span></div><dd>${p.sevj}</dd></div>
+    <div class="fix"><dt>Proposta</dt><dd>${p.fix}</dd></div></dl></div></div>`);
+}
+
+slide('cover', `<span class="tag">HCI · Assignment 1 · Gruppo A · antofallea, seconda parte</span><h1>Valutazione euristica di IdeaGinger:<br>Partner, Servizi, Come funziona</h1>
+<div class="sub">Il menu «Partner», la pagina «Servizi» e la pagina «Come funziona», analizzati con le 10 euristiche di Nielsen.</div>
+<div class="meta"><div><b>Autore di questa parte</b>antofallea (Gruppo A)</div><div><b>Data della valutazione</b>13 ottobre 2026</div><div><b>Pagina di partenza</b>ideaginger.it, barra di navigazione</div><div><b>Aree analizzate</b>3, più i percorsi collegati</div></div>`);
+
+slide('', `<div class="kicker">1 · Obiettivo e metodo</div><h1>Cosa è stato valutato e come</h1>
+<div class="cols grow" style="grid-template-columns: 1.05fr 1fr 0.95fr;">
+ <div><h2>Obiettivo</h2><p>Individuare i problemi di usabilità di tre aree di IdeaGinger raggiungibili dalla barra di navigazione, spiegare che cosa comportano per chi usa il sito e proporre correzioni realizzabili.</p>
+  <p><b>Perimetro:</b> menu «Partner», pagina «Servizi», pagina «Come funziona». Completa la prima parte (pagina partner UniTo, due progetti, pagina 404), di cui non ripete i problemi.</p>
+  <p><b>Motivazione della scelta:</b> sono i tre ingressi che il sito offre a chi vuole capire con chi collabora Ginger, che cosa offre e come si lancia una campagna.</p>
+  <h2 style="margin-top:10px">Procedura</h2><ul>
+   <li>6 task realistici, dal punto di vista di chi vuole proporre un progetto.</li>
+   <li>Task percorsi su desktop; le pagine ricontrollate su mobile. Screenshot di ogni ostacolo.</li>
+   <li>Una sola euristica prevalente per problema; severità motivata con frequenza, impatto e persistenza.</li>
+   <li>Un problema che si ripete è descritto una volta, con le pagine in cui compare.</li>
+   <li>Nessuna registrazione e nessun modulo inviato.</li></ul></div>
+ <div><h2>Le 10 euristiche di Nielsen</h2><table>${Object.entries(H).map(([k, v]) => `<tr><td style="width:36px"><b>H${k}</b></td><td>${v}</td></tr>`).join('')}</table></div>
+ <div><h2>Scala di severità</h2><table>
+  <tr><td>${sev(0)}</td><td>Non è un problema di usabilità</td></tr>
+  <tr><td>${sev(1)}</td><td><b>Cosmetico</b> — priorità bassa</td></tr>
+  <tr><td>${sev(2)}</td><td><b>Minore</b> — difficoltà limitate, da correggere</td></tr>
+  <tr><td>${sev(3)}</td><td><b>Grave</b> — ostacola in modo significativo il task</td></tr>
+  <tr><td>${sev(4)}</td><td><b>Critico</b> — impedisce un task essenziale</td></tr></table>
+  <p class="small muted" style="margin-top:10px">In ogni scheda la severità è accompagnata da tre indicatori: <b>frequenza</b> (quanti utenti incontrano il problema), <b>impatto</b> sul task e <b>persistenza</b> (si ripresenta anche a chi lo conosce?).</p>
+  <p class="small muted">Colori e illustrazioni sono citati solo dove incidono su un task, per esempio sulla leggibilità.</p></div>
+</div>`);
+
+slide('', `<div class="kicker">1 · Obiettivo e metodo</div><h1>Data, dispositivi e limiti della valutazione</h1>
+<div class="cols grow" style="grid-template-columns: 1fr 1fr 1fr; align-content:start">
+ <div class="card"><h2>Quando</h2><p><b>13 ottobre 2026.</b></p><p>Quel giorno il menu «Partner» elencava 25 voci e la pagina «Collaborazioni» 54 loghi. Elenchi, testi e destinazioni dei link citati nelle slide sono quelli osservati in quella data e possono cambiare.</p></div>
+ <div class="card"><h2>Con cosa</h2><table>
+  <tr><td><b>Desktop</b></td><td>PC Windows 10, Google Chrome 155, finestra 1366 × 768 px</td></tr>
+  <tr><td><b>Mobile</b></td><td>Emulazione smartphone di Chrome: 390 × 844 px, touch, user-agent iPhone</td></tr>
+  <tr><td><b>Cookie</b></td><td>Banner chiuso con «Rifiuto», anche sui due siti esterni</td></tr>
+  <tr><td><b>Account</b></td><td>Nessuno: navigazione da utente non registrato</td></tr></table></div>
+ <div class="card"><h2>Limiti dichiarati</h2><ul>
+  <li>Il mobile è emulato: nessuna prova su telefono fisico o su altri browser.</li>
+  <li>I rapporti di contrasto sono calcolati dai colori dichiarati nelle pagine, rispetto al bianco o al colore di fondo; non sono misure su schermo.</li>
+  <li>Dei siti esterni (gingeracademy.it, gingercrowdfunding.it) è stata osservata solo la pagina di arrivo.</li>
+  <li>Le 25 pagine dei singoli partner non sono state valutate una per una.</li>
+  <li>Non è stato usato uno screen reader.</li></ul></div>
+</div>`);
+
+const taskRows = [
+ [1,'Trovare un partner preciso nel menu e aprirne la pagina','warn','Completato con ostacoli','P01 P02 P06 P09'],
+ [2,'Capire quali partner hanno iniziative adatte al proprio progetto','warn','Parziale: richiede di aprire le pagine una a una','P08 P12 P13'],
+ [3,'Capire quali servizi offre Ginger e quanto costano','bad','Non completabile sul sito','P04 P05 P07'],
+ [4,'Trovare quando parte il prossimo corso di formazione','warn','Completato con ostacoli, su un altro sito','P05 P07 P10'],
+ [5,'Capire i passi per lanciare una campagna','warn','Completato con ostacoli','P10 P14 P16'],
+ [6,'Trovare il costo di pubblicazione e gli orari di contatto','warn','Completato con ostacoli','P11 P15'],
+];
+slide('', `<div class="kicker">2 · Task analizzati</div><h1>Sei task dal punto di vista di chi vuole proporre un progetto</h1>
+<table style="font-size:15.5px"><tr><th>#</th><th>Task</th><th>Esito</th><th>Problemi incontrati</th></tr>
+${taskRows.map(r => `<tr><td><b>T${r[0]}</b></td><td>${r[1]}</td><td><span class="pill ${r[2]}">${r[3]}</span></td><td class="id" style="font-weight:600;font-size:12.5px">${r[4]}</td></tr>`).join('')}</table>
+<p class="small muted" style="margin-top:12px">Il profilo di riferimento è una persona o un’organizzazione che valuta se lanciare una campagna: è il pubblico a cui «Servizi» e «Come funziona» si rivolgono in modo esplicito. Per T3 l’esito è «non completabile» perché i prezzi dei servizi non compaiono né in «Servizi» né nella pagina a cui il pulsante rimanda.</p>`);
+
+slide('', `<div class="kicker">3 · Pagine valutate</div><h1>Tre aree e i percorsi che ne partono</h1>
+<div class="cols grow" style="grid-template-columns: 1.15fr 1fr;">
+ <div><table><tr><th>Area</th><th>Indirizzo</th><th>Task</th></tr>
+  <tr><td><b>1. Menu «Partner»</b>, pannello aperto dalla barra</td><td class="small">nessun indirizzo proprio; aperto da /partner/universita-di-torino.html</td><td>T1 T2</td></tr>
+  <tr><td><b>2. «Servizi»</b></td><td class="small">ideaginger.it/servizi.html</td><td>T3 T4</td></tr>
+  <tr><td><b>3. «Come funziona»</b></td><td class="small">ideaginger.it/ginger_come-funziona.html</td><td>T5 T6</td></tr>
+  <tr><td colspan="3" style="background:var(--soft);font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)">Percorsi collegati esplorati</td></tr>
+  <tr><td>«Collaborazioni»</td><td class="small">ideaginger.it/collaborazioni.html</td><td>T2</td></tr>
+  <tr><td>«Formazione» e «Contatti»</td><td class="small">/ginger_formazione.html · /ginger_contatti.html</td><td>T4 T6</td></tr>
+  <tr><td>Destinazione di «Scopri il prossimo evento»</td><td class="small">gingeracademy.it (home)</td><td>T4</td></tr>
+  <tr><td>Destinazione di «Scopri i pacchetti Ginger»</td><td class="small">gingercrowdfunding.it/management.html</td><td>T3</td></tr></table></div>
+ <div class="card" style="align-self:start"><h2>Mappa dei percorsi seguiti</h2>
+  <svg viewBox="0 0 520 330" style="width:100%;height:auto;font-family:Segoe UI,Arial;font-size:12px">
+   <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5b6577"/></marker></defs>
+   <g fill="#fff" stroke="#172033" stroke-width="1.5">
+    <rect x="170" y="8" width="180" height="38" rx="8"/>
+    <rect x="10" y="100" width="150" height="38" rx="8" fill="#e8ecfd"/><rect x="185" y="100" width="150" height="38" rx="8" fill="#e8ecfd"/><rect x="360" y="100" width="150" height="38" rx="8" fill="#e8ecfd"/>
+    <rect x="10" y="192" width="150" height="38" rx="8" stroke-dasharray="5 3"/><rect x="185" y="192" width="150" height="38" rx="8" stroke-dasharray="5 3"/><rect x="360" y="192" width="150" height="38" rx="8" stroke-dasharray="5 3"/>
+    <rect x="100" y="280" width="150" height="38" rx="8" stroke-dasharray="5 3"/><rect x="275" y="280" width="150" height="38" rx="8" stroke-dasharray="5 3"/></g>
+   <g text-anchor="middle" fill="#172033">
+    <text x="260" y="32">Barra di navigazione</text>
+    <text x="85" y="124" font-weight="700">Menu «Partner»</text><text x="260" y="124" font-weight="700">Servizi</text><text x="435" y="124" font-weight="700">Come funziona</text>
+    <text x="85" y="216">Collaborazioni</text><text x="260" y="216">gingercrowdfunding.it</text><text x="435" y="216">Formazione · Contatti</text>
+    <text x="175" y="304">Pagine dei partner</text><text x="350" y="304">gingeracademy.it</text></g>
+   <g stroke="#5b6577" stroke-width="1.5" fill="none" marker-end="url(#a)">
+    <path d="M215 46L110 98"/><path d="M260 46L260 98"/><path d="M305 46L410 98"/>
+    <path d="M85 138L85 190"/><path d="M260 138L260 190"/><path d="M435 138L435 190"/>
+    <path d="M110 138L165 278"/><path d="M285 138L340 278"/><path d="M415 138L365 278"/></g>
+  </svg>
+  <p class="note">Riquadri colorati: aree assegnate. Tratteggiati: percorsi collegati. «Collaborazioni» si raggiunge dal footer e dalla colonna laterale delle pagine informative.</p></div>
+</div>`);
+
+const cnt = {}; for (const p of P) { cnt[p.h] = cnt[p.h] || {1:0,2:0,3:0,4:0}; cnt[p.h][p.sev]++; }
+const tot = s => P.filter(p => p.sev === s).length;
+slide('', `<div class="kicker">4 · Problemi riscontrati</div><h1>Quadro d’insieme: ${P.length} problemi, nessuno critico, ${tot(3)} grave</h1>
+<div class="cols grow" style="grid-template-columns: 1.25fr 1fr;">
+ <div><h2>Problemi per euristica e severità</h2>
+  <div class="bars" style="margin-top:10px">${Object.keys(H).map(h => { const c = cnt[h] || {1:0,2:0,3:0,4:0}; const t = c[1]+c[2]+c[3]+c[4];
+    return `<div><b>H${h}</b> ${H[h]}</div><div class="bar">${[3,2,1].map(s => c[s] ? `<span style="width:${c[s]*60}px;background:var(--s${s})"></span>` : '').join('')}</div><div><b>${t}</b></div>`; }).join('')}</div>
+  <p class="small" style="margin-top:14px"><span class="sev sev3">3</span> grave &nbsp; <span class="sev sev2">2</span> minore &nbsp; <span class="sev sev1">1</span> cosmetico</p>
+  <p class="small muted">Ogni problema è assegnato all’euristica che ne spiega meglio la causa. Nessun problema è stato registrato per H5, H9 e H10: in queste aree non ci sono moduli né messaggi di errore, e le carenze di «Come funziona» come documentazione sono già nella prima parte.</p></div>
+ <div><div class="cols" style="grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px">
+   <div class="card" style="text-align:center"><div style="font-size:34px;font-weight:800;color:var(--s3)">${tot(3)}</div>grave</div>
+   <div class="card" style="text-align:center"><div style="font-size:34px;font-weight:800;color:var(--s2)">${tot(2)}</div>minori</div>
+   <div class="card" style="text-align:center"><div style="font-size:34px;font-weight:800;color:var(--s1)">${tot(1)}</div>cosmetici</div></div>
+  <div class="card"><h2>Che cosa emerge</h2><ul>
+   <li><b>Coerenza</b> (H4) è l’euristica più colpita: nomi, destinazioni, orari e contrasti cambiano da una pagina all’altra.</li>
+   <li><b>Il menu «Partner» è un elenco di soli nomi</b> (H6, H7, H1): per scegliere bisogna aprire tutto.</li>
+   <li><b>«Servizi» rimanda altrove</b> (H2, H3): l’informazione cercata, cioè che cosa e a quale prezzo, non è sul sito.</li>
+   <li><b>Perché nessun 4:</b> ogni partner è raggiungibile, i passi per lanciare una campagna si capiscono e per ciò che manca il sito indica telefono ed email.</li></ul></div></div>
+</div>`);
+
+P.forEach(probSlide);
+
+slide('', `<div class="kicker">Oltre il richiesto · Confronto desktop / mobile</div><h1>Su smartphone: cosa migliora, cosa peggiora</h1>
+<div class="cols grow" style="grid-template-columns: 1.05fr 1fr;">
+ <div class="phones" style="grid-template-columns: repeat(4, 1fr)">${[['m_menu_partner.jpg','Menu «Partner»'],['m_servizi.jpg','Servizi'],['m_come.jpg','Come funziona'],['m_collab.jpg','Collaborazioni']].map(f => { fig++; return `<figure><img src="img/${f[0]}"><figcaption><b>Fig. ${fig}</b> — ${f[1]}</figcaption></figure>`; }).join('')}</div>
+ <div><table style="font-size:13.5px"><tr><th>Aspetto</th><th>Desktop</th><th>Mobile</th></tr>
+  <tr><td>Voci del menu «Partner» fuori schermo (P01)</td><td>7 su 25</td><td><span class="pill ok">Meglio</span> 2 su 25; il gesto di scorrimento è più naturale</td></tr>
+  <tr><td>Accesso al menu «Partner»</td><td>1 clic dalla barra</td><td><span class="pill warn">Un passo in più</span> menu a comparsa, poi «Partner»</td></tr>
+  <tr><td>Testo di «Servizi» (P09)</td><td>14,4 px, bianco su arancione</td><td><span class="pill ok">Meglio</span> 16 px; stesso contrasto</td></tr>
+  <tr><td>Lunghezza di «Come funziona» (P14)</td><td>5.763 px</td><td><span class="pill bad">Peggio</span> 6.438 px, sempre senza indice</td></tr>
+  <tr><td>Colonna di link nelle pagine informative (P16)</td><td>A lato del contenuto</td><td><span class="pill bad">Peggio</span> sopra il contenuto: titolo a 387 px</td></tr>
+  <tr><td>Lunghezza di «Collaborazioni»</td><td>3.129 px</td><td><span class="pill bad">Peggio</span> 6.554 px di loghi su due colonne</td></tr>
+  <tr><td>Link che aprono nuove schede (P05, P10)</td><td>La scheda nuova è visibile</td><td><span class="pill bad">Peggio</span> su smartphone le schede aperte non restano in vista</td></tr></table>
+  <p class="note">Il layout a colonna singola regge. Peggiorano le pagine lunghe e tutto ciò che su desktop sta «di lato».</p></div>
+</div>`);
+
+slide('', `<div class="kicker">Oltre il richiesto · Aspetti positivi</div><h1>Cosa funziona e va conservato</h1>
+<div class="cols grow" style="grid-template-columns: repeat(3, 1fr); align-content:start">
+ ${[
+  ['Sette passi numerati e illustrati (H2)','«Come funziona» racconta il percorso nell’ordine in cui avviene, dall’idea all’obiettivo raggiunto, con un numero e un’illustrazione per passo.'],
+  ['Contatti sempre a portata (H10)','Telefono ed email compaiono all’inizio e alla fine di «Come funziona» e nella pagina «Contatti»: chi non trova un’informazione sa a chi chiederla.'],
+  ['Voce corrente evidenziata in «Servizi» e «Come funziona» (H1)','Nella barra la voce della pagina aperta cambia colore o è sottolineata: è il comportamento da estendere a «Partner».'],
+  ['Nomi dei partner scritti per intero (H6)','Nel menu i nomi non sono troncati, nemmeno su smartphone, dove vanno a capo.'],
+  ['Comando di chiusura grande e visibile (H3)','La X del menu «Partner» misura 55 × 58 px ed è sempre nello stesso punto.'],
+  ['Ritorno da Ginger Academy (H3)','La pagina di arrivo di gingeracademy.it contiene un link «Ideaginger» che riporta al sito di partenza.'],
+ ].map(c => `<div class="card"><h2>${c[0]}</h2><p style="margin:0">${c[1]}</p></div>`).join('')}
+</div>`);
+
+slide('', `<div class="kicker">5 · Problemi più gravi e proposte</div><h1>Le priorità di intervento</h1>
+<table style="font-size:14px"><tr><th>ID</th><th>Sev.</th><th>Problema</th><th>Task</th><th>Intervento proposto</th></tr>
+${['P12','P04','P07','P09'].map(id => { const p = byId[id]; return `<tr><td class="id">${p.id}</td><td>${sev(p.sev)}</td><td><b>${p.title}</b><br><span class="small muted">H${p.h} · ${H[p.h]}</span></td><td>${p.task.map(t => 'T'+t).join(', ')}</td><td>${p.fix}</td></tr>`; }).join('')}</table>
+<div class="cols" style="grid-template-columns:1fr 1fr;margin-top:12px">
+ <div class="card"><h2>Correzioni di testo o di una riga</h2><p style="margin:0"><span class="id">P03</span> titoli delle schede · <span class="id">P10</span> testi dei link al posto di «qui» · <span class="id">P11</span> orari uguali nelle due pagine · <span class="id">P02</span> voce «Partner» evidenziata · <span class="id">P06</span> chiusura con Esc.</p></div>
+ <div class="card"><h2>Interventi strutturali</h2><p style="margin:0"><span class="id">P13</span> pagina dei partner con indirizzo e filtri · <span class="id">P08</span> elenco unico di partner e collaborazioni · <span class="id">P14</span> indice dei passi · <span class="id">P15</span> riquadro dei costi · <span class="id">P05</span> ritorno dai siti esterni.</p></div>
+</div>
+<p class="small muted" style="margin-top:10px">P12 è l’unico problema grave; P04, P07 e P09 sono i problemi di severità 2 che toccano più task o più utenti.</p>`);
+
+slide('', `<div class="kicker">Oltre il richiesto · Proposta di riprogettazione 1</div><h1>Da pannello di nomi a pagina dei partner</h1>
+<div class="cols grow" style="grid-template-columns: 1.4fr 1fr;">
+ <div class="mock"><div class="bar-top"></div><div class="mhead"><span>GINGER</span><span style="font-weight:400">Cerca progetti · Lancia una campagna · <b style="color:#e9500e">Partner</b> · Servizi</span></div>
+  <div class="mbody">
+   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><b style="font-size:17px">Partner</b><span style="font-size:11.5px;color:#5b6577">ideaginger.it/partner</span></div>
+   <div style="display:flex;gap:8px;margin-bottom:10px;font-size:12px"><span style="border:1px solid #c8cfdb;border-radius:20px;padding:4px 12px;flex:1;color:#8a94a6">Cerca un partner…</span><span class="pill">Tutti</span><span class="pill" style="background:#fff;border:1px solid #c8cfdb;color:#172033">Università</span><span class="pill" style="background:#fff;border:1px solid #c8cfdb;color:#172033">Banche</span><span class="pill" style="background:#fff;border:1px solid #c8cfdb;color:#172033">Enti e fondazioni</span></div>
+   <div style="font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#5b6577;font-weight:700;margin:6px 0 4px">Università</div>
+   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;font-size:12.5px">
+    <div style="border:1px solid #dfe3ea;border-radius:8px;padding:8px"><b>BiUniCrowd – Università degli Studi di Milano Bicocca</b><br><span style="color:#5b6577">[territorio] · [stato del bando]</span></div>
+    <div style="border:1px solid #dfe3ea;border-radius:8px;padding:8px"><b>Università di Firenze</b><br><span style="color:#5b6577">[territorio] · [stato del bando]</span></div>
+    <div style="border:2px solid #1d3fd8;border-radius:8px;padding:7px;background:#e8ecfd"><b>Università di Torino</b> <span class="pill">sei qui</span><br><span style="color:#5b6577">[territorio] · [stato del bando]</span></div></div>
+   <div style="font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#5b6577;font-weight:700;margin:10px 0 4px">Banche (in ordine alfabetico)</div>
+   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;font-size:12.5px">
+    <div style="border:1px solid #dfe3ea;border-radius:8px;padding:8px"><b>Banca 360 FVG</b><br><span style="color:#5b6577">[territorio] · [stato del bando]</span></div>
+    <div style="border:1px solid #dfe3ea;border-radius:8px;padding:8px"><b>Banca delle Terre Venete</b><br><span style="color:#5b6577">[territorio] · [stato del bando]</span></div>
+    <div style="border:1px solid #dfe3ea;border-radius:8px;padding:8px"><b>BCC Brianza e Laghi</b><br><span style="color:#5b6577">[territorio] · [stato del bando]</span></div></div>
+   <div style="font-size:11.5px;color:#5b6577;margin-top:8px">… e così via per le altre voci.</div></div></div>
+ <div><h2>Problemi affrontati</h2><table>
+  <tr><td class="id">P12</td><td>Ogni partner riporta tipo, territorio e stato dell’iniziativa; elenco raggruppato e in ordine alfabetico.</td></tr>
+  <tr><td class="id">P13</td><td>Pagina con indirizzo proprio, ricerca e filtri per tipo.</td></tr>
+  <tr><td class="id">P01</td><td>Più colonne: l’elenco non resta nascosto sotto il bordo.</td></tr>
+  <tr><td class="id">P02</td><td>«Partner» evidenziato nella barra; voce corrente marcata.</td></tr>
+  <tr><td class="id">P09</td><td>Nomi in un solo colore scuro, leggibili.</td></tr>
+  <tr><td class="id">P08</td><td>La stessa pagina può accogliere i loghi di «Collaborazioni».</td></tr></table>
+  <p class="note">Schema a bassa fedeltà. I nomi sono quelli presenti nel menu il 13/10/2026; territorio e stato del bando sono segnaposto tra parentesi quadre, da compilare con i dati reali.</p></div>
+</div>`);
+
+slide('', `<div class="kicker">Oltre il richiesto · Proposta di riprogettazione 2</div><h1>«Servizi» che dice che cosa, per chi e quanto</h1>
+<div class="cols grow" style="grid-template-columns: 1.4fr 1fr;">
+ <div class="mock"><div class="bar-top"></div><div class="mhead"><span>GINGER</span><span style="font-weight:400">Cerca progetti · Lancia una campagna · Partner · <b style="color:#e9500e">Servizi</b></span></div>
+  <div class="mbody">
+   <b style="font-size:17px">Servizi per chi lancia una campagna</b>
+   <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px">
+    <div style="border:1px solid #dfe3ea;border-radius:8px;padding:12px"><b style="font-size:15px">Formazione</b>
+     <p style="margin:6px 0;font-size:12.5px">Corsi per progettare la campagna, scrivere i testi, scegliere le ricompense e comunicare il progetto.</p>
+     <div style="font-size:12.5px"><b>Per chi:</b> chi lancia una campagna<br><b>Prossimo corso:</b> [data]<br><b>Costo:</b> [prezzo]</div>
+     <span class="btn" style="margin-top:8px">Calendario dei corsi ↗ gingeracademy.it</span></div>
+    <div style="border:1px solid #dfe3ea;border-radius:8px;padding:12px"><b style="font-size:15px">Pacchetti Ginger</b>
+     <p style="margin:6px 0;font-size:12.5px">Supporto del team su business plan della raccolta, testi, video e grafica, strategia di comunicazione, piattaforma personalizzata.</p>
+     <div style="font-size:12.5px"><b>Per chi:</b> chi vuole affidare parte del lavoro<br><b>Costo:</b> [prezzo o «su preventivo»]</div>
+     <span class="btn" style="margin-top:8px">Dettaglio dei pacchetti ↗ gingercrowdfunding.it</span></div></div>
+   <div style="border:1px solid #f1d9a6;background:#fff7e6;border-radius:8px;padding:9px;margin-top:12px;font-size:12.5px"><b>Pubblicare un progetto su Ideaginger.it:</b> quota di accesso di 350 € + IVA. <u>Come funziona</u></div></div></div>
+ <div><h2>Problemi affrontati</h2><table>
+  <tr><td class="id">P04</td><td>Per ogni servizio: contenuto, destinatari e costo, visibili senza lasciare la pagina.</td></tr>
+  <tr><td class="id">P05</td><td>I pulsanti dichiarano il sito di destinazione e sono marcati con ↗.</td></tr>
+  <tr><td class="id">P07</td><td>Etichette uguali a ciò che si trova all’arrivo: «Calendario dei corsi», «Dettaglio dei pacchetti».</td></tr>
+  <tr><td class="id">P09</td><td>Testo scuro su fondo chiaro.</td></tr>
+  <tr><td class="id">P15</td><td>La quota di pubblicazione è richiamata anche qui.</td></tr></table>
+  <p class="note">I contenuti dei due servizi riprendono i testi attuali della pagina. Date e prezzi sono segnaposto: sul sito non compaiono. La quota di 350 € + IVA è quella indicata in «Come funziona».</p></div>
+</div>`);
+
+slide('', `<div class="kicker">Oltre il richiesto · Proposta di riprogettazione 3</div><h1>«Come funziona» con indice dei passi e costi in evidenza</h1>
+<div class="cols grow" style="grid-template-columns: 1.4fr 1fr;">
+ <div class="mock"><div class="bar-top"></div><div class="mhead"><span>GINGER</span><span style="font-weight:400">Faq · Contatti · <b style="color:#e9500e">Come funziona</b></span></div>
+  <div class="mbody">
+   <b style="font-size:17px">Come funziona</b>
+   <p style="margin:6px 0 10px;font-size:12.5px">Sette passi per lanciare una campagna di crowdfunding con Ginger.</p>
+   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:11.5px;text-align:center;margin-bottom:10px">
+    ${['1 Hai un’idea!','2 Contattaci','3 Formazione','4 Campaign Manager','5 Lancia la tua campagna','6 Raccolta fondi','7 Obiettivo raggiunto'].map((s, i) => `<div style="border:1px solid ${i === 2 ? '#1d3fd8' : '#dfe3ea'};border-radius:6px;padding:6px;${i === 2 ? 'background:#e8ecfd;color:#1d3fd8;font-weight:700' : ''}">${s}</div>`).join('')}</div>
+   <div style="border:1px solid #f1d9a6;background:#fff7e6;border-radius:8px;padding:9px;font-size:12.5px;margin-bottom:10px"><b>Quanto costa:</b> quota di accesso alla piattaforma di 350 € + IVA. Ginger non trattiene nulla dai fondi raccolti; restano le commissioni dei sistemi di pagamento.</div>
+   <div style="font-weight:700;font-size:14px;color:#1d3fd8">3 · Formazione</div>
+   <p style="margin:4px 0;font-size:12.5px">Iscriviti al corso più adatto a te. <u>Vai al calendario dei corsi ↗</u><br>Il tuo territorio è seguito da un partner? <u>Scopri le iniziative dei partner</u></p>
+   <div style="font-size:12px;color:#5b6577;margin-top:8px">Contatti: 051 19501024 · ginger@ideaginger.it · [orari, uguali a quelli della pagina Contatti]</div></div></div>
+ <div><h2>Problemi affrontati</h2><table>
+  <tr><td class="id">P14</td><td>Indice dei sette passi con i titoli in testo; ogni voce porta al passo.</td></tr>
+  <tr><td class="id">P15</td><td>Riquadro dei costi subito sotto l’indice.</td></tr>
+  <tr><td class="id">P10</td><td>Link con testo che descrive la destinazione.</td></tr>
+  <tr><td class="id">P11</td><td>Orari riportati con lo stesso testo di «Contatti».</td></tr>
+  <tr><td class="id">P16</td><td>Su mobile l’indice dei passi sostituisce la colonna di link in testa alla pagina.</td></tr></table>
+  <p class="note">I nomi dei passi, la quota, le commissioni e i recapiti sono quelli della pagina attuale. L’orario è lasciato come segnaposto perché oggi le due pagine ne riportano due versioni.</p></div>
+</div>`);
+
+slide('', `<div class="kicker">6 · Conclusioni e raccomandazioni generali</div><h1>Tre ingressi che informano poco chi deve decidere</h1>
+<div class="cols grow" style="grid-template-columns: 1fr 1fr;">
+ <div><p style="font-size:16.5px">«Come funziona» spiega bene <b>il percorso</b>. Le difficoltà riguardano <b>le informazioni per scegliere</b>: quale partner fa al caso proprio, che cosa comprendono i servizi, quanto costa pubblicare. Sono presenti in modo parziale, sparse o su altri siti.</p>
+  <div class="card" style="margin-top:10px"><h2>Per area</h2><ul>
+   <li><b>Menu «Partner»:</b> un elenco di 25 nomi colorati, in parte nascosto e in parte poco leggibile, senza indicazioni per scegliere (P12, P01, P09).</li>
+   <li><b>«Servizi»:</b> due testi promozionali e due uscite verso altri siti, senza contenuti né prezzi (P04, P05).</li>
+   <li><b>«Come funziona»:</b> contenuto chiaro ma lungo, senza indice, con il costo in secondo piano (P14, P15).</li></ul></div></div>
+ <div><h2>Cinque raccomandazioni generali</h2><table style="font-size:15px">
+  <tr><td><b>1</b></td><td><b>Dare a ogni elenco le informazioni per scegliere</b>: tipo, territorio e stato per i partner; contenuto e prezzo per i servizi.</td></tr>
+  <tr><td><b>2</b></td><td><b>Un nome, una destinazione</b>: la stessa etichetta deve portare sempre nello stesso posto e chiamarsi come la pagina di arrivo.</td></tr>
+  <tr><td><b>3</b></td><td><b>Dichiarare le uscite dal sito</b> e prevedere il ritorno dai siti collegati.</td></tr>
+  <tr><td><b>4</b></td><td><b>Garantire la leggibilità</b>: contrasto di almeno 4,5:1 per i testi, colore usato solo quando ha un significato.</td></tr>
+  <tr><td><b>5</b></td><td><b>Mettere in evidenza ciò che decide</b>: costi, scadenze e orari prima dei testi promozionali, con un indice nelle pagine lunghe.</td></tr></table>
+  <p class="note" style="margin-top:10px">Passo successivo consigliato: un test con utenti sui task T2 e T3, per verificare la severità di P12 e P04.</p></div>
+</div>`);
+
+slide('', `<div class="kicker">Appendice · Registro dei problemi</div><h1 style="font-size:21px;margin-bottom:6px">Elenco completo dei ${P.length} problemi</h1>
+<table class="apx" style="font-size:12.6px;line-height:1.2"><tr><th>ID</th><th>Problema</th><th>Dove</th><th>Eur.</th><th>Sev.</th><th>Task</th></tr>${P.map(p => `<tr><td class="id" style="padding:4px 8px">${p.id}</td><td style="padding:4px 8px">${p.title}</td><td style="padding:4px 8px">${p.page.map(k => PG[k].replace(/ \(.*\)$/, '')).join('; ')}</td><td style="padding:4px 8px">H${p.h}</td><td style="padding:4px 8px">${sev(p.sev)}</td><td style="padding:4px 8px">${p.task.map(t => 'T'+t).join(' ')}</td></tr>`).join('')}</table>`);
+</script>
+</body>
+</html>
