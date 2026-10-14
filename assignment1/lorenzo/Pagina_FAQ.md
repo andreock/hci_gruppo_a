@@ -18,7 +18,7 @@
 È la pagina di domande frequenti della piattaforma di crowdfunding Ginger. Serve a due pubblici diversi: **chi vuole lanciare un progetto** (progettisti) e **chi vuole donare** (sostenitori). Struttura rilevata, dall'alto:
 
 1. barra di servizio (Faq, Contatti, Come funziona, Login progettista) e menu principale (icona, logo, Home, Cerca progetti, Lancia una campagna, Partner, Servizi);
-2. blocco di navigazione che nel testo estratto precede il contenuto: Progetti (Sostienili ora, Per ispirarti, Tutti), 26 Categorie, 17 SDGs ONU, 25 Partner `[VERIFICA: è visibile a schermo come colonna laterale o compare solo dai menu a tendina "Cerca progetti" e "Partner"?]`;
+2. blocco di navigazione che nel testo estratto precede il contenuto: Progetti (Sostienili ora, Per ispirarti, Tutti), 26 Categorie, 17 SDGs ONU, 25 Partner;
 3. elenco di link di servizio (Come funziona, Condizioni d'uso, Privacy, Cookies, Formazione, Chi Siamo, Contatti, Collaborazioni, FAQ);
 4. titolo **FAQ** seguito da **25 domande/risposte** in sequenza, senza raggruppamenti visibili (sul crowdfunding in generale, budget e scadenza, pagamenti e commissioni, ricompense, selezione e fiducia nei progettisti, donazioni);
 5. footer (Home, Chi siamo, Collaborazioni, Contatti, Login partner, Condizioni d'uso, Privacy, Cookies, Preferenze cookie, FAQ, social, blog "Il Gingerino", © 2013 - 2026).
