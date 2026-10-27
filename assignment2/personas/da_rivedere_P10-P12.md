@@ -2,13 +2,13 @@
 
 Valutazione di P10–P12 e J10–J12 rispetto alla consegna della docente (`Istruzioni.md`). Alcuni punti valgono per **tutte le 12 personas**, perché nascono dal contesto comune C00 e dal template del corso.
 
-## File in questa cartella
+## File
 
 | File | Contenuto |
 |---|---|
-| `P10_franco_gallo_persona.html`, `J10_franco_gallo_journey.html` | Franco Gallo, responsabile di una campagna in corso |
-| `P11_amir_haddad_persona.html`, `J11_amir_haddad_journey.html` | Amir Haddad, dottorando che cura la comunicazione |
-| `P12_maria_lombardi_persona.html`, `J12_maria_lombardi_journey.html` | Maria Lombardi, partner esterna che vuole proporre un progetto con UniTo |
+| `personas/P10_franco_gallo_persona.html`, `journey/J10_franco_gallo_journey.html` | Franco Gallo, responsabile di una campagna in corso |
+| `personas/P11_amir_haddad_persona.html`, `journey/J11_amir_haddad_journey.html` | Amir Haddad, dottorando che cura la comunicazione |
+| `personas/P12_maria_lombardi_persona.html`, `journey/J12_maria_lombardi_journey.html` | Maria Lombardi, partner esterna che vuole proporre un progetto con UniTo |
 
 ## 1. Cosa è già stato adeguato alla consegna
 
