@@ -2,6 +2,27 @@
 
 Valutazione di P10–P12 e J10–J12 rispetto alla consegna della docente (`Istruzioni.md`). Alcuni punti valgono per **tutte le 12 personas**, perché nascono dal contesto comune C00 e dal template del corso.
 
+## 0. Versione 2 (27/10/2026): personas scollegate da IdeaGinger
+
+P10–P12 e J10–J12 sono state riscritte per il **nuovo sito di crowdfunding dell'Università di Torino** che progettiamo, non per IdeaGinger.
+
+- **Tolti tutti i riferimenti a IdeaGinger:** nome della piattaforma, pagine e progetti reali (BRIGHT, MILK-ACT, RePatch), campaign manager di Ginger, quota di 350 € + IVA, etichette dell'interfaccia attuale («SOSTIENI», «FAI TU», «Contatta il progettista», «LANCIA UNA CAMPAGNA»), punteggi Lighthouse, codici delle slide `[Sxx · Hx · Gx]`.
+- **Intestazione:** «Servizio o progetto» = «Sito di crowdfunding dell'Università di Torino (nuovo sito progettato dal Gruppo A)»; versione «v2».
+- **Difficoltà e frustrazioni:** riscritte come esperienze e timori della persona, senza dettagli dell'interfaccia di Ginger.
+- **Journey:** passati da «As-is · Mista» a **«To-be · Ipotesi»**: descrivono il percorso previsto sul nostro sito, prima e dopo l'uso del sito. Le criticità sono i rischi che il progetto deve prevenire; le opportunità sono pagine e componenti da realizzare nel prototipo.
+- **Niente area riservata:** gli aggiornamenti e i resoconti passano dall'ufficio crowdfunding d'Ateneo (`[IPOTESI]`), coerente con un prototipo senza account.
+- **P10 vs P11 più differenziati:** Franco va dal superamento dell'obiettivo al **resoconto ai donatori** (copre anche «Seguire un progetto già sostenuto»); Amir cura **diffusione e pubblico internazionale**.
+- **P12:** la registrazione inutile e la quota di Ginger sono sostituite dal percorso «Proponi una collaborazione» (modulo, email di conferma, telefonata dell'ufficio, riepilogo per il direttivo).
+- **Fonti:** «bisogni emersi nella valutazione euristica dell'Assignment 1, riformulati senza riferimento alla piattaforma analizzata». Il collegamento con l'analisi va mostrato nel PDF, non nelle schede.
+
+### Opportunità → elementi del prototipo
+
+| Persona | Pagine o componenti richiesti |
+|---|---|
+| P10 | Card con titolo intero, tema e «Gruppo · Dipartimento UniTo»; badge «Obiettivo raggiunto · raccolta ancora aperta»; nuovo obiettivo con cifra e scopo; riquadro del cofinanziamento accanto a «Sostieni»; «Scrivi al gruppo» con conferma; stato «Campagna conclusa» con «Leggi i risultati»; resoconto in «Aggiornamenti» |
+| P11 | Selettore IT/EN che traduce tutto il percorso; validazione in linea nella lingua scelta; regole e importo minimo vicino al campo; focus visibile ed Esc; frecce nei caroselli; guida «Contenuti in due lingue» e «Segnala un problema» per i team |
+| P12 | Frase d'apertura in home e «Chi siamo» in alto; «Progetti con il territorio»; pagina «Chi può proporre» con sezione «Enti esterni» e costi in evidenza; FAQ divise per pubblico; modulo «Proponi una collaborazione» con etichette visibili, campi grandi, conferma e tempi di risposta |
+
 ## File
 
 | File | Contenuto |
@@ -55,6 +76,7 @@ La consegna chiede elementi che il template non ha, e il C00 vieta di aggiungere
 - [ ] È plausibile che un ente esterno partecipi come partner di un progetto UniTo (marcato `[IPOTESI]`)? Se possibile, verificarlo sulle regole di Funds TOgether.
 
 ### 2.3 P10 e P11 dipendono da un'area progettisti che non progetteremo
+> **Risolto nella v2:** opportunità riformulate sulle pagine pubbliche; i contenuti passano dall'ufficio d'Ateneo `[IPOTESI]`. Resta da decidere se aggiungere la pagina «Per i team di progetto».
 Entrambi lavorano su una campagna **già in corso** e molti passaggi passano dall'area riservata, marcata `[IPOTESI]`. La consegna esclude account reali.
 
 - [ ] Riformulare le loro opportunità come elementi delle **pagine pubbliche** del prototipo: badge «obiettivo raggiunto · raccolta ancora aperta», raddoppio UniTo visibile vicino a «Sostieni», selettore IT/EN completo, errori in linea nella lingua dell'utente, stato «conclusa».
@@ -68,6 +90,7 @@ La consegna dice: «Verificate anche che i profili non siano eccessivamente simi
 - Con 12 personas superiamo di molto il minimo (5 per un gruppo di 4). Decidere se nel PDF le teniamo tutte o selezioniamo le più differenziate, e collegarle tutte al prototipo.
 
 ### 2.5 Journey «As-is» e prototipo
+> **v2:** J10–J12 sono ora «To-be». Da decidere se fare lo stesso con J01–J09.
 I journey descrivono l'esperienza **attuale** su IdeaGinger. La consegna chiede opportunità «da tradurre nel progetto».
 
 - [ ] Aggiungere nel PDF una tabella che collega ogni opportunità a una pagina o un componente del prototipo, a supporto del criterio «Motivazione delle scelte» (25%).
@@ -98,5 +121,4 @@ La consegna vuole vedere le revisioni fatte sugli output dell'AI. Per P10–P12 
 - [ ] **P10:** «AlveareSano» e le sue cifre (130%, 20 giorni) sono inventate e dichiarate in «Ipotesi».
 - [ ] **P10:** verificare la regola del cofinanziamento oltre il 100%. Il dubbio di Franco («vale anche per le donazioni in più?») è anche un'informazione che il sito dovrebbe dare.
 - [ ] **P11 e P12:** la familiarità con il crowdfunding è inventata e marcata `[IPOTESI]`.
-- [ ] **P12:** [S45] è stato rilevato per gli screen reader; qui è usato come ipotesi di effetto visivo (dichiarato).
 - [ ] Alcune celle delle journey superano le 30 parole del C00 (es. J12, fase 3, criticità). È una regola interna, non della consegna: decidere se accorciare.
