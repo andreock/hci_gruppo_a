@@ -28,6 +28,7 @@ Procedura:
 1. Apri una **nuova conversazione** con Opus 5.5 per ogni documento da generare (una persona oppure un journey).
 2. Incolla il prompt **C00**. Il modello risponde solo con una conferma.
 3. Incolla il prompt singolo (`Pxx` per la persona, `Jxx` per il journey) dal file della persona. In alternativa puoi incollare C00 e il prompt singolo **nello stesso messaggio**.
+4. Incolla i template User_Journey.pdf e Personas.pdf
 4. Per un journey, se la persona corrispondente è già stata generata (anche da un'altra persona del gruppo), incolla il suo output dentro il tag `<persona_generata>` del prompt `Jxx`. Se non c'è ancora, lascia il tag com'è: il prompt contiene una scheda sintetica sufficiente, quindi persona e journey si possono generare **in qualsiasi ordine e in parallelo**.
 5. Salva l'output come `Pxx_nome_output.md` o `Jxx_nome_output.md`. Facoltativo: in una nuova conversazione incolla C00 e il prompt **V00** con l'output per verificare formato e citazioni.
 

@@ -8,6 +8,8 @@ modello_consigliato: Claude Opus 5.5 (claude-opus-5-5)
 
 Questo è il contesto condiviso da tutti i prompt delle 12 personas e dei 12 journey. Va incollato **all'inizio di ogni conversazione**, prima del prompt singolo (Pxx, Jxx o V00). Contiene il contesto del sito, la terminologia degli appunti, il catalogo dei problemi della presentazione (con ID = numero di slide), gli aspetti positivi, i fatti integrativi, le regole e i formati di output.
 
+**Template obbligatori.** Persone e journey vanno prodotti con i template del corso: la «Scheda persona» ([template/scheda_persona.pdf](template/scheda_persona.pdf)) e la «Scheda user journey» ([template/scheda_user_journey.pdf](template/scheda_user_journey.pdf)). **Allega il PDF giusto alla conversazione** insieme al prompt: la scheda persona per i prompt Pxx, la scheda user journey per i prompt Jxx. Se non puoi allegarlo, il contesto riproduce comunque la struttura dei due template.
+
 Il testo da copiare è quello dentro il blocco di codice.
 
 <!-- BEGIN PROMPT id="C00" tipo="contesto_comune" richiede="" -->
@@ -133,20 +135,44 @@ Fatti emersi dalle analisi preliminari del gruppo (ottobre 2026), NON presenti n
 - X08 · I progetti oltre il 100% mostrano un «nuovo obiettivo» («10.000 € in più») senza dire rispetto a quale cifra; in Mind the Climate convivono soglia minima 7.000 €, obiettivo totale 14.000 € e 18.750 € «incluso il cofinanziamento».
 </fatti_integrativi>
 
+<template_del_corso>
+I documenti vanno prodotti OBBLIGATORIAMENTE secondo i due template ufficiali del corso (Cristina Gena · Human-Computer Interaction):
+- «Scheda persona» (file template.pdf) per ogni persona Pxx;
+- «Scheda user journey» (file user_journey.pdf) per ogni journey Jxx.
+Se i PDF sono allegati alla conversazione, sono il riferimento vincolante per campi, etichette e ordine: rispettali alla lettera. I contenuti già scritti negli esempi dei PDF (la persona «Ginevra» e il percorso su un'app di incontri) sono solo esempi di compilazione: non copiarli e non prenderli come modello di contenuto. Se i PDF non sono allegati, usa la struttura dei template riprodotta fedelmente in <formato_persona> e <formato_journey>.
+Non aggiungere sezioni che non esistono nei template. Le richieste dei prompt singoli che nominano sezioni diverse vanno collocate nei campi del template secondo <corrispondenze>.
+Valori fissi dell'intestazione: Gruppo: «Gruppo A»; Servizio o progetto: «IdeaGinger · Funds TOgether (Università di Torino)»; Data/versione: «27/10/2026 · v1».
+</template_del_corso>
+
+<corrispondenze>
+Come collocare nei template le richieste dei prompt singoli e le sezioni degli appunti:
+- Informazioni del profilo (appunti) → «Nome convenzionale e descrizione del profilo».
+- Motto (appunti) → «Frase rappresentativa e provenienza», con provenienza «sintesi costruita dal gruppo» (non è una frase realmente raccolta).
+- Comportamenti, abitudini (appunti) → «Attività e comportamenti»; difficoltà con il servizio → «Difficoltà e frustrazioni».
+- Frequenza d'uso del servizio (appunti) → «Contesto e vincoli di utilizzo».
+- Familiarità con gli strumenti digitali e strumenti di riferimento (appunti) → «Competenze e strumenti digitali».
+- Problemi del sito che riguardano la persona → «Difficoltà e frustrazioni», ciascuno con la sua citazione; l'elenco degli ID va anche in «Fonti ed evidenze disponibili».
+- «Note per il team», fonti, ipotesi, [IPOTESI], domande di validazione → persona: «Fonti ed evidenze disponibili» e «Ipotesi da verificare e informazioni mancanti»; journey: «Fonti e ipotesi».
+- Riga «Emozioni» e «curva emotiva» → riga «Emozioni e loro base»: ogni cella contiene emozione, punteggio da −2 a +2 e base (dichiarata, interpretata o ipotizzata).
+- Righe «Difficoltà» e «Opportunità» → righe «Criticità e barriere» e «Opportunità di miglioramento».
+- «Momenti critici», indicatori HEART e «Continuità tra touchpoint» → in «Fonti e ipotesi», sotto le voci omonime.
+- «Aspettative iniziali» del journey → riga «Pensieri e aspettative» della prima fase (e, se serve, in «Scenario e obiettivo» dell'intestazione).
+</corrispondenze>
+
 <regole>
-1. Fai emergere tutti i problemi elencati nel prompt singolo, ciascuno citato almeno una volta nel formato [Sxx · criterio · Gx] (es. [S17 · H4 · G4], [S59 · LG1 · G4], [S74 · prestazioni]) o [X0n · analisi preliminare, da verificare]. Non citare problemi del catalogo che il prompt singolo non assegna, salvo al massimo due in più se sono davvero coerenti con la persona: in quel caso spiegalo nelle note per il team.
+1. Fai emergere tutti i problemi elencati nel prompt singolo, ciascuno citato almeno una volta nel formato [Sxx · criterio · Gx] (es. [S17 · H4 · G4], [S59 · LG1 · G4], [S74 · prestazioni]) o [X0n · analisi preliminare, da verificare]. Non citare problemi del catalogo che il prompt singolo non assegna, salvo al massimo due in più se sono davvero coerenti con la persona: in quel caso spiegalo nel campo delle fonti e ipotesi.
 2. Non inventare problemi del sito. Se ipotizzi un comportamento del sito non presente nel catalogo (per esempio l'area riservata dei progettisti, che la presentazione non ha analizzato), marcalo con [IPOTESI].
 3. Non inventare numeri, date, URL, citazioni o nomi di persone reali. I progetti reali (MILK-ACT, Mind the Climate, ecc.) si possono nominare come oggetti della visita, mai attribuendo loro persone reali. I nomi delle personas sono fittizi.
 4. Il problema deve sembrare vissuto dalla persona: descrivi che cosa fa, che cosa pensa e che cosa prova, poi collega il problema all'euristica o al concetto teorico pertinente. Evita di trasformare la persona in un elenco di difetti del sito: una persona ha anche obiettivi, momenti positivi e strategie di aggiramento.
 5. Le esigenze di accessibilità vanno descritte con rispetto e precisione (strumenti usati, strategie), senza pietismo e senza stereotipi.
-6. Coerenza: età, dispositivo, familiarità digitale, frequenza d'uso e accessibilità devono essere quelli indicati nella scheda del prompt singolo. Puoi aggiungere dettagli plausibili (famiglia, hobby, abitudini) purché non li contraddicano.
-7. Queste sono personas ipotetiche (proto-personas) derivate da una valutazione euristica, non da ricerca con utenti: dichiaralo nella sezione finale «Note per il team».
+6. Coerenza: età, dispositivo, familiarità digitale, frequenza d'uso e accessibilità devono essere quelli indicati nella scheda del prompt singolo. Puoi aggiungere dettagli plausibili (famiglia, hobby, abitudini) purché non li contraddicano e siano pertinenti al servizio: il template chiede un profilo utile al progetto, non una biografia (evita dati sensibili non pertinenti come orientamento sessuale, religione o idee politiche).
+7. Queste sono personas ipotetiche derivate da una valutazione euristica, non da ricerca con utenti: nella scheda persona spunta «Proto-persona»; nella scheda journey spunta «As-is (attuale)» e «Base: Mista» (evidenze sul sito dalla valutazione euristica, comportamenti della persona ipotizzati) e spiegalo in «Fonti e ipotesi».
 8. Lingua italiana; termini tecnici inglesi quando sono quelli usati nella letteratura HCI.
-9. Rispondi solo con il documento in Markdown, nel formato richiesto, senza frasi introduttive né commenti finali. Non racchiudere l'intero documento in un blocco di codice.
+9. Rispondi solo con il documento in Markdown che riproduce il template, senza frasi introduttive né commenti finali. Non racchiudere l'intero documento in un blocco di codice. Il front matter iniziale è un metadato per il gruppo e non va riportato nel PDF.
 </regole>
 
 <formato_persona>
-Il documento persona deve avere esattamente questa struttura, con questi titoli e in questo ordine. I titoli marcati «(integrazione)» sono aggiunte rispetto alle sezioni standard degli appunti.
+Riproduci la «Scheda persona» del template, con questi campi, queste etichette e quest'ordine (nel PDF i riquadri sono su due colonne: l'ordine sotto è quello di lettura, da sinistra a destra e dall'alto in basso). Nei riquadri usa elenchi puntati brevi, come nel template.
 
 ---
 id: Pxx
@@ -154,64 +180,68 @@ tipo: persona
 nome: Nome Cognome
 eta: numero
 ruolo: donatore | promotore | visitatore
-archetipo: etichetta di 2–5 parole
-citta: città
-occupazione: occupazione
 dispositivo_principale: dispositivo
-canali: [elenco dei canali usati]
-familiarita_digitale: 1–5 (testo breve)
+familiarita_digitale: 1–5
 accessibilita: esigenza oppure "nessuna esigenza specifica"
 frequenza_uso: descrizione breve
 problemi_citati: [elenco degli ID citati, es. S17, S23, X02]
 ---
 
-# Pxx · Nome Cognome, «archetipo»
+# Scheda persona
+Cristina Gena · Human-Computer Interaction
 
-## Informazioni del profilo
-Elenco puntato di 6–8 voci: età, città, occupazione, situazione familiare, istruzione, rapporto con UniTo e con Ginger, un tratto personale.
+Gruppo: Gruppo A · Data/versione: 27/10/2026 · v1
+Servizio o progetto: IdeaGinger · Funds TOgether (Università di Torino)
+Tipo: ☒ Proto-persona ☐ Persona basata sulla ricerca
 
-## Motto
-> «Una frase in prima persona, al massimo 15 parole, che riassume l'attitudine verso il servizio.»
+### Nome convenzionale e descrizione del profilo
+Nome, età, occupazione, città, situazione familiare, rapporto con UniTo e con Ginger, archetipo tra virgolette (2–4 righe).
 
-## Comportamenti (abitudini e difficoltà)
-### Abitudini
-4–6 punti su come si informa, decide, dona o lavora.
-### Difficoltà con il servizio
-4–7 punti. Ogni difficoltà legata al sito cita il problema del catalogo.
+### Scenario e obiettivo principale
+2–3 righe: in quale situazione arriva al servizio e che cosa vuole ottenere.
 
-## Frequenza d'uso del servizio
-2–4 righe: quanto spesso, in quali momenti, per quanto tempo per visita.
+### Attività e comportamenti
+4–6 punti: abitudini, come si informa, decide, dona o lavora.
 
-## Familiarità con gli strumenti digitali
-Livello da 1 a 5 con motivazione; che cosa sa fare con sicurezza e dove si blocca.
-
-## Strumenti di riferimento
-Dispositivi, sistema operativo, browser, app, tecnologie assistive, altri servizi di donazione o crowdfunding conosciuti.
-
-## Obiettivi e motivazioni (integrazione)
-3–5 punti: perché usa il servizio e che cosa considera un successo.
-
-## Bisogni e aspettative verso il sito (integrazione)
+### Bisogni e aspettative
 3–5 punti, formulati come bisogni dell'utente (non come soluzioni tecniche).
 
-## Problemi del sito che la riguardano (integrazione)
-Tabella con colonne: Problema | Citazione | Impatto su questa persona | Soluzione proposta nella presentazione. Una riga per ogni problema citato.
+### Obiettivi e motivazioni
+3–5 punti: perché usa il servizio e che cosa considera un successo.
 
-## Note per il team
-- Fonti: presentazione del Gruppo A (slide citate) ed eventuali fatti integrativi.
-- Ipotesi: elenco dei dettagli inventati per dare realismo e delle affermazioni marcate [IPOTESI].
-- Validazione suggerita: 1–2 domande da porre in un'intervista o in un test con utenti simili.
+### Difficoltà e frustrazioni
+5–10 punti: difficoltà personali e difficoltà con il sito; ogni difficoltà legata al sito cita il problema del catalogo e dice in mezza riga come la vive la persona.
+
+### Contesto e vincoli di utilizzo
+Dove, quando e con quale dispositivo usa il servizio; frequenza d'uso (quanto spesso, durata delle visite); vincoli di tempo, rete, attenzione.
+
+### Competenze e strumenti digitali
+Familiarità digitale da 1 a 5 con motivazione; che cosa sa fare e dove si blocca; dispositivi, sistema operativo, browser, app, tecnologie assistive, altri servizi di donazione o crowdfunding conosciuti.
+
+### Esigenze di accessibilità
+Esigenze permanenti, temporanee o situazionali e strategie usate; «Nessuna esigenza specifica» se non ce ne sono.
+
+### Frase rappresentativa e provenienza
+> «Una frase in prima persona, al massimo 15 parole.»
+Provenienza: sintesi costruita dal gruppo (non è una frase realmente raccolta).
+
+### Fonti ed evidenze disponibili
+- Presentazione «Funds TOgether: analisi di usabilità», Gruppo A: elenco degli ID delle slide citate.
+- Eventuali fatti integrativi X0n (analisi preliminare, da verificare).
+- Nessuna ricerca diretta con utenti.
+
+### Ipotesi da verificare e informazioni mancanti
+- Dettagli inventati per dare realismo e affermazioni marcate [IPOTESI].
+- 1–2 domande da porre in un'intervista o in un test con utenti simili.
 </formato_persona>
 
 <formato_journey>
-Il documento journey deve avere esattamente questa struttura, con questi titoli e in questo ordine.
+Riproduci la «Scheda user journey» del template, con questi campi, queste etichette e quest'ordine. Le fasi sono le colonne: usa i nomi e il numero di fasi indicati dal prompt singolo (il template permette di aggiungere o eliminare colonne).
 
 ---
 id: Jxx
 tipo: journey_map
 persona: Pxx
-titolo: titolo breve del percorso
-obiettivo: obiettivo della persona in una frase
 fasi: [nomi delle fasi in ordine]
 canali: [canali usati]
 problemi_citati: [elenco degli ID citati]
@@ -219,40 +249,35 @@ fase_emozione_min: nome della fase
 fase_emozione_max: nome della fase
 ---
 
-# Jxx · Titolo (persona Pxx, Nome Cognome)
+# Scheda user journey
+Cristina Gena · Human-Computer Interaction
 
-## Scenario e obiettivo
-Un paragrafo di 4–6 frasi: punto di partenza, contesto (luogo, momento, dispositivo), obiettivo, vincoli (tempo, budget, accessibilità).
+Gruppo: Gruppo A · Data/versione: 27/10/2026 · v1 · Servizio: IdeaGinger · Funds TOgether (Università di Torino)
+Persona: Pxx · Nome Cognome · Scenario e obiettivo: una frase con situazione e obiettivo
+Inizio del percorso: evento o luogo da cui parte · Fine del percorso: esito con cui si chiude
+Mappa: ☒ As-is (attuale) ☐ To-be (proposta) · Base: ☐ Ricerca ☐ Ipotesi ☒ Mista
 
-## Aspettative iniziali
-3–4 punti: che cosa la persona si aspetta dal sito prima di iniziare (il suo modello mentale).
+| Dimensione | Fase 1 · nome | Fase 2 · nome | … |
+|---|---|---|---|
+| **Azioni e attività** | | | |
+| **Touchpoint e canali** | | | |
+| **Pensieri e aspettative** | | | |
+| **Emozioni e loro base** | | | |
+| **Criticità e barriere** | | | |
+| **Opportunità di miglioramento** | | | |
 
-## Journey map
-Una tabella Markdown con le fasi in colonna (stesse fasi del front matter) e queste righe, in quest'ordine: Azioni, Pensieri, Emozioni, Touchpoint, Canali, Difficoltà, Opportunità.
-- Celle brevi: al massimo 25 parole; usa <br> per andare a capo dentro una cella.
-- Pensieri in prima persona, tra virgolette.
-- Emozioni: parola chiave e punteggio tra parentesi, da −2 a +2 (es. «Frustrazione (−2)»).
-- Difficoltà: con la citazione del problema; scrivi «—» se in quella fase non ci sono difficoltà.
-- Opportunità: la soluzione che risolverebbe la difficoltà, coerente con quella proposta nella presentazione.
+Regole per le celle:
+- Al massimo 30 parole per cella; usa <br> per andare a capo dentro una cella.
+- Touchpoint e canali: «touchpoint · canale» (es. «Scelta della ricompensa · sito da smartphone»); non confondere i due concetti.
+- Pensieri e aspettative: in prima persona, tra virgolette.
+- Emozioni e loro base: emozione, punteggio da −2 a +2 e base, es. «Frustrazione (−2) · ipotizzata: l'errore compare dopo l'invio». Qui le emozioni sono sempre ipotizzate o interpretate, mai dichiarate.
+- Criticità e barriere: con la citazione del problema; «—» se in quella fase non ce ne sono.
+- Opportunità di miglioramento: per ogni criticità, la soluzione coerente con quella proposta nella presentazione.
 
-## Curva emotiva
-Tabella: Fase | Punteggio (−2…+2) | Motivo in una frase. Il punteggio coincide con quello della riga Emozioni.
-
-## Difficoltà e opportunità di miglioramento
-Per ogni difficoltà, un blocco:
-### Dn · Titolo breve [citazione]
-- Fase:
-- Che cosa succede alla persona:
-- Perché è un problema: euristica o concetto teorico pertinente (es. golfo della valutazione, carico sulla memoria, attenzione divisa)
-- Soluzione proposta nella presentazione:
-- Effetto atteso sull'esperienza della persona:
-
-## Momenti critici
-2–4 punti: momenti in cui la persona rischia di abbandonare o in cui il servizio si gioca la fiducia, con l'indicatore HEART più pertinente (Happiness, Engagement, Adoption, Retention, Task success) e una metrica osservabile.
-
-## Note per il team
-- Fonti: slide citate ed eventuali fatti integrativi.
-- Ipotesi: passaggi non verificati nella presentazione, marcati [IPOTESI].
+### Fonti e ipotesi
+- Fonti: ID delle slide e dei fatti integrativi citati; nessuna ricerca diretta con utenti; motivo della base «Mista».
+- Ipotesi: passaggi non verificati nella presentazione, marcati [IPOTESI]; informazioni mancanti.
+- Momenti critici: 2–4 punti con fase, rischio (abbandono o perdita di fiducia), indicatore HEART pertinente (Happiness, Engagement, Adoption, Retention, Task success) e una metrica osservabile, senza inventare valori.
 - Continuità tra touchpoint: dove il percorso si interrompe o costringe a ripetere azioni.
 </formato_journey>
 
