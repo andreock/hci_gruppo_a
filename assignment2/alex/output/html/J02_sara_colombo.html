@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User journey · Sara Colombo</title>
+  <style>
+:root {
+  color-scheme: light;
+  --ink: #111820;
+  --muted: #4d5c67;
+  --line: #d9d9d9;
+  --panel: #e8f0f6;
+  --accent: #0b4f6c;
+  --paper: #ffffff;
+}
+* { box-sizing: border-box; }
+html { background: #eef1f3; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Calibri, "Segoe UI", Arial, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.35;
+}
+.sheet {
+  width: min(1120px, calc(100% - 32px));
+  margin: 24px auto;
+  padding: 44px 50px;
+  background: #fff;
+  box-shadow: 0 6px 26px rgba(20, 32, 40, .12);
+}
+h1 { margin: 0 0 4px; font-size: 25pt; line-height: 1.12; font-weight: 500; }
+.course { margin: 0 0 14px; }
+.meta { display: flex; flex-wrap: wrap; gap: 3px 18px; margin-bottom: 4px; }
+.meta p { margin: 0; }
+.instructions { margin: 10px 0 14px; color: var(--muted); font-size: 9pt; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid var(--line); padding: 9px; vertical-align: top; text-align: left; }
+th { font-weight: 700; }
+.field h2, .notes h2 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 10.5pt;
+  line-height: 1.25;
+}
+.field p, .field blockquote, .notes p { margin: 0; }
+ul { margin: 0; padding-left: 19px; }
+li + li { margin-top: 2px; }
+blockquote { font-style: italic; }
+.persona-grid { table-layout: fixed; }
+.persona-grid td { width: 50%; min-height: 88px; }
+.full-field { margin-top: 16px; border: 1px solid var(--line); padding: 12px; }
+.page-break { break-before: page; margin-top: 18px; }
+.journey-wrap { overflow-x: auto; }
+.journey { min-width: 1120px; table-layout: fixed; font-size: 8.4pt; line-height: 1.24; }
+.journey thead th, .journey tbody th { background: var(--panel); }
+.journey thead th:first-child, .journey tbody th { width: 132px; }
+.journey td, .journey th { padding: 7px; }
+.journey .notes-row td { background: #fbfcfd; }
+.journey .notes-row h2 { margin: 0 0 6px; font-size: 9pt; }
+.template-note { margin: 8px 0 0; font-size: 8.5pt; color: var(--muted); }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+@media (max-width: 760px) {
+  .sheet { width: 100%; margin: 0; padding: 24px 18px; box-shadow: none; }
+  .persona-grid, .persona-grid tbody, .persona-grid tr, .persona-grid td { display: block; width: 100%; }
+  .persona-grid td + td { border-top: 0; }
+  h1 { font-size: 22pt; }
+}
+@media print {
+  @page { size: Letter portrait; margin: 12mm; }
+  html, body { background: #fff; }
+  .sheet { width: 100%; margin: 0; padding: 0; box-shadow: none; }
+  .persona-grid tr, .full-field { break-inside: avoid; }
+  .journey-sheet { width: 100%; }
+  .journey { min-width: 0; font-size: 6.6pt; }
+  .journey td, .journey th { padding: 4px; }
+}
+
+@media print {
+  @page { size: Letter landscape; margin: 9mm; }
+  h1 { font-size: 20pt; }
+  .course { margin-bottom: 7px; }
+  .meta { font-size: 8pt; }
+  .instructions { margin: 6px 0 8px; }
+}
+</style>
+</head>
+<body>
+<main class="sheet journey-sheet">
+  <header>
+    <h1>Scheda user journey</h1>
+    <p class="course">Cristina Gena · Human-Computer Interaction</p>
+    <div class="meta"><p>Gruppo: Gruppo A · Data/versione: 27/10/2026 · v3 · Servizio: App di crowdfunding (servizio generico)</p>
+<p>Persona: Sara Colombo · Scenario e obiettivo: donare 20 € a una ricerca sul clima durante una pausa, riprendendo eventualmente da casa</p>
+<p>Inizio del percorso: link condiviso da un'amica sui social · Fine del percorso: donazione completata sul laptop e conferma ricevuta</p>
+<p>Mappa: ☒ As-is (attuale) ☐ To-be (proposta) · Base: ☐ Ricerca ☒ Ipotesi ☐ Mista</p></div>
+    <p class="instructions">Le fasi sono colonne; le dimensioni del percorso sono righe. La sesta fase è stata aggiunta come previsto dal template.</p>
+  </header>
+  <div class="journey-wrap" role="region" aria-label="User journey di Sara Colombo" tabindex="0">
+    <table class="journey">
+      <caption class="sr-only">Mappa del percorso di Sara Colombo</caption>
+      <thead><tr><th scope="col">Dimensione</th><th scope="col">Fase 1 · Scoperta sui social</th><th scope="col">Fase 2 · Primo caricamento</th><th scope="col">Fase 3 · Valutazione rapida</th><th scope="col">Fase 4 · Scelta della ricompensa</th><th scope="col">Fase 5 · Tentativo e interruzione</th><th scope="col">Fase 6 · Ripresa e conclusione</th></tr></thead>
+      <tbody><tr><th scope="row">Azioni e attività</th><td>Vede la storia dell'amica, legge il messaggio e apre il link.</td><td>Attende il caricamento sul 4G e controlla di essere nel progetto giusto.</td><td>Scorre obiettivo, promotore, uso dei fondi e scadenza; prova ad aprire i contatti.</td><td>Scorre le opzioni e cerca un importo libero di 20 €.</td><td>Compila il modulo; l'errore tardivo e la fine della pausa la interrompono. Copia il link in chat.</td><td>A casa riapre il link sul laptop, confronta altri progetti e completa la donazione.</td></tr><tr><th scope="row">Touchpoint e canali</th><td>Storia e link · social network</td><td>Pagina progetto · sito da smartphone</td><td>Sommario, sezioni e contatto · sito da smartphone</td><td>Ricompense e importo · sito da smartphone</td><td>Modulo e «Copia link» · sito da smartphone e messaggistica</td><td>Link salvato, elenco, modulo e conferma · sito da laptop ed email</td></tr><tr><th scope="row">Pensieri e aspettative</th><td>«Se lo condivide lei, vale la pena guardare subito.»</td><td>«Ho pochi minuti: spero che la pagina si apra.»</td><td>«Mi bastano i fatti principali per decidere.»</td><td>«Posso mettere 20 € senza scegliere un premio?»</td><td>«Ho perso tempo e ora devo tornare in reparto.»</td><td>«Voglio ripartire dal punto raggiunto e chiudere senza sorprese.»</td></tr><tr><th scope="row">Emozioni e loro base</th><td>Interesse (+2) · ipotizzato: la fonte è una persona fidata.</td><td>Impazienza (0) · ipotizzata: il caricamento è lento.</td><td>Fiducia (+1) · ipotizzata: il riepilogo risponde alle domande essenziali.</td><td>Dubbio (-1) · ipotizzato: importo libero e ricompense non sono distinti.</td><td>Frustrazione (-2) · ipotizzata: errore tardivo, lentezza e interruzione.</td><td>Soddisfazione (+1) · ipotizzata: conclude su uno schermo più comodo.</td></tr><tr><th scope="row">Criticità e barriere</th><td>—</td><td>Il contenuto principale compare dopo diversi secondi sulla rete debole.</td><td>Pagina molto lunga; il contatto non mostra caricamento e sembra inattivo.</td><td>Lista lunga e non confrontabile; l'importo libero non è riconoscibile.</td><td>Modulo lento ed errore soltanto dopo l'invio; i dati non sono salvati [IPOTESI].</td><td>Giorni negativi confondono; sullo smartphone il carosello non segnalava altre card. Deve reinserire i dati [IPOTESI].</td></tr><tr><th scope="row">Opportunità di miglioramento</th><td>—</td><td>Pagina leggera, priorità al contenuto essenziale e indicatore di avanzamento del caricamento.</td><td>Sommario con ancore; contatto con stato di caricamento e risposta visibile.</td><td>Opzioni comprimibili e confrontabili; pulsante «Dona un importo libero» con minimo esplicito.</td><td>Validazione durante la compilazione, salvataggio sicuro della bozza e link di ripresa.</td><td>Scadenza in data naturale; indicatori e frecce del carosello; ripresa cross-device con riepilogo dei dati salvati.</td></tr><tr class="notes-row"><th scope="row">Fonti e ipotesi</th><td colspan="6"><div class="notes"><ul>
+<li>Fonti: percorso costruito dal gruppo a partire da problemi di usabilità ricorrenti nelle app di crowdfunding; nessuna ricerca diretta con utenti.</li>
+<li>Ipotesi: il modulo non conserva i dati e il link in chat consente la ripresa sul laptop; entrambe le condizioni vanno verificate.</li>
+<li>Momento critico - fase 2: la lentezza può causare abbandono; HEART Adoption: aperture del progetto che raggiungono il contenuto principale.</li>
+<li>Momento critico - fase 5: errore e interruzione compromettono il compito; HEART Task success: donazioni completate dopo una ripresa e tempo necessario.</li>
+<li>Continuità tra touchpoint: il passaggio smartphone-messaggistica-laptop costringe a reinserire i dati; servono bozza salvata, riepilogo e link di ripresa.</li>
+</ul></div></td></tr></tbody>
+    </table>
+  </div>
+  <p class="template-note">Emozioni: punteggio da -2 a +2 e base ipotizzata. Fonti: proto-persona non basata su ricerca diretta.</p>
+</main>
+</body>
+</html>

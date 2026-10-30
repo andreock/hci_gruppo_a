@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User journey · Davide Rinaldi</title>
+  <style>
+:root {
+  color-scheme: light;
+  --ink: #111820;
+  --muted: #4d5c67;
+  --line: #d9d9d9;
+  --panel: #e8f0f6;
+  --accent: #0b4f6c;
+  --paper: #ffffff;
+}
+* { box-sizing: border-box; }
+html { background: #eef1f3; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Calibri, "Segoe UI", Arial, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.35;
+}
+.sheet {
+  width: min(1120px, calc(100% - 32px));
+  margin: 24px auto;
+  padding: 44px 50px;
+  background: #fff;
+  box-shadow: 0 6px 26px rgba(20, 32, 40, .12);
+}
+h1 { margin: 0 0 4px; font-size: 25pt; line-height: 1.12; font-weight: 500; }
+.course { margin: 0 0 14px; }
+.meta { display: flex; flex-wrap: wrap; gap: 3px 18px; margin-bottom: 4px; }
+.meta p { margin: 0; }
+.instructions { margin: 10px 0 14px; color: var(--muted); font-size: 9pt; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid var(--line); padding: 9px; vertical-align: top; text-align: left; }
+th { font-weight: 700; }
+.field h2, .notes h2 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 10.5pt;
+  line-height: 1.25;
+}
+.field p, .field blockquote, .notes p { margin: 0; }
+ul { margin: 0; padding-left: 19px; }
+li + li { margin-top: 2px; }
+blockquote { font-style: italic; }
+.persona-grid { table-layout: fixed; }
+.persona-grid td { width: 50%; min-height: 88px; }
+.full-field { margin-top: 16px; border: 1px solid var(--line); padding: 12px; }
+.page-break { break-before: page; margin-top: 18px; }
+.journey-wrap { overflow-x: auto; }
+.journey { min-width: 1120px; table-layout: fixed; font-size: 8.4pt; line-height: 1.24; }
+.journey thead th, .journey tbody th { background: var(--panel); }
+.journey thead th:first-child, .journey tbody th { width: 132px; }
+.journey td, .journey th { padding: 7px; }
+.journey .notes-row td { background: #fbfcfd; }
+.journey .notes-row h2 { margin: 0 0 6px; font-size: 9pt; }
+.template-note { margin: 8px 0 0; font-size: 8.5pt; color: var(--muted); }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+@media (max-width: 760px) {
+  .sheet { width: 100%; margin: 0; padding: 24px 18px; box-shadow: none; }
+  .persona-grid, .persona-grid tbody, .persona-grid tr, .persona-grid td { display: block; width: 100%; }
+  .persona-grid td + td { border-top: 0; }
+  h1 { font-size: 22pt; }
+}
+@media print {
+  @page { size: Letter portrait; margin: 12mm; }
+  html, body { background: #fff; }
+  .sheet { width: 100%; margin: 0; padding: 0; box-shadow: none; }
+  .persona-grid tr, .full-field { break-inside: avoid; }
+  .journey-sheet { width: 100%; }
+  .journey { min-width: 0; font-size: 6.6pt; }
+  .journey td, .journey th { padding: 4px; }
+}
+
+@media print {
+  @page { size: Letter landscape; margin: 9mm; }
+  h1 { font-size: 20pt; }
+  .course { margin-bottom: 7px; }
+  .meta { font-size: 8pt; }
+  .instructions { margin: 6px 0 8px; }
+}
+</style>
+</head>
+<body>
+<main class="sheet journey-sheet">
+  <header>
+    <h1>Scheda user journey</h1>
+    <p class="course">Cristina Gena · Human-Computer Interaction</p>
+    <div class="meta"><p>Gruppo: Gruppo A · Data/versione: 27/10/2026 · v3 · Servizio: App di crowdfunding (servizio generico)</p>
+<p>Persona: Davide Rinaldi · Scenario e obiettivo: sostenere una ricerca accessibile o trovare un'alternativa attiva, usando solo tastiera e screen reader</p>
+<p>Inizio del percorso: email della mailing list associativa · Fine del percorso: donazione di 30 € e resoconto condiviso con l'associazione</p>
+<p>Mappa: ☒ As-is (attuale) ☐ To-be (proposta) · Base: ☐ Ricerca ☒ Ipotesi ☐ Mista</p></div>
+    <p class="instructions">Le fasi sono colonne; le dimensioni del percorso sono righe. La sesta fase è stata aggiunta come previsto dal template.</p>
+  </header>
+  <div class="journey-wrap" role="region" aria-label="User journey di Davide Rinaldi" tabindex="0">
+    <table class="journey">
+      <caption class="sr-only">Mappa del percorso di Davide Rinaldi</caption>
+      <thead><tr><th scope="col">Dimensione</th><th scope="col">Fase 1 · Scoperta nella mailing list</th><th scope="col">Fase 2 · Esplorazione del progetto</th><th scope="col">Fase 3 · Verifica dello stato</th><th scope="col">Fase 4 · Ricerca di un'alternativa</th><th scope="col">Fase 5 · Donazione</th><th scope="col">Fase 6 · Resoconto all'associazione</th></tr></thead>
+      <tbody><tr><th scope="row">Azioni e attività</th><td>Legge l'email con sintesi vocale e apre il link dalla tastiera.</td><td>Con NVDA usa H per i titoli, landmark ed elenco dei link per ricostruire la pagina.</td><td>Cerca una dicitura testuale; prova importo e ricompense per capire se la raccolta è conclusa.</td><td>Torna alla home, apre il menu, esplora le card e rientra nell'elenco più volte.</td><td>Sceglie 30 €, compila da tastiera, invia e cerca l'eventuale messaggio di errore.</td><td>Scrive alla mailing list una sintesi di problemi, soluzioni aggirate e aspetti riusciti.</td></tr><tr><th scope="row">Touchpoint e canali</th><td>Messaggio e link · email</td><td>Scheda progetto · sito desktop con NVDA</td><td>Stato, importo e ricompense · sito desktop con NVDA</td><td>Homepage, menu ed elenco · sito desktop con NVDA</td><td>Modulo e conferma · sito desktop con NVDA</td><td>Resoconto · email e mailing list</td></tr><tr><th scope="row">Pensieri e aspettative</th><td>«Un progetto sull'accessibilità dovrebbe essere accessibile anche nel modo in cui si presenta.»</td><td>«Titoli e descrizioni devono dirmi che cosa vedrebbero gli altri.»</td><td>«È ancora possibile contribuire oppure questi controlli sono rimasti attivi per errore?»</td><td>«Devo poter distinguere ogni progetto e ritrovare il punto.»</td><td>«L'errore deve essere annunciato vicino al campo da correggere.»</td><td>«Questa esperienza può aiutare il gruppo a valutare il servizio.»</td></tr><tr><th scope="row">Emozioni e loro base</th><td>Interesse (+2) · ipotizzato: il tema coincide con i suoi valori.</td><td>Irritazione (-1) · ipotizzata: struttura e spiegazioni a comparsa sono ambigue.</td><td>Sfiducia (-2) · ipotizzata: lo stato concluso non viene annunciato.</td><td>Determinazione (-1) · ipotizzata: l'esperienza è lenta ma cerca un'alternativa.</td><td>Sollievo (+1) · ipotizzato: i pulsanti del progetto attivo sono etichettati.</td><td>Consapevolezza (+1) · ipotizzata: trasforma l'esperienza in feedback utile.</td></tr><tr><th scope="row">Criticità e barriere</th><td>—</td><td>Immagini senza descrizione, titoli vuoti e tooltip annunciati come link impediscono di capire struttura e funzione.</td><td>Stato affidato a colore o simbolo; ricompense e importo restano attivi nella campagna conclusa.</td><td>Menu non chiudibile con Esc; link uguali e duplicati; card senza nome; tornando indietro perde posizione e risultati caricati.</td><td>L'errore appare dopo l'invio e non riceve focus: deve cercarlo nell'intera pagina.</td><td>L'accessibilità complessiva mediocre riduce la credibilità del servizio e del progetto.</td></tr><tr><th scope="row">Opportunità di miglioramento</th><td>—</td><td>Titoli gerarchici, alt pertinenti e spiegazioni attivabili come pulsanti con nome, stato e descrizione accessibili.</td><td>Etichetta «Campagna conclusa» annunciata; controlli di donazione disabilitati e spiegazione dell'esito.</td><td>Menu con Esc e focus gestito; link descrittivi; card nominate; posizione, filtri e risultati preservati al ritorno.</td><td>Validazione immediata; riepilogo errori con focus e collegamenti ai campi; messaggi associati semanticamente.</td><td>Test con tastiera e screen reader; dichiarazione di accessibilità e canale di feedback con tempi di risposta.</td></tr><tr class="notes-row"><th scope="row">Fonti e ipotesi</th><td colspan="6"><div class="notes"><ul>
+<li>Fonti: percorso costruito dal gruppo a partire da problemi di usabilità ricorrenti nelle app di crowdfunding; nessuna ricerca diretta con utenti.</li>
+<li>Ipotesi: Davide interrompe il percorso quando incontra controlli senza nome e condivide sempre un resoconto; entrambe le ipotesi vanno validate.</li>
+<li>Momento critico - fase 3: il golfo della valutazione può far tentare una donazione impossibile; HEART Task success: riconoscimento corretto dello stato della campagna.</li>
+<li>Momento critico - fase 4: navigazione rumorosa e perdita di posizione possono causare abbandono; HEART Happiness: valutazione percepita di autonomia e fiducia.</li>
+<li>Continuità tra touchpoint: dall'email alla pagina il contesto è preservato; tra progetto e lista, invece, posizione e risultati caricati vengono persi.</li>
+</ul></div></td></tr></tbody>
+    </table>
+  </div>
+  <p class="template-note">Emozioni: punteggio da -2 a +2 e base ipotizzata. Fonti: proto-persona non basata su ricerca diretta.</p>
+</main>
+</body>
+</html>

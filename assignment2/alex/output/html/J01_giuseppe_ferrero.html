@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User journey · Giuseppe Ferrero</title>
+  <style>
+:root {
+  color-scheme: light;
+  --ink: #111820;
+  --muted: #4d5c67;
+  --line: #d9d9d9;
+  --panel: #e8f0f6;
+  --accent: #0b4f6c;
+  --paper: #ffffff;
+}
+* { box-sizing: border-box; }
+html { background: #eef1f3; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Calibri, "Segoe UI", Arial, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.35;
+}
+.sheet {
+  width: min(1120px, calc(100% - 32px));
+  margin: 24px auto;
+  padding: 44px 50px;
+  background: #fff;
+  box-shadow: 0 6px 26px rgba(20, 32, 40, .12);
+}
+h1 { margin: 0 0 4px; font-size: 25pt; line-height: 1.12; font-weight: 500; }
+.course { margin: 0 0 14px; }
+.meta { display: flex; flex-wrap: wrap; gap: 3px 18px; margin-bottom: 4px; }
+.meta p { margin: 0; }
+.instructions { margin: 10px 0 14px; color: var(--muted); font-size: 9pt; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid var(--line); padding: 9px; vertical-align: top; text-align: left; }
+th { font-weight: 700; }
+.field h2, .notes h2 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 10.5pt;
+  line-height: 1.25;
+}
+.field p, .field blockquote, .notes p { margin: 0; }
+ul { margin: 0; padding-left: 19px; }
+li + li { margin-top: 2px; }
+blockquote { font-style: italic; }
+.persona-grid { table-layout: fixed; }
+.persona-grid td { width: 50%; min-height: 88px; }
+.full-field { margin-top: 16px; border: 1px solid var(--line); padding: 12px; }
+.page-break { break-before: page; margin-top: 18px; }
+.journey-wrap { overflow-x: auto; }
+.journey { min-width: 1120px; table-layout: fixed; font-size: 8.4pt; line-height: 1.24; }
+.journey thead th, .journey tbody th { background: var(--panel); }
+.journey thead th:first-child, .journey tbody th { width: 132px; }
+.journey td, .journey th { padding: 7px; }
+.journey .notes-row td { background: #fbfcfd; }
+.journey .notes-row h2 { margin: 0 0 6px; font-size: 9pt; }
+.template-note { margin: 8px 0 0; font-size: 8.5pt; color: var(--muted); }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+@media (max-width: 760px) {
+  .sheet { width: 100%; margin: 0; padding: 24px 18px; box-shadow: none; }
+  .persona-grid, .persona-grid tbody, .persona-grid tr, .persona-grid td { display: block; width: 100%; }
+  .persona-grid td + td { border-top: 0; }
+  h1 { font-size: 22pt; }
+}
+@media print {
+  @page { size: Letter portrait; margin: 12mm; }
+  html, body { background: #fff; }
+  .sheet { width: 100%; margin: 0; padding: 0; box-shadow: none; }
+  .persona-grid tr, .full-field { break-inside: avoid; }
+  .journey-sheet { width: 100%; }
+  .journey { min-width: 0; font-size: 6.6pt; }
+  .journey td, .journey th { padding: 4px; }
+}
+
+@media print {
+  @page { size: Letter landscape; margin: 9mm; }
+  h1 { font-size: 20pt; }
+  .course { margin-bottom: 7px; }
+  .meta { font-size: 8pt; }
+  .instructions { margin: 6px 0 8px; }
+}
+</style>
+</head>
+<body>
+<main class="sheet journey-sheet">
+  <header>
+    <h1>Scheda user journey</h1>
+    <p class="course">Cristina Gena · Human-Computer Interaction</p>
+    <div class="meta"><p>Gruppo: Gruppo A · Data/versione: 27/10/2026 · v3 · Servizio: App di crowdfunding (servizio generico)</p>
+<p>Persona: Giuseppe Ferrero · Scenario e obiettivo: donare 50 € a una ricerca sui neonati, verificando destinazione e affidabilità dei fondi</p>
+<p>Inizio del percorso: articolo letto domenica mattina · Fine del percorso: conferma della donazione e verifica con una persona fidata</p>
+<p>Mappa: ☒ As-is (attuale) ☐ To-be (proposta) · Base: ☐ Ricerca ☒ Ipotesi ☐ Mista</p></div>
+    <p class="instructions">Le fasi sono colonne; le dimensioni del percorso sono righe. La sesta fase è stata aggiunta come previsto dal template.</p>
+  </header>
+  <div class="journey-wrap" role="region" aria-label="User journey di Giuseppe Ferrero" tabindex="0">
+    <table class="journey">
+      <caption class="sr-only">Mappa del percorso di Giuseppe Ferrero</caption>
+      <thead><tr><th scope="col">Dimensione</th><th scope="col">Fase 1 · Scoperta</th><th scope="col">Fase 2 · Orientamento</th><th scope="col">Fase 3 · Capire la donazione</th><th scope="col">Fase 4 · Valutare il progetto</th><th scope="col">Fase 5 · Donare</th><th scope="col">Fase 6 · Dopo la donazione</th></tr></thead>
+      <tbody><tr><th scope="row">Azioni e attività</th><td>Legge l'articolo, annota il nome e lo cerca sul tablet.</td><td>Apre il risultato e prova a capire chi gestisce il servizio.</td><td>Legge «Come funziona», ingrandisce il testo e cerca un contatto.</td><td>Esamina stato, scadenza, promotore e uso dei fondi; confronta i dati.</td><td>Sceglie 50 €, prova a ignorare le ricompense e compila il modulo.</td><td>Fotografa la conferma; telefona alla figlia o all'assistenza e attende un'email [IPOTESI].</td></tr><tr><th scope="row">Touchpoint e canali</th><td>Articolo · giornale cartaceo<br>Ricerca · motore di ricerca</td><td>Homepage · sito da tablet</td><td>Guida e numero di assistenza · sito da tablet e telefono</td><td>Elenco e scheda progetto · sito da tablet</td><td>Importo, ricompense e modulo · sito da tablet</td><td>Conferma · sito da tablet<br>Assistenza · telefono<br>Ricevuta · email</td></tr><tr><th scope="row">Pensieri e aspettative</th><td>«È una ricerca concreta: voglio capire come aiutarla.»</td><td>«Dove sono arrivato e chi garantisce questa raccolta?»</td><td>«Voglio una spiegazione semplice e un numero da chiamare.»</td><td>«Ha già superato l'obiettivo: il mio contributo serve ancora?»</td><td>«Voglio donare, non comprare una ricompensa; spero di non sbagliare.»</td><td>«Se una persona mi conferma tutto, posso stare tranquillo.»</td></tr><tr><th scope="row">Emozioni e loro base</th><td>Motivazione (+2) · ipotizzata: la causa richiama la nipote.</td><td>Incertezza (0) · ipotizzata: scopo e gestore non sono immediati.</td><td>Affaticamento (-1) · ipotizzato: testo denso, piccolo e pieno di gergo.</td><td>Confusione (-1) · ipotizzata: stato e scadenza sembrano contraddirsi.</td><td>Ansia (-2) · ipotizzata: regole ed errori non sono anticipati.</td><td>Sollievo (+1) · ipotizzato: il contatto umano conferma l'esito.</td></tr><tr><th scope="row">Criticità e barriere</th><td>Il titolo del risultato è troncato e il nome del servizio non è coerente.</td><td>La homepage non spiega subito il servizio; contrasto e dimensioni ostacolano la lettura.</td><td>Testo continuo, piccolo e con termini inglesi non spiegati; deve ingrandire.</td><td>Oltre 100%, giorni negativi e aperture inattese confondono lo stato e il tasto Indietro.</td><td>L'errore appare solo dopo l'invio; la ricompensa obbligata contrasta con il suo modello mentale.</td><td>[IPOTESI] L'email può tardare; senza un riferimento umano dubiterebbe dell'esito.</td></tr><tr><th scope="row">Opportunità di miglioramento</th><td>Titolo breve, descrittivo e nome del servizio coerente nei risultati.</td><td>Frase iniziale chiara; identità del gestore visibile; testo grande e contrasto almeno 4,5:1.</td><td>Indice, paragrafi brevi, glossario in italiano e telefono sempre visibile.</td><td>Stato testuale esplicito, data comprensibile e link interni nella stessa scheda con ritorno preservato.</td><td>Validazione immediata; importo libero evidente; riepilogo e spiegazione prima dell'invio.</td><td>Conferma immediata con codice, email accessibile e contatti con orari e tempi di risposta.</td></tr><tr class="notes-row"><th scope="row">Fonti e ipotesi</th><td colspan="6"><div class="notes"><ul>
+<li>Fonti: percorso costruito dal gruppo a partire da problemi di usabilità ricorrenti nelle app di crowdfunding; nessuna ricerca diretta con utenti.</li>
+<li>Ipotesi: Giuseppe fotografa lo schermo, telefona alla figlia e riceve un'email di conferma; questi comportamenti vanno verificati.</li>
+<li>Momento critico - fase 4: può rinunciare perché interpreta male lo stato; HEART Task success: quota di utenti che identifica correttamente se la campagna è attiva.</li>
+<li>Momento critico - fase 5: ansia o errore tardivo possono causare abbandono; HEART Task success: completamento del modulo e numero di correzioni prima dell'invio.</li>
+<li>Continuità tra touchpoint: passaggio da tablet a telefono; numero del progetto e stato del modulo devono restare disponibili senza ripetere la ricerca.</li>
+</ul></div></td></tr></tbody>
+    </table>
+  </div>
+  <p class="template-note">Emozioni: punteggio da -2 a +2 e base ipotizzata. Fonti: proto-persona non basata su ricerca diretta.</p>
+</main>
+</body>
+</html>

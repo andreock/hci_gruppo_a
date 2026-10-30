@@ -7,15 +7,15 @@ Questa cartella contiene tre proto-personas e i relativi user journey, prodotti 
 - `personas/`: schede sorgente in Markdown per Giuseppe Ferrero, Sara Colombo e Davide Rinaldi.
 - `journeys/`: user journey sorgente in Markdown, uno per ogni persona.
 - `documentazione_uso_ai.md`: sintesi di prompt, criticità delle prime bozze e revisioni effettuate.
-- `output/pdf/`: versioni PDF pronte per la revisione del gruppo.
-- `scripts/genera_pdf.py`: generatore riproducibile dei PDF a partire dai file Markdown.
+- `output/html/`: schede HTML compilate secondo i due template ufficiali.
+- `scripts/genera_html.py`: generatore riproducibile degli HTML a partire dai file Markdown.
 
-## Rigenerazione dei PDF
+## Apertura e rigenerazione
 
-Eseguire dalla cartella `alex`:
+I file in `output/html/` sono autonomi e si aprono direttamente in un browser, senza server. Per rigenerarli, eseguire dalla cartella `alex`:
 
 ```bash
-/home/mega/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/genera_pdf.py
+python3 scripts/genera_html.py
 ```
 
 I documenti descrivono proto-personas ipotetiche. Non derivano da interviste o osservazioni con utenti reali; le ipotesi da validare sono indicate esplicitamente nelle schede.

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scheda persona · Sara Colombo</title>
+  <style>
+:root {
+  color-scheme: light;
+  --ink: #111820;
+  --muted: #4d5c67;
+  --line: #d9d9d9;
+  --panel: #e8f0f6;
+  --accent: #0b4f6c;
+  --paper: #ffffff;
+}
+* { box-sizing: border-box; }
+html { background: #eef1f3; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Calibri, "Segoe UI", Arial, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.35;
+}
+.sheet {
+  width: min(1120px, calc(100% - 32px));
+  margin: 24px auto;
+  padding: 44px 50px;
+  background: #fff;
+  box-shadow: 0 6px 26px rgba(20, 32, 40, .12);
+}
+h1 { margin: 0 0 4px; font-size: 25pt; line-height: 1.12; font-weight: 500; }
+.course { margin: 0 0 14px; }
+.meta { display: flex; flex-wrap: wrap; gap: 3px 18px; margin-bottom: 4px; }
+.meta p { margin: 0; }
+.instructions { margin: 10px 0 14px; color: var(--muted); font-size: 9pt; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid var(--line); padding: 9px; vertical-align: top; text-align: left; }
+th { font-weight: 700; }
+.field h2, .notes h2 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 10.5pt;
+  line-height: 1.25;
+}
+.field p, .field blockquote, .notes p { margin: 0; }
+ul { margin: 0; padding-left: 19px; }
+li + li { margin-top: 2px; }
+blockquote { font-style: italic; }
+.persona-grid { table-layout: fixed; }
+.persona-grid td { width: 50%; min-height: 88px; }
+.full-field { margin-top: 16px; border: 1px solid var(--line); padding: 12px; }
+.page-break { break-before: page; margin-top: 18px; }
+.journey-wrap { overflow-x: auto; }
+.journey { min-width: 1120px; table-layout: fixed; font-size: 8.4pt; line-height: 1.24; }
+.journey thead th, .journey tbody th { background: var(--panel); }
+.journey thead th:first-child, .journey tbody th { width: 132px; }
+.journey td, .journey th { padding: 7px; }
+.journey .notes-row td { background: #fbfcfd; }
+.journey .notes-row h2 { margin: 0 0 6px; font-size: 9pt; }
+.template-note { margin: 8px 0 0; font-size: 8.5pt; color: var(--muted); }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+@media (max-width: 760px) {
+  .sheet { width: 100%; margin: 0; padding: 24px 18px; box-shadow: none; }
+  .persona-grid, .persona-grid tbody, .persona-grid tr, .persona-grid td { display: block; width: 100%; }
+  .persona-grid td + td { border-top: 0; }
+  h1 { font-size: 22pt; }
+}
+@media print {
+  @page { size: Letter portrait; margin: 12mm; }
+  html, body { background: #fff; }
+  .sheet { width: 100%; margin: 0; padding: 0; box-shadow: none; }
+  .persona-grid tr, .full-field { break-inside: avoid; }
+  .journey-sheet { width: 100%; }
+  .journey { min-width: 0; font-size: 6.6pt; }
+  .journey td, .journey th { padding: 4px; }
+}
+</style>
+</head>
+<body>
+<main class="sheet">
+  <header>
+    <h1>Scheda persona</h1>
+    <p class="course">Cristina Gena · Human-Computer Interaction</p>
+    <div class="meta">
+      <p>Gruppo: Gruppo A · Data/versione: 27/10/2026 · v3</p>
+      <p>Servizio o progetto: App di crowdfunding (servizio generico)</p>
+      <p>Tipo: ☒ Proto-persona ☐ Persona basata sulla ricerca</p>
+    </div>
+    <p class="instructions">Scheda compilata secondo il template ufficiale. Le ipotesi da validare sono indicate esplicitamente.</p>
+  </header>
+  <table class="persona-grid">
+    <caption class="sr-only">Campi della scheda persona di Sara Colombo</caption>
+    <tbody><tr><td><div class="field"><h2>Nome convenzionale e descrizione del profilo</h2><p>Sara Colombo, 34 anni, infermiera turnista in pronto soccorso a Torino. Convive con il compagno e un gatto; è pragmatica, solidale e attenta ai temi ambientali.</p></div></td><td><div class="field"><h2>Scenario e obiettivo principale</h2><p>Durante una pausa di dieci minuti vede sui social il progetto di ricerca sul clima condiviso da un'amica dottoranda. Vuole donare 20 € prima di tornare in reparto, con pochi passaggi e senza perdere ciò che ha già inserito.</p></div></td></tr>
+<tr><td><div class="field"><h2>Attività e comportamenti</h2><ul>
+<li>Lavora su turni, anche di notte, e organizza la giornata in finestre brevi.</li>
+<li>Corre al parco quando riesce e la sera guarda serie televisive.</li>
+<li>Segue profili di divulgazione scientifica e ambientale sui social.</li>
+<li>Usa home banking, app di consegne e l'app dei turni.</li>
+<li>Non legge istruzioni lunghe: prova un'azione e corregge in base al feedback.</li>
+<li>Ha già fatto due donazioni a raccolte fondi online.</li>
+</ul></div></td><td><div class="field"><h2>Bisogni e aspettative</h2><ul>
+<li>Capire rapidamente scopo, affidabilità e stato del progetto.</li>
+<li>Completare una donazione in pochi passaggi, anche con una mano.</li>
+<li>Poter scegliere subito un importo libero, senza ricompense obbligatorie.</li>
+<li>Ricevere errori immediati, specifici e facili da correggere.</li>
+<li>Riprendere su un altro dispositivo senza reinserire tutto.</li>
+</ul></div></td></tr>
+<tr><td><div class="field"><h2>Obiettivi e motivazioni</h2><ul>
+<li>Sostenere concretamente una causa ambientale segnalata da una persona fidata.</li>
+<li>Donare entro la fine della pausa senza distrarsi dal lavoro.</li>
+<li>Limitare l'importo a 20 € e mantenere il controllo della spesa.</li>
+<li>Ricevere una conferma che chiuda il compito senza dubbi.</li>
+</ul></div></td><td><div class="field"><h2>Difficoltà e frustrazioni</h2><ul>
+<li>La rete debole e il telefono datato rendono frustranti le pagine pesanti.</li>
+<li>Con attenzione divisa perde facilmente il punto raggiunto.</li>
+<li>Le pagine e le liste molto lunghe sono scomode da scorrere con il pollice.</li>
+<li>Non capisce subito se può donare liberamente senza scegliere una ricompensa.</li>
+<li>Si irrita quando un pulsante non dà feedback e sembra non rispondere.</li>
+<li>Gli errori mostrati solo alla fine consumano il poco tempo disponibile.</li>
+</ul></div></td></tr>
+<tr><td><div class="field"><h2>Contesto e vincoli di utilizzo</h2><p>Consulta le campagne dallo smartphone Android durante pause di 2-5 minuti, spesso con una sola mano, stanca e con 4G debole. Il telefono ha quattro anni e memoria quasi piena. Se interrotta, può riprendere la sera dal laptop di casa.</p></div></td><td><div class="field"><h2>Competenze e strumenti digitali</h2><ul>
+<li>Smartphone Android, social network, messaggistica, home banking, consegne e gestione turni.</li>
+<li>Laptop domestico usato soprattutto la sera.</li>
+<li>Procede per tentativi e si aspetta interazioni simili alle app quotidiane.</li>
+<li>Familiarità digitale: 3/5.</li>
+</ul></div></td></tr>
+<tr><td><div class="field"><h2>Esigenze di accessibilità</h2><p>Limitazioni situazionali: pause brevi, stanchezza dopo il turno notturno, attenzione divisa e una mano spesso occupata. Servono controlli grandi, contenuti essenziali, caricamento rapido e salvataggio dello stato.</p></div></td><td><div class="field"><h2>Frase rappresentativa e provenienza</h2><blockquote>«Se mi fido, voglio poter donare prima che finisca la pausa.»</blockquote>
+<p>Provenienza: sintesi costruita dal gruppo (non è una frase realmente raccolta).</p></div></td></tr></tbody>
+  </table>
+  <section class="full-field"><div class="field"><h2>Fonti ed evidenze disponibili</h2><p>Proto-persona costruita dal gruppo a partire da problemi di usabilità ricorrenti nelle app di crowdfunding. Non sono state svolte interviste o osservazioni dirette con utenti.</p></div></section>
+  <section class="full-field page-break"><div class="field"><h2>Ipotesi da verificare e informazioni mancanti</h2><ul>
+<li>Verificare se salverebbe una campagna per riprenderla più tardi.</li>
+<li>Capire quale metodo di pagamento usa più spesso da smartphone.</li>
+<li>In un'intervista: quanto tempo dedica a controllare l'affidabilità di un link social?</li>
+<li>In un'intervista: quale feedback le fa capire che un pulsante sta elaborando la richiesta?</li>
+</ul></div></section>
+</main>
+</body>
+</html>

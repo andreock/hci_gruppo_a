@@ -7,7 +7,7 @@ Sono state sviluppate tre proto-personas ipotetiche (P01-P03) e tre user journey
 ## Strumento e informazioni fornite
 
 - Strumento: OpenAI Codex, modello GPT-5.
-- Attività: generazione e revisione dei contenuti; controllo di coerenza tra persona e journey; verifica dei campi richiesti; produzione dei PDF.
+- Attività: generazione e revisione dei contenuti; controllo di coerenza tra persona e journey; verifica dei campi richiesti; produzione delle schede HTML.
 - Contesto fornito: obiettivo dell'Assignment 2, catalogo dei problemi dell'analisi euristica, regole di genericità, template ufficiali del corso e schede vincolanti P01-P03.
 - Vincoli principali: nessun riferimento a un servizio di crowdfunding reale; proto-personas chiaramente dichiarate; sei fasi per journey; emozioni da -2 a +2; ogni barriera associata a una soluzione; celle concise.
 
