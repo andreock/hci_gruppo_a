@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scheda persona · Giuseppe Ferrero</title>
+  <style>
+:root {
+  color-scheme: light;
+  --ink: #111820;
+  --muted: #4d5c67;
+  --line: #d9d9d9;
+  --panel: #e8f0f6;
+  --accent: #0b4f6c;
+  --paper: #ffffff;
+}
+* { box-sizing: border-box; }
+html { background: #eef1f3; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Calibri, "Segoe UI", Arial, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.35;
+}
+.sheet {
+  width: min(1120px, calc(100% - 32px));
+  margin: 24px auto;
+  padding: 44px 50px;
+  background: #fff;
+  box-shadow: 0 6px 26px rgba(20, 32, 40, .12);
+}
+h1 { margin: 0 0 4px; font-size: 25pt; line-height: 1.12; font-weight: 500; }
+.course { margin: 0 0 14px; }
+.meta { display: flex; flex-wrap: wrap; gap: 3px 18px; margin-bottom: 4px; }
+.meta p { margin: 0; }
+.instructions { margin: 10px 0 14px; color: var(--muted); font-size: 9pt; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid var(--line); padding: 9px; vertical-align: top; text-align: left; }
+th { font-weight: 700; }
+.field h2, .notes h2 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 10.5pt;
+  line-height: 1.25;
+}
+.field p, .field blockquote, .notes p { margin: 0; }
+ul { margin: 0; padding-left: 19px; }
+li + li { margin-top: 2px; }
+blockquote { font-style: italic; }
+.persona-grid { table-layout: fixed; }
+.persona-grid td { width: 50%; min-height: 88px; }
+.full-field { margin-top: 16px; border: 1px solid var(--line); padding: 12px; }
+.page-break { break-before: page; margin-top: 18px; }
+.journey-wrap { overflow-x: auto; }
+.journey { min-width: 1120px; table-layout: fixed; font-size: 8.4pt; line-height: 1.24; }
+.journey thead th, .journey tbody th { background: var(--panel); }
+.journey thead th:first-child, .journey tbody th { width: 132px; }
+.journey td, .journey th { padding: 7px; }
+.journey .notes-row td { background: #fbfcfd; }
+.journey .notes-row h2 { margin: 0 0 6px; font-size: 9pt; }
+.template-note { margin: 8px 0 0; font-size: 8.5pt; color: var(--muted); }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+@media (max-width: 760px) {
+  .sheet { width: 100%; margin: 0; padding: 24px 18px; box-shadow: none; }
+  .persona-grid, .persona-grid tbody, .persona-grid tr, .persona-grid td { display: block; width: 100%; }
+  .persona-grid td + td { border-top: 0; }
+  h1 { font-size: 22pt; }
+}
+@media print {
+  @page { size: Letter portrait; margin: 12mm; }
+  html, body { background: #fff; }
+  .sheet { width: 100%; margin: 0; padding: 0; box-shadow: none; }
+  .persona-grid tr, .full-field { break-inside: avoid; }
+  .journey-sheet { width: 100%; }
+  .journey { min-width: 0; font-size: 6.6pt; }
+  .journey td, .journey th { padding: 4px; }
+}
+</style>
+</head>
+<body>
+<main class="sheet">
+  <header>
+    <h1>Scheda persona</h1>
+    <p class="course">Cristina Gena · Human-Computer Interaction</p>
+    <div class="meta">
+      <p>Gruppo: Gruppo A · Data/versione: 27/10/2026 · v3</p>
+      <p>Servizio o progetto: App di crowdfunding (servizio generico)</p>
+      <p>Tipo: ☒ Proto-persona ☐ Persona basata sulla ricerca</p>
+    </div>
+    <p class="instructions">Scheda compilata secondo il template ufficiale. Le ipotesi da validare sono indicate esplicitamente.</p>
+  </header>
+  <table class="persona-grid">
+    <caption class="sr-only">Campi della scheda persona di Giuseppe Ferrero</caption>
+    <tbody><tr><td><div class="field"><h2>Nome convenzionale e descrizione del profilo</h2><p>Giuseppe Ferrero, 71 anni, insegnante di scienze in pensione, vive a Moncalieri. È vedovo, ha una figlia e due nipoti; è curioso, generoso e prudente con il denaro.</p></div></td><td><div class="field"><h2>Scenario e obiettivo principale</h2><p>Dopo aver letto sul giornale di una ricerca per proteggere i neonati dai virus, pensa alla nipote nata prematura. Vuole donare 50 € e capire con certezza chi riceverà il denaro e come sarà usato.</p></div></td></tr>
+<tr><td><div class="field"><h2>Attività e comportamenti</h2><ul>
+<li>Cura ogni giorno un piccolo orto e frequenta la bocciofila.</li>
+<li>Fa volontariato in parrocchia e preferisce forme di aiuto concrete.</li>
+<li>Legge ogni mattina il quotidiano locale cartaceo.</li>
+<li>Usa il tablet soprattutto per messaggi, email, meteo e giornale online.</li>
+<li>Prima di una spesa insolita confronta le informazioni e chiede un secondo parere.</li>
+<li>Non ha mai sostenuto una campagna di crowdfunding.</li>
+</ul></div></td><td><div class="field"><h2>Bisogni e aspettative</h2><ul>
+<li>Capire subito chi gestisce il servizio e quale scopo ha.</li>
+<li>Trovare spiegazioni in italiano semplice, senza gergo non necessario.</li>
+<li>Leggere importi, scadenze e stato della raccolta senza ambiguità.</li>
+<li>Sapere come saranno usati i fondi e che cosa accade dopo la donazione.</li>
+<li>Ricevere una conferma chiara e poter contattare una persona.</li>
+</ul></div></td></tr>
+<tr><td><div class="field"><h2>Obiettivi e motivazioni</h2><ul>
+<li>Sostenere una ricerca che sente vicina alla storia della famiglia.</li>
+<li>Fare una donazione utile senza esporsi a rischi non compresi.</li>
+<li>Verificare che il promotore sia affidabile.</li>
+<li>Conservare una prova della donazione.</li>
+</ul></div></td><td><div class="field"><h2>Difficoltà e frustrazioni</h2><ul>
+<li>Si affatica quando i testi sono piccoli o poco contrastati.</li>
+<li>I bersagli piccoli lo costringono a ripetere il tocco.</li>
+<li>Si insospettisce se non comprende subito che cosa offre un sito.</li>
+<li>Non conosce parole inglesi tipiche del crowdfunding.</li>
+<li>Percentuali oltre il 100% e giorni con segno negativo gli sembrano errori.</li>
+<li>Teme di scoprire soltanto alla fine di aver compilato male un pagamento.</li>
+<li>Non ritrova nel concetto di «ricompensa» il suo modello di offerta o bonifico.</li>
+</ul></div></td></tr>
+<tr><td><div class="field"><h2>Contesto e vincoli di utilizzo</h2><p>Usa a casa un tablet Android da 10 pollici, con carattere ingrandito; non possiede un computer. È la prima visita e potrebbe donare una o due volte l'anno. Procede senza fretta, ma interrompe il percorso per telefonare alla figlia o fotografare lo schermo.</p></div></td><td><div class="field"><h2>Competenze e strumenti digitali</h2><ul>
+<li>Tablet Android, WhatsApp, email, app meteo e giornale online.</li>
+<li>Ha effettuato pagamenti online solo con l'aiuto della figlia.</li>
+<li>Sa cercare informazioni e confrontarle, ma non riconosce sempre le convenzioni dei moduli online.</li>
+<li>Familiarità digitale: 2/5.</li>
+</ul></div></td></tr>
+<tr><td><div class="field"><h2>Esigenze di accessibilità</h2><p>La presbiopia richiede caratteri ingranditi, contrasto elevato e spaziatura leggibile. I bersagli ampi e ben distanziati riducono i tocchi involontari. Usa occhiali da lettura e l'ingrandimento del tablet.</p></div></td><td><div class="field"><h2>Frase rappresentativa e provenienza</h2><blockquote>«Aiuto volentieri, ma prima voglio capire dove vanno i soldi.»</blockquote>
+<p>Provenienza: sintesi costruita dal gruppo (non è una frase realmente raccolta).</p></div></td></tr></tbody>
+  </table>
+  <section class="full-field"><div class="field"><h2>Fonti ed evidenze disponibili</h2><p>Proto-persona costruita dal gruppo a partire da problemi di usabilità ricorrenti nelle app di crowdfunding. Non sono state svolte interviste o osservazioni dirette con utenti.</p></div></section>
+  <section class="full-field page-break"><div class="field"><h2>Ipotesi da verificare e informazioni mancanti</h2><ul>
+<li>Verificare se preferisca davvero il supporto telefonico rispetto a una guida passo passo.</li>
+<li>Capire quali segnali di affidabilità considera sufficienti prima di pagare.</li>
+<li>In un'intervista: come interpreta una raccolta che supera il 100%?</li>
+<li>In un'intervista: quali informazioni vorrebbe conservare dopo la donazione?</li>
+</ul></div></section>
+</main>
+</body>
+</html>
