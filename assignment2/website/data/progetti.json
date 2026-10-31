@@ -27,12 +27,12 @@
       {"id": "r15", "importo": 15, "titolo": {"it": "Cartolina illustrata degli apiari", "en": "Illustrated postcard of the apiaries"}, "descrizione": {"it": "Una cartolina disegnata da un'illustratrice torinese, spedita a casa.", "en": "A postcard drawn by a Turin illustrator, sent to your home."}, "scelte": 38, "posti": null},
       {"id": "r30", "importo": 30, "titolo": {"it": "Adotta un'arnia virtuale", "en": "Adopt a virtual hive"}, "descrizione": {"it": "Ogni mese una email con foto e dati dell'arnia che hai adottato.", "en": "A monthly email with photos and data from the hive you adopted."}, "scelte": 44, "posti": null},
       {"id": "r50", "importo": 50, "titolo": {"it": "Vasetto di miele del progetto e cartolina", "en": "Jar of project honey and postcard"}, "descrizione": {"it": "Miele da un apiaro di monitoraggio, analizzato in laboratorio.", "en": "Honey from a monitoring apiary, tested in the lab."}, "scelte": 21, "posti": 30},
-      {"id": "r120", "importo": 120, "titolo": {"it": "Il tuo nome su un'arnia di monitoraggio", "en": "Your name on a monitoring hive"}, "descrizione": {"it": "Una targhetta con il tuo nome e la ricompensa da 50 €.", "en": "A small plate with your name, plus the €50 reward."}, "scelte": 6, "posti": 20},
+      {"id": "r120", "importo": 120, "titolo": {"it": "Il tuo nome su un'arnia di monitoraggio", "en": "Your name on a monitoring hive"}, "descrizione": {"it": "Una targhetta con il tuo nome e la ricompensa da € 50.", "en": "A small plate with your name, plus the €50 reward."}, "scelte": 6, "posti": 20},
       {"id": "r250", "importo": 250, "titolo": {"it": "Visita guidata a un apiario di ricerca", "en": "Guided visit to a research apiary"}, "descrizione": {"it": "Mezza giornata con il gruppo, per 2 persone, in primavera 2027.", "en": "Half a day with the team, for 2 people, in spring 2027."}, "scelte": 0, "posti": 10}
     ],
     "libere": 33,
     "aggiornamenti": [
-      {"data": "rel:-3", "titolo": {"it": "Obiettivo raggiunto: e adesso?", "en": "Goal reached: what now?"}, "testo": {"it": "Grazie! Abbiamo superato i 6.000 €. L'Ateneo raddoppierà questa cifra alla chiusura. Le donazioni dei prossimi giorni vanno al secondo obiettivo: 9.000 € per due apiari in più. Queste donazioni non vengono raddoppiate.", "en": "Thank you! We passed €6,000. The University will match this amount when the campaign closes. Donations from now on go to the second goal: €9,000 for two more apiaries. These donations are not matched."}},
+      {"data": "rel:-3", "titolo": {"it": "Obiettivo raggiunto: e adesso?", "en": "Goal reached: what now?"}, "testo": {"it": "Grazie! Abbiamo superato i € 6.000. L'Ateneo raddoppierà questa cifra alla chiusura. Le donazioni dei prossimi giorni vanno al secondo obiettivo: € 9.000 per due apiari in più. Queste donazioni non vengono raddoppiate.", "en": "Thank you! We passed €6,000. The University will match this amount when the campaign closes. Donations from now on go to the second goal: €9,000 for two more apiaries. These donations are not matched."}},
       {"data": "rel:-18", "titolo": {"it": "Primi dati dalle arnie", "en": "First data from the hives"}, "testo": {"it": "Le prime due arnie trasmettono i dati ogni ora. In una abbiamo notato un calo di peso anomalo: l'apicoltore è intervenuto in tempo.", "en": "The first two hives send data every hour. In one we noticed an unusual weight loss: the beekeeper acted in time."}}
     ],
     "commenti": [
@@ -73,7 +73,7 @@
     ],
     "libere": 28,
     "aggiornamenti": [
-      {"data": "rel:-6", "titolo": {"it": "Siamo all'84%: mancano pochi giorni", "en": "We are at 84%: only a few days left"}, "testo": {"it": "Mancano 1.280 € all'obiettivo. Ricordate la regola «tutto o niente»: se non lo raggiungiamo, le donazioni vengono restituite. Se lo raggiungiamo, l'Ateneo aggiunge 8.000 €.", "en": "We are €1,280 from the goal. Remember the all-or-nothing rule: if we do not reach it, donations are returned. If we do, the University adds €8,000."}}
+      {"data": "rel:-6", "titolo": {"it": "Siamo all'84%: mancano pochi giorni", "en": "We are at 84%: only a few days left"}, "testo": {"it": "Mancano € 1.280 all'obiettivo. Ricordate la regola «tutto o niente»: se non lo raggiungiamo, le donazioni vengono restituite. Se lo raggiungiamo, l'Ateneo aggiunge € 8.000.", "en": "We are €1,280 from the goal. Remember the all-or-nothing rule: if we do not reach it, donations are returned. If we do, the University adds €8,000."}}
     ],
     "commenti": [
       {"autore": "Nonno Gianni", "data": "rel:-4", "lingua": "it", "testo": "Mia nipote è nata prematura. Grazie per quello che fate."},
@@ -260,9 +260,9 @@
       {"id": "r200", "importo": 200, "titolo": {"it": "Formazione per un docente", "en": "Training for a teacher"}, "descrizione": {"it": "Due ore online per imparare a usare il convertitore.", "en": "Two online hours to learn the converter."}, "scelte": 4, "posti": 10}
     ],
     "libere": 32,
-    "esito": {"it": "Obiettivo raggiunto il 21/02/2025. L'Ateneo ha aggiunto 6.000 €. Il convertitore è stato pubblicato a settembre 2025.", "en": "Goal reached on 21 Feb 2025. The University added €6,000. The converter was released in September 2025."},
+    "esito": {"it": "Obiettivo raggiunto il 21/02/2025. L'Ateneo ha aggiunto € 6.000. Il convertitore è stato pubblicato a settembre 2025.", "en": "Goal reached on 21 Feb 2025. The University added €6,000. The converter was released in September 2025."},
     "aggiornamenti": [
-      {"data": "2025-09-15", "titolo": {"it": "Resoconto finale: il convertitore è online", "en": "Final report: the converter is online"}, "testo": {"it": "Con i 13.020 € (7.020 raccolti più 6.000 dell'Ateneo) abbiamo completato il convertitore e la documentazione. Spese: sviluppo 6.900 €, prove 2.400 €, braille 1.400 €, documentazione 1.000 €, presentazioni in tre scuole 1.320 €.", "en": "With €13,020 (7,020 raised plus 6,000 from the University) we completed the converter and its documentation. Spending: development €6,900, testing €2,400, braille €1,400, documentation €1,000, presentations in three schools €1,320."}},
+      {"data": "2025-09-15", "titolo": {"it": "Resoconto finale: il convertitore è online", "en": "Final report: the converter is online"}, "testo": {"it": "Con i € 13.020 (7.020 raccolti più 6.000 dell'Ateneo) abbiamo completato il convertitore e la documentazione. Spese: sviluppo € 6.900, prove € 2.400, braille € 1.400, documentazione € 1.000, presentazioni in tre scuole € 1.320.", "en": "With €13,020 (7,020 raised plus 6,000 from the University) we completed the converter and its documentation. Spending: development €6,900, testing €2,400, braille €1,400, documentation €1,000, presentations in three schools €1,320."}},
       {"data": "2025-02-21", "titolo": {"it": "Obiettivo raggiunto!", "en": "Goal reached!"}, "testo": {"it": "Grazie: con il raddoppio dell'Ateneo possiamo fare prove con il doppio degli studenti.", "en": "Thank you: with the University's match we can test with twice as many students."}}
     ],
     "commenti": [
@@ -301,10 +301,10 @@
       {"id": "r150", "importo": 150, "titolo": {"it": "Uscita di campionamento sul Po", "en": "Sampling trip on the Po"}, "descrizione": {"it": "Una mattina con il gruppo, per 1 persona.", "en": "A morning with the team, for 1 person."}, "scelte": 6, "posti": 10}
     ],
     "libere": 45,
-    "esito": {"it": "Obiettivo raggiunto il 30/03/2025 e secondo obiettivo raggiunto il 15/04/2025. L'Ateneo ha aggiunto 8.000 €.", "en": "Goal reached on 30 Mar 2025 and second goal reached on 15 Apr 2025. The University added €8,000."},
+    "esito": {"it": "Obiettivo raggiunto il 30/03/2025 e secondo obiettivo raggiunto il 15/04/2025. L'Ateneo ha aggiunto € 8.000.", "en": "Goal reached on 30 Mar 2025 and second goal reached on 15 Apr 2025. The University added €8,000."},
     "aggiornamenti": [
-      {"data": "2025-11-10", "titolo": {"it": "Resoconto finale", "en": "Final report"}, "testo": {"it": "Abbiamo isolato tre ceppi che riducono le microplastiche di polietilene del 12% in 30 giorni. I risultati sono in un articolo in revisione. Spese: 19.200 € (11.200 raccolti più 8.000 dell'Ateneo).", "en": "We isolated three strains that reduce polyethylene microplastics by 12% in 30 days. The results are in a paper under review. Spending: €19,200 (11,200 raised plus 8,000 from the University)."}},
-      {"data": "2025-04-15", "titolo": {"it": "Secondo obiettivo raggiunto", "en": "Second goal reached"}, "testo": {"it": "Con le donazioni oltre gli 8.000 € andremo anche al lago di Viverone.", "en": "With donations above €8,000 we will also sample Lake Viverone."}}
+      {"data": "2025-11-10", "titolo": {"it": "Resoconto finale", "en": "Final report"}, "testo": {"it": "Abbiamo isolato tre ceppi che riducono le microplastiche di polietilene del 12% in 30 giorni. I risultati sono in un articolo in revisione. Spese: € 19.200 (11.200 raccolti più 8.000 dell'Ateneo).", "en": "We isolated three strains that reduce polyethylene microplastics by 12% in 30 days. The results are in a paper under review. Spending: €19,200 (11,200 raised plus 8,000 from the University)."}},
+      {"data": "2025-04-15", "titolo": {"it": "Secondo obiettivo raggiunto", "en": "Second goal reached"}, "testo": {"it": "Con le donazioni oltre gli € 8.000 andremo anche al lago di Viverone.", "en": "With donations above €8,000 we will also sample Lake Viverone."}}
     ],
     "commenti": [
       {"autore": "Ilaria V.", "data": "2025-04-02", "lingua": "it", "testo": "Si potranno usare anche negli impianti piccoli dei paesi?"}
@@ -377,9 +377,9 @@
       {"id": "r100", "importo": 100, "titolo": {"it": "Laboratorio aperto alla festa di fine anno", "en": "Open workshop at the end-of-year party"}, "descrizione": {"it": "Invito per 2 persone.", "en": "Invitation for 2 people."}, "scelte": 5, "posti": 20}
     ],
     "libere": 29,
-    "esito": {"it": "Obiettivo raggiunto il 25/03/2024. L'Ateneo ha aggiunto 5.000 €. I laboratori continuano con fondi delle associazioni.", "en": "Goal reached on 25 Mar 2024. The University added €5,000. The workshops continue with the associations' funds."},
+    "esito": {"it": "Obiettivo raggiunto il 25/03/2024. L'Ateneo ha aggiunto € 5.000. I laboratori continuano con fondi delle associazioni.", "en": "Goal reached on 25 Mar 2024. The University added €5,000. The workshops continue with the associations' funds."},
     "aggiornamenti": [
-      {"data": "2024-12-02", "titolo": {"it": "Resoconto finale", "en": "Final report"}, "testo": {"it": "Sei doposcuola, 140 ragazzi, 32 laboratori. Spese: 10.450 € (5.450 raccolti più 5.000 dell'Ateneo), tutte documentate nella relazione inviata ai sostenitori.", "en": "Six after-school clubs, 140 pupils, 32 workshops. Spending: €10,450 (5,450 raised plus 5,000 from the University), all documented in the report sent to supporters."}}
+      {"data": "2024-12-02", "titolo": {"it": "Resoconto finale", "en": "Final report"}, "testo": {"it": "Sei doposcuola, 140 ragazzi, 32 laboratori. Spese: € 10.450 (5.450 raccolti più 5.000 dell'Ateneo), tutte documentate nella relazione inviata ai sostenitori.", "en": "Six after-school clubs, 140 pupils, 32 workshops. Spending: €10,450 (5,450 raised plus 5,000 from the University), all documented in the report sent to supporters."}}
     ],
     "commenti": [
       {"autore": "Rosa D.", "data": "2024-03-10", "lingua": "it", "testo": "Anche la nostra associazione vorrebbe fare qualcosa di simile: a chi possiamo scrivere?"}
@@ -415,7 +415,7 @@
       {"id": "r250", "importo": 250, "titolo": {"it": "Adotta un filare di ricerca", "en": "Adopt a research row"}, "descrizione": {"it": "Una targa con il tuo nome e i dati del tuo filare per un anno.", "en": "A plate with your name and your row's data for a year."}, "scelte": 3, "posti": 5}
     ],
     "libere": 40,
-    "esito": {"it": "Obiettivo raggiunto il 02/06/2024. L'Ateneo ha aggiunto 7.000 €.", "en": "Goal reached on 2 Jun 2024. The University added €7,000."},
+    "esito": {"it": "Obiettivo raggiunto il 02/06/2024. L'Ateneo ha aggiunto € 7.000.", "en": "Goal reached on 2 Jun 2024. The University added €7,000."},
     "aggiornamenti": [
       {"data": "2025-03-14", "titolo": {"it": "Resoconto finale", "en": "Final report"}, "testo": {"it": "Le stazioni hanno registrato due ondate di calore e una grandinata. Abbiamo pubblicato una guida per i viticoltori, scaricabile gratuitamente.", "en": "The stations recorded two heatwaves and one hailstorm. We published a free guide for winegrowers."}}
     ],
@@ -490,7 +490,7 @@
       {"id": "r200", "importo": 200, "titolo": {"it": "Visita al laboratorio di robotica", "en": "Visit to the robotics lab"}, "descrizione": {"it": "Per 2 persone, con dimostrazione.", "en": "For 2 people, with a demo."}, "scelte": 3, "posti": 10}
     ],
     "libere": 46,
-    "esito": {"it": "Obiettivo raggiunto il 18/04/2023. L'Ateneo ha aggiunto 8.000 €.", "en": "Goal reached on 18 Apr 2023. The University added €8,000."},
+    "esito": {"it": "Obiettivo raggiunto il 18/04/2023. L'Ateneo ha aggiunto € 8.000.", "en": "Goal reached on 18 Apr 2023. The University added €8,000."},
     "aggiornamenti": [
       {"data": "2024-01-22", "titolo": {"it": "Resoconto finale", "en": "Final report"}, "testo": {"it": "18 persone su 24 hanno detto che il robot le ha aiutate a ricordare le medicine. Il software è libero e un'azienda torinese lo sta adattando.", "en": "18 people out of 24 said the robot helped them remember their medicines. The software is free and a Turin company is adapting it."}}
     ],

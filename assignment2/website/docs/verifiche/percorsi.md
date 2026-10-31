@@ -1,6 +1,6 @@
 # Percorsi interattivi
 
-Generato da `tools/percorsi.js` il 31/10/2026, 15:15:00 (Playwright + Google Chrome, server statico locale con il sito in una sottocartella).
+Generato da `tools/percorsi.js` il 31/10/2026, 15:27:42 (Playwright + Google Chrome, server statico locale con il sito in una sottocartella).
 
 **51 controlli superati su 51.**
 
@@ -8,7 +8,7 @@ Generato da `tools/percorsi.js` il 31/10/2026, 15:15:00 (Playwright + Google Chr
 |---|---|---|---|
 | 1 | Il primo Tab porta a «Salta al contenuto» | superato |  |
 | 2 | Il campo di ricerca nell'intestazione è raggiungibile da tastiera | superato |  |
-| 3 | La ricerca «api» trova i progetti sulle api | superato | 7 progetti per «api» |
+| 3 | La ricerca «api» trova i progetti sulle api (per inizio di parola, non «capire») | superato | 2 progetti per «api» |
 | 4 | Il risultato «Alveari sani» si raggiunge con Tab (link con nome significativo) | superato | Alveari sani: monitorare la salute delle api del Piemonte |
 | 5 | «Sostieni il progetto» si raggiunge da tastiera | superato |  |
 | 6 | La spiegazione «tutto o niente» si apre con Invio | superato |  |
@@ -59,3 +59,18 @@ Generato da `tools/percorsi.js` il 31/10/2026, 15:15:00 (Playwright + Google Chr
 | 51 | Nessun errore JavaScript durante i percorsi | superato |  |
 
 Screenshot del percorso da tastiera e della donazione: `docs/verifiche/screenshot/tastiera-*.png`, `donazione-*.png`, `menu-mobile-375.png`.
+
+## Senza server (file://)
+
+Generato da `tools/verifica-file.js`: le stesse funzioni aprendo i file direttamente dal disco, come nello zip della consegna.
+
+| Controllo | Esito |
+|---|---|
+| file:// · i filtri si applicano dalla URL | superato |
+| file:// · la ricerca funziona | superato |
+| file:// · la donazione si apre con il progetto | superato |
+| file:// · si passa al passo 2 (history.pushState) | superato |
+| file:// · i dati restano tornando avanti e indietro (sessionStorage) | superato |
+| file:// · versione inglese e FAQ aperta da ancora | superato |
+| file:// · le date dimostrative sono ricalcolate | superato |
+| file:// · nessun errore JavaScript | superato |

@@ -64,7 +64,7 @@
     var imposta = function (aperto) {
       toggle.setAttribute("aria-expanded", aperto ? "true" : "false");
       if (label && I) label.textContent = aperto ? I.js.menu_close : I.js.menu_open;
-      nav.hidden = mq.matches && !aperto;
+      nav.classList.toggle("is-open", aperto);
     };
     imposta(false);
     toggle.addEventListener("click", function () {
@@ -86,13 +86,10 @@
   /* ---------- spiegazioni a comparsa: pulsante, Esc, nessun link a "#" (P-044) ---------- */
   $$("[data-toggletip]").forEach(function (box) {
     var btn = $("button", box), panel = $("[data-toggletip-panel]", box);
-    panel.hidden = true;
-    btn.addEventListener("click", function () {
-      var aperto = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", aperto ? "false" : "true"); panel.hidden = aperto;
-    });
+    var imposta = function (aperto) { box.classList.toggle("is-open", aperto); btn.setAttribute("aria-expanded", aperto ? "true" : "false"); };
+    btn.addEventListener("click", function () { imposta(btn.getAttribute("aria-expanded") !== "true"); });
     box.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && !panel.hidden) { panel.hidden = true; btn.setAttribute("aria-expanded", "false"); btn.focus(); }
+      if (e.key === "Escape" && box.classList.contains("is-open")) { imposta(false); btn.focus(); }
     });
   });
 
@@ -383,13 +380,14 @@
       var trovati = D.progetti.filter(function (p) {
         var testo = norm([p.titolo[LANG], p.sottotitolo[LANG], p.testo[LANG], p.gruppo, p.anno, D.sito.categorie[p.categoria][LANG],
           D.sito.dipartimenti[p.dipartimento][LANG], p.titolo.it, p.titolo.en].join(" "));
-        return parole.every(function (w) { return testo.indexOf(w) >= 0; });
+        var voci = testo.split(/[^a-z0-9]+/);            // cerca per inizio di parola: «api» trova «apicoltori», non «capire»
+        return parole.every(function (w) { return voci.some(function (v) { return v.indexOf(w) === 0; }); });
       }).sort(function (a, b) { return calcola(b).aperto - calcola(a).aperto; });
       risultati.innerHTML = trovati.map(cardHtml).join("");
       var t = trovati.length === 0 ? I.cerca.none_title : trovati.length === 1 ? I.cerca.result_1 : I.cerca.result_n;
       titolo.textContent = tpl(t, { n: trovati.length, q: q });
       $("[data-nessun-risultato]").hidden = trovati.length > 0;
-      var pag = D.pagine[LANG].filter(function (pg) { var tx = norm(pg.titolo + " " + pg.testo); return parole.some(function (w) { return w.length > 2 && tx.indexOf(w) >= 0; }); });
+      var pag = D.pagine[LANG].filter(function (pg) { var vv = norm(pg.titolo + " " + pg.testo).split(/[^a-z0-9]+/); return parole.some(function (w) { return w.length > 2 && vv.some(function (v) { return v.indexOf(w) === 0; }); }); });
       if (pag.length) {
         $("[data-pagine-sito]").hidden = false;
         $("[data-pagine-titolo]").textContent = tpl(I.cerca.pages_title, { q: q });
@@ -585,6 +583,9 @@
       var h = $("h1", conf); h.setAttribute("tabindex", "-1"); h.focus();
     }
   }
+
+  /* ---------- pagina pronta: mostra il contenuto costruito dallo script ---------- */
+  var attesa = $("main[data-attesa]"); if (attesa) attesa.removeAttribute("data-attesa");
 
   /* ---------- 404: mostra l'indirizzo richiesto ---------- */
   var ind404 = $("[data-indirizzo]");

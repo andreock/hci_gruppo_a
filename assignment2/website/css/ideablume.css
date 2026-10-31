@@ -130,6 +130,7 @@ a:hover { color: var(--c-brand-dark); text-decoration-thickness: .15em; }
 @media (min-width: 600px) { .container { padding: 0 var(--s-5); } }
 main { display: block; padding-bottom: var(--s-8); }
 main:focus { outline: none; }
+.js main[data-attesa] { visibility: hidden; min-height: 100vh; } /* vedi tools/build.py: nessuno spostamento mentre lo script costruisce la pagina */
 .section { padding: var(--s-6) 0; }
 .section--tinted { background: var(--c-surface); }
 .stack > * + * { margin-top: var(--s-4); }
@@ -182,10 +183,10 @@ main:focus { outline: none; }
 }
 .main-nav__list a:hover { background: var(--c-brand-soft); color: var(--c-brand-dark); }
 .main-nav__list a[aria-current="page"] { color: var(--c-brand); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: .35em; }
-.js .main-nav[hidden] { display: none; }
+@media (max-width: 899px) { .js .main-nav:not(.is-open) { display: none; } } /* nascosto prima del primo disegno: nessuno spostamento (CLS) */
 @media (min-width: 900px) {
   .site-header .nav-toggle { display: none; }
-  .js .main-nav[hidden], .main-nav { display: block; }
+  .main-nav { display: block; }
   .main-nav__list { flex-direction: row; flex-wrap: wrap; gap: 0 var(--s-1); }
   .main-nav__list a { min-height: var(--target); padding: var(--s-2) var(--s-3); }
 }
@@ -302,6 +303,7 @@ main:focus { outline: none; }
   background: var(--c-bg); border: 1px solid var(--c-border-strong); border-radius: 999px; cursor: pointer;
 }
 .toggletip__btn::before { content: "?"; display: inline-grid; place-items: center; width: 1.25em; height: 1.25em; border-radius: 50%; background: var(--c-ink); color: #fff; font-size: .85em; }
+.js .toggletip:not(.is-open) .toggletip__panel { display: none; }
 .toggletip__panel { margin: var(--s-2) 0; padding: var(--s-3) var(--s-4); background: var(--c-bg); border: 1px solid var(--c-border-strong); border-radius: var(--radius); box-shadow: var(--shadow); font-size: var(--fs-small); max-width: 32rem; }
 
 /* ---------- 14. Accordion (details/summary, funziona senza JS) ---------- */
@@ -465,6 +467,10 @@ legend.h3 { margin-top: var(--s-5); }
 .statusbox .alert h2 { font-size: var(--fs-body); }
 .btn[disabled][aria-busy="true"] { background: var(--c-brand-dark); border-color: var(--c-brand-dark); color: var(--c-on-brand); cursor: progress; }
 section[id], [id].statusbox { scroll-margin-top: var(--s-4); }
+/* Link isolati (non dentro una frase): area cliccabile di almeno 24 px (WCAG 2.5.8; P01, P12) */
+.link-blocco, .update h3 a, th > a, [data-permalink], [data-modifica], .accordion__content p > a:only-child, .infobox p > a:only-child {
+  display: inline-block; min-height: 1.75rem; padding: .2rem 0; line-height: 1.4;
+}
 code { font-size: .95em; background: var(--c-surface-2); padding: 0 .25em; border-radius: 2px; overflow-wrap: anywhere; }
 
 /* ---------- 22. Stampa --------------------------------------------------- */

@@ -6,9 +6,8 @@
 <title>Donazione completata – ideaBlume</title>
 <meta name="description" content="Il crowdfunding per la ricerca dell&#x27;Università di Torino">
 <link rel="icon" href="img/ideablume-segno.svg" type="image/svg+xml">
-<link rel="alternate" hreflang="en" href="en/donazione-conferma.html">
 <link rel="stylesheet" href="css/ideablume.css">
-<script>document.documentElement.className = "js";</script>
+<script>document.documentElement.className = "js"; setTimeout(function () { var m = document.querySelector("[data-attesa]"); if (m) m.removeAttribute("data-attesa"); }, 2500);</script>
 </head>
 <body data-pagina="donazione-conferma" data-oggi-build="2026-10-31">
 <a class="skip-link" href="#main">Salta al contenuto</a>
@@ -34,7 +33,7 @@
   </nav>
 </header>
 <nav class="breadcrumb container" aria-label="Percorso"><ol><li><a href="index.html">Home</a></li><li><a href="progetti.html">Progetti</a></li><li><span aria-current="page">Grazie! La tua donazione è registrata</span></li></ol></nav>
-<main id="main" class="container" tabindex="-1">
+<main id="main" class="container" tabindex="-1" data-attesa>
 <div data-conferma hidden>
 <h1>Grazie! La tua donazione è registrata</h1>
 <p class="alert alert--success"><strong>Codice di riferimento: <span data-codice></span></strong><br>Simulazione: nessun addebito è stato fatto.</p>

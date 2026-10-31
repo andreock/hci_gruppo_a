@@ -1,6 +1,6 @@
 # Verifica automatica delle pagine
 
-Generato da `tools/verifica-pagine.js` il 31/10/2026, 15:15:51 con Google Chrome (Playwright) e axe-core 4.10.3, regole WCAG 2.0, 2.1 e 2.2 livello A e AA.
+Generato da `tools/verifica-pagine.js` il 31/10/2026, 15:28:38 con Google Chrome (Playwright) e axe-core 4.10.3, regole WCAG 2.0, 2.1 e 2.2 livello A e AA.
 
 ## Sintesi
 
@@ -21,7 +21,7 @@ Generato da `tools/verifica-pagine.js` il 31/10/2026, 15:15:51 con Google Chrome
 | `404.html` | Pagina non trovata – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `accessibilita.html` | Accessibilità – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `candidatura.html` | Candidatura al programma – ideaBlume | 1 | 0 px | 0 | nessuna |
-| `cerca.html` | 7 progetti per «api» – ideaBlume | 1 | 0 px | 0 | nessuna |
+| `cerca.html` | 2 progetti per «api» – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `chi-siamo.html` | Chi siamo – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `collabora.html` | Proponi una collaborazione – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `come-funziona.html` | Come funziona – ideaBlume | 1 | 0 px | 0 | nessuna |
@@ -31,7 +31,7 @@ Generato da `tools/verifica-pagine.js` il 31/10/2026, 15:15:51 con Google Chrome
 | `en/404.html` | Page not found – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/accessibilita.html` | Accessibility – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/candidatura.html` | Apply to the programme – ideaBlume | 1 | 0 px | 0 | nessuna |
-| `en/cerca.html` | 3 projects for “api” – ideaBlume | 1 | 0 px | 0 | nessuna |
+| `en/cerca.html` | 2 projects for “api” – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/chi-siamo.html` | About us – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/collabora.html` | Propose a partnership – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/come-funziona.html` | How it works – ideaBlume | 1 | 0 px | 0 | nessuna |

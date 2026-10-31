@@ -6,9 +6,8 @@
 <title>Search for a project – ideaBlume</title>
 <meta name="description" content="Crowdfunding for research at the University of Turin">
 <link rel="icon" href="../img/ideablume-segno.svg" type="image/svg+xml">
-<link rel="alternate" hreflang="it" href="../cerca.html">
 <link rel="stylesheet" href="../css/ideablume.css">
-<script>document.documentElement.className = "js";</script>
+<script>document.documentElement.className = "js"; setTimeout(function () { var m = document.querySelector("[data-attesa]"); if (m) m.removeAttribute("data-attesa"); }, 2500);</script>
 </head>
 <body data-pagina="cerca" data-oggi-build="2026-10-31">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -34,7 +33,7 @@
   </nav>
 </header>
 <nav class="breadcrumb container" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">Search for a project</span></li></ol></nav>
-<main id="main" class="container" tabindex="-1">
+<main id="main" class="container" tabindex="-1" data-attesa>
 <h1>Search for a project</h1>
 <p>Search in titles, descriptions, topics and departments.</p>
 <form class="search-form" role="search" action="cerca.html" method="get" style="max-width:40rem">

@@ -298,8 +298,12 @@ def breadcrumb(lang, voci):
     return f'<nav class="breadcrumb container" aria-label="{E(t(lang, "common.breadcrumb_label"))}"><ol>{"".join(items)}</ol></nav>'
 
 
-def pagina(lang, file, titolo, corpo, nav=None, briciole=None, dati=False, extra_head="", main_class="container"):
+def pagina(lang, file, titolo, corpo, nav=None, briciole=None, dati=False, extra_head="", main_class="container", attesa=False):
     prefix = "" if lang == "it" else "../"
+    # Pagine costruite dallo script: contenuto invisibile (non assente) finché è pronto, per non spostare il layout (CLS).
+    # Rete di sicurezza: se lo script non parte, il contenuto compare comunque dopo 2,5 s.
+    ATTESA = (' setTimeout(function () { var m = document.querySelector("[data-attesa]"); if (m) m.removeAttribute("data-attesa"); }, 2500);'
+              if attesa else "")
     script_dati = f'<script src="{prefix}data/testi-{lang}.js"></script>\n' + (f'<script src="{prefix}data/ib-dati.js"></script>\n' if dati else "")
     return f'''<!doctype html>
 <html lang="{lang}" class="no-js">
@@ -309,14 +313,13 @@ def pagina(lang, file, titolo, corpo, nav=None, briciole=None, dati=False, extra
 <title>{E(titolo)}</title>
 <meta name="description" content="{E(t(lang, "tagline"))}">
 <link rel="icon" href="{prefix}img/ideablume-segno.svg" type="image/svg+xml">
-<link rel="alternate" hreflang="{t(lang, "altra_lingua")}" href="{"en/" if lang == "it" else "../"}{file}">
 <link rel="stylesheet" href="{prefix}css/ideablume.css">
-<script>document.documentElement.className = "js";</script>
+<script>document.documentElement.className = "js";{ATTESA}</script>
 {extra_head}</head>
 <body data-pagina="{file[:-5]}" data-oggi-build="{OGGI.isoformat()}">
 {header(lang, file, nav, prefix)}
 {breadcrumb(lang, briciole or [])}
-<main id="main" class="{main_class}" tabindex="-1">
+<main id="main" class="{main_class}" tabindex="-1"{' data-attesa' if attesa else ''}>
 {corpo}
 </main>
 {footer(lang, prefix)}
@@ -373,12 +376,12 @@ def pg_home(lang):
 <section class="section" aria-labelledby="h-aperti">
   <h2 id="h-aperti">{E(g("open_title"))} ({len(aperti)})</h2>
   <ul class="grid grid--3">{"".join(card(p, lang, prefix) for p in aperti)}</ul>
-  <p><a href="progetti.html">{E(g("all_link"))} ({len(PROGETTI)})</a></p>
+  <p><a class="link-blocco" href="progetti.html">{E(g("all_link"))} ({len(PROGETTI)})</a></p>
 </section>
 <section class="section" aria-labelledby="h-come">
   <h2 id="h-come">{E(g("how_title"))}</h2>
   <ol class="howto">{passi}</ol>
-  <p><a href="come-funziona.html">{E(g("how_more"))}</a></p>
+  <p><a class="link-blocco" href="come-funziona.html">{E(g("how_more"))}</a></p>
 </section>
 <section class="section" aria-labelledby="h-numeri">
   <h2 id="h-numeri">{E(g("numbers_title"))}</h2>
@@ -463,7 +466,7 @@ def pg_cerca(lang):
   <p class="btn-row"><a class="btn btn--secondary" href="progetti.html">{E(g("all"))}</a><a class="btn btn--ghost" href="faq.html">{E(g("faq"))}</a></p>
 </div>
 <section data-pagine-sito hidden aria-labelledby="h-pagine"><h2 id="h-pagine" data-pagine-titolo></h2><ul data-pagine-elenco></ul></section>'''
-    return pagina(lang, "cerca.html", g("title"), corpo, nav=None, briciole=[(g("h1"), "")], dati=True)
+    return pagina(lang, "cerca.html", g("title"), corpo, nav=None, attesa=True, briciole=[(g("h1"), "")], dati=True)
 
 
 def nomi_sostenitori(p, n=8):
@@ -727,7 +730,7 @@ def pg_donazione(lang):
   </form>
   <p class="small muted">{E(g("saved"))}</p>
 </div>'''
-    return pagina(lang, "donazione.html", g("title"), corpo, nav="progetti",
+    return pagina(lang, "donazione.html", g("title"), corpo, nav="progetti", attesa=True,
                   briciole=[(t(lang, "nav.progetti"), "progetti.html"), (g("h1"), "")], dati=True)
 
 
@@ -745,7 +748,7 @@ def pg_conferma(lang):
 </div>
 <div data-conferma-assente><h1>{E(g("h1"))}</h1><p class="alert alert--info">{E(g("missing"))}</p>
 <p><a class="btn" href="contatti.html">{E(t(lang, "nav.contatti"))}</a></p></div>'''
-    return pagina(lang, "donazione-conferma.html", g("title"), corpo, nav="progetti",
+    return pagina(lang, "donazione-conferma.html", g("title"), corpo, nav="progetti", attesa=True,
                   briciole=[(t(lang, "nav.progetti"), "progetti.html"), (g("h1"), "")], dati=True)
 
 
@@ -923,7 +926,7 @@ def pg_faq(lang):
             dom = "".join(
                 f'''<details id="{q["id"]}"><summary>{E(q["q"])}</summary><div class="accordion__content">
                 {"".join(f"<p>{fmt(a, lang)}</p>" for a in q["a"])}
-                <p class="small"><a href="#{q["id"]}" data-permalink>{E(g("permalink"))}</a></p></div></details>'''
+                <p class="small"><a href="#{q["id"]}" data-permalink>{E(g("permalink"))}<span class="vh">: {E(q["q"])}</span></a></p></div></details>'''
                 for q in tp["q"])
             argomenti += f'<h3>{E(tp["t"])}</h3><div class="accordion">{dom}</div>'
         blocchi += f'<section id="{gr["id"]}" aria-labelledby="h-{gr["id"]}" data-faq-gruppo><h2 id="h-{gr["id"]}">{E(gr["t"])}</h2>{argomenti}</section>'

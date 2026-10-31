@@ -6,9 +6,8 @@
 <title>Donation completed – ideaBlume</title>
 <meta name="description" content="Crowdfunding for research at the University of Turin">
 <link rel="icon" href="../img/ideablume-segno.svg" type="image/svg+xml">
-<link rel="alternate" hreflang="it" href="../donazione-conferma.html">
 <link rel="stylesheet" href="../css/ideablume.css">
-<script>document.documentElement.className = "js";</script>
+<script>document.documentElement.className = "js"; setTimeout(function () { var m = document.querySelector("[data-attesa]"); if (m) m.removeAttribute("data-attesa"); }, 2500);</script>
 </head>
 <body data-pagina="donazione-conferma" data-oggi-build="2026-10-31">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -34,7 +33,7 @@
   </nav>
 </header>
 <nav class="breadcrumb container" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="progetti.html">Projects</a></li><li><span aria-current="page">Thank you! Your donation has been recorded</span></li></ol></nav>
-<main id="main" class="container" tabindex="-1">
+<main id="main" class="container" tabindex="-1" data-attesa>
 <div data-conferma hidden>
 <h1>Thank you! Your donation has been recorded</h1>
 <p class="alert alert--success"><strong>Reference code: <span data-codice></span></strong><br>Simulation: nothing has been charged.</p>

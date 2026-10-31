@@ -6,9 +6,8 @@
 <title>Support a project – ideaBlume</title>
 <meta name="description" content="Crowdfunding for research at the University of Turin">
 <link rel="icon" href="../img/ideablume-segno.svg" type="image/svg+xml">
-<link rel="alternate" hreflang="it" href="../donazione.html">
 <link rel="stylesheet" href="../css/ideablume.css">
-<script>document.documentElement.className = "js";</script>
+<script>document.documentElement.className = "js"; setTimeout(function () { var m = document.querySelector("[data-attesa]"); if (m) m.removeAttribute("data-attesa"); }, 2500);</script>
 </head>
 <body data-pagina="donazione" data-oggi-build="2026-10-31">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -34,7 +33,7 @@
   </nav>
 </header>
 <nav class="breadcrumb container" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="progetti.html">Projects</a></li><li><span aria-current="page">Support a project</span></li></ol></nav>
-<main id="main" class="container" tabindex="-1">
+<main id="main" class="container" tabindex="-1" data-attesa>
 <h1 data-don-titolo>Support a project</h1>
 <p class="alert alert--warning"><strong>Simulated payment.</strong> This is a teaching prototype: nothing is charged and no data leaves your browser.</p>
 <noscript><p class="alert alert--info">The simulated donation needs JavaScript. You can read all the projects or call us on 011 019 4250.</p></noscript>

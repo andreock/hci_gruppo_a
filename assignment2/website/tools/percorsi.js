@@ -49,7 +49,7 @@ async function tabFino(page, pred, max = 60) {
   await page.keyboard.press("Enter");
   await page.waitForURL(/cerca\.html\?q=api/);
   const titoloRis = await page.textContent("[data-risultati-titolo]");
-  ok("La ricerca «api» trova i progetti sulle api", /\d+ progetti per «api»/.test(titoloRis), titoloRis);
+  ok("La ricerca «api» trova i progetti sulle api (per inizio di parola, non «capire»)", /^[23] progetti per «api»/.test(titoloRis.trim()), titoloRis);
   f = await tabFino(page, (x) => x.tag === "A" && /Alveari sani/.test(x.text));
   ok("Il risultato «Alveari sani» si raggiunge con Tab (link con nome significativo)", !!f, f && f.text);
   await page.screenshot({ path: path.join(SHOT, "tastiera-03-card-focus.png"), fullPage: false });
@@ -158,12 +158,12 @@ async function tabFino(page, pred, max = 60) {
   /* 4. Menu mobile a 375 px: Invio apre, Esc chiude, focus torna al pulsante */
   page = await nuova({ width: 375, height: 740 });
   await page.goto(BASE + "index.html");
-  ok("A menu chiuso le voci non sono raggiungibili", await page.isHidden("#menu-principale"));
+  ok("A menu chiuso le voci non sono raggiungibili", await page.isHidden("#menu-principale a"));
   await page.focus("[data-nav-toggle]"); await page.keyboard.press("Enter");
-  ok("Invio apre il menu e aria-expanded diventa true", (await page.getAttribute("[data-nav-toggle]", "aria-expanded")) === "true" && (await page.isVisible("#menu-principale")));
+  ok("Invio apre il menu e aria-expanded diventa true", (await page.getAttribute("[data-nav-toggle]", "aria-expanded")) === "true" && (await page.isVisible("#menu-principale a")));
   await page.screenshot({ path: path.join(SHOT, "menu-mobile-375.png") });
   await page.keyboard.press("Escape");
-  ok("Esc chiude il menu e il focus torna al pulsante", (await page.isHidden("#menu-principale")) && (await page.evaluate(() => document.activeElement.hasAttribute("data-nav-toggle"))));
+  ok("Esc chiude il menu e il focus torna al pulsante", (await page.isHidden("#menu-principale a")) && (await page.evaluate(() => document.activeElement.hasAttribute("data-nav-toggle"))));
   const t = await page.evaluate(() => { const r = document.querySelector("[data-nav-toggle]").getBoundingClientRect(); return [r.width, r.height]; });
   ok("Il pulsante del menu misura almeno 44×44 px", t[0] >= 44 && t[1] >= 44, t.join("×"));
   await page.context().close();
