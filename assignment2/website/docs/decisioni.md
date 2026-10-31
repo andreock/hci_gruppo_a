@@ -124,3 +124,20 @@ Checkpoint 1 (31/10/2026): il gruppo ha confermato le proposte D-01…D-19 con q
 
 ### D-29 · Progetti fuori dal programma · confermata
 - Il prompt descrive un programma in cui l'Ateneo seleziona **alcuni** progetti. Due dei 13 progetti (`aria-aperta`, `rifugi-frane`) non fanno parte del programma: la loro pagina dice chiaramente che non c'è raddoppio. Nell'elenco un filtro «Programma dell'Ateneo» permette di vedere solo i progetti cofinanziati. Il filtro «Edizione» diventa «Anno».
+
+## Decisioni delle Fasi 4 e 5
+
+### D-30 · Testi dell'interfaccia separati dai dati dei progetti · confermata
+- `data/testi-it.js` e `data/testi-en.js` (circa 13 KB) sono caricati in tutte le pagine; `data/ib-dati.js` (42 KB) solo dove servono i dati dei progetti (elenco, ricerca, donazione, moduli). Motivo: le verifiche hanno trovato pagine con moduli senza messaggi di errore (FAQ, progetto) e il peso della pagina progetto conta per P02 e P11.
+
+### D-31 · Nessuna colonna fissa nella pagina progetto · confermata
+- La colonna con lo stato era fissa durante lo scorrimento, ma è più alta dello schermo: la sua parte bassa (contatto con il gruppo) sarebbe stata irraggiungibile. È stata tolta. «Sostieni» resta nella prima schermata e i pulsanti di scelta sono anche nelle ricompense (R-042 parziale per scelta).
+
+### D-32 · Nessuno spostamento del layout (CLS) · confermata
+- Il menu mobile è nascosto via CSS fin dal primo disegno (classe `js` impostata nell'`<head>`), non dallo script. Le pagine costruite dallo script (donazione, conferma, ricerca) restano invisibili, con lo spazio riservato, finché sono pronte; una rete di sicurezza le mostra dopo 2,5 s se lo script fallisce.
+
+### D-33 · Ricerca per inizio di parola, tollerante · confermata
+- La ricerca per sottostringa trovava risultati sbagliati («api» in «capire»); quella per inizio di parola esatto non trovava «veterinaria». Scelta finale: inizio di parola, togliendo l'ultima lettera alle parole di almeno 5 caratteri (singolare/plurale, maschile/femminile).
+
+### D-34 · Importi in un'unica forma · confermata
+- In italiano sempre «€ 6.000» (anche nei testi dei gruppi), in inglese «€6,000», per coerenza (P-070).

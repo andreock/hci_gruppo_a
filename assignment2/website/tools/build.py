@@ -514,6 +514,7 @@ def pg_progetto(p, lang):
             testo = f'<p>{fmt(g("match_done"), lang, cofin=e(c["cofin"]), totale=e(c["totale"]))}</p>'
         else:
             testo = f'<p>{E(g("match_failed"))}</p>'
+        testo += f'<p><a class="link-blocco" href="programma.html#raddoppio">{E(g("match_more"))}</a></p>'
         box_t = g("match_title")
     else:
         testo = f'<p>{fmt(g("not_program"), lang)}</p>'

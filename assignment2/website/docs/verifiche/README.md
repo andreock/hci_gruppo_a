@@ -10,7 +10,7 @@ Data: 31/10/2026. Ambiente: macOS, Google Chrome 156 (via Playwright 1.56), axe-
 | Contrasto | `tools/contrasto.py` | **52 coppie su 52** sopra soglia (testo min. 5,96:1; componenti min. 4,14:1) | `contrasti.md` |
 | Link e ancore | `tools/verifica-link.py` | **1.950 link interni e 486 ancore, 0 problemi**; nessun link interno in nuova scheda; nessuna risorsa esterna | `link.md` |
 | Coerenza dei dati e dei testi | `tools/verifica-dati.py` | **385 controlli su 385** (budget, sostenitori, stati, contatori, ordine delle sezioni, lessico, nota «prototipo», nessun giorno negativo fino al 2030) | `dati.md`, `segnaposto.md` |
-| Percorsi interattivi e tastiera | `tools/percorsi.js` | **51 controlli su 51** | `percorsi.md`, `screenshot/tastiera-*.png`, `donazione-*.png` |
+| Percorsi interattivi e tastiera | `tools/percorsi.js` | **52 controlli su 52** | `percorsi.md`, `screenshot/tastiera-*.png`, `donazione-*.png` |
 | Uso senza server | `tools/verifica-file.js` | **8 su 8** da `file://` (filtri, ricerca, donazione, dati conservati, inglese) | `percorsi.md` (ultima sezione) |
 | Responsive, zoom, daltonismo, aree cliccabili | `tools/responsive.js` | nessuno scorrimento orizzontale a 320/375/768/1280 px né con zoom 200%; nessun bersaglio sotto 24 px; pulsanti principali 44 px | `responsive.md`, `screenshot/*-320.jpg` … `*-1280.jpg`, `progetti-deuteranopia.jpg` |
 | Prestazioni mobile | `tools/prestazioni.js` (Lighthouse) | **100/100/100/100** su home, elenco, progetto, donazione; LCP 1,6–1,9 s; CLS 0; TBT 0 ms | `prestazioni.md` |

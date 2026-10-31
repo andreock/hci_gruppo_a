@@ -1,8 +1,8 @@
 # Percorsi interattivi
 
-Generato da `tools/percorsi.js` il 31/10/2026, 15:27:42 (Playwright + Google Chrome, server statico locale con il sito in una sottocartella).
+Generato da `tools/percorsi.js` il 31/10/2026, 15:36:59 (Playwright + Google Chrome, server statico locale con il sito in una sottocartella).
 
-**51 controlli superati su 51.**
+**52 controlli superati su 52.**
 
 | # | Controllo | Esito | Nota |
 |---|---|---|---|
@@ -37,26 +37,27 @@ Generato da `tools/percorsi.js` il 31/10/2026, 15:27:42 (Playwright + Google Chr
 | 29 | Una URL filtrata condivisa mostra solo le campagne in corso con obiettivo raggiunto | superato |  |
 | 30 | Con filtri senza risultati compare un messaggio con alternative | superato |  |
 | 31 | Ricerca senza risultati: messaggio e suggerimenti | superato |  |
-| 32 | La ricerca trova anche la pagina del programma | superato |  |
-| 33 | A menu chiuso le voci non sono raggiungibili | superato |  |
-| 34 | Invio apre il menu e aria-expanded diventa true | superato |  |
-| 35 | Esc chiude il menu e il focus torna al pulsante | superato |  |
-| 36 | Il pulsante del menu misura almeno 44×44 px | superato | 127.796875×44 |
-| 37 | Aprendo faq.html#faq-tutto-o-niente la risposta è aperta | superato |  |
-| 38 | La ricerca nelle FAQ filtra e annuncia il numero | superato |  |
-| 39 | In inglese l'errore sull'importo è in inglese | superato |  |
-| 40 | Il selettore di lingua porta alla stessa pagina in inglese con gli stessi filtri | superato |  |
-| 41 | La pagina inglese ha lang=en | superato |  |
-| 42 | Campagna conclusa: nessun link per donare né campo importo | superato |  |
-| 43 | Campagna conclusa: stato scritto in testo | superato |  |
-| 44 | Donazione su campagna conclusa aperta da URL: spiegazione invece del modulo | superato |  |
-| 45 | Donazione senza progetto: spiegazione e link, nessun reindirizzamento | superato |  |
-| 46 | «Scrivi al gruppo» mostra subito un indicatore di invio | superato |  |
-| 47 | …poi una conferma con i tempi di risposta | superato |  |
-| 48 | Candidatura vuota: riepilogo errori | superato |  |
-| 49 | I consensi sono caselle di spunta native | superato |  |
-| 50 | Spuntando il consenso l'errore sparisce | superato |  |
-| 51 | Nessun errore JavaScript durante i percorsi | superato |  |
+| 32 | La ricerca tollera singolare e plurale («veterinaria» trova Scienze Veterinarie) | superato |  |
+| 33 | La ricerca trova anche la pagina del programma | superato |  |
+| 34 | A menu chiuso le voci non sono raggiungibili | superato |  |
+| 35 | Invio apre il menu e aria-expanded diventa true | superato |  |
+| 36 | Esc chiude il menu e il focus torna al pulsante | superato |  |
+| 37 | Il pulsante del menu misura almeno 44×44 px | superato | 127.796875×44 |
+| 38 | Aprendo faq.html#faq-tutto-o-niente la risposta è aperta | superato |  |
+| 39 | La ricerca nelle FAQ filtra e annuncia il numero | superato |  |
+| 40 | In inglese l'errore sull'importo è in inglese | superato |  |
+| 41 | Il selettore di lingua porta alla stessa pagina in inglese con gli stessi filtri | superato |  |
+| 42 | La pagina inglese ha lang=en | superato |  |
+| 43 | Campagna conclusa: nessun link per donare né campo importo | superato |  |
+| 44 | Campagna conclusa: stato scritto in testo | superato |  |
+| 45 | Donazione su campagna conclusa aperta da URL: spiegazione invece del modulo | superato |  |
+| 46 | Donazione senza progetto: spiegazione e link, nessun reindirizzamento | superato |  |
+| 47 | «Scrivi al gruppo» mostra subito un indicatore di invio | superato |  |
+| 48 | …poi una conferma con i tempi di risposta | superato |  |
+| 49 | Candidatura vuota: riepilogo errori | superato |  |
+| 50 | I consensi sono caselle di spunta native | superato |  |
+| 51 | Spuntando il consenso l'errore sparisce | superato |  |
+| 52 | Nessun errore JavaScript durante i percorsi | superato |  |
 
 Screenshot del percorso da tastiera e della donazione: `docs/verifiche/screenshot/tastiera-*.png`, `donazione-*.png`, `menu-mobile-375.png`.
 

@@ -252,7 +252,8 @@
       "form_sent": "Messaggio inviato (simulazione). Il gruppo risponde di solito entro {giorni} giorni lavorativi all'indirizzo che hai indicato.",
       "form_cancel": "Annulla",
       "image_label": "Illustrazione del progetto",
-      "status_title": "Stato della raccolta"
+      "status_title": "Stato della raccolta",
+      "match_more": "Come funziona il raddoppio"
     },
     "donazione": {
       "title": "Sostieni un progetto – ideaBlume",

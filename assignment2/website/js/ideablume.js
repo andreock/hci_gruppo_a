@@ -381,7 +381,10 @@
         var testo = norm([p.titolo[LANG], p.sottotitolo[LANG], p.testo[LANG], p.gruppo, p.anno, D.sito.categorie[p.categoria][LANG],
           D.sito.dipartimenti[p.dipartimento][LANG], p.titolo.it, p.titolo.en].join(" "));
         var voci = testo.split(/[^a-z0-9]+/);            // cerca per inizio di parola: «api» trova «apicoltori», non «capire»
-        return parole.every(function (w) { return voci.some(function (v) { return v.indexOf(w) === 0; }); });
+        return parole.every(function (w) {                // tollera singolare/plurale e maschile/femminile: «veterinaria» trova «veterinarie»
+          var r = w.length >= 5 ? w.slice(0, -1) : w;
+          return voci.some(function (v) { return v.indexOf(r) === 0; });
+        });
       }).sort(function (a, b) { return calcola(b).aperto - calcola(a).aperto; });
       risultati.innerHTML = trovati.map(cardHtml).join("");
       var t = trovati.length === 0 ? I.cerca.none_title : trovati.length === 1 ? I.cerca.result_1 : I.cerca.result_n;

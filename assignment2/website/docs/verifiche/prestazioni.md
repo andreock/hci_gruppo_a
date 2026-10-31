@@ -1,13 +1,13 @@
 # Prestazioni (Lighthouse mobile)
 
-Generato da `tools/prestazioni.js` il 31/10/2026, 15:25:46 con Lighthouse 12.8.2 e Google Chrome, impostazioni mobile predefinite (Moto G Power emulato, rete 4G lenta e CPU rallentata simulate), server statico locale.
+Generato da `tools/prestazioni.js` il 31/10/2026, 15:38:01 con Lighthouse 12.8.2 e Google Chrome, impostazioni mobile predefinite (Moto G Power emulato, rete 4G lenta e CPU rallentata simulate), server statico locale.
 
 | Pagina | Prestazioni | Accessibilità | Best practice | SEO | FCP | LCP | TBT | CLS | Speed Index | Peso trasferito |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Home | **100** | 100 | 100 | 100 | 1,1 s | **1,7 s** | 0 ms | **0,000** | 1,1 s | 100 KB |
-| Elenco dei progetti | **100** | 100 | 100 | 100 | 1,1 s | **1,9 s** | 0 ms | **0,000** | 1,1 s | 149 KB |
-| Pagina progetto | **100** | 100 | 100 | 100 | 1,1 s | **1,7 s** | 0 ms | **0,000** | 1,1 s | 97 KB |
-| Donazione | **100** | 100 | 100 | 100 | 0,9 s | **1,6 s** | 0 ms | **0,000** | 0,9 s | 134 KB |
+| Home | **100** | 100 | 100 | 100 | 1,1 s | **1,7 s** | 0 ms | **0,000** | 1,1 s | 101 KB |
+| Elenco dei progetti | **100** | 100 | 100 | 100 | 1,1 s | **1,9 s** | 0 ms | **0,000** | 1,1 s | 150 KB |
+| Pagina progetto | **100** | 100 | 100 | 100 | 1,1 s | **1,7 s** | 0 ms | **0,000** | 1,1 s | 98 KB |
+| Donazione | **100** | 100 | 100 | 100 | 0,9 s | **1,6 s** | 0 ms | **0,000** | 0,9 s | 135 KB |
 
 ## Confronto con IdeaGinger (assignment1, report del 15/10/2026, smartphone)
 

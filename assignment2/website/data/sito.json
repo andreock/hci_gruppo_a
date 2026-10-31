@@ -180,7 +180,7 @@
     "verifiche": {
       "it": [
         "axe-core 4.10 su tutte le 58 pagine, in italiano e in inglese: nessuna violazione delle regole WCAG 2.2 di livello A e AA.",
-        "Percorso completo solo da tastiera (ricerca, progetto, donazione, conferma), con menu, spiegazioni a comparsa ed errori dei moduli: 51 controlli automatici superati.",
+        "Percorso completo solo da tastiera (ricerca, progetto, donazione, conferma), con menu, spiegazioni a comparsa ed errori dei moduli: 52 controlli automatici superati.",
         "Contrasto di tutte le 52 coppie di colori usate: almeno 4,5:1 per il testo e 3:1 per componenti e indicatore di focus.",
         "Nessuno scorrimento orizzontale a 320 px e con lo zoom del browser al 200%.",
         "Aree cliccabili di almeno 24×24 px; pulsanti principali alti 44 px.",
@@ -189,7 +189,7 @@
       ],
       "en": [
         "axe-core 4.10 on all 58 pages, in Italian and English: no violations of WCAG 2.2 level A and AA rules.",
-        "Complete keyboard-only journey (search, project, donation, confirmation), including menu, toggletips and form errors: 51 automated checks passed.",
+        "Complete keyboard-only journey (search, project, donation, confirmation), including menu, toggletips and form errors: 52 automated checks passed.",
         "Contrast of all 52 colour pairs in use: at least 4.5:1 for text and 3:1 for components and the focus indicator.",
         "No horizontal scrolling at 320 px wide or with browser zoom at 200%.",
         "Click targets of at least 24×24 px; main buttons are 44 px high.",

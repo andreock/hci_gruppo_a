@@ -252,7 +252,8 @@
       "form_sent": "Message sent (simulation). The group usually replies within {giorni} working days to the address you entered.",
       "form_cancel": "Cancel",
       "image_label": "Project illustration",
-      "status_title": "Campaign status"
+      "status_title": "Campaign status",
+      "match_more": "How the match works"
     },
     "donazione": {
       "title": "Support a project – ideaBlume",

@@ -151,6 +151,8 @@ async function tabFino(page, pred, max = 60) {
   page = await nuova();
   await page.goto(BASE + "cerca.html?q=zxqw");
   ok("Ricerca senza risultati: messaggio e suggerimenti", /Nessun progetto per «zxqw»/.test(await page.textContent("[data-risultati-titolo]")) && (await page.isVisible("[data-nessun-risultato]")));
+  await page.goto(BASE + "cerca.html?q=veterinaria");
+  ok("La ricerca tollera singolare e plurale («veterinaria» trova Scienze Veterinarie)", /1 progetto per «veterinaria»/.test(await page.textContent("[data-risultati-titolo]")));
   await page.goto(BASE + "cerca.html?q=cofinanziamento");
   ok("La ricerca trova anche la pagina del programma", await page.isVisible('[data-pagine-elenco] a[href="programma.html"]'));
   await page.context().close();
