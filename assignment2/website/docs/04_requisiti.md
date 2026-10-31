@@ -91,7 +91,7 @@ Le informazioni istituzionali non documentate nelle fonti sono scritte nel sito 
 | ID | Requisito | Origine | P | Criterio di accettazione | Verifica |
 |---|---|---|---|---|---|
 | R-070 | Pagina del programma con lo stato attuale (bando aperto, chiuso, prossima edizione), le date esplicite e la fase corrente evidenziata | P-021; B06-2, B08-1, B09-1; J06-F2, J08-F1, J08-F6, J09-F1 | M | In apertura: «Edizione 2026 · campagne in corso fino al …; candidature 2027 [DA VERIFICARE]»; le quattro fasi con quella corrente marcata anche in testo | VIS |
-| R-071 | Chi può candidarsi, requisiti, come, entro quando, chi contattare | P-035; B09-2, B12-3; J06-F2, J08-F4, J09-F2, J12-F3 | M | Sezioni con titoli «Chi può candidarsi», «Requisiti», «Come e quando», «A chi scrivere»; contatto fittizio `@example.org` | VIS |
+| R-071 | Chi può candidarsi, requisiti, come, entro quando, chi contattare | P-035; B09-2, B12-3; J06-F2, J08-F4, J09-F2, J12-F3 | M | Sezioni con titoli «Chi può candidarsi», «Requisiti», «Come e quando», «A chi scrivere»; contatto fittizio ma credibile (`programma@ideablume.it`, D-22) | VIS |
 | R-072 | Cofinanziamento spiegato con un esempio numerico, compreso il tetto e il caso delle donazioni oltre l'obiettivo | P-048, P-053; B10-3; J10-F3 | M | Esempio «Obiettivo 6.000 € raggiunto → l'Ateneo aggiunge 6.000 €»; tetto di 10.000 € indicato come da verificare | VIS |
 | R-073 | Numeri delle edizioni passate calcolati dai dati | P-036; J08-F5 | M | I contatori per edizione coincidono con lo script di coerenza | SCRIPT |
 | R-074 | Il pulsante per candidarsi porta al percorso del programma, distinto dal contatto generico | P-078; B09-2; J09-F2, J09-F4 | M | «Candidati al programma» porta alla pagina di candidatura del programma; nessun link generico «Registrati» lo sostituisce | VIS |
@@ -145,7 +145,7 @@ Le informazioni istituzionali non documentate nelle fonti sono scritte nel sito 
 
 | ID | Requisito | Origine | P | Criterio di accettazione | Verifica |
 |---|---|---|---|---|---|
-| R-120 | Progettazione mobile first, con versione desktop curata; provata a 320, 375, 768 e 1280 px | `Istruzioni.md` §4 (versione desktop richiesta); P-087, P-037 | M | Screenshot delle pagine principali ai quattro tagli senza difetti | VIS |
+| R-120 | Progettazione mobile first, con versione desktop curata; provata a 320, 375, 768 e 1280 px | `Istruzioni.md` §4 (versione desktop richiesta); checkpoint 1 (responsive su mobile e desktop); P-087, P-037 | M | Screenshot delle pagine principali ai quattro tagli senza difetti | VIS |
 | R-121 | Su smartphone il contenuto principale viene prima della navigazione secondaria | P-018 | M | A 375 px il titolo della pagina è nella prima metà della schermata | VIS |
 | R-122 | Core Web Vitals sulle pagine critiche (progetto e donazione): LCP ≤ 2,5 s, CLS ≤ 0,1, INP ≤ 200 ms (TBT come indicatore in laboratorio) | P-087; B02-1, B11-4; J02-F2, J11-F3 | M | Lighthouse mobile su home, elenco, progetto, donazione; confronto con `01_inventario_fonti.md` §3.1 | LH |
 | R-123 | Immagini leggere (SVG) con dimensioni dichiarate, `loading="lazy"` sotto la piega; CSS e JS leggeri; nessun font o script esterno | P-087 | M | Peso totale della pagina progetto < 200 KB; nessuna richiesta a domini esterni | SCRIPT, LH |
@@ -154,10 +154,10 @@ Le informazioni istituzionali non documentate nelle fonti sono scritte nel sito 
 
 | ID | Requisito | Origine | P | Criterio di accettazione | Verifica |
 |---|---|---|---|---|---|
-| R-130 | Il prototipo funziona aprendo `index.html` direttamente nel browser, senza server | `Istruzioni.md` §7 B («non devono essere richiesti server») | M | Tutte le pagine e le funzioni (filtri, ricerca, donazione) funzionano da `file://` in Chrome, Firefox e Safari | TAST |
+| R-130 | Il prototipo funziona aprendo `index.html` direttamente nel browser, senza server, ed è pubblicabile così com'è su GitHub Pages | `Istruzioni.md` §7 B («non devono essere richiesti server»); checkpoint 1 (D-21) | M | Tutte le pagine e le funzioni (filtri, ricerca, donazione) funzionano da `file://` in Chrome, Firefox e Safari e da un server statico in una sottocartella (simulazione di GitHub Pages), compresa la 404 a qualunque profondità | TAST |
 | R-131 | I dati dei progetti stanno in un'unica fonte da cui derivano tutte le pagine; numeri coerenti tra elenco, pagina, contatori | P-036, P-023 | M | Script di coerenza: budget = obiettivo, percentuali, stati e contatori corretti | SCRIPT |
 | R-132 | Ogni pagina mostra nel piè di pagina «Prototipo didattico realizzato per il corso di HCI: nessun pagamento reale»; le informazioni istituzionali non documentate sono segnaposto «[DA VERIFICARE con l'Ateneo]» | Regole generali del prompt; regola 4 di C00 (non inventare dati presentati come reali) | M | Script: la nota è in ogni pagina IT ed EN; elenco dei segnaposto nel README | SCRIPT |
-| R-133 | Almeno 10 pagine distinte per contenuti o funzioni (gruppo di 4) | `Istruzioni.md` §4 | M | Elenco delle pagine in `06_architettura.md` con la funzione di ognuna | REV |
+| R-133 | Almeno 12 pagine distinte per contenuti o funzioni (richiesta del gruppo al checkpoint 1; la consegna ne chiede 10 per un gruppo di 4) | `Istruzioni.md` §4; checkpoint 1 (D-23) | M | Elenco delle pagine in `06_architettura.md` con la funzione di ognuna: almeno 12 tipi diversi | REV |
 | R-134 | Nessun pagamento reale, nessun dato inviato a un server, nessun servizio esterno | Obiettivo del prompt; `Istruzioni.md` §4 | M | Nessuna richiesta di rete esterna durante il percorso di donazione | SCRIPT |
 | R-135 | Le funzioni essenziali (leggere un progetto, le sue sezioni, le FAQ) funzionano anche senza JavaScript | Vincolo di stack del prompt | M | Con JS disattivato pagine progetto, FAQ (accordion `details`) e «Come funziona» sono complete | TAST |
 | R-136 | Nessun marchio, logo, grafica o testo di IdeaGinger; nessun logo ufficiale UniTo; nome di piattaforma proprio | Regola 4 del prompt | M | Revisione; nessun file grafico esterno | REV |

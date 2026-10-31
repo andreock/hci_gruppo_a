@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anteprima del design system – ideaBlume</title>
+<link rel="stylesheet" href="../../css/ideablume.css">
+<style>
+  .swatches { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); list-style: none; padding: 0; }
+  .swatches li { margin: 0; border: 1px solid var(--c-border-strong); border-radius: .5rem; overflow: hidden; font-size: 1rem; }
+  .swatches span { display: block; height: 3rem; }
+  .swatches code { display: block; padding: .25rem .5rem; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Salta al contenuto</a>
+<header class="site-header">
+  <div class="container site-header__bar">
+    <a class="brand" href="#">
+      <img class="brand__mark" src="../../img/ideablume-segno.svg" alt="" width="36" height="36">
+      <span><span class="brand__name">idea<b>Blume</b></span><span class="brand__tagline">Il crowdfunding per la ricerca dell'Università di Torino</span></span>
+    </a>
+    <form class="search-form" role="search" action="#"><label class="vh" for="q">Cerca un progetto</label><input id="q" type="search" placeholder="es. api, clima, Informatica"><button class="btn" type="submit">Cerca</button></form>
+    <a class="lang-switch" href="#" lang="en" hreflang="en">English</a>
+  </div>
+  <nav class="main-nav container" aria-label="Principale">
+    <ul class="main-nav__list">
+      <li><a href="#" aria-current="page">Progetti</a></li><li><a href="#">Il programma dell'Ateneo</a></li><li><a href="#">Come funziona</a></li><li><a href="#">Proponi un progetto</a></li><li><a href="#">Chi siamo</a></li><li><a href="#">Domande frequenti</a></li><li><a href="#">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main" class="container" tabindex="-1">
+  <nav class="breadcrumb" aria-label="Percorso"><ol><li><a href="#">Home</a></li><li><span aria-current="page">Anteprima del design system</span></li></ol></nav>
+  <h1>Anteprima del design system</h1>
+  <p class="lead">Pagina di servizio per la verifica visiva dei componenti. Non fa parte del sito.</p>
+
+  <h2>Colori</h2>
+  <ul class="swatches">
+    <li><span style="background:#1c1a22"></span><code>ink #1c1a22</code></li>
+    <li><span style="background:#4b4757"></span><code>ink-muted #4b4757</code></li>
+    <li><span style="background:#5a2d82"></span><code>brand #5a2d82</code></li>
+    <li><span style="background:#44205f"></span><code>brand-dark #44205f</code></li>
+    <li><span style="background:#f1eaf8"></span><code>brand-soft #f1eaf8</code></li>
+    <li><span style="background:#f6f3fa"></span><code>surface #f6f3fa</code></li>
+    <li><span style="background:#6e6680"></span><code>border-strong #6e6680</code></li>
+    <li><span style="background:#1f6b57"></span><code>progress #1f6b57</code></li>
+    <li><span style="background:#e4dfea"></span><code>track #e4dfea</code></li>
+    <li><span style="background:#2b1840"></span><code>footer #2b1840</code></li>
+    <li><span style="background:#ffd34e"></span><code>focus scuro #ffd34e</code></li>
+  </ul>
+
+  <h2>Stati delle campagne</h2>
+  <p class="btn-row">
+    <span class="status status--open"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="2"/></svg>In corso · mancano 36 giorni (scade il 06/12/2026)</span>
+    <span class="status status--reached"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Obiettivo raggiunto · puoi ancora sostenerlo per 20 giorni</span>
+    <span class="status status--done"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="3" width="10" height="10" fill="currentColor"/></svg>Conclusa · obiettivo raggiunto</span>
+    <span class="status status--failed"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="2.4"/></svg>Conclusa · obiettivo non raggiunto</span>
+  </p>
+
+  <h2>Card e barra di avanzamento</h2>
+  <ul class="grid grid--3">
+    <li><article class="card">
+      <div class="card__media"><svg viewBox="0 0 320 180" width="320" height="180" aria-hidden="true"><rect width="320" height="180" fill="#e3f3e8"/><circle cx="160" cy="90" r="40" fill="#1f6b57"/></svg></div>
+      <div class="card__body">
+        <p class="card__meta"><span class="tag">Salute animale</span> · Edizione 2026</p>
+        <h3 class="card__title"><a href="#">Alveari sani: monitorare la salute delle api del Piemonte</a></h3>
+        <p class="card__org">Gruppo ApiLab · Dipartimento di Scienze Veterinarie, Università di Torino</p>
+        <p><span class="status status--reached"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Obiettivo raggiunto · puoi ancora sostenerlo per 20 giorni</span></p>
+        <div class="progress" aria-hidden="true"><div class="progress__bar" style="width:100%"></div></div>
+        <p class="card__figures"><strong>€ 7.800</strong> raccolti su € 6.000 (130%) · 142 sostenitori</p>
+      </div>
+    </article></li>
+    <li><article class="card">
+      <div class="card__media"><svg viewBox="0 0 320 180" width="320" height="180" aria-hidden="true"><rect width="320" height="180" fill="#e7f0fa"/><rect x="110" y="50" width="100" height="80" fill="#0f4c8a"/></svg></div>
+      <div class="card__body">
+        <p class="card__meta"><span class="tag">Salute</span> · Edizione 2026</p>
+        <h3 class="card__title"><a href="#">Proteggere i neonati dai virus respiratori</a></h3>
+        <p class="card__org">Gruppo NeoVir · Dipartimento di Scienze della Sanità Pubblica e Pediatriche, Università di Torino</p>
+        <p><span class="status status--open"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="2"/></svg>In corso · mancano 5 giorni (scade il 05/11/2026)</span></p>
+        <div class="progress" aria-hidden="true"><div class="progress__bar" style="width:84%"></div></div>
+        <p class="card__figures"><strong>€ 6.720</strong> raccolti su € 8.000 (84%) · 188 sostenitori</p>
+      </div>
+    </article></li>
+    <li><article class="card">
+      <div class="card__media"><svg viewBox="0 0 320 180" width="320" height="180" aria-hidden="true"><rect width="320" height="180" fill="#fbebe5"/><path d="M60 150 L160 40 L260 150Z" fill="#8a2b10"/></svg></div>
+      <div class="card__body">
+        <p class="card__meta"><span class="tag">Ambiente</span> · Edizione 2024</p>
+        <h3 class="card__title"><a href="#">Frane e rifugi alpini: una mappa del rischio</a></h3>
+        <p class="card__org">Gruppo GeoAlp · Dipartimento di Scienze della Terra, Università di Torino</p>
+        <p><span class="status status--failed"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="2.4"/></svg>Conclusa · obiettivo non raggiunto</span></p>
+        <div class="progress" aria-hidden="true"><div class="progress__bar" style="width:62%"></div></div>
+        <p class="card__figures"><strong>€ 3.720</strong> raccolti su € 6.000 (62%) · 97 sostenitori</p>
+      </div>
+    </article></li>
+  </ul>
+
+  <h2>Pulsanti, riquadri e spiegazioni</h2>
+  <p class="btn-row"><a class="btn" href="#">Sostieni il progetto</a><a class="btn btn--secondary" href="#">Scrivi al gruppo</a><button class="btn btn--ghost" type="button">Copia link</button><button class="btn" type="button" aria-busy="true">Invio in corso</button><button class="btn" type="button" disabled>Raccolta conclusa</button></p>
+  <div class="infobox"><h3>Obiettivo e raddoppio dell'Ateneo</h3><p>Se la raccolta arriva a <strong>€ 6.000</strong>, l'Università aggiunge <strong>€ 6.000</strong>. <span class="placeholder">[DA VERIFICARE con l'Ateneo]</span></p>
+  <p><span class="toggletip"><button class="toggletip__btn" type="button" aria-expanded="true">Che cosa significa «tutto o niente»?</button></span></p>
+  <div class="toggletip__panel">Se alla scadenza l'obiettivo non è raggiunto, ti restituiamo la donazione.</div></div>
+
+  <h2>Ricompense</h2>
+  <ul class="rewards">
+    <li class="reward reward--free"><span class="reward__price">da € 5</span><span><p class="reward__title">Donazione libera</p><p class="reward__facts">Scegli tu l'importo. Nessuna ricompensa.</p></span><a class="btn btn--secondary btn--small" href="#">Dona un importo libero</a></li>
+    <li class="reward"><span class="reward__price">€ 50</span><span><p class="reward__title">Vasetto di miele del progetto</p><p class="reward__facts">21 persone l'hanno scelta · restano 9 posti su 30</p></span><a class="btn btn--secondary btn--small" href="#">Scegli € 50</a></li>
+  </ul>
+
+  <h2>Modulo, errori e passi</h2>
+  <ol class="steps"><li class="is-done">Importo</li><li aria-current="step">I tuoi dati</li><li>Privacy</li><li>Pagamento</li><li>Riepilogo</li></ol>
+  <div class="alert alert--error" role="alert"><h3>Correggi 1 campo</h3><ul><li><a href="#email">Email</a></li></ul></div>
+  <div class="field field--error"><label for="email">Email</label><span class="hint" id="email-h">Ti mandiamo qui la conferma.</span><input id="email" type="email" autocomplete="email" value="mario.rossi@" aria-invalid="true" aria-describedby="email-h email-e"><p class="field-error" id="email-e">Scrivi un indirizzo email completo, per esempio nome@esempio.it</p></div>
+  <fieldset><legend>Vuoi che il tuo nome sia visibile?</legend>
+    <label class="choice"><input type="radio" name="vis"><span class="choice__text">Mostra il mio nome tra i sostenitori<small>Il pubblico vede nome e iniziale del cognome.</small></span></label>
+    <label class="choice"><input type="radio" name="vis" checked><span class="choice__text">Dona in forma anonima<small>Il pubblico vede «Sostenitore anonimo».</small></span></label>
+  </fieldset>
+  <div class="alert alert--success" role="status"><h3>Messaggio inviato (simulazione)</h3><p>Il gruppo risponde di solito entro 3 giorni lavorativi.</p></div>
+  <div class="accordion"><details open><summary>Posso donare senza scegliere una ricompensa?</summary><div class="accordion__content"><p>Sì: scegli «Donazione libera» e scrivi l'importo, da € 5 in su.</p></div></details><details><summary>Che cosa succede se il progetto non raggiunge l'obiettivo?</summary><div class="accordion__content"><p>Ti restituiamo la donazione.</p></div></details></div>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__cols">
+      <section><h2>Hai bisogno di aiuto?</h2><p>Telefono <a href="tel:+390110194250">011 019 4250</a><br>lun–ven 9:30–13:00 e 14:00–17:00<br>Email <a href="mailto:aiuto@ideablume.it">aiuto@ideablume.it</a></p><a class="btn" href="#">Scrivici</a></section>
+      <nav aria-label="Esplora"><h2>Esplora</h2><ul><li><a href="#">Progetti</a></li><li><a href="#">Il programma dell'Ateneo</a></li></ul></nav>
+    </div>
+    <p class="site-footer__note"><strong>Prototipo didattico</strong> realizzato per il corso di HCI: nessun pagamento reale.</p>
+  </div>
+</footer>
+</body>
+</html>
