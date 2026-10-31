@@ -1,0 +1,58 @@
+{
+  "nome": "ideaBlume",
+  "contatti": {
+    "telefono": "+39 011 019 4250",
+    "telefono_visibile": "011 019 4250",
+    "email_aiuto": "aiuto@ideablume.it",
+    "email_programma": "programma@ideablume.it",
+    "email_collaborazioni": "collaborazioni@ideablume.it",
+    "indirizzo": "Corso della Ricerca 12, 10124 Torino",
+    "orari": {"it": "dal lunedì al venerdì, 9:30–13:00 e 14:00–17:00", "en": "Monday to Friday, 9:30–13:00 and 14:00–17:00 (Italian time)"},
+    "orari_brevi": {"it": "lun–ven 9:30–13:00 e 14:00–17:00", "en": "Mon–Fri 9:30–13:00 and 14:00–17:00"},
+    "risposta_giorni": 2,
+    "risposta_gruppi_giorni": 3
+  },
+  "regole": {
+    "minimo_libero": 5,
+    "tetto_cofinanziamento": 10000,
+    "durata_min_giorni": 30,
+    "durata_max_giorni": 60
+  },
+  "metodi_pagamento": [
+    {"id": "carta", "nome": {"it": "Carta di credito, debito o prepagata", "en": "Credit, debit or prepaid card"},
+     "dopo": {"it": "Inserisci i dati della carta nella pagina sicura del circuito di pagamento (nel prototipo: simulato).", "en": "You enter your card details on the payment provider's secure page (simulated in this prototype)."},
+     "percentuale": 1.8, "fisso": 0.35},
+    {"id": "paypal", "nome": {"it": "PayPal", "en": "PayPal"},
+     "dopo": {"it": "Accedi al tuo conto PayPal e confermi il pagamento (nel prototipo: simulato).", "en": "You log in to PayPal and confirm the payment (simulated in this prototype)."},
+     "percentuale": 1.8, "fisso": 0.35},
+    {"id": "satispay", "nome": {"it": "Satispay", "en": "Satispay"},
+     "dopo": {"it": "Confermi il pagamento nell'app Satispay (nel prototipo: simulato).", "en": "You confirm the payment in the Satispay app (simulated in this prototype)."},
+     "percentuale": 1.8, "fisso": 0.35},
+    {"id": "bonifico", "nome": {"it": "Bonifico bancario", "en": "Bank transfer"},
+     "dopo": {"it": "Ricevi via email le coordinate per il bonifico; la donazione vale quando arriva il bonifico (nel prototipo: simulato).", "en": "You receive the bank details by email; the donation counts when the transfer arrives (simulated in this prototype)."},
+     "percentuale": 0, "fisso": 0}
+  ],
+  "categorie": {
+    "salute": {"it": "Salute", "en": "Health"},
+    "ambiente": {"it": "Ambiente", "en": "Environment"},
+    "animali": {"it": "Animali", "en": "Animals"},
+    "tecnologia": {"it": "Tecnologia", "en": "Technology"},
+    "educazione": {"it": "Educazione e inclusione", "en": "Education and inclusion"},
+    "cultura": {"it": "Società e cultura", "en": "Society and culture"},
+    "agricoltura": {"it": "Agricoltura e cibo", "en": "Agriculture and food"}
+  },
+  "dipartimenti": {
+    "veterinarie": {"it": "Dipartimento di Scienze Veterinarie", "en": "Department of Veterinary Sciences"},
+    "sanita-pubblica": {"it": "Dipartimento di Scienze della Sanità Pubblica e Pediatriche", "en": "Department of Public Health and Paediatric Sciences"},
+    "scienze-vita": {"it": "Dipartimento di Scienze della Vita e Biologia dei Sistemi", "en": "Department of Life Sciences and Systems Biology"},
+    "psicologia": {"it": "Dipartimento di Psicologia", "en": "Department of Psychology"},
+    "informatica": {"it": "Dipartimento di Informatica", "en": "Department of Computer Science"},
+    "biotecnologie": {"it": "Dipartimento di Biotecnologie Molecolari e Scienze per la Salute", "en": "Department of Molecular Biotechnology and Health Sciences"},
+    "matematica": {"it": "Dipartimento di Matematica «Giuseppe Peano»", "en": "“Giuseppe Peano” Department of Mathematics"},
+    "studi-umanistici": {"it": "Dipartimento di Studi Umanistici", "en": "Department of Humanities"},
+    "filosofia-educazione": {"it": "Dipartimento di Filosofia e Scienze dell'Educazione", "en": "Department of Philosophy and Education Sciences"},
+    "disafa": {"it": "Dipartimento di Scienze Agrarie, Forestali e Alimentari", "en": "Department of Agricultural, Forest and Food Sciences"},
+    "scienze-terra": {"it": "Dipartimento di Scienze della Terra", "en": "Department of Earth Sciences"}
+  },
+  "nomi_sostenitori": ["Anna R.", "Marco B.", "Giovanna T.", "Paolo F.", "Luisa C.", "Stefano M.", "Elisa G.", "Roberto V.", "Silvia P.", "Fabio D.", "Chiara N.", "Davide S.", "Laura M.", "Alessandro Z.", "Federica O.", "Simone L.", "Martina A.", "Giorgio E.", "Valentina R.", "Nicola P."]
+}

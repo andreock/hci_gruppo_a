@@ -144,7 +144,7 @@ main:focus { outline: none; }
 .layout-aside { display: grid; gap: var(--s-6); }
 @media (min-width: 1024px) {
   .layout-aside { grid-template-columns: minmax(0, 1fr) 22rem; align-items: start; }
-  .layout-aside__aside { position: sticky; top: var(--s-4); order: 2; }
+  .layout-aside__aside { align-self: start; }
 }
 
 /* ---------- 4. Link «Salta al contenuto» -------------------------------- */
@@ -184,14 +184,14 @@ main:focus { outline: none; }
 .main-nav__list a[aria-current="page"] { color: var(--c-brand); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: .35em; }
 .js .main-nav[hidden] { display: none; }
 @media (min-width: 900px) {
-  .nav-toggle { display: none; }
+  .site-header .nav-toggle { display: none; }
   .js .main-nav[hidden], .main-nav { display: block; }
   .main-nav__list { flex-direction: row; flex-wrap: wrap; gap: 0 var(--s-1); }
   .main-nav__list a { min-height: var(--target); padding: var(--s-2) var(--s-3); }
 }
 
 /* Briciole di pane */
-.breadcrumb { padding: var(--s-3) 0; font-size: var(--fs-small); }
+.breadcrumb { padding-top: var(--s-3); padding-bottom: var(--s-3); font-size: var(--fs-small); }
 .breadcrumb ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s-1); }
 .breadcrumb li { margin: 0; display: inline-flex; align-items: center; }
 .breadcrumb li + li::before { content: "›"; margin: 0 var(--s-2); color: var(--c-ink-muted); }
@@ -296,6 +296,7 @@ main:focus { outline: none; }
 /* ---------- 13. Spiegazioni a comparsa (pulsante, non link: P-044) ------ */
 .toggletip { display: inline; }
 .toggletip__btn {
+  text-align: left;
   display: inline-flex; align-items: center; gap: .3em; min-height: 2rem; padding: 0 var(--s-2);
   font: inherit; font-size: var(--fs-small); font-weight: 600; color: var(--c-ink);
   background: var(--c-bg); border: 1px solid var(--c-border-strong); border-radius: 999px; cursor: pointer;
@@ -429,6 +430,42 @@ tfoot td, tfoot th { font-weight: 700; border-top: 2px solid var(--c-ink); }
 .filters .field { margin: 0; }
 .filters select { max-width: none; }
 .result-count { font-weight: 700; margin: var(--s-4) 0; }
+
+/* ---------- 23. Pagine generate: elementi aggiuntivi -------------------- */
+.no-js .js-only { display: none !important; }
+.js .no-js-only { display: none !important; }
+.h3 { font-size: var(--fs-h3); font-weight: 700; margin-bottom: var(--s-3); }
+legend.h3 { margin-top: var(--s-5); }
+.plain { list-style: none; padding: 0; }
+.plain > li { max-width: var(--measure); }
+.plain > li + li { margin-top: var(--s-4); border-top: 1px solid var(--c-border); padding-top: var(--s-4); }
+.inline-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-4); }
+.inline-list li { margin: 0; }
+.inline-list a { display: inline-block; padding: .3rem 0; }
+.team { padding-left: 1.2em; }
+.update h3 { font-size: var(--fs-h4); margin: 0 0 var(--s-1); }
+.update p { margin-bottom: var(--s-2); }
+.grid .update { background: var(--c-surface); border-radius: var(--radius); padding: var(--s-4); height: 100%; }
+.comment p { margin-bottom: var(--s-1); }
+.glossary dt { font-weight: 700; font-size: var(--fs-h4); margin-top: var(--s-5); scroll-margin-top: var(--s-5); }
+.glossary dd { margin: var(--s-1) 0 0; }
+.glossary dt:target { background: var(--c-warning-bg); }
+.reward__title, .reward__desc, .reward__facts { display: block; }
+.reward__desc { margin: .1rem 0; }
+.proj-figure { max-width: 30rem; margin: 0 0 var(--s-5); border-radius: var(--radius); overflow: hidden; background: var(--c-surface-2); }
+.proj-figure img { width: 100%; height: auto; }
+.proj-head h1 { margin-top: var(--s-2); }
+.promo { border-radius: var(--radius); padding: var(--s-6) var(--s-5); margin: var(--s-6) 0; }
+.promo h2 { margin-top: 0; }
+.layout-aside { grid-template-areas: "head" "aside" "body"; }
+.proj-head { grid-area: head; } .layout-aside__aside { grid-area: aside; } .proj-body { grid-area: body; }
+@media (min-width: 1024px) {
+  .layout-aside { grid-template-areas: "head aside" "body aside"; grid-template-rows: auto 1fr; }
+}
+.statusbox .alert h2 { font-size: var(--fs-body); }
+.btn[disabled][aria-busy="true"] { background: var(--c-brand-dark); border-color: var(--c-brand-dark); color: var(--c-on-brand); cursor: progress; }
+section[id], [id].statusbox { scroll-margin-top: var(--s-4); }
+code { font-size: .95em; background: var(--c-surface-2); padding: 0 .25em; border-radius: 2px; overflow-wrap: anywhere; }
 
 /* ---------- 22. Stampa --------------------------------------------------- */
 @media print {

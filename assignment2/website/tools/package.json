@@ -1,0 +1,10 @@
+{
+  "name": "ideablume-verifiche",
+  "private": true,
+  "description": "Strumenti di verifica del prototipo ideaBlume (Playwright, axe-core). Non servono per usare il sito.",
+  "scripts": {},
+  "dependencies": {
+    "axe-core": "^4.10.3",
+    "playwright": "^1.56.1"
+  }
+}

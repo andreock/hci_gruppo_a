@@ -103,7 +103,7 @@ Checkpoint 1 (31/10/2026): il gruppo ha confermato le proposte D-01…D-19 con q
 
 ## Decisioni della Fase 2
 
-### D-24 · Date delle campagne in corso dopo la consegna · proposta
+### D-24 · Date delle campagne in corso dopo la consegna · confermata (checkpoint 2: opzione b)
 - Problema: con date fisse (scadenze tra il 05/11 e il 15/12/2026) chi apre il prototipo dopo metà dicembre 2026, per esempio la docente in fase di valutazione, troverebbe **tutte le campagne concluse** e non potrebbe provare la donazione.
 - Opzioni: (a) **date fisse**, realistiche ma «scadono»; (b) **date dimostrative relative a oggi**: nei dati le campagne in corso hanno una durata e un numero di giorni trascorsi; il browser calcola inizio e scadenza a partire dalla data corrente, così gli stati restano coerenti in qualunque giorno. Le campagne concluse restano con date fisse.
 - Proposta: **(b)**, dichiarata nel piè di pagina della pagina progetto («date dimostrative calcolate da oggi») e nel README. Senza JavaScript la pagina mostra le date calcolate al momento della generazione.
@@ -113,3 +113,14 @@ Checkpoint 1 (31/10/2026): il gruppo ha confermato le proposte D-01…D-19 con q
 
 ### D-26 · Strumenti di verifica visiva · confermata
 - Chrome headless (`--headless=new`) non scende sotto ~500 px di larghezza della finestra: gli screenshot a 320 e 375 px si ottengono caricando la pagina in un iframe della larghezza esatta. Nella Fase 4 si userà Playwright (già in cache) con viewport reali.
+
+## Decisioni della Fase 3
+
+### D-27 · Formato delle date relative nei dati · confermata
+- Nei dati una data è `"AAAA-MM-GG"` (fissa, campagne concluse) oppure `"rel:N"` (N giorni da oggi, negativo nel passato: campagne in corso, loro aggiornamenti e commenti). Lo script di build scrive nelle pagine le date calcolate dalla data di generazione; nel browser `js/ideablume.js` le ricalcola da oggi (`<time data-rel="N">`). I giorni rimanenti restano quindi costanti e coerenti con le scadenze mostrate.
+
+### D-28 · Commenti nella lingua originale · confermata
+- I commenti dei sostenitori sono contenuti scritti dagli utenti: non vengono tradotti (come avviene nei siti reali), ma sono marcati con `lang` corretto (WCAG 3.1.2) e con l'indicazione «Commento in italiano». Tutto il resto, comprese ricompense, aggiornamenti e regole, è tradotto (R-110).
+
+### D-29 · Progetti fuori dal programma · confermata
+- Il prompt descrive un programma in cui l'Ateneo seleziona **alcuni** progetti. Due dei 13 progetti (`aria-aperta`, `rifugi-frane`) non fanno parte del programma: la loro pagina dice chiaramente che non c'è raddoppio. Nell'elenco un filtro «Programma dell'Ateneo» permette di vedere solo i progetti cofinanziati. Il filtro «Edizione» diventa «Anno».
