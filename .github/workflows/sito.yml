@@ -5,7 +5,7 @@ name: Sito · build e deploy
 
 on:
   push:
-    branches: [assignment2-sito]
+    branches: [main]
     paths:
       - "assignment2/website/**"
       - ".github/workflows/sito.yml"
