@@ -1,6 +1,6 @@
 # Percorsi interattivi
 
-Generato da `tools/percorsi.js` il 31/10/2026, 15:36:59 (Playwright + Google Chrome, server statico locale con il sito in una sottocartella).
+Generato da `tools/percorsi.js` il 01/11/2026, 12:44:21 (Playwright + Google Chrome, server statico locale con il sito in una sottocartella).
 
 **52 controlli superati su 52.**
 
@@ -42,7 +42,7 @@ Generato da `tools/percorsi.js` il 31/10/2026, 15:36:59 (Playwright + Google Chr
 | 34 | A menu chiuso le voci non sono raggiungibili | superato |  |
 | 35 | Invio apre il menu e aria-expanded diventa true | superato |  |
 | 36 | Esc chiude il menu e il focus torna al pulsante | superato |  |
-| 37 | Il pulsante del menu misura almeno 44×44 px | superato | 127.796875×44 |
+| 37 | Il pulsante del menu misura almeno 44×44 px | superato | 104.09375×44 |
 | 38 | Aprendo faq.html#faq-tutto-o-niente la risposta è aperta | superato |  |
 | 39 | La ricerca nelle FAQ filtra e annuncia il numero | superato |  |
 | 40 | In inglese l'errore sull'importo è in inglese | superato |  |
@@ -60,18 +60,3 @@ Generato da `tools/percorsi.js` il 31/10/2026, 15:36:59 (Playwright + Google Chr
 | 52 | Nessun errore JavaScript durante i percorsi | superato |  |
 
 Screenshot del percorso da tastiera e della donazione: `docs/verifiche/screenshot/tastiera-*.png`, `donazione-*.png`, `menu-mobile-375.png`.
-
-## Senza server (file://)
-
-Generato da `tools/verifica-file.js`: le stesse funzioni aprendo i file direttamente dal disco, come nello zip della consegna.
-
-| Controllo | Esito |
-|---|---|
-| file:// · i filtri si applicano dalla URL | superato |
-| file:// · la ricerca funziona | superato |
-| file:// · la donazione si apre con il progetto | superato |
-| file:// · si passa al passo 2 (history.pushState) | superato |
-| file:// · i dati restano tornando avanti e indietro (sessionStorage) | superato |
-| file:// · versione inglese e FAQ aperta da ancora | superato |
-| file:// · le date dimostrative sono ricalcolate | superato |
-| file:// · nessun errore JavaScript | superato |

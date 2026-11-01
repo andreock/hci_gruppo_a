@@ -1,2 +1,4 @@
 node_modules/
 .DS_Store
+# Pagine delle lingue aggiuntive: generate da tools/build.py (anche nella GitHub Action)
+*.html

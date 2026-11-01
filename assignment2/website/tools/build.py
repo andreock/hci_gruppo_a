@@ -2,11 +2,12 @@
 """Genera il sito statico ideaBlume (italiano nella radice, inglese in en/).
 
 Fonti:  data/sito.json, data/progetti.json, i18n/it.json, i18n/en.json
-Uscita: *.html, en/*.html, data/ib-dati.js, img/progetti/*.svg
+Uscita: *.html, en/*.html, data/ib-dati.js, img/progetti/*.svg, css/font-locali.css
 Uso (dalla cartella website/):  python3 tools/build.py
 La data di riferimento è oggi; si può forzare con IB_OGGI=AAAA-MM-GG (utile per i test).
 Solo libreria standard: nessuna dipendenza da installare.
 """
+import base64
 import datetime as dt
 import hashlib
 import html
@@ -79,6 +80,8 @@ def perc(x):
 
 
 def placeholder(lang):
+    if E(t(lang, "common.placeholder")) == '':
+        return ''
     return f'<span class="placeholder">{E(t(lang, "common.placeholder"))}</span>'
 
 
@@ -170,14 +173,16 @@ def url_progetto(p):
     return f'progetto-{p["slug"]}.html'
 
 
-def card(p, lang, prefix, h="h3"):
+def card(p, lang, prefix, h="h3", li=True, cls=""):
     c = p["_"]
     cat = SITO["categorie"][p["categoria"]][lang]
     prog = f' · <span class="tag">{E(t(lang, "card.programma"))}</span>' if p["programma"] else ""
     attrs = (f'data-slug="{p["slug"]}" data-stato="{c["stato"]}" data-cat="{p["categoria"]}" data-dip="{p["dipartimento"]}" '
              f'data-anno="{p["anno"]}" data-prog="{"si" if p["programma"] else "no"}" data-perc="{c["perc"]:.1f}" '
              f'data-scadenza="{p["scadenza"]}" data-inizio="{p["inizio"]}"')
-    return f'''<li {attrs}><article class="card">
+    if not li:
+        return card(p, lang, prefix, h, cls=cls)[len(f"<li {attrs}>"):-len("</li>")]
+    return f'''<li {attrs}><article class="card{cls}">
   <div class="card__media"><img src="{prefix}img/progetti/{p["slug"]}.svg" alt="" width="320" height="180" loading="lazy"></div>
   <div class="card__body">
     <p class="card__meta"><span class="tag">{E(cat)}</span> · {E(fmt(t(lang, "card.anno"), lang, anno=p["anno"]))}{prog}</p>
@@ -225,6 +230,30 @@ def scrivi_svg():
 
 
 # ---------------------------------------------------------------- impaginazione comune
+# Segno del marchio in linea: i colori vengono dal CSS, così si adatta anche al tema scuro.
+SEGNO = ('<svg class="{cls}" viewBox="0 0 48 48" width="{w}" height="{w}" aria-hidden="true" focusable="false">'
+         '<g class="segno__petali">' + "".join(
+             f'<ellipse cx="24" cy="11" rx="7" ry="10" transform="rotate({a} 24 24)"/>' for a in (0, 72, 144, 216, 288))
+         + '</g><circle class="segno__cuore" cx="24" cy="24" r="7.5"/></svg>')
+ICONA_CERCA = ('<svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">'
+               '<circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.4"/>'
+               '<path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>')
+ICONA_FRECCIA = ('<svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">'
+                 '<path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+ICONA_SPUNTA = ('<svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">'
+                '<path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+
+
+def form_cerca(lang, id_, extra_cls=""):
+    """Campo di ricerca con pulsante (etichetta nascosta: il pulsante «Cerca» la rende esplicita, D-25)."""
+    return f'''<form class="search-form{extra_cls}" role="search" action="cerca.html" method="get">
+      <label class="vh" for="{id_}">{E(t(lang, "common.search_label"))}</label>
+      {ICONA_CERCA.replace('class="icon"', 'class="icon search-form__icon"')}
+      <input id="{id_}" name="q" type="search" placeholder="{E(t(lang, "common.search_placeholder"))}" autocomplete="off">
+      <button class="btn" type="submit">{E(t(lang, "common.search_btn"))}</button>
+    </form>'''
+
+
 NAV = ["progetti", "programma", "come-funziona", "proponi", "chi-siamo", "faq", "contatti"]
 NAV_URL = {"progetti": "progetti.html", "programma": "programma.html", "come-funziona": "come-funziona.html",
            "proponi": "proponi.html", "chi-siamo": "chi-siamo.html", "faq": "faq.html", "contatti": "contatti.html"}
@@ -240,19 +269,15 @@ def header(lang, file, nav_corrente, prefix):
 <header class="site-header">
   <div class="container site-header__bar">
     <a class="brand" href="index.html" aria-label="{E(t(lang, "common.brand_home"))}">
-      <img class="brand__mark" src="{prefix}img/ideablume-segno.svg" alt="" width="36" height="36">
+      {SEGNO.format(cls="brand__mark", w=36)}
       <span><span class="brand__name">idea<b>Blume</b></span><span class="brand__tagline">{E(t(lang, "tagline"))}</span></span>
     </a>
-    <a class="lang-switch" href="{href_altra}" lang="{altra}" hreflang="{altra}" data-lang-switch>{E(t(lang, "common.lang_switch"))}<span class="vh"> – {E(t(lang, "common.lang_switch_label"))}</span></a>
+    <a class="lang-switch" href="{href_altra}" lang="{altra}" hreflang="{altra}" data-lang-switch><svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.8 5.8 3.8 9s-1.2 6.2-3.8 9c-2.6-2.8-3.8-5.8-3.8-9S9.4 5.8 12 3z"/></g></svg><span class="lang-switch__long">{E(t(lang, "common.lang_switch"))}</span><span class="lang-switch__short" aria-hidden="true">{altra.upper()}</span><span class="vh"> – {E(t(lang, "common.lang_switch_label"))}</span></a>
     <button class="btn btn--secondary nav-toggle js-only" type="button" aria-expanded="false" aria-controls="menu-principale" data-nav-toggle>
-      <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2.4"/></svg>
+      <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
       <span data-nav-label>{E(t(lang, "common.menu"))}</span>
     </button>
-    <form class="search-form" role="search" action="cerca.html" method="get">
-      <label class="vh" for="q-header">{E(t(lang, "common.search_label"))}</label>
-      <input id="q-header" name="q" type="search" placeholder="{E(t(lang, "common.search_placeholder"))}" autocomplete="off">
-      <button class="btn" type="submit">{E(t(lang, "common.search_btn"))}</button>
-    </form>
+    {form_cerca(lang, "q-header")}
   </div>
   <nav class="main-nav container" id="menu-principale" aria-label="{E(t(lang, "common.menu_label"))}">
     <ul class="main-nav__list">{voci}</ul>
@@ -266,11 +291,12 @@ def footer(lang, prefix):
     n = lambda k: E(t(lang, "nav." + k))
     return f'''<footer class="site-footer">
   <div class="container">
+    <p class="site-footer__brand">{SEGNO.format(cls="brand__mark", w=40)}<span><span class="brand__name">idea<b>Blume</b></span><span class="brand__tagline">{E(t(lang, "tagline"))}</span></span></p>
     <div class="site-footer__cols">
       <section aria-labelledby="ft-aiuto">
         <h2 id="ft-aiuto">{f("help_title")}</h2>
         <p>{f("phone")}: <a href="tel:{c["telefono"].replace(" ", "")}">{c["telefono_visibile"]}</a><br>{E(c["orari_brevi"][lang])}<br>
-        {f("email")}: <a href="mailto:{c["email_aiuto"]}">{c["email_aiuto"]}</a><br>{fmt(t(lang, "footer.response"), lang)}</p>
+        {f("email")}: <a href="mailto:{c["email_aiuto"]}">{c["email_aiuto"]}</a><br></p>
         <a class="btn" href="contatti.html#scrivici">{f("write")}</a>
       </section>
       <nav aria-labelledby="ft-esplora"><h2 id="ft-esplora">{f("explore")}</h2><ul>
@@ -312,9 +338,13 @@ def pagina(lang, file, titolo, corpo, nav=None, briciole=None, dati=False, extra
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{E(titolo)}</title>
 <meta name="description" content="{E(t(lang, "tagline"))}">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f8f6fb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#120e19" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="{prefix}img/ideablume-segno.svg" type="image/svg+xml">
 <link rel="stylesheet" href="{prefix}css/ideablume.css">
-<script>document.documentElement.className = "js";{ATTESA}</script>
+<script>document.documentElement.className = "js";{font_js(prefix)}{ATTESA}</script>
+<noscript><link rel="stylesheet" href="{prefix}css/font.css"></noscript>
 {extra_head}</head>
 <body data-pagina="{file[:-5]}" data-oggi-build="{OGGI.isoformat()}">
 {header(lang, file, nav, prefix)}
@@ -327,6 +357,31 @@ def pagina(lang, file, titolo, corpo, nav=None, briciole=None, dati=False, extra
 </body>
 </html>
 '''
+
+
+def font_js(prefix):
+    """Sceglie il foglio dei font: da file:// i browser bloccano i file di font, quindi si usa la versione
+    con i font incorporati; su un server si usano i file .woff2, precaricati."""
+    locali = f'<link rel="stylesheet" href="{prefix}css/font-locali.css">'
+    # Su un server le @font-face vanno in linea (stesso contenuto di css/font.css): nessuna richiesta bloccante in più.
+    regole = re.sub(r"/\*.*?\*/", "", (ROOT / "css/font.css").read_text(encoding="utf-8"), flags=re.S)
+    regole = re.sub(r"\s+", " ", regole.replace("../fonts/", f"{prefix}fonts/")).strip()
+    server = (f'<link rel="preload" href="{prefix}fonts/inter.woff2" as="font" type="font/woff2" crossorigin>'
+              f'<link rel="preload" href="{prefix}fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>'
+              f'<style>{regole}</style>')
+    return f' document.write(location.protocol === "file:" ? \'{locali}\' : \'{server}\');'
+
+
+def scrivi_font_locali():
+    """css/font-locali.css: le stesse @font-face di css/font.css con i font incorporati (data URI)."""
+    css = (ROOT / "css/font.css").read_text(encoding="utf-8")
+
+    def incorpora(m):
+        dati = base64.b64encode((ROOT / "css" / m.group(1)).read_bytes()).decode("ascii")
+        return f'url("data:font/woff2;base64,{dati}")'
+    css = re.sub(r'url\("(\.\./fonts/[^"]+\.woff2)"\)', incorpora, css)
+    css = "/* Generato da tools/build.py a partire da css/font.css: non modificare a mano. Usato solo da file://. */\n" + css
+    (ROOT / "css/font-locali.css").write_text(css, encoding="utf-8")
 
 
 def torna_su(lang):
@@ -360,48 +415,75 @@ def pg_home(lang):
         for _, a, p in aggiornamenti)
     passi = "".join(f'<li><h3>{E(s["t"])}</h3><p>{fmt(s["d"], lang)}</p></li>' for s in g("how"))
     prefix = "" if lang == "it" else "../"
+    # Progetto in evidenza: la campagna non ancora riuscita più vicina alla scadenza.
+    urgenti = [p for p in aperti if not p["_"]["raggiunto"]] or aperti
+    evidenza = min(urgenti, key=lambda p: p["_"]["giorni"]) if urgenti else None
+    anno = max(p["anno"] for p in PROGETTI)
+    sep = "." if lang == "it" else ","
+    sost_txt = f"{sost:,}".replace(",", sep)
+    chips = (f'<ul class="hero__chips">'
+             f'<li>{ICONA_SPUNTA}<span><strong>{len(aperti)}</strong> {E(g("chip_open"))}</span></li>'
+             f'<li>{ICONA_SPUNTA}<span>{E(fmt(g("chip_min"), lang))}</span></li>'
+             f'<li>{ICONA_SPUNTA}<span>{E(g("chip_noreg"))}</span></li></ul>')
+    feature = (f'<div class="hero__feature"><p class="hero__feature-label" id="h-evidenza">{E(g("chip_label"))}</p>'
+               f'{card(evidenza, lang, prefix, "h2", li=False, cls=" card--feature")}'
+               f'<p class="hero__badge" aria-hidden="true"><strong>{sost_txt}</strong> {E(g("chip_supp"))}</p></div>') if evidenza else ""
     corpo = f'''<section class="hero" aria-labelledby="titolo-pagina">
+  <div class="container hero__grid">
+    <div class="hero__text">
+      <p class="eyebrow">{E(fmt(g("eyebrow"), lang, anno=anno))}</p>
+      <h1 id="titolo-pagina">{E(g("h1"))}</h1>
+      <p class="lead">{fmt(g("intro"), lang)}</p>
+      {form_cerca(lang, "q-home", " search-form--hero")}
+      <p class="btn-row"><a class="btn btn--large" href="progetti.html?stato=in-corso">{E(g("cta"))} {ICONA_FRECCIA}</a>
+        <a class="btn btn--secondary btn--large" href="come-funziona.html">{E(t(lang, "nav.come-funziona"))}</a></p>
+      {chips}
+    </div>
+    {feature}
+  </div>
+</section>
+<section class="section" aria-labelledby="h-aperti">
   <div class="container">
-    <h1 id="titolo-pagina">{E(g("h1"))}</h1>
-    <p class="lead">{fmt(g("intro"), lang)}</p>
-    <form class="search-form" role="search" action="cerca.html" method="get">
-      <label class="vh" for="q-home">{E(t(lang, "common.search_label"))}</label>
-      <input id="q-home" name="q" type="search" placeholder="{E(t(lang, "common.search_placeholder"))}">
-      <button class="btn" type="submit">{E(t(lang, "common.search_btn"))}</button>
-    </form>
-    <p><a class="btn" href="progetti.html?stato=in-corso">{E(g("cta"))}</a></p>
+    <div class="section__head">
+      <h2 id="h-aperti">{E(g("open_title"))} <span class="count-pill">{len(aperti)}</span></h2>
+      <p><a class="link-arrow" href="progetti.html">{E(g("all_link"))} ({len(PROGETTI)}) {ICONA_FRECCIA}</a></p>
+    </div>
+    <ul class="grid grid--3">{"".join(card(p, lang, prefix) for p in aperti)}</ul>
+  </div>
+</section>
+<section class="section section--tinted" aria-labelledby="h-come">
+  <div class="container">
+    <div class="section__head">
+      <h2 id="h-come">{E(g("how_title"))}</h2>
+      <p><a class="link-arrow" href="come-funziona.html">{E(g("how_more"))} {ICONA_FRECCIA}</a></p>
+    </div>
+    <ol class="howto howto--cards">{passi}</ol>
+  </div>
+</section>
+<section class="section band" aria-labelledby="h-numeri">
+  <div class="container">
+    <h2 id="h-numeri">{E(g("numbers_title"))}</h2>
+    <ul class="figures">
+      <li><strong>{len(aperti)}</strong> {E(g("n_open"))}</li>
+      <li><strong>{len(chiusi)}</strong> {E(g("n_closed"))}</li>
+      <li><strong>{euro(raccolto, lang)}</strong> {E(g("n_raised"))}</li>
+      <li><strong>{euro(cofin, lang)}</strong> {E(g("n_cofin"))}</li>
+    </ul>
+    <p class="small band__note">{fmt(g("numbers_note"), lang, data=fmt_data(OGGI, lang, True))} {sost} {E(g("n_supporters"))}.</p>
+  </div>
+</section>
+<section class="section" aria-labelledby="h-agg">
+  <div class="container">
+    <h2 id="h-agg">{E(g("updates_title"))}</h2>
+    <ul class="grid grid--3">{agg_html}</ul>
   </div>
 </section>
 <div class="container">
-<section class="section" aria-labelledby="h-aperti">
-  <h2 id="h-aperti">{E(g("open_title"))} ({len(aperti)})</h2>
-  <ul class="grid grid--3">{"".join(card(p, lang, prefix) for p in aperti)}</ul>
-  <p><a class="link-blocco" href="progetti.html">{E(g("all_link"))} ({len(PROGETTI)})</a></p>
-</section>
-<section class="section" aria-labelledby="h-come">
-  <h2 id="h-come">{E(g("how_title"))}</h2>
-  <ol class="howto">{passi}</ol>
-  <p><a class="link-blocco" href="come-funziona.html">{E(g("how_more"))}</a></p>
-</section>
-<section class="section" aria-labelledby="h-numeri">
-  <h2 id="h-numeri">{E(g("numbers_title"))}</h2>
-  <ul class="figures">
-    <li><strong>{len(aperti)}</strong> {E(g("n_open"))}</li>
-    <li><strong>{len(chiusi)}</strong> {E(g("n_closed"))}</li>
-    <li><strong>{euro(raccolto, lang)}</strong> {E(g("n_raised"))}</li>
-    <li><strong>{euro(cofin, lang)}</strong> {E(g("n_cofin"))}</li>
-  </ul>
-  <p class="muted small">{fmt(g("numbers_note"), lang, data=fmt_data(OGGI, lang, True))} {sost} {E(g("n_supporters"))}.</p>
-</section>
-<section class="section" aria-labelledby="h-agg">
-  <h2 id="h-agg">{E(g("updates_title"))}</h2>
-  <ul class="grid grid--3">{agg_html}</ul>
-</section>
-<section class="section section--tinted promo" aria-labelledby="h-promo">
-  <h2 id="h-promo">{E(g("promo_title"))}</h2>
-  <p>{E(g("promo_text"))}</p>
-  <p><a class="btn btn--secondary" href="proponi.html">{E(g("promo_cta"))}</a></p>
-</section>
+  <section class="promo" aria-labelledby="h-promo">
+    <h2 id="h-promo">{E(g("promo_title"))}</h2>
+    <p>{E(g("promo_text"))}</p>
+    <p><a class="btn btn--light btn--large" href="proponi.html">{E(g("promo_cta"))} {ICONA_FRECCIA}</a></p>
+  </section>
 </div>'''
     return pagina(lang, "index.html", g("title"), corpo, nav=None, dati=False, main_class="")
 
@@ -441,6 +523,7 @@ def pg_progetti(lang):
 <p class="result-count" role="status" aria-live="polite" data-conteggio>{fmt(g("count"), lang, n=len(PROGETTI), tot=len(PROGETTI))}</p>
 <ul class="grid grid--3" data-elenco>{"".join(card(p, lang, prefix, "h2") for p in ordina_default(PROGETTI))}</ul>
 <div data-nessuno hidden><p class="alert alert--warning"><strong>{E(g("none"))}</strong> {fmt(g("none_hint"), lang)}</p></div>
+<br />
 <p data-fine>{E(g("end"))}</p>
 {torna_su(lang)}'''
     return pagina(lang, "progetti.html", g("title"), corpo, nav="progetti", briciole=[(g("h1"), "")], dati=True)
@@ -451,11 +534,7 @@ def pg_cerca(lang):
     cats = "".join(f'<li><a href="progetti.html?categoria={k}">{E(v[lang])}</a></li>' for k, v in SITO["categorie"].items())
     corpo = f'''<h1>{E(g("h1"))}</h1>
 <p>{E(g("intro"))}</p>
-<form class="search-form" role="search" action="cerca.html" method="get" style="max-width:40rem">
-  <label class="vh" for="q-cerca">{E(t(lang, "common.search_label"))}</label>
-  <input id="q-cerca" name="q" type="search" placeholder="{E(t(lang, "common.search_placeholder"))}">
-  <button class="btn" type="submit">{E(t(lang, "common.search_btn"))}</button>
-</form>
+{form_cerca(lang, "q-cerca", " search-form--page")}
 <noscript><p class="alert alert--info">{fmt(g("noscript"), lang)}</p></noscript>
 <h2 class="result-count" role="status" aria-live="polite" data-risultati-titolo>{E(g("empty"))}</h2>
 <ul class="grid grid--3" data-risultati></ul>
@@ -568,7 +647,7 @@ def pg_progetto(p, lang):
     indice = "".join(f'<li><a href="#{i}">{E(l)}</a></li>' for i, l in sezioni)
     fondi = "".join(f'<tr><td>{E(f["voce"][lang])}</td><td class="num">{e(f["importo"])}</td></tr>' for f in p["fondi"])
     fondi_second = f'<p>{fmt(g("fondi_second"), lang, scopo=E(so["scopo"][lang]))}</p>' if so else ""
-    team = "".join(f'<li><strong>{E(m["nome"])}</strong> · {E(m["ruolo"][lang])}</li>' for m in p["team"])
+    team = "".join(f'<li><strong>{E(m["nome"])}</strong><span class="vh"> · </span>{E(m["ruolo"][lang])}</li>' for m in p["team"])
     # ricompense
     rr = []
     if c["aperto"]:
@@ -670,11 +749,10 @@ def pg_donazione(lang):
         + (f'<button class="btn" type="submit" data-paga>{E(g("pay"))}</button>' if ultimo else f'<button class="btn" type="submit">{E(g("next"))} →</button>')
         + "</p>")
     corpo = f'''<h1 data-don-titolo>{E(g("h1"))}</h1>
-<p class="alert alert--warning">{g("simulated")}</p>
 <noscript><p class="alert alert--info">{fmt(g("noscript"), lang)}</p></noscript>
 <div data-don-assente hidden><p class="alert alert--info" data-don-assente-testo></p><p class="btn-row" data-don-assente-azioni></p></div>
 <div data-don-app hidden>
-  <section class="summary" aria-labelledby="h-riepilogo">
+  <section class="summary" aria-labelledby="h-riepilogo" style="visibility: hidden; display: none;">
     <h2 id="h-riepilogo" class="small" style="margin:0 0 .5rem">{E(g("summary_title"))}</h2>
     <dl><dt>{E(g("sum_project"))}</dt><dd data-sum-progetto></dd>
         <dt>{E(g("sum_reward"))}</dt><dd data-sum-ricompensa></dd>
@@ -739,11 +817,10 @@ def pg_conferma(lang):
     g = lambda k: t(lang, "pages.conferma." + k)
     corpo = f'''<div data-conferma hidden>
 <h1>{E(g("h1"))}</h1>
-<p class="alert alert--success"><strong>{E(g("code"))}: <span data-codice></span></strong><br>{E(g("simulated"))}</p>
+<p class="alert alert--success"><strong>{E(g("code"))}: <span data-codice></span></strong><br></p>
 <div class="summary"><dl data-conferma-riepilogo></dl></div>
 <h2>{E(g("next_title"))}</h2>
 <ul data-conferma-passi></ul>
-<p class="infobox">{fmt(g("receipt"), lang)}</p>
 <p class="btn-row"><button class="btn btn--secondary" type="button" data-stampa>{E(g("print"))}</button>
 <a class="btn btn--ghost" href="#" data-conferma-progetto>{E(g("back"))}</a><a class="btn btn--ghost" href="progetti.html?stato=in-corso">{E(g("more"))}</a></p>
 </div>
@@ -831,6 +908,7 @@ def pg_proponi(lang):
   <li><section class="statusbox" aria-labelledby="h-ext"><h3 id="h-ext">{E(g("ext_title"))}</h3><p>{fmt(g("ext_text"), lang)}</p>
     <p><a class="btn" href="collabora.html">{E(g("ext_cta"))}</a></p></section></li>
 </ul></section>
+<br />
 <section id="tempi" aria-labelledby="h-tempi"><h2 id="h-tempi">{E(g("time_title"))}</h2>{lista(g("time"), lang)}</section>
 <section id="esempi" aria-labelledby="h-esempi"><h2 id="h-esempi">{E(g("examples_title"))}</h2><p>{fmt(g("examples"), lang)}</p></section>
 <p>{fmt(g("groups_link"), lang)}</p>'''
@@ -842,7 +920,6 @@ def pg_candidatura(lang):
     ruoli = [(r, r) for r in g("f_role_opts")]
     dips = sorted(((k, v[lang]) for k, v in SITO["dipartimenti"].items()), key=lambda x: x[1])
     corpo = f'''<h1>{E(g("h1"))}</h1>
-<p class="alert alert--warning">{g("simulated")}</p>
 <div class="infobox"><h2>{E(g("before_title"))}</h2>{lista(g("before"), lang)}</div>
 <noscript><p class="alert alert--info">{E(t(lang, "common.noscript_generic"))}</p></noscript>
 <div class="alert alert--error" role="alert" tabindex="-1" data-errori hidden><h2 data-errori-titolo></h2><ul data-errori-lista></ul></div>
@@ -879,7 +956,6 @@ def pg_collabora(lang):
     corpo = f'''<h1>{E(g("h1"))}</h1>
 <p class="lead">{E(g("intro"))}</p>
 <p class="alert alert--success">{g("no_commit")}</p>
-<p class="alert alert--warning">{g("simulated")}</p>
 <noscript><p class="alert alert--info">{E(t(lang, "common.noscript_generic"))}</p></noscript>
 <div class="alert alert--error" role="alert" tabindex="-1" data-errori hidden><h2 data-errori-titolo></h2><ul data-errori-lista></ul></div>
 <form novalidate data-form="collabora" data-salva="ib-collabora">
@@ -913,7 +989,7 @@ def pg_chi(lang):
 <h2>{E(g("what_title"))}</h2>{lista(g("what"), lang)}
 <h2>{E(g("money_title"))}</h2><p>{fmt(g("money"), lang)}</p>
 <h2>{E(g("contact_title"))}</h2><p>{fmt(g("address"), lang)}<br>{t(lang, "footer.phone")}: {ctx_base(lang)["tel_link"]} · {ctx_base(lang)["email_aiuto_link"]}</p>
-<div class="infobox"><h2>{E(g("prototype_title"))}</h2><p>{fmt(g("prototype"), lang)}</p></div>'''
+'''
     return pagina(lang, "chi-siamo.html", g("title"), corpo, nav="chi-siamo", briciole=[(t(lang, "nav.chi-siamo"), "")])
 
 
@@ -926,8 +1002,9 @@ def pg_faq(lang):
         for tp in gr["topics"]:
             dom = "".join(
                 f'''<details id="{q["id"]}"><summary>{E(q["q"])}</summary><div class="accordion__content">
+                <br />
                 {"".join(f"<p>{fmt(a, lang)}</p>" for a in q["a"])}
-                <p class="small"><a href="#{q["id"]}" data-permalink>{E(g("permalink"))}<span class="vh">: {E(q["q"])}</span></a></p></div></details>'''
+                </div></details>'''
                 for q in tp["q"])
             argomenti += f'<h3>{E(tp["t"])}</h3><div class="accordion">{dom}</div>'
         blocchi += f'<section id="{gr["id"]}" aria-labelledby="h-{gr["id"]}" data-faq-gruppo><h2 id="h-{gr["id"]}">{E(gr["t"])}</h2>{argomenti}</section>'
@@ -960,7 +1037,7 @@ def pg_contatti(lang):
 </div>
 <h2>{E(g("address_title"))}</h2><p>{fmt(g("address"), lang)}</p>
 <section id="scrivici" aria-labelledby="h-scrivici"><h2 id="h-scrivici">{E(g("form_title"))}</h2>
-<p>{E(g("form_intro"))}</p><p class="alert alert--warning">{g("simulated")}</p>
+<p>{E(g("form_intro"))}</p>
 <div class="alert alert--error" role="alert" tabindex="-1" data-errori hidden><h3 data-errori-titolo></h3><ul data-errori-lista></ul></div>
 <form novalidate data-form="contatti" data-giorni="{SITO["contatti"]["risposta_giorni"]}">
   {campo("ct-nome", g("f_name"), lang=lang, attrs='autocomplete="name"')}
@@ -996,7 +1073,8 @@ def pg_404(lang, radice=False):
 <p class="lead">{E(g("text"))}</p>
 <p class="small muted" data-indirizzo hidden>{E(g("tried"))} <code data-indirizzo-testo></code></p>
 <label for="q-404"><strong>{E(g("search"))}</strong></label>
-<form class="search-form" role="search" action="cerca.html" method="get" style="max-width:36rem;margin-top:.25rem">
+<form class="search-form search-form--page" role="search" action="cerca.html" method="get">
+  {ICONA_CERCA.replace('class="icon"', 'class="icon search-form__icon"')}
   <input id="q-404" name="q" type="search" placeholder="{E(t(lang, "common.search_placeholder"))}">
   <button class="btn" type="submit">{E(t(lang, "common.search_btn"))}</button>
 </form>
@@ -1057,6 +1135,7 @@ def dati_js():
 # ---------------------------------------------------------------- avvio
 def main():
     scrivi_svg()
+    scrivi_font_locali()
     dati_js()
     n = 0
     for lang in LINGUE:

@@ -16,21 +16,18 @@ Percorso principale consigliato per provarlo: Home → «Scopri i progetti in co
 
 ### Pubblicazione su GitHub Pages
 
-GitHub Pages pubblica la radice di un branch o la cartella `docs/`, non una sottocartella qualsiasi. Il modo più semplice è pubblicare il contenuto di `assignment2/website/` in un branch dedicato, per esempio:
+La pubblicazione è automatica con la GitHub Action `.github/workflows/sito.yml` (nella radice del repository): a ogni push sul branch `assignment2-sito` che tocca `assignment2/website/` esegue `tools/build.py`, lancia `verifica-dati.py` e `verifica-link.py` e pubblica il sito (senza `tools/` e `docs/`). Sulle pull request esegue solo build e verifiche. Si può avviare anche a mano da «Actions → Run workflow».
 
-```bash
-git subtree split --prefix assignment2/website -b gh-pages   # crea un branch con solo il sito
-git push origin gh-pages                                     # poi in Settings → Pages scegliere «gh-pages / root»
-```
+Le pagine inglesi (`en/*.html`) **non sono nel repository** (sono in `.gitignore`): le genera la build, in locale con `python3 tools/build.py` e online nell'Action. Prima di aprire il sito da `file://` o di creare lo zip bisogna quindi lanciare la build.
 
-Il file `.nojekyll` evita l'elaborazione di Jekyll. La pagina `404.html` funziona a qualunque profondità dell'indirizzo e mostra la versione inglese per gli indirizzi sotto `/en/`. I comandi qui sopra non sono stati eseguiti: niente è stato pubblicato.
+Configurazione una tantum: Settings → Pages → Source «GitHub Actions»; in Settings → Environments → `github-pages` consentire il deploy dal branch `assignment2-sito`. Il file `.nojekyll` evita l'elaborazione di Jekyll. La pagina `404.html` funziona a qualunque profondità dell'indirizzo e mostra la versione inglese per gli indirizzi sotto `/en/`.
 
 ### Archivio per la consegna
 
-Per lo zip richiesto (`assignment2_gruppox.zip`) basta comprimere la cartella `website/` escludendo `tools/node_modules/`:
+Per lo zip richiesto (`assignment2_gruppox.zip`) bisogna prima rigenerare le pagine (così è presente anche `en/`), poi comprimere la cartella `website/` escludendo `tools/node_modules/`:
 
 ```bash
-cd assignment2 && zip -r assignment2_gruppoA.zip website -x "website/tools/node_modules/*" "*.DS_Store"
+cd assignment2 && python3 website/tools/build.py && zip -r assignment2_gruppoA.zip website -x "website/tools/node_modules/*" "*.DS_Store"
 ```
 
 ## Pagine (17 tipi, in italiano e in inglese: 58 file HTML)
@@ -61,7 +58,9 @@ cd assignment2 && zip -r assignment2_gruppoA.zip website -x "website/tools/node_
 website/
 ├── index.html, progetti.html, …          pagine italiane (generate)
 ├── en/                                   pagine inglesi (generate)
-├── css/ideablume.css                     design system (unico foglio di stile)
+├── css/ideablume.css                     design system (token dei temi chiaro e scuro, componenti)
+├── css/font.css, font-locali.css         font per server e per file:// (il secondo è generato)
+├── fonts/                                Inter e Bricolage Grotesque (woff2) con licenze OFL
 ├── js/ideablume.js                       interazioni (miglioramento progressivo)
 ├── data/
 │   ├── progetti.json                     i 13 progetti (fonte unica dei dati)
@@ -75,19 +74,20 @@ website/
 
 ## Stack e motivazioni
 
-- **HTML, CSS e JavaScript senza framework, senza CDN, senza font esterni.** Motivi: la consegna chiede pagine che funzionino nel browser senza server; le prestazioni su mobile erano un problema grave di IdeaGinger (LCP 34 s in laboratorio sulla pagina progetto). Risultato: Lighthouse mobile 100 su home, elenco, progetto e donazione.
+- **HTML, CSS e JavaScript senza framework e senza CDN.** Motivi: la consegna chiede pagine che funzionino nel browser senza server; le prestazioni su mobile erano un problema grave di IdeaGinger (LCP 34 s in laboratorio sulla pagina progetto). Tailwind e Bootstrap sono stati valutati per il redesign e scartati (D-35).
+- **Design system v2** (redesign, D-35–D-39): CSS moderno sulle stesse classi della v1, font open source **Inter** e **Bricolage Grotesque** (Fontsource, SIL OFL 1.1) ospitati nel sito, **tema scuro automatico**, intestazione con menu fisso da 900 px. Da `file://` i font sono caricati da `css/font-locali.css` (incorporati), su un server dai file `.woff2`. Risultato: Lighthouse mobile 96–99 per le prestazioni (CLS 0) e 100 per accessibilità, best practices e SEO su home, elenco, progetto e donazione.
 - **Pagine statiche generate** da `tools/build.py` (Python, solo libreria standard) a partire da un unico file di dati e da un JSON di traduzioni per lingua. Motivi: numeri sempre coerenti tra elenco, pagina e contatori (P-036); inglese completo senza copiare a mano le pagine (P-043); contenuti leggibili anche senza JavaScript.
 - **JavaScript come miglioramento progressivo**: menu mobile, date dimostrative, filtri, ricerca, FAQ, spiegazioni a comparsa, donazione, validazione. I dati sono in file `.js` e non in `.json` letti con `fetch()`, perché da `file://` i browser bloccano `fetch()`.
 - **Date dimostrative**: le campagne in corso hanno date calcolate a partire da oggi (`"rel:N"` nei dati), così il prototipo resta provabile anche dopo la consegna (D-24). Le campagne concluse hanno date fisse.
 
-Tutte le scelte sono motivate in `docs/decisioni.md` (D-01–D-34).
+Tutte le scelte sono motivate in `docs/decisioni.md` (D-01–D-39).
 
 ## Come modificare il sito
 
 Dopo ogni modifica a dati o testi:
 
 ```bash
-python3 tools/build.py          # rigenera le 58 pagine, le illustrazioni e i file dati JS
+python3 tools/build.py          # rigenera le 58 pagine, le illustrazioni, i file dati JS e css/font-locali.css
 ```
 
 La build si ferma con un errore se manca una traduzione o una variabile.
@@ -103,14 +103,14 @@ Gli script di verifica richiedono Node.js e Google Chrome. Una volta sola: `cd t
 
 | Script | Che cosa controlla | Ultimo risultato |
 |---|---|---|
-| `python3 tools/contrasto.py` | Contrasti delle 52 coppie di colori | 52/52 conformi |
+| `python3 tools/contrasto.py` | Contrasti di 75 coppie di colori, tema chiaro e scuro | 150/150 conformi |
 | `python3 tools/verifica-link.py` | Link interni, ancore, nuove schede, risorse esterne | 0 problemi |
 | `python3 tools/verifica-dati.py` | Coerenza dei numeri, stati, ordine delle sezioni, lessico, segnaposto | 385/385 |
 | `node tools/verifica-pagine.js` | axe-core (WCAG 2.2 A/AA), errori JS, `h1`, titoli, 320 px | 0 violazioni su 58 pagine |
 | `node tools/percorsi.js` | Percorsi da tastiera e interazioni | 52/52 |
 | `node tools/verifica-file.js` | Funzionamento da `file://` | 8/8 |
 | `node tools/responsive.js` | 320/375/768/1280 px, zoom 200%, daltonismo, aree cliccabili | nessun problema |
-| `node tools/prestazioni.js` | Lighthouse mobile su 4 pagine | 100 / 100 / 100 / 100 |
+| `node tools/prestazioni.js` | Lighthouse mobile su 4 pagine | prestazioni 96–99, CLS 0; accessibilità 100 |
 | `python3 tools/genera-tracciabilita.py` | Rigenera `docs/05_tracciabilita.md` | 84 risolti, 3 parziali, 3 n/a |
 
 Dettagli in `docs/verifiche/README.md`.

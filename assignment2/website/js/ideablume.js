@@ -18,6 +18,9 @@
       if (v === null) sessionStorage.removeItem(k); else sessionStorage.setItem(k, JSON.stringify(v));
     } catch (e) { return null; }
   }
+  /* pagina visitata subito prima nella scheda (serve all'elenco dei progetti per sapere se si torna da un progetto) */
+  var paginaPrecedente = store("ib-pagina"); store("ib-pagina", location.pathname);
+  window.addEventListener("pageshow", function (e) { if (e.persisted) store("ib-pagina", location.pathname); });
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function oggi() { var d = new Date(); return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
   function dataDa(spec) {
@@ -362,9 +365,11 @@
     formFiltri.addEventListener("change", function () { applica(true); });
     formFiltri.addEventListener("submit", function (e) { e.preventDefault(); applica(true); });
     $("[data-reset]", formFiltri).addEventListener("click", function (e) { e.preventDefault(); formFiltri.reset(); campi.forEach(function (k) { formFiltri.elements[k].value = ""; }); applica(true); formFiltri.elements.stato.focus(); });
+    /* la posizione si ripristina solo tornando dal progetto aperto dall'elenco; da ogni altra pagina l'elenco parte dall'inizio */
     var chiave = function () { return "ib-scroll:" + location.pathname + location.search; };
-    elenco.addEventListener("click", function (e) { if (e.target.closest("a")) store(chiave(), window.scrollY); });
-    var y = store(chiave()); if (y) window.scrollTo(0, y);
+    elenco.addEventListener("click", function (e) { var a = e.target.closest("a"); if (a) store(chiave(), { y: window.scrollY, da: a.pathname }); });
+    var pos = store(chiave()); store(chiave(), null);
+    if (pos && pos.y && pos.da === paginaPrecedente) window.scrollTo(0, pos.y);
     window.addEventListener("pageshow", function (e) { if (e.persisted) { leggi(); applica(false); } });
   }
 

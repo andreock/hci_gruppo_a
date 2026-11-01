@@ -1,6 +1,6 @@
 # Verifica responsive, zoom, daltonismo e aree cliccabili
 
-Generato da `tools/responsive.js` il 31/10/2026, 15:37:19 (Playwright + Google Chrome). Screenshot in `docs/verifiche/screenshot/`.
+Generato da `tools/responsive.js` il 01/11/2026, 03:10:39 (Playwright + Google Chrome). Screenshot in `docs/verifiche/screenshot/`.
 
 ## Scorrimento orizzontale (WCAG 1.4.10)
 
@@ -35,11 +35,11 @@ Finestra da 1280 px ingrandita al 200% (= 640 px CSS):
 
 | Pagina | Bersagli sotto 24×24 px (esclusi i link nel testo) | Altezza minima dei pulsanti principali |
 |---|---|---|
-| home | nessuno | 44 px |
-| progetti | nessuno | 44 px |
-| progetto | nessuno | 44 px |
-| donazione | nessuno | 44 px |
-| programma | nessuno | 44 px |
-| faq | nessuno | 44 px |
-| proponi | nessuno | 44 px |
-| home-en | nessuno | 44 px |
+| home | nessuno | 40 px |
+| progetti | nessuno | 40 px |
+| progetto | nessuno | 40 px |
+| donazione | nessuno | 40 px |
+| programma | nessuno | 40 px |
+| faq | nessuno | 40 px |
+| proponi | nessuno | 40 px |
+| home-en | nessuno | 40 px |

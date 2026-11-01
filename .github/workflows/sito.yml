@@ -1,0 +1,73 @@
+# Build e deploy del sito ideaBlume (assignment2/website) su GitHub Pages.
+# Le pagine delle lingue diverse dall'italiano (en/*.html) non sono nel repository:
+# vengono generate qui da tools/build.py a partire da i18n/*.json e data/*.json.
+name: Sito · build e deploy
+
+on:
+  push:
+    branches: [assignment2-sito]
+    paths:
+      - "assignment2/website/**"
+      - ".github/workflows/sito.yml"
+  pull_request:
+    paths:
+      - "assignment2/website/**"
+      - ".github/workflows/sito.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+defaults:
+  run:
+    working-directory: assignment2/website
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Genera le pagine (italiano e lingue aggiuntive)
+        run: python3 tools/build.py
+
+      - name: Verifica dati e link
+        run: |
+          python3 tools/verifica-dati.py
+          python3 tools/verifica-link.py
+
+      - name: Prepara la cartella da pubblicare
+        run: |
+          mkdir -p "$RUNNER_TEMP/_site"
+          rsync -a \
+            --exclude 'tools/' --exclude 'docs/' --exclude '.idea/' \
+            --exclude 'README.md' --exclude '.gitignore' --exclude '.DS_Store' \
+            ./ "$RUNNER_TEMP/_site/"
+          test -f "$RUNNER_TEMP/_site/en/index.html"
+          echo "Pagine pubblicate: $(find "$RUNNER_TEMP/_site" -name '*.html' | wc -l)"
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/_site
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

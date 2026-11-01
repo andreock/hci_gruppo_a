@@ -36,7 +36,7 @@ Informazioni istituzionali non documentate nelle fonti: vanno confermate prima d
 | …Se la raccolta arriva a € 7.500 entro la scadenza, l'Università aggiunge € 7.500 : il progetto riceve in tutto € 15.000. | progetto-clima-giovani.html |
 | …Se la raccolta arriva a € 8.000 entro la scadenza, l'Università aggiunge € 8.000 : il progetto riceve in tutto € 16.000. | progetto-neonati-virus.html |
 | …agna nella campagna e, se raggiungono l'obiettivo, aggiunge una cifra pari all'obiettivo , fino a € 10.000 per progetto. | programma.html |
-| …one 2026: fase 4 di 4, campagne in corso fino al 15 dicembre 2026 . Candidature per l'edizione 2027: apertura e scadenza | programma.html |
+| …one 2026: fase 4 di 4, campagne in corso fino al 16 dicembre 2026 . Candidature per l'edizione 2027: apertura e scadenza | programma.html |
 | …obiettivo entro la scadenza. L'Ateneo aggiunge una cifra pari all'obiettivo, fino a un massimo di € 10.000 per progetto. | programma.html |
 | …Le donazioni oltre l'obiettivo vanno al secondo obiettivo del progetto, se c'è, e non vengono raddoppiate. | programma.html |
 | …ata (docente, ricercatrice o ricercatore). Assegniste, assegnisti, dottorande e dottorandi possono far parte del gruppo. | programma.html |

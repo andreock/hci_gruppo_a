@@ -141,3 +141,24 @@ Checkpoint 1 (31/10/2026): il gruppo ha confermato le proposte D-01…D-19 con q
 
 ### D-34 · Importi in un'unica forma · confermata
 - In italiano sempre «€ 6.000» (anche nei testi dei gruppi), in inglese «€6,000», per coerenza (P-070).
+
+## Redesign visivo (versione 2)
+
+### D-35 · Redesign senza framework CSS, con font open source ospitati nel sito · proposta
+- Richiesta: un design più moderno, eventualmente con framework CSS o librerie JS esterne.
+- Valutati **Tailwind CSS** e **Bootstrap**. Scartati: le pagine sono generate da `tools/build.py` con classi semantiche usate anche da `js/ideablume.js` e dagli script di verifica; Tailwind richiederebbe di riscrivere tutto il markup e una build Node (o il runtime da CDN, ~300 KB, sconsigliato in produzione); Bootstrap aggiungerebbe ~25 KB compressi di regole quasi tutte inutilizzate e un aspetto riconoscibile e generico. Entrambi andrebbero contro D-01 (funzionamento da `file://`, anche senza rete) e le prestazioni su mobile (P02, P11). Nessuna libreria JS di interfaccia serve: le interazioni esistenti bastano.
+- Scelta: nuovo design system scritto in CSS moderno (`color-mix()`, `:has()`, `text-wrap`, maschere) sulle **stesse classi** della versione 1, più due font open source da **Fontsource** (Inter e Bricolage Grotesque, SIL OFL 1.1) copiati in `fonts/`: nessuna richiesta a server di terzi, nessun tracciamento.
+- Modifica a D-03 («senza font esterni»): i font restano locali, ma si scaricano ~90 KB in più. Effetto misurato con Lighthouse mobile: prestazioni 96–99 invece di 100, CLS 0, accessibilità, best practices e SEO 100 (`docs/verifiche/prestazioni.md`). Il server di prova (`python3 -m http.server`) non comprime i file; GitHub Pages sì, quindi i valori reali saranno migliori.
+
+### D-36 · Intestazione compatta su telefono · proposta
+- Con il nuovo marchio la prima riga dell'intestazione andava su tre righe a 375 px. Sotto 600 px il sottotitolo del marchio è nascosto (resta nel piè di pagina, nell'hero della home e nella descrizione della pagina; chi gestisce il sito è spiegato in home e in «Chi siamo», R-088) e il link della lingua mostra «EN»/«IT» con l'icona del globo (il nome completo resta per gli screen reader). Marchio, lingua e «Menu» stanno su una riga a 375 px; a 320 px vanno a capo senza scorrimento orizzontale. La ricerca resta sempre visibile (D-25).
+
+### D-37 · Intestazione fissa solo per la riga del menu, da 900 px · proposta
+- Da 900 px la riga del marchio e della ricerca scorre via e resta in alto solo la riga del menu (circa 50 px), con fondo semitrasparente sfocato. Su telefono l'intestazione non è fissa, per non togliere spazio al contenuto. `scroll-padding-top` e `scroll-margin-top` di 5rem impediscono che ancore e focus finiscano sotto il menu (WCAG 2.4.11). Non contraddice D-31, che riguardava la colonna laterale della pagina progetto (rimasta non fissa).
+
+### D-38 · Tema scuro automatico · proposta
+- Il sito segue l'impostazione del sistema (`prefers-color-scheme`); nessun interruttore nell'intestazione. Tutti i colori sono token, verificati da `tools/contrasto.py` in entrambi i temi (75 coppie ciascuno, nessuna sotto soglia). Le illustrazioni dei progetti vengono leggermente attenuate.
+
+### D-39 · Font da `file://` · proposta
+- Da `file://` Chrome blocca il caricamento dei file di font (e delle immagini usate come maschera CSS) per la politica CORS. Soluzione: uno script nel `<head>` sceglie i font in base al protocollo. Su un server: precaricamento dei `.woff2` e `@font-face` in linea. Da `file://`: `css/font-locali.css`, generato dalla build con i font incorporati in base64 (~120 KB, usato solo in locale). Senza JavaScript: `css/font.css` tramite `<noscript>`. Le maschere decorative usano una sagoma SVG incorporata nel CSS. In ogni caso, se i font non arrivano il sito usa i caratteri di sistema.
+- Scartate le transizioni animate tra pagine (`@view-transition`): con navigazioni rapide producevano errori in console («Transition was aborted») rilevati da `tools/percorsi.js`.
