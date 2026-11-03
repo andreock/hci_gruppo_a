@@ -9,19 +9,18 @@ Principio guida: **prima i progetti da sostenere, poi le regole, poi i servizi p
 ```
 ideaBlume (index.html)                                   [en/index.html]
 ├── Progetti ─────────────── progetti.html  (elenco, filtri, ordinamento)
-│   └── Pagina progetto ──── progetto-<slug>.html  (×13 progetti)
+│   └── Pagina progetto ──── progetto-<slug>.html  (×10 progetti)
 │       └── Donazione ────── donazione.html?progetto=<slug>[&ricompensa=<id>]
 │           └── Conferma ─── donazione-conferma.html?codice=…
 ├── Cerca ────────────────── cerca.html?q=…  (risultati e «nessun risultato»)
 ├── Il programma dell'Ateneo programma.html  (stato del bando, regole del raddoppio, edizioni)
 ├── Come funziona ────────── come-funziona.html  (#sostenitori, #promotori)
-├── Proponi un progetto ──── proponi.html  (chi può proporre, costi, tempi)
+├── Proponi un progetto ──── proponi.html  (chi può proporre, due percorsi, consigli, tempi e costi, #gruppi)
 │   ├── Candidatura ──────── candidatura.html  (ricercatori UniTo, simulata)
 │   └── Collaborazione ───── collabora.html  (enti esterni, simulata)
 ├── Chi siamo ────────────── chi-siamo.html
 ├── Aiuto
-│   ├── Domande frequenti ── faq.html  (#sostenitori, #promotori, #generali)
-│   ├── Glossario ────────── glossario.html
+│   ├── Domande frequenti ── faq.html  (#sostenitori, #promotori, #generali, #parole)
 │   └── Contatti ─────────── contatti.html  (recapiti, orari, modulo «Scrivici»)
 ├── Accessibilità ────────── accessibilita.html  (dichiarazione e segnalazioni)
 └── Pagina non trovata ───── 404.html  [en/404.html]
@@ -41,12 +40,11 @@ Tutte le pagine esistono in italiano nella radice e in inglese in `en/` con lo s
 | 6 | Conferma della donazione | `donazione-conferma.html` | Codice di riferimento, riepilogo stampabile, ricevuta, contatti | P01, P06 |
 | 7 | Il programma dell'Ateneo | `programma.html` | Stato del bando con date, fasi, regola del raddoppio con esempio, edizioni e numeri | P06, P08, P09, P10 |
 | 8 | Come funziona | `come-funziona.html` | Passi numerati per sostenitori e per promotori, ognuno con il link all'azione | P01, P09 |
-| 9 | Proponi un progetto | `proponi.html` | Chi può proporre (ricercatori, enti esterni), costi in evidenza, tempi, due percorsi | P09, P12 |
+| 9 | Proponi un progetto | `proponi.html` | Chi può proporre (ricercatori, enti esterni), due percorsi passo per passo, consigli, tempi e costi, indicazioni per i gruppi con una campagna in corso | P09, P12 |
 | 10 | Candidatura al programma | `candidatura.html` | Modulo simulato per ricercatori UniTo | P09 |
 | 11 | Proponi una collaborazione | `collabora.html` | Modulo simulato per enti esterni, con «inviare non vi impegna» e riepilogo stampabile | P12 |
 | 12 | Domande frequenti | `faq.html` | FAQ per destinatario e argomento, ricerca interna, accordion, ancore | P06, P09, P12, P04 |
-| 13 | Glossario | `glossario.html` | Termini spiegati in parole semplici, con ancore | P01, P04, P07, P12 |
-| 14 | Chi siamo | `chi-siamo.html` | Chi gestisce il servizio, come lavora, nota sul prototipo | P06, P12 |
+| 14 | Chi siamo | `chi-siamo.html` | Chi gestisce il servizio, la sua storia, come lavora, dove vanno i soldi | P06, P12 |
 | 15 | Contatti | `contatti.html` | Recapiti e orari da un'unica fonte, modulo «Scrivici» con conferma | P01, P06, P11 |
 | 16 | Accessibilità | `accessibilita.html` | Stato di conformità verificato, limiti noti, come segnalare un problema | P03, P11 |
 | 17 | Pagina non trovata | `404.html` | Spiega l'errore nella lingua giusta; ricerca, home, progetti, FAQ | tutte |
@@ -58,19 +56,19 @@ Tutte le pagine esistono in italiano nella radice e in inglese in `en/` con lo s
 ```
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │ [Salta al contenuto]  (visibile al focus)                                    │
-│ ✿ ideaBlume                    [ Cerca un progetto…        ][Cerca]  EN ▸    │
+│ ✿ ideaBlume                                                          EN ▸    │
 │ Il crowdfunding per la ricerca                                               │
 │   dell'Università di Torino                                                  │
 ├──────────────────────────────────────────────────────────────────────────────┤
-│ Progetti · Il programma dell'Ateneo · Come funziona · Proponi un progetto ·  │
-│ Chi siamo · Domande frequenti · Contatti                                     │
+│ Home · Progetti · Chi siamo · Come funziona · Il programma dell'Ateneo ·     │
+│ Proponi un progetto · Domande frequenti · Contatti                           │
 └──────────────────────────────────────────────────────────────────────────────┘
 ```
 
-- **7 voci** di primo livello, senza tendine (P-008: oltre 70 voci su IdeaGinger). Le voci iniziano con la parola chiave (aspetto positivo S58).
+- **8 voci** di primo livello, compresa «Home» (D-44), senza tendine (P-008: oltre 70 voci su IdeaGinger). Le voci iniziano con la parola chiave (aspetto positivo S58).
 - Il **programma dell'Ateneo** è una voce di primo livello con il suo nome (P-007).
-- **Ricerca** sempre visibile nell'intestazione, anche su mobile (sopra il menu), e ripetuta in homepage e nella pagina Progetti (P-005, D-25).
-- **Logo** = unico link alla home (P-010). **Lingua**: «English» / «Italiano» scritto per esteso, con `lang` e `hreflang`, porta alla stessa pagina nell'altra lingua conservando filtri e ancora (R-112).
+- **Ricerca** in homepage e nella pagina Progetti, dove è unita ai filtri; non è più nell'intestazione (P-005, D-43).
+- **Logo** e voce «Home» scritta per esteso portano alla home; nessuna icona senza etichetta (P-010, D-44). **Lingua**: «English» / «Italiano» scritto per esteso, con `lang` e `hreflang`, porta alla stessa pagina nell'altra lingua conservando filtri e ancora (R-112).
 - **Voce corrente** con `aria-current="page"` e sottolineatura spessa (P-009).
 - **Mobile (< 900 px)**: pulsante «Menu» con testo e icona, `aria-expanded`, apertura con Invio/Spazio, chiusura con Esc e con il pulsante; a menu chiuso le voci non ricevono il focus (`hidden`), il focus torna al pulsante (P-008, P-085). Voci alte 48 px per tocchi imprecisi (P01, P12).
 
@@ -82,7 +80,7 @@ Tutte le pagine esistono in italiano nella radice e in inglese in `en/` con lo s
 │ ☎ 011 019 4250 (lun–ven 9:30–13,     Progetti          Proponi un progetto    │
 │   14–17)                             Il programma      Candidatura            │
 │ ✉ aiuto@ideablume.it                 Come funziona     Collaborazioni         │
-│ Rispondiamo entro 2 giorni lavorativi Domande frequenti Glossario             │
+│ Rispondiamo entro 2 giorni lavorativi Domande frequenti                       │
 │ [Scrivici]                                                                    │
 │ ────────────────────────────────────────────────────────────────────────────  │
 │ Prototipo didattico realizzato per il corso di HCI: nessun pagamento reale.   │
@@ -133,7 +131,7 @@ Home («Hai un progetto di ricerca?») / menu «Proponi un progetto»
           ├─► Ricercatore UniTo ──► Il programma (requisiti, scadenze) ──► Candidatura (simulata) ──► conferma
           └─► Ente esterno ──► Collaborazione (simulata) ──► conferma con tempi e riepilogo stampabile
    Ogni passo cita il link a quello successivo (P-069). «Come funziona#promotori» e FAQ#promotori portano agli stessi due percorsi.
-Gruppo con campagna in corso (P10, P11): Pagina progetto pubblica · Come funziona#gruppi · Contatti («Segnala un problema»)
+Gruppo con campagna in corso (P10, P11): Pagina progetto pubblica · Proponi#gruppi · Contatti («Segnala un problema»)
 ```
 
 Personas: P09 (candidatura in più sessioni: ogni sezione ha un'ancora), P12 (contatto, non registrazione), P10–P11 (nessuna area riservata, D-17).
@@ -146,9 +144,9 @@ Personas: P09 (candidatura in più sessioni: ogni sezione ha un'ancora), P12 (co
 | Pagine statiche | `<nome>.html` | `en/<nome>.html` | Stessi nomi di file nelle due lingue |
 | Progetto | `progetto-<slug>.html` | `en/progetto-<slug>.html` | `slug` stabile, ASCII (es. `alveari-sani`) |
 | Elenco filtrato | `progetti.html?stato=in-corso&categoria=salute&dip=…&edizione=2026&ordina=scadenza` | idem | Filtri riflessi nella URL con `history.replaceState`; condivisibili |
-| Ricerca | `cerca.html?q=api` | idem | Modulo `GET`; funziona anche dall'intestazione di ogni pagina |
+| Ricerca | `cerca.html?q=api` | idem | Modulo `GET`; si apre dal campo di ricerca della home e della 404 |
 | Donazione | `donazione.html?progetto=<slug>&ricompensa=<id>` | idem | Autosufficiente (P-061); senza parametri spiega che cosa fare |
-| Ancore | `#presentazione`, `#fondi`, `#team`, `#ricompense`, `#aggiornamenti`, `#commenti`, `#sostenitori`; FAQ `#faq-<id>`; glossario `#<termine>` | idem (stessi id) | Gli id sono uguali nelle due lingue, così il selettore di lingua conserva l'ancora |
+| Ancore | `#presentazione`, `#fondi`, `#team`, `#ricompense`, `#aggiornamenti`, `#commenti`, `#sostenitori`; FAQ `#faq-<id>` e `#parola-<termine>` | idem (stessi id) | Gli id sono uguali nelle due lingue, così il selettore di lingua conserva l'ancora |
 | Errore | `404.html` | `en/404.html` | Su GitHub Pages è servita la 404 della radice, che sceglie la lingua (D-21) |
 
 Le URL sono relative: il sito funziona da `file://`, da un server locale e in una sottocartella di GitHub Pages.
@@ -226,7 +224,7 @@ I numeri: 5 in corso · 8 concluse (P-028)
 │ Stato [Tutti ▾] Categoria [Tutte ▾] Dipartimento [Tutti ▾] Edizione [Tutte ▾]│
 │ Ordina per [Scadenza più vicina ▾]   [Applica] (senza JS)  [Azzera i filtri] │
 └──────────────────────────────────────────────────────────────────────────────┘
-«Mostrati 5 di 13 progetti» (role=status)                           (P-032)
+«Mostrati 5 di 10 progetti» (role=status)                           (P-032)
 [griglia di card: 1 colonna mobile, 2 tablet, 3 desktop]
 «Hai visto tutti i progetti di questa selezione.»  [Torna su]       (P-033, P-015)
 Nessun risultato con questi filtri → «Nessun progetto corrisponde. Azzera i filtri / vedi tutte le campagne in corso»
@@ -288,7 +286,7 @@ Sempre in ordine crescente; sempre gli stessi quattro dati, anche con 0 (P-045).
 
 Campagna conclusa (P-040): il riquadro di stato diventa «■ Conclusa · obiettivo raggiunto il 15/02/2025 · € 9.120 su € 8.000 · l'Ateneo ha aggiunto € 8.000» con i pulsanti «Leggi i risultati» (ancora all'ultimo aggiornamento) e «Scopri i progetti in corso»; le ricompense diventano un elenco in sola lettura «Ricompense assegnate», senza pulsanti né campi.
 
-Spiegazioni a comparsa (P-044): un `button` «Che cosa significa “tutto o niente”?» con `aria-expanded` che apre un riquadro sotto il pulsante (si chiude con Esc o con lo stesso pulsante), con link al glossario. Nessun link a «#».
+Spiegazioni a comparsa (P-044): un `button` «Che cosa significa “tutto o niente”?» con `aria-expanded` che apre un riquadro sotto il pulsante (si chiude con Esc o con lo stesso pulsante), con link alla risposta nelle FAQ. Nessun link a «#».
 
 «Scrivi al gruppo» (P-039): l'email del gruppo è già visibile; il pulsante apre un piccolo modulo nella pagina; all'invio «Invio in corso…» e poi «Messaggio inviato (simulazione). Il gruppo risponde di solito entro 3 giorni lavorativi.» in `role="status"`.
 
@@ -331,8 +329,6 @@ Comportamento senza JS: la pagina mostra il messaggio «La donazione simulata ri
 ```
 [briciole]
 H1 Il programma di cofinanziamento dell'Ateneo
-In una frase: l'Università seleziona progetti dei suoi gruppi di ricerca e, se raggiungono
-l'obiettivo, aggiunge una cifra pari all'obiettivo (fino a € 10.000) [DA VERIFICARE].
 ┌ Stato attuale ────────────────────────────────────────────────────────────┐
 │ Edizione 2026 · Fase 4 di 4: campagne in corso fino al 15/12/2026          │
 │ Candidature per l'edizione 2027: [DA VERIFICARE con l'Ateneo]               │
@@ -386,7 +382,7 @@ risponde, riepilogo stampabile.
 
 ```
 H1 Come funziona ideaBlume
-Indice: Per chi sostiene · Per chi propone un progetto · Per i gruppi con una campagna in corso
+Indice: Per chi sostiene · Per chi propone un progetto · Quanto costa · Hai ancora dubbi?
 H2 Per chi sostiene (ol)
   1 Scegli un progetto → [Vedi i progetti in corso]
   2 Scegli una ricompensa o una donazione libera da € 5 → [Che cos'è una ricompensa]
@@ -434,10 +430,10 @@ Puoi andare a: Home · Tutti i progetti · Domande frequenti · Contatti
 
 | Problema su IdeaGinger | Scelta di architettura | P-xxx |
 |---|---|---|
-| Menu e tendine con oltre 70 voci, senza Esc | 7 voci, nessuna tendina; menu mobile accessibile da tastiera | P-008 |
+| Menu e tendine con oltre 70 voci, senza Esc | 8 voci, nessuna tendina; menu mobile accessibile da tastiera | P-008 |
 | Il programma UniTo si trova solo ricordando che è un «Partner» | Voce di primo livello «Il programma dell'Ateneo»; la ricerca trova anche il programma | P-007 |
 | Servizi per promotori prima dei progetti | Home: progetti in corso subito dopo la frase iniziale; promotori in fondo | P-004 |
-| Nessun campo di ricerca | Campo nell'intestazione, in home e in Progetti; pagina risultati con «nessun risultato» | P-005, P-006 |
+| Nessun campo di ricerca | Campo in home e nei filtri di Progetti; pagina risultati con «nessun risultato» | P-005, P-006 |
 | «Chi siamo» solo nel footer | Nel menu principale e nella prima frase della home | P-003 |
 | Pagine interne aperte in nuove schede, link esterni non segnalati | Stessa scheda; link esterni con «(sito esterno)» | P-014 |
 | Posizione persa tornando indietro, «Altri» opaco | Tutti i progetti in una griglia con conteggio; filtri nella URL; posizione salvata | P-027, P-032, P-033 |
@@ -449,21 +445,18 @@ Puoi andare a: Home · Tutti i progetti · Domande frequenti · Contatti
 
 ## 8. Contenuti previsti per i progetti (per coprire tutti gli stati)
 
-13 progetti inventati, attribuiti a dipartimenti reali dell'Università di Torino (nomi dei gruppi e delle persone inventati). Date rispetto al 31/10/2026.
+10 progetti inventati, attribuiti a dipartimenti reali dell'Università di Torino (nomi dei gruppi e delle persone inventati). Date rispetto al 31/10/2026.
 
 | Slug | Tema | Dipartimento | Edizione | Stato previsto | Persona che lo usa |
 |---|---|---|---|---|---|
 | `alveari-sani` | Salute delle api in Piemonte | Scienze Veterinarie | 2026 | In corso, **oltre l'obiettivo** (130%), 20 giorni | P10, P05 |
 | `neonati-virus` | Proteggere i neonati dai virus respiratori | Scienze della Sanità Pubblica e Pediatriche | 2026 | In corso, **vicino alla scadenza** (5 giorni), 84% | P01 |
-| `api-in-citta` | Impollinatori urbani nei parchi di Torino | Scienze della Vita e Biologia dei Sistemi | 2026 | In corso, **lontano dalla scadenza** (45 giorni), 31% | P05, P09 (esempio) |
 | `clima-giovani` | Clima e benessere psicologico dei giovani | Psicologia | 2026 | In corso, 61%, 26 giorni | P02, P04 |
 | `aria-aperta` | Sensori open source per la qualità dell'aria | Informatica | 2026 | In corso, 47%, 33 giorni | P11 |
-| `antibiotici-test` | Test rapido per scegliere l'antibiotico giusto | Biotecnologie Molecolari e Scienze per la Salute | 2026 | In corso, appena iniziato (18%), 40 giorni | P07 |
 | `matematica-accessibile` | Formule matematiche leggibili con lo screen reader | Matematica «Giuseppe Peano» | 2025 | **Concluso, obiettivo raggiunto** | P03 |
 | `plastica-batteri` | Batteri che degradano le microplastiche | Biotecnologie Molecolari e Scienze per la Salute | 2025 | Concluso, raggiunto con secondo obiettivo | P08 |
 | `dialetti-archivio` | Archivio sonoro dei dialetti piemontesi | Studi Umanistici | 2025 | **Concluso, obiettivo non raggiunto** | P08 |
 | `scienza-doposcuola` | Laboratori di scienze nei doposcuola di quartiere | Filosofia e Scienze dell'Educazione | 2024 | Concluso, raggiunto (progetto con il territorio) | P12 |
-| `vigneti-clima` | Vigneti del Monferrato e cambiamento climatico | Scienze Agrarie, Forestali e Alimentari | 2024 | Concluso, raggiunto | P05 |
 | `rifugi-frane` | Frane e rifugi alpini: una mappa del rischio | Scienze della Terra | 2024 | Concluso, non raggiunto | P08 |
 | `robot-anziani` | Robot sociali per l'autonomia delle persone anziane | Informatica | 2023 | Concluso, raggiunto (edizione più vecchia) | P08 |
 

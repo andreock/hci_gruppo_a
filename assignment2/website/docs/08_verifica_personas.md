@@ -35,7 +35,7 @@ Limite di metodo: è un **cognitive walkthrough** del gruppo con strumenti autom
 |---|---|---|---|---|
 | J01-F1 | Titolo troncato nei risultati, nome del servizio incoerente | Titoli brevi e univoci «Pagina – ideaBlume», massimo 60 caratteri; un solo nome del marchio | risolto | `axe.md` (titoli ≤ 60, nessun duplicato) |
 | J01-F2 | Home che non spiega il servizio; testo piccolo e poco contrastato | La prima frase dice che cos'è ideaBlume e chi lo gestisce; corpo 18 px; contrasto minimo del testo 5,96:1 | risolto | `screenshot/home-1280.jpg`, `home-375.jpg`; `contrasti.md` |
-| J01-F3 | «Come funziona» continuo, piccolo, con termini inglesi | Indice, passi numerati con link all'azione, glossario in italiano, telefono nel piè di pagina di ogni pagina | risolto | `come-funziona.html`; `dati.md` (nessun termine escluso) |
+| J01-F3 | «Come funziona» continuo, piccolo, con termini inglesi | Indice, passi numerati con link all'azione, parole spiegate nelle FAQ, telefono nel piè di pagina di ogni pagina | risolto | `come-funziona.html`; `dati.md` (nessun termine escluso) |
 | J01-F4 | Oltre 100%, giorni negativi, nuove schede | Badge «Obiettivo raggiunto · puoi ancora sostenerlo per 20 giorni (scade il …)»; giorni mai negativi; tutti i link interni nella stessa scheda | risolto | `dati.md` (stati fino al 2030), `link.md` (0 `target=_blank`) |
 | J01-F5 | Errore solo dopo l'invio; ricompensa «obbligata» | Errore all'uscita dal campo con la correzione da fare; «Donazione libera · da € 5» è la prima scelta | risolto | `percorsi.md #10–12`; `screenshot/donazione-errore-importo.png` |
 | J01-F6 | Senza riferimento umano dubita dell'esito | Conferma con codice di riferimento, riepilogo stampabile, che cosa succede dopo, telefono e orari | parziale | `percorsi.md #24`; `screenshot/donazione-conferma.png`. L'email di conferma è solo annunciata: il prototipo non invia email |
@@ -66,7 +66,7 @@ Zoom al 200%: nessuno scorrimento orizzontale, testi e pulsanti interi (`respons
 
 | Codice | Punto di dolore | Che cosa succede ora | Stato | Prova |
 |---|---|---|---|---|
-| J04-F2 | Solo la descrizione tradotta; gergo non spiegato | 29 pagine inglesi complete (menu, stato, ricompense, regole, errori, FAQ); glossario in inglese | risolto | `screenshot/home-en-1280.jpg`; `tools/build.py` si ferma se manca una traduzione |
+| J04-F2 | Solo la descrizione tradotta; gergo non spiegato | 25 pagine inglesi complete (menu, stato, ricompense, regole, errori, FAQ con le parole spiegate) | risolto | `screenshot/home-en-1280.jpg`; `tools/build.py` si ferma se manca una traduzione |
 | J04-F3 | «Tutto o niente» assente in inglese; guida su altro sito senza avviso | Regola spiegata nel riquadro accanto a «Support this project»; nessun link esterno non dichiarato | risolto | `en/progetto-clima-giovani.html`; `link.md` |
 | J04-F4 | Ricompense in due lingue, disposte in modo diverso | Una lingua per volta; stessa struttura delle ricompense in tutti i progetti | risolto | `dati.md` (ordine delle sezioni), `en/progetto-*.html` |
 | J04-F5 | Errore solo in italiano; metodi incoerenti; commissioni nascoste | Errori in inglese; metodi da un'unica fonte uguali in FAQ e donazione; commissione e totale nel riepilogo | risolto | `percorsi.md #21–22, #40`; `dati.md` (metodi) |
@@ -76,8 +76,8 @@ Zoom al 200%: nessuno scorrimento orizzontale, testi e pulsanti interi (`respons
 
 | Codice | Punto di dolore | Che cosa succede ora | Stato | Prova |
 |---|---|---|---|---|
-| J05-F1 | Barre solo a colore; contrasto basso; contatore unico | Stato in testo con icona diversa; barra non interattiva con le cifre scritte; contatori «6 in corso · 7 conclusi» | risolto | `screenshot/progetti-deuteranopia.jpg`, `progetti-achromatopsia.jpg` |
-| J05-F2 | Card senza tema; niente filtri; «Altri» opaco; posizione persa | Tema e anno su ogni card; filtri per stato, tema, dipartimento, anno e programma; «Più lontani dall'obiettivo»; «Mostrati N di 13»; posizione conservata | risolto | `percorsi.md #25–30` |
+| J05-F1 | Barre solo a colore; contrasto basso; contatore unico | Stato in testo con icona diversa; barra non interattiva con le cifre scritte; contatori «4 in corso · 6 conclusi» | risolto | `screenshot/progetti-deuteranopia.jpg`, `progetti-achromatopsia.jpg` |
+| J05-F2 | Card senza tema; niente filtri; «Altri» opaco; posizione persa | Tema e anno su ogni card; filtri per stato, tema, dipartimento, anno e programma; «Più lontani dall'obiettivo»; «Mostrati N di 10»; posizione conservata | risolto | `percorsi.md #25–30` |
 | J05-F3 | Oltre 100% senza etichetta; giorni negativi; concluse attive; «nuovo obiettivo» ambiguo | Badge testuali; secondo obiettivo con cifra e scopo nel riquadro «Obiettivo e raddoppio» | risolto | `progetto-alveari-sani.html` |
 | J05-F4 | Raddoppio non visibile dove si dona | Riquadro accanto a «Sostieni» con esempio numerico; frase anche nel passo 1 della donazione | risolto | `screenshot/progetto-1280.jpg` |
 | J05-F6 | Posizione persa; giorni negativi al ritorno | Filtri nella URL (si può salvare tra i preferiti) e posizione conservata | risolto | `percorsi.md #27–29` |
@@ -97,7 +97,7 @@ Zoom al 200%: nessuno scorrimento orizzontale, testi e pulsanti interi (`respons
 | Codice | Punto di dolore | Che cosa succede ora | Stato | Prova |
 |---|---|---|---|---|
 | J07-F2 | Scopo assente; servizi prima dei progetti; titoli troncati; stato ambiguo | Frase iniziale; progetti in corso subito dopo; titoli interi; stato testuale | risolto | `screenshot/home-375.jpg` |
-| J07-F3 | Nessuna ricerca; carosello senza indicatori; inglese non spiegato | Ricerca nell'intestazione, anche su mobile; griglia senza caroselli; glossario | risolto | `percorsi.md #2–3` |
+| J07-F3 | Nessuna ricerca; carosello senza indicatori; inglese non spiegato | Ricerca in home e nei filtri di Progetti, anche su mobile; griglia senza caroselli; parole spiegate nelle FAQ | risolto | `percorsi.md #2–3` |
 | J07-F4 | Pagina senza indice; testo continuo | Indice «In questa pagina», paragrafi brevi, «Torna su» | risolto | `screenshot/progetto-375.jpg` |
 | J07-F5 | Errore sul minimo solo dopo l'invio | Minimo scritto accanto al campo; errore all'uscita dal campo | risolto | `percorsi.md #10` |
 
@@ -118,7 +118,7 @@ Zoom al 200%: nessuno scorrimento orizzontale, testi e pulsanti interi (`respons
 |---|---|---|---|---|
 | J09-F1 | Nessuna data di candidatura | La pagina dice in che fase è l'edizione; le date del bando 2027 sono segnaposto evidenti | parziale | Le date non sono nelle fonti (D-16) |
 | J09-F2 | Requisiti e contatto assenti; percorso ambiguo | «Chi può candidarsi», «Requisiti», «Come e quando», «A chi scrivere»; pulsante «Candidati al programma» distinto dalla collaborazione | risolto | `programma.html#requisiti`; `proponi.html` |
-| J09-F3 | Testo continuo, piccolo, gergo, quota nascosta | Indice e passi; corpo 18 px; FAQ «Per chi propone»; glossario; «Quanto costa» come primo riquadro di «Proponi» (cifra da confermare) | risolto (cifra da confermare) | `proponi.html`, `come-funziona.html#costi` |
+| J09-F3 | Testo continuo, piccolo, gergo, quota nascosta | Indice e passi; corpo 18 px; FAQ «Per chi propone»; parole spiegate nelle FAQ; «Quanto costa» come primo riquadro di «Proponi» (cifra da confermare) | risolto (cifra da confermare) | `proponi.html`, `come-funziona.html#costi` |
 | J09-F4 | Passo citato senza link; registrazione generica | Ogni passo di «Come funziona» ha il suo link; nessuna registrazione generica | risolto | `link.md` |
 | J09-F5 | Etichette che spariscono; niente controlli del browser; errore che resta | Etichette sopra i campi, `type`/`autocomplete`, caselle native, errori che spariscono, contatore dei caratteri, bozza salvata tra le sessioni della scheda | risolto | `percorsi.md #49–51`; `axe.md` |
 
@@ -137,7 +137,7 @@ Zoom al 200%: nessuno scorrimento orizzontale, testi e pulsanti interi (`respons
 
 | Codice | Punto di dolore | Che cosa succede ora | Stato | Prova |
 |---|---|---|---|---|
-| J11-F1 | Nessuna indicazione per scrivere in due lingue | «Per i gruppi con una campagna in corso»: campi separati IT/EN, lunghezze consigliate | risolto | `come-funziona.html#gruppi` |
+| J11-F1 | Nessuna indicazione per scrivere in due lingue | «Per i gruppi con una campagna in corso»: campi separati IT/EN, lunghezze consigliate | risolto | `proponi.html#gruppi` |
 | J11-F2 | Parti non tradotte; lingue mescolate | Inglese completo; commenti marcati con `lang` e con «Comment in Italian» | risolto | `percorsi.md #40–42`; D-28 |
 | J11-F3 | Pagina lenta da smartphone; caroselli | Lighthouse mobile 100; nessun carosello | risolto | `prestazioni.md` |
 | J11-F4 | Errori in italiano dopo l'invio; regola non ricordata | Errori in linea nella lingua; regola nel passo 1 | risolto | `percorsi.md #40` |

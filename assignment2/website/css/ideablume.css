@@ -405,7 +405,6 @@ main.container > h1:first-child + .lead { margin-bottom: var(--s-6); }
   .search-form input[type="search"]:focus-visible { outline: none; }
   .search-form:has(input:focus-visible) { border-color: var(--c-brand); outline: 3px solid var(--c-focus); outline-offset: 2px; }
 }
-@media (min-width: 900px) { .site-header .search-form { width: auto; flex: 0 1 24rem; } }
 .search-form--hero { max-width: 36rem; padding: .375rem; margin: var(--s-6) 0 var(--s-5); box-shadow: var(--shadow); }
 .search-form--hero input[type="search"] { min-height: 3rem; padding-left: 2.75rem; font-size: 1.0625rem; }
 .search-form--hero .search-form__icon { left: 1.15rem; }
@@ -521,6 +520,8 @@ main.container > h1:first-child + .lead { margin-bottom: var(--s-6); }
   display: inline-block; font-size: .875rem; font-weight: 650; line-height: 1.5; color: var(--c-brand-dark);
   background: var(--c-brand-soft); padding: .05rem .6rem; border-radius: 999px;
 }
+.tag--neutro { color: var(--c-ink); background: var(--c-surface-2); }
+.tag--programma { background: transparent; box-shadow: inset 0 0 0 1.5px currentColor; }
 
 /* ---------- 9. Barra di avanzamento (non interattiva, P-050) ------------ */
 .progress { position: relative; height: .625rem; background: var(--c-track); border-radius: 999px; overflow: hidden; }
@@ -719,6 +720,21 @@ tbody tr:hover { background: color-mix(in srgb, var(--c-surface) 60%, transparen
 td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 tfoot td, tfoot th { font-weight: 700; border-top: 2px solid var(--c-ink); border-bottom: 0; }
 
+/* Tappe della storia (chi siamo): stessa linea verticale dei passi, con l'anno al posto del numero */
+.storia { list-style: none; margin: var(--s-5) 0 var(--s-6); padding: 0; }
+.storia > li { position: relative; padding: 0 0 var(--s-5) var(--s-6); margin: 0; border-left: 2px solid var(--c-border); }
+.storia > li:last-child { padding-bottom: 0; border-left-color: transparent; }
+.storia > li::before { content: ""; position: absolute; left: calc(-.5rem - 1px); top: .35rem; width: 1rem; height: 1rem; border-radius: 50%; background: var(--c-brand); box-shadow: 0 0 0 4px var(--c-brand-soft); }
+.storia h3 { margin: 0 0 var(--s-2); font-size: var(--fs-h4); }
+.storia__anno { display: block; font-size: var(--fs-small); font-family: var(--font); font-weight: 700; letter-spacing: .02em; color: var(--c-brand-dark); }
+.storia p { margin: 0; }
+.grid--uguale { margin-bottom: var(--s-6); }
+.grid--uguale > li { display: flex; }
+.grid--uguale > li > * { flex: 1; }
+/* Riquadri affiancati: i pulsanti restano allineati in basso anche con testi di lunghezza diversa */
+.grid--uguale .statusbox { display: flex; flex-direction: column; }
+.grid--uguale .statusbox > .btn-row { margin-top: auto; padding-top: var(--s-2); }
+
 /* ---------- 19. Passi numerati (come funziona) -------------------------- */
 .howto { list-style: none; padding: 0; counter-reset: howto; }
 .howto > li { counter-increment: howto; position: relative; padding-left: 3.75rem; margin: 0 0 var(--s-6); }
@@ -861,6 +877,8 @@ tfoot td, tfoot th { font-weight: 700; border-top: 2px solid var(--c-ink); borde
 @media (min-width: 600px) { .filters__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1024px) { .filters__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .filters .field { margin: 0; }
+.filters .filters__search { margin-bottom: var(--s-4); }
+.filters .filters__search input { max-width: none; width: 100%; }
 .filters .field label { font-size: .9375rem; }
 .filters select { max-width: none; min-height: var(--target); font-size: 1rem; }
 .filters .btn-row { margin-bottom: 0; }
@@ -890,16 +908,22 @@ legend.h3 { margin-top: var(--s-5); }
 .plain > li.comment + li.comment { margin-top: var(--s-3); }
 .comment p { margin-bottom: var(--s-1); }
 .comment p:last-child { margin-bottom: 0; }
-.glossary dt { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-h4); margin-top: var(--s-5); scroll-margin-top: 5rem; padding-top: var(--s-5); border-top: 1px solid var(--c-border); }
-.glossary dt:first-child { border-top: 0; padding-top: 0; }
-.glossary dd { margin: var(--s-1) 0 0; }
-.glossary dt:target { background: var(--c-warning-bg); border-radius: 4px; }
 .reward__title, .reward__desc, .reward__facts { display: block; }
 .reward__desc { margin: .1rem 0; }
 .proj-figure { max-width: none; margin: 0 0 var(--s-5); border-radius: var(--radius-large); overflow: hidden; background: var(--c-surface-2); aspect-ratio: 2 / 1; border: 1px solid var(--c-border); }
 .proj-figure img { width: 100%; height: 100%; object-fit: cover; filter: var(--img-filter); }
 .proj-head h1 { margin-top: var(--s-3); font-size: clamp(2rem, 4.2vw, 3.25rem); letter-spacing: -.035em; }
 .proj-head .card__meta { margin-top: var(--s-2); }
+/* Gruppo, sede e responsabile: ogni informazione su una riga, con la sua etichetta */
+.proj-info { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; margin: var(--s-5) 0 0; border-top: 1px solid var(--c-border); }
+.proj-info dt { padding-top: var(--s-3); font-size: var(--fs-small); font-weight: 600; color: var(--c-ink-muted); }
+.proj-info dd { margin: 0; padding-bottom: var(--s-3); border-bottom: 1px solid var(--c-border); max-width: none; }
+.proj-info strong { font-weight: 700; color: var(--c-ink); }
+@media (min-width: 600px) {
+  .proj-info { grid-template-columns: max-content minmax(0, 1fr); }
+  .proj-info dt { padding: var(--s-3) 0; border-bottom: 1px solid var(--c-border); }
+  .proj-info dd { padding: var(--s-3) 0 var(--s-3) var(--s-5); }
+}
 .proj-body > section { margin-top: var(--s-7); }
 .proj-body > section h2 { margin-top: 0; }
 .layout-aside { grid-template-areas: "head" "aside" "body"; }

@@ -108,7 +108,7 @@ Checkpoint 1 (31/10/2026): il gruppo ha confermato le proposte D-01…D-19 con q
 - Opzioni: (a) **date fisse**, realistiche ma «scadono»; (b) **date dimostrative relative a oggi**: nei dati le campagne in corso hanno una durata e un numero di giorni trascorsi; il browser calcola inizio e scadenza a partire dalla data corrente, così gli stati restano coerenti in qualunque giorno. Le campagne concluse restano con date fisse.
 - Proposta: **(b)**, dichiarata nel piè di pagina della pagina progetto («date dimostrative calcolate da oggi») e nel README. Senza JavaScript la pagina mostra le date calcolate al momento della generazione.
 
-### D-25 · Ricerca nell'intestazione su mobile · confermata
+### D-25 · Ricerca nell'intestazione su mobile · superata da D-43
 - Su mobile il campo di ricerca è nell'intestazione, sopra il menu, invece che dentro il pannello del menu: è sempre visibile (P-005) e la verifica a 320 px non mostra problemi di spazio. L'etichetta del campo è nascosta visivamente perché il pulsante «Cerca» accanto la rende esplicita; il segnaposto è solo un esempio.
 
 ### D-26 · Strumenti di verifica visiva · confermata
@@ -123,7 +123,7 @@ Checkpoint 1 (31/10/2026): il gruppo ha confermato le proposte D-01…D-19 con q
 - I commenti dei sostenitori sono contenuti scritti dagli utenti: non vengono tradotti (come avviene nei siti reali), ma sono marcati con `lang` corretto (WCAG 3.1.2) e con l'indicazione «Commento in italiano». Tutto il resto, comprese ricompense, aggiornamenti e regole, è tradotto (R-110).
 
 ### D-29 · Progetti fuori dal programma · confermata
-- Il prompt descrive un programma in cui l'Ateneo seleziona **alcuni** progetti. Due dei 13 progetti (`aria-aperta`, `rifugi-frane`) non fanno parte del programma: la loro pagina dice chiaramente che non c'è raddoppio. Nell'elenco un filtro «Programma dell'Ateneo» permette di vedere solo i progetti cofinanziati. Il filtro «Edizione» diventa «Anno».
+- Il prompt descrive un programma in cui l'Ateneo seleziona **alcuni** progetti. Due dei 10 progetti (`aria-aperta`, `rifugi-frane`) non fanno parte del programma: la loro pagina dice chiaramente che non c'è raddoppio. Nell'elenco un filtro «Programma dell'Ateneo» permette di vedere solo i progetti cofinanziati. Il filtro «Edizione» diventa «Anno».
 
 ## Decisioni delle Fasi 4 e 5
 
@@ -177,3 +177,35 @@ Checkpoint 1 (31/10/2026): il gruppo ha confermato le proposte D-01…D-19 con q
 - Supera il carattere provvisorio di D-10, D-12, D-13, D-14, D-15, D-22 e D-24. Le informazioni che erano segnaposto sono ora stabilite così: candidature per l'edizione 2027 dal 1° novembre 2026 al 31 marzo 2027 (`bando` in `data/sito.json`); nessuna quota per i gruppi selezionati, costi a carico dell'Ateneo; commissioni 1,8% + € 0,35 non restituite in caso di rimborso (come nelle FAQ di IdeaGinger, `Pagina_FAQ.md:84`); ricevuta fiscale via email e donazione deducibile dal reddito.
 - Il comportamento tecnico non cambia: il sito resta statico e senza backend (D-01), come chiesto da `assignment2/Istruzioni.md` §4. I limiti tecnici sono descritti nel README.
 
+### D-43 · Ricerca unita ai filtri e nuovo ordine del menu · confermata
+- Supera D-25. Il gruppo ha chiesto di togliere la ricerca dall'intestazione e di unirla ai filtri della pagina Progetti: il campo `q` filtra l'elenco mentre si scrive, si combina con gli altri filtri, resta nella URL e usa la stessa logica di `cerca.html`. R-003 resta soddisfatto (campo in homepage e nella pagina dei progetti). La home e la 404 continuano a portare a `cerca.html`, che cerca anche nelle pagine del sito.
+- Costo accettato: dalle altre pagine la ricerca è a un clic di distanza, non più sempre visibile. In cambio l'intestazione su mobile è più corta (V-04).
+- La didascalia con i progetti in corso e conclusi descrive l'elenco completo: si nasconde con una ricerca o un filtro attivo, resta se si cambia solo l'ordinamento, che non toglie progetti.
+- Ordine del menu chiesto dal gruppo: Progetti, Chi siamo, Come funziona, Il programma dell'Ateneo, Proponi un progetto, Domande frequenti, Contatti (con «Home» davanti, D-44).
+
+### D-44 · Voce «Home» nel menu · confermata
+- Il gruppo ha chiesto di aggiungere «Home» come prima voce del menu. Il logo resta un link alla home, quindi i link alla home nell'intestazione sono due: cambiano R-005 (da 7 a 8 voci) e R-008.
+- P-010 resta risolto: il problema era un'icona senza etichetta che duplicava il logo, mentre questa voce è scritta per esteso. In home la voce ha `aria-current="page"` come le altre.
+
+### D-45 · Glossario unito alle FAQ · confermata
+- Il gruppo ha chiesto di unire glossario e FAQ e di togliere i link al glossario. `glossario.html` non esiste più: i termini sono nel gruppo «Le parole di ideaBlume» di `faq.html` (`#parole`, voci `#parola-<termine>`), quindi hanno gli stessi accordion e la stessa ricerca interna delle domande.
+- Il termine «Raddoppio» è confluito nella risposta già esistente `#faq-raddoppio`, che ora nomina anche il cofinanziamento. I rimandi dal riquadro «tutto o niente» e da «Come funziona» puntano alle FAQ. Cambia R-083.
+- L'indice «In questa pagina» sostituisce «Vai a:» nelle FAQ e si nasconde durante la ricerca, perché porterebbe a sezioni nascoste. Lo stesso indice è stato aggiunto a «Chi siamo» e «Proponi un progetto».
+
+### D-46 · Descrizioni dei progetti più lunghe e divise in sezioni · confermata
+- `presentazione` in `data/progetti.json` è ora un elenco di sezioni con titolo (`t`) e paragrafi (`p`), con la stessa struttura per tutti i progetti: il problema, che cosa fa il gruppo, che cosa resta o com'è andata. I sottotitoli aiutano a scorrere testi più lunghi (`h3` dentro `#presentazione`); l'ordine fisso delle sezioni della pagina (P-041) non cambia.
+- I testi usano solo fatti già presenti in budget, gruppo, aggiornamenti ed esito, e spiegano i termini tecnici con parole semplici. Sono in terza persona; gli aggiornamenti restano scritti dal gruppo in prima persona.
+
+### D-47 · «Proponi un progetto» più completa e informazioni del gruppo più chiare · confermata
+- La sezione «Per i gruppi con una campagna in corso» passa da «Come funziona» a `proponi.html#gruppi` e diventa sei riquadri con un compito ciascuno. La pagina aggiunge i due percorsi passo per passo e i consigli per una proposta; il riquadro «Quanto costa» resta solo in «Come funziona», con un rimando da «Tempi e costi».
+- Nella pagina di progetto gruppo, sede e responsabile sono tre righe con etichetta e nome in grassetto. L'etichetta del responsabile viene dal ruolo nel gruppo, così è concordata («Responsabile scientifica») e la riga dice anche il ruolo della persona.
+- Le etichette di tema, anno e programma sono tre pillole senza puntini di separazione, sia nelle card sia nelle pagine di progetto. Nelle card il nome del gruppo è in grassetto, su una riga propria.
+
+### D-48 · Nessuna frase introduttiva sotto il titolo nelle sezioni del menu · confermata
+- Il gruppo ha chiesto di togliere la frase sotto il titolo in Progetti, Chi siamo, Come funziona, Il programma dell'Ateneo, Proponi un progetto, Domande frequenti e Contatti. La pagina Progetti conserva il conteggio dei progetti in corso e conclusi.
+- Restano la frase della home (R-001), i sottotitoli dei progetti e le frasi delle pagine fuori dal menu (ricerca, collaborazione, accessibilità, 404, conferma), che dicono a chi si rivolge la pagina o che cosa è successo. Chi gestisce il servizio è ora detto in «Le persone dell'Ufficio» (R-088). La ricerca nelle pagine del sito usa solo testi visibili.
+
+### D-49 · Dieci progetti invece di tredici · confermata
+- Il gruppo ha chiesto meno progetti per anno, con almeno uno che raggiunge l'obiettivo e uno che non lo raggiunge. Tolti `vigneti-clima` (2024), `api-in-citta` e `antibiotici-test` (2026). Restano 1 progetto nel 2023 (non toccato su richiesta del gruppo, quindi senza un obiettivo mancato), 2 nel 2024, 3 nel 2025 e 4 nel 2026.
+- Il 2026 resta sopra il limite di 3 per scelta esplicita del gruppo, che ha chiesto di toglierne due. In ogni anno diverso dal 2023 c'è almeno un progetto che ha raggiunto l'obiettivo e uno che non l'ha raggiunto; nel 2026 quest'ultimo vale per le campagne ancora in corso.
+- `scienza-doposcuola` è rimasto al posto di `vigneti-clima` perché è citato in «Chi siamo» e «Proponi un progetto»; `api-in-citta` è stato tolto perché il tema delle api è già in `alveari-sani`. Il tema «Agricoltura» non ha più progetti: resta nel modulo di collaborazione, ma non è più proposto in «Sfoglia per tema».

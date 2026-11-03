@@ -42,14 +42,14 @@ async function tabFino(page, pred, max = 60) {
   let f = await focusInfo(page);
   ok("Il primo Tab porta a «Salta al contenuto»", /Salta al contenuto/.test(f.text));
   await page.screenshot({ path: path.join(SHOT, "tastiera-01-salta.png"), clip: { x: 0, y: 0, width: 1280, height: 200 } });
-  f = await tabFino(page, (x) => x.id === "q-header");
-  ok("Il campo di ricerca nell'intestazione è raggiungibile da tastiera", !!f);
+  f = await tabFino(page, (x) => x.id === "q-home");
+  ok("Il campo di ricerca della home è raggiungibile da tastiera", !!f);
   await page.keyboard.type("api");
-  await page.screenshot({ path: path.join(SHOT, "tastiera-02-ricerca.png"), clip: { x: 0, y: 0, width: 1280, height: 200 } });
+  await page.screenshot({ path: path.join(SHOT, "tastiera-02-ricerca.png") });
   await page.keyboard.press("Enter");
   await page.waitForURL(/cerca\.html\?q=api/);
   const titoloRis = await page.textContent("[data-risultati-titolo]");
-  ok("La ricerca «api» trova i progetti sulle api (per inizio di parola, non «capire»)", /^[23] progetti per «api»/.test(titoloRis.trim()), titoloRis);
+  ok("La ricerca «api» trova il progetto sulle api (per inizio di parola, non «capire»)", /^1 progetto per «api»/.test(titoloRis.trim()), titoloRis);
   f = await tabFino(page, (x) => x.tag === "A" && /Alveari sani/.test(x.text));
   ok("Il risultato «Alveari sani» si raggiunge con Tab (link con nome significativo)", !!f, f && f.text);
   await page.screenshot({ path: path.join(SHOT, "tastiera-03-card-focus.png"), fullPage: false });
@@ -129,7 +129,7 @@ async function tabFino(page, pred, max = 60) {
   ok("Il filtro aggiorna la URL", /stato=conclusi/.test(page.url()));
   await page.waitForTimeout(150);
   const cnt = await page.textContent("[data-conteggio]");
-  ok("Il conteggio dice quanti progetti sono mostrati", /Mostrati 7 di 13 progetti/.test(cnt), cnt);
+  ok("Il conteggio dice quanti progetti sono mostrati", /Mostrati 6 di 10 progetti/.test(cnt), cnt);
   await page.selectOption("#f-ordina", "bisogno");
   await page.evaluate(() => window.scrollTo(0, 900));
   const y0 = await page.evaluate(() => window.scrollY);
@@ -142,7 +142,7 @@ async function tabFino(page, pred, max = 60) {
   const y1 = await page.evaluate(() => window.scrollY);
   ok("Tornando indietro la posizione nella pagina resta", Math.abs(y1 - y0) < 60, `${y0} → ${y1}`);
   await page.goto(BASE + "progetti.html?stato=raggiunto");
-  ok("Una URL filtrata condivisa mostra solo le campagne in corso con obiettivo raggiunto", /Mostrati 1 di 13/.test(await page.textContent("[data-conteggio]")));
+  ok("Una URL filtrata condivisa mostra solo le campagne in corso con obiettivo raggiunto", /Mostrati 1 di 10/.test(await page.textContent("[data-conteggio]")));
   await page.goto(BASE + "progetti.html?categoria=cultura&anno=2023");
   ok("Con filtri senza risultati compare un messaggio con alternative", await page.isVisible("[data-nessuno]"));
   await page.context().close();
@@ -266,6 +266,88 @@ async function tabFino(page, pred, max = 60) {
     ok(`A ${larghezza} px l'interruttore del tema è largo e alto almeno 44 px`, tema.largo >= 44 && tema.alto >= 44, `${Math.round(tema.largo)}×${Math.round(tema.alto)}`);
     await page.context().close();
   }
+
+  /* Controlli aggiunti in fondo, per non cambiare i numeri citati in docs/05_tracciabilita.md: ricerca nei filtri, didascalia, ordine del menu */
+  page = await nuova();
+  await page.goto(BASE + "progetti.html");
+  ok("Nessun campo di ricerca nell'intestazione", (await page.$(".site-header input[type=search]")) === null);
+  ok("L'ordine del menu è quello richiesto", (await page.$$eval(".main-nav__list a", (a) => a.map((x) => x.getAttribute("href")).join(" "))) === "index.html progetti.html chi-siamo.html come-funziona.html programma.html proponi.html faq.html contatti.html");
+  ok("La didascalia è visibile nell'elenco completo", await page.isVisible("[data-didascalia]"));
+  await page.selectOption("#f-ordina", "bisogno");
+  ok("Ordinare non nasconde la didascalia", await page.isVisible("[data-didascalia]"));
+  await page.selectOption("#f-ordina", "");
+  await page.fill("#f-q", "api");
+  await page.waitForFunction(() => /q=api/.test(location.search));
+  await page.waitForTimeout(150);
+  const cntQ = await page.textContent("[data-conteggio]");
+  ok("La ricerca nei filtri riduce l'elenco e va nella URL", /Mostrati 1 di 10 progetti/.test(cntQ), cntQ);
+  ok("Con la ricerca la didascalia sparisce", !(await page.isVisible("[data-didascalia]")));
+  await page.selectOption("#f-stato", "in-corso");
+  ok("Ricerca e filtri si combinano", /q=api/.test(page.url()) && /stato=in-corso/.test(page.url()));
+  await page.click("[data-reset]");
+  await page.waitForTimeout(100);
+  ok("«Azzera i filtri» svuota anche la ricerca e riporta la didascalia", (await page.inputValue("#f-q")) === "" && (await page.isVisible("[data-didascalia]")) && !/q=/.test(page.url()));
+  await page.context().close();
+
+  /* Glossario unito alle FAQ, indici «In questa pagina», descrizioni dei progetti */
+  page = await nuova();
+  await page.goto(BASE + "faq.html#parola-obiettivo");
+  ok("Le parole dell'ex glossario sono nelle FAQ, con un'ancora che apre la voce", await page.evaluate(() => document.getElementById("parola-obiettivo").open));
+  await page.goto(BASE + "faq.html");
+  await page.fill("[data-faq-cerca]", "crowdfunding");
+  await page.waitForTimeout(100);
+  ok("La ricerca nelle FAQ trova anche le parole", await page.isVisible("#parola-crowdfunding"));
+  ok("Durante la ricerca l'indice delle FAQ è nascosto", !(await page.isVisible("[data-faq-indice]")));
+  await page.fill("[data-faq-cerca]", "");
+  await page.waitForTimeout(100);
+  ok("Svuotando la ricerca l'indice delle FAQ torna", await page.isVisible("[data-faq-indice]"));
+  for (const pg of ["chi-siamo.html", "proponi.html", "faq.html", "en/chi-siamo.html", "en/proponi.html", "en/faq.html"]) {
+    await page.goto(BASE + pg);
+    const voci = await page.$$eval(".toc a", (a) => a.map((x) => !!document.querySelector(x.getAttribute("href"))));
+    ok(`${pg}: «In questa pagina» presente e ogni voce porta a una sezione`, voci.length >= 2 && voci.every(Boolean), `${voci.length} voci`);
+  }
+  await page.goto(BASE + "progetto-alveari-sani.html");
+  ok("La descrizione del progetto è divisa con sottotitoli", (await page.$$("#presentazione h3")).length === 3 && (await page.$$("#presentazione p")).length >= 4);
+  ok("Il riquadro «tutto o niente» rimanda alle FAQ", (await page.$('a[href="faq.html#faq-tutto-o-niente"]')) !== null);
+  ok("Nessun link al glossario nel piè di pagina", (await page.$('.site-footer a[href*="glossario"]')) === null);
+  await page.context().close();
+
+  /* Proponi: riquadri alla stessa altezza, pulsanti allineati, sezione per i gruppi; pagina progetto: gruppo, sede e responsabile */
+  page = await nuova();
+  await page.goto(BASE + "proponi.html");
+  const riq = await page.$$eval("#chi-puo .statusbox", (b) => b.map((x) => { const r = x.getBoundingClientRect(), c = x.querySelector(".btn").getBoundingClientRect(); return { alto: Math.round(r.height), pulsante: Math.round(c.top) }; }));
+  ok("Proponi: i due riquadri hanno la stessa altezza", riq.length === 2 && riq[0].alto === riq[1].alto, JSON.stringify(riq));
+  ok("Proponi: i pulsanti dei due riquadri sono allineati", riq[0].pulsante === riq[1].pulsante);
+  ok("Proponi: c'è la sezione per i gruppi con una campagna in corso", await page.isVisible("#gruppi h2"));
+  await page.goto(BASE + "come-funziona.html");
+  ok("Come funziona: la sezione per i gruppi non c'è più e il passo rimanda a Proponi", (await page.$("#gruppi")) === null && (await page.$('a[href="proponi.html#gruppi"]')) !== null);
+  await page.goto(BASE + "progetto-alveari-sani.html");
+  const info = await page.$$eval(".proj-info dt", (d) => d.map((x) => x.textContent));
+  ok("Progetto: gruppo, sede e responsabile hanno ciascuno un'etichetta", info.length === 3 && info[2] === "Responsabile scientifica", info.join(" / "));
+  ok("Progetto: le etichette in alto non hanno puntini di separazione", !(await page.textContent(".proj-head .card__meta")).includes("·"));
+  await page.context().close();
+
+  /* Nessuna frase introduttiva sotto il titolo nelle sezioni del menu; la home la conserva (R-001) */
+  page = await nuova();
+  for (const pg of ["progetti.html", "chi-siamo.html", "come-funziona.html", "programma.html", "proponi.html", "faq.html", "contatti.html"]) {
+    await page.goto(BASE + pg);
+    ok(`${pg}: nessuna frase introduttiva sotto il titolo`, (await page.$("main .lead")) === null);
+  }
+  await page.goto(BASE + "index.html");
+  ok("La home dice ancora che cos'è il sito e chi lo gestisce", /Ufficio ideaBlume/.test(await page.textContent("main .lead")));
+  await page.context().close();
+
+  /* Dieci progetti: i tre tolti non hanno più pagina né link, e «sfoglia per tema» non propone temi vuoti */
+  page = await nuova();
+  await page.goto(BASE + "progetti.html");
+  ok("L'elenco mostra 10 progetti, 4 in corso e 6 conclusi", /Mostrati 10 di 10/.test(await page.textContent("[data-conteggio]")) && /4 progetti in corso · 6 conclusi/.test(await page.textContent("[data-didascalia]")));
+  const risposta = await page.goto(BASE + "progetto-vigneti-clima.html");
+  ok("La pagina di un progetto tolto non esiste più", risposta.status() === 404);
+  await page.goto(BASE + "cerca.html?q=zxqw");
+  ok("«Sfoglia per tema» non propone temi senza progetti", (await page.$('a[href="progetti.html?categoria=agricoltura"]')) === null && (await page.$('a[href="progetti.html?categoria=salute"]')) !== null);
+  await page.goto(BASE + "en/programma.html");
+  ok("Inglese allineato all'italiano nel programma", /without being matched/.test(await page.textContent("#raddoppio")) && /Any other questions/.test(await page.textContent("#contatti")));
+  await page.context().close();
 
   await browser.close();
   server.kill();

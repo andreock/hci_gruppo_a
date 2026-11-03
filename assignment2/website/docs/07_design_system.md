@@ -98,10 +98,10 @@ Confronto con IdeaGinger (P-034): titoli arancioni 2,46:1, pulsante verde 2,09:1
 | Componente | Classe | Comportamento e accessibilità | Problemi risolti |
 |---|---|---|---|
 | Link «Salta al contenuto» | `.skip-link` | Primo elemento focalizzabile, visibile al focus, porta a `main` | P-017 |
-| Intestazione | `.site-header`, `.brand` | Fondo semitrasparente sfocato. Da 900 px la riga del marchio scorre via e **la riga del menu resta fissa in alto**; `scroll-padding-top` evita che il focus finisca sotto l'intestazione (WCAG 2.4.11). Su telefono: marchio, lingua («EN»/«IT» con icona) e «Menu» su una riga, ricerca sempre visibile sotto (D-25, D-36) | P-001, P-010, P-005 |
+| Intestazione | `.site-header`, `.brand` | Fondo semitrasparente sfocato. Da 900 px la riga del marchio scorre via e **la riga del menu resta fissa in alto**; `scroll-padding-top` evita che il focus finisca sotto l'intestazione (WCAG 2.4.11). Su telefono: marchio, lingua («EN»/«IT» con icona) e «Menu» su una riga; la ricerca non è nell'intestazione (D-36, D-43) | P-001, P-010, P-005 |
 | Marchio | `.brand__mark` | Il fiore è SVG in linea colorato dai token (si adatta al tema scuro); ruota al passaggio del mouse | — |
 | Ricerca | `.search-form` | Un'unica «pillola» con icona, campo e pulsante «Cerca»; il focus del campo evidenzia tutta la pillola | P-005 |
-| Menu principale | `.main-nav`, `.nav-toggle` | 7 voci a pillola, nessuna tendina; su mobile pulsante «Menu» con `aria-expanded`, Esc chiude; voce corrente con `aria-current`, fondo e sottolineatura | P-008, P-009, P-085 |
+| Menu principale | `.main-nav`, `.nav-toggle` | 8 voci a pillola, nessuna tendina; su mobile pulsante «Menu» con `aria-expanded`, Esc chiude; voce corrente con `aria-current`, fondo e sottolineatura | P-008, P-009, P-085 |
 | Briciole di pane | `.breadcrumb` | `nav` con `aria-label`, separatori disegnati in CSS, ultima voce `aria-current="page"` | P-016 |
 | Link | `a` | Sempre sottolineati (sottolineatura tenue che si intensifica al passaggio del mouse); esterni con «(sito esterno)» e freccia | P-014, P-011 |
 | Link con freccia | `.link-arrow` | Link isolati («Tutti i progetti», «Come funziona nel dettaglio») con freccia che si sposta al passaggio del mouse; alti 44 px | P-074 |

@@ -168,10 +168,15 @@ def url_progetto(p):
     return f'progetto-{p["slug"]}.html'
 
 
+def etichette(p, lang):
+    """Tema, anno e, se c'è, programma dell'Ateneo: le pillole in cima a card e pagine di progetto."""
+    prog = f'<span class="tag tag--programma">{E(t(lang, "card.programma"))}</span>' if p["programma"] else ""
+    return (f'<p class="card__meta"><span class="tag">{E(SITO["categorie"][p["categoria"]][lang])}</span>'
+            f'<span class="tag tag--neutro">{E(fmt(t(lang, "card.anno"), lang, anno=p["anno"]))}</span>{prog}</p>')
+
+
 def card(p, lang, prefix, h="h3", li=True, cls=""):
     c = p["_"]
-    cat = SITO["categorie"][p["categoria"]][lang]
-    prog = f' · <span class="tag">{E(t(lang, "card.programma"))}</span>' if p["programma"] else ""
     attrs = (f'data-slug="{p["slug"]}" data-stato="{c["stato"]}" data-cat="{p["categoria"]}" data-dip="{p["dipartimento"]}" '
              f'data-anno="{p["anno"]}" data-prog="{"si" if p["programma"] else "no"}" data-perc="{c["perc"]:.1f}" '
              f'data-scadenza="{p["scadenza"]}" data-inizio="{p["inizio"]}"')
@@ -180,7 +185,7 @@ def card(p, lang, prefix, h="h3", li=True, cls=""):
     return f'''<li {attrs}><article class="card{cls}">
   <div class="card__media"><img src="{prefix}img/progetti/{p["slug"]}.svg" alt="" width="320" height="180" loading="lazy"></div>
   <div class="card__body">
-    <p class="card__meta"><span class="tag">{E(cat)}</span> · {E(fmt(t(lang, "card.anno"), lang, anno=p["anno"]))}{prog}</p>
+    {etichette(p, lang)}
     <{h} class="card__title"><a href="{url_progetto(p)}">{E(p["titolo"][lang])}</a></{h}>
     <p class="card__org">{org(p, lang)}</p>
     <p>{stato_html(p, lang)}</p>
@@ -254,8 +259,8 @@ def form_cerca(lang, id_, extra_cls=""):
     </form>'''
 
 
-NAV = ["progetti", "programma", "come-funziona", "proponi", "chi-siamo", "faq", "contatti"]
-NAV_URL = {"progetti": "progetti.html", "programma": "programma.html", "come-funziona": "come-funziona.html",
+NAV = ["home", "progetti", "chi-siamo", "come-funziona", "programma", "proponi", "faq", "contatti"]
+NAV_URL = {"home": "index.html", "progetti": "progetti.html", "programma": "programma.html", "come-funziona": "come-funziona.html",
            "proponi": "proponi.html", "chi-siamo": "chi-siamo.html", "faq": "faq.html", "contatti": "contatti.html"}
 
 
@@ -281,7 +286,6 @@ def header(lang, file, nav_corrente, prefix):
       <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
       <span data-nav-label>{E(t(lang, "common.menu"))}</span>
     </button>
-    {form_cerca(lang, "q-header")}
   </div>
   <nav class="main-nav container" id="menu-principale" aria-label="{E(t(lang, "common.menu_label"))}">
     <ul class="main-nav__list">{voci}</ul>
@@ -311,7 +315,7 @@ def footer(lang, prefix):
         <li><a href="collabora.html">{f("collabora")}</a></li></ul></nav>
       <nav aria-labelledby="ft-info"><h2 id="ft-info">{f("info")}</h2><ul>
         <li><a href="chi-siamo.html">{n("chi-siamo")}</a></li><li><a href="contatti.html">{n("contatti")}</a></li>
-        <li><a href="glossario.html">{f("glossario")}</a></li><li><a href="accessibilita.html">{f("accessibilita")}</a></li></ul></nav>
+        <li><a href="accessibilita.html">{f("accessibilita")}</a></li></ul></nav>
     </div>
     <p class="site-footer__note">{t(lang, "footer.note")}</p>
   </div>
@@ -391,6 +395,12 @@ def scrivi_font_locali():
     (ROOT / "css/font-locali.css").write_text(css, encoding="utf-8")
 
 
+def indice_pagina(lang, voci, attr=""):
+    """Riquadro «In questa pagina»: voci è un elenco di coppie (id della sezione, titolo)."""
+    righe = "".join(f'<li><a href="#{i}">{E(l)}</a></li>' for i, l in voci)
+    return f'<nav class="toc" aria-labelledby="h-toc"{attr}><h2 id="h-toc">{E(t(lang, "common.toc"))}</h2><ol>{righe}</ol></nav>'
+
+
 def torna_su(lang):
     return f'<p><a class="back-to-top" href="#main">↑ {E(t(lang, "common.back_to_top"))}</a></p>'
 
@@ -408,13 +418,18 @@ def costi_box(lang, h="h2", id_="costi"):
 
 
 # ---------------------------------------------------------------- pagine
+def totali_sito():
+    """Donato, cofinanziato e sostenitori: gli stessi numeri in home e in «Chi siamo» (P-036)."""
+    return (sum(p["raccolto"] for p in PROGETTI if p["_"]["raggiunto"] or p["_"]["aperto"]),
+            sum(p["_"]["cofin"] for p in PROGETTI if not p["_"]["aperto"]),
+            sum(p["_"]["sostenitori"] for p in PROGETTI))
+
+
 def pg_home(lang):
     g = lambda k: t(lang, "pages.home." + k)
     aperti = ordina_default([p for p in PROGETTI if p["_"]["aperto"]])
     chiusi = [p for p in PROGETTI if not p["_"]["aperto"]]
-    raccolto = sum(p["raccolto"] for p in PROGETTI if p["_"]["raggiunto"] or p["_"]["aperto"])
-    cofin = sum(p["_"]["cofin"] for p in PROGETTI if not p["_"]["aperto"])
-    sost = sum(p["_"]["sostenitori"] for p in PROGETTI)
+    raccolto, cofin, sost = totali_sito()
     aggiornamenti = sorted(((data_da(a["data"]), a, p) for p in PROGETTI for a in p["aggiornamenti"]), key=lambda x: x[0], reverse=True)[:3]
     agg_html = "".join(
         f'<li><article class="update"><h3><a href="{url_progetto(p)}#aggiornamenti">{E(a["titolo"][lang])}</a></h3>'
@@ -492,7 +507,7 @@ def pg_home(lang):
     <p><a class="btn btn--light btn--large" href="proponi.html">{E(g("promo_cta"))} {ICONA_FRECCIA}</a></p>
   </section>
 </div>'''
-    return pagina(lang, "index.html", g("title"), corpo, nav=None, dati=False, main_class="")
+    return pagina(lang, "index.html", g("title"), corpo, nav="home", dati=False, main_class="")
 
 
 def opzioni(sel_id, label, opts, tutti):
@@ -511,10 +526,13 @@ def pg_progetti(lang):
       <option value="">{E(g("o_scadenza"))}</option><option value="recenti">{E(g("o_recenti"))}</option>
       <option value="bisogno">{E(g("o_bisogno"))}</option><option value="percentuale">{E(g("o_percentuale"))}</option></select></div>'''
     corpo = f'''<h1>{E(g("h1"))}</h1>
-<p class="lead">{fmt(g("intro"), lang)}</p>
-<p><strong>{fmt(g("counts"), lang, open=aperti, closed=len(PROGETTI) - aperti)}</strong></p>
+<div data-didascalia>
+  <p><strong>{fmt(g("counts"), lang, open=aperti, closed=len(PROGETTI) - aperti)}</strong></p>
+</div>
 <form class="filters" action="progetti.html" method="get" aria-labelledby="h-filtri" data-filtri>
   <h2 id="h-filtri" class="vh">{E(g("filters_title"))}</h2>
+  <div class="field filters__search"><label for="f-q">{E(t(lang, "common.search_label"))}</label>
+    <input id="f-q" name="q" type="search" placeholder="{E(t(lang, "common.search_placeholder"))}" autocomplete="off"></div>
   <div class="filters__grid">
     {opzioni("stato", g("f_stato"), [("in-corso", g("f_stato_open")), ("raggiunto", g("f_stato_reached")), ("conclusi", g("f_stato_closed"))], g("f_stato_all"))}
     {opzioni("categoria", g("f_cat"), [(k, SITO["categorie"][k][lang]) for k in cats], g("f_cat_all"))}
@@ -538,7 +556,7 @@ def pg_progetti(lang):
 
 def pg_cerca(lang):
     g = lambda k: t(lang, "pages.cerca." + k)
-    cats = "".join(f'<li><a href="progetti.html?categoria={k}">{E(v[lang])}</a></li>' for k, v in SITO["categorie"].items())
+    cats = "".join(f'<li><a href="progetti.html?categoria={k}">{E(v[lang])}</a></li>' for k, v in SITO["categorie"].items() if any(p["categoria"] == k for p in PROGETTI))
     corpo = f'''<h1>{E(g("h1"))}</h1>
 <p>{E(g("intro"))}</p>
 {form_cerca(lang, "q-cerca", " search-form--page")}
@@ -566,9 +584,8 @@ def pg_progetto(p, lang):
     c = p["_"]
     prefix = "" if lang == "it" else "../"
     file = url_progetto(p)
-    cat = SITO["categorie"][p["categoria"]][lang]
-    prog = f' · <span class="tag">{E(t(lang, "card.programma"))}</span>' if p["programma"] else ""
     resp = p["team"][0]
+    resp_titolo, _, resp_ruolo = resp["ruolo"][lang].partition(", ")  # «Responsabile scientifica», «professoressa associata di…»
     e = lambda x: euro(x, lang)
     # --- riquadro di stato
     righe = [f'<dt>{E(g("supporters"))}</dt><dd>{c["sostenitori"]}</dd>',
@@ -689,17 +706,21 @@ def pg_progetto(p, lang):
     altri = c["sostenitori"] - len(nomi)
     corpo = f'''<div class="layout-aside">
 <div class="proj-head">
-  <p class="card__meta"><span class="tag">{E(cat)}</span> · {E(fmt(t(lang, "card.anno"), lang, anno=p["anno"]))}{prog}</p>
+  {etichette(p, lang)}
   <h1>{E(p["titolo"][lang])}</h1>
   <p class="lead">{E(p["sottotitolo"][lang])}</p>
-  <p>{fmt(g("by"), lang, gruppo=E(p["gruppo"]), dip=E(SITO["dipartimenti"][p["dipartimento"]][lang]))}<br>{fmt(g("resp"), lang, nome=E(resp["nome"]))}</p>
+  <dl class="proj-info">
+    <dt>{E(g("info_group"))}</dt><dd><strong>{E(p["gruppo"])}</strong></dd>
+    <dt>{E(g("info_place"))}</dt><dd>{fmt(g("info_place_value"), lang, dip=E(SITO["dipartimenti"][p["dipartimento"]][lang]))}</dd>
+    <dt>{E(resp_titolo)}</dt><dd><strong>{E(resp["nome"])}</strong>{", " + E(resp_ruolo) if resp_ruolo else ""}</dd>
+  </dl>
 </div>
 {aside}
 <div class="proj-body">
   <figure class="proj-figure"><img src="{prefix}img/progetti/{p["slug"]}.svg" alt="{E(p["immagine"]["alt"][lang])}" width="640" height="360"></figure>
   <nav class="toc" aria-labelledby="h-indice"><h2 id="h-indice">{E(t(lang, "common.toc"))}</h2><ol>{indice}</ol></nav>
   <section id="presentazione" aria-labelledby="h-presentazione"><h2 id="h-presentazione">{E(g("s_presentazione"))}</h2>
-    {"".join(f"<p>{E(x)}</p>" for x in p["presentazione"][lang])}</section>
+    {"".join(f'<h3>{E(s["t"])}</h3>' + "".join(f"<p>{E(x)}</p>" for x in s["p"]) for s in p["presentazione"][lang])}</section>
   <section id="fondi" aria-labelledby="h-fondi"><h2 id="h-fondi">{E(g("s_fondi"))}</h2>
     <div class="table-wrap"><table><caption>{E(g("fondi_caption"))}</caption>
       <thead><tr><th scope="col">{E(g("fondi_voce"))}</th><th scope="col" class="num">{E(g("fondi_importo"))}</th></tr></thead>
@@ -854,10 +875,9 @@ def pg_programma(lang):
                   f'<td class="num">{sum(1 for p in ps if p["_"]["raggiunto"])}</td><td class="num">{e(sum(p["raccolto"] for p in ps))}</td>'
                   f'<td class="num">{e(sum(p["_"]["cofin"] for p in ps))}</td><td class="num">{sum(p["_"]["sostenitori"] for p in ps)}</td></tr>')
     toc = [("stato", g("status_title")), ("fasi", g("phases_label")), ("raddoppio", g("match_title")), ("requisiti", g("who_title")),
-           ("costi", t(lang, "pages.costi.title")), ("contatti", g("contact_title")), ("edizioni", g("editions_title"))]
+           ("edizioni", g("editions_title")), ("contatti", g("contact_title"))]
     corpo = f'''<h1>{E(g("h1"))}</h1>
-<p class="lead">{fmt(g("intro"), lang, tetto=e(SITO["regole"]["tetto_cofinanziamento"]))}</p>
-<nav class="toc" aria-labelledby="h-toc"><h2 id="h-toc">{E(t(lang, "common.toc"))}</h2><ol>{"".join(f'<li><a href="#{i}">{E(l)}</a></li>' for i, l in toc)}</ol></nav>
+{indice_pagina(lang, toc)}
 <section id="stato" class="statusbox" aria-labelledby="h-stato"><h2 id="h-stato">{E(g("status_title"))}</h2>
   <p>{stato_now}</p><p>{fmt(g("status_next"), lang)}</p>
   <p><a class="btn" href="candidatura.html">{E(g("apply_cta"))}</a></p></section>
@@ -866,9 +886,8 @@ def pg_programma(lang):
   <div class="infobox"><h3>{E(g("example_title"))}</h3><p>{E(g("example"))}</p></div></section>
 <section id="requisiti" aria-labelledby="h-chi"><h2 id="h-chi">{E(g("who_title"))}</h2><p>{fmt(g("who"), lang)}</p>
   <h3>{E(g("req_title"))}</h3>{lista(g("req"), lang)}
-  <h3>{E(g("how_title"))}</h3><p>{fmt(g("how"), lang)}</p></section>
-{costi_box(lang)}
-<section id="contatti" aria-labelledby="h-contatti"><h2 id="h-contatti">{E(g("contact_title"))}</h2><p>{fmt(g("contact"), lang)}</p>
+
+  <h3>{E(g("how_title"))}</h3><p>{fmt(g("how"), lang)}</p>
   <p><a class="btn" href="candidatura.html">{E(g("apply_cta"))}</a></p></section>
 <section id="edizioni" aria-labelledby="h-edizioni"><h2 id="h-edizioni">{E(g("editions_title"))}</h2>
   <div class="table-wrap"><table><caption>{E(g("editions_caption"))}</caption>
@@ -876,25 +895,24 @@ def pg_programma(lang):
   <th scope="col" class="num">{E(g("e_raccolto"))}</th><th scope="col" class="num">{E(g("e_cofin"))}</th><th scope="col" class="num">{E(g("e_sost"))}</th></tr></thead>
   <tbody>{righe}</tbody></table></div>
   <p class="small muted">{E(g("e_note"))} {E(t(lang, "common.updated"))} {fmt_data(OGGI, lang, True)}.</p></section>
+<section id="contatti" aria-labelledby="h-contatti"><h2 id="h-contatti">{E(g("contact_title"))}</h2><p>{fmt(g("contact"), lang)}</p>
+  </section>
 {torna_su(lang)}'''
     return pagina(lang, "programma.html", g("title"), corpo, nav="programma", briciole=[(t(lang, "nav.programma"), "")])
 
 
 def passi_howto(items, lang):
     return '<ol class="howto">' + "".join(
-        f'<li><h3>{E(s["t"])}</h3><p>{fmt(s["d"], lang)}</p><p><a href="{s["a"]}">{E(s["l"])}</a></p></li>' for s in items) + "</ol>"
+        f'<li><h3>{E(s["t"])}</h3><p>{fmt(s["d"], lang)}</p>' + (f'<p><a href="{s["a"]}">{E(s["l"])}</a></p>' if s.get("a") else "") + "</li>" for s in items) + "</ol>"
 
 
 def pg_come(lang):
     g = lambda k: t(lang, "pages.come." + k)
-    ids = ["sostenitori", "promotori", "gruppi", "costi", "dubbi"]
-    toc = "".join(f'<li><a href="#{i}">{E(l)}</a></li>' for i, l in zip(ids, g("toc")))
+    ids = ["sostenitori", "promotori", "costi", "dubbi"]
     corpo = f'''<h1>{E(g("h1"))}</h1>
-<p class="lead">{E(g("intro"))}</p>
-<nav class="toc" aria-labelledby="h-toc"><h2 id="h-toc">{E(t(lang, "common.toc"))}</h2><ol>{toc}</ol></nav>
+{indice_pagina(lang, zip(ids, g("toc")))}
 <section id="sostenitori" aria-labelledby="h-sost"><h2 id="h-sost">{E(g("donor_title"))}</h2>{passi_howto(g("donor"), lang)}</section>
 <section id="promotori" aria-labelledby="h-prom"><h2 id="h-prom">{E(g("promoter_title"))}</h2>{passi_howto(g("promoter"), lang)}</section>
-<section id="gruppi" aria-labelledby="h-gruppi"><h2 id="h-gruppi">{E(g("groups_title"))}</h2>{lista(g("groups"), lang)}</section>
 {costi_box(lang)}
 <section id="dubbi" aria-labelledby="h-dubbi"><h2 id="h-dubbi">{E(g("doubts_title"))}</h2><p>{fmt(g("doubts"), lang)}</p></section>
 {torna_su(lang)}'''
@@ -903,20 +921,30 @@ def pg_come(lang):
 
 def pg_proponi(lang):
     g = lambda k: t(lang, "pages.proponi." + k)
+    riquadri = lambda chiave, voci: "".join(
+        f'<li><section class="statusbox" aria-labelledby="h-{chiave}-{i}"><h3 id="h-{chiave}-{i}">{E(x["t"])}</h3><p>{fmt(x["d"], lang)}</p></section></li>'
+        for i, x in enumerate(voci))
+    voci = [("chi-puo", g("who_title")), ("ricerca", g("res_path_title")), ("enti", g("ext_path_title")), ("proposta", g("tips_title")),
+            ("tempi", g("time_title")), ("gruppi", g("groups_title")), ("dubbi", g("doubts_title"))]
     corpo = f'''<h1>{E(g("h1"))}</h1>
-<p class="lead">{E(g("intro"))}</p>
-{costi_box(lang)}
+{indice_pagina(lang, voci)}
 <section id="chi-puo" aria-labelledby="h-chi"><h2 id="h-chi">{E(g("who_title"))}</h2>
-<ul class="grid grid--2">
+<ul class="grid grid--2 grid--uguale">
   <li><section class="statusbox" aria-labelledby="h-ric"><h3 id="h-ric">{E(g("res_title"))}</h3><p>{E(g("res_text"))}</p>
-    <p class="btn-row"><a class="btn" href="candidatura.html">{E(g("res_cta"))}</a><a href="programma.html#requisiti">{E(g("res_more"))}</a></p></section></li>
+    <p class="btn-row"><a class="btn" href="candidatura.html">{E(g("res_cta"))}</a></p> <br/><br/></section></li>
   <li><section class="statusbox" aria-labelledby="h-ext"><h3 id="h-ext">{E(g("ext_title"))}</h3><p>{fmt(g("ext_text"), lang)}</p>
-    <p><a class="btn" href="collabora.html">{E(g("ext_cta"))}</a></p></section></li>
+    <p class="btn-row"><a class="btn" href="collabora.html">{E(g("ext_cta"))}</a></p></section></li>
 </ul></section>
-<br />
+<section id="ricerca" aria-labelledby="h-ricerca"><h2 id="h-ricerca">{E(g("res_path_title"))}</h2><p>{fmt(g("res_path_intro"), lang)}</p>{passi_howto(g("res_path"), lang)}</section>
+<section id="enti" aria-labelledby="h-enti"><h2 id="h-enti">{E(g("ext_path_title"))}</h2><p>{fmt(g("ext_path_intro"), lang)}</p>{passi_howto(g("ext_path"), lang)}</section>
+<section id="proposta" aria-labelledby="h-proposta"><h2 id="h-proposta">{E(g("tips_title"))}</h2><p>{E(g("tips_intro"))}</p>
+<ul class="grid grid--2 grid--uguale">{riquadri("consiglio", g("tips"))}</ul></section>
 <section id="tempi" aria-labelledby="h-tempi"><h2 id="h-tempi">{E(g("time_title"))}</h2>{lista(g("time"), lang)}</section>
-<section id="esempi" aria-labelledby="h-esempi"><h2 id="h-esempi">{E(g("examples_title"))}</h2><p>{fmt(g("examples"), lang)}</p></section>
-<p>{fmt(g("groups_link"), lang)}</p>'''
+<section id="gruppi" aria-labelledby="h-gruppi"><h2 id="h-gruppi">{E(g("groups_title"))}</h2><p>{fmt(g("groups_intro"), lang)}</p>
+<ul class="grid grid--2 grid--uguale">{riquadri("gruppi", g("groups"))}</ul></section>
+<section id="dubbi" aria-labelledby="h-dubbi"><h2 id="h-dubbi">{E(g("doubts_title"))}</h2><p>{fmt(g("doubts"), lang)}</p></section>
+{torna_su(lang)}
+'''
     return pagina(lang, "proponi.html", g("title"), corpo, nav="proponi", briciole=[(t(lang, "nav.proponi"), "")])
 
 
@@ -989,20 +1017,35 @@ def pg_collabora(lang):
 
 def pg_chi(lang):
     g = lambda k: t(lang, "pages.chi." + k)
+    raccolto, cofin, sost = totali_sito()
+    tappe = "".join(
+        f'<li><h3><span class="storia__anno">{E(x["y"])}</span> {E(x["t"])}</h3><p>{fmt(x["d"], lang, n_progetti=len(PROGETTI), raccolto=euro(raccolto, lang), cofin=euro(cofin, lang), sostenitori=sost)}</p></li>'
+        for x in g("story"))
+    attivita = "".join(
+        f'<li><section class="statusbox" aria-labelledby="h-fare-{i}"><h3 id="h-fare-{i}">{E(x["t"])}</h3><p>{fmt(x["d"], lang)}</p></section></li>'
+        for i, x in enumerate(g("what")))
     corpo = f'''<h1>{E(g("h1"))}</h1>
-<p class="lead">{fmt(g("intro"), lang)}</p>
-<h2>{E(g("what_title"))}</h2>{lista(g("what"), lang)}
-<h2>{E(g("money_title"))}</h2><p>{fmt(g("money"), lang)}</p>
-<h2>{E(g("contact_title"))}</h2><p>{fmt(g("address"), lang)}<br>{t(lang, "footer.phone")}: {ctx_base(lang)["tel_link"]} · {ctx_base(lang)["email_aiuto_link"]}</p>
-'''
+{indice_pagina(lang, [("storia", g("story_title")), ("attivita", g("what_title")), ("soldi", g("money_title")), ("persone", g("people_title")), ("dove", g("contact_title")), ("prossimo", g("next_title"))])}
+<section id="storia" aria-labelledby="h-storia"><h2 id="h-storia">{E(g("story_title"))}</h2>
+<p>{E(g("story_intro"))}</p>
+<ol class="storia">{tappe}</ol></section>
+<section id="attivita" aria-labelledby="h-fare"><h2 id="h-fare">{E(g("what_title"))}</h2>
+<p>{E(g("what_intro"))}</p>
+<ul class="grid grid--2 grid--uguale">{attivita}</ul></section>
+<section id="soldi" aria-labelledby="h-soldi"><h2 id="h-soldi">{E(g("money_title"))}</h2>
+<p>{fmt(g("money"), lang)}</p><p>{fmt(g("money_no"), lang)}</p></section>
+<section id="persone" aria-labelledby="h-persone"><h2 id="h-persone">{E(g("people_title"))}</h2><p>{fmt(g("people"), lang)}</p></section>
+<section id="dove" aria-labelledby="h-dove"><h2 id="h-dove">{E(g("contact_title"))}</h2><p>{fmt(g("address"), lang)}<br>{t(lang, "footer.phone")}: {ctx_base(lang)["tel_link"]} · {ctx_base(lang)["email_aiuto_link"]}<br>{fmt(g("hours"), lang)}</p></section>
+<section class="infobox" id="prossimo" aria-labelledby="h-prossimo"><h2 id="h-prossimo">{E(g("next_title"))}</h2><p>{E(g("next"))}</p>
+<p class="btn-row"><a class="btn" href="progetti.html?stato=in-corso">{E(g("next_projects"))}</a><a class="btn btn--secondary" href="proponi.html">{E(t(lang, "nav.proponi"))}</a></p></section>
+{torna_su(lang)}'''
     return pagina(lang, "chi-siamo.html", g("title"), corpo, nav="chi-siamo", briciole=[(t(lang, "nav.chi-siamo"), "")])
 
 
 def pg_faq(lang):
     g = lambda k: t(lang, "pages.faq." + k)
-    blocchi, salto = "", []
+    blocchi = ""
     for gr in g("groups"):
-        salto.append(f'<li><a href="#{gr["id"]}">{E(gr["t"])}</a></li>')
         argomenti = ""
         for tp in gr["topics"]:
             dom = "".join(
@@ -1013,29 +1056,23 @@ def pg_faq(lang):
                 for q in tp["q"])
             argomenti += f'<h3>{E(tp["t"])}</h3><div class="accordion">{dom}</div>'
         blocchi += f'<section id="{gr["id"]}" aria-labelledby="h-{gr["id"]}" data-faq-gruppo><h2 id="h-{gr["id"]}">{E(gr["t"])}</h2>{argomenti}</section>'
+    voci = [(gr["id"], gr["t"]) for gr in g("groups")] + [("non-trovato", g("not_found_title"))]
     corpo = f'''<h1>{E(g("h1"))}</h1>
 <div class="field js-only"><label for="faq-cerca">{E(g("search_label"))}</label>
 <input id="faq-cerca" type="search" placeholder="{E(g("search_placeholder"))}" aria-describedby="faq-conteggio" data-faq-cerca></div>
 <p class="result-count" id="faq-conteggio" role="status" aria-live="polite" data-faq-conteggio></p>
-<nav aria-labelledby="h-vai"><p><strong id="h-vai">{E(g("jump"))}</strong></p><ul class="inline-list">{"".join(salto)}</ul></nav>
+{indice_pagina(lang, voci, " data-faq-indice")}
 {blocchi}
-<section class="infobox" aria-labelledby="h-nf"><h2 id="h-nf">{E(g("not_found_title"))}</h2><p>{fmt(g("not_found"), lang)}</p></section>
+<section class="infobox" id="non-trovato" aria-labelledby="h-nf"><h2 id="h-nf">{E(g("not_found_title"))}</h2><p>{fmt(g("not_found"), lang)}</p></section>
 <p class="small muted">{E(t(lang, "common.updated"))} {fmt_data(OGGI, lang, True)}</p>
 {torna_su(lang)}'''
     return pagina(lang, "faq.html", g("title"), corpo, nav="faq", briciole=[(t(lang, "nav.faq"), "")])
 
 
-def pg_glossario(lang):
-    g = lambda k: t(lang, "pages.glossario." + k)
-    voci = "".join(f'<dt id="{x["id"]}">{E(x["t"])}</dt><dd>{fmt(x["d"], lang)}</dd>' for x in g("terms"))
-    corpo = f'''<h1>{E(g("h1"))}</h1><p class="lead">{E(g("intro"))}</p><dl class="glossary">{voci}</dl>{torna_su(lang)}'''
-    return pagina(lang, "glossario.html", g("title"), corpo, nav=None, briciole=[(g("h1"), "")])
-
-
 def pg_contatti(lang):
     g = lambda k: t(lang, "pages.contatti." + k)
     sogg = [(s, s) for s in g("f_subjects")]
-    corpo = f'''<h1>{E(g("h1"))}</h1><p class="lead">{E(g("intro"))}</p>
+    corpo = f'''<h1>{E(g("h1"))}</h1>
 <div class="grid grid--2" style="list-style:none">
 <section class="statusbox" aria-labelledby="h-tel"><h2 id="h-tel">{E(g("phone_title"))}</h2><p>{fmt(g("phone"), lang)}</p></section>
 <section class="statusbox" aria-labelledby="h-mail"><h2 id="h-mail">{E(g("email_title"))}</h2>{lista(g("emails"), lang)}<p>{fmt(g("email_time"), lang)}</p></section>
@@ -1108,18 +1145,17 @@ def dati_js():
         return {k: p[k] for k in ("slug", "programma", "anno", "categoria", "dipartimento", "gruppo", "titolo", "titolo_breve",
                                   "sottotitolo", "obiettivo", "raccolto", "inizio", "scadenza", "libere")} | {
             "secondo_obiettivo": p.get("secondo_obiettivo"),
-            "testo": {l: " ".join(p["presentazione"][l]) for l in LINGUE},
+            "testo": {l: " ".join(s["t"] + " " + " ".join(s["p"]) for s in p["presentazione"][l]) for l in LINGUE},
             "ricompense": [{k: r[k] for k in ("id", "importo", "titolo", "descrizione", "scelte", "posti")} for r in p["ricompense"]],
         }
     pagine = {}
     for l in LINGUE:
         pagine[l] = [
-            {"url": "programma.html", "titolo": t(l, "pages.programma.h1"), "testo": t(l, "pages.programma.intro") + " " + " ".join(t(l, "pages.programma.match")) + " funds together cofinanziamento co-funding raddoppio match bando call"},
-            {"url": "come-funziona.html", "titolo": t(l, "pages.come.h1"), "testo": t(l, "pages.come.intro")},
-            {"url": "proponi.html", "titolo": t(l, "pages.proponi.h1"), "testo": t(l, "pages.proponi.intro") + " associazione scuola ente association school"},
+            {"url": "programma.html", "titolo": t(l, "pages.programma.h1"), "testo": " ".join(t(l, "pages.programma.match")) + " funds together cofinanziamento co-funding raddoppio match bando call"},
+            {"url": "come-funziona.html", "titolo": t(l, "pages.come.h1"), "testo": " ".join(t(l, "pages.come.toc"))},
+            {"url": "proponi.html", "titolo": t(l, "pages.proponi.h1"), "testo": t(l, "pages.proponi.res_text") + " " + t(l, "pages.proponi.ext_text") + " associazione scuola ente association school"},
             {"url": "faq.html", "titolo": t(l, "pages.faq.h1"), "testo": " ".join(q["q"] for gr in t(l, "pages.faq.groups") for tp in gr["topics"] for q in tp["q"])},
-            {"url": "glossario.html", "titolo": t(l, "pages.glossario.h1"), "testo": " ".join(x["t"] for x in t(l, "pages.glossario.terms"))},
-            {"url": "chi-siamo.html", "titolo": t(l, "pages.chi.h1"), "testo": t(l, "pages.chi.intro")},
+            {"url": "chi-siamo.html", "titolo": t(l, "pages.chi.h1"), "testo": t(l, "pages.chi.story_intro") + " " + t(l, "pages.chi.what_intro")},
             {"url": "contatti.html", "titolo": t(l, "pages.contatti.h1"), "testo": "telefono email phone contact contatti orari"},
         ]
     for l in LINGUE:
@@ -1151,7 +1187,7 @@ def main():
             "donazione.html": pg_donazione(lang), "donazione-conferma.html": pg_conferma(lang),
             "programma.html": pg_programma(lang), "come-funziona.html": pg_come(lang), "proponi.html": pg_proponi(lang),
             "candidatura.html": pg_candidatura(lang), "collabora.html": pg_collabora(lang), "chi-siamo.html": pg_chi(lang),
-            "faq.html": pg_faq(lang), "glossario.html": pg_glossario(lang), "contatti.html": pg_contatti(lang),
+            "faq.html": pg_faq(lang), "contatti.html": pg_contatti(lang),
             "accessibilita.html": pg_accessibilita(lang), "404.html": pg_404(lang, radice=(lang == "it")),
         }
         for p in PROGETTI:

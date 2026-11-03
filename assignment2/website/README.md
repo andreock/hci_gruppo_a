@@ -28,24 +28,23 @@ Per lo zip richiesto (`assignment2_gruppox.zip`) bisogna prima rigenerare le pag
 cd assignment2 && python3 website/tools/build.py && zip -r assignment2_gruppoA.zip website -x "website/tools/node_modules/*" "*.DS_Store"
 ```
 
-## Pagine (17 tipi, in italiano e in inglese: 58 file HTML)
+## Pagine (16 tipi, in italiano e in inglese: 50 file HTML)
 
 | Pagina | File | Funzione |
 |---|---|---|
 | Home | `index.html` | Che cos'è e chi lo gestisce, ricerca, progetti in corso, come funziona in 3 passi, numeri, aggiornamenti |
-| Progetti | `progetti.html` | Elenco con filtri e ordinamento salvati nella URL, conteggio, ritorno nella stessa posizione |
+| Progetti | `progetti.html` | Elenco con ricerca, filtri e ordinamento salvati nella URL, conteggio, ritorno nella stessa posizione |
 | Ricerca | `cerca.html` | Risultati e caso «nessun risultato» con alternative |
-| Pagina progetto (×13) | `progetto-<slug>.html` | Stato, obiettivo e raddoppio, indice, sezioni in ordine fisso, ricompense, scrivi al gruppo |
+| Pagina progetto (×10) | `progetto-<slug>.html` | Stato, obiettivo e raddoppio, indice, sezioni in ordine fisso, ricompense, scrivi al gruppo |
 | Donazione | `donazione.html?progetto=…` | 5 passi con validazione in linea, dati conservati, commissioni nel riepilogo |
 | Conferma | `donazione-conferma.html` | Codice di riferimento, riepilogo stampabile, che cosa succede adesso |
-| Programma dell'Ateneo | `programma.html` | Stato del bando, fasi, regole del raddoppio, requisiti, costi, edizioni in numeri |
-| Come funziona | `come-funziona.html` | Passi per chi sostiene, chi propone, gruppi con una campagna in corso |
-| Proponi un progetto | `proponi.html` | Chi può proporre, costi in evidenza, due percorsi |
+| Programma dell'Ateneo | `programma.html` | Stato del bando, fasi, regole del raddoppio, requisiti, edizioni in numeri, contatti |
+| Come funziona | `come-funziona.html` | Passi per chi sostiene e per chi propone, quanto costa |
+| Proponi un progetto | `proponi.html` | Chi può proporre, due percorsi passo per passo, consigli, tempi e costi, indicazioni per i gruppi con una campagna in corso |
 | Candidatura | `candidatura.html` | Modulo per ricercatori UniTo |
 | Collaborazione | `collabora.html` | Modulo per associazioni ed enti esterni |
-| Domande frequenti | `faq.html` | Per destinatario e argomento, ricerca interna, ancore |
-| Glossario | `glossario.html` | Termini spiegati in modo semplice |
-| Chi siamo | `chi-siamo.html` | Chi gestisce il servizio, dove vanno i soldi |
+| Domande frequenti | `faq.html` | Per destinatario e argomento, parole del sito spiegate, indice, ricerca interna, ancore |
+| Chi siamo | `chi-siamo.html` | Chi gestisce il servizio, la sua storia, che cosa fa, dove vanno i soldi |
 | Contatti | `contatti.html` | Recapiti, orari, modulo «Scrivici» |
 | Accessibilità | `accessibilita.html` | Dichiarazione con verifiche e limiti |
 | Pagina non trovata | `404.html` | Messaggio, ricerca e link utili |
@@ -61,7 +60,7 @@ website/
 ├── fonts/                                Inter e Bricolage Grotesque (woff2) con licenze OFL
 ├── js/ideablume.js                       interazioni (miglioramento progressivo)
 ├── data/
-│   ├── progetti.json                     i 13 progetti (fonte unica dei dati)
+│   ├── progetti.json                     i 10 progetti (fonte unica dei dati)
 │   ├── sito.json                         contatti, regole, metodi di pagamento, dipartimenti, categorie
 │   ├── ib-dati.js, testi-it.js, testi-en.js   generati per il JavaScript (non modificare a mano)
 ├── i18n/it.json, i18n/en.json            tutti i testi dell'interfaccia e delle pagine
@@ -85,7 +84,7 @@ Tutte le scelte sono motivate in `docs/decisioni.md` (D-01–D-42).
 Dopo ogni modifica a dati o testi:
 
 ```bash
-python3 tools/build.py          # rigenera le 58 pagine, le illustrazioni, i file dati JS e css/font-locali.css
+python3 tools/build.py          # rigenera le 50 pagine, le illustrazioni, i file dati JS e css/font-locali.css
 ```
 
 La build si ferma con un errore se manca una traduzione o una variabile.
@@ -104,7 +103,7 @@ Gli script di verifica richiedono Node.js e Google Chrome. Una volta sola: `cd t
 | `python3 tools/contrasto.py` | Contrasti di 90 coppie di colori, tema chiaro e scuro | 180/180 conformi |
 | `python3 tools/verifica-link.py` | Link interni, ancore, nuove schede, risorse esterne | 0 problemi |
 | `python3 tools/verifica-dati.py` | Coerenza dei numeri, stati, ordine delle sezioni, lessico, nessun testo provvisorio | 394/394 |
-| `node tools/verifica-pagine.js` | axe-core (WCAG 2.2 A/AA) in entrambi i temi, errori JS, `h1`, titoli, 320 px | 0 violazioni su 58 pagine |
+| `node tools/verifica-pagine.js` | axe-core (WCAG 2.2 A/AA) in entrambi i temi, errori JS, `h1`, titoli, 320 px | 0 violazioni su 50 pagine |
 | `node tools/percorsi.js` | Percorsi da tastiera, interazioni, cambio di tema | 66/66 |
 | `node tools/verifica-file.js` | Funzionamento da `file://` | 8/8 |
 | `node tools/responsive.js` | 320/375/768/1280 px, zoom 200%, daltonismo, aree cliccabili | nessun problema |

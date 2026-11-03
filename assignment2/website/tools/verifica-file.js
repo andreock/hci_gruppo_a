@@ -8,10 +8,10 @@ const esiti = []; const ok = (n, c) => { esiti.push([n, !!c]); console.log((c ? 
   const b = await chromium.launch({ channel: "chrome" }); const page = await b.newPage(); const err = [];
   page.on("pageerror", (e) => err.push(e.message));
   await page.goto(F("progetti.html?stato=in-corso")); await page.waitForTimeout(150);
-  ok("file:// · i filtri si applicano dalla URL", /Mostrati 6 di 13/.test(await page.textContent("[data-conteggio]")));
+  ok("file:// · i filtri si applicano dalla URL", /Mostrati 4 di 10/.test(await page.textContent("[data-conteggio]")));
   await page.goto(F("cerca.html?q=clima"));
   ok("file:// · la ricerca funziona", /progett/.test(await page.textContent("[data-risultati-titolo]")));
-  await page.goto(F("donazione.html?progetto=api-in-citta&ricompensa=r30"));
+  await page.goto(F("donazione.html?progetto=clima-giovani&ricompensa=r30"));
   ok("file:// · la donazione si apre con il progetto", await page.isVisible("[data-don-app]"));
   await page.click('[data-passo="1"] button[type=submit]'); await page.waitForSelector('[data-passo="2"]:not([hidden])');
   ok("file:// · si passa al passo 2 (history.pushState)", /passo=2/.test(page.url()));

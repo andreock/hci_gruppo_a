@@ -332,25 +332,43 @@
     var c = calcola(p), prefix = LANG === "en" ? "../" : "";
     var dip = D.sito.dipartimenti[p.dipartimento][LANG], cat = D.sito.categorie[p.categoria][LANG];
     return '<li><article class="card"><div class="card__media"><img src="' + prefix + "img/progetti/" + p.slug + '.svg" alt="" width="320" height="180" loading="lazy"></div>' +
-      '<div class="card__body"><p class="card__meta"><span class="tag">' + esc(cat) + "</span> · " + esc(tpl(I.card.anno, { anno: p.anno })) +
-      (p.programma ? ' · <span class="tag">' + esc(I.card.programma) + "</span>" : "") + "</p>" +
+      '<div class="card__body"><p class="card__meta"><span class="tag">' + esc(cat) + '</span><span class="tag tag--neutro">' + esc(tpl(I.card.anno, { anno: p.anno })) + "</span>" +
+      (p.programma ? '<span class="tag tag--programma">' + esc(I.card.programma) + "</span>" : "") + "</p>" +
       '<h3 class="card__title"><a href="progetto-' + p.slug + '.html">' + esc(p.titolo[LANG]) + "</a></h3>" +
       '<p class="card__org">' + tpl(I.card.org, { gruppo: esc(p.gruppo), dip: esc(dip) }) + "</p><p>" + statoHtml(p, c) + "</p>" +
       '<div class="progress" aria-hidden="true"><div class="progress__bar" style="width:' + Math.min(100, c.perc).toFixed(0) + '%"></div></div>' +
       '<p class="card__figures">' + tpl(I.card.raised, { raccolto: euro(p.raccolto), obiettivo: euro(p.obiettivo), perc: Math.round(c.perc) + "%" }) + " · " + tpl(I.card.supporters, { n: c.sost }) + "</p></div></article></li>";
   }
 
-  /* ---------- elenco dei progetti: filtri nella URL, conteggio, posizione (P-027, P-031–P-033) ---------- */
+  /* ---------- ricerca testuale: la stessa logica per l'elenco dei progetti e per «Cerca» ---------- */
+  var norm = function (s) { return String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); };
+  var paroleDi = function (q) { return norm(q).split(/\s+/).filter(Boolean); };
+  var corrisponde = function (p, parole) {
+    var testo = norm([p.titolo[LANG], p.sottotitolo[LANG], p.testo[LANG], p.gruppo, p.anno, D.sito.categorie[p.categoria][LANG],
+      D.sito.dipartimenti[p.dipartimento][LANG], p.titolo.it, p.titolo.en].join(" "));
+    var voci = testo.split(/[^a-z0-9]+/);            // cerca per inizio di parola: «api» trova «apicoltori», non «capire»
+    return parole.every(function (w) {                // tollera singolare/plurale e maschile/femminile: «veterinaria» trova «veterinarie»
+      var r = w.length >= 5 ? w.slice(0, -1) : w;
+      return voci.some(function (v) { return v.indexOf(r) === 0; });
+    });
+  };
+
+  /* ---------- elenco dei progetti: ricerca e filtri nella URL, conteggio, posizione (P-005, P-027, P-031–P-033) ---------- */
   var formFiltri = $("[data-filtri]");
   if (formFiltri && D) {
     var elenco = $("[data-elenco]"), items = $$("li[data-slug]", elenco);
-    var conteggio = $("[data-conteggio]"), nessuno = $("[data-nessuno]"), fine = $("[data-fine]");
-    var campi = ["stato", "categoria", "dip", "anno", "programma", "ordina"];
+    var conteggio = $("[data-conteggio]"), nessuno = $("[data-nessuno]"), fine = $("[data-fine]"), didascalia = $("[data-didascalia]");
+    var campi = ["q", "stato", "categoria", "dip", "anno", "programma", "ordina"];
+    var perSlug = {}; D.progetti.forEach(function (p) { perSlug[p.slug] = p; });
     var leggi = function () { var q = new URLSearchParams(location.search); campi.forEach(function (k) { var s = formFiltri.elements[k]; if (s) s.value = q.get(k) || ""; }); };
     var applica = function (annunciare) {
-      var f = {}; campi.forEach(function (k) { f[k] = formFiltri.elements[k].value; });
+      var f = {}; campi.forEach(function (k) { f[k] = formFiltri.elements[k].value.trim(); });
+      var parole = paroleDi(f.q);
+      /* la didascalia con i progetti in corso e conclusi vale per l'elenco completo: ordinare non toglie progetti, quindi resta */
+      didascalia.hidden = campi.some(function (k) { return k !== "ordina" && f[k]; });
       var vis = items.filter(function (li) {
         var st = li.getAttribute("data-stato");
+        if (parole.length && !corrisponde(perSlug[li.getAttribute("data-slug")], parole)) return false;
         if (f.stato === "in-corso" && !(st === "open" || st === "reached")) return false;
         if (f.stato === "raggiunto" && st !== "reached") return false;
         if (f.stato === "conclusi" && !(st === "done" || st === "failed")) return false;
@@ -378,7 +396,9 @@
       history.replaceState(history.state, "", location.pathname + (q.toString() ? "?" + q : ""));
     };
     leggi(); applica(false);
-    formFiltri.addEventListener("change", function () { applica(true); });
+    var attesaTesto;
+    formFiltri.addEventListener("input", function (e) { if (e.target.name === "q") { clearTimeout(attesaTesto); attesaTesto = setTimeout(function () { applica(true); }, 250); } });
+    formFiltri.addEventListener("change", function (e) { if (e.target.name !== "q") applica(true); });
     formFiltri.addEventListener("submit", function (e) { e.preventDefault(); applica(true); });
     $("[data-reset]", formFiltri).addEventListener("click", function (e) { e.preventDefault(); formFiltri.reset(); campi.forEach(function (k) { formFiltri.elements[k].value = ""; }); applica(true); formFiltri.elements.stato.focus(); });
     /* la posizione si ripristina solo tornando dal progetto aperto dall'elenco; da ogni altra pagina l'elenco parte dall'inizio */
@@ -392,21 +412,12 @@
   /* ---------- ricerca (P-005, P-006) ---------- */
   var risultati = $("[data-risultati]");
   if (risultati && D) {
-    var norm = function (s) { return String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); };
     var q = (new URLSearchParams(location.search).get("q") || "").trim();
     var campo = $("#q-cerca"); campo.value = q;
     var titolo = $("[data-risultati-titolo]");
     if (q) {
-      var parole = norm(q).split(/\s+/).filter(Boolean);
-      var trovati = D.progetti.filter(function (p) {
-        var testo = norm([p.titolo[LANG], p.sottotitolo[LANG], p.testo[LANG], p.gruppo, p.anno, D.sito.categorie[p.categoria][LANG],
-          D.sito.dipartimenti[p.dipartimento][LANG], p.titolo.it, p.titolo.en].join(" "));
-        var voci = testo.split(/[^a-z0-9]+/);            // cerca per inizio di parola: «api» trova «apicoltori», non «capire»
-        return parole.every(function (w) {                // tollera singolare/plurale e maschile/femminile: «veterinaria» trova «veterinarie»
-          var r = w.length >= 5 ? w.slice(0, -1) : w;
-          return voci.some(function (v) { return v.indexOf(r) === 0; });
-        });
-      }).sort(function (a, b) { return calcola(b).aperto - calcola(a).aperto; });
+      var parole = paroleDi(q);
+      var trovati = D.progetti.filter(function (p) { return corrisponde(p, parole); }).sort(function (a, b) { return calcola(b).aperto - calcola(a).aperto; });
       risultati.innerHTML = trovati.map(cardHtml).join("");
       var t = trovati.length === 0 ? I.cerca.none_title : trovati.length === 1 ? I.cerca.result_1 : I.cerca.result_n;
       titolo.textContent = tpl(t, { n: trovati.length, q: q });
@@ -433,9 +444,10 @@
   }
   if ($("[data-faq-gruppo]") && I) {
     apriAncora(); window.addEventListener("hashchange", apriAncora);
-    var cont = $("[data-faq-conteggio]");
+    var cont = $("[data-faq-conteggio]"), indiceFaq = $("[data-faq-indice]");
     if (faqCerca) faqCerca.addEventListener("input", function () {
       var w = faqCerca.value.trim().toLowerCase(), n = 0;
+      indiceFaq.hidden = !!w; // durante la ricerca porterebbe a sezioni nascoste
       $$("[data-faq-gruppo] details").forEach(function (d) {
         var ok = !w || d.textContent.toLowerCase().indexOf(w) >= 0; d.hidden = !ok; if (ok) n++;
       });
