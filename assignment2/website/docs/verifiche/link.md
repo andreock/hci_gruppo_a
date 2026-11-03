@@ -5,8 +5,8 @@ Generato da `tools/verifica-link.py`.
 | Controllo | Valore |
 |---|---|
 | Pagine analizzate (IT + EN) | 58 |
-| Link interni controllati | 1976 |
-| Link con ancora controllati | 508 |
+| Link interni controllati | 1932 |
+| Link con ancora controllati | 464 |
 | Link esterni (tutti dichiarati) | 0 |
 | Problemi trovati | 0 |
 

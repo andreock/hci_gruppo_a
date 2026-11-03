@@ -2,7 +2,7 @@
 """Coerenza tra data/progetti.json e le pagine generate (R-022, R-026, R-031, R-032, R-055, R-073, R-084, R-132).
 
 Uso (dalla cartella website/):  python3 tools/verifica-dati.py
-Scrive docs/verifiche/dati.md e docs/verifiche/segnaposto.md. Esce con 1 se trova errori.
+Scrive docs/verifiche/dati.md. Esce con 1 se trova errori.
 """
 import html
 import json
@@ -77,13 +77,22 @@ for lang in B.LINGUE:
 # 3. testi in tutte le pagine
 ESCLUSI = {"it": [r"\boverfunding\b", r"\bkeep it all\b", r"\bFAI TU\b", r"\bcampaign manager\b", r"\bprogettist", r"\bfee\b", r"\bbacker", r"\bcheckout\b"],
            "en": [r"\boverfunding\b", r"\bkeep it all\b", r"\bcampaign manager\b", r"\bbacker", r"\bFAI TU\b"]}
+# Parole che non devono comparire nel sito: il sito è presentato come definitivo, nulla è simulato o da decidere.
+VIETATI = (r"simul\w*|prototip\w*|(?<!\.)\bprototype\w*|dimostrativ\w*|inventat\w*|fittizi\w*|fictional|teaching|"
+           r"da verificare|da confermare|da decidere|da definire|to be confirmed|to be decided|\{DV\}")
 for pg in pagine:
     lang = "en" if pg.startswith("en/") else "it"
     tx = testo(pg)
     check(f"{pg}: nessun numero di giorni negativo", not re.search(r"-\s?\d+\s(giorn|day)", tx))
-    check(f"{pg}: nota «prototipo» nel piè di pagina", ("Prototipo didattico" if lang == "it" else "Teaching prototype") in tx)
+    vietati = re.findall(VIETATI, tx, flags=re.I)
+    check(f"{pg}: nessun riferimento a simulazioni o informazioni da decidere", not vietati, ", ".join(sorted(set(vietati))))
     trovati = [r for r in ESCLUSI[lang] if re.search(r, tx, flags=re.I)]
     check(f"{pg}: nessun termine escluso dal lessico", not trovati, ", ".join(trovati))
+
+for risorsa in ("js/ideablume.js", "css/ideablume.css", "data/ib-dati.js", "data/testi-it.js", "data/testi-en.js", "data/sito.json", "data/progetti.json", "i18n/it.json", "i18n/en.json"):
+    sorgente = (ROOT / risorsa).read_text(encoding="utf-8")
+    vietati = re.findall(VIETATI, sorgente, flags=re.I)
+    check(f"{risorsa}: nessun riferimento a simulazioni o informazioni da decidere", not vietati, ", ".join(sorted(set(vietati))))
 
 # 4. metodi di pagamento uguali tra FAQ e donazione
 for lang in B.LINGUE:
@@ -99,27 +108,12 @@ for d in ("2026-10-31", "2026-12-24", "2027-03-15", "2030-01-01"):
                          cwd=ROOT, env={**os.environ, "IB_OGGI": d}, capture_output=True, text=True)
     check(f"stati calcolati al {d}: nessun giorno negativo", out.returncode == 0 and not re.search(r"-\d+ (giorn|day)", out.stdout), out.stderr[-200:])
 
-# 6. segnaposto da verificare
-seg = {}
-for pg in pagine:
-    if pg.startswith("en/"):
-        continue
-    tx = testo(pg)
-    for m in re.finditer(r"\[DA VERIFICARE con l'Ateneo\]", tx):
-        frase = " ".join(tx[max(0, m.start() - 140):m.start()].split()).replace("|", "/")
-        frase = frase.split("]")[-1].strip()[-120:]
-        seg.setdefault(frase, set()).add(pg)
-
 righe = ["# Coerenza dei dati e dei testi", "", "Generato da `tools/verifica-dati.py`.", "",
          f"**{sum(1 for _, ok in controlli if ok)} controlli superati su {len(controlli)}.**", ""]
 righe += ["## Errori", ""] + [f"- {e}" for e in errori] if errori else ["Nessun errore."]
 righe += ["", "## Controlli eseguiti", "", "| Controllo | Esito |", "|---|---|"] + [f"| {n} | {'superato' if ok else '**NON superato**'} |" for n, ok in controlli]
 (ROOT / "docs/verifiche/dati.md").write_text("\n".join(righe) + "\n", encoding="utf-8")
-s = ["# Segnaposto «[DA VERIFICARE con l'Ateneo]»", "", "Informazioni istituzionali non documentate nelle fonti: vanno confermate prima di un uso reale. Generato da `tools/verifica-dati.py` sulle pagine italiane (le inglesi hanno gli stessi segnaposto).", "",
-     "| Contesto (testo che precede il segnaposto) | Pagine |", "|---|---|"]
-s += [f"| …{k} | {', '.join(sorted(v)[:6])}{' e altre' if len(v) > 6 else ''} |" for k, v in sorted(seg.items(), key=lambda x: -len(x[1]))]
-(ROOT / "docs/verifiche/segnaposto.md").write_text("\n".join(s) + "\n", encoding="utf-8")
-print(f"{sum(1 for _, ok in controlli if ok)}/{len(controlli)} controlli superati; {len(seg)} segnaposto distinti")
+print(f"{sum(1 for _, ok in controlli if ok)}/{len(controlli)} controlli superati")
 for e in errori[:30]:
     print("  ", e)
 sys.exit(1 if errori else 0)

@@ -20,7 +20,7 @@ const esiti = []; const ok = (n, c) => { esiti.push([n, !!c]); console.log((c ? 
   await page.goto(F("en/faq.html#faq-anonimo")); await page.waitForTimeout(150);
   ok("file:// · versione inglese e FAQ aperta da ancora", await page.evaluate(() => document.getElementById("faq-anonimo").open));
   await page.goto(F("progetto-alveari-sani.html"));
-  ok("file:// · le date dimostrative sono ricalcolate", (await page.getAttribute("time[data-rel]", "datetime")) !== null);
+  ok("file:// · le date relative sono ricalcolate", (await page.getAttribute("time[data-rel]", "datetime")) !== null);
   ok("file:// · nessun errore JavaScript", err.length === 0);
   await b.close();
   const md = path.join(SITE, "docs/verifiche/percorsi.md"); let t = fs.readFileSync(md, "utf8").replace(/\n## Senza server[\s\S]*$/, "");

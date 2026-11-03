@@ -3,7 +3,7 @@
    - errori JavaScript e messaggi di errore nella console
    - un solo h1, titolo della pagina univoco
    - nessuno scorrimento orizzontale a 320 px (WCAG 1.4.10)
-   - axe-core con le regole WCAG 2.0/2.1/2.2 livello A e AA
+   - axe-core con le regole WCAG 2.0/2.1/2.2 livello A e AA, nel tema chiaro e nel tema scuro
    Uso (dalla cartella website/tools):  npm install  &&  node verifica-pagine.js
    Usa Google Chrome installato (channel "chrome") e un server statico locale (python3 -m http.server). Scrive docs/verifiche/axe.md e axe.json. */
 const fs = require("fs");
@@ -39,10 +39,15 @@ const pagine = []
     await page.waitForTimeout(150);
     const info = await page.evaluate(() => ({ h1: document.querySelectorAll("h1:not([hidden] h1)").length, title: document.title, lang: document.documentElement.lang }));
     await page.addScriptTag({ content: AXE });
-    const axe = await page.evaluate(async () => {
-      const r = await window.axe.run(document, { runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"] } });
-      return r.violations.map((v) => ({ id: v.id, impact: v.impact, help: v.help, nodes: v.nodes.length, target: v.nodes.slice(0, 3).map((n) => n.target.join(" ")) }));
-    });
+    const axe = [];
+    for (const tema of ["light", "dark"]) { // stesse regole in entrambi i temi
+      axe.push(...await page.evaluate(async (tema) => {
+        document.documentElement.setAttribute("data-theme", tema);
+        await new Promise((fatto) => setTimeout(fatto, 350)); // attende la fine delle transizioni di colore
+        const r = await window.axe.run(document, { runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"] } });
+        return r.violations.map((v) => ({ id: v.id, tema, impact: v.impact, help: v.help + " [tema " + tema + "]", nodes: v.nodes.length, target: v.nodes.slice(0, 3).map((n) => n.target.join(" ")) }));
+      }, tema));
+    }
     await page.setViewportSize({ width: 320, height: 800 });
     await page.waitForTimeout(100);
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);

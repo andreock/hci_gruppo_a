@@ -2,7 +2,7 @@
 
 Generato da `tools/verifica-dati.py`.
 
-**385 controlli superati su 385.**
+**394 controlli superati su 394.**
 
 Nessun errore.
 
@@ -210,179 +210,188 @@ Nessun errore.
 | programma [en] 2026: totale raccolto della tabella | superato |
 | progetti [en]: tutte le card presenti | superato |
 | 404.html: nessun numero di giorni negativo | superato |
-| 404.html: nota «prototipo» nel piè di pagina | superato |
+| 404.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | 404.html: nessun termine escluso dal lessico | superato |
 | accessibilita.html: nessun numero di giorni negativo | superato |
-| accessibilita.html: nota «prototipo» nel piè di pagina | superato |
+| accessibilita.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | accessibilita.html: nessun termine escluso dal lessico | superato |
 | candidatura.html: nessun numero di giorni negativo | superato |
-| candidatura.html: nota «prototipo» nel piè di pagina | superato |
+| candidatura.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | candidatura.html: nessun termine escluso dal lessico | superato |
 | cerca.html: nessun numero di giorni negativo | superato |
-| cerca.html: nota «prototipo» nel piè di pagina | superato |
+| cerca.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | cerca.html: nessun termine escluso dal lessico | superato |
 | chi-siamo.html: nessun numero di giorni negativo | superato |
-| chi-siamo.html: nota «prototipo» nel piè di pagina | superato |
+| chi-siamo.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | chi-siamo.html: nessun termine escluso dal lessico | superato |
 | collabora.html: nessun numero di giorni negativo | superato |
-| collabora.html: nota «prototipo» nel piè di pagina | superato |
+| collabora.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | collabora.html: nessun termine escluso dal lessico | superato |
 | come-funziona.html: nessun numero di giorni negativo | superato |
-| come-funziona.html: nota «prototipo» nel piè di pagina | superato |
+| come-funziona.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | come-funziona.html: nessun termine escluso dal lessico | superato |
 | contatti.html: nessun numero di giorni negativo | superato |
-| contatti.html: nota «prototipo» nel piè di pagina | superato |
+| contatti.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | contatti.html: nessun termine escluso dal lessico | superato |
 | donazione-conferma.html: nessun numero di giorni negativo | superato |
-| donazione-conferma.html: nota «prototipo» nel piè di pagina | superato |
+| donazione-conferma.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | donazione-conferma.html: nessun termine escluso dal lessico | superato |
 | donazione.html: nessun numero di giorni negativo | superato |
-| donazione.html: nota «prototipo» nel piè di pagina | superato |
+| donazione.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | donazione.html: nessun termine escluso dal lessico | superato |
 | en/404.html: nessun numero di giorni negativo | superato |
-| en/404.html: nota «prototipo» nel piè di pagina | superato |
+| en/404.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/404.html: nessun termine escluso dal lessico | superato |
 | en/accessibilita.html: nessun numero di giorni negativo | superato |
-| en/accessibilita.html: nota «prototipo» nel piè di pagina | superato |
+| en/accessibilita.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/accessibilita.html: nessun termine escluso dal lessico | superato |
 | en/candidatura.html: nessun numero di giorni negativo | superato |
-| en/candidatura.html: nota «prototipo» nel piè di pagina | superato |
+| en/candidatura.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/candidatura.html: nessun termine escluso dal lessico | superato |
 | en/cerca.html: nessun numero di giorni negativo | superato |
-| en/cerca.html: nota «prototipo» nel piè di pagina | superato |
+| en/cerca.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/cerca.html: nessun termine escluso dal lessico | superato |
 | en/chi-siamo.html: nessun numero di giorni negativo | superato |
-| en/chi-siamo.html: nota «prototipo» nel piè di pagina | superato |
+| en/chi-siamo.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/chi-siamo.html: nessun termine escluso dal lessico | superato |
 | en/collabora.html: nessun numero di giorni negativo | superato |
-| en/collabora.html: nota «prototipo» nel piè di pagina | superato |
+| en/collabora.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/collabora.html: nessun termine escluso dal lessico | superato |
 | en/come-funziona.html: nessun numero di giorni negativo | superato |
-| en/come-funziona.html: nota «prototipo» nel piè di pagina | superato |
+| en/come-funziona.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/come-funziona.html: nessun termine escluso dal lessico | superato |
 | en/contatti.html: nessun numero di giorni negativo | superato |
-| en/contatti.html: nota «prototipo» nel piè di pagina | superato |
+| en/contatti.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/contatti.html: nessun termine escluso dal lessico | superato |
 | en/donazione-conferma.html: nessun numero di giorni negativo | superato |
-| en/donazione-conferma.html: nota «prototipo» nel piè di pagina | superato |
+| en/donazione-conferma.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/donazione-conferma.html: nessun termine escluso dal lessico | superato |
 | en/donazione.html: nessun numero di giorni negativo | superato |
-| en/donazione.html: nota «prototipo» nel piè di pagina | superato |
+| en/donazione.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/donazione.html: nessun termine escluso dal lessico | superato |
 | en/faq.html: nessun numero di giorni negativo | superato |
-| en/faq.html: nota «prototipo» nel piè di pagina | superato |
+| en/faq.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/faq.html: nessun termine escluso dal lessico | superato |
 | en/glossario.html: nessun numero di giorni negativo | superato |
-| en/glossario.html: nota «prototipo» nel piè di pagina | superato |
+| en/glossario.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/glossario.html: nessun termine escluso dal lessico | superato |
 | en/index.html: nessun numero di giorni negativo | superato |
-| en/index.html: nota «prototipo» nel piè di pagina | superato |
+| en/index.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/index.html: nessun termine escluso dal lessico | superato |
 | en/progetti.html: nessun numero di giorni negativo | superato |
-| en/progetti.html: nota «prototipo» nel piè di pagina | superato |
+| en/progetti.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/progetti.html: nessun termine escluso dal lessico | superato |
 | en/progetto-alveari-sani.html: nessun numero di giorni negativo | superato |
-| en/progetto-alveari-sani.html: nota «prototipo» nel piè di pagina | superato |
+| en/progetto-alveari-sani.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/progetto-alveari-sani.html: nessun termine escluso dal lessico | superato |
 | en/progetto-antibiotici-test.html: nessun numero di giorni negativo | superato |
-| en/progetto-antibiotici-test.html: nota «prototipo» nel piè di pagina | superato |
+| en/progetto-antibiotici-test.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/progetto-antibiotici-test.html: nessun termine escluso dal lessico | superato |
 | en/progetto-api-in-citta.html: nessun numero di giorni negativo | superato |
-| en/progetto-api-in-citta.html: nota «prototipo» nel piè di pagina | superato |
+| en/progetto-api-in-citta.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/progetto-api-in-citta.html: nessun termine escluso dal lessico | superato |
 | en/progetto-aria-aperta.html: nessun numero di giorni negativo | superato |
-| en/progetto-aria-aperta.html: nota «prototipo» nel piè di pagina | superato |
+| en/progetto-aria-aperta.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/progetto-aria-aperta.html: nessun termine escluso dal lessico | superato |
 | en/progetto-clima-giovani.html: nessun numero di giorni negativo | superato |
-| en/progetto-clima-giovani.html: nota «prototipo» nel piè di pagina | superato |
+| en/progetto-clima-giovani.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/progetto-clima-giovani.html: nessun termine escluso dal lessico | superato |
 | en/progetto-dialetti-archivio.html: nessun numero di giorni negativo | superato |
-| en/progetto-dialetti-archivio.html: nota «prototipo» nel piè di pagina | superato |
+| en/progetto-dialetti-archivio.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/progetto-dialetti-archivio.html: nessun termine escluso dal lessico | superato |
 | en/progetto-matematica-accessibile.html: nessun numero di giorni negativo | superato |
-| en/progetto-matematica-accessibile.html: nota «prototipo» nel piè di pagina | superato |
+| en/progetto-matematica-accessibile.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/progetto-matematica-accessibile.html: nessun termine escluso dal lessico | superato |
 | en/progetto-neonati-virus.html: nessun numero di giorni negativo | superato |
-| en/progetto-neonati-virus.html: nota «prototipo» nel piè di pagina | superato |
+| en/progetto-neonati-virus.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/progetto-neonati-virus.html: nessun termine escluso dal lessico | superato |
 | en/progetto-plastica-batteri.html: nessun numero di giorni negativo | superato |
-| en/progetto-plastica-batteri.html: nota «prototipo» nel piè di pagina | superato |
+| en/progetto-plastica-batteri.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/progetto-plastica-batteri.html: nessun termine escluso dal lessico | superato |
 | en/progetto-rifugi-frane.html: nessun numero di giorni negativo | superato |
-| en/progetto-rifugi-frane.html: nota «prototipo» nel piè di pagina | superato |
+| en/progetto-rifugi-frane.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/progetto-rifugi-frane.html: nessun termine escluso dal lessico | superato |
 | en/progetto-robot-anziani.html: nessun numero di giorni negativo | superato |
-| en/progetto-robot-anziani.html: nota «prototipo» nel piè di pagina | superato |
+| en/progetto-robot-anziani.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/progetto-robot-anziani.html: nessun termine escluso dal lessico | superato |
 | en/progetto-scienza-doposcuola.html: nessun numero di giorni negativo | superato |
-| en/progetto-scienza-doposcuola.html: nota «prototipo» nel piè di pagina | superato |
+| en/progetto-scienza-doposcuola.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/progetto-scienza-doposcuola.html: nessun termine escluso dal lessico | superato |
 | en/progetto-vigneti-clima.html: nessun numero di giorni negativo | superato |
-| en/progetto-vigneti-clima.html: nota «prototipo» nel piè di pagina | superato |
+| en/progetto-vigneti-clima.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/progetto-vigneti-clima.html: nessun termine escluso dal lessico | superato |
 | en/programma.html: nessun numero di giorni negativo | superato |
-| en/programma.html: nota «prototipo» nel piè di pagina | superato |
+| en/programma.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/programma.html: nessun termine escluso dal lessico | superato |
 | en/proponi.html: nessun numero di giorni negativo | superato |
-| en/proponi.html: nota «prototipo» nel piè di pagina | superato |
+| en/proponi.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/proponi.html: nessun termine escluso dal lessico | superato |
 | faq.html: nessun numero di giorni negativo | superato |
-| faq.html: nota «prototipo» nel piè di pagina | superato |
+| faq.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | faq.html: nessun termine escluso dal lessico | superato |
 | glossario.html: nessun numero di giorni negativo | superato |
-| glossario.html: nota «prototipo» nel piè di pagina | superato |
+| glossario.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | glossario.html: nessun termine escluso dal lessico | superato |
 | index.html: nessun numero di giorni negativo | superato |
-| index.html: nota «prototipo» nel piè di pagina | superato |
+| index.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | index.html: nessun termine escluso dal lessico | superato |
 | progetti.html: nessun numero di giorni negativo | superato |
-| progetti.html: nota «prototipo» nel piè di pagina | superato |
+| progetti.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | progetti.html: nessun termine escluso dal lessico | superato |
 | progetto-alveari-sani.html: nessun numero di giorni negativo | superato |
-| progetto-alveari-sani.html: nota «prototipo» nel piè di pagina | superato |
+| progetto-alveari-sani.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | progetto-alveari-sani.html: nessun termine escluso dal lessico | superato |
 | progetto-antibiotici-test.html: nessun numero di giorni negativo | superato |
-| progetto-antibiotici-test.html: nota «prototipo» nel piè di pagina | superato |
+| progetto-antibiotici-test.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | progetto-antibiotici-test.html: nessun termine escluso dal lessico | superato |
 | progetto-api-in-citta.html: nessun numero di giorni negativo | superato |
-| progetto-api-in-citta.html: nota «prototipo» nel piè di pagina | superato |
+| progetto-api-in-citta.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | progetto-api-in-citta.html: nessun termine escluso dal lessico | superato |
 | progetto-aria-aperta.html: nessun numero di giorni negativo | superato |
-| progetto-aria-aperta.html: nota «prototipo» nel piè di pagina | superato |
+| progetto-aria-aperta.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | progetto-aria-aperta.html: nessun termine escluso dal lessico | superato |
 | progetto-clima-giovani.html: nessun numero di giorni negativo | superato |
-| progetto-clima-giovani.html: nota «prototipo» nel piè di pagina | superato |
+| progetto-clima-giovani.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | progetto-clima-giovani.html: nessun termine escluso dal lessico | superato |
 | progetto-dialetti-archivio.html: nessun numero di giorni negativo | superato |
-| progetto-dialetti-archivio.html: nota «prototipo» nel piè di pagina | superato |
+| progetto-dialetti-archivio.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | progetto-dialetti-archivio.html: nessun termine escluso dal lessico | superato |
 | progetto-matematica-accessibile.html: nessun numero di giorni negativo | superato |
-| progetto-matematica-accessibile.html: nota «prototipo» nel piè di pagina | superato |
+| progetto-matematica-accessibile.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | progetto-matematica-accessibile.html: nessun termine escluso dal lessico | superato |
 | progetto-neonati-virus.html: nessun numero di giorni negativo | superato |
-| progetto-neonati-virus.html: nota «prototipo» nel piè di pagina | superato |
+| progetto-neonati-virus.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | progetto-neonati-virus.html: nessun termine escluso dal lessico | superato |
 | progetto-plastica-batteri.html: nessun numero di giorni negativo | superato |
-| progetto-plastica-batteri.html: nota «prototipo» nel piè di pagina | superato |
+| progetto-plastica-batteri.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | progetto-plastica-batteri.html: nessun termine escluso dal lessico | superato |
 | progetto-rifugi-frane.html: nessun numero di giorni negativo | superato |
-| progetto-rifugi-frane.html: nota «prototipo» nel piè di pagina | superato |
+| progetto-rifugi-frane.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | progetto-rifugi-frane.html: nessun termine escluso dal lessico | superato |
 | progetto-robot-anziani.html: nessun numero di giorni negativo | superato |
-| progetto-robot-anziani.html: nota «prototipo» nel piè di pagina | superato |
+| progetto-robot-anziani.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | progetto-robot-anziani.html: nessun termine escluso dal lessico | superato |
 | progetto-scienza-doposcuola.html: nessun numero di giorni negativo | superato |
-| progetto-scienza-doposcuola.html: nota «prototipo» nel piè di pagina | superato |
+| progetto-scienza-doposcuola.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | progetto-scienza-doposcuola.html: nessun termine escluso dal lessico | superato |
 | progetto-vigneti-clima.html: nessun numero di giorni negativo | superato |
-| progetto-vigneti-clima.html: nota «prototipo» nel piè di pagina | superato |
+| progetto-vigneti-clima.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | progetto-vigneti-clima.html: nessun termine escluso dal lessico | superato |
 | programma.html: nessun numero di giorni negativo | superato |
-| programma.html: nota «prototipo» nel piè di pagina | superato |
+| programma.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | programma.html: nessun termine escluso dal lessico | superato |
 | proponi.html: nessun numero di giorni negativo | superato |
-| proponi.html: nota «prototipo» nel piè di pagina | superato |
+| proponi.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | proponi.html: nessun termine escluso dal lessico | superato |
+| js/ideablume.js: nessun riferimento a simulazioni o informazioni da decidere | superato |
+| css/ideablume.css: nessun riferimento a simulazioni o informazioni da decidere | superato |
+| data/ib-dati.js: nessun riferimento a simulazioni o informazioni da decidere | superato |
+| data/testi-it.js: nessun riferimento a simulazioni o informazioni da decidere | superato |
+| data/testi-en.js: nessun riferimento a simulazioni o informazioni da decidere | superato |
+| data/sito.json: nessun riferimento a simulazioni o informazioni da decidere | superato |
+| data/progetti.json: nessun riferimento a simulazioni o informazioni da decidere | superato |
+| i18n/it.json: nessun riferimento a simulazioni o informazioni da decidere | superato |
+| i18n/en.json: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | [it] metodo «Carta di credito, debito o prepagata» uguale in FAQ e donazione | superato |
 | [it] metodo «PayPal» uguale in FAQ e donazione | superato |
 | [it] metodo «Satispay» uguale in FAQ e donazione | superato |

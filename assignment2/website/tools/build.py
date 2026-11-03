@@ -58,7 +58,7 @@ def fmt_data(d, lang, lunga=False):
 
 
 def time_tag(spec, lang, lunga=False):
-    """<time> con data-rel per le date dimostrative: il browser le ricalcola da oggi (D-24, D-27)."""
+    """<time> con data-rel per le date relative: il browser le ricalcola da oggi (D-24, D-27)."""
     d = data_da(spec)
     rel = f' data-rel="{spec[4:]}"' if spec.startswith("rel:") else ""
     lng = ' data-lunga="1"' if lunga else ""
@@ -79,12 +79,6 @@ def perc(x):
     return f"{round(x)}%"
 
 
-def placeholder(lang):
-    if E(t(lang, "common.placeholder")) == '':
-        return ''
-    return f'<span class="placeholder">{E(t(lang, "common.placeholder"))}</span>'
-
-
 def ctx_base(lang):
     c = SITO["contatti"]
     r = SITO["regole"]
@@ -98,17 +92,18 @@ def ctx_base(lang):
         "email_aiuto_link": mail("email_aiuto"), "email_programma_link": mail("email_programma"),
         "email_collaborazioni_link": mail("email_collaborazioni"), "email_programma": mail("email_programma"),
         "metodi": ", ".join(m["nome"][lang] for m in SITO["metodi_pagamento"]),
+        "edizione": str(SITO["bando"]["edizione"]), "candidature": SITO["bando"]["periodo"][lang],
+        "scadenza_bando": SITO["bando"]["scadenza"][lang],
     }
 
 
 def fmt(s, lang, **extra):
-    """Sostituisce {link:url|testo}, {ext:url|testo}, {DV} e {variabile}."""
+    """Sostituisce {link:url|testo}, {ext:url|testo} e {variabile}."""
     ctx = ctx_base(lang)
     ctx.update(extra)
     s = re.sub(r"\{link:([^|}]+)\|([^}]+)\}", lambda m: f'<a href="{E(m.group(1))}">{m.group(2)}</a>', s)
     s = re.sub(r"\{ext:([^|}]+)\|([^}]+)\}",
                lambda m: f'<a href="{E(m.group(1))}" class="ext">{m.group(2)} <span class="vh">{t(lang, "common.external")}</span></a>', s)
-    s = s.replace("{DV}", placeholder(lang))
 
     def var(m):
         k = m.group(1)
@@ -203,19 +198,19 @@ def ordina_default(ps):
 
 # ---------------------------------------------------------------- illustrazioni SVG
 TEMI = {
-    "api": ("#fff4d1", '<rect x="120" y="70" width="80" height="70" rx="6" fill="#6a4a00"/><rect x="128" y="80" width="64" height="8" fill="#ffd34e"/><rect x="128" y="96" width="64" height="8" fill="#ffd34e"/><rect x="128" y="112" width="64" height="8" fill="#ffd34e"/><circle cx="210" cy="60" r="9" fill="#1c1a22"/><ellipse cx="206" cy="52" rx="7" ry="4" fill="#fff"/><circle cx="95" cy="55" r="7" fill="#1c1a22"/><rect x="200" y="125" width="18" height="12" fill="#1f6b57"/>'),
-    "cuore": ("#e7f0fa", '<path d="M110 120 h100 v20 h-100z" fill="#0f4c8a"/><path d="M115 120 q45 -50 90 0" fill="none" stroke="#0f4c8a" stroke-width="6"/><path d="M160 30 l40 14 v28 c0 26 -18 40 -40 48 c-22 -8 -40 -22 -40 -48 v-28z" fill="none" stroke="#5a2d82" stroke-width="5"/>'),
-    "fiore": ("#e3f3e8", '<rect x="0" y="140" width="320" height="40" fill="#1f6b57"/><g fill="#5a2d82"><circle cx="100" cy="95" r="14"/><circle cx="122" cy="95" r="14"/><circle cx="111" cy="77" r="14"/><circle cx="111" cy="113" r="14"/></g><circle cx="111" cy="95" r="9" fill="#ffd34e"/><rect x="108" y="110" width="6" height="32" fill="#1d5e37"/><circle cx="215" cy="70" r="8" fill="#1c1a22"/><ellipse cx="210" cy="62" rx="7" ry="4" fill="#fff"/>'),
-    "sole": ("#fff4d1", '<circle cx="110" cy="85" r="34" fill="#ffd34e" stroke="#6a4a00" stroke-width="4"/><g stroke="#6a4a00" stroke-width="5"><line x1="110" y1="30" x2="110" y2="42"/><line x1="110" y1="128" x2="110" y2="140"/><line x1="55" y1="85" x2="67" y2="85"/><line x1="153" y1="85" x2="165" y2="85"/></g><rect x="185" y="55" width="90" height="60" rx="14" fill="#fff" stroke="#5a2d82" stroke-width="4"/><circle cx="215" cy="80" r="4" fill="#1c1a22"/><circle cx="245" cy="80" r="4" fill="#1c1a22"/><path d="M215 95 q15 10 30 0" fill="none" stroke="#1c1a22" stroke-width="3"/>'),
-    "aria": ("#e7f0fa", '<rect x="70" y="80" width="120" height="70" fill="#5a2d82"/><path d="M60 82 l70 -40 l70 40z" fill="#44205f"/><rect x="115" y="110" width="30" height="40" fill="#fff"/><rect x="205" y="110" width="24" height="18" rx="3" fill="#1f6b57"/><line x1="217" y1="128" x2="217" y2="150" stroke="#1c1a22" stroke-width="3"/><g fill="#fff" stroke="#0f4c8a" stroke-width="3"><ellipse cx="240" cy="55" rx="30" ry="14"/><ellipse cx="275" cy="80" rx="22" ry="10"/></g>'),
-    "chip": ("#eee8f5", '<rect x="90" y="45" width="140" height="90" rx="10" fill="#fff" stroke="#5a2d82" stroke-width="5"/><g stroke-width="6" fill="none"><path d="M110 70 h100" stroke="#1f6b57"/><path d="M110 90 h100" stroke="#0f4c8a"/><path d="M110 110 h100" stroke="#8a2b10"/></g><g fill="#ffd34e" stroke="#1c1a22" stroke-width="2"><circle cx="110" cy="70" r="6"/><circle cx="110" cy="90" r="6"/><circle cx="110" cy="110" r="6"/></g>'),
-    "formula": ("#f1eaf8", '<text x="60" y="100" font-family="serif" font-size="40" fill="#1c1a22">∫ f(x) dx</text><g fill="#5a2d82"><circle cx="230" cy="70" r="7"/><circle cx="250" cy="70" r="7"/><circle cx="230" cy="90" r="7"/><circle cx="250" cy="110" r="7"/><circle cx="270" cy="90" r="7"/></g>'),
-    "acqua": ("#e7f0fa", '<path d="M0 110 q40 -20 80 0 t80 0 t80 0 t80 0 v70 h-320z" fill="#0f4c8a"/><path d="M0 130 q40 -20 80 0 t80 0 t80 0 t80 0" fill="none" stroke="#fff" stroke-width="3"/><g fill="#ffd34e"><circle cx="70" cy="150" r="5"/><circle cx="160" cy="160" r="4"/><circle cx="250" cy="148" r="5"/></g><g fill="#1f6b57"><ellipse cx="120" cy="60" rx="18" ry="9"/><ellipse cx="200" cy="50" rx="18" ry="9"/></g>'),
-    "voce": ("#fbebe5", '<rect x="140" y="40" width="40" height="70" rx="20" fill="#8a2b10"/><path d="M125 95 q35 40 70 0" fill="none" stroke="#1c1a22" stroke-width="5"/><line x1="160" y1="125" x2="160" y2="145" stroke="#1c1a22" stroke-width="5"/><g fill="none" stroke="#5a2d82" stroke-width="4"><path d="M210 60 q15 15 0 30"/><path d="M225 50 q25 25 0 50"/><path d="M110 60 q-15 15 0 30"/><path d="M95 50 q-25 25 0 50"/></g>'),
-    "provetta": ("#e3f3e8", '<rect x="120" y="30" width="34" height="110" rx="17" fill="#fff" stroke="#1c1a22" stroke-width="4"/><rect x="124" y="90" width="26" height="46" rx="13" fill="#1f6b57"/><circle cx="215" cy="90" r="32" fill="none" stroke="#5a2d82" stroke-width="7"/><line x1="238" y1="113" x2="265" y2="140" stroke="#5a2d82" stroke-width="9"/>'),
-    "uva": ("#f1eaf8", '<g fill="#5a2d82"><circle cx="120" cy="70" r="14"/><circle cx="148" cy="70" r="14"/><circle cx="134" cy="94" r="14"/><circle cx="106" cy="94" r="14"/><circle cx="162" cy="94" r="14"/><circle cx="120" cy="118" r="14"/><circle cx="148" cy="118" r="14"/><circle cx="134" cy="140" r="14"/></g><path d="M134 56 q10 -20 30 -22" fill="none" stroke="#1d5e37" stroke-width="5"/><rect x="225" y="40" width="20" height="90" rx="10" fill="#fff" stroke="#1c1a22" stroke-width="4"/><circle cx="235" cy="135" r="16" fill="#8a2b10" stroke="#1c1a22" stroke-width="4"/><rect x="231" y="80" width="8" height="50" fill="#8a2b10"/>'),
-    "montagna": ("#e7f0fa", '<path d="M20 160 l100 -120 l60 70 l40 -40 l90 90z" fill="#3a3646"/><path d="M120 40 l25 30 l-15 -5 l-10 10 l-10 -10 l-15 5z" fill="#fff"/><path d="M150 70 l10 25 l-12 15 l8 20" fill="none" stroke="#ffd34e" stroke-width="5"/><rect x="225" y="115" width="34" height="26" fill="#8a2b10"/><path d="M220 117 l22 -16 l22 16z" fill="#5a2d82"/>'),
-    "robot": ("#eee8f5", '<rect x="115" y="55" width="90" height="70" rx="16" fill="#fff" stroke="#5a2d82" stroke-width="5"/><circle cx="142" cy="85" r="9" fill="#1c1a22"/><circle cx="178" cy="85" r="9" fill="#1c1a22"/><path d="M142 105 q18 12 36 0" fill="none" stroke="#1c1a22" stroke-width="4"/><line x1="160" y1="55" x2="160" y2="35" stroke="#5a2d82" stroke-width="4"/><circle cx="160" cy="32" r="6" fill="#ffd34e"/><rect x="125" y="125" width="70" height="25" rx="6" fill="#5a2d82"/>'),
+    "api": ("#fdf0cf", '<rect x="120" y="70" width="80" height="70" rx="6" fill="#7a4d00"/><rect x="128" y="80" width="64" height="8" fill="#f4b93e"/><rect x="128" y="96" width="64" height="8" fill="#f4b93e"/><rect x="128" y="112" width="64" height="8" fill="#f4b93e"/><circle cx="210" cy="60" r="9" fill="#3b1d2a"/><ellipse cx="206" cy="52" rx="7" ry="4" fill="#fff"/><circle cx="95" cy="55" r="7" fill="#3b1d2a"/><rect x="200" y="125" width="18" height="12" fill="#2f6b4f"/>'),
+    "cuore": ("#e3eff2", '<path d="M110 120 h100 v20 h-100z" fill="#1d5b73"/><path d="M115 120 q45 -50 90 0" fill="none" stroke="#1d5b73" stroke-width="6"/><path d="M160 30 l40 14 v28 c0 26 -18 40 -40 48 c-22 -8 -40 -22 -40 -48 v-28z" fill="none" stroke="#8f3a12" stroke-width="5"/>'),
+    "fiore": ("#e3f2e6", '<rect x="0" y="140" width="320" height="40" fill="#2f6b4f"/><g fill="#8f3a12"><circle cx="100" cy="95" r="14"/><circle cx="122" cy="95" r="14"/><circle cx="111" cy="77" r="14"/><circle cx="111" cy="113" r="14"/></g><circle cx="111" cy="95" r="9" fill="#f4b93e"/><rect x="108" y="110" width="6" height="32" fill="#24603f"/><circle cx="215" cy="70" r="8" fill="#3b1d2a"/><ellipse cx="210" cy="62" rx="7" ry="4" fill="#fff"/>'),
+    "sole": ("#fdf0cf", '<circle cx="110" cy="85" r="34" fill="#f4b93e" stroke="#7a4d00" stroke-width="4"/><g stroke="#7a4d00" stroke-width="5"><line x1="110" y1="30" x2="110" y2="42"/><line x1="110" y1="128" x2="110" y2="140"/><line x1="55" y1="85" x2="67" y2="85"/><line x1="153" y1="85" x2="165" y2="85"/></g><rect x="185" y="55" width="90" height="60" rx="14" fill="#fff" stroke="#8f3a12" stroke-width="4"/><circle cx="215" cy="80" r="4" fill="#3b1d2a"/><circle cx="245" cy="80" r="4" fill="#3b1d2a"/><path d="M215 95 q15 10 30 0" fill="none" stroke="#3b1d2a" stroke-width="3"/>'),
+    "aria": ("#e3eff2", '<rect x="70" y="80" width="120" height="70" fill="#8f3a12"/><path d="M60 82 l70 -40 l70 40z" fill="#6e2b0d"/><rect x="115" y="110" width="30" height="40" fill="#fff"/><rect x="205" y="110" width="24" height="18" rx="3" fill="#2f6b4f"/><line x1="217" y1="128" x2="217" y2="150" stroke="#3b1d2a" stroke-width="3"/><g fill="#fff" stroke="#1d5b73" stroke-width="3"><ellipse cx="240" cy="55" rx="30" ry="14"/><ellipse cx="275" cy="80" rx="22" ry="10"/></g>'),
+    "chip": ("#fbeadd", '<rect x="90" y="45" width="140" height="90" rx="10" fill="#fff" stroke="#8f3a12" stroke-width="5"/><g stroke-width="6" fill="none"><path d="M110 70 h100" stroke="#2f6b4f"/><path d="M110 90 h100" stroke="#1d5b73"/><path d="M110 110 h100" stroke="#a3271a"/></g><g fill="#f4b93e" stroke="#3b1d2a" stroke-width="2"><circle cx="110" cy="70" r="6"/><circle cx="110" cy="90" r="6"/><circle cx="110" cy="110" r="6"/></g>'),
+    "formula": ("#f7e6d8", '<text x="60" y="100" font-family="serif" font-size="40" fill="#3b1d2a">∫ f(x) dx</text><g fill="#8f3a12"><circle cx="230" cy="70" r="7"/><circle cx="250" cy="70" r="7"/><circle cx="230" cy="90" r="7"/><circle cx="250" cy="110" r="7"/><circle cx="270" cy="90" r="7"/></g>'),
+    "acqua": ("#e3eff2", '<path d="M0 110 q40 -20 80 0 t80 0 t80 0 t80 0 v70 h-320z" fill="#1d5b73"/><path d="M0 130 q40 -20 80 0 t80 0 t80 0 t80 0" fill="none" stroke="#fff" stroke-width="3"/><g fill="#f4b93e"><circle cx="70" cy="150" r="5"/><circle cx="160" cy="160" r="4"/><circle cx="250" cy="148" r="5"/></g><g fill="#2f6b4f"><ellipse cx="120" cy="60" rx="18" ry="9"/><ellipse cx="200" cy="50" rx="18" ry="9"/></g>'),
+    "voce": ("#fbe9e4", '<rect x="140" y="40" width="40" height="70" rx="20" fill="#a3271a"/><path d="M125 95 q35 40 70 0" fill="none" stroke="#3b1d2a" stroke-width="5"/><line x1="160" y1="125" x2="160" y2="145" stroke="#3b1d2a" stroke-width="5"/><g fill="none" stroke="#8f3a12" stroke-width="4"><path d="M210 60 q15 15 0 30"/><path d="M225 50 q25 25 0 50"/><path d="M110 60 q-15 15 0 30"/><path d="M95 50 q-25 25 0 50"/></g>'),
+    "provetta": ("#e3f2e6", '<rect x="120" y="30" width="34" height="110" rx="17" fill="#fff" stroke="#3b1d2a" stroke-width="4"/><rect x="124" y="90" width="26" height="46" rx="13" fill="#2f6b4f"/><circle cx="215" cy="90" r="32" fill="none" stroke="#8f3a12" stroke-width="7"/><line x1="238" y1="113" x2="265" y2="140" stroke="#8f3a12" stroke-width="9"/>'),
+    "uva": ("#f7e6d8", '<g fill="#8f3a12"><circle cx="120" cy="70" r="14"/><circle cx="148" cy="70" r="14"/><circle cx="134" cy="94" r="14"/><circle cx="106" cy="94" r="14"/><circle cx="162" cy="94" r="14"/><circle cx="120" cy="118" r="14"/><circle cx="148" cy="118" r="14"/><circle cx="134" cy="140" r="14"/></g><path d="M134 56 q10 -20 30 -22" fill="none" stroke="#24603f" stroke-width="5"/><rect x="225" y="40" width="20" height="90" rx="10" fill="#fff" stroke="#3b1d2a" stroke-width="4"/><circle cx="235" cy="135" r="16" fill="#a3271a" stroke="#3b1d2a" stroke-width="4"/><rect x="231" y="80" width="8" height="50" fill="#a3271a"/>'),
+    "montagna": ("#e3eff2", '<path d="M20 160 l100 -120 l60 70 l40 -40 l90 90z" fill="#4f443e"/><path d="M120 40 l25 30 l-15 -5 l-10 10 l-10 -10 l-15 5z" fill="#fff"/><path d="M150 70 l10 25 l-12 15 l8 20" fill="none" stroke="#f4b93e" stroke-width="5"/><rect x="225" y="115" width="34" height="26" fill="#a3271a"/><path d="M220 117 l22 -16 l22 16z" fill="#8f3a12"/>'),
+    "robot": ("#fbeadd", '<rect x="115" y="55" width="90" height="70" rx="16" fill="#fff" stroke="#8f3a12" stroke-width="5"/><circle cx="142" cy="85" r="9" fill="#3b1d2a"/><circle cx="178" cy="85" r="9" fill="#3b1d2a"/><path d="M142 105 q18 12 36 0" fill="none" stroke="#3b1d2a" stroke-width="4"/><line x1="160" y1="55" x2="160" y2="35" stroke="#8f3a12" stroke-width="4"/><circle cx="160" cy="32" r="6" fill="#f4b93e"/><rect x="125" y="125" width="70" height="25" rx="6" fill="#8f3a12"/>'),
 }
 
 
@@ -240,6 +235,11 @@ ICONA_CERCA = ('<svg class="icon" viewBox="0 0 24 24" width="20" height="20" ari
                '<path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>')
 ICONA_FRECCIA = ('<svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">'
                  '<path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+ICONA_LUNA = ('<svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">'
+              '<path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>')
+ICONA_SOLE = ('<svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">'
+              '<circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2.2"/>'
+              '<path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3L7 7M17 17l1.7 1.7M5.3 18.7L7 17M17 7l1.7-1.7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>')
 ICONA_SPUNTA = ('<svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">'
                 '<path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>')
 
@@ -273,6 +273,10 @@ def header(lang, file, nav_corrente, prefix):
       <span><span class="brand__name">idea<b>Blume</b></span><span class="brand__tagline">{E(t(lang, "tagline"))}</span></span>
     </a>
     <a class="lang-switch" href="{href_altra}" lang="{altra}" hreflang="{altra}" data-lang-switch><svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.8 5.8 3.8 9s-1.2 6.2-3.8 9c-2.6-2.8-3.8-5.8-3.8-9S9.4 5.8 12 3z"/></g></svg><span class="lang-switch__long">{E(t(lang, "common.lang_switch"))}</span><span class="lang-switch__short" aria-hidden="true">{altra.upper()}</span><span class="vh"> – {E(t(lang, "common.lang_switch_label"))}</span></a>
+    <button class="theme-toggle js-only" type="button" data-tema-toggle>
+      <span class="theme-toggle__verso theme-toggle__verso--scuro">{ICONA_LUNA}<span class="vh">{E(t(lang, "common.theme_to"))} </span><span class="theme-toggle__testo">{E(t(lang, "common.theme_dark"))}</span></span>
+      <span class="theme-toggle__verso theme-toggle__verso--chiaro">{ICONA_SOLE}<span class="vh">{E(t(lang, "common.theme_to"))} </span><span class="theme-toggle__testo">{E(t(lang, "common.theme_light"))}</span></span>
+    </button>
     <button class="btn btn--secondary nav-toggle js-only" type="button" aria-expanded="false" aria-controls="menu-principale" data-nav-toggle>
       <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
       <span data-nav-label>{E(t(lang, "common.menu"))}</span>
@@ -309,7 +313,7 @@ def footer(lang, prefix):
         <li><a href="chi-siamo.html">{n("chi-siamo")}</a></li><li><a href="contatti.html">{n("contatti")}</a></li>
         <li><a href="glossario.html">{f("glossario")}</a></li><li><a href="accessibilita.html">{f("accessibilita")}</a></li></ul></nav>
     </div>
-    <p class="site-footer__note">{t(lang, "footer.prototype")}</p>
+    <p class="site-footer__note">{t(lang, "footer.note")}</p>
   </div>
 </footer>'''
 
@@ -338,12 +342,10 @@ def pagina(lang, file, titolo, corpo, nav=None, briciole=None, dati=False, extra
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{E(titolo)}</title>
 <meta name="description" content="{E(t(lang, "tagline"))}">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#f8f6fb" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#120e19" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fbf6ee">
 <link rel="icon" href="{prefix}img/ideablume-segno.svg" type="image/svg+xml">
 <link rel="stylesheet" href="{prefix}css/ideablume.css">
-<script>document.documentElement.className = "js";{font_js(prefix)}{ATTESA}</script>
+<script>document.documentElement.className = "js";{TEMA_JS}{font_js(prefix)}{ATTESA}</script>
 <noscript><link rel="stylesheet" href="{prefix}css/font.css"></noscript>
 {extra_head}</head>
 <body data-pagina="{file[:-5]}" data-oggi-build="{OGGI.isoformat()}">
@@ -357,6 +359,11 @@ def pagina(lang, file, titolo, corpo, nav=None, briciole=None, dati=False, extra
 </body>
 </html>
 '''
+
+
+# Applica il tema prima del primo disegno: scuro solo se scelto da chi visita, altrimenti chiaro.
+TEMA_JS = (' (function () { var s = null; try { s = localStorage.getItem("ib-tema"); } catch (e) {}'
+           ' document.documentElement.setAttribute("data-theme", s === "dark" ? "dark" : "light"); })();')
 
 
 def font_js(prefix):
@@ -435,7 +442,7 @@ def pg_home(lang):
       <h1 id="titolo-pagina">{E(g("h1"))}</h1>
       <p class="lead">{fmt(g("intro"), lang)}</p>
       {form_cerca(lang, "q-home", " search-form--hero")}
-      <p class="btn-row"><a class="btn btn--large" href="progetti.html?stato=in-corso">{E(g("cta"))} {ICONA_FRECCIA}</a>
+      <p class="btn-row"><a class="btn btn--cta btn--large" href="progetti.html?stato=in-corso">{E(g("cta"))} {ICONA_FRECCIA}</a>
         <a class="btn btn--secondary btn--large" href="come-funziona.html">{E(t(lang, "nav.come-funziona"))}</a></p>
       {chips}
     </div>
@@ -569,7 +576,7 @@ def pg_progetto(p, lang):
              f'<dt>{E(g("deadline") if c["aperto"] else g("closed_on"))}</dt><dd>{time_tag(p["scadenza"], lang)}</dd>']
     mancano = f'<p>{fmt(g("missing"), lang, x=e(p["obiettivo"] - p["raccolto"]))}</p>' if not c["raggiunto"] else ""
     if c["aperto"]:
-        azione = f'<p><a class="btn btn--block" href="donazione.html?progetto={p["slug"]}">{E(g("support"))}</a></p>'
+        azione = f'<p><a class="btn btn--cta btn--block" href="donazione.html?progetto={p["slug"]}">{E(g("support"))}</a></p>'
     else:
         azione = (f'<div class="alert alert--info"><h2>{fmt(g("closed_title"), lang, data=time_tag(p["scadenza"], lang))}</h2>'
                   f'<p>{E(p["esito"][lang])}</p></div>'
@@ -705,7 +712,6 @@ def pg_progetto(p, lang):
   <section id="commenti" aria-labelledby="h-commenti"><h2 id="h-commenti">{E(sezioni[5][1])}</h2><p class="small muted">{E(g("comments_note"))}</p><ul class="plain">{com}</ul></section>
   <section id="sostenitori" aria-labelledby="h-sostenitori"><h2 id="h-sostenitori">{E(sezioni[6][1])}</h2>
     <p>{E(g("supporters_intro"))}</p><p>{E(", ".join(nomi))}{" " + E(fmt(g("supporters_more"), lang, n=altri)) if altri > 0 else ""}</p></section>
-  {f'<p class="small muted">{E(t(lang, "common.demo_dates"))}</p>' if p["scadenza"].startswith("rel:") else ""}
   {torna_su(lang)}
 </div>
 </div>'''
@@ -746,7 +752,7 @@ def pg_donazione(lang):
     nav = lambda primo=False, ultimo=False: (
         f'<p class="btn-row don-nav">'
         + (f'<a class="btn btn--ghost" href="#" data-torna-progetto>{E(g("back_project"))}</a>' if primo else f'<button class="btn btn--secondary" type="button" data-indietro>← {E(g("back"))}</button>')
-        + (f'<button class="btn" type="submit" data-paga>{E(g("pay"))}</button>' if ultimo else f'<button class="btn" type="submit">{E(g("next"))} →</button>')
+        + (f'<button class="btn btn--cta" type="submit" data-paga>{E(g("pay"))}</button>' if ultimo else f'<button class="btn btn--cta" type="submit">{E(g("next"))} →</button>')
         + "</p>")
     corpo = f'''<h1 data-don-titolo>{E(g("h1"))}</h1>
 <noscript><p class="alert alert--info">{fmt(g("noscript"), lang)}</p></noscript>
@@ -851,17 +857,16 @@ def pg_programma(lang):
            ("costi", t(lang, "pages.costi.title")), ("contatti", g("contact_title")), ("edizioni", g("editions_title"))]
     corpo = f'''<h1>{E(g("h1"))}</h1>
 <p class="lead">{fmt(g("intro"), lang, tetto=e(SITO["regole"]["tetto_cofinanziamento"]))}</p>
-<p class="small muted">{E(g("inspired"))}</p>
 <nav class="toc" aria-labelledby="h-toc"><h2 id="h-toc">{E(t(lang, "common.toc"))}</h2><ol>{"".join(f'<li><a href="#{i}">{E(l)}</a></li>' for i, l in toc)}</ol></nav>
 <section id="stato" class="statusbox" aria-labelledby="h-stato"><h2 id="h-stato">{E(g("status_title"))}</h2>
-  <p>{stato_now}</p><p>{fmt(g("status_next"), lang, anno_prossimo=anno + 1)}</p>
+  <p>{stato_now}</p><p>{fmt(g("status_next"), lang)}</p>
   <p><a class="btn" href="candidatura.html">{E(g("apply_cta"))}</a></p></section>
 <section id="fasi" aria-labelledby="h-fasi"><h2 id="h-fasi">{E(g("phases_label"))}</h2><ol class="howto">{fasi}</ol></section>
 <section id="raddoppio" aria-labelledby="h-raddoppio"><h2 id="h-raddoppio">{E(g("match_title"))}</h2>{lista(g("match"), lang)}
   <div class="infobox"><h3>{E(g("example_title"))}</h3><p>{E(g("example"))}</p></div></section>
 <section id="requisiti" aria-labelledby="h-chi"><h2 id="h-chi">{E(g("who_title"))}</h2><p>{fmt(g("who"), lang)}</p>
   <h3>{E(g("req_title"))}</h3>{lista(g("req"), lang)}
-  <h3>{E(g("how_title"))}</h3><p>{fmt(g("how"), lang, anno_prossimo=anno + 1)}</p></section>
+  <h3>{E(g("how_title"))}</h3><p>{fmt(g("how"), lang)}</p></section>
 {costi_box(lang)}
 <section id="contatti" aria-labelledby="h-contatti"><h2 id="h-contatti">{E(g("contact_title"))}</h2><p>{fmt(g("contact"), lang)}</p>
   <p><a class="btn" href="candidatura.html">{E(g("apply_cta"))}</a></p></section>
@@ -1119,7 +1124,7 @@ def dati_js():
         ]
     for l in LINGUE:
         testi = {"js": t(l, "js"), "status": t(l, "status"), "card": t(l, "card"), "mesi": t(l, "mesi"),
-                 "placeholder": t(l, "common.placeholder"), "external": t(l, "common.external"),
+                 "external": t(l, "common.external"),
                  "don": t(l, "pages.donazione"), "conferma": t(l, "pages.conferma"), "cerca": t(l, "pages.cerca"),
                  "progetti": {k: t(l, "pages.progetti." + k) for k in ("count", "end")}, "faq": {k: t(l, "pages.faq." + k) for k in ("count_n", "count_1", "count_0")},
                  "candidatura": t(l, "pages.candidatura"), "collabora": t(l, "pages.collabora"), "contatti": t(l, "pages.contatti"),

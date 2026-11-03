@@ -1,6 +1,6 @@
-/* ideaBlume · interazioni del prototipo (miglioramento progressivo).
-   Senza JavaScript le pagine restano leggibili; qui si aggiungono menu mobile, date dimostrative,
-   filtri, ricerca, FAQ, spiegazioni a comparsa, donazione simulata e validazione dei moduli.
+/* ideaBlume · interazioni del sito (miglioramento progressivo).
+   Senza JavaScript le pagine restano leggibili; qui si aggiungono tema chiaro/scuro, menu mobile, date relative,
+   filtri, ricerca, FAQ, spiegazioni a comparsa, donazione e validazione dei moduli.
    Nessuna richiesta di rete: tutti i dati sono in data/ib-dati.js. */
 (function () {
   "use strict";
@@ -10,6 +10,23 @@
   var I = window.IB_TESTI || null;     // testi dell'interfaccia nella lingua della pagina: in tutte le pagine
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+
+  /* ---------- tema chiaro / scuro ---------- */
+  (function () {
+    var radice = document.documentElement, pulsante = $("[data-tema-toggle]");
+    function salvato() { try { return localStorage.getItem("ib-tema"); } catch (e) { return null; } }
+    function applica(tema) {
+      radice.setAttribute("data-theme", tema);
+      var fondo = getComputedStyle(radice).getPropertyValue("--c-page").trim();
+      $$('meta[name="theme-color"]').forEach(function (m) { m.setAttribute("content", fondo); });
+    }
+    if (salvato()) applica(radice.getAttribute("data-theme"));
+    if (pulsante) pulsante.addEventListener("click", function () {
+      var tema = radice.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      try { localStorage.setItem("ib-tema", tema); } catch (e) { /* la scelta vale solo per questa pagina */ }
+      applica(tema);
+    });
+  })();
 
   /* ---------- utilità ---------- */
   function store(k, v) {                       // sessionStorage protetto (modalità privata, file://)
@@ -47,12 +64,11 @@
     v = v || {};
     var ctx = I ? I.ctx : {};
     s = s.replace(/\{link:([^|}]+)\|([^}]+)\}/g, function (m, u, t) { return '<a href="' + esc(u) + '">' + t + "</a>"; });
-    s = s.replace(/\{DV\}/g, I ? '<span class="placeholder">' + esc(I.placeholder) + "</span>" : "");
     return s.replace(/\{([a-z_]+)\}/g, function (m, k) { return k in v ? v[k] : (k in ctx ? ctx[k] : m); });
   }
   function annuncia(el, html) { if (el) { el.innerHTML = ""; window.setTimeout(function () { el.innerHTML = html; }, 50); } }
 
-  /* ---------- date dimostrative (D-24, D-27) ---------- */
+  /* ---------- date relative (D-24, D-27) ---------- */
   $$("time[data-rel]").forEach(function (t) {
     var d = oggi(); d.setDate(d.getDate() + parseInt(t.getAttribute("data-rel"), 10));
     t.setAttribute("datetime", iso(d));
@@ -236,7 +252,7 @@
       el.addEventListener("input", agg); agg();
     });
   }
-  function invioSimulato(btn, fatto) {
+  function invioConAttesa(btn, fatto) {
     var testo = btn.textContent;
     btn.setAttribute("aria-busy", "true"); btn.disabled = true;
     if (btn.getAttribute("data-label-invio")) btn.textContent = btn.getAttribute("data-label-invio");
@@ -255,7 +271,7 @@
       if (errori.length) { if (box) riepilogoErrori(box, errori); else errori[0].el.focus(); return; }
       if (box) box.hidden = true;
       var btn = $("button[type=submit]", form);
-      invioSimulato(btn, function () {
+      invioConAttesa(btn, function () {
         var val = function (n) { var el = form.elements[n]; return el ? el.value.trim() : ""; };
         if (tipo === "scrivi") {
           var ok = form.parentNode.querySelector("[data-scrivi-ok]");
@@ -429,7 +445,7 @@
     });
   }
 
-  /* ---------- donazione simulata in 5 passi (P-054–P-063) ---------- */
+  /* ---------- donazione in 5 passi (P-054–P-063) ---------- */
   var app = $("[data-don-app]");
   if (app && D) donazione();
 

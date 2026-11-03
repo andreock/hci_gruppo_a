@@ -37,17 +37,20 @@
 
   <h2>Colori</h2>
   <ul class="swatches">
-    <li><span style="background:#1c1a22"></span><code>ink #1c1a22</code></li>
-    <li><span style="background:#4b4757"></span><code>ink-muted #4b4757</code></li>
-    <li><span style="background:#5a2d82"></span><code>brand #5a2d82</code></li>
-    <li><span style="background:#44205f"></span><code>brand-dark #44205f</code></li>
-    <li><span style="background:#f1eaf8"></span><code>brand-soft #f1eaf8</code></li>
-    <li><span style="background:#f6f3fa"></span><code>surface #f6f3fa</code></li>
-    <li><span style="background:#6e6680"></span><code>border-strong #6e6680</code></li>
-    <li><span style="background:#1f6b57"></span><code>progress #1f6b57</code></li>
-    <li><span style="background:#e4dfea"></span><code>track #e4dfea</code></li>
-    <li><span style="background:#2b1840"></span><code>footer #2b1840</code></li>
-    <li><span style="background:#ffd34e"></span><code>focus scuro #ffd34e</code></li>
+    <li><span style="background:var(--c-ink)"></span><code>ink / primario</code></li>
+    <li><span style="background:var(--c-ink-muted)"></span><code>ink-muted</code></li>
+    <li><span style="background:var(--c-page)"></span><code>page</code></li>
+    <li><span style="background:var(--c-bg)"></span><code>bg</code></li>
+    <li><span style="background:var(--c-surface)"></span><code>surface</code></li>
+    <li><span style="background:var(--c-cta)"></span><code>cta</code></li>
+    <li><span style="background:var(--c-secondary)"></span><code>secondary</code></li>
+    <li><span style="background:var(--c-brand)"></span><code>brand</code></li>
+    <li><span style="background:var(--c-brand-soft)"></span><code>brand-soft</code></li>
+    <li><span style="background:var(--c-accent)"></span><code>accent</code></li>
+    <li><span style="background:var(--c-error)"></span><code>error</code></li>
+    <li><span style="background:var(--c-info)"></span><code>info</code></li>
+    <li><span style="background:var(--c-track)"></span><code>track</code></li>
+    <li><span style="background:var(--c-footer-bg)"></span><code>footer</code></li>
   </ul>
 
   <h2>Stati delle campagne</h2>
@@ -96,8 +99,8 @@
   </ul>
 
   <h2>Pulsanti, riquadri e spiegazioni</h2>
-  <p class="btn-row"><a class="btn" href="#">Sostieni il progetto</a><a class="btn btn--secondary" href="#">Scrivi al gruppo</a><button class="btn btn--ghost" type="button">Copia link</button><button class="btn" type="button" aria-busy="true">Invio in corso</button><button class="btn" type="button" disabled>Raccolta conclusa</button></p>
-  <div class="infobox"><h3>Obiettivo e raddoppio dell'Ateneo</h3><p>Se la raccolta arriva a <strong>€ 6.000</strong>, l'Università aggiunge <strong>€ 6.000</strong>. <span class="placeholder">[DA VERIFICARE con l'Ateneo]</span></p>
+  <p class="btn-row"><a class="btn btn--cta" href="#">Sostieni il progetto</a><a class="btn" href="#">Cerca</a><a class="btn btn--secondary" href="#">Scrivi al gruppo</a><button class="btn btn--ghost" type="button">Copia link</button><button class="btn" type="button" aria-busy="true">Invio in corso</button><button class="btn" type="button" disabled>Raccolta conclusa</button></p>
+  <div class="infobox"><h3>Obiettivo e raddoppio dell'Ateneo</h3><p>Se la raccolta arriva a <strong>€ 6.000</strong>, l'Università aggiunge <strong>€ 6.000</strong>.</p>
   <p><span class="toggletip"><button class="toggletip__btn" type="button" aria-expanded="true">Che cosa significa «tutto o niente»?</button></span></p>
   <div class="toggletip__panel">Se alla scadenza l'obiettivo non è raggiunto, ti restituiamo la donazione.</div></div>
 
@@ -115,7 +118,7 @@
     <label class="choice"><input type="radio" name="vis"><span class="choice__text">Mostra il mio nome tra i sostenitori<small>Il pubblico vede nome e iniziale del cognome.</small></span></label>
     <label class="choice"><input type="radio" name="vis" checked><span class="choice__text">Dona in forma anonima<small>Il pubblico vede «Sostenitore anonimo».</small></span></label>
   </fieldset>
-  <div class="alert alert--success" role="status"><h3>Messaggio inviato (simulazione)</h3><p>Il gruppo risponde di solito entro 3 giorni lavorativi.</p></div>
+  <div class="alert alert--success" role="status"><h3>Messaggio inviato</h3><p>Il gruppo risponde di solito entro 3 giorni lavorativi.</p></div>
   <div class="accordion"><details open><summary>Posso donare senza scegliere una ricompensa?</summary><div class="accordion__content"><p>Sì: scegli «Donazione libera» e scrivi l'importo, da € 5 in su.</p></div></details><details><summary>Che cosa succede se il progetto non raggiunge l'obiettivo?</summary><div class="accordion__content"><p>Ti restituiamo la donazione.</p></div></details></div>
 </main>
 <footer class="site-footer">
@@ -124,7 +127,7 @@
       <section><h2>Hai bisogno di aiuto?</h2><p>Telefono <a href="tel:+390110194250">011 019 4250</a><br>lun–ven 9:30–13:00 e 14:00–17:00<br>Email <a href="mailto:aiuto@ideablume.it">aiuto@ideablume.it</a></p><a class="btn" href="#">Scrivici</a></section>
       <nav aria-label="Esplora"><h2>Esplora</h2><ul><li><a href="#">Progetti</a></li><li><a href="#">Il programma dell'Ateneo</a></li></ul></nav>
     </div>
-    <p class="site-footer__note"><strong>Prototipo didattico</strong> realizzato per il corso di HCI: nessun pagamento reale.</p>
+    <p class="site-footer__note"><strong>ideaBlume</strong> è il servizio di crowdfunding per la ricerca dell'Università di Torino, gestito dall'Ufficio ideaBlume.</p>
   </div>
 </footer>
 </body>

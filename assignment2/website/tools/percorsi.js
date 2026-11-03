@@ -109,7 +109,7 @@ async function tabFino(page, pred, max = 60) {
   await page.keyboard.press("Enter");
   await page.waitForSelector('[data-passo="4"]:not([hidden])');
   await page.focus("#m-paypal"); await page.keyboard.press("Space");
-  ok("La commissione stimata è mostrata accanto al metodo", /Commissione stimata/.test(await page.textContent('[data-commissione="paypal"]')));
+  ok("La commissione è mostrata accanto al metodo", /Commissione/.test(await page.textContent('[data-commissione="paypal"]')));
   await page.keyboard.press("Enter");
   await page.waitForSelector('[data-passo="5"]:not([hidden])');
   const rev = await page.textContent("[data-revisione]");
@@ -224,6 +224,48 @@ async function tabFino(page, pred, max = 60) {
   await page.check("#c-consenso");
   ok("Spuntando il consenso l'errore sparisce", await page.isHidden("#c-consenso-e"));
   await page.context().close();
+
+  /* Tema chiaro e scuro: chiaro predefinito, interruttore, memoria della scelta */
+  const temaDi = (pg) => pg.evaluate(() => document.documentElement.getAttribute("data-theme"));
+  const fondo = (pg) => pg.evaluate(() => getComputedStyle(document.body).backgroundColor);
+  let ctxTema = await browser.newContext({ viewport: { width: 1280, height: 900 }, colorScheme: "dark" });
+  page = await ctxTema.newPage();
+  page.on("pageerror", (e) => errori.push(e.message));
+  await page.goto(BASE + "index.html");
+  ok("Senza una scelta salvata il tema è chiaro, anche con il sistema in scuro", (await temaDi(page)) === "light" && (await fondo(page)) === "rgb(251, 246, 238)", await fondo(page));
+  const pulsanteTema = page.locator("[data-tema-toggle]");
+  const nomeTema = async () => (await pulsanteTema.innerText()).trim();
+  ok("L'interruttore dice verso quale tema si passa", /Tema scuro/.test(await nomeTema()), await nomeTema());
+  await pulsanteTema.focus();
+  await page.keyboard.press("Enter");
+  ok("Da tastiera si passa al tema scuro", (await temaDi(page)) === "dark" && (await fondo(page)) === "rgb(28, 20, 18)", await fondo(page));
+  ok("Il pulsante propone ora il tema chiaro", /Tema chiaro/.test(await nomeTema()), await nomeTema());
+  ok("Il colore della barra del browser segue il tema", (await page.getAttribute('meta[name="theme-color"]', "content")) === "#1c1412");
+  await page.goto(BASE + "progetti.html");
+  ok("La scelta resta valida cambiando pagina", (await temaDi(page)) === "dark");
+  await page.goto(BASE + "en/index.html");
+  ok("La scelta resta valida cambiando lingua", (await temaDi(page)) === "dark" && /Light theme/.test(await page.locator("[data-tema-toggle]").innerText()));
+  await page.reload();
+  ok("Il tema scuro scelto resta valido dopo aver ricaricato la pagina", (await temaDi(page)) === "dark");
+  await page.locator("[data-tema-toggle]").click();
+  await page.reload();
+  ok("Si può tornare al tema chiaro e la scelta resta", (await temaDi(page)) === "light" && (await fondo(page)) === "rgb(251, 246, 238)", await fondo(page));
+  await ctxTema.close();
+  const ctxNoJs = await browser.newContext({ viewport: { width: 1280, height: 900 }, colorScheme: "dark", javaScriptEnabled: false });
+  page = await ctxNoJs.newPage();
+  await page.goto(BASE + "index.html");
+  ok("Senza JavaScript il tema è chiaro e l'interruttore è nascosto", (await page.locator("[data-tema-toggle]").isHidden()) && (await fondo(page)) === "rgb(251, 246, 238)", await fondo(page));
+  await ctxNoJs.close();
+  for (const larghezza of [320, 375]) {
+    page = await nuova({ width: larghezza, height: 700 });
+    await page.goto(BASE + "index.html");
+    const altezze = await page.evaluate(() => ["[data-tema-toggle]", "[data-nav-toggle]", ".lang-switch", ".brand"].map((s) => { const r = document.querySelector(s).getBoundingClientRect(); return { sopra: r.top, sotto: r.bottom, largo: r.width, alto: r.height }; }));
+    const [tema, menu] = altezze;
+    const riga = altezze.every((a) => a.sopra < menu.sotto && a.sotto > menu.sopra);
+    ok(`A ${larghezza} px marchio, lingua, tema e menu stanno su una riga`, riga, JSON.stringify(altezze.map((a) => Math.round(a.sopra))));
+    ok(`A ${larghezza} px l'interruttore del tema è largo e alto almeno 44 px`, tema.largo >= 44 && tema.alto >= 44, `${Math.round(tema.largo)}×${Math.round(tema.alto)}`);
+    await page.context().close();
+  }
 
   await browser.close();
   server.kill();

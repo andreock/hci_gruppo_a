@@ -1,8 +1,8 @@
 # Percorsi interattivi
 
-Generato da `tools/percorsi.js` il 01/11/2026, 12:44:21 (Playwright + Google Chrome, server statico locale con il sito in una sottocartella).
+Generato da `tools/percorsi.js` il 03/11/2026, 10:28:29 (Playwright + Google Chrome, server statico locale con il sito in una sottocartella).
 
-**52 controlli superati su 52.**
+**66 controlli superati su 66.**
 
 | # | Controllo | Esito | Nota |
 |---|---|---|---|
@@ -26,8 +26,8 @@ Generato da `tools/percorsi.js` il 01/11/2026, 12:44:21 (Playwright + Google Chr
 | 18 | Nessuna scelta di visibilità preselezionata | superato |  |
 | 19 | Con Indietro del browser si torna al passo 2 e i dati sono ancora lì | superato |  |
 | 20 | Anche dopo aver ricaricato la pagina i dati restano | superato |  |
-| 21 | La commissione stimata è mostrata accanto al metodo | superato |  |
-| 22 | Il riepilogo finale mostra commissione e totale prima della conferma | superato | ProgettoAlveari sani: monitorare la salute delle api del PiemonteRicompensaDonazione liberaDonazione€ 20Commissione del pagamento (stima)€ 0,71Totale€ 20,71Meto |
+| 21 | La commissione è mostrata accanto al metodo | superato |  |
+| 22 | Il riepilogo finale mostra commissione e totale prima della conferma | superato | ProgettoAlveari sani: monitorare la salute delle api del PiemonteRicompensaDonazione liberaDonazione€ 20Commissione del pagamento€ 0,71Totale€ 20,71Metodo di pa |
 | 23 | Nessun campo per numeri di carta | superato |  |
 | 24 | La conferma mostra il codice di riferimento | superato |  |
 | 25 | Il filtro aggiorna la URL | superato |  |
@@ -42,7 +42,7 @@ Generato da `tools/percorsi.js` il 01/11/2026, 12:44:21 (Playwright + Google Chr
 | 34 | A menu chiuso le voci non sono raggiungibili | superato |  |
 | 35 | Invio apre il menu e aria-expanded diventa true | superato |  |
 | 36 | Esc chiude il menu e il focus torna al pulsante | superato |  |
-| 37 | Il pulsante del menu misura almeno 44×44 px | superato | 104.09375×44 |
+| 37 | Il pulsante del menu misura almeno 44×44 px | superato | 48×44 |
 | 38 | Aprendo faq.html#faq-tutto-o-niente la risposta è aperta | superato |  |
 | 39 | La ricerca nelle FAQ filtra e annuncia il numero | superato |  |
 | 40 | In inglese l'errore sull'importo è in inglese | superato |  |
@@ -57,6 +57,37 @@ Generato da `tools/percorsi.js` il 01/11/2026, 12:44:21 (Playwright + Google Chr
 | 49 | Candidatura vuota: riepilogo errori | superato |  |
 | 50 | I consensi sono caselle di spunta native | superato |  |
 | 51 | Spuntando il consenso l'errore sparisce | superato |  |
-| 52 | Nessun errore JavaScript durante i percorsi | superato |  |
+| 52 | Senza una scelta salvata il tema è chiaro, anche con il sistema in scuro | superato | rgb(251, 246, 238) |
+| 53 | L'interruttore dice verso quale tema si passa | superato | Passa a:
+Tema scuro |
+| 54 | Da tastiera si passa al tema scuro | superato | rgb(28, 20, 18) |
+| 55 | Il pulsante propone ora il tema chiaro | superato | Passa a:
+Tema chiaro |
+| 56 | Il colore della barra del browser segue il tema | superato |  |
+| 57 | La scelta resta valida cambiando pagina | superato |  |
+| 58 | La scelta resta valida cambiando lingua | superato |  |
+| 59 | Il tema scuro scelto resta valido dopo aver ricaricato la pagina | superato |  |
+| 60 | Si può tornare al tema chiaro e la scelta resta | superato | rgb(251, 246, 238) |
+| 61 | Senza JavaScript il tema è chiaro e l'interruttore è nascosto | superato | rgb(251, 246, 238) |
+| 62 | A 320 px marchio, lingua, tema e menu stanno su una riga | superato | [12,12,12,12] |
+| 63 | A 320 px l'interruttore del tema è largo e alto almeno 44 px | superato | 44×44 |
+| 64 | A 375 px marchio, lingua, tema e menu stanno su una riga | superato | [12,12,12,12] |
+| 65 | A 375 px l'interruttore del tema è largo e alto almeno 44 px | superato | 44×44 |
+| 66 | Nessun errore JavaScript durante i percorsi | superato |  |
 
 Screenshot del percorso da tastiera e della donazione: `docs/verifiche/screenshot/tastiera-*.png`, `donazione-*.png`, `menu-mobile-375.png`.
+
+## Senza server (file://)
+
+Generato da `tools/verifica-file.js`: le stesse funzioni aprendo i file direttamente dal disco, come nello zip della consegna.
+
+| Controllo | Esito |
+|---|---|
+| file:// · i filtri si applicano dalla URL | superato |
+| file:// · la ricerca funziona | superato |
+| file:// · la donazione si apre con il progetto | superato |
+| file:// · si passa al passo 2 (history.pushState) | superato |
+| file:// · i dati restano tornando avanti e indietro (sessionStorage) | superato |
+| file:// · versione inglese e FAQ aperta da ancora | superato |
+| file:// · le date relative sono ricalcolate | superato |
+| file:// · nessun errore JavaScript | superato |

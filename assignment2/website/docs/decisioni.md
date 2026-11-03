@@ -162,3 +162,18 @@ Checkpoint 1 (31/10/2026): il gruppo ha confermato le proposte D-01…D-19 con q
 ### D-39 · Font da `file://` · proposta
 - Da `file://` Chrome blocca il caricamento dei file di font (e delle immagini usate come maschera CSS) per la politica CORS. Soluzione: uno script nel `<head>` sceglie i font in base al protocollo. Su un server: precaricamento dei `.woff2` e `@font-face` in linea. Da `file://`: `css/font-locali.css`, generato dalla build con i font incorporati in base64 (~120 KB, usato solo in locale). Senza JavaScript: `css/font.css` tramite `<noscript>`. Le maschere decorative usano una sagoma SVG incorporata nel CSS. In ogni caso, se i font non arrivano il sito usa i caratteri di sistema.
 - Scartate le transizioni animate tra pagine (`@view-transition`): con navigazioni rapide producevano errori in console («Transition was aborted») rilevati da `tools/percorsi.js`.
+
+### D-40 · Palette calda · confermata
+- Il gruppo ha chiesto una palette da campagna di raccolta fondi: calda, accogliente, che spinga alla donazione senza aggressività. Il viola della versione 2 è sostituito da prugna bruna, arancio terracotta, verde bosco, crema e panna, con miele, mattone e petrolio come colori di supporto (`07_design_system.md` §2).
+- Supera la scelta della versione 2 di restare lontano dall'arancione di IdeaGinger: l'accento è un terracotta più scuro, che con il bianco arriva a 5,00:1 (i titoli arancioni di IdeaGinger erano a 2,46:1).
+- L'accento è usato solo per l'azione di donare e per la barra di avanzamento. I pulsanti normali (ricerca, invio dei moduli) sono in prugna, così «Sostieni il progetto» resta il punto più visibile della pagina.
+
+### D-41 · Interruttore tra tema chiaro e scuro · confermata
+- Supera D-38. Il sito aveva già un tema scuro automatico, ma chi visita non poteva scegliere. Ora il tema predefinito è quello chiaro, indipendentemente dal sistema, e un interruttore nell'intestazione permette di scegliere quello scuro; la scelta è salvata in `localStorage`. Senza JavaScript il tema è quello chiaro.
+- Su telefono l'interruttore è solo icona (44 px); sotto 420 px anche il pulsante del menu è solo icona, perché la prima riga dell'intestazione resti su una riga.
+
+### D-42 · Contenuti definitivi · confermata
+- Il gruppo ha chiesto che il sito non contenga più alcun riferimento a simulazioni, prototipi o informazioni da decidere con l'Ateneo. Tolti la nota nel piè di pagina, gli avvisi «simulato», la FAQ «Questo sito è reale?», la nota sulle date delle campagne e il meccanismo dei segnaposto `{DV}`. `tools/verifica-dati.py` ora controlla che queste parole non ricompaiano.
+- Supera il carattere provvisorio di D-10, D-12, D-13, D-14, D-15, D-22 e D-24. Le informazioni che erano segnaposto sono ora stabilite così: candidature per l'edizione 2027 dal 1° novembre 2026 al 31 marzo 2027 (`bando` in `data/sito.json`); nessuna quota per i gruppi selezionati, costi a carico dell'Ateneo; commissioni 1,8% + € 0,35 non restituite in caso di rimborso (come nelle FAQ di IdeaGinger, `Pagina_FAQ.md:84`); ricevuta fiscale via email e donazione deducibile dal reddito.
+- Il comportamento tecnico non cambia: il sito resta statico e senza backend (D-01), come chiesto da `assignment2/Istruzioni.md` §4. I limiti tecnici sono descritti nel README.
+

@@ -34,7 +34,6 @@
     "home": "Home",
     "back_to_top": "Torna su",
     "external": "(sito esterno)",
-    "placeholder": "",
     "toc": "In questa pagina",
     "optional": "facoltativo",
     "required_note": "Tutti i campi sono obbligatori, tranne quelli indicati come facoltativi.",
@@ -43,7 +42,9 @@
     "updated": "Ultimo aggiornamento:",
     "print": "Stampa",
     "close": "Chiudi",
-    "demo_dates": "Le date delle campagne in corso sono dimostrative: vengono calcolate a partire da oggi."
+    "theme_to": "Passa a:",
+    "theme_dark": "Tema scuro",
+    "theme_light": "Tema chiaro"
   },
   "nav": {
     "progetti": "Progetti",
@@ -67,7 +68,7 @@
     "accessibilita": "Accessibilità",
     "candidatura": "Candidatura al programma",
     "collabora": "Collaborazioni con enti esterni",
-    "prototype": "<strong>Prototipo didattico</strong> realizzato per il corso di Human-Computer Interaction dell'Università di Torino: <strong>nessun pagamento reale</strong>, nessun dato inviato. Contatti, persone e progetti sono inventati."
+    "note": "<strong>ideaBlume</strong> è il servizio di crowdfunding per la ricerca dell'Università di Torino, gestito dall'Ufficio ideaBlume."
   },
   "status": {
     "open": "In corso · mancano {n} giorni (scade il {data})",
@@ -198,10 +199,10 @@
       "read_results": "Leggi il resoconto",
       "see_open": "Scopri i progetti in corso",
       "match_title": "Obiettivo e raddoppio dell'Ateneo",
-      "match_open": "Se la raccolta arriva a <strong>{obiettivo}</strong> entro la scadenza, l'Università aggiunge <strong>{cofin}</strong>: il progetto riceve in tutto {totale}. {DV}",
+      "match_open": "Se la raccolta arriva a <strong>{obiettivo}</strong> entro la scadenza, l'Università aggiunge <strong>{cofin}</strong>: il progetto riceve in tutto {totale}.",
       "match_example": "Esempio: se doni € 10 e l'obiettivo viene raggiunto, il progetto riceve € 10 da te e € 10 dall'Ateneo.",
-      "match_reached": "L'obiettivo di <strong>{obiettivo}</strong> è raggiunto: alla chiusura l'Università aggiungerà <strong>{cofin}</strong>. {DV}",
-      "match_second": "Secondo obiettivo: <strong>{importo}</strong> per {scopo}. Le donazioni oltre {obiettivo} servono a questo obiettivo e non vengono raddoppiate. {DV}",
+      "match_reached": "L'obiettivo di <strong>{obiettivo}</strong> è raggiunto: alla chiusura l'Università aggiungerà <strong>{cofin}</strong>.",
+      "match_second": "Secondo obiettivo: <strong>{importo}</strong> per {scopo}. Le donazioni oltre {obiettivo} servono a questo obiettivo e non vengono raddoppiate.",
       "match_second_done": "Secondo obiettivo di {importo} raggiunto: {scopo}.",
       "match_done": "L'Ateneo ha aggiunto <strong>{cofin}</strong>: in tutto il progetto ha ricevuto <strong>{totale}</strong>.",
       "match_failed": "L'obiettivo non è stato raggiunto: le donazioni sono state restituite e l'Ateneo non ha aggiunto fondi.",
@@ -255,7 +256,7 @@
       "form_msg": "Messaggio",
       "form_send": "Invia il messaggio",
       "form_sending": "Invio in corso…",
-      "form_sent": "Messaggio inviato (simulazione). Il gruppo risponde di solito entro {giorni} giorni lavorativi all'indirizzo che hai indicato.",
+      "form_sent": "Messaggio inviato. Il gruppo risponde di solito entro {giorni} giorni lavorativi all'indirizzo che hai indicato.",
       "form_cancel": "Annulla",
       "image_label": "Illustrazione del progetto",
       "status_title": "Stato della raccolta",
@@ -266,7 +267,6 @@
       "title_project": "Donazione a {titolo} – ideaBlume",
       "h1": "Sostieni un progetto",
       "h1_project": "Sostieni «{titolo}»",
-      "simulated": "<strong>Pagamento simulato.</strong> Questo è un prototipo didattico: non viene addebitato nulla e nessun dato lascia il tuo browser.",
       "missing": "Non hai ancora scelto un progetto da sostenere.",
       "missing_cta": "Scegli un progetto",
       "closed": "La raccolta di questo progetto è conclusa: non si può più donare.",
@@ -291,8 +291,8 @@
       "s1_amount": "Importo in euro",
       "s1_amount_hint": "Minimo {min} per la scelta fatta. Puoi donare di più.",
       "s1_rule": "<strong>Tutto o niente:</strong> se alla scadenza l'obiettivo non è raggiunto, ti restituiamo la donazione.",
-      "s1_match": "<strong>Raddoppio dell'Ateneo:</strong> se l'obiettivo viene raggiunto, l'Università aggiunge una cifra pari all'obiettivo. {DV}",
-      "s1_match_over": "<strong>Obiettivo già raggiunto:</strong> la tua donazione serve al secondo obiettivo e non viene raddoppiata. {DV}",
+      "s1_match": "<strong>Raddoppio dell'Ateneo:</strong> se l'obiettivo viene raggiunto, l'Università aggiunge una cifra pari all'obiettivo.",
+      "s1_match_over": "<strong>Obiettivo già raggiunto:</strong> la tua donazione serve al secondo obiettivo e non viene raddoppiata.",
       "s1_no_match": "Questo progetto non fa parte del programma dell'Ateneo: la donazione non viene raddoppiata.",
       "s2_title": "I tuoi dati",
       "s2_name": "Nome",
@@ -308,27 +308,27 @@
       "s3_show_hint": "Il pubblico vede nome e iniziale del cognome, per esempio «Anna R.».",
       "s3_anon": "Dona in forma anonima",
       "s3_anon_hint": "Il pubblico vede «Sostenitore anonimo».",
-      "s3_team": "In entrambi i casi il gruppo di ricerca riceve il tuo nome e la tua email per ringraziarti e, se serve, inviarti la ricompensa. L'importo non è mai pubblico. {DV}",
+      "s3_team": "In entrambi i casi il gruppo di ricerca riceve il tuo nome e la tua email per ringraziarti e, se serve, inviarti la ricompensa. L'importo non è mai pubblico.",
       "s3_privacy": "Ho letto l'informativa sulla privacy e accetto che i miei dati siano usati per gestire la donazione.",
       "s3_news": "Voglio ricevere via email gli aggiornamenti di questo progetto",
       "s4_legend": "Come vuoi pagare?",
-      "s4_fee": "Commissione stimata: {fee}",
-      "s4_fee_none": "Nessuna commissione da parte nostra; la tua banca potrebbe applicarne una.",
+      "s4_fee": "Commissione: {fee}",
+      "s4_fee_none": "Nessuna commissione da parte nostra.",
       "s4_help": "Il pagamento non va a buon fine? {link:faq.html#faq-pagamento-rifiutato|Ecco che cosa fare}.",
       "s5_title": "Controlla e conferma",
       "r_project": "Progetto",
       "r_reward": "Ricompensa",
       "r_amount": "Donazione",
-      "r_fee": "Commissione del pagamento (stima)",
+      "r_fee": "Commissione del pagamento",
       "r_total": "Totale",
       "r_method": "Metodo di pagamento",
       "r_visible": "Nome tra i sostenitori",
       "r_visible_yes": "Visibile",
       "r_visible_no": "Anonimo",
       "r_email": "Email per la conferma",
-      "r_fee_note": "La commissione la paga chi dona ed è calcolata sulla tariffa d'esempio del metodo scelto. {DV}",
-      "r_refund": "Se alla scadenza l'obiettivo non è raggiunto ti restituiamo la donazione; la commissione del pagamento potrebbe non essere restituita. {DV}",
-      "r_receipt": "<strong>Ricevuta e detraibilità:</strong> dopo il pagamento ricevi una email con il riepilogo. Se la donazione dà diritto a una ricevuta fiscale e a una detrazione: {DV}",
+      "r_fee_note": "La commissione la paga chi dona ed è calcolata sulla tariffa del metodo scelto.",
+      "r_refund": "Se alla scadenza l'obiettivo non è raggiunto ti restituiamo la donazione; la commissione del pagamento non viene restituita.",
+      "r_receipt": "<strong>Ricevuta e vantaggi fiscali:</strong> dopo il pagamento ricevi via email il riepilogo e la ricevuta fiscale. La donazione all'Università è deducibile dal reddito.",
       "pay": "Paga ora",
       "next": "Continua",
       "back": "Indietro",
@@ -339,15 +339,13 @@
     "conferma": {
       "title": "Donazione completata – ideaBlume",
       "h1": "Grazie! La tua donazione è registrata",
-      "simulated": "",
       "code": "Codice di riferimento",
       "next_title": "Che cosa succede adesso",
       "next": [
-        "Ricevi una email di conferma con questo riepilogo all'indirizzo {email} (nel prototipo non viene inviata).",
+        "Ricevi una email di conferma con questo riepilogo e la ricevuta fiscale all'indirizzo {email}.",
         "Alla scadenza ti scriviamo l'esito. Se l'obiettivo è raggiunto, i fondi vanno al gruppo; se non lo è, ti restituiamo la donazione.",
         "Se hai scelto una ricompensa, il gruppo ti contatta per la consegna dopo la chiusura della raccolta."
       ],
-      "receipt": "",
       "print": "Stampa il riepilogo",
       "back": "Torna al progetto",
       "more": "Scopri altri progetti",
@@ -356,11 +354,10 @@
     "programma": {
       "title": "Il programma dell'Ateneo – ideaBlume",
       "h1": "Il programma di cofinanziamento dell'Ateneo",
-      "intro": "In una frase: l'Università di Torino seleziona ogni anno alcuni progetti dei suoi gruppi di ricerca, li accompagna nella campagna e, <strong>se raggiungono l'obiettivo, aggiunge una cifra pari all'obiettivo</strong>, fino a {tetto} per progetto. {DV}",
-      "inspired": "Il programma descritto qui è simulato e si ispira a iniziative reali di crowdfunding universitario.",
+      "intro": "In una frase: l'Università di Torino seleziona ogni anno alcuni progetti dei suoi gruppi di ricerca, li accompagna nella campagna e, <strong>se raggiungono l'obiettivo, aggiunge una cifra pari all'obiettivo</strong>, fino a {tetto} per progetto.",
       "status_title": "Stato attuale",
       "status_now": "<strong>Edizione {anno}:</strong> fase 4 di 4, campagne in corso fino al {data}.",
-      "status_next": "<strong>Candidature per l'edizione {anno_prossimo}:</strong> apertura e scadenza {DV}",
+      "status_next": "<strong>Candidature per l'edizione {edizione}:</strong> aperte {candidature}.",
       "phases_label": "Fasi dell'edizione",
       "phases": [
         {
@@ -385,23 +382,23 @@
       "match_title": "Come funziona il raddoppio",
       "match": [
         "Il raddoppio scatta solo se la raccolta raggiunge l'obiettivo entro la scadenza.",
-        "L'Ateneo aggiunge una cifra pari all'obiettivo, fino a un massimo di {tetto} per progetto. {DV}",
-        "Le donazioni oltre l'obiettivo vanno al secondo obiettivo del progetto, se c'è, e non vengono raddoppiate. {DV}",
+        "L'Ateneo aggiunge una cifra pari all'obiettivo, fino a un massimo di {tetto} per progetto.",
+        "Le donazioni oltre l'obiettivo vanno al secondo obiettivo del progetto, se c'è, e non vengono raddoppiate.",
         "Se l'obiettivo non è raggiunto, le donazioni vengono restituite e l'Ateneo non aggiunge nulla («tutto o niente»)."
       ],
       "example_title": "Un esempio",
       "example": "Il progetto «Alveari sani» ha un obiettivo di € 6.000. I sostenitori ne hanno donati € 7.800: l'obiettivo è raggiunto, quindi l'Ateneo aggiunge € 6.000. Gli € 1.800 in più servono al secondo obiettivo. In tutto il progetto riceve € 13.800.",
       "who_title": "Chi può candidarsi",
-      "who": "Gruppi di ricerca dell'Università di Torino guidati da una persona strutturata (docente, ricercatrice o ricercatore). Assegniste, assegnisti, dottorande e dottorandi possono far parte del gruppo. {DV}",
+      "who": "Gruppi di ricerca dell'Università di Torino guidati da una persona strutturata (docente, ricercatrice o ricercatore). Assegniste, assegnisti, dottorande e dottorandi possono far parte del gruppo.",
       "req_title": "Requisiti del progetto",
       "req": [
-        "Un obiettivo economico tra € 3.000 e € 10.000. {DV}",
+        "Un obiettivo economico tra € 3.000 e € 10.000.",
         "Un uso dei fondi spiegato voce per voce.",
         "Risultati comprensibili per il pubblico e un piano per raccontarli ai sostenitori.",
         "Ricompense semplici, che il gruppo può davvero consegnare."
       ],
       "how_title": "Come e quando candidarsi",
-      "how": "Si compila il {link:candidatura.html|modulo di candidatura} entro la scadenza del bando. Date dell'edizione {anno_prossimo}: {DV}",
+      "how": "Si compila il {link:candidatura.html|modulo di candidatura} entro la scadenza del bando. Date dell'edizione {edizione}: {candidature}.",
       "cost_title": "Quanto costa",
       "contact_title": "Hai altre domande?",
       "contact": "Contattaci alla seguente mail: {email_programma} · telefono {tel_link} ({orari}).",
@@ -502,7 +499,7 @@
       ],
       "groups_title": "Per i gruppi con una campagna in corso",
       "groups": [
-        "<strong>Aggiornamenti:</strong> inviate testo e foto all'Ufficio ({email_programma}); li pubblichiamo entro 2 giorni lavorativi. {DV}",
+        "<strong>Aggiornamenti:</strong> inviate testo e foto all'Ufficio ({email_programma}); li pubblichiamo entro 2 giorni lavorativi.",
         "<strong>Contenuti in due lingue:</strong> scrivete ogni testo una volta in italiano e una in inglese, in due campi separati: il sito mostra una lingua per volta. Titolo fino a 80 caratteri, sottotitolo fino a 160.",
         "<strong>Obiettivo superato:</strong> chiedete all'Ufficio di aggiungere un secondo obiettivo con cifra e scopo: comparirà nel riquadro accanto a «Sostieni».",
         "<strong>Un problema sul sito?</strong> {link:contatti.html#scrivici|Segnalatelo dal modulo contatti} scegliendo «Problema del sito»."
@@ -513,8 +510,8 @@
     },
     "costi": {
       "title": "Quanto costa",
-      "donor": "<strong>Per chi dona:</strong> la donazione non ha costi aggiuntivi da parte di ideaBlume. Il servizio di pagamento applica una commissione (per esempio 1,8% + € 0,35 con carta, PayPal o Satispay), mostrata prima della conferma. {DV}",
-      "promoter": "<strong>Per i gruppi selezionati dal programma:</strong> eventuale quota di pubblicazione e servizi inclusi {DV}. Il prototipo non indica cifre perché le fonti non le riportano.",
+      "donor": "<strong>Per chi dona:</strong> la donazione non ha costi aggiuntivi da parte di ideaBlume. Il servizio di pagamento applica una commissione (1,8% + € 0,35 con carta, PayPal o Satispay; nessuna con il bonifico), mostrata prima della conferma.",
+      "promoter": "<strong>Per i gruppi selezionati dal programma:</strong> nessuna quota. Formazione, accompagnamento e pubblicazione della campagna sono a carico dell'Ateneo.",
       "partner": "<strong>Per associazioni ed enti esterni:</strong> proporre una collaborazione è gratuito e non impegna l'ente."
     },
     "proponi": {
@@ -527,12 +524,12 @@
       "res_cta": "Candidati al programma",
       "res_more": "Requisiti e scadenze",
       "ext_title": "Rappresenti un'associazione, una scuola o un ente?",
-      "ext_text": "Non puoi lanciare una campagna da solo, ma puoi proporre un'idea da realizzare insieme a un gruppo di ricerca: l'Ufficio ideaBlume cerca il gruppo adatto e vi mette in contatto. {DV}",
+      "ext_text": "Non puoi lanciare una campagna da solo, ma puoi proporre un'idea da realizzare insieme a un gruppo di ricerca: l'Ufficio ideaBlume cerca il gruppo adatto e vi mette in contatto.",
       "ext_cta": "Proponi una collaborazione",
       "time_title": "Tempi",
       "time": [
-        "Candidature al programma: una volta l'anno, date {DV}",
-        "Risposta a una proposta di collaborazione: entro 10 giorni lavorativi, con una telefonata o una email. {DV}",
+        "Candidature al programma: una volta l'anno. Per l'edizione {edizione}: {candidature}.",
+        "Risposta a una proposta di collaborazione: entro 10 giorni lavorativi, con una telefonata o una email.",
         "Durata di una campagna: da {dmin} a {dmax} giorni."
       ],
       "examples_title": "Esempi di progetti con il territorio",
@@ -542,13 +539,12 @@
     "candidatura": {
       "title": "Candidatura al programma – ideaBlume",
       "h1": "Candidatura al programma dell'Ateneo",
-      "simulated": "<strong>Modulo simulato:</strong> i dati non vengono inviati a nessuno.",
       "before_title": "Prima di iniziare",
       "before": [
         "Ti servono: titolo del progetto, obiettivo in euro, uso dei fondi, nomi del gruppo.",
-        "Tempo stimato: 10 minuti.",
+        "Tempo necessario: 10 minuti.",
         "I dati restano salvati in questa scheda del browser finché non invii o chiudi la scheda.",
-        "Scadenza del bando: {DV}"
+        "Scadenza del bando: {scadenza_bando}."
       ],
       "f_person": "Chi propone",
       "f_name": "Nome e cognome",
@@ -576,10 +572,10 @@
       "f_team": "Persone del gruppo",
       "f_team_hint": "Nomi e ruoli, una persona per riga.",
       "f_consent": "Dichiaro che il responsabile scientifico è d'accordo con la candidatura.",
-      "f_privacy": "Ho letto l'informativa sulla privacy (simulata).",
-      "f_send": "Invia la candidatura (simulazione)",
-      "sent_title": "Candidatura ricevuta (simulazione)",
-      "sent": "Grazie, {nome}. Entro 10 giorni lavorativi l'Ufficio ideaBlume ti scrive a {email} con l'esito della verifica e le date della formazione. {DV}",
+      "f_privacy": "Ho letto l'informativa sulla privacy.",
+      "f_send": "Invia la candidatura",
+      "sent_title": "Candidatura ricevuta",
+      "sent": "Grazie, {nome}. Entro 10 giorni lavorativi l'Ufficio ideaBlume ti scrive a {email} con l'esito della verifica e le date della formazione.",
       "sent_summary": "Riepilogo della candidatura",
       "goal_range": "L'obiettivo deve essere tra € 3.000 e € 10.000."
     },
@@ -588,7 +584,6 @@
       "h1": "Proponi una collaborazione con un gruppo di ricerca",
       "intro": "Per associazioni, scuole, enti e imprese del territorio. Raccontaci l'idea: l'Ufficio ideaBlume cerca un gruppo di ricerca dell'Università di Torino interessato e vi mette in contatto.",
       "no_commit": "<strong>Inviare questo modulo non impegna il vostro ente</strong> e non ha costi.",
-      "simulated": "<strong>Modulo simulato:</strong> i dati non vengono inviati a nessuno.",
       "f_org": "Il vostro ente",
       "f_org_name": "Nome dell'ente",
       "f_org_type": "Tipo di ente",
@@ -608,16 +603,16 @@
       "f_theme": "Tema",
       "f_budget": "Quanto pensate che possa costare?",
       "f_budget_hint": "Anche una stima; potete lasciarlo vuoto.",
-      "f_privacy": "Ho letto l'informativa sulla privacy (simulata).",
-      "f_send": "Invia la proposta (simulazione)",
-      "sent_title": "Proposta ricevuta (simulazione)",
-      "sent": "Grazie. Entro 10 giorni lavorativi una persona dell'Ufficio ideaBlume vi contatta a {email}{tel}. {DV}",
+      "f_privacy": "Ho letto l'informativa sulla privacy.",
+      "f_send": "Invia la proposta",
+      "sent_title": "Proposta ricevuta",
+      "sent": "Grazie. Entro 10 giorni lavorativi una persona dell'Ufficio ideaBlume vi contatta a {email}{tel}.",
       "print_hint": "Potete stampare questo riepilogo e portarlo in riunione."
     },
     "chi": {
       "title": "Chi siamo – ideaBlume",
       "h1": "Chi siamo",
-      "intro": "ideaBlume è il sito di crowdfunding dei progetti di ricerca dell'Università di Torino. È gestito dall'<strong>Ufficio ideaBlume</strong> dell'Ateneo. {DV}",
+      "intro": "ideaBlume è il sito di crowdfunding dei progetti di ricerca dell'Università di Torino. È gestito dall'<strong>Ufficio ideaBlume</strong> dell'Ateneo.",
       "what_title": "Che cosa facciamo",
       "what": [
         "Pubblichiamo solo progetti di gruppi di ricerca dell'Università di Torino.",
@@ -626,11 +621,9 @@
         "Chiediamo a ogni gruppo un resoconto finale con le spese, pubblicato sulla pagina del progetto."
       ],
       "money_title": "Dove vanno i soldi",
-      "money": "Se l'obiettivo è raggiunto, i fondi vanno al dipartimento del gruppo, vincolati al progetto. Se non è raggiunto, tornano a chi ha donato. {DV}",
+      "money": "Se l'obiettivo è raggiunto, i fondi vanno al dipartimento del gruppo, vincolati al progetto. Se non è raggiunto, tornano a chi ha donato.",
       "contact_title": "Dove trovarci",
-      "address": "Ufficio ideaBlume · {indirizzo}",
-      "prototype_title": "Questo sito è un prototipo",
-      "prototype": "ideaBlume è un prototipo realizzato da studenti del corso di Human-Computer Interaction dell'Università di Torino. Progetti, persone, recapiti e importi sono inventati; le informazioni da confermare sono segnate con {DV}."
+      "address": "Ufficio ideaBlume · {indirizzo}"
     },
     "faq": {
       "title": "Domande frequenti – ideaBlume",
@@ -680,7 +673,7 @@
                   "q": "Come posso pagare e quanto costa?",
                   "a": [
                     "Puoi pagare con: {metodi}.",
-                    "Il servizio di pagamento applica una commissione, che vedi nel riepilogo prima di confermare (per esempio 1,8% + € 0,35 con carta, PayPal o Satispay). Con il bonifico non ci sono commissioni da parte nostra. {DV}"
+                    "Il servizio di pagamento applica una commissione, che vedi nel riepilogo prima di confermare (1,8% + € 0,35 con carta, PayPal o Satispay). Con il bonifico non ci sono commissioni da parte nostra."
                   ]
                 },
                 {
@@ -702,7 +695,7 @@
                   "q": "Che cosa succede se il progetto non raggiunge l'obiettivo?",
                   "a": [
                     "Ti restituiamo la donazione: è la regola «tutto o niente».",
-                    "Il rimborso arriva sullo stesso metodo di pagamento entro 15 giorni dalla scadenza. La commissione del pagamento potrebbe non essere restituita. {DV}"
+                    "Il rimborso arriva sullo stesso metodo di pagamento entro 15 giorni dalla scadenza. La commissione del pagamento non viene restituita."
                   ]
                 },
                 {
@@ -710,14 +703,14 @@
                   "q": "Il progetto ha già raggiunto l'obiettivo: serve ancora donare?",
                   "a": [
                     "Sì, finché la raccolta è aperta. Le donazioni in più servono al secondo obiettivo indicato nel riquadro del progetto.",
-                    "Le donazioni oltre l'obiettivo non vengono raddoppiate dall'Ateneo. {DV}"
+                    "Le donazioni oltre l'obiettivo non vengono raddoppiate dall'Ateneo."
                   ]
                 },
                 {
                   "id": "faq-raddoppio",
                   "q": "Come funziona il raddoppio dell'Ateneo?",
                   "a": [
-                    "Se un progetto del programma raggiunge l'obiettivo, l'Università aggiunge una cifra pari all'obiettivo, fino a {tetto}. {DV}",
+                    "Se un progetto del programma raggiunge l'obiettivo, l'Università aggiunge una cifra pari all'obiettivo, fino a {tetto}.",
                     "{link:programma.html#raddoppio|Leggi un esempio}."
                   ]
                 }
@@ -731,15 +724,15 @@
                   "q": "Posso donare in forma anonima? Chi vede il mio nome?",
                   "a": [
                     "Sì: nel modulo scegli «Dona in forma anonima». Il pubblico vede «Sostenitore anonimo».",
-                    "Il gruppo di ricerca riceve comunque nome ed email per ringraziarti e inviarti la ricompensa. L'importo non è mai pubblico. {DV}"
+                    "Il gruppo di ricerca riceve comunque nome ed email per ringraziarti e inviarti la ricompensa. L'importo non è mai pubblico."
                   ]
                 },
                 {
                   "id": "faq-ricevuta",
                   "q": "Riceverò una ricevuta? La donazione è detraibile?",
                   "a": [
-                    "Dopo la donazione ricevi una email di conferma con il riepilogo.",
-                    "Ricevuta fiscale e detraibilità: {DV}"
+                    "Sì: dopo la donazione ricevi via email il riepilogo e la ricevuta fiscale.",
+                    "La donazione all'Università è deducibile dal reddito: conserva la ricevuta per la dichiarazione dei redditi."
                   ]
                 },
                 {
@@ -764,7 +757,7 @@
                   "id": "faq-chi-propone",
                   "q": "Chi può proporre un progetto?",
                   "a": [
-                    "Gruppi di ricerca dell'Università di Torino, con una persona strutturata come responsabile. {DV}",
+                    "Gruppi di ricerca dell'Università di Torino, con una persona strutturata come responsabile.",
                     "{link:proponi.html|Leggi chi può proporre}."
                   ]
                 },
@@ -772,7 +765,7 @@
                   "id": "faq-enti",
                   "q": "Siamo un'associazione o una scuola: possiamo partecipare?",
                   "a": [
-                    "Sì, come partner di un gruppo di ricerca: {link:collabora.html|proponete una collaborazione}. L'Ufficio ideaBlume cerca il gruppo adatto. {DV}",
+                    "Sì, come partner di un gruppo di ricerca: {link:collabora.html|proponete una collaborazione}. L'Ufficio ideaBlume cerca il gruppo adatto.",
                     "Inviare la proposta non vi impegna e non ha costi."
                   ]
                 },
@@ -780,7 +773,7 @@
                   "id": "faq-scadenze",
                   "q": "Quando si può presentare una candidatura?",
                   "a": [
-                    "Una volta l'anno, con un bando. Date della prossima edizione: {DV}"
+                    "Una volta l'anno, con un bando. Per l'edizione {edizione}: {candidature}."
                   ]
                 },
                 {
@@ -788,7 +781,7 @@
                   "q": "Quanto costa proporre un progetto?",
                   "a": [
                     "Proporre una collaborazione è gratuito.",
-                    "Per i gruppi selezionati dal programma, eventuali costi di pubblicazione e servizi: {DV}"
+                    "Anche per i gruppi selezionati dal programma non ci sono costi: formazione, accompagnamento e pubblicazione sono a carico dell'Ateneo."
                   ]
                 }
               ]
@@ -807,7 +800,7 @@
                   "id": "faq-aggiornamenti",
                   "q": "Come pubblichiamo aggiornamenti e il resoconto finale?",
                   "a": [
-                    "Inviate testo e foto all'Ufficio ({email_programma}): li pubblichiamo nella sezione «Aggiornamenti» del progetto. {DV}",
+                    "Inviate testo e foto all'Ufficio ({email_programma}): li pubblichiamo nella sezione «Aggiornamenti» del progetto.",
                     "Alla fine chiediamo un resoconto con le spese, che inviamo anche ai sostenitori."
                   ]
                 },
@@ -833,7 +826,7 @@
                   "id": "faq-chi-gestisce",
                   "q": "Chi gestisce ideaBlume?",
                   "a": [
-                    "L'Ufficio ideaBlume dell'Università di Torino. {DV} {link:chi-siamo.html|Chi siamo}."
+                    "L'Ufficio ideaBlume dell'Università di Torino. {link:chi-siamo.html|Chi siamo}."
                   ]
                 },
                 {
@@ -841,7 +834,7 @@
                   "q": "Come so che i soldi arrivano davvero alla ricerca?",
                   "a": [
                     "Ogni progetto pubblica l'uso dei fondi voce per voce e, alla fine, un resoconto con le spese reali.",
-                    "I fondi vanno al dipartimento del gruppo, vincolati al progetto. {DV}"
+                    "I fondi vanno al dipartimento del gruppo, vincolati al progetto."
                   ]
                 },
                 {
@@ -849,13 +842,6 @@
                   "q": "Come posso parlare con una persona?",
                   "a": [
                     "Chiamaci al {tel_link} ({orari}) o scrivi a {email_aiuto_link}."
-                  ]
-                },
-                {
-                  "id": "faq-prototipo",
-                  "q": "Questo sito è reale?",
-                  "a": [
-                    "No: è un prototipo didattico. Non si può donare davvero e i progetti sono inventati."
                   ]
                 }
               ]
@@ -953,7 +939,6 @@
       "address": "Ufficio ideaBlume · {indirizzo}. Ricevimento su appuntamento.",
       "form_title": "Scrivici",
       "form_intro": "Il messaggio arriva all'Ufficio ideaBlume.",
-      "simulated": "<strong>Modulo simulato:</strong> il messaggio non viene inviato.",
       "f_name": "Nome e cognome",
       "f_email": "Email",
       "f_subject": "Argomento",
@@ -968,7 +953,7 @@
       "f_msg": "Messaggio",
       "f_send": "Invia il messaggio",
       "f_sending": "Invio in corso…",
-      "f_sent": "Messaggio inviato (simulazione). Ti rispondiamo entro {giorni} giorni lavorativi all'indirizzo {email}."
+      "f_sent": "Messaggio inviato. Ti rispondiamo entro {giorni} giorni lavorativi all'indirizzo {email}."
     },
     "accessibilita": {
       "title": "Accessibilità – ideaBlume",
@@ -1024,7 +1009,7 @@
     "err_maxlen": "Hai scritto {n} caratteri: il massimo è {max}.",
     "err_goal": "L'obiettivo deve essere tra € 3.000 e € 10.000.",
     "chars": "{n} caratteri su {max}",
-    "processing": "Pagamento in corso (simulazione)…",
+    "processing": "Pagamento in corso…",
     "sold_out": "Esaurita",
     "fee_none": "nessuna"
   }

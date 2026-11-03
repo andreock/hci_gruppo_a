@@ -32,8 +32,8 @@
         "en": "Credit, debit or prepaid card"
       },
       "dopo": {
-        "it": "Inserisci i dati della carta nella pagina sicura del circuito di pagamento (nel prototipo: simulato).",
-        "en": "You enter your card details on the payment provider's secure page (simulated in this prototype)."
+        "it": "Inserisci i dati della carta nella pagina sicura del circuito di pagamento.",
+        "en": "You enter your card details on the payment provider's secure page."
       },
       "percentuale": 1.8,
       "fisso": 0.35
@@ -45,8 +45,8 @@
         "en": "PayPal"
       },
       "dopo": {
-        "it": "Accedi al tuo conto PayPal e confermi il pagamento (nel prototipo: simulato).",
-        "en": "You log in to PayPal and confirm the payment (simulated in this prototype)."
+        "it": "Accedi al tuo conto PayPal e confermi il pagamento.",
+        "en": "You log in to PayPal and confirm the payment."
       },
       "percentuale": 1.8,
       "fisso": 0.35
@@ -58,8 +58,8 @@
         "en": "Satispay"
       },
       "dopo": {
-        "it": "Confermi il pagamento nell'app Satispay (nel prototipo: simulato).",
-        "en": "You confirm the payment in the Satispay app (simulated in this prototype)."
+        "it": "Confermi il pagamento nell'app Satispay.",
+        "en": "You confirm the payment in the Satispay app."
       },
       "percentuale": 1.8,
       "fisso": 0.35
@@ -71,8 +71,8 @@
         "en": "Bank transfer"
       },
       "dopo": {
-        "it": "Ricevi via email le coordinate per il bonifico; la donazione vale quando arriva il bonifico (nel prototipo: simulato).",
-        "en": "You receive the bank details by email; the donation counts when the transfer arrives (simulated in this prototype)."
+        "it": "Ricevi via email le coordinate per il bonifico; la donazione vale quando arriva il bonifico.",
+        "en": "You receive the bank details by email; the donation counts when the transfer arrives."
       },
       "percentuale": 0,
       "fisso": 0
@@ -179,21 +179,21 @@
   "accessibilita": {
     "verifiche": {
       "it": [
-        "axe-core 4.10 su tutte le 58 pagine, in italiano e in inglese: nessuna violazione delle regole WCAG 2.2 di livello A e AA.",
-        "Percorso completo solo da tastiera (ricerca, progetto, donazione, conferma), con menu, spiegazioni a comparsa ed errori dei moduli: 52 controlli automatici superati.",
-        "Contrasto di tutte le 52 coppie di colori usate: almeno 4,5:1 per il testo e 3:1 per componenti e indicatore di focus.",
+        "axe-core 4.10 su tutte le 58 pagine, in italiano e in inglese: nessuna violazione delle regole WCAG 2.2 di livello A e AA, nel tema chiaro e nel tema scuro.",
+        "Percorso completo solo da tastiera (ricerca, progetto, donazione, conferma), con menu, spiegazioni a comparsa ed errori dei moduli: 66 controlli automatici superati.",
+        "Contrasto di tutte le 90 coppie di colori usate, nel tema chiaro e nel tema scuro: almeno 4,5:1 per il testo e 3:1 per componenti e indicatore di focus.",
         "Nessuno scorrimento orizzontale a 320 px e con lo zoom del browser al 200%.",
         "Aree cliccabili di almeno 24×24 px; pulsanti principali alti 44 px.",
-        "Simulazione di deuteranopia e acromatopsia: lo stato delle campagne resta riconoscibile da testo e icona.",
+        "Controllo con filtri di deuteranopia e acromatopsia: lo stato delle campagne resta riconoscibile da testo e icona.",
         "Lighthouse su smartphone: accessibilità 100 su home, elenco dei progetti, pagina progetto e donazione."
       ],
       "en": [
-        "axe-core 4.10 on all 58 pages, in Italian and English: no violations of WCAG 2.2 level A and AA rules.",
-        "Complete keyboard-only journey (search, project, donation, confirmation), including menu, toggletips and form errors: 52 automated checks passed.",
-        "Contrast of all 52 colour pairs in use: at least 4.5:1 for text and 3:1 for components and the focus indicator.",
+        "axe-core 4.10 on all 58 pages, in Italian and English: no violations of WCAG 2.2 level A and AA rules, in the light and dark themes.",
+        "Complete keyboard-only journey (search, project, donation, confirmation), including menu, toggletips and form errors: 66 automated checks passed.",
+        "Contrast of all 90 colour pairs in use, in the light and dark themes: at least 4.5:1 for text and 3:1 for components and the focus indicator.",
         "No horizontal scrolling at 320 px wide or with browser zoom at 200%.",
         "Click targets of at least 24×24 px; main buttons are 44 px high.",
-        "Deuteranopia and achromatopsia simulation: campaign status stays recognisable from text and icon.",
+        "Check with deuteranopia and achromatopsia filters: campaign status stays recognisable from text and icon.",
         "Lighthouse on mobile: accessibility 100 on the home page, project list, project page and donation."
       ]
     },
@@ -201,15 +201,26 @@
       "it": [
         "Non sono ancora stati fatti test con persone che usano screen reader, ingranditori o comandi vocali: i controlli automatici coprono solo una parte dei criteri WCAG.",
         "Nomi, ruoli e stati dei controlli (aria-expanded, aria-invalid, aria-current) sono stati verificati con strumenti automatici, non con NVDA o VoiceOver.",
-        "Ricerca, filtri e donazione simulata richiedono JavaScript; pagine dei progetti, FAQ e «Come funziona» funzionano anche senza.",
+        "Ricerca, filtri e donazione richiedono JavaScript; pagine dei progetti, FAQ e «Come funziona» funzionano anche senza.",
         "I commenti dei sostenitori sono pubblicati nella lingua in cui sono stati scritti."
       ],
       "en": [
         "No tests have yet been carried out with people using screen readers, magnifiers or voice control: automated checks cover only part of the WCAG criteria.",
         "Control names, roles and states (aria-expanded, aria-invalid, aria-current) were checked with automated tools, not with NVDA or VoiceOver.",
-        "Search, filters and the simulated donation need JavaScript; project pages, FAQ and “How it works” work without it.",
+        "Search, filters and the donation need JavaScript; project pages, FAQ and “How it works” work without it.",
         "Supporters' comments are published in the language they were written in."
       ]
+    }
+  },
+  "bando": {
+    "edizione": 2027,
+    "periodo": {
+      "it": "dal 1° novembre 2026 al 31 marzo 2027",
+      "en": "from 1 November 2026 to 31 March 2027"
+    },
+    "scadenza": {
+      "it": "31 marzo 2027",
+      "en": "31 March 2027"
     }
   }
 }
