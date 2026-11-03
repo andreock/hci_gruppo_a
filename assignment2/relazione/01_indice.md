@@ -3,6 +3,8 @@
 Documento per il checkpoint di REL-AI-01. Le prove sono descritte in `00_inventario_prove.md`.
 
 > **Esito del checkpoint (03/11/2026).** Il gruppo ha fornito componenti, strumenti, materiali, URL e natura delle modifiche manuali, senza rispondere alle decisioni 1–4. La relazione è stata scritta così: decisione 1, descrive D-42 com'è, con un riquadro e un segnaposto in §5; decisione 2, cita `797fc7e`, già committato; decisione 3, dichiara i disallineamenti come limiti; decisione 4, copre solo la documentazione dell'IA. Quanto resta da fornire è in `03_da_completare.md`.
+>
+> **Revisione successiva (03/11/2026).** Su richiesta del gruppo la relazione non cita più percorsi, commit e lavori delle singole persone, ed è stata riorganizzata con personas (§2) e journey (§3). Questo indice e `00_inventario_prove.md` restano documenti interni con le prove: non vanno consegnati.
 
 ## 1. Passaggi scelti
 

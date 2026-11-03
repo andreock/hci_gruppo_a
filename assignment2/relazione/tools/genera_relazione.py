@@ -44,24 +44,27 @@ SCREENSHOT = "assignment2/website/docs/verifiche/screenshot/"
 
 # Consegna -> sezioni in cui è trattata (per 02_controllo_consegna.md).
 CONSEGNA = [
-    ("Personas e journey · strumenti utilizzati e attività", ["2", "3.1"]),
-    ("Personas e journey · principali prompt e informazioni fornite", ["3.2"]),
-    ("Personas e journey · esempi della prima versione e della versione finale", ["3.3"]),
-    ("Personas e journey · problemi individuati negli output", ["3.4"]),
-    ("Personas e journey · richieste di modifica e interventi effettuati", ["3.5"]),
-    ("Personas e journey · motivazioni delle scelte finali", ["3.8"]),
-    ("Personas · come abbiamo reso i profili più specifici, differenziati e coerenti", ["3.6"]),
-    ("Journey · come abbiamo migliorato la corrispondenza con obiettivi e caratteristiche delle personas", ["3.7"]),
-    ("Sito · strumenti utilizzati e attività", ["2", "4.1"]),
-    ("Sito · principali prompt e informazioni fornite", ["4.2"]),
-    ("Sito · esempi della prima versione e della versione finale", ["4.3"]),
-    ("Sito · problemi individuati negli output", ["4.4"]),
-    ("Sito · richieste di modifica e interventi effettuati", ["4.5"]),
-    ("Sito · revisione di contenuti, struttura, navigazione e interazioni", ["4.6"]),
-    ("Sito · eventuali modifiche apportate direttamente al codice", ["4.7"]),
-    ("Sito · motivazioni delle scelte finali", ["4.8"]),
-    ("Selezione dei passaggi invece dell'intera cronologia; contributo del gruppo", ["1", "6"]),
-    ("Richiesta del gruppo · uso responsabile dell'IA", ["5"]),
+    ("Introduzione al progetto e link al prototipo", ["1"]),
+    ("Personas", ["2"]),
+    ("Uno user journey per ogni persona", ["3"]),
+    ("Personas e journey · strumenti utilizzati e attività", ["4", "5.1"]),
+    ("Personas e journey · principali prompt e informazioni fornite", ["5.2"]),
+    ("Personas e journey · esempi della prima versione e della versione finale", ["5.3"]),
+    ("Personas e journey · problemi individuati negli output", ["5.4"]),
+    ("Personas e journey · richieste di modifica e interventi effettuati", ["5.5"]),
+    ("Personas e journey · motivazioni delle scelte finali", ["5.8"]),
+    ("Personas · come abbiamo reso i profili più specifici, differenziati e coerenti", ["5.6"]),
+    ("Journey · come abbiamo migliorato la corrispondenza con obiettivi e caratteristiche delle personas", ["5.7"]),
+    ("Sito · strumenti utilizzati e attività", ["4", "6.1"]),
+    ("Sito · principali prompt e informazioni fornite", ["6.2"]),
+    ("Sito · esempi della prima versione e della versione finale", ["6.3"]),
+    ("Sito · problemi individuati negli output", ["6.4"]),
+    ("Sito · richieste di modifica e interventi effettuati", ["6.5"]),
+    ("Sito · revisione di contenuti, struttura, navigazione e interazioni", ["6.6"]),
+    ("Sito · eventuali modifiche apportate direttamente al codice", ["6.7"]),
+    ("Sito · motivazioni delle scelte finali", ["6.8"]),
+    ("Selezione dei passaggi invece dell'intera cronologia; contributo del gruppo", ["1", "8"]),
+    ("Richiesta del gruppo · uso responsabile dell'IA", ["7"]),
 ]
 
 SEGNAPOSTO = re.compile(r"\[DA (?:COMPLETARE|VERIFICARE):(?! …)[^\]]*\]")  # «…» = citazione del prompt
@@ -105,6 +108,7 @@ class Stato:
 
 def tabella(righe, didascalia, st):
     celle = lambda r: [c.strip() for c in re.split(r"(?<!\\)\|", r.strip().strip("|"))]
+    riga_th = righe[0].startswith("| Dimensione")
     testa = celle(righe[0])
     corpo = [celle(r) for r in righe[2:]]
     caption = ""
@@ -113,7 +117,8 @@ def tabella(righe, didascalia, st):
         caption = f"<caption><b>Tabella {st.tab}.</b> {inline(didascalia)}</caption>"
     cl = "tabella corta" if len(corpo) <= 7 else "tabella"
     h = "".join(f'<th scope="col">{inline(c)}</th>' for c in testa)
-    b = "".join("<tr>" + "".join(f"<td>{inline(c)}</td>" for c in r) + "</tr>" for r in corpo)
+    cella = lambda c: "<br>".join(inline(x.strip()) for x in c.split("¶"))
+    b = "".join("<tr>" + "".join((f'<th scope="row">{cella(c)}</th>' if riga_th and k == 0 else (f'<td colspan="{len(testa) - k}">{cella(c)}</td>' if k == len(r) - 1 and len(r) < len(testa) else f"<td>{cella(c)}</td>")) for k, c in enumerate(r)) + "</tr>" for r in corpo)
     nome = f"Tabella {st.tab}" if didascalia else "Tabella"
     return f'<div class="{cl}" role="region" aria-label="{nome}" tabindex="0"><table>{caption}<thead><tr>{h}</tr></thead><tbody>{b}</tbody></table></div>'
 
@@ -182,6 +187,15 @@ def blocco(tipo, arg, contenuto, st):
     if tipo == "figure2":
         extra = " figure2--stretta" if t == "stretta" else ""
         return f'<div class="figure2{extra}">{interno}</div>'
+    if tipo == "persona":
+        testa, sep, campi = interno.partition('<div class="campo">')
+        return f'<section class="scheda-persona">{testa}<div class="campi">{sep}{campi}</div></section>'
+    if tipo == "journey":
+        return f'<section class="scheda-journey">{interno}</section>'
+    if tipo == "meta":
+        return f'<div class="scheda-meta">{interno}</div>'
+    if tipo == "campo":
+        return f'<div class="campo"><h4>{inline(t)}</h4>{interno}</div>'
     if tipo == "html":
         return "\n".join(contenuto)
     raise SystemExit(f"Blocco sconosciuto: {tipo}")
@@ -380,21 +394,20 @@ def pagine_titoli(st):
 def scrivi_controllo(st, pagine, totale):
     per_num = {num: (testo, pagine.get(ident, "")) for _, num, testo, ident in st.titoli if num}
     r = ["# 02 · Controllo della consegna", "",
-         "Generato da `tools/genera_relazione.py`. Per ogni punto della consegna (`assignment2/Istruzioni.md` §5 e prompt REL-AI-01): sezione e pagina di `relazione.pdf`.", "",
+         "Per ogni punto della consegna: sezione e pagina di `relazione.pdf`.", "", "Numero del gruppo e componenti sono in copertina (pagina 1).", "",
          f"Pagine del PDF: {totale}.", "",
          "| Punto della consegna | Sezione | Pagina del PDF |", "|---|---|---|"]
     for punto, sez in CONSEGNA:
         s = "; ".join(f"§{n} {per_num[n][0]}" for n in sez)
         p = ", ".join(str(per_num[n][1]) for n in sez)
         r.append(f"| {punto} | {s} | {p} |")
-    r += ["", "## Punti di `Istruzioni.md` §7 fuori da questa relazione", "",
-          "La consegna chiede un solo PDF (`assignment2_gruppox.pdf`) che contenga anche le personas e uno user journey per ogni persona. Questa relazione copre la documentazione dell'uso dell'IA e il link al prototipo: le 24 schede vanno allegate (`assignment2/personas/`), come indicato nell'introduzione.", ""]
+    r.append("")
     (BASE / "02_controllo_consegna.md").write_text("\n".join(r), encoding="utf-8")
 
 
 def scrivi_da_completare(st):
     r = ["# 03 · Segnaposto da completare", "",
-         "Generato da `tools/genera_relazione.py` a partire da `relazione.md`. Dopo averli sostituiti nel testo, rieseguite lo script.", ""]
+         "Dopo averli sostituiti in `relazione.md`, rieseguite `python3 tools/genera_relazione.py`.", ""]
     if not st.segnaposto:
         r.append("Nessun segnaposto rimasto.")
     else:
@@ -412,6 +425,7 @@ def main():
     css = re.sub(r'url\("FONT:([^"]+)"\)', lambda m: 'url("data:font/woff2;base64,' + base64.b64encode((BASE / "assets" / "fonts" / m.group(1)).read_bytes()).decode() + '")', css)
     (BASE / "assets" / "stile.css").write_text(css, encoding="utf-8")
     sorgente = (BASE / "relazione.md").read_text(encoding="utf-8")
+    sorgente = re.sub(r"^\[\[INCLUDI (.+?)\]\]$", lambda m: (BASE / m.group(1)).read_text(encoding="utf-8"), sorgente, flags=re.M)
     pagina, st = costruisci(sorgente)
     (BASE / "relazione.html").write_text(pagina, encoding="utf-8")
     pagine, totale = {}, 0
