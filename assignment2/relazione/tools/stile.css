@@ -1,0 +1,112 @@
+/* Stile della relazione: palette e caratteri del design system di ideaBlume (website/docs/07_design_system.md). */
+@font-face { font-family: "Inter"; src: url("FONT:inter.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Bricolage Grotesque"; src: url("FONT:bricolage-grotesque.woff2") format("woff2"); font-weight: 200 800; font-display: swap; }
+
+:root {
+  --ink: #3b1d2a; --testo: #2c1f24; --muted: #66544a; --cta: #bf4a12; --brand: #a33f0f;
+  --verde: #24603f; --petrolio: #1d5b73; --mattone: #a3271a; --crema: #fbf6ee; --panna: #fffdf9;
+  --bordo: #d9cbbd; --riga: #f8f2ea; --brand-soft: #fbeadd; --verde-soft: #e3f2e6; --petrolio-soft: #e2eff4; --giallo-soft: #fdf1d0;
+}
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; background: #fff; color: var(--testo); font: 400 10.5pt/1.5 "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }
+main { max-width: 174mm; margin: 0 auto; padding: 0 16px; }
+@media screen { main { padding-bottom: 3rem; } }
+
+h1, h2, h3, h4 { font-family: "Bricolage Grotesque", "Inter", system-ui, sans-serif; color: var(--ink); line-height: 1.15; break-after: avoid; }
+h2 { font-size: 21pt; font-weight: 700; margin: 0 0 10pt; padding-bottom: 6pt; border-bottom: 2.5pt solid var(--cta); break-before: page; }
+h3 { font-size: 13.5pt; font-weight: 700; margin: 16pt 0 5pt; }
+h4 { font-size: 11pt; font-weight: 700; margin: 12pt 0 3pt; }
+.num { color: var(--brand); margin-right: .35em; }
+p { margin: 0 0 7pt; orphans: 3; widows: 3; }
+ul, ol { margin: 0 0 8pt; padding-left: 16pt; }
+li { margin-bottom: 2.5pt; }
+a { color: var(--brand); text-underline-offset: 2px; }
+code { font: 8.8pt/1.4 ui-monospace, "SF Mono", Menlo, Consolas, monospace; background: var(--riga); padding: 0 2px; border-radius: 2px; overflow-wrap: anywhere; }
+strong { font-weight: 650; }
+
+/* Copertina */
+.copertina { min-height: 100vh; }
+@media print { .copertina { height: 297mm; min-height: 0; margin: 0; break-after: page; } main { padding: 0; max-width: none; } }
+.copertina { display: flex; flex-direction: column; background: var(--crema); }
+.copertina__fascia { background: var(--ink); color: #fff8f0; padding: 26mm 20mm 14mm; }
+.copertina__fascia p { color: #f4b93e; font-weight: 600; letter-spacing: .02em; margin: 0 0 8mm; font-size: 11pt; }
+.copertina h1 { color: #fff8f0; font-size: 33pt; margin: 0 0 5mm; font-weight: 700; }
+.copertina__sottotitolo { color: #fff8f0 !important; font-weight: 400 !important; font-size: 14pt !important; line-height: 1.35; margin: 0 !important; letter-spacing: 0 !important; }
+.copertina__striscia { height: 5mm; background: var(--cta); }
+.copertina__dati { padding: 14mm 20mm; font-size: 11.5pt; }
+.copertina__dati dt { font-weight: 650; color: var(--brand); margin-top: 5mm; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .05em; }
+.copertina__dati dd { margin: 1mm 0 0; color: var(--ink); }
+
+/* Indice */
+.indice h2 { break-before: page; }
+.indice ol { list-style: none; padding: 0; margin: 0; }
+.indice li { display: flex; align-items: baseline; gap: 6px; margin: 0; padding: 1.8pt 0; font-size: 9.8pt; }
+.indice li.l2 { font-weight: 650; color: var(--ink); margin-top: 6pt; font-size: 10.5pt; }
+.indice li.l3 { padding-left: 14pt; }
+.indice a { color: inherit; text-decoration: none; }
+.indice .pun { flex: 1; border-bottom: 1px dotted #9c8a7c; transform: translateY(-3px); }
+.indice .pag { font-variant-numeric: tabular-nums; }
+
+/* Tabelle */
+.tabella { margin: 8pt 0 11pt; }
+.tabella.corta { break-inside: avoid; }
+table { width: 100%; border-collapse: collapse; font-size: 8.6pt; line-height: 1.36; }
+caption, figcaption { caption-side: top; text-align: left; font-size: 8.8pt; color: var(--muted); font-weight: 500; }
+caption { padding-bottom: 3pt; break-after: avoid; }
+caption b, figcaption b { color: var(--ink); font-weight: 650; }
+thead { display: table-header-group; }
+th { background: var(--ink); color: #fff8f0; text-align: left; font-weight: 600; padding: 4pt 5pt; vertical-align: bottom; }
+td { padding: 3.5pt 5pt; border-bottom: 1px solid var(--bordo); vertical-align: top; overflow-wrap: break-word; hyphens: manual; }
+code.nb { white-space: nowrap; }
+tr { break-inside: avoid; }
+tbody tr:nth-child(even) td { background: var(--riga); }
+td code { font-size: 7.8pt; }
+
+/* Riquadri */
+.box { margin: 8pt 0 10pt; border: 1px solid var(--bordo); border-left-width: 4pt; border-radius: 3px; padding: 7pt 9pt; break-inside: avoid; background: var(--panna); }
+.box > :last-child { margin-bottom: 0; }
+.box__tit { display: block; font-weight: 650; color: var(--ink); font-size: 9.2pt; margin-bottom: 3pt; }
+.box__meta { font-weight: 400; color: var(--muted); }
+.box--cambio { border-left-color: var(--verde); background: var(--verde-soft); font-size: 9.4pt; }
+.box--responsabile { border-left-color: var(--petrolio); background: var(--petrolio-soft); font-size: 9.6pt; }
+.box--avviso { border-left-color: var(--mattone); background: #fbe9e5; font-size: 9.6pt; }
+.prompt { margin: 8pt 0 10pt; border: 1px solid var(--bordo); border-left: 4pt solid var(--ink); border-radius: 3px; background: var(--riga); break-inside: avoid; }
+.prompt__tit { display: block; padding: 5pt 9pt 3pt; font-size: 8.8pt; font-weight: 650; color: var(--ink); }
+.prompt__tit span { font-weight: 400; color: var(--muted); }
+pre { margin: 0; padding: 3pt 9pt 7pt; font: 8.2pt/1.42 ui-monospace, "SF Mono", Menlo, Consolas, monospace; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--testo); }
+pre.diff .piu { color: #17472e; background: var(--verde-soft); display: block; }
+pre.diff .meno { color: #7d1c12; background: #fbe9e5; display: block; }
+
+.confronto { display: grid; grid-template-columns: 1fr 1fr; gap: 0 7pt; margin: 8pt 0 10pt; break-inside: avoid; }
+.confronto > .box--cambio { grid-column: 1 / -1; margin: 6pt 0 0; }
+.colonna { border: 1px solid var(--bordo); border-top-width: 3pt; border-radius: 3px; padding: 6pt 8pt; font-size: 9.2pt; background: var(--panna); line-height: 1.42; }
+.colonna > :last-child { margin-bottom: 0; }
+.colonna--prima { border-top-color: var(--muted); }
+.colonna--dopo { border-top-color: var(--cta); }
+.colonna__tit { display: block; font-weight: 700; color: var(--ink); }
+.colonna__fonte { display: block; font-size: 8pt; color: var(--muted); margin-bottom: 4pt; overflow-wrap: anywhere; }
+.colonna__fonte code { font-size: 7.4pt; }
+@media (max-width: 560px) { .confronto, .figure2 { grid-template-columns: 1fr !important; } .tabella { overflow-x: auto; } .tabella table { min-width: 520px; } .copertina__fascia, .copertina__dati { padding-left: 16px; padding-right: 16px; } .copertina h1 { font-size: 26pt; overflow-wrap: break-word; } }
+@media screen { .tabella:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; } }
+
+/* Etichette e segnaposto */
+.tag { display: inline-block; font-size: 7.8pt; font-weight: 650; padding: 0 5px; border-radius: 8px; border: 1px solid currentColor; line-height: 1.5; white-space: nowrap; }
+.tag--personas { color: #17472e; background: var(--verde-soft); }
+.tag--journey { color: #154657; background: var(--petrolio-soft); }
+.tag--sito { color: #8a350c; background: var(--brand-soft); }
+.tag--trasversale { color: var(--ink); background: var(--riga); }
+.todo { background: var(--giallo-soft); color: #5c3e00; font-weight: 600; outline: 1px solid #a57a10; border-radius: 2px; padding: 0 2px; }
+
+/* Figure */
+figure { margin: 8pt 0 10pt; break-inside: avoid; }
+figure img { display: block; max-width: 100%; height: auto; border: 1px solid var(--bordo); border-radius: 3px; }
+figure.flusso svg { display: block; width: 100%; height: auto; }
+figure.piccola img { max-height: 95mm; width: auto; }
+figure figcaption { margin-top: 3pt; }
+.figure2 { display: grid; grid-template-columns: 1fr 1fr; gap: 7pt; align-items: start; break-inside: avoid; }
+.figure2 figure { margin: 8pt 0 4pt; }
+.figure2--stretta { grid-template-columns: 1fr 1fr 1fr; }
+
+@page { size: A4; margin: 19mm 19mm 20mm 19mm; }
+@page :first { margin: 0; }
