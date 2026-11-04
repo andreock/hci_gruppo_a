@@ -1,10 +1,6 @@
 :::persona
 ### P01 · Giuseppe Ferrero
 
-:::meta
-27/10/2026 · v3 · App di crowdfunding (servizio generico) · Proto-persona
-:::
-
 :::campo | Nome convenzionale e descrizione del profilo
 Giuseppe Ferrero, 71 anni, insegnante di scienze in pensione, vive a Moncalieri. È vedovo, ha una figlia e due nipoti; è curioso, generoso e prudente con il denaro.
 
@@ -54,7 +50,7 @@ Dopo aver letto sul giornale di una ricerca per proteggere i neonati dai virus, 
 :::
 
 :::campo | Contesto e vincoli di utilizzo
-Usa a casa un tablet Android da 10 pollici, con carattere ingrandito; non possiede un computer. È la prima visita e potrebbe donare una o due volte l'anno. Procede senza fretta, ma interrompe il percorso per telefonare alla figlia o fotografare lo schermo.
+Usa a casa un tablet Android da 10 pollici, con carattere ingrandito; non possiede un computer. È la prima visita e potrebbe donare una o due volte l'anno. Procede senza fretta, ma interrompe il percorso per telefonare alla figlia o fotografare lo schermo per farsi guidare.
 
 :::
 
@@ -71,10 +67,9 @@ La presbiopia richiede caratteri ingranditi, contrasto elevato e spaziatura legg
 
 :::
 
-:::campo | Frase rappresentativa e provenienza
+:::campo | Frase rappresentativa
 - «Aiuto volentieri, ma prima voglio capire dove vanno i soldi.»
-- Provenienza: sintesi costruita dal gruppo (non è una frase realmente raccolta).
-
+- 
 :::
 
 :::campo | Fonti ed evidenze disponibili
@@ -94,17 +89,13 @@ Proto-persona costruita dal gruppo a partire da problemi di usabilità ricorrent
 :::persona
 ### P02 · Sara Colombo
 
-:::meta
-27/10/2026 · v3 · App di crowdfunding (servizio generico) · Proto-persona
-:::
-
 :::campo | Nome convenzionale e descrizione del profilo
 Sara Colombo, 34 anni, infermiera turnista in pronto soccorso a Torino. Convive con il compagno e un gatto; è pragmatica, solidale e attenta ai temi ambientali.
 
 :::
 
 :::campo | Scenario e obiettivo principale
-Durante una pausa di dieci minuti vede sui social il progetto di ricerca sul clima condiviso da un'amica dottoranda. Vuole donare 20 € prima di tornare in reparto, con pochi passaggi e senza perdere ciò che ha già inserito.
+Durante una pausa di dieci minuti vede sui social il progetto di ricerca sul clima condiviso da un'amica dottoranda. Vuole donare 20 € prima di tornare in reparto, con pochi passaggi.
 
 :::
 
@@ -120,10 +111,9 @@ Durante una pausa di dieci minuti vede sui social il progetto di ricerca sul cli
 
 :::campo | Bisogni e aspettative
 - Capire rapidamente scopo, affidabilità e stato del progetto.
-- Completare una donazione in pochi passaggi, anche con una mano.
+- Completare una donazione in pochi passaggi.
 - Poter scegliere subito un importo libero, senza ricompense obbligatorie.
 - Ricevere errori immediati, specifici e facili da correggere.
-- Riprendere su un altro dispositivo senza reinserire tutto.
 
 :::
 
@@ -136,9 +126,8 @@ Durante una pausa di dieci minuti vede sui social il progetto di ricerca sul cli
 :::
 
 :::campo | Difficoltà e frustrazioni
-- La rete debole e il telefono datato rendono frustranti le pagine pesanti.
-- Con attenzione divisa perde facilmente il punto raggiunto.
-- Le pagine e le liste molto lunghe sono scomode da scorrere con il pollice.
+- La rete debole e il telefono datato rendono frustrante la navigazione delle pagine pesanti.
+- Perde facilmente l'attenzione se ci sono troppe informazioni nella pagina.
 - Non capisce subito se può donare liberamente senza scegliere una ricompensa.
 - Si irrita quando un pulsante non dà feedback e sembra non rispondere.
 - Gli errori mostrati solo alla fine consumano il poco tempo disponibile.
@@ -154,7 +143,7 @@ Consulta le campagne dallo smartphone Android durante pause di 2-5 minuti, spess
 - Smartphone Android, social network, messaggistica, home banking, consegne e gestione turni.
 - Laptop domestico usato soprattutto la sera.
 - Procede per tentativi e si aspetta interazioni simili alle app quotidiane.
-- Familiarità digitale: 3/5.
+- Familiarità digitale: 3.5/5.
 
 :::
 
@@ -163,9 +152,8 @@ Limitazioni situazionali: pause brevi, stanchezza dopo il turno notturno, attenz
 
 :::
 
-:::campo | Frase rappresentativa e provenienza
+:::campo | Frase rappresentativa
 - «Se mi fido, voglio poter donare prima che finisca la pausa.»
-- Provenienza: sintesi costruita dal gruppo (non è una frase realmente raccolta).
 
 :::
 
@@ -186,10 +174,6 @@ Proto-persona costruita dal gruppo a partire da problemi di usabilità ricorrent
 :::persona
 ### P03 · Davide Rinaldi
 
-:::meta
-27/10/2026 · v3 · App di crowdfunding (servizio generico) · Proto-persona
-:::
-
 :::campo | Nome convenzionale e descrizione del profilo
 Davide Rinaldi, 39 anni, funzionario amministrativo in un ente pubblico a Torino. Vive con la compagna e un cane guida; è autonomo, analitico e impegnato per il diritto allo studio.
 
@@ -205,8 +189,8 @@ Dalla mailing list di un'associazione scopre una ricerca sulla matematica access
 - Fa volontariato in un'associazione per l'accessibilità dell'istruzione.
 - Ascolta audiolibri e podcast con sintesi vocale ad alta velocità.
 - Nel fine settimana pratica ciclismo in tandem.
-- Dona online tre o quattro volte l'anno a cause su accessibilità e istruzione.
-- Valuta l'affidabilità di un servizio anche dalla qualità semantica dell'interfaccia.
+- Dona online tre o quattro volte l'anno a progetti su accessibilità e istruzione.
+- Valuta l'affidabilità di un servizio anche sull'attenzione all'accessibilità dell'interfaccia.
 
 :::
 
@@ -256,9 +240,8 @@ Cieco dalla nascita, usa esclusivamente tastiera e sintesi vocale. Ha bisogno di
 
 :::
 
-:::campo | Frase rappresentativa e provenienza
+:::campo | Frase rappresentativa
 - «L'accessibilità mi permette di scegliere, non soltanto di entrare.»
-- Provenienza: sintesi costruita dal gruppo (non è una frase realmente raccolta).
 
 :::
 
@@ -279,12 +262,8 @@ Proto-persona costruita dal gruppo a partire da problemi di usabilità ricorrent
 :::persona
 ### P04 · Tomás García
 
-:::meta
-27/10/2026 · v3 · App di crowdfunding (servizio generico) · Proto-persona
-:::
-
 :::campo | Nome convenzionale e descrizione del profilo
-Tomás García, 31 anni, data analyst in una società di consulenza a Madrid. Single, vive in un appartamento condiviso con un amico. Ex studente Erasmus a Torino, «l'ex Erasmus ancora legato all'Italia»: tiene molto alle amicizie internazionali, all'impegno per il clima e alla trasparenza.
+Tomás García, 31 anni, data analyst in una società di consulenza a Madrid. Single, vive in un appartamento condiviso con un amico. Ex studente Erasmus a Torino, tiene molto alle amicizie internazionali, all'impegno per il clima e alla trasparenza.
 
 :::
 
@@ -321,11 +300,10 @@ Un ex compagno di corso, oggi ricercatore in Italia, gli manda il link a un prog
 :::
 
 :::campo | Difficoltà e frustrazioni
-- Legge l'italiano solo quando le parole somigliano allo spagnolo; si perde nelle frasi lunghe e nei termini tecnici.
+- Si perde nelle frasi lunghe e nei termini tecnici se non chiari.
 - La sera ha poco tempo ed energia: vuole chiudere le cose in pochi minuti.
-- Si irrita con i siti tradotti a metà, dove una parte è in inglese e il resto in italiano.
-- Trova faticosi i testi ripetuti in due lingue: tutto si allunga e deve cercare la sua riga.
-- Teme il pagamento: un messaggio d'errore in una lingua che non capisce lo blocca proprio mentre dona.
+- Si irrita con i siti che non riesce a capire per la mancanza della traduzione in inglese.
+- Teme il pagamento: un messaggio d'errore lo blocca proprio mentre dona e gli mette ansia che i suoi soldi siano andati persi.
 - Diffida di costi e commissioni poco chiari e di metodi di pagamento con nomi che non conosce.
 - Si sente spaesato quando un link lo porta su un altro sito senza avvisarlo.
 
@@ -334,16 +312,16 @@ Un ex compagno di corso, oggi ricercatore in Italia, gli manda il link a un prog
 :::campo | Contesto e vincoli di utilizzo
 - Usa le app di crowdfunding la sera, a casa, dal laptop aziendale con il browser in inglese.
 - Dallo smartphone apre i link ricevuti in chat e condivide; per pagare preferisce il laptop.
-- Dona 3–4 volte l'anno, sessioni di 10–15 minuti; su un'app italiana è la prima volta.
+- Dona 3–4 volte l'anno.
 - Si affida al traduttore automatico del browser, che però non traduce i testi nelle immagini né i messaggi che compaiono dopo un'azione.
-- Rete stabile; il vincolo principale è l'attenzione divisa tra due lingue a fine giornata.
+- Usa una rete stabile e dispositivi recenti per navigare.
 
 :::
 
 :::campo | Competenze e strumenti digitali
-- Laptop aziendale (browser in inglese), smartphone Android
+- Laptop aziendale, smartphone Android
 - Fogli di calcolo e strumenti di analisi dei dati
-- Traduttore automatico del browser, app di traduzione
+- App di traduzione sul browser
 - App di messaggistica, social network professionale
 - Carta di pagamento, wallet digitale, app della banca
 - Piattaforme di crowdfunding internazionali
@@ -353,15 +331,12 @@ Un ex compagno di corso, oggi ricercatore in Italia, gli manda il link a un prog
 
 :::campo | Esigenze di accessibilità
 - Esigenza linguistica situazionale: italiano A2, inglese C1, spagnolo madrelingua.
-- Capisce le parole simili allo spagnolo, non le frasi lunghe, il gergo né i messaggi d'errore.
-- Strategie: traduttore del browser, versione inglese quando c'è, copia del testo in un'app di traduzione, domanda all'amico italiano.
-- Limiti: la traduzione automatica salta immagini e testi che compaiono dopo, e rende male i termini tecnici.
+- La traduzione automatica dall'italiano salta immagini e testi che compaiono dopo, e rende male i termini tecnici.
 
 :::
 
-:::campo | Frase rappresentativa e provenienza
+:::campo | Frase rappresentativa
 - «Dono volentieri, ma prima voglio capire cosa sto pagando.»
-- Provenienza: sintesi costruita dal gruppo (non è una frase realmente raccolta).
 
 :::
 
@@ -373,7 +348,6 @@ Proto-persona costruita dal gruppo a partire da problemi di usabilità ricorrent
 :::campo | Ipotesi da verificare e informazioni mancanti
 - Da verificare: quanto i donatori dall'estero usano il traduttore del browser e quanto si fidano del risultato.
 - Da verificare: se il timore di commissioni nascoste porta ad abbandonare la donazione prima del pagamento.
-- Dettagli inventati da confermare: abitudini serali, gruppo di amici Erasmus come canale di condivisione.
 - Domande per l'intervista: «Racconti l'ultima volta che ha donato su un sito in una lingua che non conosce bene: che cosa l'ha fatta esitare?» · «Prima di pagare, quali informazioni cerca e dove si aspetta di trovarle?»
 
 :::
@@ -382,12 +356,8 @@ Proto-persona costruita dal gruppo a partire da problemi di usabilità ricorrent
 :::persona
 ### P05 · Luca Moretti
 
-:::meta
-27/10/2026 · v3 · App di crowdfunding (servizio generico) · Proto-persona
-:::
-
 :::campo | Nome convenzionale e descrizione del profilo
-Luca Moretti, 52 anni, elettricista e titolare di una piccola impresa con due dipendenti ad Asti. Sposato, due figli adolescenti: il maggiore studia all'università. Concreto e preciso, «il donatore che confronta prima di scegliere»: vuole aiutare chi è più indietro e sostenere il suo territorio.
+Luca Moretti, 52 anni, elettricista e titolare di una piccola impresa con due dipendenti ad Asti. Sposato con due figli: il maggiore studia all'università. Concreto e preciso, vuole aiutare chi è più indietro e sostenere il suo territorio.
 
 :::
 
@@ -426,8 +396,7 @@ Ha deciso di dare 100 € a un progetto di ricerca universitario che raccoglie f
 :::campo | Difficoltà e frustrazioni
 - Durante la settimana ha poco tempo: alle donazioni dedica il sabato mattina, a impresa chiusa.
 - Con il digitale è lento ma meticoloso; quando qualcosa non torna si ferma e ricomincia da capo.
-- Quando lo stato di una campagna è indicato solo dal colore non capisce se è aperta, chiusa o già finanziata.
-- Si spazientisce quando non può mettere in ordine i progetti e deve farli comparire un gruppo alla volta, senza sapere quanti ne mancano.
+- Si spazientisce quando non può mettere filtrare i progetti per capire chi non è ancora arrivato all'obiettivo.
 - Ogni volta che torna all'elenco riparte dall'inizio e deve ritrovare il punto in cui era.
 - Deve aprire un progetto dopo l'altro solo per capire di che cosa parla.
 - Cifre e scadenze ambigue, come giorni con il segno meno o obiettivi che cambiano, gli rendono impossibile un confronto onesto.
@@ -435,7 +404,7 @@ Ha deciso di dare 100 € a un progetto di ricerca universitario che raccoglie f
 :::
 
 :::campo | Contesto e vincoli di utilizzo
-- Usa le app di crowdfunding soprattutto il sabato mattina, in ufficio, dal PC desktop con monitor da 24 pollici.
+- Usa le app di crowdfunding soprattutto il sabato mattina dal PC desktop con monitor da 24 pollici.
 - Visite lunghe di confronto (30–40 minuti), con un foglio di carta o il foglio di calcolo accanto.
 - Dallo smartphone fa solo controlli veloci nelle settimane successive.
 - Uso ricorrente: 2–3 donazioni l'anno e controlli periodici delle campagne sostenute.
@@ -444,27 +413,26 @@ Ha deciso di dare 100 € a un progetto di ricerca universitario che raccoglie f
 :::
 
 :::campo | Competenze e strumenti digitali
-- PC desktop in ufficio con monitor da 24 pollici
-- Smartphone per controlli veloci
+- PC desktop Windows con monitor da 24 pollici
+- Smartphone iPhone per controlli veloci
 - Software di fatturazione elettronica, home banking
 - Foglio di calcolo per i conti di casa
 - Acquisti online
 - Taccuino e penna per gli appunti
-- Familiarità digitale: 3/5
+- Familiarità digitale: 4/5
 
 :::
 
 :::campo | Esigenze di accessibilità
 - Daltonismo (deuteranopia), permanente: distingue con difficoltà verde, rosso e arancione.
 - Legge bene testi e numeri: la difficoltà nasce solo quando un'informazione è affidata al colore.
-- Strategie: cerca etichette scritte e numeri, confronta le percentuali, chiede conferma in famiglia quando un colore è decisivo.
+- Strategie: cerca etichette scritte e numeri e confronta le percentuali.
 - Si trova meglio con testo scuro su sfondo chiaro e ben contrastato.
 
 :::
 
-:::campo | Frase rappresentativa e provenienza
+:::campo | Frase rappresentativa
 - «Prima di dare un euro, voglio capire chi ne ha davvero bisogno.»
-- Provenienza: sintesi costruita dal gruppo (non è una frase realmente raccolta).
 
 :::
 
@@ -476,7 +444,6 @@ Proto-persona costruita dal gruppo a partire da problemi di usabilità ricorrent
 :::campo | Ipotesi da verificare e informazioni mancanti
 - Da verificare: quanto spesso i donatori metodici annotano cifre fuori dall'app per confrontare i progetti.
 - Da verificare: quanto le persone con daltonismo si affidano a etichette e percentuali anziché al colore.
-- Dettagli inventati da confermare: confronto con il figlio universitario, aiuto dei familiari sui colori.
 - Domande per l'intervista: «Come ha scelto l'ultimo progetto a cui ha donato? Che cosa ha confrontato?» · «Dopo aver donato, come controlla com'è andata la campagna?»
 
 :::
@@ -485,12 +452,8 @@ Proto-persona costruita dal gruppo a partire da problemi di usabilità ricorrent
 :::persona
 ### P06 · Elena Conti
 
-:::meta
-27/10/2026 · v3 · App di crowdfunding (servizio generico) · Proto-persona
-:::
-
 :::campo | Nome convenzionale e descrizione del profilo
-Elena Conti, 58 anni, commercialista con studio proprio a Torino, zona Crocetta. Divorziata, una figlia medico specializzando. Rigorosa e riservata, «la donatrice che legge le condizioni»: per lei trasparenza e riservatezza vengono prima di tutto.
+Elena Conti, 58 anni, commercialista con studio proprio a Torino, zona Crocetta. Divorziata, una figlia medico specializzando. Rigorosa e riservata, per lei trasparenza e riservatezza vengono prima di tutto.
 
 :::
 
@@ -501,8 +464,9 @@ Un'ex compagna di università le racconta che il loro ateneo raccoglie fondi per
 
 :::campo | Attività e comportamenti
 - Lunghe giornate in studio tra dichiarazioni, scadenze e clienti; lavora con software gestionali, portali fiscali e PEC.
-- Il giovedì sera va al corso di yoga; è abbonata alla stagione del teatro.
-- Fa volontariato contabile per una piccola onlus: ne segue bilancio e rendicontazione.
+- Il giovedì sera va al corso di yoga
+- è abbonata alla stagione del teatro.
+- Fa volontariato per una piccola onlus: ne segue bilancio e rendicontazione.
 - Dona una volta l'anno, a dicembre, a enti di ricerca, dopo aver controllato chi sono e come usano i fondi.
 - Legge sempre condizioni d'uso, informative sulla privacy e note prima di firmare o pagare.
 - Si informa sui quotidiani e attraverso la rete di colleghi; chiede alla figlia un parere sui temi medici.
@@ -533,7 +497,7 @@ Un'ex compagna di università le racconta che il loro ateneo raccoglie fondi per
 - Si irrita quando regole e costi sono sparsi in pagine diverse e la stessa cosa ha nomi diversi.
 - Teme che i suoi dati diventino pubblici o arrivino ad altri senza che le sia stato detto chiaramente.
 - Non sopporta di dover cercare a lungo come ottenere una ricevuta e se la donazione è detraibile.
-- Vuole sapere chi c'è dietro un progetto e a chi rivolgersi, e spesso non lo trova.
+- Vuole sapere chi c'è dietro un progetto e a chi rivolgersi.
 
 :::
 
@@ -551,7 +515,6 @@ Un'ex compagna di università le racconta che il loro ateneo raccoglie fondi per
 - Smartphone per email e telefonate
 - Software gestionali e portali fiscali
 - Posta elettronica certificata (PEC)
-- Home banking
 - Familiarità digitale: 4/5
 
 :::
@@ -563,9 +526,8 @@ Un'ex compagna di università le racconta che il loro ateneo raccoglie fondi per
 
 :::
 
-:::campo | Frase rappresentativa e provenienza
+:::campo | Frase rappresentativa
 - «Prima di donare leggo tutto: se qualcosa non torna, non dono.»
-- Provenienza: sintesi costruita dal gruppo (non è una frase realmente raccolta).
 
 :::
 
@@ -577,7 +539,6 @@ Proto-persona costruita dal gruppo a partire da problemi di usabilità ricorrent
 :::campo | Ipotesi da verificare e informazioni mancanti
 - Da verificare: quanto la coerenza di date e numeri influenza la fiducia di chi dona per la prima volta.
 - Da verificare: quanti donatori scelgono l'anonimato e sanno quali dati riceve comunque il promotore.
-- Dettagli inventati da confermare: lettura delle condizioni su due monitor, ruolo dell'ex compagna come fonte.
 - Domande per l'intervista: «Che cosa le serve vedere per fidarsi di un servizio di raccolta fondi che non conosce?» · «Quali documenti si aspetta di ricevere dopo una donazione?»
 
 :::
@@ -585,10 +546,6 @@ Proto-persona costruita dal gruppo a partire da problemi di usabilità ricorrent
 
 :::persona
 ### P07 · Giulia Esposito
-
-:::meta
-31/10/2026 · v2 · Funds TOgether · Università di Torino · P07 · Giulia Esposito — Donatrice alla prima esperienza · Dispositivo principale: iPhone · Familiarità digitale: 4/5
-:::
 
 :::campo | Nome convenzionale e descrizione del profilo
 Giulia, 20 anni, è una studentessa fuorisede di Biotecnologie a Torino, originaria di Salerno. Vive con due coinquiline. È interessata a iniziative vicine ai suoi studi, ma non ha mai sostenuto un progetto di crowdfunding.
@@ -627,9 +584,8 @@ Sul tram verso l'università vede una storia su Instagram dedicata a una raccolt
 
 :::campo | Difficoltà e frustrazioni
 - Se la pagina iniziale non chiarisce lo scopo dell'iniziativa, teme di essere nel posto sbagliato.
-- Si disorienta quando i contenuti più utili per chi vuole donare non sono visibili subito.
-- Trova faticosi titoli incompleti, etichette ambigue e parole inglesi non spiegate.
-- Non sempre nota che un carosello contiene altri progetti da scoprire.
+- Si disorienta quando i contenuti più utili non sono visibili subito.
+- Trova faticosi titoli incompleti, etichette ambigue e parole tecniche non spiegate.
 - Nei testi lunghi senza sezioni perde il punto, anche usando la lettura vocale.
 - Si sente scoraggiata se scopre il minimo donabile solo dopo aver inserito una cifra.
 
@@ -644,7 +600,7 @@ Sul tram verso l'università vede una storia su Instagram dedicata a una raccolt
 
 :::campo | Competenze e strumenti digitali
 - 4/5 nell'uso di social e app; minore confidenza con moduli complessi e testi molto lunghi.
-- Usa iPhone, Safari, Instagram, WhatsApp e servizi di pagamento digitale.
+- Usa un iPhone e regolarmente naviga tramite Safari e si tiene in contatto con le persone tramite Instagram e WhatsApp.
 - Sa verificare un link, condividere contenuti e attivare la lettura vocale.
 
 :::
@@ -661,18 +617,15 @@ Sul tram verso l'università vede una storia su Instagram dedicata a una raccolt
 
 :::
 
-:::campo | Elementi da considerare nel progetto
-- Una presentazione immediata dell'iniziativa e dei progetti attivi riduce l'incertezza iniziale.
-- Gerarchia visiva, linguaggio semplice e sezioni brevi rendono la lettura più agevole.
-- Importo minimo, metodi di pagamento e passaggi successivi devono essere visibili prima della conferma.
+:::campo | Fonti ed evidenze disponibili
+Proto-persona costruita dal gruppo a partire da problemi di usabilità ricorrenti nelle app di crowdfunding (stato delle campagne affidato al colore, assenza di filtri, cifre e scadenze ambigue). Non c'è ricerca diretta con utenti.
 
 :::
 
-:::campo | Aspetti da verificare con utenti
-- Quanto l'indice e il linguaggio semplice facilitino la lettura per studentesse e studenti con DSA.
-- Se la condivisione contribuisca a far conoscere i progetti anche quando la donazione è piccola.
-- Quali informazioni siano decisive per fidarsi al primo accesso.
-- Profilo di riferimento per la progettazione del servizio.
+:::campo | Ipotesi da verificare e informazioni mancanti
+- Da verificare: quanto l'indice e il linguaggio semplice facilitino la lettura per studentesse e studenti con DSA.
+- Da verificare: se la condivisione contribuisca a far conoscere i progetti anche quando la donazione è piccola.
+- Domande per l'intervista: «Che cosa ha guardato per decidere se fidarsi l'ultima volta che ha aperto il link di una raccolta fondi?» · «Quando un testo online è lungo o difficile, che cosa fa per riuscire a capirlo?»
 
 :::
 :::
@@ -680,25 +633,21 @@ Sul tram verso l'università vede una storia su Instagram dedicata a una raccolt
 :::persona
 ### P08 · Roberta Galli
 
-:::meta
-31/10/2026 · v2 · Funds TOgether · Università di Torino · P08 · Roberta Galli — Visitatrice per lavoro · Dispositivo principale: Laptop · Familiarità digitale: 5/5
-:::
-
 :::campo | Nome convenzionale e descrizione del profilo
 Roberta, 47 anni, vive a Torino, è giornalista scientifica freelance, sposata e madre di due figli. Lavora soprattutto da casa e cerca fonti solide per raccontare la ricerca al pubblico.
 
 :::
 
 :::campo | Scenario e obiettivo principale
-In una settimana con consegna venerdì, deve ricostruire le precedenti edizioni dell'iniziativa: progetti, risultati e persone coinvolte. Vuole pubblicare un articolo accurato, con dati verificabili e collegamenti affidabili.
+In una settimana deve ricostruire le precedenti edizioni dell'iniziativa: progetti, risultati e persone coinvolte. Vuole pubblicare un articolo accurato, con dati verificabili e collegamenti affidabili.
 
 :::
 
 :::campo | Attività e comportamenti
 - Apre molte schede e annota dati in un foglio di calcolo.
-- Alterna ricerca sul sito, fonti istituzionali, email e telefonate.
+- Alterna ricerca sul sito, email e telefonate.
 - Confronta numeri e date prima di citarli.
-- Riprende il lavoro dopo interruzioni e scadenze.
+- Riprende il lavoro dopo alcune interruzioni.
 - Cerca di coprire l'insieme dei progetti, non soltanto quelli trovati per primi.
 
 :::
@@ -737,9 +686,10 @@ In una settimana con consegna venerdì, deve ricostruire le precedenti edizioni 
 :::
 
 :::campo | Competenze e strumenti digitali
-- 5/5: ricerca avanzata, archivi online e verifica delle fonti.
+- Fa spesso Ricerca avanzata, archivi online e verifica delle fonti.
 - Usa un laptop con molte schede aperte e lo smartphone per foto e telefonate.
 - Sa ricostruire percorsi informativi complessi, ma si aspetta che le informazioni essenziali siano disponibili e coerenti.
+- Familiarità digitale: 4/5.
 
 :::
 
@@ -750,32 +700,25 @@ In una settimana con consegna venerdì, deve ricostruire le precedenti edizioni 
 :::
 
 :::campo | Frase rappresentativa
-«Se non posso ricostruire la fonte, non posso pubblicare il numero.»
+«Se non posso ricostruire la fonte, non posso pubblicare l'articolo.»
 
 :::
 
-:::campo | Elementi da considerare nel progetto
-- Date, dati aggregati e fonti devono essere contestualizzati e coerenti.
-- Filtri, ordinamento e stato dei risultati aiutano a svolgere una ricerca completa.
-- Contatti e informazioni sul gruppo proponente devono essere facili da individuare.
+:::campo | Fonti ed evidenze disponibili
+Proto-persona costruita dal gruppo a partire da problemi di usabilità ricorrenti nelle app di crowdfunding (stato delle campagne affidato al colore, assenza di filtri, cifre e scadenze ambigue). Non c'è ricerca diretta con utenti.
 
 :::
 
-:::campo | Aspetti da verificare con utenti
-- Se filtri per edizione e strumenti di esportazione riducano la verifica manuale.
-- Quali informazioni consentano a chi scrive di citare correttamente risultati e fonti.
-- In che modo le persone ritrovino una ricerca interrotta.
-- Profilo di riferimento per la progettazione del servizio.
+:::campo | Ipotesi da verificare e informazioni mancanti
+- Da verificare: se filtri per edizione e strumenti di esportazione riducano la verifica manuale.
+- Da verificare: in che modo le persone ritrovino una ricerca interrotta.
+- Domande per l'intervista: «Quali informazioni le servono per citare correttamente risultati e fonti di un progetto?» · «Racconti l'ultima volta che ha dovuto riprendere una ricerca interrotta: come ha ritrovato il punto in cui era?»
 
 :::
 :::
 
 :::persona
 ### P09 · Chiara Marino
-
-:::meta
-31/10/2026 · v2 · Funds TOgether · Università di Torino · P09 · Chiara Marino — Promotrice alla prima campagna · Dispositivo principale: Laptop macOS con Safari · Familiarità digitale: 4/5
-:::
 
 :::campo | Nome convenzionale e descrizione del profilo
 Chiara, 32 anni, vive a Torino con il compagno ed è assegnista in ecologia. Vorrebbe finanziare i campionamenti di un progetto sugli impollinatori urbani, ma non ha mai gestito una campagna di crowdfunding.
@@ -805,7 +748,7 @@ In tre sere dopo il laboratorio, dopo aver sentito parlare dell'iniziativa in ri
 :::
 
 :::campo | Obiettivi e motivazioni
-- Valutare la candidatura del progetto sugli impollinatori.
+- Valutare la candidatura del progetto su cui sta lavorando.
 - Capire se la modalità di finanziamento è sostenibile per il gruppo di ricerca.
 - Avviare il percorso appropriato senza errori.
 - Parlare con un referente e preparare le prime bozze della proposta.
@@ -817,8 +760,7 @@ In tre sere dopo il laboratorio, dopo aver sentito parlare dell'iniziativa in ri
 - Si disorienta se non è chiaro chi segue il programma e a chi chiedere informazioni.
 - Le guide lunghe, senza indice o con testi piccoli, sono difficili da consultare nelle sue brevi sessioni serali.
 - Il gergo promozionale e termini diversi per la stessa attività le fanno dubitare di avere capito bene.
-- La scoperta tardiva di eventuali costi mette in discussione il tempo già investito.
-- Moduli con etichette poco chiare o messaggi d'errore persistenti rallentano un passaggio che si aspetta lineare.
+- La scoperta tardiva di eventuali costi la irritano.
 
 :::
 
@@ -830,10 +772,11 @@ In tre sere dopo il laboratorio, dopo aver sentito parlare dell'iniziativa in ri
 :::
 
 :::campo | Competenze e strumenti digitali
-- 4/5: usa banche dati, piattaforme per bandi e social.
+- Consulta regolarmente banche dati, piattaforme per bandi e social.
 - Non ha esperienza di crowdfunding né di marketing.
 - Usa abitualmente email, siti istituzionali, telefono e moduli online.
-
+- Familiarità digitale: 4/5.
+- 
 :::
 
 :::campo | Esigenze di accessibilità
@@ -847,18 +790,15 @@ In tre sere dopo il laboratorio, dopo aver sentito parlare dell'iniziativa in ri
 
 :::
 
-:::campo | Elementi da considerare nel progetto
-- Requisiti, scadenze, costi e contatti devono essere raccolti in un punto chiaro del percorso.
-- Una guida strutturata per fasi aiuta chi affronta la candidatura per la prima volta.
-- Il modulo deve offrire istruzioni comprensibili, controlli tempestivi e messaggi d'errore utili.
+:::campo | Fonti ed evidenze disponibili
+Proto-persona costruita dal gruppo a partire da problemi di usabilità ricorrenti nelle app di crowdfunding (stato delle campagne affidato al colore, assenza di filtri, cifre e scadenze ambigue). Non c'è ricerca diretta con utenti.
 
 :::
 
-:::campo | Aspetti da verificare con utenti
-- Se il percorso rispecchi il modo in cui ricercatrici e ricercatori cercano informazioni sui bandi.
-- Quali dettagli siano necessari per decidere se iniziare una candidatura.
-- Quanto sia utile poter salvare i progressi e riprendere il lavoro in un secondo momento.
-- Profilo di riferimento per la progettazione del servizio.
+:::campo | Ipotesi da verificare e informazioni mancanti
+- Da verificare: se il percorso rispecchi il modo in cui ricercatrici e ricercatori cercano informazioni sui bandi.
+- Da verificare: quanto sia utile poter salvare i progressi e riprendere il lavoro in un secondo momento.
+- Domande per l'intervista: «Quali dettagli le servono per decidere se iniziare una candidatura?» · «Come organizza il lavoro su un bando quando può dedicargli solo poche sere?»
 
 :::
 :::
@@ -866,14 +806,9 @@ In tre sere dopo il laboratorio, dopo aver sentito parlare dell'iniziativa in ri
 :::persona
 ### P10 · Franco Gallo
 
-:::meta
-27/10/2026 · v2 · Sito di crowdfunding dell'Università di Torino (nuovo sito progettato dal Gruppo A) · Proto-persona
-:::
-
 :::campo | Nome convenzionale e descrizione del profilo
 - Franco Gallo, 63 anni, Torino. Professore ordinario in un dipartimento UniTo di area veterinaria; apicoltore per passione.
-- Responsabile scientifico della campagna fittizia «AlveareSano» (salute delle api) sul sito di crowdfunding dell'Ateneo: è al 130% dell'obiettivo con 20 giorni rimasti.
-- Archetipo: «il responsabile scientifico con poco tempo».
+- Responsabile scientifico della campagna «AlveareSano» sul sito di crowdfunding dell'Ateneo: è al 130% dell'obiettivo con 20 giorni rimasti.
 
 :::
 
@@ -884,7 +819,7 @@ In tre sere dopo il laboratorio, dopo aver sentito parlare dell'iniziativa in ri
 :::
 
 :::campo | Attività e comportamenti
-- Ogni mattina guarda dal PC dello studio solo percentuale, raccolto e giorni rimasti, in 2–3 minuti.
+- Ogni mattina guarda dal PC dello studio solo percentuale, raccolto e giorni rimasti.
 - Delega a un dottorando i testi degli aggiornamenti, le foto e i rapporti con l'ufficio crowdfunding d'Ateneo.
 - Presenta il progetto a eventi pubblici e agli incontri con gli apicoltori del territorio.
 - Riceve via email e telefono le domande dei donatori e risponde di persona.
@@ -895,16 +830,7 @@ In tre sere dopo il laboratorio, dopo aver sentito parlare dell'iniziativa in ri
 :::campo | Bisogni e aspettative
 - Capire a colpo d'occhio a che punto è la campagna, senza dover interpretare grafici.
 - Mostrare ai donatori che la raccolta resta aperta e utile anche oltre il 100%.
-- Far arrivare il messaggio del cofinanziamento proprio dove la gente decide di donare.
 - Ricevere meno domande ripetitive: le risposte di base dovrebbero essere già sulla pagina.
-
-
-**Bisogni informativi**
-
-- Stato della campagna in parole: raccolto, giorni rimasti, «obiettivo raggiunto, raccolta ancora aperta».
-- Regole del cofinanziamento d'Ateneo: quando scatta, fino a quanto e se vale anche oltre l'obiettivo.
-- Come appare il progetto a chi lo trova nell'elenco: titolo completo, tema, gruppo e dipartimento.
-- Che cosa succede alla pagina e ai fondi a campagna chiusa; che cosa e come rendicontare ai donatori.
 
 :::
 
@@ -912,67 +838,55 @@ In tre sere dopo il laboratorio, dopo aver sentito parlare dell'iniziativa in ri
 - Raggiungere il secondo obiettivo per finanziare più campionamenti negli apiari.
 - Far capire che, con il cofinanziamento dell'Ateneo, raggiungere l'obiettivo vale il doppio.
 - Chiudere con una buona immagine del gruppo e dell'Ateneo e tenere i donatori come pubblico per i risultati.
-- Successo per lui: meno email di chiarimento, più donazioni nell'ultima settimana, un resoconto finale letto dai donatori.
 
 :::
 
 :::campo | Difficoltà e frustrazioni
 - Dubbio: «Come spiego che serve ancora donare, ora che abbiamo superato l'obiettivo?»
 - Poco tempo e poca pazienza per imparare uno strumento nuovo: se una cosa richiede più di qualche minuto, la delega o la rimanda.
-- Teme che una campagna «al 130%» venga letta come chiusa: un amico gli ha già scritto «Complimenti, allora non serve più!».
-- Si confonde con soglie diverse (primo obiettivo, nuovo obiettivo, cofinanziamento) e non saprebbe spiegarle in una frase.
-- Non vede con i suoi occhi l'esperienza dei donatori: i problemi gli arrivano di seconda mano e in ritardo («ho scritto al gruppo, ma nessuno mi ha risposto»).
-- Con la presbiopia fatica a leggere in pochi secondi testi piccoli e barre sottili.
-
-
-**Fiducia: che cosa la favorisce (+) e che cosa la riduce (−)**
-
-- + Per lui: la selezione e l'accompagnamento dell'Ateneo; un referente dell'ufficio con nome e telefono.
-- + Per i suoi donatori: nome del gruppo, del dipartimento e dell'Università sulla pagina; stato della raccolta chiaro, con la scadenza.
-- − Per i suoi donatori: numeri ambigui o soglie non spiegate, che fanno nascere domande.
-- − Per i donatori e per lui: un contatto con il gruppo che non dà riscontro; nessuna notizia sull'uso dei fondi a campagna chiusa.
+- Teme che una campagna «al 130%» venga letta come chiusa.
+- Si confonde con soglie diverse (primo obiettivo, nuovo obiettivo, cofinanziamento).
+- Con la presbiopia fatica a leggere testi piccoli e barre sottili.
 
 :::
 
 :::campo | Contesto e vincoli di utilizzo
 - Studio in dipartimento, PC fisso con monitor da 27 pollici; smartphone solo per email e telefonate.
-- Frequenza: quotidiana durante la campagna (2–3 minuti tra una riunione e l'altra); dopo la chiusura, poche visite per il resoconto finale.
+- Frequenza: quotidiana durante la campagna.
 - Attenzione divisa e interrotta: legge solo ciò che salta all'occhio nella parte alta della pagina.
 - Molti contatti con il sito sono indiretti: domande di donatori, colleghi e ufficio stampa.
 
 :::
 
 :::campo | Competenze e strumenti digitali
-- Familiarità digitale 2/5: usa con sicurezza email, piattaforme per i bandi e presentazioni; si blocca su pannelli e impostazioni.
-- È esperto nel suo campo e sa raccontare la ricerca al pubblico: la difficoltà è il tempo, non la comprensione.
-- Windows, browser predefinito, posta d'Ateneo, telefono.
-- Familiarità con il crowdfunding: bassa; è la sua prima campagna e non ha mai donato online [IPOTESI].
+- Usa con sicurezza email, piattaforme per i bandi e presentazioni ma rallenta se deve imparare un nuovo strumento.
+- È esperto nel suo campo e sa raccontare la ricerca al pubblico.
+- Use Windows con Microsoft Edge e un iPhone.
+- Ha poca familiarità con il crowdfunding: è la sua prima campagna e non ha mai donato online.
+- Familiarità digitale 2.5/5
 
 :::
 
 :::campo | Esigenze di accessibilità
 - Presbiopia lieve (permanente): con testi piccoli e contrasti deboli avvicina il viso allo schermo o usa lo zoom del browser al 125%.
-- Situazionale: attenzione divisa e pochi minuti per volta; ha bisogno di informazioni riconoscibili a colpo d'occhio (riconoscimento anziché ricordo).
+- Situazionale: attenzione divisa e pochi minuti per volta; ha bisogno di informazioni riconoscibili a colpo d'occhio.
 
 :::
 
-:::campo | Frase rappresentativa e provenienza
+:::campo | Frase rappresentativa
 - «Siamo al 130%, ma devo spiegare a tutti che serve ancora donare.»
-- Provenienza: sintesi costruita dal gruppo (non è una frase realmente raccolta).
 
 :::
 
 :::campo | Fonti ed evidenze disponibili
 - Proto-persona costruita dal gruppo per il nuovo sito di crowdfunding dell'Università di Torino, a partire dai bisogni emersi nella valutazione euristica dell'Assignment 1, riformulati senza riferimento alla piattaforma analizzata (stato delle campagne, cofinanziamento, contatto con il gruppo, campagne concluse).
-- Nessuna ricerca diretta con utenti.
 
 :::
 
 :::campo | Ipotesi da verificare e informazioni mancanti
-- Inventati per realismo: campagna «AlveareSano» e le sue cifre, delega al dottorando, episodi delle domande ricevute.
-- [IPOTESI] Regola del cofinanziamento (raddoppio al raggiungimento dell'obiettivo, con un tetto massimo): da verificare sul regolamento d'Ateneo, anche per le donazioni oltre il 100%.
-- [IPOTESI] Aggiornamenti e resoconti pubblicati tramite l'ufficio crowdfunding d'Ateneo: il prototipo non prevede un'area riservata.
-- Domande di validazione: «Che domande vi fanno i donatori dopo il 100%?» «Come raccontate ai donatori i risultati a campagna chiusa?»
+- Da verificare: quanto una percentuale oltre il 100% venga letta dai donatori come una campagna ormai chiusa.
+- Da verificare: se i responsabili scientifici consultino direttamente la pagina o deleghino quasi tutto ai collaboratori.
+- Domande per l'intervista: «Che domande le fanno i donatori dopo il 100%?» · «Come racconta ai donatori i risultati a campagna chiusa?»
 
 :::
 :::
@@ -980,45 +894,31 @@ In tre sere dopo il laboratorio, dopo aver sentito parlare dell'iniziativa in ri
 :::persona
 ### P11 · Amir Haddad
 
-:::meta
-27/10/2026 · v2 · Sito di crowdfunding dell'Università di Torino (nuovo sito progettato dal Gruppo A) · Proto-persona
-:::
-
 :::campo | Nome convenzionale e descrizione del profilo
 - Amir Haddad, 27 anni, Torino. Libanese, in Italia da cinque anni; arabo madrelingua, inglese C1, italiano B2.
-- Dottorando in Informatica a UniTo; cura la comunicazione della campagna fittizia «OpenAria» (sensori open source per la qualità dell'aria) sul sito di crowdfunding dell'Ateneo.
-- Archetipo: «il dottorando che fa da social media manager».
+- Dottorando in Informatica a UniTo; cura la comunicazione del progetto di ricerca «OpenAria».
 
 :::
 
 :::campo | Scenario e obiettivo principale
-- Domenica sera pubblica su LinkedIn e Instagram un post in inglese su «OpenAria»; lunedì mattina trova su WhatsApp lo screenshot di una collega di Beirut ferma a metà donazione davanti a un messaggio in italiano.
-- Obiettivo: portare donatori dall'estero e far sì che completino la donazione da soli, nella loro lingua.
+- Domenica sera pubblica su LinkedIn e Instagram un post in inglese su «OpenAria»; lunedì mattina trova su WhatsApp lo screenshot di una collega di Beirut ferma a metà donazione sul sito di crowdfunding davanti a un messaggio in italiano.
+- Obiettivo: portare donatori dall'estero e far sì che completino la donazione da soli, in una lingua che loro comprendano.
 
 :::
 
 :::campo | Attività e comportamenti
 - Scrive i testi prima in inglese, poi li traduce in italiano con l'aiuto di un collega.
 - Condivide il link della campagna su Instagram, LinkedIn e nei gruppi WhatsApp e controlla come si apre da smartphone.
-- Naviga quasi solo da tastiera (Tab, scorciatoie, Esc) e apre gli strumenti per sviluppatori quando qualcosa non va.
-- Raccoglie i messaggi dei donatori in difficoltà e li aiuta uno per uno, spesso con screenshot.
-- Il venerdì prepara per il gruppo un breve report con numeri e problemi della settimana.
+- Naviga quasi solo da tastiera (Tab, scorciatoie, Esc).
+- Raccoglie i messaggi dei donatori in difficoltà e li aiuta uno per uno, spesso con screenshot o video tutorial.
+- Il venerdì prepara per il gruppo un breve report con i numeri delle campagne social.
 
 :::
 
 :::campo | Bisogni e aspettative
 - Un percorso interamente in inglese per i donatori stranieri, dalla scheda del progetto alla conferma.
-- Scrivere un contenuto una volta per lingua, senza testi doppi e mescolati da tenere allineati.
 - Pagine leggere e chiare da smartphone, perché quasi tutto il suo pubblico arriva dai social.
 - Un'interfaccia coerente e usabile da tastiera, con comandi prevedibili.
-
-
-**Bisogni informativi**
-
-- Quali parti del sito sono tradotte e come vede la pagina un donatore straniero.
-- Regole della donazione (importo minimo, «tutto o niente», cofinanziamento) da spiegare in inglese.
-- Link e testi pronti da condividere, con un'anteprima corretta sui social.
-- A chi segnalare un problema del sito e in quanto tempo viene preso in carico [IPOTESI].
 
 :::
 
@@ -1026,67 +926,54 @@ In tre sere dopo il laboratorio, dopo aver sentito parlare dell'iniziativa in ri
 - Aumentare i donatori internazionali e ridurre le richieste di aiuto.
 - Dare un'immagine professionale al gruppo e all'Ateneo davanti ai colleghi esteri.
 - Mettere alla prova le sue competenze di comunicazione, utili per la carriera.
-- Successo per lui: più donazioni dai link condivisi, nessun messaggio «I can't complete the payment».
 
 :::
 
 :::campo | Difficoltà e frustrazioni
 - Dubbio: «Un donatore estero capisce le regole e l'importo minimo prima di pagare?»
 - Tempo sottratto alla tesi: ogni ora passata ad assistere i donatori è un'ora in meno di ricerca.
-- Ha già visto siti «a metà» in inglese, con pezzi in italiano proprio al momento del pagamento: teme che i suoi contatti rinuncino.
-- Gli errori spiegati solo dopo l'invio, e solo in italiano, gli portano richieste di aiuto che non dovrebbero esistere.
+- Gli errori spiegati solo in italiano, gli portano richieste di aiuto che potrebbero essere risolte senza sprecare il suo tempo.
 - Si irrita con menu e finestre che non si chiudono con Esc o perdono il focus: rallentano chi usa la tastiera.
 - Pagine lente e caroselli poco chiari su smartphone fanno sparire chi arriva da Instagram.
 - Piccoli difetti (pulsanti senza riscontro, elementi che sembrano link e non lo sono) fanno sembrare la campagna poco professionale.
 
-
-**Fiducia: che cosa la favorisce (+) e che cosa la riduce (−)**
-
-- + Per lui: un sito curato tecnicamente, accessibile e coerente; condivisione con un clic.
-- + Per i donatori esteri: l'affiliazione a un'università pubblica e una versione inglese completa.
-- − Per i donatori esteri: lingue mescolate e termini tecnici non tradotti; la campagna sembra improvvisata.
-- − Per i donatori esteri: messaggi di errore in italiano proprio al momento del pagamento.
-
 :::
 
 :::campo | Contesto e vincoli di utilizzo
-- Laboratorio, casa e mezzi pubblici; laptop Linux per scrivere e verificare, smartphone Android per social e messaggi.
-- Frequenza: quotidiana durante la campagna, sessioni brevi e frequenti più una sessione lunga il venerdì per il report.
-- Non gestisce il sito: prepara i contenuti e segnala i problemi all'ufficio che lo cura [IPOTESI].
+- Laboratorio, casa e mezzi pubblici; laptop Linux per scrivere gli articoli e smartphone Android per social e messaggi.
+- Non gestisce il sito: prepara i contenuti e segnala i problemi all'ufficio che lo cura.
 - Fa da ponte tra il gruppo e i donatori: vede i problemi in prima persona e attraverso i messaggi che riceve.
 
 :::
 
 :::campo | Competenze e strumenti digitali
-- Familiarità digitale 5/5: sviluppatore e power user; ispeziona il codice delle pagine e ne misura le prestazioni.
-- Familiarità con il crowdfunding: media; ha donato ad alcune campagne online [IPOTESI], ma è la sua prima campagna da promotore.
-- Ubuntu, Firefox con estensioni, Android con Chrome; Instagram, LinkedIn, WhatsApp, Canva.
+- è uno sviluppatore; ispeziona il codice delle pagine e ne misura le prestazioni.
+- Ha donato ad alcune campagne online  ma è la sua prima campagna da promotore.
+- Usa Ubuntu, Firefox con estensioni, Android con Chrome; Instagram, LinkedIn, WhatsApp, Canva.
+- Familiarità digitale 5/5
 
 :::
 
 :::campo | Esigenze di accessibilità
-- Situazionale e per scelta: usa quasi solo la tastiera, quindi ha bisogno di focus visibile, Esc funzionante e scorciatoie.
+- Usa quasi solo la tastiera per scelta, quindi ha bisogno di focus visibile, Esc funzionante e scorciatoie.
 - Linguistica: italiano B2; legge bene ma scrive con qualche incertezza, preferisce scrivere in inglese e far rivedere i testi.
 
 :::
 
-:::campo | Frase rappresentativa e provenienza
-- «Porto donatori dall'estero: il sito deve parlare anche la loro lingua.»
-- Provenienza: sintesi costruita dal gruppo (non è una frase realmente raccolta).
+:::campo | Frase rappresentativa
+- «Porto donatori alla campagna: il sito deve essere comprensibile per tutti. »
 
 :::
 
 :::campo | Fonti ed evidenze disponibili
 - Proto-persona costruita dal gruppo per il nuovo sito di crowdfunding dell'Università di Torino, a partire dai bisogni emersi nella valutazione euristica dell'Assignment 1, riformulati senza riferimento alla piattaforma analizzata (lingue, modulo di donazione, uso da smartphone e da tastiera).
-- Nessuna ricerca diretta con utenti.
 
 :::
 
 :::campo | Ipotesi da verificare e informazioni mancanti
-- Inventati per realismo: campagna «OpenAria», abitudini di scrittura, canali social, messaggi dei donatori.
-- [IPOTESI] I team inviano i contenuti bilingui all'ufficio che gestisce il sito: il prototipo non prevede un'area riservata.
-- Differenza con P10: stessa fase della campagna, ma Amir cura diffusione e pubblico internazionale; Franco stato della raccolta, cofinanziamento e resoconto.
-- Domande di validazione: «Quanti donatori arrivano dall'estero e dove si fermano?» «Quanto tempo vi richiede scrivere i contenuti in due lingue?»
+- Da verificare: quanto il pubblico internazionale completi la donazione se una parte del percorso resta in italiano.
+- Da verificare: quanta parte dei donatori arrivi dai social e da smartphone rispetto agli altri canali.
+- Domande per l'intervista: «Quanti donatori arrivano dall'estero e dove si fermano?» · «Quanto tempo le richiede scrivere i contenuti in due lingue?»
 
 :::
 :::
@@ -1094,19 +981,14 @@ In tre sere dopo il laboratorio, dopo aver sentito parlare dell'iniziativa in ri
 :::persona
 ### P12 · Maria Lombardi
 
-:::meta
-27/10/2026 · v2 · Sito di crowdfunding dell'Università di Torino (nuovo sito progettato dal Gruppo A) · Proto-persona
-:::
-
 :::campo | Nome convenzionale e descrizione del profilo
 - Maria Lombardi, 49 anni, Torino. Impiegata part-time in un'agenzia assicurativa e presidente volontaria di un'associazione di quartiere che gestisce un doposcuola per ragazzi delle medie.
-- Esterna all'Università: non può proporre una campagna da sola, ma vuole costruire un progetto insieme a un gruppo di ricerca UniTo [IPOTESI].
-- Archetipo: «la volontaria che cerca l'Università».
+- Esterna all'Università: non può proporre una campagna da sola, ma vuole costruire un progetto insieme ad altre persone.
 
 :::
 
 :::campo | Scenario e obiettivo principale
-- Giovedì sera, dopo la riunione dell'associazione, una volontaria le manda su WhatsApp il link del sito di crowdfunding dell'Università: «Potremmo fare il laboratorio di scienze con loro!». Maria lo apre dallo smartphone e il giorno dopo continua dal PC dell'associazione.
+- Giovedì sera, dopo la riunione dell'associazione, una volontaria le manda su WhatsApp il link del sito di crowdfunding: «Potremmo fare il laboratorio di scienze con loro!». Maria lo apre dallo smartphone e il giorno dopo continua dal PC dell'associazione.
 - Obiettivo: capire se un'associazione può partecipare, a quali condizioni e chi contattare, prima di portare l'idea al direttivo.
 
 :::
@@ -1123,84 +1005,61 @@ In tre sere dopo il laboratorio, dopo aver sentito parlare dell'iniziativa in ri
 :::campo | Bisogni e aspettative
 - Capire subito che cos'è il sito e chi c'è dietro, per potersi fidare.
 - Sapere che cosa può fare un'associazione, invece di scoprire a metà strada che il percorso non è per lei.
-- Parole semplici e pochi passaggi chiari.
-- Controlli grandi e tolleranti agli errori, che non richiedano gesti precisi.
 - Poter parlare con una persona quando ha dubbi.
-
-
-**Bisogni informativi**
-
-- Chi può proporre un progetto e se gli enti esterni possono partecipare come partner.
-- Chi contattare in Università e come presentare l'idea.
-- Se l'associazione deve sostenere costi o commissioni e quali impegni si prende.
-- Esempi di progetti UniTo con scuole o realtà del territorio.
 
 :::
 
 :::campo | Obiettivi e motivazioni
-- Portare nel doposcuola un laboratorio di scienze seguito da un gruppo di ricerca UniTo.
+- Portare nel doposcuola un laboratorio di scienze per aiutare il quartiere.
 - Finanziare computer e materiali per il laboratorio (circa 5.000 €) senza esporre l'associazione a spese impreviste.
 - Dare ai ragazzi del quartiere un contatto con l'Università.
-- Successo per lei: arrivare in riunione con un nome e un contatto in Università e un'idea chiara di che cosa spetta all'associazione.
 
 :::
 
 :::campo | Difficoltà e frustrazioni
 - Dubbio: «Un'associazione può partecipare? O serve per forza un professore?»
-- Tempo limitato tra lavoro e volontariato: ogni passaggio in più la scoraggia.
+- Tempo limitato tra lavoro e volontariato: ogni passaggio in più le fa perdere tempo prezioso.
 - Non conosce il mondo universitario: dipartimenti, uffici e ruoli le sembrano un labirinto.
 - Davanti a un sito nuovo vuole capire subito che cos'è e chi c'è dietro; se non lo capisce, non si fida.
 - Si allarma quando scopre i costi tardi o scritti in piccolo: «che cos'altro non mi hanno detto?».
-- Parole come «campaign manager» o «fee» e FAQ lunghissime la fanno sentire fuori posto.
 - Con il tremore sbaglia voce nei menu fitti e nei bersagli piccoli; i moduli che nascondono le etichette o mostrano errori poco chiari le fanno credere di aver sbagliato tutto.
-
-
-**Fiducia: che cosa la favorisce (+) e che cosa la riduce (−)**
-
-- + Il marchio dell'Università, un telefono con gli orari e una persona che risponde.
-- + Esempi di progetti già realizzati con scuole e realtà del territorio; il consiglio di una volontaria che conosce.
-- − Non capire chi gestisce il sito né se il percorso è aperto agli enti esterni.
-- − Costi o impegni scoperti solo a metà strada.
 
 :::
 
 :::campo | Contesto e vincoli di utilizzo
 - Sera a casa con lo smartphone Android; nei giorni seguenti dal vecchio PC Windows dell'associazione, con schermo piccolo.
-- Frequenza: prima visita; se la collaborazione parte, uso intensivo per circa due mesi insieme al gruppo UniTo.
 - Tempo limitato tra lavoro part-time e volontariato; sessioni spezzate tra due dispositivi.
 - Teme di impegnare l'associazione senza volerlo compilando moduli che non capisce.
 
 :::
 
 :::campo | Competenze e strumenti digitali
-- Familiarità digitale 2/5: usa con sicurezza WhatsApp, Facebook ed email; si blocca su moduli lunghi, menu a tendina e termini tecnici.
-- Familiarità con il crowdfunding: nessuna da promotrice; ha donato una volta a una raccolta su un social [IPOTESI]. Non conosce gli uffici dell'Università.
-- Smartphone Android con Chrome; PC Windows datato con browser predefinito.
-
+- Usa con sicurezza WhatsApp, Facebook ed email; si blocca su moduli lunghi, menu a tendina e termini tecnici.
+- Ha donato una volta ad una raccolta su un social.
+- Usa uno smartphone Android con Chrome e un PC Windows molto datato con Internet Explorer.
+- Familiarità digitale 2.5/5
 :::
 
 :::campo | Esigenze di accessibilità
-- Tremore essenziale lieve alle mani (permanente): fatica con bersagli piccoli, tendine e gesti precisi; per la legge di Fitts bersagli piccoli e lontani richiedono più tempo e causano più errori.
+- Tremore essenziale lieve alle mani (permanente): fatica con bersagli piccoli, tendine e gesti precisi.
 - Strategie: appoggia il telefono sul tavolo e usa l'indice, ingrandisce la pagina, preferisce il PC per i testi lunghi e la telefonata ai moduli.
 
 :::
 
-:::campo | Frase rappresentativa e provenienza
-- «So organizzare il quartiere; non so a quale porta bussare in Università.»
-- Provenienza: sintesi costruita dal gruppo (non è una frase realmente raccolta).
+:::campo | Frase rappresentativa
+- «So organizzare il quartiere e mi impegno per renderlo un posto migliore»
 
 :::
 
 :::campo | Fonti ed evidenze disponibili
 - Proto-persona costruita dal gruppo per il nuovo sito di crowdfunding dell'Università di Torino, a partire dai bisogni emersi nella valutazione euristica dell'Assignment 1, riformulati senza riferimento alla piattaforma analizzata (chiarezza dell'iniziativa, chi può proporre, costi, linguaggio, moduli, bersagli piccoli).
-- Differenza con P09: Chiara è interna all'Ateneo e segue il percorso «candidatura»; Maria è esterna e segue il percorso «contatto». Nessuna ricerca diretta con utenti.
 
 :::
 
 :::campo | Ipotesi da verificare e informazioni mancanti
-- [IPOTESI] Che un ente esterno possa partecipare come partner di un progetto proposto da un gruppo UniTo: da verificare con l'Ateneo.
-- Inventati per realismo: associazione, laboratorio, cifra di 5.000 €.
-- Domande di validazione: «Come cerchereste un referente in Università per un progetto con il vostro territorio?» «Quali controlli dei moduli online vi creano difficoltà con le mani?»
+- Da verificare: se le associazioni esterne capiscano da sole di poter partecipare e a quali condizioni.
+- Da verificare: se chi ha tremore alle mani preferisca davvero la telefonata alla compilazione di un modulo.
+- Domande per l'intervista: «Come cercherebbe un referente in Università per un progetto con il suo territorio?» · «Quali controlli dei moduli online le creano difficoltà con le mani?»
 
 :::
 :::
