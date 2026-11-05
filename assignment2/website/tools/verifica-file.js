@@ -3,9 +3,11 @@
    Uso (dalla cartella website/tools): node verifica-file.js → stampa gli esiti e li aggiunge a docs/verifiche/percorsi.md */
 const fs = require("fs"); const path = require("path"); const { chromium } = require("playwright");
 const SITE = path.resolve(__dirname, ".."); const F = (p) => "file://" + path.join(SITE, p);
+const BROWSER = process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } :
+  (fs.existsSync("/usr/bin/chromium") ? { executablePath: "/usr/bin/chromium" } : { channel: "chrome" });
 const esiti = []; const ok = (n, c) => { esiti.push([n, !!c]); console.log((c ? "OK  " : "NO  ") + n); };
 (async () => {
-  const b = await chromium.launch({ channel: "chrome" }); const page = await b.newPage(); const err = [];
+  const b = await chromium.launch(BROWSER); const page = await b.newPage(); const err = [];
   page.on("pageerror", (e) => err.push(e.message));
   await page.goto(F("progetti.html?stato=in-corso")); await page.waitForTimeout(150);
   ok("file:// · i filtri si applicano dalla URL", /Mostrati 4 di 10/.test(await page.textContent("[data-conteggio]")));

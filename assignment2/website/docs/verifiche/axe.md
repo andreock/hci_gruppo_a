@@ -1,12 +1,12 @@
 # Verifica automatica delle pagine
 
-Generato da `tools/verifica-pagine.js` il 03/11/2026, 10:29:53 con Google Chrome (Playwright) e axe-core 4.10.3, regole WCAG 2.0, 2.1 e 2.2 livello A e AA.
+Generato da `tools/verifica-pagine.js` il 05/11/2026, 11:50:57 con Google Chrome (Playwright) e axe-core 4.10.3, regole WCAG 2.0, 2.1 e 2.2 livello A e AA.
 
 ## Sintesi
 
 | Controllo | Esito |
 |---|---|
-| Pagine controllate (IT + EN) | 58 |
+| Pagine controllate (IT + EN) | 50 |
 | Errori JavaScript o di console | 0 |
 | Pagine senza esattamente un `h1` | 0 |
 | Pagine con scorrimento orizzontale a 320 px | 0 |
@@ -21,7 +21,7 @@ Generato da `tools/verifica-pagine.js` il 03/11/2026, 10:29:53 con Google Chrome
 | `404.html` | Pagina non trovata – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `accessibilita.html` | Accessibilità – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `candidatura.html` | Candidatura al programma – ideaBlume | 1 | 0 px | 0 | nessuna |
-| `cerca.html` | 2 progetti per «api» – ideaBlume | 1 | 0 px | 0 | nessuna |
+| `cerca.html` | 1 progetto per «api» – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `chi-siamo.html` | Chi siamo – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `collabora.html` | Proponi una collaborazione – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `come-funziona.html` | Come funziona – ideaBlume | 1 | 0 px | 0 | nessuna |
@@ -31,7 +31,7 @@ Generato da `tools/verifica-pagine.js` il 03/11/2026, 10:29:53 con Google Chrome
 | `en/404.html` | Page not found – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/accessibilita.html` | Accessibility – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/candidatura.html` | Apply to the programme – ideaBlume | 1 | 0 px | 0 | nessuna |
-| `en/cerca.html` | 2 projects for “api” – ideaBlume | 1 | 0 px | 0 | nessuna |
+| `en/cerca.html` | 1 project for “api” – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/chi-siamo.html` | About us – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/collabora.html` | Propose a partnership – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/come-funziona.html` | How it works – ideaBlume | 1 | 0 px | 0 | nessuna |
@@ -39,12 +39,9 @@ Generato da `tools/verifica-pagine.js` il 03/11/2026, 10:29:53 con Google Chrome
 | `en/donazione-conferma.html` | Donation completed – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/donazione.html` | Donation to Healthy hives – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/faq.html` | Frequently asked questions – ideaBlume | 1 | 0 px | 0 | nessuna |
-| `en/glossario.html` | Glossary – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/index.html` | Support research at the University of Turin – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/progetti.html` | Research projects – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/progetto-alveari-sani.html` | Healthy hives – ideaBlume | 1 | 0 px | 0 | nessuna |
-| `en/progetto-antibiotici-test.html` | Rapid antibiotic test – ideaBlume | 1 | 0 px | 0 | nessuna |
-| `en/progetto-api-in-citta.html` | Bees in the city – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/progetto-aria-aperta.html` | Open air – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/progetto-clima-giovani.html` | Climate and wellbeing – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/progetto-dialetti-archivio.html` | Dialect archive – ideaBlume | 1 | 0 px | 0 | nessuna |
@@ -54,16 +51,12 @@ Generato da `tools/verifica-pagine.js` il 03/11/2026, 10:29:53 con Google Chrome
 | `en/progetto-rifugi-frane.html` | Landslides and huts – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/progetto-robot-anziani.html` | Social robots – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/progetto-scienza-doposcuola.html` | Science after school – ideaBlume | 1 | 0 px | 0 | nessuna |
-| `en/progetto-vigneti-clima.html` | Vineyards and climate – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/programma.html` | University programme – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `en/proponi.html` | Propose a project – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `faq.html` | Domande frequenti – ideaBlume | 1 | 0 px | 0 | nessuna |
-| `glossario.html` | Glossario – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `index.html` | Sostieni la ricerca dell'Università di Torino – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `progetti.html` | Progetti di ricerca – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `progetto-alveari-sani.html` | Alveari sani – ideaBlume | 1 | 0 px | 0 | nessuna |
-| `progetto-antibiotici-test.html` | Test rapido sugli antibiotici – ideaBlume | 1 | 0 px | 0 | nessuna |
-| `progetto-api-in-citta.html` | Api in città – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `progetto-aria-aperta.html` | Aria aperta – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `progetto-clima-giovani.html` | Clima e benessere – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `progetto-dialetti-archivio.html` | Archivio dei dialetti – ideaBlume | 1 | 0 px | 0 | nessuna |
@@ -73,6 +66,5 @@ Generato da `tools/verifica-pagine.js` il 03/11/2026, 10:29:53 con Google Chrome
 | `progetto-rifugi-frane.html` | Frane e rifugi – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `progetto-robot-anziani.html` | Robot sociali – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `progetto-scienza-doposcuola.html` | Scienza nei doposcuola – ideaBlume | 1 | 0 px | 0 | nessuna |
-| `progetto-vigneti-clima.html` | Vigneti e clima – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `programma.html` | Il programma dell'Ateneo – ideaBlume | 1 | 0 px | 0 | nessuna |
 | `proponi.html` | Proponi un progetto – ideaBlume | 1 | 0 px | 0 | nessuna |

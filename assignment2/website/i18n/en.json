@@ -39,6 +39,7 @@
     "required_note": "All fields are required, except those marked as optional.",
     "noscript_generic": "This feature needs JavaScript. You can still read every page of the site or call us.",
     "brand_home": "ideaBlume, go to the home page",
+    "brand_home_suffix": "go to the home page",
     "updated": "Last updated:",
     "print": "Print",
     "close": "Close",

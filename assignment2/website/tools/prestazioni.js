@@ -9,7 +9,7 @@ const { spawn, execFileSync } = require("child_process");
 const SITE = path.resolve(__dirname, "..");
 const PORTA = 8768;
 const BASE = `http://127.0.0.1:${PORTA}/website/`;
-const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+const CHROME = process.env.CHROME_PATH || (fs.existsSync("/usr/bin/chromium") ? "/usr/bin/chromium" : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome");
 const PAGINE = [
   ["Home", "index.html", null],
   ["Elenco dei progetti", "progetti.html", ["Progetti (scheda partner)", 50, 71, "16,6 s", "0,003", "60 ms"]],

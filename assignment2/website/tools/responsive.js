@@ -10,6 +10,8 @@ const { chromium } = require("playwright");
 const SITE = path.resolve(__dirname, "..");
 const SHOT = path.join(SITE, "docs/verifiche/screenshot");
 const PORTA = 8769;
+const BROWSER = process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } :
+  (fs.existsSync("/usr/bin/chromium") ? { executablePath: "/usr/bin/chromium" } : { channel: "chrome" });
 const BASE = `http://127.0.0.1:${PORTA}/website/`;
 const PAGINE = [["home", "index.html"], ["progetti", "progetti.html"], ["progetto", "progetto-neonati-virus.html"],
   ["donazione", "donazione.html?progetto=neonati-virus&ricompensa=r25"], ["programma", "programma.html"], ["faq", "faq.html"],
@@ -20,7 +22,7 @@ const LARGHEZZE = [320, 375, 768, 1280];
   fs.mkdirSync(SHOT, { recursive: true });
   const server = spawn("python3", ["-m", "http.server", String(PORTA), "--bind", "127.0.0.1", "--directory", path.resolve(SITE, "..")], { stdio: "ignore" });
   await new Promise((r) => setTimeout(r, 800));
-  const browser = await chromium.launch({ channel: "chrome" });
+  const browser = await chromium.launch(BROWSER);
   const tabella = [];
   const bersagli = [];
   for (const [nome, url] of PAGINE) {

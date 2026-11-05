@@ -2,7 +2,7 @@
 
 Generato da `tools/verifica-dati.py`.
 
-**394 controlli superati su 394.**
+**329 controlli superati su 329.**
 
 Nessun errore.
 
@@ -37,19 +37,6 @@ Nessun errore.
 | neonati-virus [en]: pagina con raccolto, obiettivo e percentuale dei dati | superato |
 | neonati-virus [en]: pagina con il numero di sostenitori | superato |
 | neonati-virus [en]: sezioni nell'ordine fisso | superato |
-| api-in-citta: le voci di budget sommano all'obiettivo | superato |
-| api-in-citta: sostenitori = somma delle scelte + donazioni libere | superato |
-| api-in-citta: raccolto ≥ somma degli importi minimi | superato |
-| api-in-citta: posti mai superati | superato |
-| api-in-citta: «obiettivo raggiunto» solo con raccolto ≥ obiettivo | superato |
-| api-in-citta: esito presente se e solo se la campagna è conclusa | superato |
-| api-in-citta: ricompense distinte e ordinabili | superato |
-| api-in-citta [it]: pagina con raccolto, obiettivo e percentuale dei dati | superato |
-| api-in-citta [it]: pagina con il numero di sostenitori | superato |
-| api-in-citta [it]: sezioni nell'ordine fisso | superato |
-| api-in-citta [en]: pagina con raccolto, obiettivo e percentuale dei dati | superato |
-| api-in-citta [en]: pagina con il numero di sostenitori | superato |
-| api-in-citta [en]: sezioni nell'ordine fisso | superato |
 | clima-giovani: le voci di budget sommano all'obiettivo | superato |
 | clima-giovani: sostenitori = somma delle scelte + donazioni libere | superato |
 | clima-giovani: raccolto ≥ somma degli importi minimi | superato |
@@ -76,19 +63,6 @@ Nessun errore.
 | aria-aperta [en]: pagina con raccolto, obiettivo e percentuale dei dati | superato |
 | aria-aperta [en]: pagina con il numero di sostenitori | superato |
 | aria-aperta [en]: sezioni nell'ordine fisso | superato |
-| antibiotici-test: le voci di budget sommano all'obiettivo | superato |
-| antibiotici-test: sostenitori = somma delle scelte + donazioni libere | superato |
-| antibiotici-test: raccolto ≥ somma degli importi minimi | superato |
-| antibiotici-test: posti mai superati | superato |
-| antibiotici-test: «obiettivo raggiunto» solo con raccolto ≥ obiettivo | superato |
-| antibiotici-test: esito presente se e solo se la campagna è conclusa | superato |
-| antibiotici-test: ricompense distinte e ordinabili | superato |
-| antibiotici-test [it]: pagina con raccolto, obiettivo e percentuale dei dati | superato |
-| antibiotici-test [it]: pagina con il numero di sostenitori | superato |
-| antibiotici-test [it]: sezioni nell'ordine fisso | superato |
-| antibiotici-test [en]: pagina con raccolto, obiettivo e percentuale dei dati | superato |
-| antibiotici-test [en]: pagina con il numero di sostenitori | superato |
-| antibiotici-test [en]: sezioni nell'ordine fisso | superato |
 | matematica-accessibile: le voci di budget sommano all'obiettivo | superato |
 | matematica-accessibile: sostenitori = somma delle scelte + donazioni libere | superato |
 | matematica-accessibile: raccolto ≥ somma degli importi minimi | superato |
@@ -150,21 +124,6 @@ Nessun errore.
 | scienza-doposcuola [en]: pagina con il numero di sostenitori | superato |
 | scienza-doposcuola [en]: sezioni nell'ordine fisso | superato |
 | scienza-doposcuola [en]: campagna conclusa senza link alla donazione | superato |
-| vigneti-clima: le voci di budget sommano all'obiettivo | superato |
-| vigneti-clima: sostenitori = somma delle scelte + donazioni libere | superato |
-| vigneti-clima: raccolto ≥ somma degli importi minimi | superato |
-| vigneti-clima: posti mai superati | superato |
-| vigneti-clima: «obiettivo raggiunto» solo con raccolto ≥ obiettivo | superato |
-| vigneti-clima: esito presente se e solo se la campagna è conclusa | superato |
-| vigneti-clima: ricompense distinte e ordinabili | superato |
-| vigneti-clima [it]: pagina con raccolto, obiettivo e percentuale dei dati | superato |
-| vigneti-clima [it]: pagina con il numero di sostenitori | superato |
-| vigneti-clima [it]: sezioni nell'ordine fisso | superato |
-| vigneti-clima [it]: campagna conclusa senza link alla donazione | superato |
-| vigneti-clima [en]: pagina con raccolto, obiettivo e percentuale dei dati | superato |
-| vigneti-clima [en]: pagina con il numero di sostenitori | superato |
-| vigneti-clima [en]: sezioni nell'ordine fisso | superato |
-| vigneti-clima [en]: campagna conclusa senza link alla donazione | superato |
 | rifugi-frane: le voci di budget sommano all'obiettivo | superato |
 | rifugi-frane: sostenitori = somma delle scelte + donazioni libere | superato |
 | rifugi-frane: raccolto ≥ somma degli importi minimi | superato |
@@ -272,9 +231,6 @@ Nessun errore.
 | en/faq.html: nessun numero di giorni negativo | superato |
 | en/faq.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/faq.html: nessun termine escluso dal lessico | superato |
-| en/glossario.html: nessun numero di giorni negativo | superato |
-| en/glossario.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
-| en/glossario.html: nessun termine escluso dal lessico | superato |
 | en/index.html: nessun numero di giorni negativo | superato |
 | en/index.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/index.html: nessun termine escluso dal lessico | superato |
@@ -284,12 +240,6 @@ Nessun errore.
 | en/progetto-alveari-sani.html: nessun numero di giorni negativo | superato |
 | en/progetto-alveari-sani.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/progetto-alveari-sani.html: nessun termine escluso dal lessico | superato |
-| en/progetto-antibiotici-test.html: nessun numero di giorni negativo | superato |
-| en/progetto-antibiotici-test.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
-| en/progetto-antibiotici-test.html: nessun termine escluso dal lessico | superato |
-| en/progetto-api-in-citta.html: nessun numero di giorni negativo | superato |
-| en/progetto-api-in-citta.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
-| en/progetto-api-in-citta.html: nessun termine escluso dal lessico | superato |
 | en/progetto-aria-aperta.html: nessun numero di giorni negativo | superato |
 | en/progetto-aria-aperta.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/progetto-aria-aperta.html: nessun termine escluso dal lessico | superato |
@@ -317,9 +267,6 @@ Nessun errore.
 | en/progetto-scienza-doposcuola.html: nessun numero di giorni negativo | superato |
 | en/progetto-scienza-doposcuola.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/progetto-scienza-doposcuola.html: nessun termine escluso dal lessico | superato |
-| en/progetto-vigneti-clima.html: nessun numero di giorni negativo | superato |
-| en/progetto-vigneti-clima.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
-| en/progetto-vigneti-clima.html: nessun termine escluso dal lessico | superato |
 | en/programma.html: nessun numero di giorni negativo | superato |
 | en/programma.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | en/programma.html: nessun termine escluso dal lessico | superato |
@@ -329,9 +276,6 @@ Nessun errore.
 | faq.html: nessun numero di giorni negativo | superato |
 | faq.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | faq.html: nessun termine escluso dal lessico | superato |
-| glossario.html: nessun numero di giorni negativo | superato |
-| glossario.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
-| glossario.html: nessun termine escluso dal lessico | superato |
 | index.html: nessun numero di giorni negativo | superato |
 | index.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | index.html: nessun termine escluso dal lessico | superato |
@@ -341,12 +285,6 @@ Nessun errore.
 | progetto-alveari-sani.html: nessun numero di giorni negativo | superato |
 | progetto-alveari-sani.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | progetto-alveari-sani.html: nessun termine escluso dal lessico | superato |
-| progetto-antibiotici-test.html: nessun numero di giorni negativo | superato |
-| progetto-antibiotici-test.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
-| progetto-antibiotici-test.html: nessun termine escluso dal lessico | superato |
-| progetto-api-in-citta.html: nessun numero di giorni negativo | superato |
-| progetto-api-in-citta.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
-| progetto-api-in-citta.html: nessun termine escluso dal lessico | superato |
 | progetto-aria-aperta.html: nessun numero di giorni negativo | superato |
 | progetto-aria-aperta.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | progetto-aria-aperta.html: nessun termine escluso dal lessico | superato |
@@ -374,9 +312,6 @@ Nessun errore.
 | progetto-scienza-doposcuola.html: nessun numero di giorni negativo | superato |
 | progetto-scienza-doposcuola.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | progetto-scienza-doposcuola.html: nessun termine escluso dal lessico | superato |
-| progetto-vigneti-clima.html: nessun numero di giorni negativo | superato |
-| progetto-vigneti-clima.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
-| progetto-vigneti-clima.html: nessun termine escluso dal lessico | superato |
 | programma.html: nessun numero di giorni negativo | superato |
 | programma.html: nessun riferimento a simulazioni o informazioni da decidere | superato |
 | programma.html: nessun termine escluso dal lessico | superato |

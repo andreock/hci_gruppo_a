@@ -2,12 +2,19 @@
   "name": "ideablume-verifiche",
   "private": true,
   "description": "Strumenti di verifica del sito ideaBlume (Playwright, axe-core). Non servono per usare il sito.",
-  "scripts": {},
+  "scripts": {
+    "validate": "html-validate ../*.html ../en/*.html && stylelint '../css/*.css'",
+    "verify:paths": "node percorsi.js",
+    "verify:responsive": "node responsive.js",
+    "verify": "node verifica-pagine.js && node percorsi.js && node verifica-file.js && node responsive.js"
+  },
   "dependencies": {
     "axe-core": "^4.10.3",
     "playwright": "^1.56.1"
   },
   "devDependencies": {
-    "lighthouse": "^12.8.2"
+    "html-validate": "^9.7.1",
+    "lighthouse": "^12.8.2",
+    "stylelint": "^16.25.0"
   }
 }

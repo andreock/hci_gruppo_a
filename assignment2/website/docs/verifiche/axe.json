@@ -1,7 +1,7 @@
 {
-  "data": "2026-11-03T09:29:53.261Z",
+  "data": "2026-11-05T10:50:57.296Z",
   "tot": {
-    "pagine": 58,
+    "pagine": 50,
     "errori_js": 0,
     "h1_non_1": 0,
     "overflow": 0,
@@ -49,7 +49,7 @@
       "pagina": "cerca.html",
       "errori": [],
       "h1": 1,
-      "titolo": "2 progetti per «api» – ideaBlume",
+      "titolo": "1 progetto per «api» – ideaBlume",
       "lunghezza_titolo": 32,
       "lang": "it",
       "overflow320": 0,
@@ -149,8 +149,8 @@
       "pagina": "en/cerca.html",
       "errori": [],
       "h1": 1,
-      "titolo": "2 projects for “api” – ideaBlume",
-      "lunghezza_titolo": 32,
+      "titolo": "1 project for “api” – ideaBlume",
+      "lunghezza_titolo": 31,
       "lang": "en",
       "overflow320": 0,
       "axe": []
@@ -226,16 +226,6 @@
       "axe": []
     },
     {
-      "pagina": "en/glossario.html",
-      "errori": [],
-      "h1": 1,
-      "titolo": "Glossary – ideaBlume",
-      "lunghezza_titolo": 20,
-      "lang": "en",
-      "overflow320": 0,
-      "axe": []
-    },
-    {
       "pagina": "en/index.html",
       "errori": [],
       "h1": 1,
@@ -261,26 +251,6 @@
       "h1": 1,
       "titolo": "Healthy hives – ideaBlume",
       "lunghezza_titolo": 25,
-      "lang": "en",
-      "overflow320": 0,
-      "axe": []
-    },
-    {
-      "pagina": "en/progetto-antibiotici-test.html",
-      "errori": [],
-      "h1": 1,
-      "titolo": "Rapid antibiotic test – ideaBlume",
-      "lunghezza_titolo": 33,
-      "lang": "en",
-      "overflow320": 0,
-      "axe": []
-    },
-    {
-      "pagina": "en/progetto-api-in-citta.html",
-      "errori": [],
-      "h1": 1,
-      "titolo": "Bees in the city – ideaBlume",
-      "lunghezza_titolo": 28,
       "lang": "en",
       "overflow320": 0,
       "axe": []
@@ -376,16 +346,6 @@
       "axe": []
     },
     {
-      "pagina": "en/progetto-vigneti-clima.html",
-      "errori": [],
-      "h1": 1,
-      "titolo": "Vineyards and climate – ideaBlume",
-      "lunghezza_titolo": 33,
-      "lang": "en",
-      "overflow320": 0,
-      "axe": []
-    },
-    {
       "pagina": "en/programma.html",
       "errori": [],
       "h1": 1,
@@ -416,16 +376,6 @@
       "axe": []
     },
     {
-      "pagina": "glossario.html",
-      "errori": [],
-      "h1": 1,
-      "titolo": "Glossario – ideaBlume",
-      "lunghezza_titolo": 21,
-      "lang": "it",
-      "overflow320": 0,
-      "axe": []
-    },
-    {
       "pagina": "index.html",
       "errori": [],
       "h1": 1,
@@ -450,26 +400,6 @@
       "errori": [],
       "h1": 1,
       "titolo": "Alveari sani – ideaBlume",
-      "lunghezza_titolo": 24,
-      "lang": "it",
-      "overflow320": 0,
-      "axe": []
-    },
-    {
-      "pagina": "progetto-antibiotici-test.html",
-      "errori": [],
-      "h1": 1,
-      "titolo": "Test rapido sugli antibiotici – ideaBlume",
-      "lunghezza_titolo": 41,
-      "lang": "it",
-      "overflow320": 0,
-      "axe": []
-    },
-    {
-      "pagina": "progetto-api-in-citta.html",
-      "errori": [],
-      "h1": 1,
-      "titolo": "Api in città – ideaBlume",
       "lunghezza_titolo": 24,
       "lang": "it",
       "overflow320": 0,
@@ -561,16 +491,6 @@
       "h1": 1,
       "titolo": "Scienza nei doposcuola – ideaBlume",
       "lunghezza_titolo": 34,
-      "lang": "it",
-      "overflow320": 0,
-      "axe": []
-    },
-    {
-      "pagina": "progetto-vigneti-clima.html",
-      "errori": [],
-      "h1": 1,
-      "titolo": "Vigneti e clima – ideaBlume",
-      "lunghezza_titolo": 27,
       "lang": "it",
       "overflow320": 0,
       "axe": []

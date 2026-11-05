@@ -406,7 +406,15 @@
     elenco.addEventListener("click", function (e) { var a = e.target.closest("a"); if (a) store(chiave(), { y: window.scrollY, da: a.pathname }); });
     var pos = store(chiave()); store(chiave(), null);
     if (pos && pos.y && pos.da === paginaPrecedente) window.scrollTo(0, pos.y);
-    window.addEventListener("pageshow", function (e) { if (e.persisted) { leggi(); applica(false); } });
+    window.addEventListener("pageshow", function (e) {
+      if (e.persisted) {
+        leggi(); applica(false);
+        /* Con la back-forward cache lo script non viene rieseguito: recupera qui la posizione
+           salvata prima di aprire il progetto, dopo che i filtri hanno ricostruito l'elenco. */
+        var ritorno = store(chiave()); store(chiave(), null);
+        if (ritorno && ritorno.y) window.requestAnimationFrame(function () { window.scrollTo({ top: ritorno.y, behavior: "instant" }); });
+      }
+    });
   }
 
   /* ---------- ricerca (P-005, P-006) ---------- */

@@ -251,7 +251,7 @@ ICONA_SPUNTA = ('<svg class="icon" viewBox="0 0 24 24" width="18" height="18" ar
 
 def form_cerca(lang, id_, extra_cls=""):
     """Campo di ricerca con pulsante (etichetta nascosta: il pulsante «Cerca» la rende esplicita, D-25)."""
-    return f'''<form class="search-form{extra_cls}" role="search" action="cerca.html" method="get">
+    return f'''<form class="search-form{extra_cls}" role="search" aria-label="{E(t(lang, "common.search_label"))}" action="cerca.html" method="get">
       <label class="vh" for="{id_}">{E(t(lang, "common.search_label"))}</label>
       {ICONA_CERCA.replace('class="icon"', 'class="icon search-form__icon"')}
       <input id="{id_}" name="q" type="search" placeholder="{E(t(lang, "common.search_placeholder"))}" autocomplete="off">
@@ -273,9 +273,9 @@ def header(lang, file, nav_corrente, prefix):
     return f'''<a class="skip-link" href="#main">{E(t(lang, "common.skip"))}</a>
 <header class="site-header">
   <div class="container site-header__bar">
-    <a class="brand" href="index.html" aria-label="{E(t(lang, "common.brand_home"))}">
+    <a class="brand" href="index.html">
       {SEGNO.format(cls="brand__mark", w=36)}
-      <span><span class="brand__name">idea<b>Blume</b></span><span class="brand__tagline">{E(t(lang, "tagline"))}</span></span>
+      <span><span class="brand__name">idea<b>Blume</b></span><span class="brand__tagline">{E(t(lang, "tagline"))}</span></span><span class="vh"> — {E(t(lang, "common.brand_home_suffix"))}</span>
     </a>
     <a class="lang-switch" href="{href_altra}" lang="{altra}" hreflang="{altra}" data-lang-switch><svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.8 5.8 3.8 9s-1.2 6.2-3.8 9c-2.6-2.8-3.8-5.8-3.8-9S9.4 5.8 12 3z"/></g></svg><span class="lang-switch__long">{E(t(lang, "common.lang_switch"))}</span><span class="lang-switch__short" aria-hidden="true">{altra.upper()}</span><span class="vh"> – {E(t(lang, "common.lang_switch_label"))}</span></a>
     <button class="theme-toggle js-only" type="button" data-tema-toggle>
@@ -569,7 +569,7 @@ def pg_cerca(lang):
   <p>{E(g("browse"))}</p><ul class="inline-list">{cats}</ul>
   <p class="btn-row"><a class="btn btn--secondary" href="progetti.html">{E(g("all"))}</a><a class="btn btn--ghost" href="faq.html">{E(g("faq"))}</a></p>
 </div>
-<section data-pagine-sito hidden aria-labelledby="h-pagine"><h2 id="h-pagine" data-pagine-titolo></h2><ul data-pagine-elenco></ul></section>'''
+<section data-pagine-sito hidden aria-labelledby="h-pagine"><h2 id="h-pagine" data-pagine-titolo>{E(fmt(g("pages_title"), lang, q="…"))}</h2><ul data-pagine-elenco></ul></section>'''
     return pagina(lang, "cerca.html", g("title"), corpo, nav=None, attesa=True, briciole=[(g("h1"), "")], dati=True)
 
 
@@ -788,7 +788,7 @@ def pg_donazione(lang):
   </section>
   <nav aria-label="{E(g("steps_label"))}"><ol class="steps">{passi}</ol></nav>
   <p class="small muted" data-passo-testo aria-live="polite"></p>
-  <div class="alert alert--error" role="alert" tabindex="-1" data-errori hidden><h2 data-errori-titolo></h2><ul data-errori-lista></ul></div>
+  <div class="alert alert--error" role="alert" tabindex="-1" data-errori hidden><h2 data-errori-titolo>{E(t(lang, "js.err_title_1"))}</h2><ul data-errori-lista></ul></div>
   <form novalidate data-form="donazione">
     <section data-passo="1" aria-labelledby="h-p1">
       <h2 id="h-p1">{E(g("steps")[0])}</h2>
@@ -931,7 +931,7 @@ def pg_proponi(lang):
 <section id="chi-puo" aria-labelledby="h-chi"><h2 id="h-chi">{E(g("who_title"))}</h2>
 <ul class="grid grid--2 grid--uguale">
   <li><section class="statusbox" aria-labelledby="h-ric"><h3 id="h-ric">{E(g("res_title"))}</h3><p>{E(g("res_text"))}</p>
-    <p class="btn-row"><a class="btn" href="candidatura.html">{E(g("res_cta"))}</a></p> <br/><br/></section></li>
+    <p class="btn-row"><a class="btn" href="candidatura.html">{E(g("res_cta"))}</a></p></section></li>
   <li><section class="statusbox" aria-labelledby="h-ext"><h3 id="h-ext">{E(g("ext_title"))}</h3><p>{fmt(g("ext_text"), lang)}</p>
     <p class="btn-row"><a class="btn" href="collabora.html">{E(g("ext_cta"))}</a></p></section></li>
 </ul></section>
@@ -955,7 +955,7 @@ def pg_candidatura(lang):
     corpo = f'''<h1>{E(g("h1"))}</h1>
 <div class="infobox"><h2>{E(g("before_title"))}</h2>{lista(g("before"), lang)}</div>
 <noscript><p class="alert alert--info">{E(t(lang, "common.noscript_generic"))}</p></noscript>
-<div class="alert alert--error" role="alert" tabindex="-1" data-errori hidden><h2 data-errori-titolo></h2><ul data-errori-lista></ul></div>
+<div class="alert alert--error" role="alert" tabindex="-1" data-errori hidden><h2 data-errori-titolo>{E(t(lang, "js.err_title_1"))}</h2><ul data-errori-lista></ul></div>
 <form novalidate data-form="candidatura" data-salva="ib-candidatura">
   <p class="small muted">{E(t(lang, "common.required_note"))}</p>
   <fieldset><legend class="h3">{E(g("f_person"))}</legend>
@@ -990,7 +990,7 @@ def pg_collabora(lang):
 <p class="lead">{E(g("intro"))}</p>
 <p class="alert alert--success">{g("no_commit")}</p>
 <noscript><p class="alert alert--info">{E(t(lang, "common.noscript_generic"))}</p></noscript>
-<div class="alert alert--error" role="alert" tabindex="-1" data-errori hidden><h2 data-errori-titolo></h2><ul data-errori-lista></ul></div>
+<div class="alert alert--error" role="alert" tabindex="-1" data-errori hidden><h2 data-errori-titolo>{E(t(lang, "js.err_title_1"))}</h2><ul data-errori-lista></ul></div>
 <form novalidate data-form="collabora" data-salva="ib-collabora">
   <p class="small muted">{E(t(lang, "common.required_note"))}</p>
   <fieldset><legend class="h3">{E(g("f_org"))}</legend>
@@ -1080,7 +1080,7 @@ def pg_contatti(lang):
 <h2>{E(g("address_title"))}</h2><p>{fmt(g("address"), lang)}</p>
 <section id="scrivici" aria-labelledby="h-scrivici"><h2 id="h-scrivici">{E(g("form_title"))}</h2>
 <p>{E(g("form_intro"))}</p>
-<div class="alert alert--error" role="alert" tabindex="-1" data-errori hidden><h3 data-errori-titolo></h3><ul data-errori-lista></ul></div>
+<div class="alert alert--error" role="alert" tabindex="-1" data-errori hidden><h3 data-errori-titolo>{E(t(lang, "js.err_title_1"))}</h3><ul data-errori-lista></ul></div>
 <form novalidate data-form="contatti" data-giorni="{SITO["contatti"]["risposta_giorni"]}">
   {campo("ct-nome", g("f_name"), lang=lang, attrs='autocomplete="name"')}
   {campo("ct-email", g("f_email"), "email", lang=lang, attrs='autocomplete="email" inputmode="email"')}
@@ -1115,7 +1115,7 @@ def pg_404(lang, radice=False):
 <p class="lead">{E(g("text"))}</p>
 <p class="small muted" data-indirizzo hidden>{E(g("tried"))} <code data-indirizzo-testo></code></p>
 <label for="q-404"><strong>{E(g("search"))}</strong></label>
-<form class="search-form search-form--page" role="search" action="cerca.html" method="get">
+<form class="search-form search-form--page" role="search" aria-label="{E(t(lang, "common.search_label"))}" action="cerca.html" method="get">
   {ICONA_CERCA.replace('class="icon"', 'class="icon search-form__icon"')}
   <input id="q-404" name="q" type="search" placeholder="{E(t(lang, "common.search_placeholder"))}">
   <button class="btn" type="submit">{E(t(lang, "common.search_btn"))}</button>

@@ -11,6 +11,8 @@ const path = require("path");
 const { chromium } = require("playwright");
 const { spawn } = require("child_process");
 const PORTA = 8765;
+const BROWSER = process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } :
+  (fs.existsSync("/usr/bin/chromium") ? { executablePath: "/usr/bin/chromium" } : { channel: "chrome" });
 // Server statico locale con il sito in una sottocartella (/website/), come su GitHub Pages.
 // Da file:// axe-core non può rileggere i fogli di stile (CORS) e segnalerebbe errori estranei al sito.
 const BASE = `http://127.0.0.1:${PORTA}/website/`;
@@ -25,7 +27,7 @@ const pagine = []
 (async () => {
   const server = spawn("python3", ["-m", "http.server", String(PORTA), "--bind", "127.0.0.1", "--directory", path.resolve(SITE, "..")], { stdio: "ignore" });
   await new Promise((r) => setTimeout(r, 800));
-  const browser = await chromium.launch({ channel: "chrome" });
+  const browser = await chromium.launch(BROWSER);
   const risultati = [];
   const titoli = {};
   for (const p of pagine) {

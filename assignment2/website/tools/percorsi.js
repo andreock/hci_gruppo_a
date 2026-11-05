@@ -11,6 +11,8 @@ const { chromium } = require("playwright");
 const SITE = path.resolve(__dirname, "..");
 const SHOT = path.join(SITE, "docs/verifiche/screenshot");
 const PORTA = 8766;
+const BROWSER = process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } :
+  (fs.existsSync("/usr/bin/chromium") ? { executablePath: "/usr/bin/chromium" } : { channel: "chrome" });
 const BASE = `http://127.0.0.1:${PORTA}/website/`;
 const esiti = [];
 function ok(nome, cond, nota = "") { esiti.push({ nome, ok: !!cond, nota }); console.log((cond ? "OK  " : "NO  ") + nome + (nota ? " · " + nota : "")); }
@@ -26,7 +28,7 @@ async function tabFino(page, pred, max = 60) {
   fs.mkdirSync(SHOT, { recursive: true });
   const server = spawn("python3", ["-m", "http.server", String(PORTA), "--bind", "127.0.0.1", "--directory", path.resolve(SITE, "..")], { stdio: "ignore" });
   await new Promise((r) => setTimeout(r, 800));
-  const browser = await chromium.launch({ channel: "chrome" });
+  const browser = await chromium.launch(BROWSER);
   const errori = [];
   const nuova = async (vp = { width: 1280, height: 900 }) => {
     const ctx = await browser.newContext({ viewport: vp });
@@ -131,10 +133,18 @@ async function tabFino(page, pred, max = 60) {
   const cnt = await page.textContent("[data-conteggio]");
   ok("Il conteggio dice quanti progetti sono mostrati", /Mostrati 6 di 10 progetti/.test(cnt), cnt);
   await page.selectOption("#f-ordina", "bisogno");
-  await page.evaluate(() => window.scrollTo(0, 900));
+  /* Evita che scroll-behavior:smooth renda y0 dipendente dal momento del campionamento. */
+  await page.evaluate(() => {
+    document.documentElement.style.scrollBehavior = "auto";
+    window.scrollTo(0, 900);
+  });
+  await page.waitForTimeout(50);
   const y0 = await page.evaluate(() => window.scrollY);
   const link = await page.$("[data-elenco] li:not([hidden]) .card__title a");
-  await link.click();
+  /* Il click di Playwright scorre automaticamente l'elemento prima di attivarlo e
+     cambierebbe la posizione che stiamo cercando di verificare. Un click DOM replica
+     l'attivazione del link senza introdurre quello scroll artificiale. */
+  await link.evaluate((el) => el.click());
   await page.waitForURL(/progetto-/);
   await page.goBack();
   await page.waitForTimeout(300);
