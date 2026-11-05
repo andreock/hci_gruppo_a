@@ -4,7 +4,7 @@ Sottotitolo: Come abbiamo costruito e rivisto le personas, user journey e sito d
 Gruppo: Gruppo A
 Componenti: Andrea Canale · Antonio Fallea · Alexandru Ioan Chindris · Lorenzo Rizzolo
 Corso: Human-Computer Interaction · a.a. 2026/27
-Data: 3 novembre 2026
+Data: 5 novembre 2026
 Sito pubblicato: https://andreock.github.io/hci_gruppo_a/
 ---
 
@@ -12,7 +12,7 @@ Sito pubblicato: https://andreock.github.io/hci_gruppo_a/
 
 ## Introduzione
 
-Con assignment 2 abbiamo progettato **ideaBlume**, un sito di crowdfunding per i progetti di ricerca dell'Università di Torino, ripartendo dalla valutazione euristica di IdeaGinger svolta in assignment 1 e sulla base dell'iniziativa Funds TOgether. Il lavoro ha avuto due fasi: prima 12 proto-personas per un servizio generico di crowdfunding e 12 user journey, che mostrano le difficoltà su IdeaGinger (As-is) e i miglioramenti su ideaBlume (To-be), poi un sito statico di 17 tipi di pagina in italiano e in inglese.
+Con assignment 2 abbiamo progettato **ideaBlume**, un sito di crowdfunding per i progetti di ricerca dell'Università di Torino, ripartendo dalla valutazione euristica di IdeaGinger svolta in assignment 1 e sulla base dell'iniziativa Funds TOgether. Il lavoro ha avuto due fasi: prima 12 proto-personas per un servizio generico di crowdfunding e 12 user journey, che mostrano le difficoltà su IdeaGinger (As-is) e i miglioramenti su ideaBlume (To-be), poi un sito statico di 25 pagine, di cui 10 schede di progetto, in italiano e in inglese.
 
 Il sito è stato creato mettendo nel contesto dell'IA, oltre alle personas e agli user journey, anche le problematiche relative al sito che abbiamo trovato nell'assignment 1.
 
@@ -21,8 +21,6 @@ Il sito è pubblicato su https://andreock.github.io/hci_gruppo_a/.
 ## Le personas
 
 Dopo l'analisi di IdeaGinger abbiamo costruito 12 **proto-personas** pensate per un **servizio generico di crowdfunding**, non per IdeaGinger: descrivono persone con obiettivi ed esigenze proprie, e i problemi trovati nella valutazione euristica entrano come loro difficoltà, senza citare il sito. P10–P12 restano generiche nei bisogni, ma sono collocate sul sito di crowdfunding dell'Ateneo. Le personas non derivano da interviste o osservazioni con utenti, ma dallo studio dei potenziali utenti del servizio. Riportiamo il testo delle schede compilate sui template del corso, con un'impaginazione uniforme. Dati, nomi e scenari sono fittizi. La matrice che ne mostra la differenziazione è in §5.6.
-
-<!-- Le schede non hanno tutte lo stesso grado di maturità, e lo dichiariamo: P01–P06 descrivono un'app di crowdfunding generica; P07–P09 sono state riviste il 31/10/2026 ma nominano ancora Funds TOgether, e hanno una struttura leggermente diversa; P10–P12 descrivono il nuovo sito dell'Università di Torino. I motivi sono in §5.8. -->
 
 [[INCLUDI schede/personas.md]]
 
@@ -51,7 +49,7 @@ Tabella: Strumenti e attività
 | Codex (OpenAI Codex, modello GPT-5) | {{Personas}} {{Journey}} | Generazione e revisione di P01–P03 e J01–J03, controllo di coerenza, schede HTML | Documentato nelle nostre note sulle revisioni |
 | Claude Code (Claude Opus 5.5) | {{Personas}} {{Journey}} | Compilazione di P04–P12 e J04–J12, confronto con la consegna e revisione tramite prompt di verifica | Documentato |
 | Claude Code (Claude Opus 5.5) | {{Sito}} | Inventario delle fonti, requisiti, architettura, codice, verifiche, tracciabilità | Documentato |
-| Codex | {{Sito}} | Abbiamo usato Codex per fargli scrivere il codice del sito,e per vari raffinamenti. | Dichiarato dal gruppo |
+| Codex | {{Sito}} | Scrittura del codice del sito e vari raffinamenti | Dichiarato dal gruppo |
 | Script scritti con l'agente | {{Sito}} | axe-core, Lighthouse, Playwright, controlli su contrasti, link e dati | Risultati nelle verifiche del sito |
 
 :::html
@@ -92,7 +90,7 @@ Abbiamo generato ogni persona e ogni journey in una conversazione separata, lavo
 :::prompt | Prompt · C00, contesto comune (estratto) | {{Personas}} {{Journey}} · versione 3
 Il gruppo sta producendo 12 personas (P01–P12) e 12 journey map (J01–J12) per una GENERICA app di crowdfunding (sito web e versione mobile). Ogni documento viene generato da una persona diversa in una conversazione separata: per questo tutti i documenti devono seguire esattamente gli stessi formati, definiti più sotto.
 […]
-4. Non inventare dati presentati come reali (statistiche, URL, citazioni). Se aggiungi comportamenti dell'app non previsti dal catalogo, marcali con.
+4. Non inventare dati presentati come reali (statistiche, URL, citazioni). Se aggiungi comportamenti dell'app non previsti dal catalogo, marcali con [IPOTESI].
 […]
 6. Le esigenze di accessibilità vanno descritte con rispetto e precisione (strumenti usati, strategie), senza pietismo e senza stereotipi.
 :::
@@ -113,10 +111,10 @@ Genera e raffina la scheda della proto-persona indicata usando esclusivamente i 
 «Fai emergere tutti i problemi elencati nel prompt singolo, ciascuno citato almeno una volta nel formato [Sxx · criterio · Gx] (es. [S17 · H4 · G4], [S59 · LG1 · G4], [S74 · prestazioni]) o [X0n · analisi preliminare, da verificare]. […]»
 :::
 :::dopo | Versione finale | C00, regola 1, versione 3
-«GENERICITÀ ASSOLUTA. Non citare la valutazione del gruppo, slide, euristiche numerate, gravità o gli ID del catalogo (Sxx, Xxx). Rendi generiche le personas parlando non solo dell'uso del sito di crowdfunding ma dando anche un minimo di contesto sulla vita delle persone […]»
+«GENERICITÀ ASSOLUTA. Non nominare mai piattaforme, app, siti, enti, università, programmi o progetti reali, né marchi. Non citare la valutazione del gruppo, slide, euristiche numerate, gravità o gli ID del catalogo (Sxx, Xxx). […]» Regola 2: «Persona: racconta la persona, non l'app. Profilo, attività, obiettivi, bisogni, contesto e competenze descrivono la sua vita e il suo rapporto con il crowdfunding in generale. […]»
 :::
 :::cambio
-Le personas non descrivono più l'interfaccia di IdeaGinger ma persone con esigenze proprie; il legame con la valutazione resta nelle chiavi interne dei prompt. 
+Le personas non descrivono più l'interfaccia di IdeaGinger ma persone con esigenze proprie; il legame con la valutazione resta nelle chiavi interne dei prompt.
 :::
 :::
 
@@ -141,7 +139,7 @@ Prompt: «Città: Forlì»; «promotrice esterna a UniTo; vuole lanciare la prim
 Prima scheda: Torino; «una volontaria le manda su WhatsApp il link di Ginger»; «[S49 · H5 · G4] Trova in fondo a un paragrafo la quota di 350 € + IVA e si allarma».
 :::
 :::dopo | Versione finale · P12 {{Personas}} | Scheda P12, versione 2, §2
-«Esterna all'Università: non può proporre una campagna da sola, ma vuole costruire un progetto insieme a un gruppo di ricerca UniTo.» «Si allarma quando scopre i costi tardi o scritti in piccolo: “che cos'altro non mi hanno detto?”.»
+«Esterna all'Università: non può proporre una campagna da sola, ma vuole costruire un progetto insieme ad altre persone.» «Si allarma quando scopre i costi tardi o scritti in piccolo: “che cos'altro non mi hanno detto?”.»
 :::
 :::cambio
 Il sito è dedicato alle campagne dell'Ateneo: lì una campagna lanciata in autonomia non esiste, e una ricercatrice UniTo sarebbe stata quasi uguale a P09. Maria resta esterna e segue il percorso «contatto», mentre Chiara segue la candidatura. La versione 2 toglie i riferimenti a IdeaGinger.
@@ -153,7 +151,7 @@ Il sito è dedicato alle campagne dell'Ateneo: lì una campagna lanciata in auto
 «[S59 · LG1 · G4] La homepage non spiega che cos'è Ginger: teme di essere sul sito sbagliato.» «[S64 · LG6 · G3] Titoli troncati e stato “Per ispirarti” ambiguo.»
 :::
 :::dopo | Versione rivista · P07 {{Personas}} | Versione 2, 31/10/2026, §2
-«Se la pagina iniziale non chiarisce lo scopo dell'iniziativa, teme di essere nel posto sbagliato.» «Trova faticosi titoli incompleti, etichette ambigue e parole inglesi non spiegate.»
+«Se la pagina iniziale non chiarisce lo scopo dell'iniziativa, teme di essere nel posto sbagliato.» «Trova faticosi titoli incompleti, etichette ambigue e parole tecniche non spiegate.»
 :::
 :::cambio
 La revisione porta le difficoltà dall'interfaccia alla persona. È però **arrivata tardi**: il sito è stato costruito sulla prima versione di P07–P09, e J07–J09 sono stati allineati solo il 05/11/2026, a sito già realizzato.
@@ -169,7 +167,7 @@ Tabella: Problemi trovati negli output di personas e journey
 | {{Personas}} P03: «Davide ha bisogno di un sito semplice» | Revisione: paternalistico | Specificare navigazione per H, landmark, elenco link, sintesi ad alta velocità | Corretto |
 | {{Journey}} J01: «La pagina è confusa» | Revisione: generico, non osservabile, senza soluzione | Esplicitare percentuali oltre il 100%, giorni negativi, apertura inattesa dei link | Corretto |
 | {{Journey}} J03: «Non vede il pallino rosso» | Revisione: descrizione visiva impropria per chi usa uno screen reader | Descrivere lo stato non annunciato e il golfo della valutazione | Corretto |
-| {{Personas}} {{Journey}} P10–P12: mancavano bisogni informativi, fiducia, familiarità con il crowdfunding, obiettivo e informazioni per fase | Confronto con la consegna | Aggiunte righe e sottogruppi | Corretto per P10–P12; decisione generale rimasta aperta (§5.8) |
+| {{Personas}} {{Journey}} P10–P12: mancavano bisogni informativi, fiducia, familiarità con il crowdfunding, obiettivo e informazioni per fase | Confronto con la consegna | Aggiunte due righe ai journey e sottogruppi alle personas | Righe presenti in J10–J12; i sottogruppi delle personas sono stati tolti il 04/11/2026 (§5.5, §5.8) |
 | {{Personas}} P10: «ogni euro vale doppio» contraddiceva la regola del cofinanziamento | Revisione delle schede | Motivazione e dubbio riformulati | Corretto |
 | {{Personas}} P12: due affermazioni sul sito assenti dalla presentazione (FAQ, logo UniTo) | Confronto con la presentazione | Rimosse | Corretto |
 | {{Personas}} P10, P11: fiducia del promotore confusa con quella dei donatori | Revisione delle schede | Ogni voce dice di chi è la fiducia | Corretto |
@@ -177,15 +175,29 @@ Tabella: Problemi trovati negli output di personas e journey
 | {{Journey}} J07–J09: IdeaGinger e riferimenti alle slide | Controllo rispetto alla regola 1 di C00 | Riscritti come J01–J06: nessun codice di slide, criticità in frasi complete, servizio generico | Corretto |
 | {{Journey}} J10–J12: descrivevano criticità ancora da risolvere, con emozioni fino a −2 | Confronto con il sito realizzato | Riscritti sul percorso reale di ideaBlume, con confronto con IdeaGinger e criticità residue | Corretto |
 
-Il prompt V00 prevedeva sette criteri, tra cui fedeltà e rispetto (Appendice A), ma era facoltativo. Prompt usato per revisionare la relazione, in modo tale da ottenere un opinione critica e basata su criteri predefiniti nel prompt.
+**Controllo con V00.** Il prompt V00 (Appendice A) era facoltativo e non lo abbiamo eseguito mentre generavamo le schede. Il 05/11/2026 abbiamo applicato i suoi sette criteri alle 24 schede con Claude Code, in un'unica conversazione. Abbiamo adattato il criterio 2: V00 chiede citazioni con ID e gravità, che C00 versione 3 vieta, quindi abbiamo controllato che ogni problema assegnato emergesse. V00 non riscrive i documenti ma elenca che cosa correggere.
+
+Tabella: Esito del controllo V00 sulle 24 schede
+| Criterio | Esito | Che cosa è emerso |
+|---|---|---|
+| 1. Struttura | Da correggere | Campo «Frase rappresentativa e provenienza» ridotto a «Frase rappresentativa» in tutte le personas; P07 e P09 superano le 12 parole; J10–J12 senza momenti critici, HEART e continuità; J04–J06 senza la nota sulla base delle emozioni |
+| 2. Problemi assegnati | Da correggere | Tutti presenti in J01–J09; ne mancano alcuni nelle difficoltà di P04, P07, P08, P09 e P10 |
+| 3. Fedeltà | Da correggere | Tolti i marcatori `[IPOTESI]`: alcuni passaggi di J04, J05 e J06 ora sembrano fatti; P07–P09 riportano le fonti di P05; J10 e J11 usano nomi di campagna diversi da quelli del sito |
+| 4. Scheda vincolante | Da correggere | Familiarità digitale diversa dal prompt in P02, P05, P08, P10 e P12; frequenza d'uso assente in P11 e P12 |
+| 5. Journey | Da correggere | Curve coerenti con i prompt; touchpoint e canali confusi in singole celle di J04, J08, J09, J10 e J12 |
+| 6. Terminologia HCI | Da correggere | Una sola metrica impropria: J08 usa dati di comportamento per HEART Happiness |
+| 7. Rispetto | OK | Nessuno stereotipo nelle schede; resta l'archetipo del prompt P01 (§7) |
+
+Le correzioni puntuali sono elencate nel registro `04_verifica_V00.md`. Il controllo è arrivato dopo la realizzazione del sito, quindi non ha influito sulle sue scelte.
 
 ### Richieste di modifica e interventi
 
-Abbiamo fatto tre tipi di intervento.
+Abbiamo fatto quattro tipi di intervento.
 
 - **Revisioni dei prompt, prima di generare.** Abbiamo allineato C00 ai template e poi lo abbiamo reso generico: sono interventi sulle istruzioni date all'IA, non sui singoli output.
 - **Richieste di revisione sugli output.** Per P01–P03 e J01–J03 abbiamo fatto sei richieste, una per documento. Per esempio, per P02: «Rendere visibili pause, una mano, interruzione e ripresa serale». Un controllo finale ha verificato la coerenza tra persona e journey.
 - **Riscritture di una versione già salvata.** Il 27/10/2026 P10–P12 e J10–J12 sono passati in poche ore dal servizio esistente al nuovo sito, e i journey sono diventati To-be. Il 05/11/2026, a sito finito, abbiamo chiesto di togliere i riferimenti alle slide da J07–J09 e di far riflettere a J10–J12 «i miglioramenti che sono stati fatti in ideaBlume rispetto ad ideaGinger».
+- **Revisione delle schede per la relazione.** Il 04/11/2026 abbiamo alleggerito le personas: via le intestazioni, i marcatori `[IPOTESI]` e i sottogruppi «Bisogni informativi» e «Fiducia» di P10–P12.
 
 
 ### Come abbiamo reso le personas più specifiche, differenziate e coerenti
@@ -212,7 +224,7 @@ Tabella: Matrice delle personas nella versione usata per il sito
 
 Due casi mostrano dove la differenziazione è stata corretta dopo la generazione. P12 si distingue da P09 per il percorso «contatto». P10 e P11 erano entrambi promotori nella stessa fase: nella versione 2 Franco arriva fino al resoconto ai donatori, che copre anche il percorso «Seguire un progetto già sostenuto», mentre Amir cura diffusione e pubblico internazionale.
 
-**Coerenza.** La scheda vincolante mantiene costanti i dati principali tra persona e journey. Dove una persona contraddiceva una regola, abbiamo corretto il testo: è il caso di P10 e del raddoppio. Resta un'incoerenza non risolta tra prompt e output: il prompt di P12 descrive ancora Forlì e il lancio di una campagna, mentre la scheda finale descrive una partner a Torino.
+**Coerenza.** La scheda vincolante ha tenuto fermi età, dispositivo e ruolo tra persona e journey. Dove una persona contraddiceva una regola, abbiamo corretto il testo: è il caso di P10 e del raddoppio. La matrice riporta i valori del prompt: la familiarità digitale nelle schede finali è diversa per P02 (3,5), P05 (4), P08 (4), P10 (2,5) e P12 (2,5). Resta anche un'incoerenza tra prompt e output: il prompt di P12 descrive ancora Forlì e il lancio di una campagna, mentre la scheda finale descrive una partner a Torino.
 
 ### Come abbiamo migliorato la corrispondenza tra journey e personas
 
@@ -244,7 +256,7 @@ Tabella: Altri adattamenti del journey alle caratteristiche della persona
 | Journey | Caratteristica della persona | Intervento |
 |---|---|---|
 | {{Journey}} J01 | Tablet, modello mentale dell'offerta, ricorso alla figlia | La curva scende su comprensione e pagamento e risale con conferma e contatto umano; «La pagina è confusa» diventa dati osservabili |
-| {{Journey}} J02 | Pausa breve, rete debole, una mano | Da «Riprende sul laptop» a percorso multicanale; dati da reinserire marcati `[IPOTESI]`; abbandono legato a lentezza ed errore tardivo |
+| {{Journey}} J02 | Pausa breve, rete debole, una mano | Da «Riprende sul laptop» a percorso multicanale; dati da reinserire dichiarati come ipotesi in «Fonti e ipotesi»; abbandono legato a lentezza ed errore tardivo |
 | {{Journey}} J12 | Tremore, ansia da moduli, decide dopo aver parlato con qualcuno | La registrazione è sostituita dal modulo «Proponi una collaborazione», seguito dalla telefonata dell'ufficio e dal direttivo |
 | {{Journey}} J07–J09 | Piccola donazione da iPhone; ricerca esaustiva con interruzioni; candidatura in più sere | Codici delle slide sostituiti da difficoltà descritte per esteso, nel contesto di ciascuna persona |
 | {{Journey}} J10–J12 | Pochi minuti (Franco); tastiera e pubblico estero (Amir); tremore e bisogno di parlare con qualcuno (Maria) | Le emozioni salgono a livelli medio-alti dove il sito risolve il problema; restano le criticità di ciascuno, come le tendine del modulo per Maria |
@@ -254,8 +266,8 @@ Tabella: Altri adattamenti del journey alle caratteristiche della persona
 - **Dodici personas invece di cinque.** Il minimo per quattro persone è 5. Le 12 personas sono costruite per far emergere i problemi di assignment 1. Il rischio è una maturità disomogenea, che si è verificata.
 - **Proto-personas dichiarate.** Non derivano da ricerca con utenti, e le schede lo riportano.
 - **To-be per P10–P12, As-is per gli altri.** I nove journey As-is documentano le difficoltà su IdeaGinger; i tre To-be mostrano, sul sito realizzato, come ideaBlume le affronta. Non abbiamo scritto un To-be per ogni persona: per le altre, la verifica del sito è nel confronto con i punti di dolore.
-- **Niente area riservata.** Il prototipo non prevede account, quindi gli aggiornamenti passano da un ufficio d'Ateneo, marcato `[IPOTESI]`.
-
+- **Niente area riservata.** Il prototipo non prevede account, quindi gli aggiornamenti passano dall'Ufficio di ideaBlume, come riportato in «Fonti e ipotesi» di J10 e J11.
+- **Template e consegna.** La consegna chiede elementi che il template non ha. J10–J12 aggiungono le righe «Obiettivo della fase» e «Informazioni necessarie»; J01–J09 restano sul template, e nelle personas bisogni informativi e fiducia sono distribuiti nei campi esistenti. Non abbiamo uniformato le 24 schede.
 
 ## Fase 2 · Uso dell'IA per il sito
 
@@ -268,7 +280,7 @@ Tabella: Fasi di lavoro del sito (31/10–03/11/2026)
 |---|---|---|
 | Fonti e requisiti | Inventario delle fonti, 90 problemi consolidati, bisogni, 102 requisiti, 19 decisioni proposte | Checkpoint 1: conferma con indicazioni (§6.5) |
 | Architettura | Mappa del sito, design system, controllo dei contrasti | Checkpoint 2: date delle campagne |
-| Implementazione | 58 pagine statiche, donazione in 5 passi | — |
+| Implementazione | Prima versione di 58 pagine statiche, donazione in 5 passi | — |
 | Verifiche | Script di verifica e correzioni | — |
 | Chiusura | Verifica con le personas, valutazione euristica, tracciabilità | — |
 | Redesign | Nuovo aspetto grafico | Richiesta di «un design più moderno» |
@@ -276,14 +288,21 @@ Tabella: Fasi di lavoro del sito (31/10–03/11/2026)
 
 ### Prompt principali e informazioni fornite
 
+**Informazioni fornite.** L'agente ha ricevuto la presentazione di assignment 1, i registri dei problemi, i report Core Web Vitals, i prompt di personas e journey e tutte le schede. A queste si aggiungono i nostri appunti e i vincoli della consegna: niente server, almeno 10 pagine distinte, versione desktop, nessun account né pagamento reale. Il lavoro è organizzato in una catena tracciabile: problema, requisito, soluzione, verifica.
 
-:::prompt | Frammenti del prompt citati nel registro delle decisioni | {{Sito}}
+**Prompt.** Il prompt iniziale, SITO-01, non è stato salvato: ne restano i frammenti citati nel registro delle decisioni. Abbiamo invece conservato due richieste di modifica, riportate qui in estratto e in Appendice A per la parte salvata. L'appendice contiene anche un prompt di esempio scritto a posteriori e indicato come tale.
+
+:::prompt | Frammenti del prompt iniziale, citati nel registro delle decisioni | {{Sito}}
 il prompt chiede un sito statico «consultabile con un semplice server locale» e dati letti da `data/progetti.json`
 […]
 Il prompt dice che la valutazione ha trovato errori 404 «dalle pagine FAQ e Come funziona».
 :::
 
-**Informazioni fornite.** L'agente ha ricevuto la presentazione di assignment 1, i registri dei problemi, i report Core Web Vitals, i prompt di personas e journey e tutte le schede. A queste si aggiungono i nostri appunti e i vincoli della consegna: niente server, almeno 10 pagine distinte, versione desktop, nessun account né pagamento reale. Il lavoro è organizzato in una catena tracciabile: problema, requisito, soluzione, verifica.
+:::prompt | Richieste di modifica (estratti) | {{Sito}}
+Nella sezione dei progetti, quando si filtra rimuovi la didascalia legata ai progetti in corso e ai conclusi, mettila solo nella pagina progetti principale. Poi unisci la search box con la parte dei filtri rimuovendola dalla navbar.
+[…]
+Rifattorizza il sito cambiando la palette dei colori e introducendo il tema chiaro oltre il tema scuro. […]
+:::
 
 ### Dalla prima versione alla versione finale
 
@@ -303,9 +322,10 @@ La richiesta di redesign ammetteva framework CSS: Tailwind e Bootstrap sono stat
 
 #### Una funzione: la ricerca
 
-L'agente ha prodotto una prima versione che con le nostre verifiche manuali hanno trovato difettosa due volte:
-- La prima versione mostrava i progetti totali senza mostrare solamente quelli filtrati. Il filtro non funzionava correttamente, cercava anche sottostringhe all'interno della stringa
-- La seconda versione duplicava la ricerca sulla navbar
+Provando il sito a mano abbiamo trovato due difetti nelle versioni generate dall'agente:
+
+- La prima versione non mostrava solo i progetti filtrati, perché il filtro cercava anche sottostringhe all'interno delle parole.
+- La seconda versione duplicava la ricerca nella navbar.
 
 :::diff | Script di ricerca del sito, dalla prima versione alla finale | {{Sito}}
 - return parole.every(function (w) { return testo.indexOf(w) >= 0; });
@@ -353,13 +373,14 @@ Tabella: Che cosa ha proposto l'agente e che cosa abbiamo deciso
 | Tema | Proposta dell'agente | Decisione del gruppo |
 |---|---|---|
 | Nome | «Sostieni la Ricerca» | **ideaBlume** |
-| Pagine | Almeno 10, come da consegna | 25 Pagine(di cui 10 progetti e una pagina 404) |
+| Pagine | Almeno 10, come da consegna | 25 pagine, di cui 10 progetti e una pagina 404 |
 | Contatti | Dominio `example.org` | Fittizi ma credibili: `@ideablume.it`, numero di Torino |
 | Pubblicazione | Sito apribile senza server | Anche pubblicato online |
 | Date delle campagne | Date relative a oggi | Confermate al checkpoint 2 |
 | Design | Prugna, «lontano dall'arancione» | Prima «più moderno», poi palette calda |
 | Tema | Automatico dal sistema | Chiaro predefinito con interruttore |
 | Contenuti | Segnaposto e avvisi | Eliminati, informazioni stabilite |
+| Ricerca | Campo nella navbar | Tolto dalla navbar e unito ai filtri in «Progetti» |
 
 ### Revisione di contenuti, struttura, navigazione e interazioni
 
@@ -373,11 +394,11 @@ Il principio guida è «prima i progetti da sostenere, poi le regole, poi i serv
 
 #### Navigazione
 
-Il menu passa dalle oltre 70 voci di IdeaGinger a 7 voci senza tendine, con la ricerca sempre visibile e un menu mobile gestibile da tastiera. Tornando dall'elenco, filtri e posizione restano. Su telefono l'intestazione è stata compattata perché andava su tre righe a 375 px.
+Il menu passa dalle oltre 70 voci di IdeaGinger a 8 voci senza tendine, Home compresa, con un menu mobile gestibile da tastiera. La ricerca non è più nella navbar: si trova in home, nell'elenco dei progetti e nella pagina dei risultati. L'ordine finale è Home, Progetti, Chi siamo, Come funziona, Il programma dell'Ateneo, Proponi un progetto, Domande frequenti, Contatti, diverso da quello della nostra richiesta in Appendice A, che non prevedeva Home e metteva Progetti al terzo posto. Tornando dall'elenco, filtri e posizione restano. Su telefono l'intestazione è stata compattata perché andava su tre righe a 375 px.
 
 :::figure2 | stretta
 ![Home a 375 pixel: intestazione su una riga, ricerca, titolo e frase che spiega il servizio.](home-375.jpg){Home a 375 px.}
-![Menu mobile aperto a 375 pixel con le sette voci in un elenco.](menu-mobile-375.png){Menu mobile a 375 px con le 7 voci.}
+![Menu mobile aperto a 375 pixel con sette voci in un elenco e il campo di ricerca in alto.](menu-mobile-375.png){Menu mobile a 375 px, prima delle ultime modifiche: 7 voci e ricerca in alto.}
 ![Pagina di un progetto a 375 pixel: tema, titolo, gruppo, responsabile e riquadro dello stato.](progetto-375.jpg){Pagina progetto a 375 px.}
 :::
 
@@ -405,7 +426,7 @@ Tabella: Estratto della tracciabilità problema → soluzione
 | Problema | Fonte | Journey | Soluzione | Verifica | Stato |
 |---|---|---|---|---|---|
 | Nessuna frase che dica che cos'è il servizio (G4) | Slide 59 | J01, J07, J12 | Frase iniziale in home e nel programma | Screenshot a 1280 e 375 px | Risolto |
-| Menu con oltre 70 voci (G2) | Slide 67 | J03, J11, J12 | 7 voci senza tendine; `aria-expanded`, Esc | Test da tastiera | Risolto |
+| Menu con oltre 70 voci (G2) | Slide 67 | J03, J11, J12 | 8 voci senza tendine; `aria-expanded`, Esc | Test da tastiera | Risolto |
 | Oltre il 100% senza etichetta (G3) | Slide 10 | J01, J05, J10 | Badge con icona e testo | Test dei percorsi e dei dati | Risolto |
 | Card che non sembrano cliccabili (G4) | Slide 17 | J03 | Titolo come unico link esteso alla card | Test da tastiera | Risolto |
 | Il promotore riceve i dati anche con l'anonimato | Prompt C00 | J06 | Il sito lo dichiara prima dell'invio | Verifica con le personas | Risolto |
@@ -415,7 +436,7 @@ Tabella: Estratto della tracciabilità problema → soluzione
 Riteniamo di aver usato l'IA in modo responsabile. In questa sezione mettiamo alla prova questa affermazione sul lavoro svolto: indichiamo dove regge e dove no.
 
 :::responsabile | Supervisione umana
-L'IA ha prodotto bozze e proposte; le scelte di progetto sono passate dal gruppo. Per le personas: l'iterazione di revisione sui primi output (§5.5) e le note con le decisioni da prendere insieme. Per il sito: i checkpoint, con proposte che abbiamo cambiato (§6.5), e gli script di verifica. Il limite è dichiarato nella nostra valutazione euristica: «chi valuta ha anche progettato il sito». Non abbiamo documentato l'esecuzione di V00.
+L'IA ha prodotto bozze e proposte; le scelte di progetto sono passate dal gruppo. Per le personas: l'iterazione di revisione sui primi output (§5.5) e le note con le decisioni da prendere insieme. Per il sito: i checkpoint, con proposte che abbiamo cambiato (§6.5), e gli script di verifica. Il limite è dichiarato nella nostra valutazione euristica: «chi valuta ha anche progettato il sito». V00 è stato eseguito solo il 05/11/2026, a sito finito (§5.4).
 :::
 
 :::responsabile | Fondamento nei dati
@@ -438,7 +459,7 @@ Le personas sono fittizie e i nomi inventati. Il sito non invia dati a un server
 :::
 
 :::responsabile | Trasparenza
-Questa relazione dichiara strumenti, prompt e limiti. È stata revisionata tramite **Claude Code (Claude Opus 5.5)** , che chiedeva di non inventare prompt, versioni o interventi. L'agente ha letto i nostri materiali e ha controllato il testo.
+Questa relazione dichiara strumenti, prompt e limiti. È stata revisionata con **Claude Code (Claude Opus 5.5)**, a cui abbiamo chiesto di non inventare prompt, versioni o interventi: l'agente ha letto i nostri materiali e ha controllato il testo. Il limite maggiore riguarda il sito: dopo l'ultima revisione non dichiara più di essere un prototipo didattico e presenta come definitive informazioni inventate. Chi lo visita può saperlo solo da questa relazione.
 :::
 
 ## Contributo del gruppo
@@ -462,7 +483,7 @@ Tabella: Che cosa ha fatto l'IA e che cosa ha fatto il gruppo
 
 ## Appendice A · Prompt
 
-Questa appendice raccoglie esempi di prompt per personas, journey, sito e relazione. Il contesto comune C00 e il prompt principale di P01–P03 sono in §5.2. Tutti i prompt riportati sono quelli che abbiamo usato, tranne il prompt di esempio per generare il sito, che abbiamo scritto a posteriori e che è indicato come tale.
+Questa appendice raccoglie esempi di prompt per personas, journey e sito. Il contesto comune C00 e il prompt principale di P01–P03 sono in §5.2. Tutti i prompt riportati sono quelli che abbiamo usato, tranne il prompt di esempio per generare il sito, che abbiamo scritto a posteriori e che è indicato come tale.
 
 ### Prompt per personas e user journey
 
@@ -550,7 +571,7 @@ J03: Descrivere lo stato non annunciato nel codice e il conseguente golfo della 
 :::prompt | Prompt · V00, verifica di un documento generato (estratto) | {{Personas}} {{Journey}}
 1. Struttura: front matter completo; titoli e ordine delle sezioni identici a <formato_persona> o <formato_journey>.
 2. Citazioni: ogni problema assegnato nel prompt originale è citato; ogni citazione esiste nel catalogo C00 con criterio e gravità corretti; problemi_citati coincide con gli ID presenti nel testo.
-3. Fedeltà: nessun problema del sito inventato; le ipotesi sono marcate; nessun numero, URL o nome reale inventato.
+3. Fedeltà: nessun problema del sito inventato; le ipotesi sono marcate [IPOTESI]; nessun numero, URL o nome reale inventato.
 4. Coerenza con la scheda vincolante: età, dispositivo, familiarità, accessibilità e frequenza rispettati.
 5. Journey: fasi della tabella uguali al front matter; punteggi della curva emotiva uguali alla riga Emozioni; ogni difficoltà ha un'opportunità; touchpoint e canali non confusi.
 6. Terminologia HCI corretta (usabilità e UX, affordance e signifier, touchpoint e canale, euristiche di Nielsen).
