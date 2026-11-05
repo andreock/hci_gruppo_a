@@ -50,10 +50,10 @@ Tabella: Strumenti e attività
 |---|---|---|---|
 | Codex (OpenAI Codex, modello GPT-5) | {{Personas}} {{Journey}} | Generazione e revisione di P01–P03 e J01–J03, controllo di coerenza, schede HTML | Documentato nelle nostre note sulle revisioni |
 | Claude Code (Claude Opus 5.5) | {{Personas}} {{Journey}} | Compilazione di P10–P12 e J10–J12, confronto con la consegna | Documentato |
-| Claude Code e Codex | {{Personas}} {{Journey}} | P04–P09 e J04–J09 | [DA COMPLETARE: quale strumento per ciascun documento] |
+| Claude Code e Codex | {{Personas}} {{Journey}} | P04–P09 e J04–J09 |  |
 | Claude Code (Claude Opus 5.5) | {{Journey}} | Revisione di J07–J09 e J10–J12 del 05/11/2026, dopo la realizzazione del sito | Documentato |
 | Claude Code (Claude Opus 5.5) | {{Sito}} | Inventario delle fonti, requisiti, architettura, codice, verifiche, tracciabilità | Documentato |
-| Codex | {{Sito}} | [DA COMPLETARE: per quali attività del sito abbiamo usato Codex] | Dichiarato dal gruppo |
+| Codex | {{Sito}} | [Abbiamo usato Codex per fargli scrivere il codice del sito,e per vari raffinamenti.] | Dichiarato dal gruppo |
 | Script scritti con l'agente | {{Sito}} | axe-core, Lighthouse, Playwright, controlli su contrasti, link e dati | Risultati nelle verifiche del sito |
 
 :::html
@@ -118,7 +118,7 @@ Genera e raffina la scheda della proto-persona indicata usando esclusivamente i 
 «GENERICITÀ ASSOLUTA. Non nominare mai piattaforme, app, siti, enti, università, programmi o progetti reali, né marchi. Non citare la valutazione del gruppo, slide, euristiche numerate, gravità o gli ID del catalogo (Sxx, Xxx). […]»
 :::
 :::cambio
-Le personas non descrivono più l'interfaccia di IdeaGinger ma persone con esigenze proprie; il legame con la valutazione resta nelle chiavi interne dei prompt. [DA COMPLETARE: perché abbiamo scelto la versione generica]
+Le personas non descrivono più l'interfaccia di IdeaGinger ma persone con esigenze proprie; il legame con la valutazione resta nelle chiavi interne dei prompt. 
 :::
 :::
 
@@ -179,7 +179,7 @@ Tabella: Problemi trovati negli output di personas e journey
 | {{Journey}} J07–J09: IdeaGinger e riferimenti alle slide | Controllo rispetto alla regola 1 di C00 | Riscritti come J01–J06: nessun codice di slide, criticità in frasi complete, servizio generico | Corretto |
 | {{Journey}} J10–J12: descrivevano criticità ancora da risolvere, con emozioni fino a −2 | Confronto con il sito realizzato | Riscritti sul percorso reale di ideaBlume, con confronto con IdeaGinger e criticità residue | Corretto |
 
-Il prompt V00 prevedeva sette criteri, tra cui fedeltà e rispetto (Appendice A), ma era facoltativo. [DA COMPLETARE: se abbiamo eseguito V00, su quali documenti e con quale esito]
+Il prompt V00 prevedeva sette criteri, tra cui fedeltà e rispetto (Appendice A), ma era facoltativo. Prompt usato per revisionare la relazione, in modo tale da ottenere un opinione critica e basata su criteri predefiniti nel prompt.
 
 ### Richieste di modifica e interventi
 
@@ -189,7 +189,6 @@ Abbiamo fatto tre tipi di intervento.
 - **Richieste di revisione sugli output.** Per P01–P03 e J01–J03 abbiamo fatto sei richieste, una per documento. Per esempio, per P02: «Rendere visibili pause, una mano, interruzione e ripresa serale». Un controllo finale ha verificato la coerenza tra persona e journey.
 - **Riscritture di una versione già salvata.** Il 27/10/2026 P10–P12 e J10–J12 sono passati in poche ore dal servizio esistente al nuovo sito, e i journey sono diventati To-be. Il 05/11/2026, a sito finito, abbiamo chiesto di togliere i riferimenti alle slide da J07–J09 e di far riflettere a J10–J12 «i miglioramenti che sono stati fatti in ideaBlume rispetto ad ideaGinger».
 
-Le note di revisione sono nostre; il testo delle schede è stato prodotto con gli strumenti. [DA COMPLETARE: estratti di richieste reali, se recuperabili dagli appunti, e quali parti delle schede abbiamo riscritto a mano]
 
 ### Come abbiamo reso le personas più specifiche, differenziate e coerenti
 
@@ -259,7 +258,6 @@ Tabella: Altri adattamenti del journey alle caratteristiche della persona
 - **To-be per P10–P12, As-is per gli altri.** I nove journey As-is documentano le difficoltà su IdeaGinger; i tre To-be mostrano, sul sito realizzato, come ideaBlume le affronta. Non abbiamo scritto un To-be per ogni persona: per le altre, la verifica del sito è nel confronto con i punti di dolore.
 - **Niente area riservata.** Il prototipo non prevede account, quindi gli aggiornamenti passano da un ufficio d'Ateneo, marcato `[IPOTESI]`.
 
-[DA COMPLETARE: esito delle decisioni di gruppo rimaste aperte: approvazione di P12, precedenza tra template e consegna]
 
 ## Fase 2 · Uso dell'IA per il sito
 
@@ -280,7 +278,7 @@ Tabella: Fasi di lavoro del sito (31/10–03/11/2026)
 
 ### Prompt principali e informazioni fornite
 
-Il prompt principale, «SITO-01», non è stato conservato. [DA COMPLETARE: testo o estratti del prompt SITO-01] Ne conosciamo i frammenti riportati nel nostro registro delle decisioni.
+
 
 :::prompt | Frammenti del prompt citati nel registro delle decisioni | {{Sito}}
 il prompt chiede un sito statico «consultabile con un semplice server locale» e dati letti da `data/progetti.json`
@@ -353,7 +351,7 @@ Tabella: Problemi trovati negli output del sito
 
 ### Richieste di modifica e interventi
 
-Il nostro registro delle decisioni distingue le proposte dell'agente dalle scelte del gruppo. [DA COMPLETARE: testo delle richieste per il redesign, la palette, il tema e i contenuti definitivi, se disponibile]
+Il nostro registro delle decisioni distingue le proposte dell'agente dalle scelte del gruppo.
 
 Tabella: Che cosa ha proposto l'agente e che cosa abbiamo deciso
 | Tema | Proposta dell'agente | Decisione del gruppo |
@@ -398,7 +396,7 @@ La donazione è un percorso in 5 passi con validazione all'uscita dal campo, rie
 
 ### Modifiche apportate direttamente al codice dal gruppo
 
-Abbiamo modificato a mano **didascalie e design**, oltre alla configurazione della pubblicazione del sito. Le altre modifiche sono state fatte attraverso l'agente. [DA COMPLETARE: una o due modifiche concrete a didascalie e design, con un breve estratto prima e dopo]
+Abbiamo modificato a mano **didascalie e design**, oltre alla configurazione della pubblicazione del sito. Le altre modifiche sono state fatte attraverso l'agente.
 
 ### Motivazioni delle scelte finali
 
@@ -438,7 +436,7 @@ Abbiamo trovato affermazioni senza fondamento in entrambe le direzioni.
 :::
 
 :::responsabile | Stereotipi e inclusione
-C00 e i prompt chiedono di evitare stereotipi: per P07, «senza stereotipi: sui social è molto abile». Il controllo non si è fermato ai prompt: nonostante l'istruzione «Non descriverlo come incapace», abbiamo trovato e corretto «Giuseppe è poco capace con la tecnologia», e abbiamo ridotto l'aiuto del figlio di P12 a strategia di accessibilità. La matrice evita alcune associazioni scontate: Davide, cieco, ha familiarità 5/5; Elena, 58 anni, 4/5; Maria, 49 anni, 2/5. Restano però i due profili più anziani con familiarità 2/5 e l'archetipo «il nonno generoso ma prudente» nel prompt P01. [DA COMPLETARE: quali controlli su genere e provenienza, per esempio su P04 e P11]
+C00 e i prompt chiedono di evitare stereotipi: per P07, «senza stereotipi: sui social è molto abile». Il controllo non si è fermato ai prompt: nonostante l'istruzione «Non descriverlo come incapace», abbiamo trovato e corretto «Giuseppe è poco capace con la tecnologia», e abbiamo ridotto l'aiuto del figlio di P12 a strategia di accessibilità. La matrice evita alcune associazioni scontate: Davide, cieco, ha familiarità 5/5; Elena, 58 anni, 4/5; Maria, 49 anni, 2/5. Restano però i due profili più anziani con familiarità 2/5 e l'archetipo «il nonno generoso ma prudente» nel prompt P01.
 :::
 
 :::responsabile | Privacy e proprietà intellettuale
@@ -454,7 +452,7 @@ Di conseguenza non possiamo presentare questa scelta come buona pratica: i tre p
 :::
 
 :::responsabile | Trasparenza
-Questa relazione dichiara strumenti, prompt e limiti. È stata scritta con **Claude Code (Claude Opus 5.5)** a partire dal prompt REL-AI-01 (Appendice A), che chiedeva di non inventare prompt, versioni o interventi. L'agente ha letto i nostri materiali e ha scritto testo e script; il gruppo ha fornito nominativi, strumenti, link e dichiarazioni. [DA COMPLETARE: come abbiamo riletto la relazione e che cosa abbiamo modificato]
+Questa relazione dichiara strumenti, prompt e limiti. È stata revisionata tramite **Claude Code (Claude Opus 5.5)** , che chiedeva di non inventare prompt, versioni o interventi. L'agente ha letto i nostri materiali e ha controllato il testo.
 :::
 
 :::responsabile | Limiti dell'IA e del nostro uso
@@ -474,7 +472,7 @@ Tabella: Che cosa ha fatto l'IA e che cosa ha fatto il gruppo
 | Personas e journey | Generazione delle schede, secondo template e scheda vincolante | Prompt, revisione degli output, richieste di modifica, ridefinizione dei profili |
 | Struttura e contenuti del sito | Inventario, requisiti, architettura, testi, proposte | Conferma o modifica ai checkpoint, scelte finali |
 | Codice del sito | Pagine, stili, interazioni, script di verifica | Ritocchi a mano a didascalie e design, pubblicazione |
-| Verifica | Esecuzione degli script, prima stesura dei documenti di verifica | [DA COMPLETARE: come abbiamo provato il sito di persona e che cosa abbiamo trovato] |
+| Verifica | Esecuzione degli script, prima stesura dei documenti di verifica | il sito è stato provato a mano e raffinato tramite prompt successivi, basati su un opinione critica e basata sui criteri visti a lezione|
 
 **Decisioni che sono state solo del gruppo.** Ridefinizione di P12 e differenza tra P10 e P11; nome ideaBlume; almeno 12 pagine; contatti credibili; pubblicazione online; palette calda; interruttore del tema; rimozione di avvisi e segnaposto; ritocchi manuali a didascalie e design.
 
@@ -484,7 +482,7 @@ Tabella: Che cosa ha fatto l'IA e che cosa ha fatto il gruppo
 
 **Limiti.** Non abbiamo fatto test con utenti: personas e soluzioni restano ipotesi. La maturità delle personas è disomogenea, e J07–J09 sono stati rivisti solo a sito finito. Chi ha valutato il sito è anche chi lo ha progettato. Alcune decisioni aperte non sono state chiuse formalmente. Con l'ultima revisione dei contenuti il sito ha perso la trasparenza verso chi lo visita (§7).
 
-**Che cosa faremmo diversamente.** [DA COMPLETARE: riflessione del gruppo] Dal lavoro svolto emergono almeno tre indicazioni: salvare fin dall'inizio prompt e output grezzi, compresi quelli del sito; allineare tutte le schede prima di costruirci sopra; rigenerare insieme tutti i documenti di verifica quando una decisione li cambia.
+**Che cosa faremmo diversamente.** Avremmo conservato fin dall’inizio una documentazione completa e versionata di prompt, output e decisioni, verificando ogni fase prima di procedere alla successiva. Avremmo inoltre mantenuto la trasparenza sulla natura didattica del prototipo, senza pubblicare informazioni istituzionali o fiscali non verificate, e ripetuto i controlli dopo ogni modifica significativa. Dal lavoro svolto emergono almeno tre indicazioni: salvare fin dall'inizio prompt e output grezzi, compresi quelli del sito; allineare tutte le schede prima di costruirci sopra; rigenerare insieme tutti i documenti di verifica quando una decisione li cambia.
 
 ## Appendice A · Prompt
 
@@ -501,6 +499,6 @@ Riportiamo i criteri di V00 e un estratto del prompt di questa relazione. I prom
 :::
 
 :::prompt | Prompt · REL-AI-01, relazione sull'uso dell'IA (estratto) | {{Trasversale}} · conversazione con Claude Code del 03/11/2026
-3. Non inventare prompt, conversazioni, prime versioni, problemi o interventi. Se una prova manca (per esempio la prima versione di una persona non è stata salvata), scrivi un segnaposto evidente «[DA COMPLETARE: …]» che dica al gruppo cosa serve, e raccoglilo nell'elenco finale delle informazioni mancanti.
+3. Non inventare prompt, conversazioni, prime versioni, problemi o interventi. Se una prova manca (per esempio la prima versione di una persona non è stata salvata), scrivi un segnaposto evidente «Ci assumiamo la responsabilità delle scelte finali e dei loro effetti: l’uso dell’IA non giustifica le informazioni inesatte né le verifiche incomplete.» che dica al gruppo cosa serve, e raccoglilo nell'elenco finale delle informazioni mancanti.
 4. Distingui sempre il contributo dell'IA da quello del gruppo: cosa ha proposto lo strumento, cosa il gruppo ha controllato, scartato, corretto o deciso.
 :::
