@@ -277,7 +277,6 @@ Tabella: Fasi di lavoro del sito (31/10–03/11/2026)
 ### Prompt principali e informazioni fornite
 
 
-
 :::prompt | Frammenti del prompt citati nel registro delle decisioni | {{Sito}}
 il prompt chiede un sito statico «consultabile con un semplice server locale» e dati letti da `data/progetti.json`
 […]
@@ -463,7 +462,90 @@ Tabella: Che cosa ha fatto l'IA e che cosa ha fatto il gruppo
 
 ## Appendice A · Prompt
 
-Riportiamo i criteri di V00 e un estratto del prompt di questa relazione. I prompt di C00, P01 e P01–P03 sono in §5.2.
+Questa appendice raccoglie esempi di prompt per personas, journey, sito e relazione. Il contesto comune C00 e il prompt principale di P01–P03 sono in §5.2. Tutti i prompt riportati sono quelli che abbiamo usato, tranne il prompt di esempio per generare il sito, che abbiamo scritto a posteriori e che è indicato come tale.
+
+### Prompt per personas e user journey
+
+Ogni persona e ogni journey hanno un prompt proprio, da usare dopo C00. I prompt di persona fissano i tratti che non devono cambiare nella `<scheda_vincolante>`; quelli di journey definiscono scenario e fasi. Le chiavi tra parentesi quadre o nell'elenco delle fasi (S59, S41…) rimandano al catalogo dei problemi di C00 e non compaiono nelle schede.
+
+:::prompt | Prompt · P01, Giuseppe Ferrero (estratto) | {{Personas}} · versione 3
+<obiettivo>
+Genera la scheda della persona P01 usando il formato <formato_persona> e le regole del contesto C00. Racconta la persona e il suo rapporto con il crowdfunding in generale, senza riferimenti ad app, piattaforme, enti o progetti reali.
+</obiettivo>
+
+<scheda_vincolante>
+- Nome: Giuseppe Ferrero
+- Età: 71
+- Città: Moncalieri, nella prima cintura di Torino
+- Occupazione: insegnante di scienze alle scuole medie, in pensione
+[…]
+- Ruolo: donatore alla prima esperienza di crowdfunding
+- Dispositivo principale: tablet Android da 10 pollici regalato dal nipote, con carattere ingrandito; in casa non c'è un computer
+- Familiarità digitale: 2/5. Usa WhatsApp, email, meteo e il giornale online; ha pagato online solo con l'aiuto della figlia; diffida dei siti che non conosce
+- Accessibilità: presbiopia (occhiali da lettura), si affatica con testi piccoli e poco contrastati; tocchi imprecisi sui bersagli piccoli
+- Frequenza d'uso: prima volta; al massimo una o due donazioni l'anno
+- Motivazione: ha letto sul giornale di un progetto di ricerca universitaria per proteggere i neonati dai virus e, pensando alla nipote, vuole donare 50 €
+</scheda_vincolante>
+
+<frustrazioni_da_far_emergere>
+- [S59] Non capisce subito «che cosa sia» il sito su cui è arrivato.
+- [S23, S54] Testi piccoli e poco contrastati che lo costringono a ingrandire.
+- [S12] Parole inglesi del crowdfunding che non conosce.
+- [S10, S11] Numeri e percentuali che non sa interpretare (oltre il 100%, giorni con il segno meno).
+- [S41] Paura di sbagliare quando paga online e l'errore arriva solo alla fine.
+</frustrazioni_da_far_emergere>
+:::
+
+:::prompt | Prompt · J01, il journey di Giuseppe (estratto) | {{Journey}} · versione 3
+<scenario>
+Domenica mattina, a casa. Giuseppe ha letto sul giornale di un progetto di ricerca universitaria per proteggere i neonati dai virus, finanziato con il crowdfunding. Sul tablet cerca il progetto con il motore di ricerca. Obiettivo: donare 50 € ed essere sicuro che i soldi arrivino davvero alla ricerca.
+</scenario>
+
+<fasi>
+Usa queste fasi come colonne. Per ogni fase sono indicati i problemi del catalogo di C00 da far emergere nella riga «Criticità e barriere» (con una soluzione in «Opportunità di miglioramento») e le esperienze positive da usare. Le chiavi non vanno riportate nel documento.
+1. Scoperta: articolo sul giornale e ricerca online. Canali: giornale cartaceo, motore di ricerca. Problema facoltativo: S60.
+2. Orientamento sulla homepage dell'app. Canale: sito da tablet. Problemi: S59, S23.
+3. Capire come funziona la donazione (pagina «Come funziona»). Problemi: S54, S52, S12. Positivo: S44 (trova un numero di telefono).
+4. Valutare il progetto: elenco dei progetti e pagina del progetto. Problemi: S10, S11, S14. Positivo: S27.
+5. Donare: scelta dell'importo e modulo di donazione. Problema: S41.
+6. Dopo la donazione: telefona alla figlia o all'assistenza per avere conferma; attende un'email [IPOTESI]. Canali: telefono, email.
+</fasi>
+
+<indicazioni_specifiche>
+- Andamento emotivo atteso: motivazione alta all'inizio, calo nelle fasi 3–4, minimo nella fase 5, recupero nella fase 6 grazie al contatto umano.
+- Nella fase 4 mostra il golfo della valutazione: Giuseppe interpreta male lo stato della campagna e rischia di rinunciare per un motivo sbagliato.
+- Nella fase 5 evidenzia che dover scegliere una «ricompensa» non corrisponde al suo modello mentale.
+</indicazioni_specifiche>
+:::
+
+:::prompt | Prompt · P11, Amir Haddad, un promotore (estratto) | {{Personas}} · versione 3
+<scheda_vincolante>
+- Nome: Amir Haddad
+- Età: 27
+- Origine e lingue: libanese, in Italia da cinque anni; arabo madrelingua, inglese C1, italiano B2
+- Occupazione: dottorando in Informatica
+[…]
+- Ruolo: promotore; cura la comunicazione della campagna fittizia del suo gruppo («OpenAria», sensori open source per la qualità dell'aria)
+- Dispositivo principale: laptop Linux con Firefox; smartphone Android
+- Familiarità digitale: 5/5. Sviluppatore, usa molto la tastiera e le scorciatoie, ispeziona il codice delle pagine
+- Motivazione: portare donatori anche dall'estero (colleghi internazionali, comunità libanese) e far sembrare la campagna professionale
+</scheda_vincolante>
+
+<indicazioni_specifiche>
+- È un utente esperto: le sue difficoltà riguardano flessibilità ed efficienza d'uso e qualità tecnica, oltre alle lingue.
+- Fa da ponte tra il gruppo di ricerca e i donatori: vede i problemi in prima persona e attraverso i messaggi che riceve.
+- Distingui ciò che è previsto dal catalogo da ciò che riguarda l'area riservata dei promotori, da marcare [IPOTESI].
+</indicazioni_specifiche>
+:::
+
+:::prompt | Richieste di revisione sulle prime bozze di P01–P03 e J01–J03 | {{Personas}} {{Journey}} · iterazione 1
+P01: Descrivere competenze, strategie e contesto; attribuire le difficoltà all'interfaccia.
+J01: Esplicitare percentuali oltre il 100%, giorni negativi e apertura inattesa dei link.
+P02: Rendere visibili pause, una mano, interruzione e ripresa serale.
+J02: Indicare dati da reinserire [IPOTESI] e collegarli a una soluzione di salvataggio.
+P03: Specificare navigazione per H, landmark, elenco link e sintesi ad alta velocità.
+J03: Descrivere lo stato non annunciato nel codice e il conseguente golfo della valutazione.
+:::
 
 :::prompt | Prompt · V00, verifica di un documento generato (estratto) | {{Personas}} {{Journey}}
 1. Struttura: front matter completo; titoli e ordine delle sezioni identici a <formato_persona> o <formato_journey>.
@@ -475,7 +557,79 @@ Riportiamo i criteri di V00 e un estratto del prompt di questa relazione. I prom
 7. Rispetto nella descrizione delle esigenze di accessibilità, senza stereotipi.
 :::
 
-:::prompt | Prompt · REL-AI-01, relazione sull'uso dell'IA (estratto) | {{Trasversale}} · conversazione con Claude Code del 03/11/2026
-3. Non inventare prompt, conversazioni, prime versioni, problemi o interventi. Se una prova manca (per esempio la prima versione di una persona non è stata salvata), scrivi un segnaposto evidente «Ci assumiamo la responsabilità delle scelte finali e dei loro effetti: l’uso dell’IA non giustifica le informazioni inesatte né le verifiche incomplete.» che dica al gruppo cosa serve, e raccoglilo nell'elenco finale delle informazioni mancanti.
-4. Distingui sempre il contributo dell'IA da quello del gruppo: cosa ha proposto lo strumento, cosa il gruppo ha controllato, scartato, corretto o deciso.
+### Prompt per il sito
+
+Questi sono due prompt con cui abbiamo chiesto di rifinire il sito già generato.
+
+:::prompt | Richiesta di modifica · navigazione, ricerca e «Chi siamo» | {{Sito}}
+Nella sezione dei progetti, quando si filtra rimuovi la didascalia legata ai progetti in corso e ai conclusi, mettila solo nella pagina progetti principale. Poi unisci la search box con la parte dei filtri rimuovendola dalla navbar.
+Inoltre modifica l'ordine della navbar come segue: Chi siamo, Come funziona, Progetti, Proponi un progetto, Programma dell'ateneo, FAQ e contatti. Migliora anche la pagina chi siamo inventando una storia e aumentando un po' le didascalie.
+:::
+
+:::prompt | Richiesta di modifica · palette, tema e contenuti definitivi | {{Sito}} · la parte finale, un testo incollato, non è stata salvata
+Rifattorizza il sito cambiando la palette dei colori e introducendo il tema chiaro oltre il tema scuro. Togli qualsiasi riferimento al fatto che il sito è simulato e che ci siano campagne/informazioni da decidere con l'università, tutto è deciso nulla deve essere ipotetico. […]
+:::
+
+### Prompt di esempio per generare il sito
+
+Il prompt iniziale del sito non è stato salvato, quindi quello che segue **non è il prompt che abbiamo usato**. Lo abbiamo scritto a posteriori per mostrare come chiederemmo oggi un sito del genere: riunisce in un'unica richiesta le fonti, i vincoli e le correzioni emersi durante il lavoro (§6).
+
+:::prompt | Prompt di esempio, scritto a posteriori · generazione di ideaBlume | {{Sito}}
+<ruolo>
+Sei un progettista UX e sviluppatore front-end esperto di accessibilità. Collabori con un gruppo di studenti del corso di Human-Computer Interaction e scrivi in italiano.
+</ruolo>
+
+<obiettivo>
+Progetta e realizza ideaBlume, il sito di crowdfunding dei progetti di ricerca dell'Università di Torino. Chi arriva deve capire subito che cos'è il servizio e chi lo gestisce, trovare per primi i progetti da sostenere e poter donare senza incertezze. Il sito deve risolvere i problemi emersi dalla nostra valutazione euristica di IdeaGinger.
+</obiettivo>
+
+<fonti>
+Prima di proporre qualsiasi cosa leggi: la consegna, la relazione di assignment 1 con i registri dei problemi, i report Core Web Vitals, le 12 personas e i 12 journey.
+- Se due fonti sono in conflitto prevale la consegna: segnalami il conflitto.
+- Se una fonte sembra sbagliata non correggerla in silenzio: segnalamelo.
+- Ogni requisito deve indicare il problema o la persona da cui deriva.
+</fonti>
+
+<vincoli>
+- Sito statico in HTML, CSS e JavaScript, senza framework: tutto deve funzionare senza server, anche aprendo i file da file://.
+- Nessun account e nessun pagamento reale: i moduli restano nel browser e non si chiedono numeri di carta.
+- Versione italiana e inglese complete, generate dagli stessi modelli.
+- Una sola fonte di dati per progetti, importi e date, da cui uno script genera le pagine: lo stesso numero deve essere uguale ovunque.
+- Font open source inclusi nel sito. Nessun logo di IdeaGinger o dell'Università e nessun nome di iniziative reali.
+</vincoli>
+
+<struttura>
+Menu senza tendine: Home, Progetti, Chi siamo, Come funziona, Il programma dell'Ateneo, Proponi un progetto, Domande frequenti, Contatti.
+Altre pagine: 10 pagine progetto, risultati di ricerca, donazione e conferma, candidatura per i ricercatori dell'Ateneo, collaborazione per gli enti esterni, accessibilità, pagina 404.
+L'ordine di priorità è: prima i progetti da sostenere, poi le regole, poi i servizi per chi propone.
+</struttura>
+
+<interazioni>
+- Elenco dei progetti: ricerca, filtri e ordinamento salvati nell'indirizzo; tornando da un progetto restano filtri e posizione.
+- Ricerca: per inizio di parola e tollerante a singolare e plurale, maschile e femminile. «api» trova «apicoltori» ma non «capire»; «veterinaria» trova «Scienze Veterinarie». Se non ci sono risultati, proponi alternative.
+- Stato delle campagne: sempre con testo e icona, mai con il solo colore, compreso «Obiettivo raggiunto · puoi ancora sostenerlo per N giorni». Le campagne concluse non hanno controlli di donazione attivi.
+- Donazione in 5 passi: validazione all'uscita dal campo, riepilogo degli errori che riceve il focus, dati conservati tra i passi, «Modifica» nel riepilogo, commissioni visibili prima di pagare.
+- Anonimato: spiega prima dell'invio quali dati riceve comunque il promotore.
+</interazioni>
+
+<design>
+- Palette calda su fondo crema, tema chiaro predefinito e tema scuro con interruttore. Un solo colore di accento, riservato all'azione «Sostieni il progetto».
+- WCAG 2.1 AA in entrambi i temi: testo almeno 4,5:1, componenti almeno 3:1. Calcola i contrasti con uno script.
+- Tutto usabile da tastiera, con focus visibile; menu mobile con aria-expanded e chiusura con Esc; link con nomi distinguibili anche fuori contesto.
+- Nessuno scorrimento orizzontale a 375 px, buone prestazioni su mobile e nessuno spostamento del layout durante il caricamento.
+</design>
+
+<contenuti>
+Scrivi testi semplici, senza gergo, con gli importi in una sola forma e senza segnaposto. Progetti, persone, recapiti e importi sono inventati: elencali in un documento, così possiamo dichiararlo nella relazione. Non attribuire all'Ateneo regole, dati fiscali o dati reali che non si trovano nelle fonti: chiedici prima di fissarli.
+</contenuti>
+
+<processo>
+Lavora per fasi e fermati ai checkpoint: non proseguire finché non abbiamo risposto.
+1. Fonti e requisiti: inventario, problemi consolidati, bisogni per persona, requisiti, decisioni da prendere. CHECKPOINT.
+2. Architettura: mappa del sito, design system, controllo dei contrasti. CHECKPOINT.
+3. Implementazione a piccoli incrementi.
+4. Verifiche: axe-core, Lighthouse, percorsi completi con Playwright e script su link, dati e lessico. Correggi e ripeti i controlli dopo ogni modifica significativa.
+5. Chiusura: cognitive walkthrough per ogni persona, valutazione euristica e tabella di tracciabilità problema → requisito → soluzione → verifica.
+In un registro delle decisioni distingui sempre ciò che proponi tu da ciò che decidiamo noi. Dichiara risolto un problema solo dopo averlo verificato e riporta i limiti rimasti.
+</processo>
 :::

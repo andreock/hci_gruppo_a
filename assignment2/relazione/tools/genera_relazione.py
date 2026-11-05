@@ -103,6 +103,7 @@ class Stato:
         self.tab = 0
         self.segnaposto = []      # (sezione, testo)
         self.sezione = "Copertina"
+        self.in_appendice = False
         self.pagine = pagine or {}
 
 
@@ -232,11 +233,13 @@ def render(righe, st):
             liv = len(m.group(1))
             testo = m.group(2)
             num = ""
+            if liv == 2:
+                st.in_appendice = testo.startswith("Appendice")
             if liv == 2 and not testo.startswith("Appendice") and testo != "Indice":
                 st.h2 += 1
                 st.h3 = 0
                 num = str(st.h2)
-            elif liv == 3 and st.h2 and not st.sezione.startswith("Appendice"):
+            elif liv == 3 and st.h2 and not st.in_appendice:
                 st.h3 += 1
                 num = f"{st.h2}.{st.h3}"
             ident = slug((num + "-" if num else "") + testo)
