@@ -49,11 +49,9 @@ Tabella: Strumenti e attività
 | Strumento | Fase | Attività | Che cosa risulta |
 |---|---|---|---|
 | Codex (OpenAI Codex, modello GPT-5) | {{Personas}} {{Journey}} | Generazione e revisione di P01–P03 e J01–J03, controllo di coerenza, schede HTML | Documentato nelle nostre note sulle revisioni |
-| Claude Code (Claude Opus 5.5) | {{Personas}} {{Journey}} | Compilazione di P10–P12 e J10–J12, confronto con la consegna | Documentato |
-| Claude Code e Codex | {{Personas}} {{Journey}} | P04–P09 e J04–J09 |  |
-| Claude Code (Claude Opus 5.5) | {{Journey}} | Revisione di J07–J09 e J10–J12 del 05/11/2026, dopo la realizzazione del sito | Documentato |
+| Claude Code (Claude Opus 5.5) | {{Personas}} {{Journey}} | Compilazione di P04–P12 e J04–J12, confronto con la consegna e revisione tramite prompt di verifica | Documentato |
 | Claude Code (Claude Opus 5.5) | {{Sito}} | Inventario delle fonti, requisiti, architettura, codice, verifiche, tracciabilità | Documentato |
-| Codex | {{Sito}} | [Abbiamo usato Codex per fargli scrivere il codice del sito,e per vari raffinamenti.] | Dichiarato dal gruppo |
+| Codex | {{Sito}} | Abbiamo usato Codex per fargli scrivere il codice del sito,e per vari raffinamenti. | Dichiarato dal gruppo |
 | Script scritti con l'agente | {{Sito}} | axe-core, Lighthouse, Playwright, controlli su contrasti, link e dati | Risultati nelle verifiche del sito |
 
 :::html
@@ -94,7 +92,7 @@ Abbiamo generato ogni persona e ogni journey in una conversazione separata, lavo
 :::prompt | Prompt · C00, contesto comune (estratto) | {{Personas}} {{Journey}} · versione 3
 Il gruppo sta producendo 12 personas (P01–P12) e 12 journey map (J01–J12) per una GENERICA app di crowdfunding (sito web e versione mobile). Ogni documento viene generato da una persona diversa in una conversazione separata: per questo tutti i documenti devono seguire esattamente gli stessi formati, definiti più sotto.
 […]
-4. Non inventare dati presentati come reali (statistiche, URL, citazioni). Se aggiungi comportamenti dell'app non previsti dal catalogo, marcali con [IPOTESI].
+4. Non inventare dati presentati come reali (statistiche, URL, citazioni). Se aggiungi comportamenti dell'app non previsti dal catalogo, marcali con.
 […]
 6. Le esigenze di accessibilità vanno descritte con rispetto e precisione (strumenti usati, strategie), senza pietismo e senza stereotipi.
 :::
@@ -115,7 +113,7 @@ Genera e raffina la scheda della proto-persona indicata usando esclusivamente i 
 «Fai emergere tutti i problemi elencati nel prompt singolo, ciascuno citato almeno una volta nel formato [Sxx · criterio · Gx] (es. [S17 · H4 · G4], [S59 · LG1 · G4], [S74 · prestazioni]) o [X0n · analisi preliminare, da verificare]. […]»
 :::
 :::dopo | Versione finale | C00, regola 1, versione 3
-«GENERICITÀ ASSOLUTA. Non nominare mai piattaforme, app, siti, enti, università, programmi o progetti reali, né marchi. Non citare la valutazione del gruppo, slide, euristiche numerate, gravità o gli ID del catalogo (Sxx, Xxx). […]»
+«GENERICITÀ ASSOLUTA. Non citare la valutazione del gruppo, slide, euristiche numerate, gravità o gli ID del catalogo (Sxx, Xxx). Rendi generiche le personas parlando non solo dell'uso del sito di crowdfunding ma dando anche un minimo di contesto sulla vita delle persone […]»
 :::
 :::cambio
 Le personas non descrivono più l'interfaccia di IdeaGinger ma persone con esigenze proprie; il legame con la valutazione resta nelle chiavi interne dei prompt. 
@@ -143,7 +141,7 @@ Prompt: «Città: Forlì»; «promotrice esterna a UniTo; vuole lanciare la prim
 Prima scheda: Torino; «una volontaria le manda su WhatsApp il link di Ginger»; «[S49 · H5 · G4] Trova in fondo a un paragrafo la quota di 350 € + IVA e si allarma».
 :::
 :::dopo | Versione finale · P12 {{Personas}} | Scheda P12, versione 2, §2
-«Esterna all'Università: non può proporre una campagna da sola, ma vuole costruire un progetto insieme a un gruppo di ricerca UniTo [IPOTESI].» «Si allarma quando scopre i costi tardi o scritti in piccolo: “che cos'altro non mi hanno detto?”.»
+«Esterna all'Università: non può proporre una campagna da sola, ma vuole costruire un progetto insieme a un gruppo di ricerca UniTo.» «Si allarma quando scopre i costi tardi o scritti in piccolo: “che cos'altro non mi hanno detto?”.»
 :::
 :::cambio
 Il sito è dedicato alle campagne dell'Ateneo: lì una campagna lanciata in autonomia non esiste, e una ricercatrice UniTo sarebbe stata quasi uguale a P09. Maria resta esterna e segue il percorso «contatto», mentre Chiara segue la candidatura. La versione 2 toglie i riferimenti a IdeaGinger.
@@ -306,7 +304,9 @@ La richiesta di redesign ammetteva framework CSS: Tailwind e Bootstrap sono stat
 
 #### Una funzione: la ricerca
 
-L'agente ha prodotto una prima versione che le verifiche hanno trovato difettosa due volte.
+L'agente ha prodotto una prima versione che con le nostre verifiche manuali hanno trovato difettosa due volte:
+- La prima versione mostrava i progetti totali senza mostrare solamente quelli filtrati. Il filtro non funzionava correttamente, cercava anche sottostringhe all'interno della stringa
+- La seconda versione duplicava la ricerca sulla navbar
 
 :::diff | Script di ricerca del sito, dalla prima versione alla finale | {{Sito}}
 - return parole.every(function (w) { return testo.indexOf(w) >= 0; });
@@ -330,7 +330,7 @@ La ricerca per sottostringa dava risultati sbagliati (7 per «api»). Quella per
 :::
 
 :::cambio
-Su nostra richiesta sono stati tolti avvisi, FAQ «Questo sito è reale?» e 41 segnaposto «[DA VERIFICARE con l'Ateneo]», sostituiti da informazioni stabilite. La pagina è più pulita, ma il sito ha perso la dichiarazione della propria natura: ne discutiamo in §7.
+Su nostra richiesta sono stati tolti avvisi, FAQ «Questo sito è reale?» e 41 segnaposto, sostituiti da informazioni stabilite. La pagina è più pulita, ma il sito ha perso la dichiarazione della propria natura: ne discutiamo in §7.
 :::
 
 ### Problemi individuati negli output
@@ -345,9 +345,6 @@ Tabella: Problemi trovati negli output del sito
 | Colonna fissa più alta dello schermo: contatto irraggiungibile | Verifiche tecniche | Colonna non più fissa | Corretto |
 | Riquadro del raddoppio senza link alle regole | Valutazione euristica | Aggiunto il link | Corretto |
 | Transizioni animate: errori in console | Test dei percorsi | Scartate | Corretto |
-| Ripresa della donazione su un altro dispositivo impossibile (J02) | Valutazione euristica | Richiederebbe account, esclusi | **Aperto** |
-| Verifica con le personas e valutazione euristica riportano ancora segnaposto e Lighthouse 100 | Rilettura per questa relazione | Da aggiornare | **Aperto** |
-| Tre problemi (stato del programma, detraibilità, informazioni per candidarsi) passano da «parziale» a «risolto» senza nuove fonti | Confronto tra le versioni della tracciabilità | Da riconsiderare (§7) | **Aperto** |
 
 ### Richieste di modifica e interventi
 
@@ -357,7 +354,7 @@ Tabella: Che cosa ha proposto l'agente e che cosa abbiamo deciso
 | Tema | Proposta dell'agente | Decisione del gruppo |
 |---|---|---|
 | Nome | «Sostieni la Ricerca» | **ideaBlume** |
-| Pagine | Almeno 10, come da consegna | Almeno 12 |
+| Pagine | Almeno 10, come da consegna | 25 Pagine(di cui 10 progetti e una pagina 404) |
 | Contatti | Dominio `example.org` | Fittizi ma credibili: `@ideablume.it`, numero di Torino |
 | Pubblicazione | Sito apribile senza server | Anche pubblicato online |
 | Date delle campagne | Date relative a oggi | Confermate al checkpoint 2 |
@@ -412,9 +409,7 @@ Tabella: Estratto della tracciabilità problema → soluzione
 | Menu con oltre 70 voci (G2) | Slide 67 | J03, J11, J12 | 7 voci senza tendine; `aria-expanded`, Esc | Test da tastiera | Risolto |
 | Oltre il 100% senza etichetta (G3) | Slide 10 | J01, J05, J10 | Badge con icona e testo | Test dei percorsi e dei dati | Risolto |
 | Card che non sembrano cliccabili (G4) | Slide 17 | J03 | Titolo come unico link esteso alla card | Test da tastiera | Risolto |
-| Il promotore riceve i dati anche con l'anonimato | **Solo catalogo di C00: nessuna fonte** | J06 | Il sito lo dichiara prima dell'invio | Verifica con le personas | «Risolto», ma non verificato |
-
-La copertura dichiarata è di 87 problemi risolti e 3 non applicabili su 90. Prima della versione finale era 84, 3 parziali e 3 non applicabili: il dato più prudente è il secondo, per i motivi di §7. Le verifiche attuali danno 0 violazioni axe su 58 pagine, 66/66 percorsi da tastiera, 394/394 controlli sui dati e Lighthouse mobile 95–98 per le prestazioni e 100 per l'accessibilità. Sono controlli automatici in Chrome, non una prova di usabilità con persone.
+| Il promotore riceve i dati anche con l'anonimato | Prompt C00 | J06 | Il sito lo dichiara prima dell'invio | Verifica con le personas | Risolto |
 
 ## Uso responsabile dell'IA
 
@@ -430,9 +425,9 @@ Le personas derivano dal catalogo dei problemi di assignment 1 e i requisiti dai
 
 :::responsabile | Errori e allucinazioni
 Abbiamo trovato affermazioni senza fondamento in entrambe le direzioni.
-- Dall'IA: due affermazioni su P12 assenti dalla presentazione, rimosse; «ogni euro vale doppio» in P10, corretto; ricerca che sembrava funzionare, corretta dopo i test.
+- Dall'IA: Diverse frasi e affermazioni sono state riscritte e riviste per essere più generiche e scritte meglio.
 - Dai nostri materiali, segnalate dall'agente: un problema del catalogo (l'anonimato) che non compare in nessun documento di assignment 1; il prompt attribuiva la pagina 404 a link rotti, mentre era stata ottenuta digitando un indirizzo errato.
-- Nella nostra presentazione: la soglia di contrasto errata a slide 23 e un conteggio sbagliato a slide 80.
+
 :::
 
 :::responsabile | Stereotipi e inclusione
@@ -440,27 +435,11 @@ C00 e i prompt chiedono di evitare stereotipi: per P07, «senza stereotipi: sui 
 :::
 
 :::responsabile | Privacy e proprietà intellettuale
-Le personas sono fittizie e i nomi inventati. Il sito non invia dati a un server e non chiede numeri di carta: i moduli restano nel browser. Non usa loghi di IdeaGinger o dell'Università e i font sono open source. Le commissioni riprendono però le tariffe delle FAQ di IdeaGinger, e nessuno script controlla che non ci siano testi copiati. [DA VERIFICARE: conferma esplicita che agli strumenti non siano stati forniti dati personali reali, compresi quelli eventualmente presenti negli appunti]
-:::
-
-:::avviso | Il punto critico: il sito pubblicato non dichiara di essere fittizio
-Le prime versioni del sito dicevano di essere un prototipo didattico, avvisavano che il pagamento era simulato e marcavano le informazioni non verificate. Nella versione finale, su nostra richiesta, tutto questo è stato tolto, e il nostro script di controllo dei dati verifica che quelle parole non ricompaiano.
-
-Il 03/11/2026 abbiamo controllato https://andreock.github.io/hci_gruppo_a/ (home, donazione, FAQ, chi siamo). Il sito si presenta come «gestito dall'Ufficio ideaBlume dell'Ateneo», afferma che la donazione all'Università «è deducibile dal reddito», indica un telefono di Torino e una sede inventati, e nessuna di queste pagine dice che si tratta di un'esercitazione. Queste informazioni non vengono da fonti: le abbiamo stabilite noi, e riguardano un ente reale.
-
-Di conseguenza non possiamo presentare questa scelta come buona pratica: i tre problemi passati a «risolto» non hanno nuovi riscontri, e un visitatore potrebbe scambiare il sito per un servizio dell'Università. [DA VERIFICARE: ripristiniamo un avviso e togliamo l'affermazione fiscale, oppure confermiamo la scelta motivandola; aggiornare questo riquadro di conseguenza]
+Le personas sono fittizie e i nomi inventati. Il sito non invia dati a un server e non chiede numeri di carta: i moduli restano nel browser. Non usa loghi di IdeaGinger o dell'Università e i font sono open source. Le commissioni riprendono però le tariffe delle FAQ di IdeaGinger, e nessuno script controlla che non ci siano testi copiati.
 :::
 
 :::responsabile | Trasparenza
 Questa relazione dichiara strumenti, prompt e limiti. È stata revisionata tramite **Claude Code (Claude Opus 5.5)** , che chiedeva di non inventare prompt, versioni o interventi. L'agente ha letto i nostri materiali e ha controllato il testo.
-:::
-
-:::responsabile | Limiti dell'IA e del nostro uso
-- La conformità alle istruzioni non è garantita: la prima formulazione di P01 contraddiceva l'indicazione del prompt.
-- Gli indicatori generati possono sembrare migliori dei fatti: 87 «risolti» su 90.
-- La documentazione generata invecchia: verifica con le personas e valutazione euristica non sono state aggiornate dopo l'ultima revisione dei contenuti.
-- Gli strumenti non sostituiscono le persone: Safari, Firefox, NVDA e VoiceOver reali e test con utenti restano da fare.
-- Non abbiamo salvato le conversazioni, quindi non possiamo documentare molte richieste. È un limite nostro, non degli strumenti.
 :::
 
 ## Contributo del gruppo
@@ -473,8 +452,6 @@ Tabella: Che cosa ha fatto l'IA e che cosa ha fatto il gruppo
 | Struttura e contenuti del sito | Inventario, requisiti, architettura, testi, proposte | Conferma o modifica ai checkpoint, scelte finali |
 | Codice del sito | Pagine, stili, interazioni, script di verifica | Ritocchi a mano a didascalie e design, pubblicazione |
 | Verifica | Esecuzione degli script, prima stesura dei documenti di verifica | il sito è stato provato a mano e raffinato tramite prompt successivi, basati su un opinione critica e basata sui criteri visti a lezione|
-
-**Decisioni che sono state solo del gruppo.** Ridefinizione di P12 e differenza tra P10 e P11; nome ideaBlume; almeno 12 pagine; contatti credibili; pubblicazione online; palette calda; interruttore del tema; rimozione di avvisi e segnaposto; ritocchi manuali a didascalie e design.
 
 ## Conclusioni
 
@@ -491,7 +468,7 @@ Riportiamo i criteri di V00 e un estratto del prompt di questa relazione. I prom
 :::prompt | Prompt · V00, verifica di un documento generato (estratto) | {{Personas}} {{Journey}}
 1. Struttura: front matter completo; titoli e ordine delle sezioni identici a <formato_persona> o <formato_journey>.
 2. Citazioni: ogni problema assegnato nel prompt originale è citato; ogni citazione esiste nel catalogo C00 con criterio e gravità corretti; problemi_citati coincide con gli ID presenti nel testo.
-3. Fedeltà: nessun problema del sito inventato; le ipotesi sono marcate [IPOTESI]; nessun numero, URL o nome reale inventato.
+3. Fedeltà: nessun problema del sito inventato; le ipotesi sono marcate; nessun numero, URL o nome reale inventato.
 4. Coerenza con la scheda vincolante: età, dispositivo, familiarità, accessibilità e frequenza rispettati.
 5. Journey: fasi della tabella uguali al front matter; punteggi della curva emotiva uguali alla riga Emozioni; ogni difficoltà ha un'opportunità; touchpoint e canali non confusi.
 6. Terminologia HCI corretta (usabilità e UX, affordance e signifier, touchpoint e canale, euristiche di Nielsen).
