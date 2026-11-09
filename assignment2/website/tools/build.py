@@ -1130,6 +1130,7 @@ def pg_404(lang, radice=False):
   if (!/\\.github\\.io$/.test(location.hostname)) return;   // altrove la pagina è aperta dal suo indirizzo reale
   var p = location.pathname, seg = p.split("/").filter(Boolean), root = "/";
   if (seg.length && seg[0] !== "en" && !/\\.html$/.test(seg[0])) root = "/" + seg[0] + "/";
+  if (seg[1] === "anteprime" && seg[2]) root += "anteprime/" + seg[2] + "/";   // anteprima di un branch
   document.write('<base href="' + root + '">');
   var rel = p.indexOf(root) === 0 ? p.slice(root.length) : p;
   if (/^en\\//.test(rel)) location.replace(root + "en/404.html?da=" + encodeURIComponent(p));
