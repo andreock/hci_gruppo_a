@@ -1,0 +1,1201 @@
+{
+  "lang": "en",
+  "altra_lingua": "it",
+  "nome_lingua": "English",
+  "tagline": "Crowdfunding for research at the University of Turin",
+  "mesi": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ],
+  "nomi_lingue": {
+    "it": "Italian",
+    "en": "English"
+  },
+  "common": {
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "menu_label": "Main",
+    "search_label": "Search for a project",
+    "search_placeholder": "e.g. bees, climate, Computer Science",
+    "search_btn": "Search",
+    "lang_switch": "Italiano",
+    "lang_switch_label": "Versione italiana di questa pagina",
+    "breadcrumb_label": "Breadcrumb",
+    "home": "Home",
+    "back_to_top": "Back to top",
+    "external": "(external site)",
+    "toc": "On this page",
+    "optional": "optional",
+    "required_note": "All fields are required, except those marked as optional.",
+    "noscript_generic": "This feature needs JavaScript. You can still read every page of the site or call us.",
+    "brand_home": "ideaBlume, go to the home page",
+    "updated": "Last updated:",
+    "print": "Print",
+    "close": "Close",
+    "theme_to": "Switch to:",
+    "theme_dark": "Dark theme",
+    "theme_light": "Light theme"
+  },
+  "nav": {
+    "home": "Home",
+    "progetti": "Projects",
+    "programma": "University programme",
+    "come-funziona": "How it works",
+    "proponi": "Propose a project",
+    "chi-siamo": "About us",
+    "faq": "FAQ",
+    "contatti": "Contact"
+  },
+  "footer": {
+    "help_title": "Need help?",
+    "phone": "Phone",
+    "email": "Email",
+    "response": "We answer emails within {giorni} working days.",
+    "write": "Write to us",
+    "explore": "Explore",
+    "promoters": "For project proposers",
+    "info": "Information",
+    "accessibilita": "Accessibility",
+    "candidatura": "Apply to the programme",
+    "collabora": "Partnerships with organisations",
+    "note": "<strong>ideaBlume</strong> is the University of Turin's crowdfunding service for research, run by the ideaBlume Office."
+  },
+  "status": {
+    "open": "In progress · {n} days left (ends {data})",
+    "open_1": "In progress · 1 day left (ends {data})",
+    "open_0": "In progress · last day (ends today, {data})",
+    "reached": "Goal reached · you can still support it for {n} days (ends {data})",
+    "reached_1": "Goal reached · you can still support it for 1 day (ends {data})",
+    "reached_0": "Goal reached · today is the last day to support it ({data})",
+    "done": "Closed · goal reached",
+    "failed": "Closed · goal not reached"
+  },
+  "card": {
+    "org": "<strong>{gruppo} group</strong><br>{dip}, University of Turin",
+    "anno": "Year {anno}",
+    "programma": "University programme",
+    "raised": "<strong>{raccolto}</strong> raised of {obiettivo} ({perc})",
+    "supporters": "{n} supporters"
+  },
+  "pages": {
+    "home": {
+      "title": "Support research at the University of Turin – ideaBlume",
+      "h1": "Support research at the University of Turin",
+      "intro": "<strong>ideaBlume</strong> is the crowdfunding site for research projects at the University of Turin: choose a project, donate even a few euros and follow the results. The site is run by the University's ideaBlume Office. {link:chi-siamo.html|About us and how we work}",
+      "cta": "See ongoing projects",
+      "open_title": "Ongoing projects",
+      "all_link": "All projects, including closed ones",
+      "how_title": "How it works, in three steps",
+      "how": [
+        {
+          "t": "Choose a project",
+          "d": "Each project tells you who proposes it, what the money is for and how far it is from its goal."
+        },
+        {
+          "t": "Donate what you like",
+          "d": "From {min} upwards, with a reward or as a free donation. No need to register."
+        },
+        {
+          "t": "If the goal is reached, the University matches it",
+          "d": "This applies to projects in the University programme. If the goal is not reached, we return your donation: this is the all-or-nothing rule."
+        }
+      ],
+      "how_more": "How it works in detail",
+      "numbers_title": "ideaBlume in numbers",
+      "n_open": "ongoing campaigns",
+      "n_closed": "closed campaigns",
+      "n_raised": "donated by supporters",
+      "n_cofin": "added by the University",
+      "n_supporters": "supporters",
+      "numbers_note": "Calculated from project data on {data}.",
+      "updates_title": "Latest project updates",
+      "promo_title": "Do you have a research project or want to work with the University?",
+      "promo_text": "Researchers at the University of Turin can apply to the University programme with a project. Associations, schools and local organisations can propose a partnership with a research group.",
+      "promo_cta": "Propose a project",
+      "eyebrow": "University of Turin · {anno} edition",
+      "chip_open": "ongoing campaigns",
+      "chip_min": "Donate from {min}",
+      "chip_supp": "supporters so far",
+      "chip_label": "Featured project",
+      "chip_noreg": "No registration needed"
+    },
+    "progetti": {
+      "title": "Research projects – ideaBlume",
+      "h1": "Research projects",
+      "counts": "{open} ongoing projects · {closed} closed",
+      "filters_title": "Search, filter and sort projects",
+      "f_stato": "Status",
+      "f_stato_all": "All",
+      "f_stato_open": "In progress",
+      "f_stato_reached": "In progress, goal already reached",
+      "f_stato_closed": "Closed",
+      "f_cat": "Topic",
+      "f_cat_all": "All topics",
+      "f_dip": "Department",
+      "f_dip_all": "All departments",
+      "f_anno": "Year",
+      "f_anno_all": "All years",
+      "f_prog": "University programme",
+      "f_prog_all": "All projects",
+      "f_prog_si": "Co-funded projects only",
+      "f_ordina": "Sort by",
+      "o_scadenza": "Ending soonest",
+      "o_recenti": "Most recent",
+      "o_bisogno": "Furthest from the goal",
+      "o_percentuale": "Closest to the goal",
+      "apply": "Apply filters",
+      "reset": "Clear filters",
+      "count": "Showing {n} of {tot} projects",
+      "end": "You have seen all the projects in this selection.",
+      "none": "No projects match your search and filters.",
+      "none_hint": "Try clearing the filters or see {link:progetti.html?stato=in-corso|all ongoing projects}.",
+      "noscript": "Without JavaScript, search and filters do not apply: below you will find all projects, ongoing ones first."
+    },
+    "cerca": {
+      "title": "Search for a project – ideaBlume",
+      "h1": "Search for a project",
+      "intro": "Search in titles, descriptions, topics and departments.",
+      "result_n": "{n} projects for “{q}”",
+      "result_1": "1 project for “{q}”",
+      "none_title": "No projects for “{q}”",
+      "tips_title": "What you can do",
+      "tips": [
+        "Check the spelling of the word.",
+        "Try a more general word, for example “health” or “environment”.",
+        "Search for a department, for example “Computer Science” or “Veterinary”."
+      ],
+      "browse": "Or browse by topic:",
+      "all": "See all projects",
+      "faq": "Read the FAQ",
+      "pages_title": "Pages of the site about “{q}”",
+      "empty": "Type a word to search for, for example “bees”.",
+      "noscript": "Search needs JavaScript. You can browse {link:progetti.html|all projects}."
+    },
+    "progetto": {
+      "title": "{titolo} – ideaBlume",
+      "info_group": "Research group",
+      "info_place": "Based at",
+      "info_place_value": "<strong>{dip}</strong>, University of Turin",
+      "raised": "raised",
+      "goal": "of a {obiettivo} goal",
+      "perc": "{perc} of the goal",
+      "missing": "<strong>{x}</strong> still needed to reach the goal.",
+      "supporters": "Supporters",
+      "start": "Start",
+      "deadline": "Ends",
+      "closed_on": "Closed on",
+      "support": "Support this project",
+      "closed_title": "Campaign closed on {data}",
+      "read_results": "Read the final report",
+      "see_open": "See ongoing projects",
+      "match_title": "Goal and University match",
+      "match_open": "If donations reach <strong>{obiettivo}</strong> by the end date, the University adds <strong>{cofin}</strong>: the project receives {totale} in total.",
+      "match_example": "Example: if you donate €10 and the goal is reached, the project receives €10 from you and €10 from the University.",
+      "match_reached": "The <strong>{obiettivo}</strong> goal has been reached: when the campaign closes the University will add <strong>{cofin}</strong>.",
+      "match_second": "Second goal: <strong>{importo}</strong> to {scopo}. Donations above {obiettivo} go to this goal and are not matched.",
+      "match_second_done": "Second goal of {importo} reached: {scopo}.",
+      "match_done": "The University added <strong>{cofin}</strong>: in total the project received <strong>{totale}</strong>.",
+      "match_failed": "The goal was not reached: donations were returned and the University added no funds.",
+      "not_program_title": "Goal",
+      "not_program": "This project is <strong>not part</strong> of the University co-funding programme: the group receives only the amount raised, if the goal is reached.",
+      "rule_btn": "What does “all or nothing” mean?",
+      "rule_text": "The group receives the money only if the goal is reached by the end date. If not, we return your donation. {link:faq.html#faq-tutto-o-niente|Read the answer in the FAQ}",
+      "copy": "Copy link",
+      "copied": "Link copied. You can paste it into a message.",
+      "copy_fail": "Copying failed: select the address in your browser's address bar.",
+      "write": "Write to the group",
+      "group_email": "Group email:",
+      "s_presentazione": "About the project",
+      "s_fondi": "How we will use the money",
+      "s_team": "The research group",
+      "s_ricompense": "Rewards",
+      "s_aggiornamenti": "Updates",
+      "s_commenti": "Comments",
+      "s_sostenitori": "Supporters",
+      "fondi_caption": "Use of funds: the items add up to the goal",
+      "fondi_voce": "Budget item",
+      "fondi_importo": "Amount",
+      "fondi_totale": "Total (goal)",
+      "fondi_second": "If the second goal is reached, the extra money will be used to {scopo}.",
+      "rewards_intro": "Choose a reward or a free donation. The amounts shown are minimums: you can always give more.",
+      "free_title": "Free donation",
+      "free_desc": "You choose the amount, from {min} upwards. No reward.",
+      "free_btn": "Donate any amount",
+      "free_btn_label": "Donate any amount, from {min} upwards",
+      "choose": "Choose {importo}",
+      "choose_label": "Choose the {importo} reward: {titolo}",
+      "chosen_n": "chosen by {n} people",
+      "chosen_1": "chosen by 1 person",
+      "chosen_0": "not chosen yet",
+      "seats": "{r} of {tot} left",
+      "seats_unl": "unlimited",
+      "sold_out": "Sold out",
+      "from": "from {importo}",
+      "rewards_closed_title": "Rewards given",
+      "rewards_closed": "The campaign is closed: rewards can no longer be chosen. Below you can see how many people chose each one.",
+      "updates_none": "No updates yet.",
+      "comment_lang": "Comment in {lingua}",
+      "comments_note": "Comments are published in the language they were written in.",
+      "supporters_intro": "Some of the supporters who chose to show their name:",
+      "supporters_more": "and {n} more people.",
+      "form_title": "Write to the {gruppo} group",
+      "form_intro": "Your message goes to the research group. You can also write directly to {email}.",
+      "form_name": "Your name",
+      "form_email": "Your email",
+      "form_email_hint": "The group will reply to this address.",
+      "form_msg": "Message",
+      "form_send": "Send message",
+      "form_sending": "Sending…",
+      "form_sent": "Message sent. The group usually replies within {giorni} working days to the address you entered.",
+      "form_cancel": "Cancel",
+      "image_label": "Project illustration",
+      "status_title": "Campaign status",
+      "match_more": "How the match works"
+    },
+    "donazione": {
+      "title": "Support a project – ideaBlume",
+      "title_project": "Donation to {titolo} – ideaBlume",
+      "h1": "Support a project",
+      "h1_project": "Support “{titolo}”",
+      "missing": "You have not chosen a project to support yet.",
+      "missing_cta": "Choose a project",
+      "closed": "This campaign is closed: donations are no longer possible.",
+      "closed_cta": "See ongoing projects",
+      "summary_title": "You are supporting",
+      "sum_project": "Project",
+      "sum_reward": "Reward",
+      "sum_amount": "Donation",
+      "sum_free": "Free donation",
+      "edit": "Change",
+      "steps_label": "Donation steps",
+      "step_of": "Step {n} of {tot}",
+      "steps": [
+        "Amount",
+        "Your details",
+        "Privacy and visibility",
+        "Payment",
+        "Review"
+      ],
+      "done_step": "completed",
+      "s1_legend": "Choose a reward or a free donation",
+      "s1_amount": "Amount in euros",
+      "s1_amount_hint": "Minimum {min} for your choice. You can give more.",
+      "s1_rule": "<strong>All or nothing:</strong> if the goal is not reached by the end date, we return your donation.",
+      "s1_match": "<strong>University match:</strong> if the goal is reached, the University adds an amount equal to the goal.",
+      "s1_match_over": "<strong>Goal already reached:</strong> your donation goes to the second goal and is not matched.",
+      "s1_no_match": "This project is not part of the University programme: your donation is not matched.",
+      "s2_title": "Your details",
+      "s2_name": "First name",
+      "s2_surname": "Last name",
+      "s2_email": "Email",
+      "s2_email_hint": "We send the donation confirmation here.",
+      "s2_phone": "Phone",
+      "s2_phone_hint": "We use it only if there is a problem with your donation.",
+      "s2_address_note": "If the reward needs to be shipped, we will ask for your address by email after the campaign closes.",
+      "s3_title": "Privacy and name visibility",
+      "s3_legend": "Do you want your name to appear among the supporters?",
+      "s3_show": "Show my name",
+      "s3_show_hint": "The public sees your first name and initial, for example “Anna R.”.",
+      "s3_anon": "Donate anonymously",
+      "s3_anon_hint": "The public sees “Anonymous supporter”.",
+      "s3_team": "In both cases the research group receives your name and email to thank you and, if needed, send your reward. The amount is never public.",
+      "s3_privacy": "I have read the privacy notice and agree that my data is used to manage the donation.",
+      "s3_news": "I want to receive updates on this project by email",
+      "s4_legend": "How do you want to pay?",
+      "s4_fee": "Fee: {fee}",
+      "s4_fee_none": "No fee from us.",
+      "s4_help": "Payment not going through? {link:faq.html#faq-pagamento-rifiutato|Here is what to do}.",
+      "s5_title": "Check and confirm",
+      "r_project": "Project",
+      "r_reward": "Reward",
+      "r_amount": "Donation",
+      "r_fee": "Payment fee",
+      "r_total": "Total",
+      "r_method": "Payment method",
+      "r_visible": "Name among supporters",
+      "r_visible_yes": "Visible",
+      "r_visible_no": "Anonymous",
+      "r_email": "Email for the confirmation",
+      "r_fee_note": "The fee is paid by the donor and is calculated using the rate of the chosen method.",
+      "r_refund": "If the goal is not reached by the end date we return your donation; the payment fee is not refunded.",
+      "r_receipt": "<strong>Receipt and tax benefits:</strong> after payment you receive a summary and a tax receipt by email. Donations to the University are tax-deductible.",
+      "pay": "Pay now",
+      "next": "Continue",
+      "back": "Back",
+      "back_project": "Back to the project",
+      "saved": "Your details stay saved in this browser tab until you close it.",
+      "noscript": "The donation needs JavaScript. You can read all the projects or call us on {tel}."
+    },
+    "conferma": {
+      "title": "Donation completed – ideaBlume",
+      "h1": "Thank you! Your donation has been recorded",
+      "code": "Reference code",
+      "next_title": "What happens next",
+      "next": [
+        "You receive a confirmation email with this summary and a tax receipt at {email}.",
+        "When the campaign ends we will email you the result. If the goal is reached, the money goes to the group; if not, we return your donation.",
+        "If you chose a reward, the group will contact you about delivery after the campaign closes."
+      ],
+      "print": "Print the summary",
+      "back": "Back to the project",
+      "more": "See other projects",
+      "missing": "We cannot find a recent donation in this browser tab. If you completed a donation and cannot see the summary, write to us: we will help."
+    },
+    "programma": {
+      "title": "University programme – ideaBlume",
+      "h1": "The University co-funding programme",
+      "status_title": "Current status",
+      "status_now": "<strong>{anno} edition:</strong> phase 4 of 4, campaigns running until {data}.",
+      "status_next": "<strong>Applications for the {edizione} edition:</strong> open {candidature}.",
+      "phases_label": "Phases of the edition",
+      "phases": [
+        {
+          "t": "Training",
+          "d": "Sessions to learn how to present the project and run a campaign."
+        },
+        {
+          "t": "Selection",
+          "d": "A University committee chooses projects based on quality, impact and feasibility."
+        },
+        {
+          "t": "Support",
+          "d": "The ideaBlume Office helps groups prepare their page, rewards and budget."
+        },
+        {
+          "t": "Fundraising and match",
+          "d": "Campaigns last {dmin} to {dmax} days. When the goal is reached the University adds the same amount."
+        }
+      ],
+      "phase_done": "completed",
+      "phase_now": "in progress",
+      "match_title": "How the match works",
+      "match": [
+        "The match applies only if donations reach the goal by the end date.",
+        "The University adds an amount equal to the goal, up to {tetto} per project.",
+        "Donations above the goal go to the project's second goal, if there is one, and are not matched.",
+        "If the goal is not reached, donations are returned and the University adds nothing (“all or nothing”)."
+      ],
+      "example_title": "An example",
+      "example": "The “Healthy hives” project has a goal of €6,000. Supporters have donated €7,800: the goal is reached, so the University adds €6,000. The extra €1,800 goes entirely to the organisation, without being matched. In total the project receives €13,800.",
+      "who_title": "Who can apply",
+      "who": "Research groups at the University of Turin led by a permanent staff member (professor or researcher). Research fellows and PhD students can be part of the group.",
+      "req_title": "Project requirements",
+      "req": [
+        "A financial goal between €3,000 and €10,000.",
+        "A use of funds explained item by item.",
+        "Results that the public can understand and a plan to share them with supporters.",
+        "Simple rewards that the group can really deliver."
+      ],
+      "how_title": "How and when to apply",
+      "how": "Fill in the {link:candidatura.html|application form} before the call closes. Dates for the {edizione} edition: {candidature}.",
+      "cost_title": "How much it costs",
+      "contact_title": "Any other questions?",
+      "contact": "Contact us at this email address: {email_programma} · phone {tel_link} ({orari}).",
+      "apply_cta": "Apply to the programme",
+      "editions_title": "Editions in numbers",
+      "editions_caption": "Programme projects by year (calculated from project data)",
+      "e_anno": "Year",
+      "e_progetti": "Projects",
+      "e_riusciti": "Goal reached",
+      "e_raccolto": "Donated by supporters",
+      "e_cofin": "Added by the University",
+      "e_sost": "Supporters",
+      "e_link": "See the {anno} projects",
+      "e_note": "For the current year the numbers change until the campaigns close; the co-funding shown is the amount expected for projects that have already reached their goal."
+    },
+    "come": {
+      "title": "How it works – ideaBlume",
+      "h1": "How ideaBlume works",
+      "toc": [
+        "For people supporting a project",
+        "For people proposing a project",
+        "How much it costs",
+        "Still have questions?"
+      ],
+      "donor_title": "For people supporting a project",
+      "donor": [
+        {
+          "t": "Choose a project",
+          "d": "Look at the topic, the group, the use of funds and the status of the campaign.",
+          "a": "progetti.html?stato=in-corso",
+          "l": "See ongoing projects"
+        },
+        {
+          "t": "Choose a reward or a free donation",
+          "d": "Free donations start at {min}. Rewards are small thank-you gifts from the group.",
+          "a": "faq.html#parola-ricompensa",
+          "l": "What is a reward"
+        },
+        {
+          "t": "Enter your details and choose whether to show your name",
+          "d": "No need to register. You can donate anonymously.",
+          "a": "faq.html#faq-anonimo",
+          "l": "Who sees my name"
+        },
+        {
+          "t": "Pay securely",
+          "d": "By card, PayPal, Satispay or bank transfer. Before confirming you see the total including the fee.",
+          "a": "faq.html#faq-metodi",
+          "l": "Payment methods and fees"
+        },
+        {
+          "t": "When the campaign ends we tell you the result",
+          "d": "Goal reached: the money goes to the group and, for programme projects, the University matches it. Goal not reached: we return your donation.",
+          "a": "programma.html#raddoppio",
+          "l": "How the match works"
+        }
+      ],
+      "promoter_title": "For people proposing a project",
+      "promoter": [
+        {
+          "t": "Check who can propose",
+          "d": "Research groups at the University of Turin; associations, schools and organisations can partner with a group.",
+          "a": "proponi.html#chi-puo",
+          "l": "Who can propose a project"
+        },
+        {
+          "t": "Read the programme requirements and deadlines",
+          "d": "Goal, use of funds, rewards and call dates.",
+          "a": "programma.html#requisiti",
+          "l": "Programme requirements"
+        },
+        {
+          "t": "Send your application",
+          "d": "A form of about 10 minutes. Your data stays saved while you fill it in.",
+          "a": "candidatura.html",
+          "l": "Go to the application form"
+        },
+        {
+          "t": "Take part in training and selection",
+          "d": "The ideaBlume Office will contact you with the dates.",
+          "a": "programma.html#fasi",
+          "l": "Programme phases"
+        },
+        {
+          "t": "Prepare your page with the Office",
+          "d": "Texts in Italian and English, rewards, budget.",
+          "a": "proponi.html#gruppi",
+          "l": "Guidance for groups"
+        },
+        {
+          "t": "Share the results",
+          "d": "Publish updates and, at the end, a report with the spending.",
+          "a": "faq.html#faq-aggiornamenti",
+          "l": "How to publish updates"
+        }
+      ],
+      "cost_title": "How much it costs",
+      "doubts_title": "Still have questions?",
+      "doubts": "Read the {link:faq.html|FAQ} or {link:contatti.html|contact us}."
+    },
+    "costi": {
+      "title": "How much it costs",
+      "donor": "<strong>For donors:</strong> ideaBlume adds no extra cost to your donation. The payment provider charges a fee (1.8% + €0.35 by card, PayPal or Satispay; none for bank transfers), shown before you confirm.",
+      "promoter": "<strong>For groups selected by the programme:</strong> no fee. Training, support and publication of the campaign are paid for by the University.",
+      "partner": "<strong>For associations and external organisations:</strong> proposing a partnership is free and does not commit your organisation."
+    },
+    "proponi": {
+      "title": "Propose a project – ideaBlume",
+      "h1": "Propose a project",
+      "who_title": "Who can propose",
+      "res_title": "Do you do research at the University of Turin?",
+      "res_text": "You can apply to the co-funding programme with your group's project. You need a financial goal, a clear use of funds and a permanent staff member as principal investigator.",
+      "res_cta": "Apply to the programme",
+      "res_more": "Steps for researchers",
+      "ext_title": "Do you represent an association, a school or an organisation?",
+      "ext_text": "You cannot launch a campaign on your own, but you can propose an idea to carry out with a research group: the ideaBlume Office looks for the right group and puts you in touch.",
+      "ext_cta": "Propose a partnership",
+      "time_title": "Timing and costs",
+      "time": [
+        "Applications to the programme: once a year. For the {edizione} edition: {candidature}.",
+        "Reply to a partnership proposal: within 10 working days, by phone or email.",
+        "Campaign length: {dmin} to {dmax} days.",
+        "Costs: proposing a partnership is free and groups selected by the programme pay no fees. {link:come-funziona.html#costi|Read how much it costs}."
+      ],
+      "examples_title": "Examples of projects with the local community",
+      "examples": "The project {link:progetto-scienza-doposcuola.html|“Science workshops in neighbourhood after-school clubs”} was started by associations in Barriera di Milano and Falchera together with the Department of Philosophy and Education Sciences.",
+      "ext_more": "Steps for organisations",
+      "res_path_title": "If you do research: from idea to campaign",
+      "res_path_intro": "Applications to the {link:programma.html|University programme} open once a year. Here is what happens, step by step.",
+      "res_path": [
+        {
+          "t": "Check the requirements",
+          "d": "You need a financial goal, a use of funds explained item by item, rewards the group can really deliver and a permanent staff member as principal investigator.",
+          "a": "programma.html#requisiti",
+          "l": "Read the programme requirements"
+        },
+        {
+          "t": "Send your application",
+          "d": "The form takes about 10 minutes and your data stays saved while you fill it in. For the {edizione} edition, applications run {candidature}.",
+          "a": "candidatura.html",
+          "l": "Go to the application form"
+        },
+        {
+          "t": "Take part in the training and selection",
+          "d": "At the meetings you learn how to explain your project and run a campaign. A University committee then chooses the projects based on quality, impact and feasibility.",
+          "a": "programma.html#fasi",
+          "l": "The programme stages"
+        },
+        {
+          "t": "Prepare the page with the Office",
+          "d": "The ideaBlume Office helps you with text, rewards and budget. Every text must be written in Italian and in English."
+        },
+        {
+          "t": "Launch the campaign",
+          "d": "Fundraising lasts {dmin} to {dmax} days. If you reach the goal, the University adds the same amount, up to {tetto}.",
+          "a": "programma.html#raddoppio",
+          "l": "How the match works"
+        }
+      ],
+      "ext_path_title": "If you represent an organisation: from idea to partnership",
+      "ext_path_intro": "Local associations, schools, organisations and businesses can start a project together with the University. Sending a proposal is free and does not commit you to anything.",
+      "ext_path": [
+        {
+          "t": "Tell us your idea",
+          "d": "Fill in the form, explaining which problem you would like to tackle and who would benefit. You do not need scientific expertise.",
+          "a": "collabora.html",
+          "l": "Go to the partnership form"
+        },
+        {
+          "t": "Get a reply",
+          "d": "Within 10 working days someone from the ideaBlume Office contacts you, by phone or email."
+        },
+        {
+          "t": "Meet the research group",
+          "d": "The Office looks for a University of Turin group interested in the idea and puts you in touch. Together you decide whether and how to take it forward."
+        },
+        {
+          "t": "Build the project together",
+          "d": "The research group leads the project and the organisation takes part as a partner. It has already happened with the after-school science workshops, started by associations in Barriera di Milano and Falchera.",
+          "a": "progetto-scienza-doposcuola.html",
+          "l": "Read the after-school project"
+        }
+      ],
+      "tips_title": "What makes a strong proposal",
+      "tips_intro": "Donors usually do not know the subject and want to understand quickly why the project matters. These four points help with both the application and the campaign.",
+      "tips": [
+        {
+          "t": "A clear problem",
+          "d": "Explain in a few sentences which problem you are tackling and who it matters to. If someone who does not know the subject understands it, you are on the right track."
+        },
+        {
+          "t": "A realistic goal",
+          "d": "Ask for the amount you really need and explain every expense: together they must add up exactly to the campaign goal."
+        },
+        {
+          "t": "Results to share",
+          "d": "Decide from the start what you will be able to show donors, even while the work is under way: data, photos, small milestones."
+        },
+        {
+          "t": "Simple rewards",
+          "d": "A postcard or a lab visit is enough, as long as the group can really deliver it. Anyone who prefers can always make a free donation."
+        }
+      ],
+      "groups_title": "For groups with an ongoing campaign",
+      "groups_intro": "Is your campaign online? Here is how to keep it alive and who to turn to when you need help. For any question you can write to the Office: {email_programma}.",
+      "groups": [
+        {
+          "t": "Publish updates",
+          "d": "Send text and photos to the Office: we publish them within 2 working days in the project's “Updates” section. Even a small step forward helps your supporters feel part of the work."
+        },
+        {
+          "t": "Write in two languages",
+          "d": "Write each text once in Italian and once in English, in two separate fields: the site shows one language at a time. The title can be up to 80 characters, the subtitle up to 160."
+        },
+        {
+          "t": "Reply to supporters",
+          "d": "Messages sent with “Write to the group” come straight to you. We tell people who write that you usually reply within {giorni} working days."
+        },
+        {
+          "t": "If you exceed the goal",
+          "d": "Ask the Office to add a second goal with an amount and a purpose: it will appear in the box next to “Support”. Donations above the goal are not matched by the University."
+        },
+        {
+          "t": "When fundraising closes",
+          "d": "If the goal is reached, write to people who chose a reward to ask for their address, if needed. When the work is finished, send the report with the actual spending: we publish it on the project page and send it to supporters."
+        },
+        {
+          "t": "If something does not work",
+          "d": "For a mistake on the project page or another problem with the site, {link:contatti.html#scrivici|write to us with the contact form}, choosing “Problem with the site”."
+        }
+      ],
+      "doubts_title": "Still have questions?",
+      "doubts": "You can find more answers in the {link:faq.html#promotori|questions for people proposing a project}. For the programme you can write to {email_programma_link}, for partnerships to {email_collaborazioni_link}."
+    },
+    "candidatura": {
+      "title": "Apply to the programme – ideaBlume",
+      "h1": "Apply to the University programme",
+      "before_title": "Before you start",
+      "before": [
+        "You need: project title, goal in euros, use of funds, names of the group.",
+        "Time needed: 10 minutes.",
+        "Your data stays saved in this browser tab until you send it or close the tab.",
+        "Call deadline: {scadenza_bando}."
+      ],
+      "f_person": "Who is applying",
+      "f_name": "Full name",
+      "f_email": "University email",
+      "f_email_hint": "Your University address, for example name.surname@unito.it.",
+      "f_role": "Role",
+      "f_role_opts": [
+        "Professor",
+        "Researcher",
+        "Research fellow",
+        "PhD student",
+        "Technical staff"
+      ],
+      "f_dip": "Department",
+      "f_choose": "Choose…",
+      "f_project": "The project",
+      "f_title": "Project title",
+      "f_title_hint": "Up to 80 characters, in plain words.",
+      "f_goal": "Financial goal in euros",
+      "f_goal_hint": "Between €3,000 and €10,000.",
+      "f_summary": "The project in a few lines",
+      "f_summary_hint": "What you want to do and why it is useful. Up to 600 characters.",
+      "f_funds": "How you will use the money",
+      "f_funds_hint": "The main items with amounts.",
+      "f_team": "People in the group",
+      "f_team_hint": "Names and roles, one person per line.",
+      "f_consent": "I confirm that the principal investigator agrees with this application.",
+      "f_privacy": "I have read the privacy notice.",
+      "f_send": "Send application",
+      "sent_title": "Application received",
+      "sent": "Thank you, {nome}. Within 10 working days the ideaBlume Office will write to {email} with the result of the check and the training dates.",
+      "sent_summary": "Application summary",
+      "goal_range": "The goal must be between €3,000 and €10,000."
+    },
+    "collabora": {
+      "title": "Propose a partnership – ideaBlume",
+      "h1": "Propose a partnership with a research group",
+      "intro": "For local associations, schools, organisations and companies. Tell us your idea: the ideaBlume Office looks for an interested research group at the University of Turin and puts you in touch.",
+      "no_commit": "<strong>Sending this form does not commit your organisation</strong> and is free.",
+      "f_org": "Your organisation",
+      "f_org_name": "Name of the organisation",
+      "f_org_type": "Type of organisation",
+      "f_org_types": [
+        "Association",
+        "School",
+        "Public body",
+        "Company",
+        "Other"
+      ],
+      "f_contact": "Full name of the contact person",
+      "f_email": "Email",
+      "f_phone": "Phone",
+      "f_phone_hint": "Prefer a phone call? Enter your number.",
+      "f_idea": "Your idea",
+      "f_idea_hint": "What you would like to do, with whom and for whom. A few lines are enough.",
+      "f_theme": "Topic",
+      "f_budget": "How much do you think it could cost?",
+      "f_budget_hint": "An estimate is fine; you can leave it empty.",
+      "f_privacy": "I have read the privacy notice.",
+      "f_send": "Send proposal",
+      "sent_title": "Proposal received",
+      "sent": "Thank you. Within 10 working days someone from the ideaBlume Office will contact you at {email}{tel}.",
+      "print_hint": "You can print this summary and bring it to your meeting."
+    },
+    "chi": {
+      "title": "About us – ideaBlume",
+      "h1": "About us",
+      "what_title": "What we do",
+      "what": [
+        {
+          "t": "We choose the projects",
+          "d": "We publish only projects by research groups at the University of Turin. Before publication we review each page with the group, so that anyone can understand the project without knowing the subject."
+        },
+        {
+          "t": "We check the numbers",
+          "d": "We check each group's budget and rewards before publication: every expense must be clear and realistic, and together they must add up exactly to the campaign goal."
+        },
+        {
+          "t": "We run the match funding",
+          "d": "We run the {link:programma.html|University co-funding programme}. We support the selected projects during the campaign and, if they reach their goal, the University adds the same amount, up to {tetto} per project."
+        },
+        {
+          "t": "We report back",
+          "d": "We ask every group for updates during the work and a final report with the actual spending. We publish it on the project page and send it to the donors, so everyone can see what their contribution achieved."
+        }
+      ],
+      "money_title": "Where the money goes",
+      "money": "If the goal is reached, the money goes to the group's department, earmarked for the project: it cannot be used for anything else. Every project page shows how the funds are used, item by item, and, once the work is finished, the report with the actual spending.",
+      "contact_title": "Where to find us",
+      "address": "ideaBlume Office · {indirizzo}",
+      "story_title": "Our story",
+      "story_intro": "We started with a simple question: what happens to good ideas that are too small for a major grant, but too useful to stay in a drawer?",
+      "story": [
+        {
+          "y": "2021",
+          "t": "A question over coffee",
+          "d": "During a break in the department, a researcher mentions giving up on a study because she was a few thousand euros short of the sensors she needed. Others around the table have similar stories. Over the following weeks that conversation becomes a list of stalled projects and a proposal to the University: ask people directly for help."
+        },
+        {
+          "y": "2022",
+          "t": "A name and a rule",
+          "d": "The ideaBlume Office is born: three people and a shared desk. The name joins «idea» with «Blume», German for flower, because an idea only blooms if someone looks after it. That same year we write the rule we still follow, «all or nothing»: if the goal is not reached, donations go back to the donors."
+        },
+        {
+          "y": "2023",
+          "t": "The first campaign",
+          "d": "With {link:progetto-robot-anziani.html|«Social robots for older people's independence»}, the site and the first edition of the {link:programma.html|University programme} start together: if a project reaches its goal, the University adds an amount equal to the goal. The group passes its target and we see that the idea works."
+        },
+        {
+          "y": "2024",
+          "t": "The neighbourhood, and the first missed goal",
+          "d": "With {link:progetto-scienza-doposcuola.html|the after-school science workshops}, associations from Barriera di Milano and Falchera build a project together with the University: the start of our {link:collabora.html|partnerships with local organisations}. That same year, {link:progetto-rifugi-frane.html|the risk map for mountain huts} misses its goal. We return the donations and say so clearly on the project page: that too is part of our promise to donors."
+        },
+        {
+          "y": "2025",
+          "t": "More topics, more people",
+          "d": "Very different projects reach the site, from {link:progetto-matematica-accessibile.html|maths formulas readable with a screen reader} to {link:progetto-plastica-batteri.html|bacteria that break down microplastics}. Alongside first-time donors, more people follow every update and come back to support a new project."
+        },
+        {
+          "y": "2026",
+          "t": "A site designed for everyone",
+          "d": "We redesign the site starting from donors and researchers: clearer text, accessible pages, a complete English version and the same numbers on every page."
+        },
+        {
+          "y": "Today",
+          "t": "A story still being written",
+          "d": "We have published {n_progetti} projects. {sostenitori} supporters have donated {raccolto} and the University has added {cofin}. Applications for the {edizione} edition of the programme run {candidature}."
+        }
+      ],
+      "what_intro": "We stand between the labs and the people who want to support them. Our work starts before a campaign goes online and ends only when the group has accounted for its spending.",
+      "money_no": "If the goal is not reached, donations go back to the donors. Only the payment fee, which you always see before confirming, is not returned. You can find all the details in the {link:faq.html|FAQ}.",
+      "people_title": "The people in the Office",
+      "people": "ideaBlume is run by the University's ideaBlume Office. From the original three people we have grown into a team of seven with different skills: former researchers who help groups prepare their campaigns, people who look after accounts and reports, people who work on the text and people who answer the phone and email. If you write to us, we reply within {giorni} working days.",
+      "hours": "Opening hours: {orari}. You can also {link:contatti.html#scrivici|write to us from the site}.",
+      "next_title": "The next chapter",
+      "next": "Every project on the site started like that conversation over coffee. You can support an ongoing campaign or, if you have an idea, propose it to us.",
+      "next_projects": "Discover ongoing projects"
+    },
+    "faq": {
+      "title": "Frequently asked questions – ideaBlume",
+      "h1": "Frequently asked questions",
+      "search_label": "Search the questions",
+      "search_placeholder": "e.g. refund, anonymous, costs",
+      "count_n": "{n} questions match",
+      "count_1": "1 question matches",
+      "count_0": "No questions match. Try another word or {link:contatti.html|write to us}.",
+      "permalink": "Link to this answer",
+      "not_found_title": "Didn't find your answer?",
+      "not_found": "Call us on {tel_link} ({orari}) or write to {email_aiuto_link}. We reply within {giorni} working days.",
+      "groups": [
+        {
+          "id": "sostenitori",
+          "t": "For people supporting a project",
+          "topics": [
+            {
+              "t": "Donations and payments",
+              "q": [
+                {
+                  "id": "faq-libera",
+                  "q": "Can I donate without choosing a reward?",
+                  "a": [
+                    "Yes. Choose “Free donation” and enter the amount, from {min} upwards.",
+                    "Rewards are just a thank-you: they are not required."
+                  ]
+                },
+                {
+                  "id": "faq-minimo",
+                  "q": "What is the minimum amount?",
+                  "a": [
+                    "{min} for a free donation, for every project.",
+                    "For a reward, the minimum is the price shown next to it."
+                  ]
+                },
+                {
+                  "id": "faq-registrazione",
+                  "q": "Do I need to register to donate?",
+                  "a": [
+                    "No. We only need your name, surname and email for the confirmation."
+                  ]
+                },
+                {
+                  "id": "faq-metodi",
+                  "q": "How can I pay and how much does it cost?",
+                  "a": [
+                    "You can pay by: {metodi}.",
+                    "The payment provider charges a fee, which you see in the summary before confirming (1.8% + €0.35 by card, PayPal or Satispay). There is no fee from us for bank transfers."
+                  ]
+                },
+                {
+                  "id": "faq-pagamento-rifiutato",
+                  "q": "My payment did not go through: what should I do?",
+                  "a": [
+                    "Nothing has been charged. You can try again straight away: the details you entered stay saved.",
+                    "Try another payment method, for example a bank transfer.",
+                    "If the problem continues, call us on {tel_link} ({orari}): we will help you complete the donation."
+                  ]
+                }
+              ]
+            },
+            {
+              "t": "Campaign rules",
+              "q": [
+                {
+                  "id": "faq-tutto-o-niente",
+                  "q": "What happens if the project does not reach its goal?",
+                  "a": [
+                    "We return your donation: this is the all-or-nothing rule.",
+                    "The refund goes back to the same payment method within 15 days of the end date. The payment fee is not refunded."
+                  ]
+                },
+                {
+                  "id": "faq-oltre",
+                  "q": "The project has already reached its goal: is it still worth donating?",
+                  "a": [
+                    "Yes, as long as the campaign is open. Extra donations go to the second goal shown in the project box.",
+                    "Donations above the goal are not matched by the University."
+                  ]
+                },
+                {
+                  "id": "faq-raddoppio",
+                  "q": "How does the University match work?",
+                  "a": [
+                    "If a programme project reaches its goal, the University adds an amount equal to the goal, up to {tetto}. This is also called co-funding.",
+                    "{link:programma.html#raddoppio|Read an example}."
+                  ]
+                }
+              ]
+            },
+            {
+              "t": "Receipt, privacy and rewards",
+              "q": [
+                {
+                  "id": "faq-anonimo",
+                  "q": "Can I donate anonymously? Who sees my name?",
+                  "a": [
+                    "Yes: in the form choose “Donate anonymously”. The public sees “Anonymous supporter”.",
+                    "The research group still receives your name and email to thank you and send your reward. The amount is never public."
+                  ]
+                },
+                {
+                  "id": "faq-ricevuta",
+                  "q": "Will I get a receipt? Is the donation tax-deductible?",
+                  "a": [
+                    "Yes: after donating you receive the summary and the tax receipt by email.",
+                    "Donations to the University are tax-deductible: keep the receipt for your tax return."
+                  ]
+                },
+                {
+                  "id": "faq-ricompensa",
+                  "q": "When will I get my reward?",
+                  "a": [
+                    "After the campaign closes, if the goal is reached. The group will write to ask for your address, if needed."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "promotori",
+          "t": "For people proposing a project",
+          "topics": [
+            {
+              "t": "Taking part",
+              "q": [
+                {
+                  "id": "faq-chi-propone",
+                  "q": "Who can propose a project?",
+                  "a": [
+                    "Research groups at the University of Turin, with a permanent staff member as principal investigator.",
+                    "{link:proponi.html|Read who can propose}."
+                  ]
+                },
+                {
+                  "id": "faq-enti",
+                  "q": "We are an association or a school: can we take part?",
+                  "a": [
+                    "Yes, as a partner of a research group: {link:collabora.html|propose a partnership}. The ideaBlume Office looks for the right group.",
+                    "Sending the proposal does not commit you and is free."
+                  ]
+                },
+                {
+                  "id": "faq-scadenze",
+                  "q": "When can we apply?",
+                  "a": [
+                    "Once a year, through a call. For the {edizione} edition: {candidature}."
+                  ]
+                },
+                {
+                  "id": "faq-costi",
+                  "q": "How much does it cost to propose a project?",
+                  "a": [
+                    "Proposing a partnership is free.",
+                    "Groups selected by the programme pay nothing either: training, support and publication are paid for by the University."
+                  ]
+                }
+              ]
+            },
+            {
+              "t": "During the campaign",
+              "q": [
+                {
+                  "id": "faq-durata",
+                  "q": "How long does a campaign last?",
+                  "a": [
+                    "{dmin} to {dmax} days."
+                  ]
+                },
+                {
+                  "id": "faq-aggiornamenti",
+                  "q": "How do we publish updates and the final report?",
+                  "a": [
+                    "Send text and photos to the Office ({email_programma}): we publish them in the project's “Updates” section.",
+                    "At the end we ask for a report with the spending, which we also send to supporters."
+                  ]
+                },
+                {
+                  "id": "faq-lingue",
+                  "q": "Do we have to write content in two languages?",
+                  "a": [
+                    "Yes, in Italian and in English, in separate fields: the site shows one language at a time. {link:proponi.html#gruppi|Read the guidance}."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "generali",
+          "t": "General questions",
+          "topics": [
+            {
+              "t": "ideaBlume",
+              "q": [
+                {
+                  "id": "faq-chi-gestisce",
+                  "q": "Who runs ideaBlume?",
+                  "a": [
+                    "The University of Turin's ideaBlume Office. {link:chi-siamo.html|About us}."
+                  ]
+                },
+                {
+                  "id": "faq-soldi",
+                  "q": "How do I know the money really goes to research?",
+                  "a": [
+                    "Every project publishes the use of funds item by item and, at the end, a report with the actual spending.",
+                    "The money goes to the group's department, earmarked for the project."
+                  ]
+                },
+                {
+                  "id": "faq-persona",
+                  "q": "How can I talk to a person?",
+                  "a": [
+                    "Call us on {tel_link} ({orari}) or write to {email_aiuto_link}."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "parole",
+          "t": "ideaBlume words",
+          "topics": [
+            {
+              "t": "The fundraising",
+              "q": [
+                {
+                  "id": "parola-crowdfunding",
+                  "q": "Crowdfunding",
+                  "a": [
+                    "Raising money online: many people donate small amounts to make a project happen."
+                  ]
+                },
+                {
+                  "id": "parola-obiettivo",
+                  "q": "Goal",
+                  "a": [
+                    "The minimum amount the project must raise by the end date. If it is not reached, donations are returned."
+                  ]
+                },
+                {
+                  "id": "parola-tutto-o-niente",
+                  "q": "All or nothing",
+                  "a": [
+                    "The ideaBlume rule: the group receives the money only if the goal is reached by the end date. Otherwise we return your donation."
+                  ]
+                },
+                {
+                  "id": "parola-secondo-obiettivo",
+                  "q": "Second goal",
+                  "a": [
+                    "A higher amount, with a specific purpose, for projects that have already reached their goal. Donations above the goal go to it."
+                  ]
+                },
+                {
+                  "id": "parola-sostenitore",
+                  "q": "Supporter",
+                  "a": [
+                    "Someone who donates to a project."
+                  ]
+                },
+                {
+                  "id": "parola-gruppo",
+                  "q": "Research group",
+                  "a": [
+                    "The University people who propose and carry out the project. The principal investigator leads the group."
+                  ]
+                }
+              ]
+            },
+            {
+              "t": "The donation",
+              "q": [
+                {
+                  "id": "parola-ricompensa",
+                  "q": "Reward",
+                  "a": [
+                    "A small thank-you from the group for people who donate at least a certain amount, for example a postcard or a lab visit. It is not required."
+                  ]
+                },
+                {
+                  "id": "parola-donazione-libera",
+                  "q": "Free donation",
+                  "a": [
+                    "A donation without a reward, of the amount you prefer, from {min} upwards."
+                  ]
+                },
+                {
+                  "id": "parola-commissione",
+                  "q": "Fee",
+                  "a": [
+                    "The cost charged by the payment provider (card, PayPal, Satispay). You see it before confirming your donation."
+                  ]
+                }
+              ]
+            },
+            {
+              "t": "The programme and the results",
+              "q": [
+                {
+                  "id": "parola-programma",
+                  "q": "University programme",
+                  "a": [
+                    "The initiative through which the University selects some projects, supports them and co-funds them."
+                  ]
+                },
+                {
+                  "id": "parola-anno",
+                  "q": "Year (edition)",
+                  "a": [
+                    "The year in which the campaign took place. For programme projects it is the programme edition."
+                  ]
+                },
+                {
+                  "id": "parola-resoconto",
+                  "q": "Final report",
+                  "a": [
+                    "The text in which the group describes the results and how it spent the money."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "contatti": {
+      "title": "Contact – ideaBlume",
+      "h1": "Contact",
+      "phone_title": "Phone",
+      "phone": "{tel_link}, {orari}.",
+      "email_title": "Email",
+      "emails": [
+        "Donations and general questions: {email_aiuto_link}",
+        "University programme and applications: {email_programma_link}",
+        "Partnerships with organisations: {email_collaborazioni_link}"
+      ],
+      "email_time": "We reply within {giorni} working days.",
+      "address_title": "Address",
+      "address": "ideaBlume Office · {indirizzo}. Visits by appointment.",
+      "form_title": "Write to us",
+      "form_intro": "Your message goes to the ideaBlume Office.",
+      "f_name": "Full name",
+      "f_email": "Email",
+      "f_subject": "Topic",
+      "f_subjects": [
+        "A donation",
+        "Proposing a project",
+        "An ongoing project",
+        "Problem with the site",
+        "Accessibility",
+        "Other"
+      ],
+      "f_msg": "Message",
+      "f_send": "Send message",
+      "f_sending": "Sending…",
+      "f_sent": "Message sent. We will reply within {giorni} working days to {email}."
+    },
+    "accessibilita": {
+      "title": "Accessibility – ideaBlume",
+      "h1": "Accessibility statement",
+      "intro": "We want ideaBlume to be usable by everyone, including people using a screen reader, only a keyboard, screen magnification or a slow connection.",
+      "target_title": "Target",
+      "target": "Conformance with WCAG 2.2 level AA.",
+      "done_title": "What we checked",
+      "done": "{verifiche}",
+      "limits_title": "Known limitations",
+      "limits": "{limiti}",
+      "feedback_title": "Report a problem",
+      "feedback": "If something does not work for you, {link:contatti.html#scrivici|write to us} choosing “Accessibility” or call {tel_link}. We reply within {giorni} working days."
+    },
+    "404": {
+      "title": "Page not found – ideaBlume",
+      "h1": "Page not found",
+      "text": "The address may be mistyped or the page may have moved.",
+      "tried": "Address requested:",
+      "search": "Search for a project:",
+      "go": "You can go to:",
+      "links": [
+        "Home",
+        "All projects",
+        "FAQ",
+        "Contact"
+      ]
+    }
+  },
+  "js": {
+    "menu_open": "Menu",
+    "menu_close": "Close menu",
+    "count": "Showing {n} of {tot} projects",
+    "faq_count_n": "{n} questions match",
+    "faq_count_1": "1 question matches",
+    "faq_count_0": "No questions match.",
+    "err_title_1": "There is 1 field to correct",
+    "err_title_n": "There are {n} fields to correct",
+    "err_required": "Fill in this field.",
+    "err_name": "Enter your first name.",
+    "err_surname": "Enter your last name.",
+    "err_email": "Enter a complete email address, for example name@example.com.",
+    "err_tel": "Use only digits, spaces or the + sign.",
+    "err_amount_missing": "Enter the amount in euros, for example 20.",
+    "err_amount_nan": "Use digits only, for example 20.",
+    "err_amount_min": "The minimum amount is {min}: enter {minnum} or more.",
+    "err_choice": "Choose a reward or a free donation.",
+    "err_visibility": "Choose whether to show your name or donate anonymously.",
+    "err_privacy": "To continue you need to accept the privacy notice.",
+    "err_method": "Choose a payment method.",
+    "err_select": "Choose an option from the list.",
+    "err_consent": "To send the form you need to confirm this statement.",
+    "err_maxlen": "You wrote {n} characters: the maximum is {max}.",
+    "err_goal": "The goal must be between €3,000 and €10,000.",
+    "chars": "{n} of {max} characters",
+    "processing": "Payment in progress…",
+    "sold_out": "Sold out",
+    "fee_none": "none"
+  }
+}
