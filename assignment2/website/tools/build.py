@@ -561,7 +561,7 @@ def pg_cerca(lang):
 <p>{E(g("intro"))}</p>
 {form_cerca(lang, "q-cerca", " search-form--page")}
 <noscript><p class="alert alert--info">{fmt(g("noscript"), lang)}</p></noscript>
-<h2 class="result-count" role="status" aria-live="polite" data-risultati-titolo>{E(g("empty"))}</h2>
+<div role="status"><h2 class="result-count" data-risultati-titolo>{E(g("empty"))}</h2></div>
 <ul class="grid grid--3" data-risultati></ul>
 <div data-nessun-risultato hidden>
   <h3>{E(g("tips_title"))}</h3>
