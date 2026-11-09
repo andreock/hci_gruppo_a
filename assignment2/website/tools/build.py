@@ -275,7 +275,7 @@ def header(lang, file, nav_corrente, prefix):
   <div class="container site-header__bar">
     <a class="brand" href="index.html">
       {SEGNO.format(cls="brand__mark", w=36)}
-      <span><span class="brand__name">idea<b>Blume</b></span><span class="brand__tagline">{E(t(lang, "tagline"))}</span></span><span class="vh"> — {E(t(lang, "common.brand_home_suffix"))}</span>
+      <span><span class="brand__name">idea<span class="brand__accent">Blume</span></span><span class="brand__tagline">{E(t(lang, "tagline"))}</span></span><span class="vh"> — {E(t(lang, "common.brand_home_suffix"))}</span>
     </a>
     <a class="lang-switch" href="{href_altra}" lang="{altra}" hreflang="{altra}" data-lang-switch><svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.8 5.8 3.8 9s-1.2 6.2-3.8 9c-2.6-2.8-3.8-5.8-3.8-9S9.4 5.8 12 3z"/></g></svg><span class="lang-switch__long">{E(t(lang, "common.lang_switch"))}</span><span class="lang-switch__short" aria-hidden="true">{altra.upper()}</span><span class="vh"> – {E(t(lang, "common.lang_switch_label"))}</span></a>
     <button class="theme-toggle js-only" type="button" data-tema-toggle>
@@ -299,7 +299,7 @@ def footer(lang, prefix):
     n = lambda k: E(t(lang, "nav." + k))
     return f'''<footer class="site-footer">
   <div class="container">
-    <p class="site-footer__brand">{SEGNO.format(cls="brand__mark", w=40)}<span><span class="brand__name">idea<b>Blume</b></span><span class="brand__tagline">{E(t(lang, "tagline"))}</span></span></p>
+    <p class="site-footer__brand">{SEGNO.format(cls="brand__mark", w=40)}<span><span class="brand__name">idea<span class="brand__accent">Blume</span></span><span class="brand__tagline">{E(t(lang, "tagline"))}</span></span></p>
     <div class="site-footer__cols">
       <section aria-labelledby="ft-aiuto">
         <h2 id="ft-aiuto">{f("help_title")}</h2>
