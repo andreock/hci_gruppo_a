@@ -14,11 +14,13 @@ Percorso principale consigliato per provarlo: Home → «Scopri i progetti in co
 
 ### Pubblicazione su GitHub Pages
 
-La pubblicazione è automatica con la GitHub Action `.github/workflows/sito.yml` (nella radice del repository): a ogni push sul branch `main` che tocca `assignment2/website/` esegue `tools/build.py`, lancia `verifica-dati.py` e `verifica-link.py` e pubblica il sito (senza `tools/` e `docs/`). Sulle pull request esegue solo build e verifiche. Si può avviare anche a mano da «Actions → Run workflow».
+La pubblicazione è automatica con la GitHub Action `.github/workflows/sito.yml` (nella radice del repository): a ogni push che tocca `assignment2/website/` esegue `tools/build.py`, lancia `verifica-dati.py` e `verifica-link.py` e pubblica il sito (senza `tools/` e `docs/`): il branch `main` nella radice del sito, gli altri branch in una sottocartella di anteprima (vedi sotto). Sulle pull request esegue solo build e verifiche. Si può avviare anche a mano da «Actions → Run workflow».
 
 Le pagine inglesi (`en/*.html`) **non sono nel repository** (sono in `.gitignore`): le genera la build, in locale con `python3 tools/build.py` e online nell'Action. Prima di aprire il sito da `file://` o di creare lo zip bisogna quindi lanciare la build.
 
-Configurazione una tantum: Settings → Pages → Source «GitHub Actions»; in Settings → Environments → `github-pages` consentire il deploy dal branch `main`. Il file `.nojekyll` evita l'elaborazione di Jekyll. La pagina `404.html` funziona a qualunque profondità dell'indirizzo e mostra la versione inglese per gli indirizzi sotto `/en/`.
+Configurazione una tantum: Settings → Pages → Source «Deploy from a branch», branch `gh-pages`, cartella `/ (root)`. Il branch `gh-pages` viene creato dalla prima esecuzione dell'Action.
+
+**Anteprime per branch.** Un push su qualunque altro branch pubblica il sito in `https://andreock.github.io/hci_gruppo_a/anteprime/<branch>/` (i caratteri del nome diversi da lettere, cifre, `.`, `_` e `-` diventano `-`, per esempio `assignment/andre` → `anteprime/assignment-andre/`). L'indirizzo esatto compare nel riepilogo dell'esecuzione dell'Action. Il deploy di `main` sostituisce la radice ma non tocca la cartella `anteprime/`; quando un branch viene cancellato la sua anteprima viene rimossa (questo richiede che il workflow sia presente anche sul branch predefinito del repository). Il file `.nojekyll` evita l'elaborazione di Jekyll. La pagina `404.html` funziona a qualunque profondità dell'indirizzo e mostra la versione inglese per gli indirizzi sotto `/en/`.
 
 ### Archivio per la consegna
 

@@ -1,11 +1,16 @@
 # Build e deploy del sito ideaBlume (assignment2/website) su GitHub Pages.
+# Tutto passa dal branch gh-pages (Settings → Pages → «Deploy from a branch» → gh-pages, / (root)):
+# - main              -> https://andreock.github.io/hci_gruppo_a/
+# - ogni altro branch -> https://andreock.github.io/hci_gruppo_a/anteprime/<branch>/
+#   (nel nome del branch i caratteri diversi da lettere, cifre, «.», «_» e «-» diventano «-»)
+# Quando un branch viene cancellato, la sua anteprima viene rimossa.
 # Le pagine delle lingue diverse dall'italiano (en/*.html) non sono nel repository:
 # vengono generate qui da tools/build.py a partire da i18n/*.json e data/*.json.
 name: Sito · build e deploy
 
 on:
   push:
-    branches: [main]
+    branches: ["**"]
     paths:
       - "assignment2/website/**"
       - ".github/workflows/sito.yml"
@@ -13,13 +18,14 @@ on:
     paths:
       - "assignment2/website/**"
       - ".github/workflows/sito.yml"
+  delete:
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: pages
+  group: sito-${{ github.event_name == 'delete' && 'delete' || github.ref }}
   cancel-in-progress: false
 
 defaults:
@@ -28,6 +34,7 @@ defaults:
 
 jobs:
   build:
+    if: github.event_name != 'delete' && github.ref != 'refs/heads/gh-pages'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -54,20 +61,120 @@ jobs:
           test -f "$RUNNER_TEMP/_site/en/index.html"
           echo "Pagine pubblicate: $(find "$RUNNER_TEMP/_site" -name '*.html' | wc -l)"
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
+          name: sito
           path: ${{ runner.temp }}/_site
+          include-hidden-files: true
+          retention-days: 7
 
   deploy:
-    if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request' && github.event_name != 'delete'
     needs: build
     runs-on: ubuntu-latest
     permissions:
-      pages: write
-      id-token: write
+      contents: write
+    # Un solo deploy alla volta scrive su gh-pages, da qualunque branch arrivi.
+    concurrency:
+      group: gh-pages
+      cancel-in-progress: false
     environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      name: ${{ github.ref_name == 'main' && 'github-pages' || format('anteprima-{0}', github.ref_name) }}
+      url: ${{ steps.dest.outputs.url }}
+    defaults:
+      run:
+        working-directory: .
     steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: sito
+          path: ${{ runner.temp }}/_site
+
+      - name: Calcola la destinazione
+        id: dest
+        env:
+          BRANCH: ${{ github.ref_name }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+        run: |
+          base="https://${OWNER,,}.github.io/${REPO}/"
+          if [ "$BRANCH" = "main" ]; then
+            echo "dir=" >> "$GITHUB_OUTPUT"
+            echo "url=$base" >> "$GITHUB_OUTPUT"
+          else
+            slug=$(printf '%s' "$BRANCH" | tr -c 'A-Za-z0-9._-' '-')
+            echo "dir=anteprime/$slug" >> "$GITHUB_OUTPUT"
+            echo "url=${base}anteprime/$slug/" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Prepara il branch gh-pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898733+github-actions[bot]@users.noreply.github.com"
+          url="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git ls-remote --exit-code --heads "$url" gh-pages >/dev/null; then
+            git clone --depth 1 --branch gh-pages "$url" pubblicato
+          else
+            git init -b gh-pages pubblicato
+            git -C pubblicato remote add origin "$url"
+          fi
+
+      - name: Copia il sito
+        env:
+          DIR: ${{ steps.dest.outputs.dir }}
+        run: |
+          cd pubblicato
+          if [ -z "$DIR" ]; then
+            # main: sostituisce la radice ma lascia intatte le anteprime dei branch
+            rsync -a --delete --exclude '.git/' --exclude 'anteprime/' "$RUNNER_TEMP/_site/" ./
+          else
+            mkdir -p "$DIR"
+            rsync -a --delete "$RUNNER_TEMP/_site/" "$DIR/"
+          fi
+          touch .nojekyll
+
+      - name: Pubblica
+        env:
+          URL: ${{ steps.dest.outputs.url }}
+        run: |
+          cd pubblicato
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nessuna modifica da pubblicare."
+          else
+            git commit -q -m "Deploy ${GITHUB_REF_NAME} @ ${GITHUB_SHA::7}"
+            git push origin gh-pages
+          fi
+          echo "Pubblicato su $URL" >> "$GITHUB_STEP_SUMMARY"
+
+  # Branch cancellato: rimuove la sua anteprima da gh-pages
+  rimuovi-anteprima:
+    if: github.event_name == 'delete' && github.event.ref_type == 'branch' && github.event.ref != 'main' && github.event.ref != 'gh-pages'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: gh-pages
+      cancel-in-progress: false
+    defaults:
+      run:
+        working-directory: .
+    steps:
+      - name: Rimuovi la cartella dell'anteprima
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.event.ref }}
+        run: |
+          url="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git ls-remote --exit-code --heads "$url" gh-pages >/dev/null || exit 0
+          git clone --depth 1 --branch gh-pages "$url" pubblicato
+          cd pubblicato
+          slug=$(printf '%s' "$BRANCH" | tr -c 'A-Za-z0-9._-' '-')
+          [ -d "anteprime/$slug" ] || { echo "Nessuna anteprima per $BRANCH."; exit 0; }
+          git rm -rq "anteprime/$slug"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898733+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Rimuovi anteprima ${BRANCH}"
+          git push origin gh-pages
