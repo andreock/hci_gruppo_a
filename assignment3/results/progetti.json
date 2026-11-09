@@ -1,0 +1,554 @@
+{
+  "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/progetti.html",
+  "template": "elenco",
+  "checked_at": "2026-11-09T11:00:00+01:00",
+  "tools": {
+    "mauve": {
+      "status": "ok",
+      "score": 90,
+      "errors": 8,
+      "warnings": 5,
+      "issues": [
+        {
+          "tipo": "error",
+          "criterio": "1.3.1, 1.4.5",
+          "livello": "A",
+          "tecnica": "G140",
+          "descrizione": "Separating information and structure from presentation to enable different presentations",
+          "elemento": [
+            "<html lang=\"it\" class=\"js\" data-theme=\"light\">"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "error",
+          "criterio": "2.4.7",
+          "livello": "AA",
+          "tecnica": "F78",
+          "descrizione": "Using an author-supplied, highly visible focus indicator",
+          "elemento": [
+            "<a class=\"skip-link\" href=\"#main\">Salta al contenuto</a>"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "error",
+          "criterio": "2.4.7",
+          "livello": "AA",
+          "tecnica": "G195",
+          "descrizione": "Using an author-supplied, highly visible focus indicator",
+          "elemento": [
+            "<a class=\"skip-link\" href=\"#main\">Salta al contenuto</a>"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "error",
+          "criterio": "1.1.1",
+          "livello": "A",
+          "tecnica": "ARIA6",
+          "descrizione": "Using aria-label to provide labels for objects",
+          "elemento": [
+            "<svg class=\"brand__mark\" viewbox=\"0 0 48 48\" width=\"36\" height=\"36\" aria-hidden=\"true\" focusable=\"false\">",
+            "<svg class=\"icon\" viewbox=\"0 0 24 24\" width=\"18\" height=\"18\" aria-hidden=\"true\" focusable=\"false\">"
+          ],
+          "occorrenze": 16
+        },
+        {
+          "tipo": "error",
+          "criterio": "1.4.3",
+          "livello": "AA",
+          "tecnica": "G18",
+          "descrizione": "Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text",
+          "elemento": [
+            "<span class=\"vh\">Passa a: </span>",
+            "<span class=\"theme-toggle__testo\">Tema scuro</span>"
+          ],
+          "occorrenze": 11
+        },
+        {
+          "tipo": "error",
+          "criterio": "1.4.10",
+          "livello": "AA",
+          "tecnica": "C38",
+          "descrizione": "Using CSS width, max-width and flexbox to fit labels and inputs",
+          "elemento": [
+            "<div class=\"field filters__search\">"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "error",
+          "criterio": "1.3.5",
+          "livello": "AA",
+          "tecnica": "H98",
+          "descrizione": "Identify the purpose of inputs using the autocomplete value",
+          "elemento": [
+            "<select id=\"f-stato\" name=\"stato\">",
+            "<select id=\"f-categoria\" name=\"categoria\">"
+          ],
+          "occorrenze": 6
+        },
+        {
+          "tipo": "error",
+          "criterio": "1.4.1",
+          "livello": "A",
+          "tecnica": "F73",
+          "descrizione": "Failure of Success Criterion 1.4.1 due to creating links that are not visually evident without color vision",
+          "elemento": [
+            "<a class=\"btn\" href=\"contatti.html#scrivici\">Scrivici</a>"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.3.1, 2.4.1",
+          "livello": "A",
+          "tecnica": "ARIA11",
+          "descrizione": "Using ARIA landmarks to identify regions of a page",
+          "elemento": [
+            "<header class=\"site-header\">",
+            "<nav class=\"main-nav container\" id=\"menu-principale\" aria-label=\"Principale\">"
+          ],
+          "occorrenze": 9
+        },
+        {
+          "tipo": "warning",
+          "criterio": "2.5.3",
+          "livello": "A",
+          "tecnica": "F96",
+          "descrizione": "If on the page are present the tags aria-label or aria-labelledby, check that their content matches the visible name.",
+          "elemento": [
+            "<div class=\"container site-header__bar\">",
+            "<div data-didascalia=\"\">"
+          ],
+          "occorrenze": 53
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.4.12",
+          "livello": "AA",
+          "tecnica": "C21",
+          "descrizione": "Specifying line spacing in CSS",
+          "elemento": [
+            "<span class=\"brand__name\">"
+          ],
+          "occorrenze": 37
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.4.4, 1.4.12",
+          "livello": "AA",
+          "tecnica": "C28",
+          "descrizione": "Specifying the size of text containers using em units",
+          "elemento": [
+            "<span class=\"vh\"> — vai alla home</span>",
+            "<span class=\"vh\"> – English version of this page</span>"
+          ],
+          "occorrenze": 4
+        },
+        {
+          "tipo": "warning",
+          "criterio": "4.1.3",
+          "livello": "AA",
+          "tecnica": "ARIA19",
+          "descrizione": "Use role=alert or aria-live=assertive attribute in order to inject the error message inside these containers and notify the Assistive Technologies",
+          "elemento": [
+            "<p class=\"btn-row\" style=\"margin-top:1rem\">"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.1.1, 1.2.1",
+          "livello": "A",
+          "tecnica": "F30",
+          "descrizione": "Failure of Success Criterion 1.1.1 - 1.2.1 due to using text alternatives that are not alternatives (e.g., filenames or placeholder text)",
+          "elemento": [
+            "<img src=\"img/progetti/neonati-virus.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\">",
+            "<img src=\"img/progetti/alveari-sani.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\">"
+          ],
+          "occorrenze": 10
+        }
+      ],
+      "note": "WCAG 2.1 AA, Desktop Chrome. score = 'Accessibility percentage'; completezza 84%. Criteri in errore: 1.1.1, 1.3.1, 1.3.5, 1.4.1, 1.4.3, 1.4.5, 1.4.10, 2.4.7; in avviso: 1.2.1, 1.4.4, 2.4.1, 2.5.3, 4.1.3. Occorrenze = numero di segnalazioni per tecnica nel codice sorgente annotato (tabella End User non letta per questa pagina). H98 (1.3.5) è segnalato sui <select> dei filtri, che non raccolgono dati personali."
+    },
+    "accessibilitychecker": {
+      "status": "error",
+      "score": null,
+      "errors": null,
+      "warnings": null,
+      "issues": [],
+      "note": "Tre tentativi falliti: navigazione verso /audit/?website=... in timeout (30 s e 90 s), poi attesa del risultato oltre il timeout di 3 minuti con chiusura della scheda del browser. Non è un CAPTCHA né un limite d'uso dichiarato: nello stesso lotto la scansione di chi-siamo.html è riuscita subito dopo. Da ripetere."
+    },
+    "achecks": {
+      "status": "ok",
+      "score": null,
+      "errors": 2,
+      "warnings": 146,
+      "issues": [
+        {
+          "tipo": "error",
+          "criterio": "1.4.4",
+          "livello": "AA",
+          "check_id": "116",
+          "descrizione": "<b> (bold) element used.",
+          "elemento": [
+            "L20: <b>Blume</b>"
+          ],
+          "occorrenze": 2
+        },
+        {
+          "tipo": "warning",
+          "criterio": "2.4.2",
+          "livello": "A",
+          "check_id": "54",
+          "descrizione": "<title> might not describe the document.",
+          "elemento": [
+            "L6: <title>Progetti di ricerca – ideaBlume</title>"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "2.1.1",
+          "livello": "A",
+          "check_id": "89",
+          "descrizione": "<script> user interface may not be accessible.",
+          "elemento": [
+            "L11: <script> inline tema"
+          ],
+          "occorrenze": 4
+        },
+        {
+          "tipo": "warning",
+          "criterio": "2.3.1",
+          "livello": "A",
+          "check_id": "87",
+          "descrizione": "<script> may cause screen flicker.",
+          "elemento": [
+            "L11: <script> inline tema"
+          ],
+          "occorrenze": 4
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.4.1",
+          "livello": "A",
+          "check_id": "86",
+          "descrizione": "<script> may use color alone.",
+          "elemento": [
+            "L11: <script> inline tema"
+          ],
+          "occorrenze": 4
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.3.1",
+          "livello": "A",
+          "check_id": "248",
+          "descrizione": "Visual lists may not be properly marked.",
+          "elemento": [
+            "L14: <body>"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.3.1",
+          "livello": "A",
+          "check_id": "270",
+          "descrizione": "Unicode right-to-left marks or left-to-right marks may be required.",
+          "elemento": [
+            "L14: <body>"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.3.1",
+          "livello": "A",
+          "check_id": "271",
+          "descrizione": "<dir> attribute may be required to identify changes in text direction.",
+          "elemento": [
+            "L14: <body>"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.3.3",
+          "livello": "A",
+          "check_id": "250",
+          "descrizione": "Text may refer to items by shape, size, or relative position alone.",
+          "elemento": [
+            "L14: <body>"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "2.4.1",
+          "livello": "A",
+          "check_id": "28",
+          "descrizione": "Document may be missing a \"skip to content\" link.",
+          "elemento": [
+            "L14: <body>"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "2.4.1",
+          "livello": "A",
+          "check_id": "262",
+          "descrizione": "Groups of links with a related purpose are not marked.",
+          "elemento": [
+            "L14: <body>"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "2.4.5",
+          "livello": "AA",
+          "check_id": "184",
+          "descrizione": "Site missing site map.",
+          "elemento": [
+            "L14: <body>"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "3.2.3",
+          "livello": "AA",
+          "check_id": "276",
+          "descrizione": "Repeated components may not appear in the same relative order each time they appear.",
+          "elemento": [
+            "L14: <body>"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "3.2.4",
+          "livello": "AA",
+          "check_id": "131",
+          "descrizione": "Long quotations may not be marked using the <blockquote> element.",
+          "elemento": [
+            "L14: <body>"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "2.4.4",
+          "livello": "A",
+          "check_id": "19",
+          "descrizione": "Link text may not be meaningful.",
+          "elemento": [
+            "L15: <a class=\"skip-link\" href=\"#main\">Salta al contenuto</a>"
+          ],
+          "occorrenze": 38
+        },
+        {
+          "tipo": "warning",
+          "criterio": "2.4.6",
+          "livello": "AA",
+          "check_id": "42",
+          "descrizione": "<h1> may be used for formatting.",
+          "elemento": [
+            "L38: <h1>Progetti di ricerca</h1>"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "3.2.3",
+          "livello": "AA",
+          "check_id": "265",
+          "descrizione": "Tab order may not follow logical order.",
+          "elemento": [
+            "L42: <form class=\"filters\" action=\"progetti.html\" method=\"get\">"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "3.3.1",
+          "livello": "A",
+          "check_id": "267",
+          "descrizione": "Form submission error messages may not identify empty required fields.",
+          "elemento": [
+            "L42: <form class=\"filters\" action=\"progetti.html\" method=\"get\">"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "3.3.2",
+          "livello": "A",
+          "check_id": "246",
+          "descrizione": "All required <form> fields may not be indicated as required.",
+          "elemento": [
+            "L42: <form class=\"filters\" action=\"progetti.html\" method=\"get\">"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "3.3.3",
+          "livello": "AA",
+          "check_id": "268",
+          "descrizione": "Form submission error messages may not provide assistance.",
+          "elemento": [
+            "L42: <form class=\"filters\" action=\"progetti.html\" method=\"get\">"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "3.3.4",
+          "livello": "AA",
+          "check_id": "269",
+          "descrizione": "Form submission data may not be presented to the user before final acceptance of an irreversable transaction.",
+          "elemento": [
+            "L42: <form class=\"filters\" action=\"progetti.html\" method=\"get\">"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "3.3.4",
+          "livello": "AA",
+          "check_id": "272",
+          "descrizione": "Form may delete information without allowing for recovery.",
+          "elemento": [
+            "L42: <form class=\"filters\" action=\"progetti.html\" method=\"get\">"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "2.4.6",
+          "livello": "AA",
+          "check_id": "43",
+          "descrizione": "<h2> may be used for formatting.",
+          "elemento": [
+            "L43: <h2 id=\"h-filtri\" class=\"vh\">"
+          ],
+          "occorrenze": 15
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.4.1",
+          "livello": "A",
+          "check_id": "55",
+          "descrizione": "<input> possibly using color alone.",
+          "elemento": [
+            "L45: <input id=\"f-q\" type=\"search\">"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "3.3.2",
+          "livello": "A",
+          "check_id": "189",
+          "descrizione": "<label> may not describe its associated control.",
+          "elemento": [
+            "L45: <input id=\"f-q\" type=\"search\">"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.3.1",
+          "livello": "A",
+          "check_id": "209",
+          "descrizione": "<select> element's label is not positioned close to control.",
+          "elemento": [
+            "L47: <select id=\"f-stato\" name=\"stato\">"
+          ],
+          "occorrenze": 6
+        },
+        {
+          "tipo": "warning",
+          "criterio": "3.3.2",
+          "livello": "A",
+          "check_id": "210",
+          "descrizione": "<select> element's label may not describe the purpose or function of the control.",
+          "elemento": [
+            "L47: <select id=\"f-stato\" name=\"stato\">"
+          ],
+          "occorrenze": 6
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.1.1",
+          "livello": "A",
+          "check_id": "8",
+          "descrizione": "<img> element may require a long description.",
+          "elemento": [
+            "L62: <img src=\"img/progetti/neonati-virus.svg\" alt=\"\">"
+          ],
+          "occorrenze": 10
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.1.1",
+          "livello": "A",
+          "check_id": "178",
+          "descrizione": "Alt text does not convey the same information as the image.",
+          "elemento": [
+            "L62: <img src=\"img/progetti/neonati-virus.svg\" alt=\"\">"
+          ],
+          "occorrenze": 10
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.4.5",
+          "livello": "AA",
+          "check_id": "11",
+          "descrizione": "Image may contain text that is not in Alt text.",
+          "elemento": [
+            "L62: <img src=\"img/progetti/neonati-virus.svg\" alt=\"\">"
+          ],
+          "occorrenze": 10
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.4.1",
+          "livello": "A",
+          "check_id": "14",
+          "descrizione": "Image may be using color alone.",
+          "elemento": [
+            "L62: <img src=\"img/progetti/neonati-virus.svg\" alt=\"\">"
+          ],
+          "occorrenze": 10
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.4.1",
+          "livello": "A",
+          "check_id": "251",
+          "descrizione": "Image may contain text with poor contrast.",
+          "elemento": [
+            "L62: <img src=\"img/progetti/neonati-virus.svg\" alt=\"\">"
+          ],
+          "occorrenze": 10
+        }
+      ],
+      "note": "AChecker, WCAG 2.0 AA (Markup). AChecker non dà un punteggio: score null. errors = 'Known problems' (scheda ERRORS); warnings = 'Potential problems' da verificare a mano (scheda WARNINGS). Criterio WCAG ricavato dall'ID del controllo (vedi a11y/achecks-checks.json). L'unico errore (check 116, mappato da AChecker su 1.4.4) è l'elemento <b> nel logo 'ideaBlume' dell'header, presente su ogni pagina. Gli snippet degli script sono abbreviati."
+    },
+    "achecks_lighthouse": {
+      "status": "ok",
+      "score": 100,
+      "errors": 0,
+      "warnings": 10,
+      "issues": [],
+      "note": "Lighthouse 13.0.1 via ACHECKS (opzione 'WCAG 2.1 AA computer', desktop emulato). score = punteggio Accessibility. Nessun audit fallito; warnings = 10 'Additional items to manually check' generici (focus da tastiera, ordine di tabulazione, landmark, controlli personalizzati, ecc.). Passed audits 28, not applicable 32."
+    }
+  }
+}

@@ -1,0 +1,312 @@
+[
+  {
+    "id": "F01",
+    "titolo": "Indicatore di focus del link «Salta al contenuto»",
+    "criterio_wcag": "2.4.7",
+    "livello": "AA",
+    "strumenti": [
+      "MAUVE++ (G195, F78)"
+    ],
+    "pagine": [
+      "tutte le 50 pagine (25 IT + 25 EN)"
+    ],
+    "file_sorgente": [
+      "css/ideablume.css (.skip-link:focus, token --c-focus-skip)"
+    ],
+    "status": "done",
+    "tries": 0,
+    "note": "Su .skip-link:focus è impostato solo outline-color: stile e spessore arrivano da :focus-visible, mentre :focus:not(:focus-visible) toglie l'outline; MAUVE non trova quindi un indicatore dichiarato su :focus (F78). Inoltre l'anello giallo #f4b93e con offset 3px cade sullo sfondo crema #fbf6ee con un rapporto di 1,65:1 (tema scuro: #a33f0f). Il link comparendo resta visibile (14,8:1), ma conviene dichiarare l'outline completo su :focus e renderlo leggibile sullo sfondo adiacente (≥ 3:1), restando il più vicino possibile al design. Gli HTML generati sono in .gitignore (*.html): il diff va fatto su una copia degli HTML presa prima della build (cartella nuova in a11y/), e il commit conterrà solo le sorgenti. Lanciare la build con IB_OGGI=2026-11-05 per non cambiare data/ib-dati.js. — FATTO (commit 78cbbec): outline: 3px solid var(--c-focus-skip); outline-offset: 3px su .skip-link:focus; --c-focus-skip chiaro #f4b93e→#bc830b (3,05:1 su --c-page, 4,58:1 su --c-ink), scuro #a33f0f→#b64611 (3,34:1 su --c-page, 4,77:1 su --c-ink). HTML generati invariati (fix solo CSS). stylelint e html-validate senza errori; contrasto.py: 0 coppie sotto soglia. Verifica nel browser non eseguita (permesso Playwright negato)."
+  },
+  {
+    "id": "F02",
+    "titolo": "Marchio idea<b>Blume</b>: <b> usato solo per lo stile",
+    "criterio_wcag": "1.4.4 (AChecker #116)",
+    "livello": "AA",
+    "strumenti": [
+      "AChecker (#116, errore)"
+    ],
+    "pagine": [
+      "tutte le 50 pagine (25 IT + 25 EN)"
+    ],
+    "file_sorgente": [
+      "tools/build.py (header riga ~278 e footer riga ~302)",
+      "css/ideablume.css (.brand__name b, .site-footer__brand .brand__name b)"
+    ],
+    "status": "done",
+    "tries": 0,
+    "note": "<b> serve solo a colorare «Blume»: sostituirlo con <span class=\"brand__accent\"> e aggiornare i due selettori CSS, senza cambiamenti visivi. Il ridimensionamento del testo di per sé non è compromesso: il controllo di AChecker è sull'uso di elementi presentazionali. Gli HTML generati sono in .gitignore (*.html): il diff va fatto su una copia degli HTML presa prima della build (cartella nuova in a11y/), e il commit conterrà solo le sorgenti. Lanciare la build con IB_OGGI=2026-11-05 per non cambiare data/ib-dati.js. — FATTO (commit 1541ed1): idea<b>Blume</b> → idea<span class=\"brand__accent\">Blume</span> in tools/build.py (header e footer) e in docs/verifiche/anteprima-design-system.html; CSS .brand__name b → .brand__accent e .site-footer__brand .brand__name b → .site-footer__brand .brand__accent (font-weight: inherit tolto perché lo span eredita già il peso). Diff sugli HTML generati: in tutte le 50 pagine cambiano solo le 2 righe del marchio (header e footer); nessun <b> rimasto. html-validate e stylelint senza errori. Verifica visiva nel browser non eseguita."
+  },
+  {
+    "id": "F03",
+    "titolo": "role=\"status\" su <h2> nei risultati della ricerca annulla il ruolo di intestazione",
+    "criterio_wcag": "1.3.1 / 4.1.2",
+    "livello": "A",
+    "strumenti": [
+      "Lighthouse via ACHECKS (aria-allowed-role, informativo)"
+    ],
+    "pagine": [
+      "cerca.html",
+      "en/cerca.html"
+    ],
+    "file_sorgente": [
+      "tools/build.py (pagina cerca, <h2 class=\"result-count\" role=\"status\" ...>)",
+      "js/ideablume.js (data-risultati-titolo: verificare che continui a funzionare)"
+    ],
+    "status": "done",
+    "tries": 0,
+    "note": "role=\"status\" sostituisce il ruolo heading: l'h2 sparisce dalla navigazione per intestazioni. Correzione minima: spostare role=\"status\"/aria-live in un <div> che contiene l'h2, lasciando invariato il JS che aggiorna il testo di [data-risultati-titolo]. Verificare l'annuncio da tastiera dopo la ricerca. Gli HTML generati sono in .gitignore (*.html): il diff va fatto su una copia degli HTML presa prima della build (cartella nuova in a11y/), e il commit conterrà solo le sorgenti. Lanciare la build con IB_OGGI=2026-11-05 per non cambiare data/ib-dati.js. | FATTO: <div role=\"status\"><h2 class=\"result-count\" data-risultati-titolo>…</h2></div> in tools/build.py; aria-live rimosso perché ridondante (role=status implica polite). Diff solo su cerca.html ed en/cerca.html, html-validate ok. JS invariato (seleziona ancora [data-risultati-titolo]); verifica in browser non eseguita: permesso Playwright negato."
+  },
+  {
+    "id": "FP01",
+    "titolo": "SVG decorativi con aria-hidden segnalati come privi di etichetta",
+    "criterio_wcag": "1.1.1",
+    "livello": "A",
+    "strumenti": [
+      "MAUVE++ (ARIA6, errore)"
+    ],
+    "pagine": [
+      "tutte le 50 pagine (25 IT + 25 EN)"
+    ],
+    "file_sorgente": [
+      "tools/build.py (SEGNO, icone)"
+    ],
+    "status": "falso_positivo",
+    "tries": 0,
+    "note": "Tutti gli elementi segnalati (svg.brand__mark, svg.icon) hanno aria-hidden=\"true\" focusable=\"false\" e accanto un testo visibile o .vh (nome del marchio, etichette dei pulsanti): sono decorativi e correttamente nascosti. ARIA6 non si applica."
+  },
+  {
+    "id": "FP02",
+    "titolo": "Contrasto di testo nascosto e di elementi già conformi",
+    "criterio_wcag": "1.4.3",
+    "livello": "AA",
+    "strumenti": [
+      "MAUVE++ (G18, errore)"
+    ],
+    "pagine": [
+      "tutte le 50 pagine (25 IT + 25 EN)"
+    ],
+    "file_sorgente": [
+      "css/ideablume.css"
+    ],
+    "status": "falso_positivo",
+    "tries": 0,
+    "note": "Ricalcolato sui token: span.vh «Passa a:» è testo visivamente nascosto (clip 1px) letto solo dagli screen reader; .theme-toggle__testo è #3b1d2a su #fbf6ee = 14,0:1 (scuro 16,0:1) ed è nascosto sotto 1200 px; .tag--programma #7a3010 su #fffdf9 = 9,2:1 (scuro 11,7:1); .btn--ghost #a33f0f su #fbf6ee = 6,0:1 e su #f7efe4 = 5,6:1 (scuro 10,3:1). MAUVE non risolve gli sfondi trasparenti, color-mix e backdrop-filter dell'header. tools/contrasto.py: 180/180 coppie conformi."
+  },
+  {
+    "id": "FP03",
+    "titolo": "Pulsanti-link distinguibili solo con il colore",
+    "criterio_wcag": "1.4.1",
+    "livello": "A",
+    "strumenti": [
+      "MAUVE++ (F73, errore)",
+      "AChecker (#86, #55, avvisi)"
+    ],
+    "pagine": [
+      "tutte le 50 pagine (25 IT + 25 EN)"
+    ],
+    "file_sorgente": [
+      "css/ideablume.css (.btn)"
+    ],
+    "status": "falso_positivo",
+    "tries": 0,
+    "note": "F73 riguarda link inseriti in un blocco di testo. Gli elementi segnalati sono tutti a.btn isolati con sfondo pieno o bordo di 2px e forma a pillola (nel footer .btn è #fffaf3 su #3b1d2a); i .btn--ghost sono anche sottolineati. Non dipendono dal solo colore."
+  },
+  {
+    "id": "FP04",
+    "titolo": "Separazione fra struttura e presentazione (elemento <html>)",
+    "criterio_wcag": "1.3.1, 1.4.5",
+    "livello": "A",
+    "strumenti": [
+      "MAUVE++ (G140, errore)"
+    ],
+    "pagine": [
+      "tutte le 50 pagine (25 IT + 25 EN)"
+    ],
+    "file_sorgente": [],
+    "status": "falso_positivo",
+    "tries": 0,
+    "note": "È un controllo da verificare a mano, ancorato a <html> senza un elemento preciso. Le pagine usano HTML semantico (landmark, intestazioni, liste, tabelle con th/scope, label) e un unico CSS esterno; testo e icone non sono immagini di testo. Il controllo è già rispettato."
+  },
+  {
+    "id": "FP05",
+    "titolo": "Tabelle con id/headers mancanti",
+    "criterio_wcag": "1.3.1",
+    "livello": "A",
+    "strumenti": [
+      "AChecker (#245 errore; #111, #137, #231, #242 avvisi)",
+      "MAUVE++ (F46, H73 avvisi)"
+    ],
+    "pagine": [
+      "progetto-alveari-sani.html",
+      "progetto-aria-aperta.html",
+      "progetto-clima-giovani.html",
+      "progetto-dialetti-archivio.html",
+      "progetto-matematica-accessibile.html",
+      "progetto-neonati-virus.html",
+      "progetto-plastica-batteri.html",
+      "progetto-rifugi-frane.html",
+      "progetto-robot-anziani.html",
+      "progetto-scienza-doposcuola.html",
+      "en/progetto-alveari-sani.html",
+      "en/progetto-aria-aperta.html",
+      "en/progetto-clima-giovani.html",
+      "en/progetto-dialetti-archivio.html",
+      "en/progetto-matematica-accessibile.html",
+      "en/progetto-neonati-virus.html",
+      "en/progetto-plastica-batteri.html",
+      "en/progetto-rifugi-frane.html",
+      "en/progetto-robot-anziani.html",
+      "en/progetto-scienza-doposcuola.html",
+      "programma.html",
+      "en/programma.html"
+    ],
+    "file_sorgente": [
+      "tools/build.py (tabella «Uso dei fondi» e tabella del programma)"
+    ],
+    "status": "falso_positivo",
+    "tries": 0,
+    "note": "Le tabelle sono semplici: una sola riga di intestazioni di colonna (th scope=\"col\") e una colonna di intestazioni di riga (th scope=\"row\" nel tfoot del totale o sull'anno), con <caption> descrittivo. Con un solo livello di intestazioni per asse, scope basta (tecnica H63) e id/headers (H43) sarebbe ridondante. Non sono tabelle di impaginazione; summary è obsoleto in HTML5 e caption già descrive la tabella."
+  },
+  {
+    "id": "FP06",
+    "titolo": "autocomplete mancante su campi che non riguardano dati personali",
+    "criterio_wcag": "1.3.5",
+    "livello": "AA",
+    "strumenti": [
+      "MAUVE++ (H98)"
+    ],
+    "pagine": [
+      "candidatura.html",
+      "collabora.html",
+      "contatti.html",
+      "donazione.html",
+      "progetti.html",
+      "progetto-alveari-sani.html",
+      "progetto-aria-aperta.html",
+      "progetto-clima-giovani.html",
+      "progetto-neonati-virus.html",
+      "en/candidatura.html",
+      "en/collabora.html",
+      "en/contatti.html",
+      "en/donazione.html",
+      "en/progetti.html",
+      "en/progetto-alveari-sani.html",
+      "en/progetto-aria-aperta.html",
+      "en/progetto-clima-giovani.html",
+      "en/progetto-neonati-virus.html"
+    ],
+    "file_sorgente": [
+      "tools/build.py (moduli)"
+    ],
+    "status": "falso_positivo",
+    "tries": 0,
+    "note": "Tutti i campi con dati personali hanno già autocomplete (name, given-name, family-name, email, tel, organization, transaction-amount). I campi segnalati sono messaggi, titolo e obiettivo del progetto, budget, filtri e select di tipo/argomento, che non rientrano nell'elenco delle finalità di 1.3.5. k-telefono e telefono hanno già autocomplete=\"tel\". c-ruolo è una select a elenco chiuso di categorie dell'Ateneo, non un titolo professionale libero."
+  },
+  {
+    "id": "FP07",
+    "titolo": "Reflow dei contenitori div.field",
+    "criterio_wcag": "1.4.10",
+    "livello": "AA",
+    "strumenti": [
+      "MAUVE++ (C38)"
+    ],
+    "pagine": [
+      "candidatura.html",
+      "collabora.html",
+      "contatti.html",
+      "progetti.html",
+      "progetto-alveari-sani.html",
+      "progetto-aria-aperta.html",
+      "progetto-clima-giovani.html",
+      "progetto-neonati-virus.html",
+      "en/candidatura.html",
+      "en/collabora.html",
+      "en/contatti.html",
+      "en/progetti.html",
+      "en/progetto-alveari-sani.html",
+      "en/progetto-aria-aperta.html",
+      "en/progetto-clima-giovani.html",
+      "en/progetto-neonati-virus.html"
+    ],
+    "file_sorgente": [
+      "css/ideablume.css (.field, input)"
+    ],
+    "status": "falso_positivo",
+    "tries": 0,
+    "note": "Le label sono display:block sopra il campo e i campi hanno width:100% e max-width:32rem: si adattano a 320 px senza scorrimento orizzontale (tools/responsive.js: nessun problema a 320 px e con zoom al 200%)."
+  },
+  {
+    "id": "FP08",
+    "titolo": "Lingua delle parti nelle pagine inglesi",
+    "criterio_wcag": "3.1.2",
+    "livello": "AA",
+    "strumenti": [
+      "AChecker (#110, avviso)"
+    ],
+    "pagine": [
+      "25 pagine EN"
+    ],
+    "file_sorgente": [
+      "tools/build.py"
+    ],
+    "status": "falso_positivo",
+    "tries": 0,
+    "note": "Già rispettato: il link della lingua ha lang=\"it\" hreflang=\"it\" e i commenti dei sostenitori in italiano nelle schede EN hanno <p lang=\"it\">. Non risultano altri passaggi in italiano nel testo EN, se non nomi propri come l'indirizzo."
+  },
+  {
+    "id": "FP09",
+    "titolo": "Messaggi di stato e di errore dei moduli",
+    "criterio_wcag": "4.1.3 / 4.1.2",
+    "livello": "AA",
+    "strumenti": [
+      "MAUVE++ (G199, ARIA19, ARIA5, avvisi)"
+    ],
+    "pagine": [
+      "candidatura.html",
+      "collabora.html",
+      "contatti.html",
+      "donazione.html",
+      "progetti.html",
+      "progetto-alveari-sani.html",
+      "progetto-aria-aperta.html",
+      "progetto-clima-giovani.html",
+      "progetto-neonati-virus.html",
+      "en/candidatura.html",
+      "en/collabora.html",
+      "en/contatti.html",
+      "en/donazione.html",
+      "en/progetti.html",
+      "en/progetto-alveari-sani.html",
+      "en/progetto-aria-aperta.html",
+      "en/progetto-clima-giovani.html",
+      "en/progetto-neonati-virus.html",
+      "index.html",
+      "404.html",
+      "cerca.html"
+    ],
+    "file_sorgente": [
+      "tools/build.py",
+      "js/ideablume.js"
+    ],
+    "status": "falso_positivo",
+    "tries": 0,
+    "note": "Già rispettato: i riepiloghi degli errori hanno role=\"alert\" e tabindex=\"-1\", le conferme role=\"status\" e l'esito della copia del link role=\"status\". I form di ricerca di home e 404 portano a un'altra pagina, quindi non serve un messaggio di stato."
+  },
+  {
+    "id": "FP10",
+    "titolo": "Avvisi generici da verificare a mano (AChecker «potential problems» e MAUVE++ warning)",
+    "criterio_wcag": "vari (1.1.1, 1.3.1, 1.3.3, 1.4.4, 1.4.12, 2.1.1, 2.3.1, 2.4.x, 2.5.3, 3.2.x, 3.3.x, 1.2.1)",
+    "livello": "A/AA",
+    "strumenti": [
+      "AChecker (#8, #11, #14, #16, #19, #28, #42-44, #54, #86-89, #96, #110, #123, #125, #131, #178, #184, #189, #209-211, #218-220, #230, #246, #248, #250, #251, #262, #265, #267-272, #276)",
+      "MAUVE++ (ARIA11, C21, C28, F96, F30, H67, H44, G162)"
+    ],
+    "pagine": [
+      "tutte le 50 pagine (25 IT + 25 EN)"
+    ],
+    "file_sorgente": [],
+    "status": "falso_positivo",
+    "tries": 0,
+    "note": "Sono controlli generici che chiedono una verifica a mano, non errori. Verificato sul markup: lo skip link esiste (#28); title e intestazioni sono descrittivi; header, nav e footer sono landmark nativi (ARIA11); le dimensioni sono in rem/em e l'interlinea è nel CSS (C21, C28); nessun aria-label su elementi generici (F96); le immagini delle card con alt=\"\" sono accanto al titolo del progetto, che è il link (F30); le illustrazioni delle schede hanno un alt descrittivo e non sono decorative (H67, #16); ogni campo ha la sua label vicina (H44, G162, #96, #123, #125, #209-211); obbligatori e facoltativi sono indicati; la donazione mostra il riepilogo prima del pagamento (#269); non ci sono animazioni lampeggianti (#87) e i percorsi da tastiera sono verificati da tools/percorsi.js (#89). Restano da fare a mano con screen reader (vedi FIXES_REPORT)."
+  }
+]

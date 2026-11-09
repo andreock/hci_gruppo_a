@@ -1,0 +1,464 @@
+[
+  {
+    "id": "116",
+    "pane": "achecker-errors",
+    "msg": "<b> (bold) element used.",
+    "line": 31,
+    "rest": "<b>Blume</b> Replace your <b> (bold) elements with <em> or <strong>. open_in_new Explanation"
+  },
+  {
+    "id": "116",
+    "pane": "achecker-errors",
+    "msg": "<b> (bold) element used.",
+    "line": 63,
+    "rest": "<b>Blume</b> Replace your <b> (bold) elements with <em> or <strong>. open_in_new Explanation"
+  },
+  {
+    "id": "54",
+    "pane": "achecker-warnings",
+    "msg": "<title> might not describe the document.",
+    "line": 6,
+    "rest": "<title>Pagina non trovata – ideaBlume</title> <title> describes the document.PASS <title> does not describe the document.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "89",
+    "pane": "achecker-warnings",
+    "msg": "<script> user interface may not be accessible.",
+    "line": 11,
+    "rest": "<script>document.documentElement.className = \"js\"; (function () { var s = null; try { s = localStora ... <script> user interface is accessible.PASS <script> user interface is not accessible.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "87",
+    "pane": "achecker-warnings",
+    "msg": "<script> may cause screen flicker.",
+    "line": 11,
+    "rest": "<script>document.documentElement.className = \"js\"; (function () { var s = null; try { s = localStora ... <script> does not cause screen flicker.PASS <script> causes screen flicker.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "86",
+    "pane": "achecker-warnings",
+    "msg": "<script> may use color alone.",
+    "line": 11,
+    "rest": "<script>document.documentElement.className = \"js\"; (function () { var s = null; try { s = localStora ... <script> does not use color alone.PASS <script> uses color alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "89",
+    "pane": "achecker-warnings",
+    "msg": "<script> user interface may not be accessible.",
+    "line": 13,
+    "rest": "<script> (function () { if (!/\\.github\\.io$/.test(location.hostname)) return; // altrove la pagi ... <script> user interface is accessible.PASS <script> user interface is not accessible.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "87",
+    "pane": "achecker-warnings",
+    "msg": "<script> may cause screen flicker.",
+    "line": 13,
+    "rest": "<script> (function () { if (!/\\.github\\.io$/.test(location.hostname)) return; // altrove la pagi ... <script> does not cause screen flicker.PASS <script> causes screen flicker.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "86",
+    "pane": "achecker-warnings",
+    "msg": "<script> may use color alone.",
+    "line": 13,
+    "rest": "<script> (function () { if (!/\\.github\\.io$/.test(location.hostname)) return; // altrove la pagi ... <script> does not use color alone.PASS <script> uses color alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "248",
+    "pane": "achecker-warnings",
+    "msg": "Visual lists may not be properly marked.",
+    "line": 25,
+    "rest": "<body data-pagina=\"404\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Salta al con ... All visual lists contain proper markup.PASS Not all visual lists contain proper markup.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "270",
+    "pane": "achecker-warnings",
+    "msg": "Unicode right-to-left marks or left-to-right marks may be required.",
+    "line": 25,
+    "rest": "<body data-pagina=\"404\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Salta al con ... Unicode right-to-left marks or left-to-right marks are used whenever the HTML bidirectional algorithm produces undesirable results.PASS Unicode right-to-left marks or left-to-right marks are not used whenever the HTML bidirectional algorithm produces undesirable results.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "271",
+    "pane": "achecker-warnings",
+    "msg": "<dir> attribute may be required to identify changes in text direction.",
+    "line": 25,
+    "rest": "<body data-pagina=\"404\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Salta al con ... All changes in text direction are marked using the <dir> attribute.PASS All changes in text direction are not marked using the <dir> attribute.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "250",
+    "pane": "achecker-warnings",
+    "msg": "Text may refer to items by shape, size, or relative position alone.",
+    "line": 25,
+    "rest": "<body data-pagina=\"404\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Salta al con ... There are no references to items in the document by shape, size, or relative position alone.PASS There are references to items in the document by shape, size, or relative position alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "28",
+    "pane": "achecker-warnings",
+    "msg": "Document may be missing a \"skip to content\" link.",
+    "line": 25,
+    "rest": "<body data-pagina=\"404\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Salta al con ... Document contians a \"skip to content\" link or does not require it.PASS Document does not contain a \"skip to content\" link and requires it.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "262",
+    "pane": "achecker-warnings",
+    "msg": "Groups of links with a related purpose are not marked.",
+    "line": 25,
+    "rest": "<body data-pagina=\"404\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Salta al con ... All groups of links with a related purpose are marked.PASS All groups of links with a related purpose are not marked.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "184",
+    "pane": "achecker-warnings",
+    "msg": "Site missing site map.",
+    "line": 25,
+    "rest": "<body data-pagina=\"404\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Salta al con ... Page is not part of a collection that requires a site map.PASS Page is part of a collection that requires a site map.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "276",
+    "pane": "achecker-warnings",
+    "msg": "Repeated components may not appear in the same relative order each time they appear.",
+    "line": 25,
+    "rest": "<body data-pagina=\"404\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Salta al con ... Repeated components appear in the same relative order on this page.PASS Repeated components do not appear in the same relative order on this page.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "131",
+    "pane": "achecker-warnings",
+    "msg": "Long quotations may not be marked using the <blockquote> element.",
+    "line": 25,
+    "rest": "<body data-pagina=\"404\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Salta al con ... All long quotations have been marked with the <blockquote> element.PASS All long quotations are not marked with the <blockquote> element.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 26,
+    "rest": "<a class=\"skip-link\" href=\"#main\">Salta al contenuto</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 29,
+    "rest": "<a class=\"brand\" href=\"index.html\"> <svg class=\"brand__mark\" viewbox=\"0 0 48 48\" width=\"36\" he ... Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 33,
+    "rest": "<a class=\"lang-switch\" href=\"en/404.html\" lang=\"en\" hreflang=\"en\" data-lang-switch><svg class=\"icon\" ... Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 44,
+    "rest": "<a href=\"index.html\">Home</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 44,
+    "rest": "<a href=\"progetti.html\">Progetti</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 44,
+    "rest": "<a href=\"chi-siamo.html\">Chi siamo</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 44,
+    "rest": "<a href=\"come-funziona.html\">Come funziona</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 44,
+    "rest": "<a href=\"programma.html\">Il programma dell&#x27;Ateneo</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 44,
+    "rest": "<a href=\"proponi.html\">Proponi un progetto</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 44,
+    "rest": "<a href=\"faq.html\">Domande frequenti</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 44,
+    "rest": "<a href=\"contatti.html\">Contatti</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "42",
+    "pane": "achecker-warnings",
+    "msg": "<h1> may be used for formatting.",
+    "line": 49,
+    "rest": "<h1>Pagina non trovata</h1> This <h1> element is really a section header.PASS This <h1> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "265",
+    "pane": "achecker-warnings",
+    "msg": "Tab order may not follow logical order.",
+    "line": 53,
+    "rest": "<form class=\"search-form search-form--page\" role=\"search\" aria-label=\"Cerca un progetto\" action=\"cer ... Tab order follows a logical order.PASS Tab order does not follow a logical order.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "267",
+    "pane": "achecker-warnings",
+    "msg": "Form submission error messages may not identify empty required fields.",
+    "line": 53,
+    "rest": "<form class=\"search-form search-form--page\" role=\"search\" aria-label=\"Cerca un progetto\" action=\"cer ... Required fields are identified in all form submission error messages.PASS Required fields are not identified in all form submission error messages.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "246",
+    "pane": "achecker-warnings",
+    "msg": "All required <form> fields may not be indicated as required.",
+    "line": 53,
+    "rest": "<form class=\"search-form search-form--page\" role=\"search\" aria-label=\"Cerca un progetto\" action=\"cer ... All required fields are indicated to the user as required.PASS All required fields are not indicated to the user as required.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "268",
+    "pane": "achecker-warnings",
+    "msg": "Form submission error messages may not provide assistance.",
+    "line": 53,
+    "rest": "<form class=\"search-form search-form--page\" role=\"search\" aria-label=\"Cerca un progetto\" action=\"cer ... All form submission error messages provide assistance in correcting the error.PASS All form submission error messages do not provide assistance in correcting the errors.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "269",
+    "pane": "achecker-warnings",
+    "msg": "Form submission data may not be presented to the user before final acceptance of an irreversable transaction.",
+    "line": 53,
+    "rest": "<form class=\"search-form search-form--page\" role=\"search\" aria-label=\"Cerca un progetto\" action=\"cer ... All form submission data is presented to the user before final acceptance for all irreversable transactions.PASS All form submission data is not presented to the user before final acceptance for all irreversable transactions.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "272",
+    "pane": "achecker-warnings",
+    "msg": "Form may delete information without allowing for recovery.",
+    "line": 53,
+    "rest": "<form class=\"search-form search-form--page\" role=\"search\" aria-label=\"Cerca un progetto\" action=\"cer ... Information deleted using this form can be recovered.PASS Information delted using this form can not be recovered.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "55",
+    "pane": "achecker-warnings",
+    "msg": "<input> possibly using color alone.",
+    "line": 55,
+    "rest": "<input id=\"q-404\" name=\"q\" type=\"search\" placeholder=\"es. api, clima, Informatica\"> <input> element does not use color alone.PASS <input> element uses color alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "189",
+    "pane": "achecker-warnings",
+    "msg": "<label> may not describe its associated control.",
+    "line": 55,
+    "rest": "<input id=\"q-404\" name=\"q\" type=\"search\" placeholder=\"es. api, clima, Informatica\"> <label> describes its associated control.PASS <label> does not describe its associated control.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 58,
+    "rest": "<h2>Puoi andare a:</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 59,
+    "rest": "<a href=\"index.html\">Home</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 59,
+    "rest": "<a href=\"progetti.html\">Tutti i progetti</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 59,
+    "rest": "<a href=\"faq.html\">Domande frequenti</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 59,
+    "rest": "<a href=\"contatti.html\">Contatti</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 66,
+    "rest": "<h2 id=\"ft-aiuto\">Hai bisogno di aiuto?</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 67,
+    "rest": "<a href=\"tel:+390110194250\">011 019 4250</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 68,
+    "rest": "<a href=\"mailto:aiuto@ideablume.it\">aiuto@ideablume.it</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 69,
+    "rest": "<a class=\"btn\" href=\"contatti.html#scrivici\">Scrivici</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 71,
+    "rest": "<h2 id=\"ft-esplora\">Esplora</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 72,
+    "rest": "<a href=\"progetti.html\">Progetti</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 72,
+    "rest": "<a href=\"programma.html\">Il programma dell&#x27;Ateneo</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 73,
+    "rest": "<a href=\"come-funziona.html\">Come funziona</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 73,
+    "rest": "<a href=\"faq.html\">Domande frequenti</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 74,
+    "rest": "<h2 id=\"ft-promotori\">Per chi propone</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 75,
+    "rest": "<a href=\"proponi.html\">Proponi un progetto</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 75,
+    "rest": "<a href=\"candidatura.html\">Candidatura al programma</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 76,
+    "rest": "<a href=\"collabora.html\">Collaborazioni con enti esterni</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 77,
+    "rest": "<h2 id=\"ft-info\">Informazioni</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 78,
+    "rest": "<a href=\"chi-siamo.html\">Chi siamo</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 78,
+    "rest": "<a href=\"contatti.html\">Contatti</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 79,
+    "rest": "<a href=\"accessibilita.html\">Accessibilità</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "89",
+    "pane": "achecker-warnings",
+    "msg": "<script> user interface may not be accessible.",
+    "line": 84,
+    "rest": "<script src=\"data/testi-it.js\"></script> <script> user interface is accessible.PASS <script> user interface is not accessible.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "87",
+    "pane": "achecker-warnings",
+    "msg": "<script> may cause screen flicker.",
+    "line": 84,
+    "rest": "<script src=\"data/testi-it.js\"></script> <script> does not cause screen flicker.PASS <script> causes screen flicker.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "86",
+    "pane": "achecker-warnings",
+    "msg": "<script> may use color alone.",
+    "line": 84,
+    "rest": "<script src=\"data/testi-it.js\"></script> <script> does not use color alone.PASS <script> uses color alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "89",
+    "pane": "achecker-warnings",
+    "msg": "<script> user interface may not be accessible.",
+    "line": 85,
+    "rest": "<script src=\"js/ideablume.js\"></script> <script> user interface is accessible.PASS <script> user interface is not accessible.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "87",
+    "pane": "achecker-warnings",
+    "msg": "<script> may cause screen flicker.",
+    "line": 85,
+    "rest": "<script src=\"js/ideablume.js\"></script> <script> does not cause screen flicker.PASS <script> causes screen flicker.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "86",
+    "pane": "achecker-warnings",
+    "msg": "<script> may use color alone.",
+    "line": 85,
+    "rest": "<script src=\"js/ideablume.js\"></script> <script> does not use color alone.PASS <script> uses color alone.FAIL open_in_new Explanation"
+  }
+]

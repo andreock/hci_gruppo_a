@@ -1,0 +1,302 @@
+[
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/",
+    "template": "home",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/progetti.html",
+    "template": "elenco",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/chi-siamo.html",
+    "template": "contenuto",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/come-funziona.html",
+    "template": "contenuto",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/programma.html",
+    "template": "contenuto",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/proponi.html",
+    "template": "contenuto",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/faq.html",
+    "template": "contenuto",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/contatti.html",
+    "template": "form",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/progetto-neonati-virus.html",
+    "template": "scheda",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/progetto-alveari-sani.html",
+    "template": "scheda",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/progetto-clima-giovani.html",
+    "template": "scheda",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/progetto-aria-aperta.html",
+    "template": "scheda",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/candidatura.html",
+    "template": "form",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/collabora.html",
+    "template": "form",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/accessibilita.html",
+    "template": "contenuto",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/progetto-dialetti-archivio.html",
+    "template": "scheda",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/progetto-plastica-batteri.html",
+    "template": "scheda",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/progetto-matematica-accessibile.html",
+    "template": "scheda",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/progetto-rifugi-frane.html",
+    "template": "scheda",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/progetto-scienza-doposcuola.html",
+    "template": "scheda",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/progetto-robot-anziani.html",
+    "template": "scheda",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/donazione.html",
+    "template": "form",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/cerca.html",
+    "template": "ricerca",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/donazione-conferma.html",
+    "template": "conferma",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/404.html",
+    "template": "errore",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/",
+    "template": "home",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/progetti.html",
+    "template": "elenco",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/chi-siamo.html",
+    "template": "contenuto",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/come-funziona.html",
+    "template": "contenuto",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/programma.html",
+    "template": "contenuto",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/proponi.html",
+    "template": "contenuto",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/faq.html",
+    "template": "contenuto",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/contatti.html",
+    "template": "form",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/progetto-neonati-virus.html",
+    "template": "scheda",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/progetto-alveari-sani.html",
+    "template": "scheda",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/progetto-clima-giovani.html",
+    "template": "scheda",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/progetto-aria-aperta.html",
+    "template": "scheda",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/candidatura.html",
+    "template": "form",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/collabora.html",
+    "template": "form",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/accessibilita.html",
+    "template": "contenuto",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/progetto-dialetti-archivio.html",
+    "template": "scheda",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/progetto-plastica-batteri.html",
+    "template": "scheda",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/progetto-matematica-accessibile.html",
+    "template": "scheda",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/progetto-rifugi-frane.html",
+    "template": "scheda",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/progetto-scienza-doposcuola.html",
+    "template": "scheda",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/progetto-robot-anziani.html",
+    "template": "scheda",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/donazione.html",
+    "template": "form",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/cerca.html",
+    "template": "ricerca",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/donazione-conferma.html",
+    "template": "conferma",
+    "status": "todo",
+    "tries": 0
+  },
+  {
+    "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/404.html",
+    "template": "errore",
+    "status": "todo",
+    "tries": 0
+  }
+]

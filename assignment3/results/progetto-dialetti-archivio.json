@@ -1,0 +1,528 @@
+{
+  "url": "https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/progetto-dialetti-archivio.html",
+  "template": "scheda",
+  "checked_at": "2026-11-09T13:26:00+01:00",
+  "tools": {
+    "mauve": {
+      "status": "ok",
+      "score": 94,
+      "errors": 6,
+      "warnings": 4,
+      "issues": [
+        {
+          "tipo": "error",
+          "criterio": "1.1.1",
+          "livello": "A",
+          "tecnica": "ARIA6",
+          "descrizione": "Using aria-label to provide labels for objects",
+          "elemento": [
+            "<svg class=\"brand__mark\" viewBox=\"0 0 48 48\" width=\"36\" height=\"36\" aria-hidden=\"true\" focusable=\"false\">",
+            "<svg class=\"icon\" viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" aria-hidden=\"true\" focusable=\"false\">",
+            "<svg class=\"icon\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" aria-hidden=\"true\" focusable=\"false\">"
+          ],
+          "occorrenze": 7
+        },
+        {
+          "tipo": "error",
+          "criterio": "1.3.1, 1.4.5",
+          "livello": "A",
+          "tecnica": "G140",
+          "descrizione": "Separating information and structure from presentation to enable different presentations",
+          "elemento": [
+            "<html lang=\"it\" class=\"js\" data-theme=\"light\">"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "error",
+          "criterio": "1.4.1",
+          "livello": "A",
+          "tecnica": "F73",
+          "descrizione": "Failure of Success Criterion 1.4.1 due to creating links that are not visually evident without color vision",
+          "elemento": [
+            "<a class=\"btn\" href=\"#aggiornamenti\">Leggi il resoconto</a>",
+            "<a class=\"btn btn--secondary\" href=\"progetti.html?stato=in-corso\">Scopri i progetti in corso</a>",
+            "<a class=\"btn\" href=\"contatti.html#scrivici\">Scrivici</a>"
+          ],
+          "occorrenze": 3
+        },
+        {
+          "tipo": "error",
+          "criterio": "1.4.3",
+          "livello": "AA",
+          "tecnica": "G18",
+          "descrizione": "Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text",
+          "elemento": [
+            "<span class=\"vh\">Passa a: </span>",
+            "<span class=\"theme-toggle__testo\">Tema scuro</span>",
+            "<span class=\"tag tag--programma\">Programma dell'Ateneo</span>"
+          ],
+          "occorrenze": 3
+        },
+        {
+          "tipo": "error",
+          "criterio": "2.4.7",
+          "livello": "AA",
+          "tecnica": "G195",
+          "descrizione": "Using an author-supplied, highly visible focus indicator",
+          "elemento": [
+            "<a class=\"skip-link\" href=\"#main\">Salta al contenuto</a>"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "error",
+          "criterio": "2.4.7",
+          "livello": "AA",
+          "tecnica": "F78",
+          "descrizione": "Using an author-supplied, highly visible focus indicator",
+          "elemento": [
+            "<a class=\"skip-link\" href=\"#main\">Salta al contenuto</a>"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.1.1",
+          "livello": "A",
+          "tecnica": "H67",
+          "descrizione": "Using null alt text and no title attribute on img elements for images that AT should ignore",
+          "elemento": [
+            "<img src=\"img/progetti/dialetti-archivio.svg\" alt=\"Illustrazione: un microfono e onde sonore.\" width=\"640\" height=\"360\">"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.3.1, 2.4.1",
+          "livello": "A",
+          "tecnica": "ARIA11",
+          "descrizione": "Using ARIA landmarks to identify regions of a page",
+          "elemento": [
+            "<header class=\"site-header\">",
+            "<footer class=\"site-footer\">",
+            "<nav class=\"main-nav container\" id=\"menu-principale\" aria-label=\"Principale\">"
+          ],
+          "occorrenze": 10
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.3.1",
+          "livello": "A",
+          "tecnica": "F46",
+          "descrizione": "Failure of Success Criterion 1.3.1 due to using th elements, caption elements, or non-empty summary attributes in layout tables",
+          "elemento": [
+            "<table>"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.3.1",
+          "livello": "A",
+          "tecnica": "H73",
+          "descrizione": "Using the summary attribute of the table element to give an overview of data tables",
+          "elemento": [
+            "<table>"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.4.4, 1.4.12",
+          "livello": "AA",
+          "tecnica": "C28",
+          "descrizione": "Specifying the size of text containers using em units",
+          "elemento": [
+            "<span class=\"vh\"> — vai alla home</span>",
+            "<span class=\"vh\"> – English version of this page</span>",
+            "<span class=\"vh\">Passa a: </span>"
+          ],
+          "occorrenze": 6
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.4.12",
+          "livello": "AA",
+          "tecnica": "C21",
+          "descrizione": "Specifying line spacing in CSS",
+          "elemento": [
+            "<span class=\"theme-toggle__verso theme-toggle__verso--scuro\">",
+            "<span class=\"vh\">Passa a: </span>",
+            "<span class=\"theme-toggle__testo\">Tema scuro</span>"
+          ],
+          "occorrenze": 11
+        },
+        {
+          "tipo": "warning",
+          "criterio": "2.5.3",
+          "livello": "A",
+          "tecnica": "F96",
+          "descrizione": "If on the page are present the tags aria-label or aria-labelledby, check that their content matches the visible name.",
+          "elemento": [
+            "<div class=\"container site-header__bar\">",
+            "<div class=\"layout-aside\">",
+            "<div class=\"proj-head\">"
+          ],
+          "occorrenze": 11
+        },
+        {
+          "tipo": "warning",
+          "criterio": "4.1.2",
+          "livello": "A",
+          "tecnica": "ARIA5",
+          "descrizione": "Using WAI-ARIA state and property attributes to expose the state of a user interface component",
+          "elemento": [
+            "<p class=\"small\" role=\"status\" data-copia-esito=\"\"></p>"
+          ],
+          "occorrenze": 1
+        }
+      ],
+      "note": "WCAG 2.1 AA, Desktop Chrome. score = 'Accessibility percentage'; completezza 89%. Criteri in errore: 1.1.1, 1.3.1, 1.4.1, 1.4.3, 1.4.5, 2.4.7; in avviso: 1.4.4, 1.4.12, 2.4.1, 2.5.3, 4.1.2. Occorrenze = segnalazioni per tecnica (da window.json_report della pagina dei risultati). Snippet ricavati dagli XPath di MAUVE++ sul DOM pubblicato (primi 3 elementi). Tecniche e occorrenze specifiche della pagina: non sembra il risultato di una pagina vuota. Riepilogo (94%, 6 errori, 4 avvisi, completezza 89%) identico per le tre schede del lotto 6: stesso template scheda senza form di donazione (a differenza delle schede del lotto 4, che hanno un form e in più H98, C38, ARIA19, G199). HTML statico, non generato via JavaScript. Le occorrenze e gli XPath cambiano tra le pagine (es. C28 6/7/7; le pagine hanno 53/54/54 elementi segnalati), quindi i report sono distinti."
+    },
+    "accessibilitychecker": {
+      "status": "skipped",
+      "score": null,
+      "errors": null,
+      "warnings": null,
+      "issues": [],
+      "note": "Strumento abbandonato dal lotto 4 (regola di LOOP.md: stesso blocco 'You have reached the daily limit for scanning websites' per 3 iterazioni consecutive). Anche per questo lotto l'utente ha indicato che il limite giornaliero è esaurito. URL non inviata; limite d'uso non aggirato."
+    },
+    "achecks": {
+      "status": "ok",
+      "score": null,
+      "errors": 3,
+      "warnings": 89,
+      "issues": [
+        {
+          "tipo": "error",
+          "criterio": "1.4.4",
+          "livello": "AA",
+          "check_id": "116",
+          "descrizione": "<b> (bold) element used.",
+          "elemento": [
+            "L20: <b>Blume</b>"
+          ],
+          "occorrenze": 2
+        },
+        {
+          "tipo": "error",
+          "criterio": "1.3.1",
+          "livello": "A",
+          "check_id": "245",
+          "descrizione": "Data table with more than one row/column of headers does not use <id> and <headers> attributes to identify cells.",
+          "elemento": [
+            "L82: <table><caption>Uso dei fondi: le voci sommano all&#x27;obiettivo</caption> <thead><tr><th sco ..."
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "2.4.2",
+          "livello": "A",
+          "check_id": "54",
+          "descrizione": "<title> might not describe the document.",
+          "elemento": [
+            "L6: <title>Archivio dei dialetti – ideaBlume</title>"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "2.1.1",
+          "livello": "A",
+          "check_id": "89",
+          "descrizione": "<script> user interface may not be accessible.",
+          "elemento": [
+            "L11: <script>document.documentElement.className = \"js\"; (function () { var s = null; try { s = localStora ..."
+          ],
+          "occorrenze": 3
+        },
+        {
+          "tipo": "warning",
+          "criterio": "2.3.1",
+          "livello": "A",
+          "check_id": "87",
+          "descrizione": "<script> may cause screen flicker.",
+          "elemento": [
+            "L11: <script>document.documentElement.className = \"js\"; (function () { var s = null; try { s = localStora ..."
+          ],
+          "occorrenze": 3
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.4.1",
+          "livello": "A",
+          "check_id": "86",
+          "descrizione": "<script> may use color alone.",
+          "elemento": [
+            "L11: <script>document.documentElement.className = \"js\"; (function () { var s = null; try { s = localStora ..."
+          ],
+          "occorrenze": 3
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.3.1",
+          "livello": "A",
+          "check_id": "248",
+          "descrizione": "Visual lists may not be properly marked.",
+          "elemento": [
+            "L14: <body data-pagina=\"progetto-dialetti-archivio\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" hr ..."
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.3.1",
+          "livello": "A",
+          "check_id": "270",
+          "descrizione": "Unicode right-to-left marks or left-to-right marks may be required.",
+          "elemento": [
+            "L14: <body data-pagina=\"progetto-dialetti-archivio\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" hr ..."
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.3.1",
+          "livello": "A",
+          "check_id": "271",
+          "descrizione": "<dir> attribute may be required to identify changes in text direction.",
+          "elemento": [
+            "L14: <body data-pagina=\"progetto-dialetti-archivio\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" hr ..."
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.3.3",
+          "livello": "A",
+          "check_id": "250",
+          "descrizione": "Text may refer to items by shape, size, or relative position alone.",
+          "elemento": [
+            "L14: <body data-pagina=\"progetto-dialetti-archivio\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" hr ..."
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "2.4.1",
+          "livello": "A",
+          "check_id": "28",
+          "descrizione": "Document may be missing a \"skip to content\" link.",
+          "elemento": [
+            "L14: <body data-pagina=\"progetto-dialetti-archivio\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" hr ..."
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "2.4.1",
+          "livello": "A",
+          "check_id": "262",
+          "descrizione": "Groups of links with a related purpose are not marked.",
+          "elemento": [
+            "L14: <body data-pagina=\"progetto-dialetti-archivio\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" hr ..."
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "2.4.5",
+          "livello": "AA",
+          "check_id": "184",
+          "descrizione": "Site missing site map.",
+          "elemento": [
+            "L14: <body data-pagina=\"progetto-dialetti-archivio\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" hr ..."
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "3.2.3",
+          "livello": "AA",
+          "check_id": "276",
+          "descrizione": "Repeated components may not appear in the same relative order each time they appear.",
+          "elemento": [
+            "L14: <body data-pagina=\"progetto-dialetti-archivio\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" hr ..."
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "3.2.4",
+          "livello": "AA",
+          "check_id": "131",
+          "descrizione": "Long quotations may not be marked using the <blockquote> element.",
+          "elemento": [
+            "L14: <body data-pagina=\"progetto-dialetti-archivio\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" hr ..."
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "2.4.4",
+          "livello": "A",
+          "check_id": "19",
+          "descrizione": "Link text may not be meaningful.",
+          "elemento": [
+            "L15: <a class=\"skip-link\" href=\"#main\">Salta al contenuto</a>"
+          ],
+          "occorrenze": 39
+        },
+        {
+          "tipo": "warning",
+          "criterio": "2.4.6",
+          "livello": "AA",
+          "check_id": "42",
+          "descrizione": "<h1> may be used for formatting.",
+          "elemento": [
+            "L41: <h1>Un archivio sonoro dei dialetti piemontesi</h1>"
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "2.4.6",
+          "livello": "AA",
+          "check_id": "43",
+          "descrizione": "<h2> may be used for formatting.",
+          "elemento": [
+            "L51: <h2 id=\"h-stato\" class=\"vh\">Stato della raccolta</h2>"
+          ],
+          "occorrenze": 15
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.1.1",
+          "livello": "A",
+          "check_id": "8",
+          "descrizione": "<img> element may require a long description.",
+          "elemento": [
+            "L77: <img src=\"img/progetti/dialetti-archivio.svg\" alt=\"Illustrazione: un microfono e onde sonore.\" width ..."
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.1.1",
+          "livello": "A",
+          "check_id": "16",
+          "descrizione": "Alt text is not empty and image may be decorative.",
+          "elemento": [
+            "L77: <img src=\"img/progetti/dialetti-archivio.svg\" alt=\"Illustrazione: un microfono e onde sonore.\" width ..."
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.1.1",
+          "livello": "A",
+          "check_id": "178",
+          "descrizione": "Alt text does not convey the same information as the image.",
+          "elemento": [
+            "L77: <img src=\"img/progetti/dialetti-archivio.svg\" alt=\"Illustrazione: un microfono e onde sonore.\" width ..."
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.4.5",
+          "livello": "AA",
+          "check_id": "11",
+          "descrizione": "Image may contain text that is not in Alt text.",
+          "elemento": [
+            "L77: <img src=\"img/progetti/dialetti-archivio.svg\" alt=\"Illustrazione: un microfono e onde sonore.\" width ..."
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.4.1",
+          "livello": "A",
+          "check_id": "14",
+          "descrizione": "Image may be using color alone.",
+          "elemento": [
+            "L77: <img src=\"img/progetti/dialetti-archivio.svg\" alt=\"Illustrazione: un microfono e onde sonore.\" width ..."
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.4.1",
+          "livello": "A",
+          "check_id": "251",
+          "descrizione": "Image may contain text with poor contrast.",
+          "elemento": [
+            "L77: <img src=\"img/progetti/dialetti-archivio.svg\" alt=\"Illustrazione: un microfono e onde sonore.\" width ..."
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "2.4.6",
+          "livello": "AA",
+          "check_id": "44",
+          "descrizione": "<h3> may be used for formatting.",
+          "elemento": [
+            "L80: <h3>Il problema</h3>"
+          ],
+          "occorrenze": 5
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.3.1",
+          "livello": "A",
+          "check_id": "111",
+          "descrizione": "Table may require a summary.",
+          "elemento": [
+            "L82: <table><caption>Uso dei fondi: le voci sommano all&#x27;obiettivo</caption> <thead><tr><th sco ..."
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.3.1",
+          "livello": "A",
+          "check_id": "137",
+          "descrizione": "Layout <table> may be misusing <th> elements.",
+          "elemento": [
+            "L82: <table><caption>Uso dei fondi: le voci sommano all&#x27;obiettivo</caption> <thead><tr><th sco ..."
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.3.1",
+          "livello": "A",
+          "check_id": "231",
+          "descrizione": "Table may require <colgroup> and <col> elements to group table columns.",
+          "elemento": [
+            "L82: <table><caption>Uso dei fondi: le voci sommano all&#x27;obiettivo</caption> <thead><tr><th sco ..."
+          ],
+          "occorrenze": 1
+        },
+        {
+          "tipo": "warning",
+          "criterio": "1.3.1",
+          "livello": "A",
+          "check_id": "242",
+          "descrizione": "Table caption may not identify the table.",
+          "elemento": [
+            "L82: <caption>Uso dei fondi: le voci sommano all&#x27;obiettivo</caption>"
+          ],
+          "occorrenze": 1
+        }
+      ],
+      "note": "AChecker, WCAG 2.0 AA (Markup). AChecker non dà un punteggio: score null. errors = 'Known problems' (scheda ERRORS); warnings = 'Potential problems' da verificare a mano (scheda WARNINGS). Criterio WCAG ricavato dall'ID del controllo (vedi a11y/achecks-checks.json). Snippet: il primo elemento per controllo, come mostrato da AChecker (gli snippet lunghi sono abbreviati da AChecker con ' ...')."
+    },
+    "achecks_lighthouse": {
+      "status": "ok",
+      "score": 100,
+      "errors": 0,
+      "warnings": 10,
+      "issues": [],
+      "note": "Lighthouse 13.0.1 via ACHECKS (opzione 'WCAG 2.1 AA computer', desktop emulato). score = punteggio Accessibility. Nessun audit fallito; warnings = 10 'Additional items to manually check' generici. Passed audits 29, not applicable 31."
+    }
+  }
+}

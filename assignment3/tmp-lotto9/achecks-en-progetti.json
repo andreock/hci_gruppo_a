@@ -1,0 +1,1045 @@
+[
+  {
+    "id": "116",
+    "pane": "achecker-errors",
+    "msg": "<b> (bold) element used.",
+    "line": 20,
+    "rest": "<b>Blume</b> Replace your <b> (bold) elements with <em> or <strong>. open_in_new Explanation"
+  },
+  {
+    "id": "116",
+    "pane": "achecker-errors",
+    "msg": "<b> (bold) element used.",
+    "line": 169,
+    "rest": "<b>Blume</b> Replace your <b> (bold) elements with <em> or <strong>. open_in_new Explanation"
+  },
+  {
+    "id": "54",
+    "pane": "achecker-warnings",
+    "msg": "<title> might not describe the document.",
+    "line": 6,
+    "rest": "<title>Research projects – ideaBlume</title> <title> describes the document.PASS <title> does not describe the document.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "89",
+    "pane": "achecker-warnings",
+    "msg": "<script> user interface may not be accessible.",
+    "line": 11,
+    "rest": "<script>document.documentElement.className = \"js\"; (function () { var s = null; try { s = localStora ... <script> user interface is accessible.PASS <script> user interface is not accessible.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "87",
+    "pane": "achecker-warnings",
+    "msg": "<script> may cause screen flicker.",
+    "line": 11,
+    "rest": "<script>document.documentElement.className = \"js\"; (function () { var s = null; try { s = localStora ... <script> does not cause screen flicker.PASS <script> causes screen flicker.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "86",
+    "pane": "achecker-warnings",
+    "msg": "<script> may use color alone.",
+    "line": 11,
+    "rest": "<script>document.documentElement.className = \"js\"; (function () { var s = null; try { s = localStora ... <script> does not use color alone.PASS <script> uses color alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "248",
+    "pane": "achecker-warnings",
+    "msg": "Visual lists may not be properly marked.",
+    "line": 14,
+    "rest": "<body data-pagina=\"progetti\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Skip to ... All visual lists contain proper markup.PASS Not all visual lists contain proper markup.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "270",
+    "pane": "achecker-warnings",
+    "msg": "Unicode right-to-left marks or left-to-right marks may be required.",
+    "line": 14,
+    "rest": "<body data-pagina=\"progetti\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Skip to ... Unicode right-to-left marks or left-to-right marks are used whenever the HTML bidirectional algorithm produces undesirable results.PASS Unicode right-to-left marks or left-to-right marks are not used whenever the HTML bidirectional algorithm produces undesirable results.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "271",
+    "pane": "achecker-warnings",
+    "msg": "<dir> attribute may be required to identify changes in text direction.",
+    "line": 14,
+    "rest": "<body data-pagina=\"progetti\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Skip to ... All changes in text direction are marked using the <dir> attribute.PASS All changes in text direction are not marked using the <dir> attribute.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "250",
+    "pane": "achecker-warnings",
+    "msg": "Text may refer to items by shape, size, or relative position alone.",
+    "line": 14,
+    "rest": "<body data-pagina=\"progetti\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Skip to ... There are no references to items in the document by shape, size, or relative position alone.PASS There are references to items in the document by shape, size, or relative position alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "28",
+    "pane": "achecker-warnings",
+    "msg": "Document may be missing a \"skip to content\" link.",
+    "line": 14,
+    "rest": "<body data-pagina=\"progetti\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Skip to ... Document contians a \"skip to content\" link or does not require it.PASS Document does not contain a \"skip to content\" link and requires it.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "262",
+    "pane": "achecker-warnings",
+    "msg": "Groups of links with a related purpose are not marked.",
+    "line": 14,
+    "rest": "<body data-pagina=\"progetti\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Skip to ... All groups of links with a related purpose are marked.PASS All groups of links with a related purpose are not marked.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "110",
+    "pane": "achecker-warnings",
+    "msg": "Words or phrases that are not in the document's primary language may not be identified.",
+    "line": 14,
+    "rest": "<body data-pagina=\"progetti\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Skip to ... All words outside the primary language are identified.PASS Words outside the primary language are not identified.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "184",
+    "pane": "achecker-warnings",
+    "msg": "Site missing site map.",
+    "line": 14,
+    "rest": "<body data-pagina=\"progetti\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Skip to ... Page is not part of a collection that requires a site map.PASS Page is part of a collection that requires a site map.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "276",
+    "pane": "achecker-warnings",
+    "msg": "Repeated components may not appear in the same relative order each time they appear.",
+    "line": 14,
+    "rest": "<body data-pagina=\"progetti\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Skip to ... Repeated components appear in the same relative order on this page.PASS Repeated components do not appear in the same relative order on this page.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "131",
+    "pane": "achecker-warnings",
+    "msg": "Long quotations may not be marked using the <blockquote> element.",
+    "line": 14,
+    "rest": "<body data-pagina=\"progetti\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Skip to ... All long quotations have been marked with the <blockquote> element.PASS All long quotations are not marked with the <blockquote> element.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 15,
+    "rest": "<a class=\"skip-link\" href=\"#main\">Skip to content</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 18,
+    "rest": "<a class=\"brand\" href=\"index.html\"> <svg class=\"brand__mark\" viewbox=\"0 0 48 48\" width=\"36\" he ... Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 22,
+    "rest": "<a class=\"lang-switch\" href=\"../progetti.html\" lang=\"it\" hreflang=\"it\" data-lang-switch><svg class=\" ... Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 33,
+    "rest": "<a href=\"index.html\">Home</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 33,
+    "rest": "<a href=\"progetti.html\" aria-current=\"page\">Projects</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 33,
+    "rest": "<a href=\"chi-siamo.html\">About us</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 33,
+    "rest": "<a href=\"come-funziona.html\">How it works</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 33,
+    "rest": "<a href=\"programma.html\">University programme</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 33,
+    "rest": "<a href=\"proponi.html\">Propose a project</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 33,
+    "rest": "<a href=\"faq.html\">FAQ</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 33,
+    "rest": "<a href=\"contatti.html\">Contact</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 36,
+    "rest": "<a href=\"index.html\">Home</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "42",
+    "pane": "achecker-warnings",
+    "msg": "<h1> may be used for formatting.",
+    "line": 38,
+    "rest": "<h1>Research projects</h1> This <h1> element is really a section header.PASS This <h1> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "265",
+    "pane": "achecker-warnings",
+    "msg": "Tab order may not follow logical order.",
+    "line": 42,
+    "rest": "<form class=\"filters\" action=\"progetti.html\" method=\"get\" aria-labelledby=\"h-filtri\" data-filtri> ... Tab order follows a logical order.PASS Tab order does not follow a logical order.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "267",
+    "pane": "achecker-warnings",
+    "msg": "Form submission error messages may not identify empty required fields.",
+    "line": 42,
+    "rest": "<form class=\"filters\" action=\"progetti.html\" method=\"get\" aria-labelledby=\"h-filtri\" data-filtri> ... Required fields are identified in all form submission error messages.PASS Required fields are not identified in all form submission error messages.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "246",
+    "pane": "achecker-warnings",
+    "msg": "All required <form> fields may not be indicated as required.",
+    "line": 42,
+    "rest": "<form class=\"filters\" action=\"progetti.html\" method=\"get\" aria-labelledby=\"h-filtri\" data-filtri> ... All required fields are indicated to the user as required.PASS All required fields are not indicated to the user as required.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "268",
+    "pane": "achecker-warnings",
+    "msg": "Form submission error messages may not provide assistance.",
+    "line": 42,
+    "rest": "<form class=\"filters\" action=\"progetti.html\" method=\"get\" aria-labelledby=\"h-filtri\" data-filtri> ... All form submission error messages provide assistance in correcting the error.PASS All form submission error messages do not provide assistance in correcting the errors.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "269",
+    "pane": "achecker-warnings",
+    "msg": "Form submission data may not be presented to the user before final acceptance of an irreversable transaction.",
+    "line": 42,
+    "rest": "<form class=\"filters\" action=\"progetti.html\" method=\"get\" aria-labelledby=\"h-filtri\" data-filtri> ... All form submission data is presented to the user before final acceptance for all irreversable transactions.PASS All form submission data is not presented to the user before final acceptance for all irreversable transactions.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "272",
+    "pane": "achecker-warnings",
+    "msg": "Form may delete information without allowing for recovery.",
+    "line": 42,
+    "rest": "<form class=\"filters\" action=\"progetti.html\" method=\"get\" aria-labelledby=\"h-filtri\" data-filtri> ... Information deleted using this form can be recovered.PASS Information delted using this form can not be recovered.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 43,
+    "rest": "<h2 id=\"h-filtri\" class=\"vh\">Search, filter and sort projects</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "55",
+    "pane": "achecker-warnings",
+    "msg": "<input> possibly using color alone.",
+    "line": 45,
+    "rest": "<input id=\"f-q\" name=\"q\" type=\"search\" placeholder=\"e.g. bees, climate, Computer Science\" autocomple ... <input> element does not use color alone.PASS <input> element uses color alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "189",
+    "pane": "achecker-warnings",
+    "msg": "<label> may not describe its associated control.",
+    "line": 45,
+    "rest": "<input id=\"f-q\" name=\"q\" type=\"search\" placeholder=\"e.g. bees, climate, Computer Science\" autocomple ... <label> describes its associated control.PASS <label> does not describe its associated control.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "209",
+    "pane": "achecker-warnings",
+    "msg": "<select> element's label is not positioned close to control.",
+    "line": 47,
+    "rest": "<select id=\"f-stato\" name=\"stato\"><option value=\"\">All</option><option value=\"in-corso\">In progress< ... <select> element's label is positioned close to the control.PASS <select> element's label is not positioned close to the control.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "210",
+    "pane": "achecker-warnings",
+    "msg": "<select> element's label may not describe the purpose or function of the control.",
+    "line": 47,
+    "rest": "<select id=\"f-stato\" name=\"stato\"><option value=\"\">All</option><option value=\"in-corso\">In progress< ... <select> element's label describes the purpose or function of the control.PASS <select> element's label does not describe the purpose or function of the control.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "209",
+    "pane": "achecker-warnings",
+    "msg": "<select> element's label is not positioned close to control.",
+    "line": 48,
+    "rest": "<select id=\"f-categoria\" name=\"categoria\"><option value=\"\">All topics</option><option value=\"animali ... <select> element's label is positioned close to the control.PASS <select> element's label is not positioned close to the control.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "210",
+    "pane": "achecker-warnings",
+    "msg": "<select> element's label may not describe the purpose or function of the control.",
+    "line": 48,
+    "rest": "<select id=\"f-categoria\" name=\"categoria\"><option value=\"\">All topics</option><option value=\"animali ... <select> element's label describes the purpose or function of the control.PASS <select> element's label does not describe the purpose or function of the control.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "209",
+    "pane": "achecker-warnings",
+    "msg": "<select> element's label is not positioned close to control.",
+    "line": 49,
+    "rest": "<select id=\"f-dip\" name=\"dip\"><option value=\"\">All departments</option><option value=\"informatica\">D ... <select> element's label is positioned close to the control.PASS <select> element's label is not positioned close to the control.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "210",
+    "pane": "achecker-warnings",
+    "msg": "<select> element's label may not describe the purpose or function of the control.",
+    "line": 49,
+    "rest": "<select id=\"f-dip\" name=\"dip\"><option value=\"\">All departments</option><option value=\"informatica\">D ... <select> element's label describes the purpose or function of the control.PASS <select> element's label does not describe the purpose or function of the control.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "209",
+    "pane": "achecker-warnings",
+    "msg": "<select> element's label is not positioned close to control.",
+    "line": 50,
+    "rest": "<select id=\"f-anno\" name=\"anno\"><option value=\"\">All years</option><option value=\"2026\">2026</option ... <select> element's label is positioned close to the control.PASS <select> element's label is not positioned close to the control.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "210",
+    "pane": "achecker-warnings",
+    "msg": "<select> element's label may not describe the purpose or function of the control.",
+    "line": 50,
+    "rest": "<select id=\"f-anno\" name=\"anno\"><option value=\"\">All years</option><option value=\"2026\">2026</option ... <select> element's label describes the purpose or function of the control.PASS <select> element's label does not describe the purpose or function of the control.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "209",
+    "pane": "achecker-warnings",
+    "msg": "<select> element's label is not positioned close to control.",
+    "line": 51,
+    "rest": "<select id=\"f-programma\" name=\"programma\"><option value=\"\">All projects</option><option value=\"si\">C ... <select> element's label is positioned close to the control.PASS <select> element's label is not positioned close to the control.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "210",
+    "pane": "achecker-warnings",
+    "msg": "<select> element's label may not describe the purpose or function of the control.",
+    "line": 51,
+    "rest": "<select id=\"f-programma\" name=\"programma\"><option value=\"\">All projects</option><option value=\"si\">C ... <select> element's label describes the purpose or function of the control.PASS <select> element's label does not describe the purpose or function of the control.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "209",
+    "pane": "achecker-warnings",
+    "msg": "<select> element's label is not positioned close to control.",
+    "line": 52,
+    "rest": "<select id=\"f-ordina\" name=\"ordina\"> <option value=\"\">Ending soonest</option><option value=\"re ... <select> element's label is positioned close to the control.PASS <select> element's label is not positioned close to the control.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "210",
+    "pane": "achecker-warnings",
+    "msg": "<select> element's label may not describe the purpose or function of the control.",
+    "line": 52,
+    "rest": "<select id=\"f-ordina\" name=\"ordina\"> <option value=\"\">Ending soonest</option><option value=\"re ... <select> element's label describes the purpose or function of the control.PASS <select> element's label does not describe the purpose or function of the control.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 57,
+    "rest": "<a class=\"btn btn--ghost\" href=\"progetti.html\" data-reset>Clear filters</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "8",
+    "pane": "achecker-warnings",
+    "msg": "<img> element may require a long description.",
+    "line": 62,
+    "rest": "<img src=\"../img/progetti/neonati-virus.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Image does not require a long description or a long description is provided.PASS Image requires a long description and is not properly marked.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "178",
+    "pane": "achecker-warnings",
+    "msg": "Alt text does not convey the same information as the image.",
+    "line": 62,
+    "rest": "<img src=\"../img/progetti/neonati-virus.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Alt text conveys the same information as the image.PASS Alt text does not convey the same information as the image.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "11",
+    "pane": "achecker-warnings",
+    "msg": "Image may contain text that is not in Alt text.",
+    "line": 62,
+    "rest": "<img src=\"../img/progetti/neonati-virus.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Any text in image is also in Alt text or text in image is decorative or redundant.PASS Image contains some text that is not in Alt text.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "14",
+    "pane": "achecker-warnings",
+    "msg": "Image may be using color alone.",
+    "line": 62,
+    "rest": "<img src=\"../img/progetti/neonati-virus.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> There are no references to this image using color alone.PASS There is a reference to this image using color alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "251",
+    "pane": "achecker-warnings",
+    "msg": "Image may contain text with poor contrast.",
+    "line": 62,
+    "rest": "<img src=\"../img/progetti/neonati-virus.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Image does not contain text with a poor contrast ratio.PASS Image contains text with poor contrast ratio.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 65,
+    "rest": "<h2 class=\"card__title\"><a href=\"progetto-neonati-virus.html\">Protecting newborns from respiratory v ... This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 65,
+    "rest": "<a href=\"progetto-neonati-virus.html\">Protecting newborns from respiratory viruses</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "8",
+    "pane": "achecker-warnings",
+    "msg": "<img> element may require a long description.",
+    "line": 72,
+    "rest": "<img src=\"../img/progetti/alveari-sani.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Image does not require a long description or a long description is provided.PASS Image requires a long description and is not properly marked.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "178",
+    "pane": "achecker-warnings",
+    "msg": "Alt text does not convey the same information as the image.",
+    "line": 72,
+    "rest": "<img src=\"../img/progetti/alveari-sani.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Alt text conveys the same information as the image.PASS Alt text does not convey the same information as the image.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "11",
+    "pane": "achecker-warnings",
+    "msg": "Image may contain text that is not in Alt text.",
+    "line": 72,
+    "rest": "<img src=\"../img/progetti/alveari-sani.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Any text in image is also in Alt text or text in image is decorative or redundant.PASS Image contains some text that is not in Alt text.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "14",
+    "pane": "achecker-warnings",
+    "msg": "Image may be using color alone.",
+    "line": 72,
+    "rest": "<img src=\"../img/progetti/alveari-sani.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> There are no references to this image using color alone.PASS There is a reference to this image using color alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "251",
+    "pane": "achecker-warnings",
+    "msg": "Image may contain text with poor contrast.",
+    "line": 72,
+    "rest": "<img src=\"../img/progetti/alveari-sani.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Image does not contain text with a poor contrast ratio.PASS Image contains text with poor contrast ratio.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 75,
+    "rest": "<h2 class=\"card__title\"><a href=\"progetto-alveari-sani.html\">Healthy hives: monitoring the health of ... This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 75,
+    "rest": "<a href=\"progetto-alveari-sani.html\">Healthy hives: monitoring the health of bees in Piedmont</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "8",
+    "pane": "achecker-warnings",
+    "msg": "<img> element may require a long description.",
+    "line": 82,
+    "rest": "<img src=\"../img/progetti/clima-giovani.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Image does not require a long description or a long description is provided.PASS Image requires a long description and is not properly marked.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "178",
+    "pane": "achecker-warnings",
+    "msg": "Alt text does not convey the same information as the image.",
+    "line": 82,
+    "rest": "<img src=\"../img/progetti/clima-giovani.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Alt text conveys the same information as the image.PASS Alt text does not convey the same information as the image.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "11",
+    "pane": "achecker-warnings",
+    "msg": "Image may contain text that is not in Alt text.",
+    "line": 82,
+    "rest": "<img src=\"../img/progetti/clima-giovani.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Any text in image is also in Alt text or text in image is decorative or redundant.PASS Image contains some text that is not in Alt text.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "14",
+    "pane": "achecker-warnings",
+    "msg": "Image may be using color alone.",
+    "line": 82,
+    "rest": "<img src=\"../img/progetti/clima-giovani.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> There are no references to this image using color alone.PASS There is a reference to this image using color alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "251",
+    "pane": "achecker-warnings",
+    "msg": "Image may contain text with poor contrast.",
+    "line": 82,
+    "rest": "<img src=\"../img/progetti/clima-giovani.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Image does not contain text with a poor contrast ratio.PASS Image contains text with poor contrast ratio.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 85,
+    "rest": "<h2 class=\"card__title\"><a href=\"progetto-clima-giovani.html\">Climate and wellbeing: how young peopl ... This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 85,
+    "rest": "<a href=\"progetto-clima-giovani.html\">Climate and wellbeing: how young people experience the climate ... Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "8",
+    "pane": "achecker-warnings",
+    "msg": "<img> element may require a long description.",
+    "line": 92,
+    "rest": "<img src=\"../img/progetti/aria-aperta.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Image does not require a long description or a long description is provided.PASS Image requires a long description and is not properly marked.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "178",
+    "pane": "achecker-warnings",
+    "msg": "Alt text does not convey the same information as the image.",
+    "line": 92,
+    "rest": "<img src=\"../img/progetti/aria-aperta.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Alt text conveys the same information as the image.PASS Alt text does not convey the same information as the image.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "11",
+    "pane": "achecker-warnings",
+    "msg": "Image may contain text that is not in Alt text.",
+    "line": 92,
+    "rest": "<img src=\"../img/progetti/aria-aperta.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Any text in image is also in Alt text or text in image is decorative or redundant.PASS Image contains some text that is not in Alt text.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "14",
+    "pane": "achecker-warnings",
+    "msg": "Image may be using color alone.",
+    "line": 92,
+    "rest": "<img src=\"../img/progetti/aria-aperta.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> There are no references to this image using color alone.PASS There is a reference to this image using color alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "251",
+    "pane": "achecker-warnings",
+    "msg": "Image may contain text with poor contrast.",
+    "line": 92,
+    "rest": "<img src=\"../img/progetti/aria-aperta.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Image does not contain text with a poor contrast ratio.PASS Image contains text with poor contrast ratio.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 95,
+    "rest": "<h2 class=\"card__title\"><a href=\"progetto-aria-aperta.html\">Open air: open-source sensors to measure ... This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 95,
+    "rest": "<a href=\"progetto-aria-aperta.html\">Open air: open-source sensors to measure smog near schools</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "8",
+    "pane": "achecker-warnings",
+    "msg": "<img> element may require a long description.",
+    "line": 102,
+    "rest": "<img src=\"../img/progetti/dialetti-archivio.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Image does not require a long description or a long description is provided.PASS Image requires a long description and is not properly marked.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "178",
+    "pane": "achecker-warnings",
+    "msg": "Alt text does not convey the same information as the image.",
+    "line": 102,
+    "rest": "<img src=\"../img/progetti/dialetti-archivio.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Alt text conveys the same information as the image.PASS Alt text does not convey the same information as the image.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "11",
+    "pane": "achecker-warnings",
+    "msg": "Image may contain text that is not in Alt text.",
+    "line": 102,
+    "rest": "<img src=\"../img/progetti/dialetti-archivio.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Any text in image is also in Alt text or text in image is decorative or redundant.PASS Image contains some text that is not in Alt text.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "14",
+    "pane": "achecker-warnings",
+    "msg": "Image may be using color alone.",
+    "line": 102,
+    "rest": "<img src=\"../img/progetti/dialetti-archivio.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> There are no references to this image using color alone.PASS There is a reference to this image using color alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "251",
+    "pane": "achecker-warnings",
+    "msg": "Image may contain text with poor contrast.",
+    "line": 102,
+    "rest": "<img src=\"../img/progetti/dialetti-archivio.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Image does not contain text with a poor contrast ratio.PASS Image contains text with poor contrast ratio.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 105,
+    "rest": "<h2 class=\"card__title\"><a href=\"progetto-dialetti-archivio.html\">A sound archive of Piedmontese dia ... This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 105,
+    "rest": "<a href=\"progetto-dialetti-archivio.html\">A sound archive of Piedmontese dialects</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "8",
+    "pane": "achecker-warnings",
+    "msg": "<img> element may require a long description.",
+    "line": 112,
+    "rest": "<img src=\"../img/progetti/plastica-batteri.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Image does not require a long description or a long description is provided.PASS Image requires a long description and is not properly marked.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "178",
+    "pane": "achecker-warnings",
+    "msg": "Alt text does not convey the same information as the image.",
+    "line": 112,
+    "rest": "<img src=\"../img/progetti/plastica-batteri.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Alt text conveys the same information as the image.PASS Alt text does not convey the same information as the image.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "11",
+    "pane": "achecker-warnings",
+    "msg": "Image may contain text that is not in Alt text.",
+    "line": 112,
+    "rest": "<img src=\"../img/progetti/plastica-batteri.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Any text in image is also in Alt text or text in image is decorative or redundant.PASS Image contains some text that is not in Alt text.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "14",
+    "pane": "achecker-warnings",
+    "msg": "Image may be using color alone.",
+    "line": 112,
+    "rest": "<img src=\"../img/progetti/plastica-batteri.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> There are no references to this image using color alone.PASS There is a reference to this image using color alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "251",
+    "pane": "achecker-warnings",
+    "msg": "Image may contain text with poor contrast.",
+    "line": 112,
+    "rest": "<img src=\"../img/progetti/plastica-batteri.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Image does not contain text with a poor contrast ratio.PASS Image contains text with poor contrast ratio.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 115,
+    "rest": "<h2 class=\"card__title\"><a href=\"progetto-plastica-batteri.html\">Bacteria that break down microplast ... This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 115,
+    "rest": "<a href=\"progetto-plastica-batteri.html\">Bacteria that break down microplastics</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "8",
+    "pane": "achecker-warnings",
+    "msg": "<img> element may require a long description.",
+    "line": 122,
+    "rest": "<img src=\"../img/progetti/matematica-accessibile.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\" ... Image does not require a long description or a long description is provided.PASS Image requires a long description and is not properly marked.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "178",
+    "pane": "achecker-warnings",
+    "msg": "Alt text does not convey the same information as the image.",
+    "line": 122,
+    "rest": "<img src=\"../img/progetti/matematica-accessibile.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\" ... Alt text conveys the same information as the image.PASS Alt text does not convey the same information as the image.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "11",
+    "pane": "achecker-warnings",
+    "msg": "Image may contain text that is not in Alt text.",
+    "line": 122,
+    "rest": "<img src=\"../img/progetti/matematica-accessibile.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\" ... Any text in image is also in Alt text or text in image is decorative or redundant.PASS Image contains some text that is not in Alt text.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "14",
+    "pane": "achecker-warnings",
+    "msg": "Image may be using color alone.",
+    "line": 122,
+    "rest": "<img src=\"../img/progetti/matematica-accessibile.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\" ... There are no references to this image using color alone.PASS There is a reference to this image using color alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "251",
+    "pane": "achecker-warnings",
+    "msg": "Image may contain text with poor contrast.",
+    "line": 122,
+    "rest": "<img src=\"../img/progetti/matematica-accessibile.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\" ... Image does not contain text with a poor contrast ratio.PASS Image contains text with poor contrast ratio.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 125,
+    "rest": "<h2 class=\"card__title\"><a href=\"progetto-matematica-accessibile.html\">Accessible maths: formulas re ... This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 125,
+    "rest": "<a href=\"progetto-matematica-accessibile.html\">Accessible maths: formulas readable with a screen rea ... Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "8",
+    "pane": "achecker-warnings",
+    "msg": "<img> element may require a long description.",
+    "line": 132,
+    "rest": "<img src=\"../img/progetti/rifugi-frane.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Image does not require a long description or a long description is provided.PASS Image requires a long description and is not properly marked.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "178",
+    "pane": "achecker-warnings",
+    "msg": "Alt text does not convey the same information as the image.",
+    "line": 132,
+    "rest": "<img src=\"../img/progetti/rifugi-frane.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Alt text conveys the same information as the image.PASS Alt text does not convey the same information as the image.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "11",
+    "pane": "achecker-warnings",
+    "msg": "Image may contain text that is not in Alt text.",
+    "line": 132,
+    "rest": "<img src=\"../img/progetti/rifugi-frane.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Any text in image is also in Alt text or text in image is decorative or redundant.PASS Image contains some text that is not in Alt text.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "14",
+    "pane": "achecker-warnings",
+    "msg": "Image may be using color alone.",
+    "line": 132,
+    "rest": "<img src=\"../img/progetti/rifugi-frane.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> There are no references to this image using color alone.PASS There is a reference to this image using color alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "251",
+    "pane": "achecker-warnings",
+    "msg": "Image may contain text with poor contrast.",
+    "line": 132,
+    "rest": "<img src=\"../img/progetti/rifugi-frane.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Image does not contain text with a poor contrast ratio.PASS Image contains text with poor contrast ratio.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 135,
+    "rest": "<h2 class=\"card__title\"><a href=\"progetto-rifugi-frane.html\">Landslides and mountain huts: a risk ma ... This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 135,
+    "rest": "<a href=\"progetto-rifugi-frane.html\">Landslides and mountain huts: a risk map</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "8",
+    "pane": "achecker-warnings",
+    "msg": "<img> element may require a long description.",
+    "line": 142,
+    "rest": "<img src=\"../img/progetti/scienza-doposcuola.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Image does not require a long description or a long description is provided.PASS Image requires a long description and is not properly marked.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "178",
+    "pane": "achecker-warnings",
+    "msg": "Alt text does not convey the same information as the image.",
+    "line": 142,
+    "rest": "<img src=\"../img/progetti/scienza-doposcuola.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Alt text conveys the same information as the image.PASS Alt text does not convey the same information as the image.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "11",
+    "pane": "achecker-warnings",
+    "msg": "Image may contain text that is not in Alt text.",
+    "line": 142,
+    "rest": "<img src=\"../img/progetti/scienza-doposcuola.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Any text in image is also in Alt text or text in image is decorative or redundant.PASS Image contains some text that is not in Alt text.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "14",
+    "pane": "achecker-warnings",
+    "msg": "Image may be using color alone.",
+    "line": 142,
+    "rest": "<img src=\"../img/progetti/scienza-doposcuola.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> There are no references to this image using color alone.PASS There is a reference to this image using color alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "251",
+    "pane": "achecker-warnings",
+    "msg": "Image may contain text with poor contrast.",
+    "line": 142,
+    "rest": "<img src=\"../img/progetti/scienza-doposcuola.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Image does not contain text with a poor contrast ratio.PASS Image contains text with poor contrast ratio.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 145,
+    "rest": "<h2 class=\"card__title\"><a href=\"progetto-scienza-doposcuola.html\">Science workshops in neighbourhoo ... This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 145,
+    "rest": "<a href=\"progetto-scienza-doposcuola.html\">Science workshops in neighbourhood after-school clubs</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "8",
+    "pane": "achecker-warnings",
+    "msg": "<img> element may require a long description.",
+    "line": 152,
+    "rest": "<img src=\"../img/progetti/robot-anziani.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Image does not require a long description or a long description is provided.PASS Image requires a long description and is not properly marked.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "178",
+    "pane": "achecker-warnings",
+    "msg": "Alt text does not convey the same information as the image.",
+    "line": 152,
+    "rest": "<img src=\"../img/progetti/robot-anziani.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Alt text conveys the same information as the image.PASS Alt text does not convey the same information as the image.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "11",
+    "pane": "achecker-warnings",
+    "msg": "Image may contain text that is not in Alt text.",
+    "line": 152,
+    "rest": "<img src=\"../img/progetti/robot-anziani.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Any text in image is also in Alt text or text in image is decorative or redundant.PASS Image contains some text that is not in Alt text.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "14",
+    "pane": "achecker-warnings",
+    "msg": "Image may be using color alone.",
+    "line": 152,
+    "rest": "<img src=\"../img/progetti/robot-anziani.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> There are no references to this image using color alone.PASS There is a reference to this image using color alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "251",
+    "pane": "achecker-warnings",
+    "msg": "Image may contain text with poor contrast.",
+    "line": 152,
+    "rest": "<img src=\"../img/progetti/robot-anziani.svg\" alt=\"\" width=\"320\" height=\"180\" loading=\"lazy\"> Image does not contain text with a poor contrast ratio.PASS Image contains text with poor contrast ratio.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 155,
+    "rest": "<h2 class=\"card__title\"><a href=\"progetto-robot-anziani.html\">Social robots for older people&#x27;s ... This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 155,
+    "rest": "<a href=\"progetto-robot-anziani.html\">Social robots for older people&#x27;s independence</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 162,
+    "rest": "<a href=\"progetti.html?stato=in-corso\">all ongoing projects</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 165,
+    "rest": "<a class=\"back-to-top\" href=\"#main\">↑ Back to top</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 172,
+    "rest": "<h2 id=\"ft-aiuto\">Need help?</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 173,
+    "rest": "<a href=\"tel:+390110194250\">011 019 4250</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 174,
+    "rest": "<a href=\"mailto:aiuto@ideablume.it\">aiuto@ideablume.it</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 175,
+    "rest": "<a class=\"btn\" href=\"contatti.html#scrivici\">Write to us</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 177,
+    "rest": "<h2 id=\"ft-esplora\">Explore</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 178,
+    "rest": "<a href=\"progetti.html\">Projects</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 178,
+    "rest": "<a href=\"programma.html\">University programme</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 179,
+    "rest": "<a href=\"come-funziona.html\">How it works</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 179,
+    "rest": "<a href=\"faq.html\">FAQ</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 180,
+    "rest": "<h2 id=\"ft-promotori\">For project proposers</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 181,
+    "rest": "<a href=\"proponi.html\">Propose a project</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 181,
+    "rest": "<a href=\"candidatura.html\">Apply to the programme</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 182,
+    "rest": "<a href=\"collabora.html\">Partnerships with organisations</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 183,
+    "rest": "<h2 id=\"ft-info\">Information</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 184,
+    "rest": "<a href=\"chi-siamo.html\">About us</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 184,
+    "rest": "<a href=\"contatti.html\">Contact</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 185,
+    "rest": "<a href=\"accessibilita.html\">Accessibility</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "89",
+    "pane": "achecker-warnings",
+    "msg": "<script> user interface may not be accessible.",
+    "line": 190,
+    "rest": "<script src=\"../data/testi-en.js\"></script> <script> user interface is accessible.PASS <script> user interface is not accessible.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "87",
+    "pane": "achecker-warnings",
+    "msg": "<script> may cause screen flicker.",
+    "line": 190,
+    "rest": "<script src=\"../data/testi-en.js\"></script> <script> does not cause screen flicker.PASS <script> causes screen flicker.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "86",
+    "pane": "achecker-warnings",
+    "msg": "<script> may use color alone.",
+    "line": 190,
+    "rest": "<script src=\"../data/testi-en.js\"></script> <script> does not use color alone.PASS <script> uses color alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "89",
+    "pane": "achecker-warnings",
+    "msg": "<script> user interface may not be accessible.",
+    "line": 191,
+    "rest": "<script src=\"../data/ib-dati.js\"></script> <script> user interface is accessible.PASS <script> user interface is not accessible.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "87",
+    "pane": "achecker-warnings",
+    "msg": "<script> may cause screen flicker.",
+    "line": 191,
+    "rest": "<script src=\"../data/ib-dati.js\"></script> <script> does not cause screen flicker.PASS <script> causes screen flicker.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "86",
+    "pane": "achecker-warnings",
+    "msg": "<script> may use color alone.",
+    "line": 191,
+    "rest": "<script src=\"../data/ib-dati.js\"></script> <script> does not use color alone.PASS <script> uses color alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "89",
+    "pane": "achecker-warnings",
+    "msg": "<script> user interface may not be accessible.",
+    "line": 192,
+    "rest": "<script src=\"../js/ideablume.js\"></script> <script> user interface is accessible.PASS <script> user interface is not accessible.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "87",
+    "pane": "achecker-warnings",
+    "msg": "<script> may cause screen flicker.",
+    "line": 192,
+    "rest": "<script src=\"../js/ideablume.js\"></script> <script> does not cause screen flicker.PASS <script> causes screen flicker.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "86",
+    "pane": "achecker-warnings",
+    "msg": "<script> may use color alone.",
+    "line": 192,
+    "rest": "<script src=\"../js/ideablume.js\"></script> <script> does not use color alone.PASS <script> uses color alone.FAIL open_in_new Explanation"
+  }
+]

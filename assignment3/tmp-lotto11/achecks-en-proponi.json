@@ -1,0 +1,730 @@
+[
+  {
+    "id": "116",
+    "pane": "achecker-errors",
+    "msg": "<b> (bold) element used.",
+    "line": 20,
+    "rest": "<b>Blume</b> Replace your <b> (bold) elements with <em> or <strong>. open_in_new Explanation"
+  },
+  {
+    "id": "116",
+    "pane": "achecker-errors",
+    "msg": "<b> (bold) element used.",
+    "line": 60,
+    "rest": "<b>Blume</b> Replace your <b> (bold) elements with <em> or <strong>. open_in_new Explanation"
+  },
+  {
+    "id": "54",
+    "pane": "achecker-warnings",
+    "msg": "<title> might not describe the document.",
+    "line": 6,
+    "rest": "<title>Propose a project – ideaBlume</title> <title> describes the document.PASS <title> does not describe the document.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "89",
+    "pane": "achecker-warnings",
+    "msg": "<script> user interface may not be accessible.",
+    "line": 11,
+    "rest": "<script>document.documentElement.className = \"js\"; (function () { var s = null; try { s = localStora ... <script> user interface is accessible.PASS <script> user interface is not accessible.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "87",
+    "pane": "achecker-warnings",
+    "msg": "<script> may cause screen flicker.",
+    "line": 11,
+    "rest": "<script>document.documentElement.className = \"js\"; (function () { var s = null; try { s = localStora ... <script> does not cause screen flicker.PASS <script> causes screen flicker.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "86",
+    "pane": "achecker-warnings",
+    "msg": "<script> may use color alone.",
+    "line": 11,
+    "rest": "<script>document.documentElement.className = \"js\"; (function () { var s = null; try { s = localStora ... <script> does not use color alone.PASS <script> uses color alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "248",
+    "pane": "achecker-warnings",
+    "msg": "Visual lists may not be properly marked.",
+    "line": 14,
+    "rest": "<body data-pagina=\"proponi\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Skip to ... All visual lists contain proper markup.PASS Not all visual lists contain proper markup.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "270",
+    "pane": "achecker-warnings",
+    "msg": "Unicode right-to-left marks or left-to-right marks may be required.",
+    "line": 14,
+    "rest": "<body data-pagina=\"proponi\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Skip to ... Unicode right-to-left marks or left-to-right marks are used whenever the HTML bidirectional algorithm produces undesirable results.PASS Unicode right-to-left marks or left-to-right marks are not used whenever the HTML bidirectional algorithm produces undesirable results.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "271",
+    "pane": "achecker-warnings",
+    "msg": "<dir> attribute may be required to identify changes in text direction.",
+    "line": 14,
+    "rest": "<body data-pagina=\"proponi\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Skip to ... All changes in text direction are marked using the <dir> attribute.PASS All changes in text direction are not marked using the <dir> attribute.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "250",
+    "pane": "achecker-warnings",
+    "msg": "Text may refer to items by shape, size, or relative position alone.",
+    "line": 14,
+    "rest": "<body data-pagina=\"proponi\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Skip to ... There are no references to items in the document by shape, size, or relative position alone.PASS There are references to items in the document by shape, size, or relative position alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "28",
+    "pane": "achecker-warnings",
+    "msg": "Document may be missing a \"skip to content\" link.",
+    "line": 14,
+    "rest": "<body data-pagina=\"proponi\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Skip to ... Document contians a \"skip to content\" link or does not require it.PASS Document does not contain a \"skip to content\" link and requires it.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "262",
+    "pane": "achecker-warnings",
+    "msg": "Groups of links with a related purpose are not marked.",
+    "line": 14,
+    "rest": "<body data-pagina=\"proponi\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Skip to ... All groups of links with a related purpose are marked.PASS All groups of links with a related purpose are not marked.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "110",
+    "pane": "achecker-warnings",
+    "msg": "Words or phrases that are not in the document's primary language may not be identified.",
+    "line": 14,
+    "rest": "<body data-pagina=\"proponi\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Skip to ... All words outside the primary language are identified.PASS Words outside the primary language are not identified.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "184",
+    "pane": "achecker-warnings",
+    "msg": "Site missing site map.",
+    "line": 14,
+    "rest": "<body data-pagina=\"proponi\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Skip to ... Page is not part of a collection that requires a site map.PASS Page is part of a collection that requires a site map.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "276",
+    "pane": "achecker-warnings",
+    "msg": "Repeated components may not appear in the same relative order each time they appear.",
+    "line": 14,
+    "rest": "<body data-pagina=\"proponi\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Skip to ... Repeated components appear in the same relative order on this page.PASS Repeated components do not appear in the same relative order on this page.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "131",
+    "pane": "achecker-warnings",
+    "msg": "Long quotations may not be marked using the <blockquote> element.",
+    "line": 14,
+    "rest": "<body data-pagina=\"proponi\" data-oggi-build=\"2026-11-09\"> <a class=\"skip-link\" href=\"#main\">Skip to ... All long quotations have been marked with the <blockquote> element.PASS All long quotations are not marked with the <blockquote> element.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 15,
+    "rest": "<a class=\"skip-link\" href=\"#main\">Skip to content</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 18,
+    "rest": "<a class=\"brand\" href=\"index.html\"> <svg class=\"brand__mark\" viewbox=\"0 0 48 48\" width=\"36\" he ... Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 22,
+    "rest": "<a class=\"lang-switch\" href=\"../proponi.html\" lang=\"it\" hreflang=\"it\" data-lang-switch><svg class=\"i ... Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 33,
+    "rest": "<a href=\"index.html\">Home</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 33,
+    "rest": "<a href=\"progetti.html\">Projects</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 33,
+    "rest": "<a href=\"chi-siamo.html\">About us</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 33,
+    "rest": "<a href=\"come-funziona.html\">How it works</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 33,
+    "rest": "<a href=\"programma.html\">University programme</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 33,
+    "rest": "<a href=\"proponi.html\" aria-current=\"page\">Propose a project</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 33,
+    "rest": "<a href=\"faq.html\">FAQ</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 33,
+    "rest": "<a href=\"contatti.html\">Contact</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 36,
+    "rest": "<a href=\"index.html\">Home</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "42",
+    "pane": "achecker-warnings",
+    "msg": "<h1> may be used for formatting.",
+    "line": 38,
+    "rest": "<h1>Propose a project</h1> This <h1> element is really a section header.PASS This <h1> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 39,
+    "rest": "<h2 id=\"h-toc\">On this page</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 39,
+    "rest": "<a href=\"#chi-puo\">Who can propose</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 39,
+    "rest": "<a href=\"#ricerca\">If you do research: from idea to campaign</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 39,
+    "rest": "<a href=\"#enti\">If you represent an organisation: from idea to partnership</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 39,
+    "rest": "<a href=\"#proposta\">What makes a strong proposal</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 39,
+    "rest": "<a href=\"#tempi\">Timing and costs</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 39,
+    "rest": "<a href=\"#gruppi\">For groups with an ongoing campaign</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 39,
+    "rest": "<a href=\"#dubbi\">Still have questions?</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 40,
+    "rest": "<h2 id=\"h-chi\">Who can propose</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "44",
+    "pane": "achecker-warnings",
+    "msg": "<h3> may be used for formatting.",
+    "line": 42,
+    "rest": "<h3 id=\"h-ric\">Do you do research at the University of Turin?</h3> This <h3> element is really a section header.PASS This <h3> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 43,
+    "rest": "<a class=\"btn\" href=\"candidatura.html\">Apply to the programme</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "44",
+    "pane": "achecker-warnings",
+    "msg": "<h3> may be used for formatting.",
+    "line": 44,
+    "rest": "<h3 id=\"h-ext\">Do you represent an association, a school or an organisation?</h3> This <h3> element is really a section header.PASS This <h3> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 45,
+    "rest": "<a class=\"btn\" href=\"collabora.html\">Propose a partnership</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 47,
+    "rest": "<h2 id=\"h-ricerca\">If you do research: from idea to campaign</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 47,
+    "rest": "<a href=\"programma.html\">University programme</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "44",
+    "pane": "achecker-warnings",
+    "msg": "<h3> may be used for formatting.",
+    "line": 47,
+    "rest": "<h3>Check the requirements</h3> This <h3> element is really a section header.PASS This <h3> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 47,
+    "rest": "<a href=\"programma.html#requisiti\">Read the programme requirements</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "44",
+    "pane": "achecker-warnings",
+    "msg": "<h3> may be used for formatting.",
+    "line": 47,
+    "rest": "<h3>Send your application</h3> This <h3> element is really a section header.PASS This <h3> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 47,
+    "rest": "<a href=\"candidatura.html\">Go to the application form</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "44",
+    "pane": "achecker-warnings",
+    "msg": "<h3> may be used for formatting.",
+    "line": 47,
+    "rest": "<h3>Take part in the training and selection</h3> This <h3> element is really a section header.PASS This <h3> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 47,
+    "rest": "<a href=\"programma.html#fasi\">The programme stages</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "44",
+    "pane": "achecker-warnings",
+    "msg": "<h3> may be used for formatting.",
+    "line": 47,
+    "rest": "<h3>Prepare the page with the Office</h3> This <h3> element is really a section header.PASS This <h3> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "44",
+    "pane": "achecker-warnings",
+    "msg": "<h3> may be used for formatting.",
+    "line": 47,
+    "rest": "<h3>Launch the campaign</h3> This <h3> element is really a section header.PASS This <h3> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 47,
+    "rest": "<a href=\"programma.html#raddoppio\">How the match works</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 48,
+    "rest": "<h2 id=\"h-enti\">If you represent an organisation: from idea to partnership</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "44",
+    "pane": "achecker-warnings",
+    "msg": "<h3> may be used for formatting.",
+    "line": 48,
+    "rest": "<h3>Tell us your idea</h3> This <h3> element is really a section header.PASS This <h3> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 48,
+    "rest": "<a href=\"collabora.html\">Go to the partnership form</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "44",
+    "pane": "achecker-warnings",
+    "msg": "<h3> may be used for formatting.",
+    "line": 48,
+    "rest": "<h3>Get a reply</h3> This <h3> element is really a section header.PASS This <h3> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "44",
+    "pane": "achecker-warnings",
+    "msg": "<h3> may be used for formatting.",
+    "line": 48,
+    "rest": "<h3>Meet the research group</h3> This <h3> element is really a section header.PASS This <h3> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "44",
+    "pane": "achecker-warnings",
+    "msg": "<h3> may be used for formatting.",
+    "line": 48,
+    "rest": "<h3>Build the project together</h3> This <h3> element is really a section header.PASS This <h3> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 48,
+    "rest": "<a href=\"progetto-scienza-doposcuola.html\">Read the after-school project</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 49,
+    "rest": "<h2 id=\"h-proposta\">What makes a strong proposal</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "44",
+    "pane": "achecker-warnings",
+    "msg": "<h3> may be used for formatting.",
+    "line": 50,
+    "rest": "<h3 id=\"h-consiglio-0\">A clear problem</h3> This <h3> element is really a section header.PASS This <h3> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "44",
+    "pane": "achecker-warnings",
+    "msg": "<h3> may be used for formatting.",
+    "line": 50,
+    "rest": "<h3 id=\"h-consiglio-1\">A realistic goal</h3> This <h3> element is really a section header.PASS This <h3> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "44",
+    "pane": "achecker-warnings",
+    "msg": "<h3> may be used for formatting.",
+    "line": 50,
+    "rest": "<h3 id=\"h-consiglio-2\">Results to share</h3> This <h3> element is really a section header.PASS This <h3> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "44",
+    "pane": "achecker-warnings",
+    "msg": "<h3> may be used for formatting.",
+    "line": 50,
+    "rest": "<h3 id=\"h-consiglio-3\">Simple rewards</h3> This <h3> element is really a section header.PASS This <h3> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 51,
+    "rest": "<h2 id=\"h-tempi\">Timing and costs</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 51,
+    "rest": "<a href=\"come-funziona.html#costi\">Read how much it costs</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 52,
+    "rest": "<h2 id=\"h-gruppi\">For groups with an ongoing campaign</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 52,
+    "rest": "<a href=\"mailto:programma@ideablume.it\">programma@ideablume.it</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "44",
+    "pane": "achecker-warnings",
+    "msg": "<h3> may be used for formatting.",
+    "line": 53,
+    "rest": "<h3 id=\"h-gruppi-0\">Publish updates</h3> This <h3> element is really a section header.PASS This <h3> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "44",
+    "pane": "achecker-warnings",
+    "msg": "<h3> may be used for formatting.",
+    "line": 53,
+    "rest": "<h3 id=\"h-gruppi-1\">Write in two languages</h3> This <h3> element is really a section header.PASS This <h3> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "44",
+    "pane": "achecker-warnings",
+    "msg": "<h3> may be used for formatting.",
+    "line": 53,
+    "rest": "<h3 id=\"h-gruppi-2\">Reply to supporters</h3> This <h3> element is really a section header.PASS This <h3> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "44",
+    "pane": "achecker-warnings",
+    "msg": "<h3> may be used for formatting.",
+    "line": 53,
+    "rest": "<h3 id=\"h-gruppi-3\">If you exceed the goal</h3> This <h3> element is really a section header.PASS This <h3> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "44",
+    "pane": "achecker-warnings",
+    "msg": "<h3> may be used for formatting.",
+    "line": 53,
+    "rest": "<h3 id=\"h-gruppi-4\">When fundraising closes</h3> This <h3> element is really a section header.PASS This <h3> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "44",
+    "pane": "achecker-warnings",
+    "msg": "<h3> may be used for formatting.",
+    "line": 53,
+    "rest": "<h3 id=\"h-gruppi-5\">If something does not work</h3> This <h3> element is really a section header.PASS This <h3> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 53,
+    "rest": "<a href=\"contatti.html#scrivici\">write to us with the contact form</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 54,
+    "rest": "<h2 id=\"h-dubbi\">Still have questions?</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 54,
+    "rest": "<a href=\"faq.html#promotori\">questions for people proposing a project</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 54,
+    "rest": "<a href=\"mailto:programma@ideablume.it\">programma@ideablume.it</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 54,
+    "rest": "<a href=\"mailto:collaborazioni@ideablume.it\">collaborazioni@ideablume.it</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 55,
+    "rest": "<a class=\"back-to-top\" href=\"#main\">↑ Back to top</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 63,
+    "rest": "<h2 id=\"ft-aiuto\">Need help?</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 64,
+    "rest": "<a href=\"tel:+390110194250\">011 019 4250</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 65,
+    "rest": "<a href=\"mailto:aiuto@ideablume.it\">aiuto@ideablume.it</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 66,
+    "rest": "<a class=\"btn\" href=\"contatti.html#scrivici\">Write to us</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 68,
+    "rest": "<h2 id=\"ft-esplora\">Explore</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 69,
+    "rest": "<a href=\"progetti.html\">Projects</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 69,
+    "rest": "<a href=\"programma.html\">University programme</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 70,
+    "rest": "<a href=\"come-funziona.html\">How it works</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 70,
+    "rest": "<a href=\"faq.html\">FAQ</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 71,
+    "rest": "<h2 id=\"ft-promotori\">For project proposers</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 72,
+    "rest": "<a href=\"proponi.html\">Propose a project</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 72,
+    "rest": "<a href=\"candidatura.html\">Apply to the programme</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 73,
+    "rest": "<a href=\"collabora.html\">Partnerships with organisations</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "43",
+    "pane": "achecker-warnings",
+    "msg": "<h2> may be used for formatting.",
+    "line": 74,
+    "rest": "<h2 id=\"ft-info\">Information</h2> This <h2> element is really a section header.PASS This <h2> element is used to format text (not really a section header).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 75,
+    "rest": "<a href=\"chi-siamo.html\">About us</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 75,
+    "rest": "<a href=\"contatti.html\">Contact</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "19",
+    "pane": "achecker-warnings",
+    "msg": "Link text may not be meaningful.",
+    "line": 76,
+    "rest": "<a href=\"accessibilita.html\">Accessibility</a> Link text is meaningful when read alone (out of context).PASS Link text is not meaningful when read alone (out of context).FAIL open_in_new Explanation"
+  },
+  {
+    "id": "89",
+    "pane": "achecker-warnings",
+    "msg": "<script> user interface may not be accessible.",
+    "line": 81,
+    "rest": "<script src=\"../data/testi-en.js\"></script> <script> user interface is accessible.PASS <script> user interface is not accessible.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "87",
+    "pane": "achecker-warnings",
+    "msg": "<script> may cause screen flicker.",
+    "line": 81,
+    "rest": "<script src=\"../data/testi-en.js\"></script> <script> does not cause screen flicker.PASS <script> causes screen flicker.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "86",
+    "pane": "achecker-warnings",
+    "msg": "<script> may use color alone.",
+    "line": 81,
+    "rest": "<script src=\"../data/testi-en.js\"></script> <script> does not use color alone.PASS <script> uses color alone.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "89",
+    "pane": "achecker-warnings",
+    "msg": "<script> user interface may not be accessible.",
+    "line": 82,
+    "rest": "<script src=\"../js/ideablume.js\"></script> <script> user interface is accessible.PASS <script> user interface is not accessible.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "87",
+    "pane": "achecker-warnings",
+    "msg": "<script> may cause screen flicker.",
+    "line": 82,
+    "rest": "<script src=\"../js/ideablume.js\"></script> <script> does not cause screen flicker.PASS <script> causes screen flicker.FAIL open_in_new Explanation"
+  },
+  {
+    "id": "86",
+    "pane": "achecker-warnings",
+    "msg": "<script> may use color alone.",
+    "line": 82,
+    "rest": "<script src=\"../js/ideablume.js\"></script> <script> does not use color alone.PASS <script> uses color alone.FAIL open_in_new Explanation"
+  }
+]

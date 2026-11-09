@@ -1,0 +1,10 @@
+{
+  "url": "Lighthouse Result https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/en/progetti.html | ACHECKS",
+  "lh": "Lighthouse 13.0.1",
+  "score": 100,
+  "manual": 10,
+  "passed": 28,
+  "na": 32,
+  "prima_dei_manuali": "",
+  "full": "These checks highlight opportunities to improve the accessibility of your web app. Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so manual testing is also encouraged.\nADDITIONAL ITEMS TO MANUALLY CHECK (10)\nHide\nInteractive controls are keyboard focusable\nInteractive elements indicate their purpose and state\nThe page has a logical tab order\nVisual order on the page follows DOM order\nUser focus is not accidentally trapped in a region\nThe user's focus is directed to new content added to the page\nHTML5 landmark elements are used to improve navigation\nOffscreen content is hidden from assistive technology\nCustom controls have associated labels\nCustom controls have ARIA roles\nThese items address areas which an automated testing tool cannot cover. Learn more in our guide on conducting an accessibility review.\nPASSED AUDITS (28)\nShow\nNOT APPLICABLE (32)\nShow\n100"
+}
