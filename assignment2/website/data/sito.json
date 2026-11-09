@@ -200,13 +200,13 @@
     "limiti": {
       "it": [
         "Non sono ancora stati fatti test con persone che usano screen reader, ingranditori o comandi vocali: i controlli automatici coprono solo una parte dei criteri WCAG.",
-        "Nomi, ruoli e stati dei controlli (aria-expanded, aria-invalid, aria-current) sono stati verificati con strumenti automatici, non con NVDA o VoiceOver.",
+        "Nomi, ruoli e stati dei controlli (aria-expanded, aria-invalid, aria-current) e l'annuncio dei messaggi di stato (numero di risultati della ricerca, conferme ed errori dei moduli) sono stati verificati con strumenti automatici e sul codice, non con NVDA o VoiceOver.",
         "Ricerca, filtri e donazione richiedono JavaScript; pagine dei progetti, FAQ e «Come funziona» funzionano anche senza.",
         "I commenti dei sostenitori sono pubblicati nella lingua in cui sono stati scritti."
       ],
       "en": [
         "No tests have yet been carried out with people using screen readers, magnifiers or voice control: automated checks cover only part of the WCAG criteria.",
-        "Control names, roles and states (aria-expanded, aria-invalid, aria-current) were checked with automated tools, not with NVDA or VoiceOver.",
+        "Control names, roles and states (aria-expanded, aria-invalid, aria-current) and the announcement of status messages (number of search results, form confirmations and errors) were checked with automated tools and in the code, not with NVDA or VoiceOver.",
         "Search, filters and the donation need JavaScript; project pages, FAQ and “How it works” work without it.",
         "Supporters' comments are published in the language they were written in."
       ]
