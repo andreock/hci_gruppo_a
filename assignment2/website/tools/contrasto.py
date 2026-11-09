@@ -107,6 +107,7 @@ COPPIE = [
     ("focus", "warning-bg", "focus", "Anello di focus su risposta FAQ evidenziata"),
     ("focus-on-dark", "footer-bg", "focus", "Anello di focus nel piè di pagina"),
     ("focus-skip", "ink", "focus", "Anello di focus del link «Salta al contenuto»"),
+    ("focus-skip", "page", "focus", "Anello di focus del link «Salta al contenuto» sullo sfondo della pagina"),
 ]
 
 def tokens():

@@ -90,7 +90,7 @@
   /* Focus: anello scuro su sfondi chiari, miele su sfondi scuri */
   --c-focus: #3b1d2a;
   --c-focus-on-dark: #f4b93e;
-  --c-focus-skip: #f4b93e;     /* anello del link «Salta al contenuto» (sfondo --c-ink) */
+  --c-focus-skip: #bc830b;     /* anello del link «Salta al contenuto»: ≥ 3:1 sullo sfondo della pagina e su --c-ink */
 
   /* Ombre */
   --shadow-sm: 0 1px 2px rgb(59 29 42 / .06), 0 1px 3px rgb(59 29 42 / .05);
@@ -152,7 +152,7 @@
 
   --c-focus: #f8efe6;
   --c-focus-on-dark: #f4b93e;
-  --c-focus-skip: #a33f0f;
+  --c-focus-skip: #b64611;
 
   --shadow-sm: 0 1px 2px rgb(0 0 0 / .4);
   --shadow: 0 1px 2px rgb(0 0 0 / .35), 0 8px 24px -6px rgb(0 0 0 / .5);
@@ -318,7 +318,7 @@ main.container > h1:first-child + .lead { margin-bottom: var(--s-6); }
   background: var(--c-ink); color: var(--c-bg); padding: var(--s-3) var(--s-4);
   border-radius: var(--radius-small); font-weight: 700;
 }
-.skip-link:focus { top: var(--s-2); color: var(--c-bg); outline-color: var(--c-focus-skip); }
+.skip-link:focus { top: var(--s-2); color: var(--c-bg); outline: 3px solid var(--c-focus-skip); outline-offset: 3px; }
 
 /* ---------- 5. Intestazione e navigazione ------------------------------- */
 .site-header {

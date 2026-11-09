@@ -97,9 +97,10 @@ Soglie WCAG 2.2: testo normale 4,5:1 (1.4.3); testo grande, componenti dell'inte
 | `--c-focus` #3b1d2a | `--c-brand-soft` #fbeadd | focus | 3,0:1 | **12,84:1** | sì | Anello di focus nell'hero e nei riquadri informativi |
 | `--c-focus` #3b1d2a | `--c-warning-bg` #fdf0cf | focus | 3,0:1 | **13,29:1** | sì | Anello di focus su risposta FAQ evidenziata |
 | `--c-focus-on-dark` #f4b93e | `--c-footer-bg` #3b1d2a | focus | 3,0:1 | **8,50:1** | sì | Anello di focus nel piè di pagina |
-| `--c-focus-skip` #f4b93e | `--c-ink` #3b1d2a | focus | 3,0:1 | **8,50:1** | sì | Anello di focus del link «Salta al contenuto» |
+| `--c-focus-skip` #bc830b | `--c-ink` #3b1d2a | focus | 3,0:1 | **4,58:1** | sì | Anello di focus del link «Salta al contenuto» |
+| `--c-focus-skip` #bc830b | `--c-page` #fbf6ee | focus | 3,0:1 | **3,05:1** | sì | Anello di focus del link «Salta al contenuto» sullo sfondo della pagina |
 
-Coppie controllate: 90 · sotto soglia: 0.
+Coppie controllate: 91 · sotto soglia: 0.
 
 ## Tema scuro
 
@@ -194,6 +195,7 @@ Coppie controllate: 90 · sotto soglia: 0.
 | `--c-focus` #f8efe6 | `--c-brand-soft` #3a2318 | focus | 3,0:1 | **12,89:1** | sì | Anello di focus nell'hero e nei riquadri informativi |
 | `--c-focus` #f8efe6 | `--c-warning-bg` #33270c | focus | 3,0:1 | **12,87:1** | sì | Anello di focus su risposta FAQ evidenziata |
 | `--c-focus-on-dark` #f4b93e | `--c-footer-bg` #140d0b | focus | 3,0:1 | **10,86:1** | sì | Anello di focus nel piè di pagina |
-| `--c-focus-skip` #a33f0f | `--c-ink` #f8efe6 | focus | 3,0:1 | **5,64:1** | sì | Anello di focus del link «Salta al contenuto» |
+| `--c-focus-skip` #b64611 | `--c-ink` #f8efe6 | focus | 3,0:1 | **4,77:1** | sì | Anello di focus del link «Salta al contenuto» |
+| `--c-focus-skip` #b64611 | `--c-page` #1c1412 | focus | 3,0:1 | **3,34:1** | sì | Anello di focus del link «Salta al contenuto» sullo sfondo della pagina |
 
-Coppie controllate: 90 · sotto soglia: 0.
+Coppie controllate: 91 · sotto soglia: 0.
