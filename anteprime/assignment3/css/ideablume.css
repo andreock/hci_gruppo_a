@@ -90,7 +90,7 @@
   /* Focus: anello scuro su sfondi chiari, miele su sfondi scuri */
   --c-focus: #3b1d2a;
   --c-focus-on-dark: #f4b93e;
-  --c-focus-skip: #f4b93e;     /* anello del link «Salta al contenuto» (sfondo --c-ink) */
+  --c-focus-skip: #bc830b;     /* anello del link «Salta al contenuto»: ≥ 3:1 sullo sfondo della pagina e su --c-ink */
 
   /* Ombre */
   --shadow-sm: 0 1px 2px rgb(59 29 42 / .06), 0 1px 3px rgb(59 29 42 / .05);
@@ -152,7 +152,7 @@
 
   --c-focus: #f8efe6;
   --c-focus-on-dark: #f4b93e;
-  --c-focus-skip: #a33f0f;
+  --c-focus-skip: #b64611;
 
   --shadow-sm: 0 1px 2px rgb(0 0 0 / .4);
   --shadow: 0 1px 2px rgb(0 0 0 / .35), 0 8px 24px -6px rgb(0 0 0 / .5);
@@ -318,7 +318,7 @@ main.container > h1:first-child + .lead { margin-bottom: var(--s-6); }
   background: var(--c-ink); color: var(--c-bg); padding: var(--s-3) var(--s-4);
   border-radius: var(--radius-small); font-weight: 700;
 }
-.skip-link:focus { top: var(--s-2); color: var(--c-bg); outline-color: var(--c-focus-skip); }
+.skip-link:focus { top: var(--s-2); color: var(--c-bg); outline: 3px solid var(--c-focus-skip); outline-offset: 3px; }
 
 /* ---------- 5. Intestazione e navigazione ------------------------------- */
 .site-header {
@@ -340,7 +340,7 @@ main.container > h1:first-child + .lead { margin-bottom: var(--s-6); }
 .segno__petali { fill: var(--c-brand); }
 .segno__cuore { fill: var(--c-accent); stroke: #3b1d2a; stroke-width: 1.5; }
 .brand__name { font-family: var(--font-display); font-size: 1.625rem; font-weight: 750; letter-spacing: -.03em; line-height: 1; }
-.brand__name b { color: var(--c-brand); font-weight: inherit; }
+.brand__accent { color: var(--c-brand); }
 .brand__tagline { display: block; font-size: .875rem; font-weight: 500; color: var(--c-ink-muted); line-height: 1.3; margin-top: .25rem; }
 /* Telefono: marchio, lingua e menu su una riga; il sottotitolo è detto nell'hero e nel piè di pagina */
 .lang-switch__short { display: none; }
@@ -774,7 +774,7 @@ tfoot td, tfoot th { font-weight: 700; border-top: 2px solid var(--c-ink); borde
 .site-footer__brand .brand__mark { width: 3rem; height: 3rem; }
 .site-footer__brand .segno__petali { fill: var(--c-footer-accent); }
 .site-footer__brand .brand__name { font-size: 2rem; color: var(--c-footer-fg); }
-.site-footer__brand .brand__name b { color: var(--c-footer-accent); }
+.site-footer__brand .brand__accent { color: var(--c-footer-accent); }
 .site-footer__brand .brand__tagline { color: var(--c-footer-muted); font-size: var(--fs-small); }
 .site-footer__cols { display: grid; gap: var(--s-6); grid-template-columns: 1fr; }
 @media (min-width: 600px) { .site-footer__cols { grid-template-columns: repeat(2, 1fr); } }
