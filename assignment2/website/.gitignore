@@ -3,3 +3,5 @@ __pycache__/
 .DS_Store
 # Pagine delle lingue aggiuntive: generate da tools/build.py (anche nella GitHub Action)
 *.html
+a11y/
+.playwright-mcp/
