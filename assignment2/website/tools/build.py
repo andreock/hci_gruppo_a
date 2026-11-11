@@ -314,8 +314,7 @@ def footer(lang, prefix):
         <li><a href="proponi.html">{n("proponi")}</a></li><li><a href="candidatura.html">{f("candidatura")}</a></li>
         <li><a href="collabora.html">{f("collabora")}</a></li></ul></nav>
       <nav aria-labelledby="ft-info"><h2 id="ft-info">{f("info")}</h2><ul>
-        <li><a href="chi-siamo.html">{n("chi-siamo")}</a></li><li><a href="contatti.html">{n("contatti")}</a></li>
-        <li><a href="accessibilita.html">{f("accessibilita")}</a></li></ul></nav>
+        <li><a href="chi-siamo.html">{n("chi-siamo")}</a></li><li><a href="contatti.html">{n("contatti")}</a></li></ul></nav>
     </div>
     <p class="site-footer__note">{t(lang, "footer.note")}</p>
   </div>
@@ -1093,20 +1092,6 @@ def pg_contatti(lang):
     return pagina(lang, "contatti.html", g("title"), corpo, nav="contatti", briciole=[(t(lang, "nav.contatti"), "")], dati=True)
 
 
-def pg_accessibilita(lang):
-    g = lambda k: t(lang, "pages.accessibilita." + k)
-    acc = SITO.get("accessibilita", {})
-    ver = lista(acc.get("verifiche", {}).get(lang, []), lang)
-    lim = lista(acc.get("limiti", {}).get(lang, []), lang)
-    corpo = f'''<h1>{E(g("h1"))}</h1><p class="lead">{E(g("intro"))}</p>
-<h2>{E(g("target_title"))}</h2><p>{E(g("target"))}</p>
-<h2>{E(g("done_title"))}</h2>{ver}
-<h2>{E(g("limits_title"))}</h2>{lim}
-<h2>{E(g("feedback_title"))}</h2><p>{fmt(g("feedback"), lang)}</p>
-<p class="small muted">{E(t(lang, "common.updated"))} {fmt_data(OGGI, lang, True)}</p>'''
-    return pagina(lang, "accessibilita.html", g("title"), corpo, nav=None, briciole=[(t(lang, "footer.accessibilita"), "")])
-
-
 def pg_404(lang, radice=False):
     """404 nel modello del sito (R-014). Quella della radice funziona a qualunque profondità su GitHub Pages (D-21)."""
     g = lambda k: t(lang, "pages.404." + k)
@@ -1189,7 +1174,7 @@ def main():
             "programma.html": pg_programma(lang), "come-funziona.html": pg_come(lang), "proponi.html": pg_proponi(lang),
             "candidatura.html": pg_candidatura(lang), "collabora.html": pg_collabora(lang), "chi-siamo.html": pg_chi(lang),
             "faq.html": pg_faq(lang), "contatti.html": pg_contatti(lang),
-            "accessibilita.html": pg_accessibilita(lang), "404.html": pg_404(lang, radice=(lang == "it")),
+            "404.html": pg_404(lang, radice=(lang == "it")),
         }
         for p in PROGETTI:
             pagine[url_progetto(p)] = pg_progetto(p, lang)

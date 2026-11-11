@@ -4,9 +4,9 @@ Generato da `tools/verifica-link.py`.
 
 | Controllo | Valore |
 |---|---|
-| Pagine analizzate (IT + EN) | 58 |
-| Link interni controllati | 1932 |
-| Link con ancora controllati | 464 |
+| Pagine analizzate (IT + EN) | 48 |
+| Link interni controllati | 1606 |
+| Link con ancora controllati | 416 |
 | Link esterni (tutti dichiarati) | 0 |
 | Problemi trovati | 0 |
 
