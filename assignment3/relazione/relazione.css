@@ -1,0 +1,134 @@
+/* Relazione sull'accessibilità di ideaBlume (Assignment 3).
+   Stile ripreso dalla relazione dell'Assignment 2 (assignment2/relazione/assets/stile.css). */
+@font-face { font-family: "Inter"; src: url("fonts/inter.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+@font-face { font-family: "Bricolage Grotesque"; src: url("fonts/bricolage-grotesque.woff2") format("woff2"); font-weight: 200 800; font-display: block; }
+
+:root {
+  --ink: #3b1d2a; --testo: #2c1f24; --muted: #5f4e45; --cta: #bf4a12; --brand: #a33f0f; --oro: #f4b93e;
+  --verde: #24603f; --petrolio: #1d5b73; --mattone: #a3271a; --crema: #fbf6ee; --panna: #fffdf9;
+  --bordo: #d9cbbd; --riga: #f8f2ea; --pesca: #fbeadd; --verde-soft: #e3f2e6; --azzurro: #e2eff4; --giallo: #fdf1d0;
+}
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; background: #fff; color: var(--testo); font: 400 10.2pt/1.45 "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }
+main { max-width: 174mm; margin: 0 auto; padding: 0 16px; }
+
+h1, h2, h3, h4 { font-family: "Bricolage Grotesque", "Inter", system-ui, sans-serif; color: var(--ink); line-height: 1.15; break-after: avoid; }
+h2 { font-size: 20pt; font-weight: 800; margin: 0 0 9pt; padding-bottom: 5pt; border-bottom: 1.5pt solid var(--cta); break-before: page; }
+h2.segue { break-before: auto; margin-top: 18pt; }
+h3 { font-size: 13pt; font-weight: 800; margin: 13pt 0 4pt; }
+h4 { font-size: 10.5pt; font-weight: 800; margin: 9pt 0 3pt; }
+.num { color: var(--cta); margin-right: .3em; }
+p { margin: 0 0 6pt; orphans: 3; widows: 3; }
+ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+li { margin-bottom: 2pt; }
+a { color: var(--brand); text-underline-offset: 2px; }
+code { font: 8.5pt/1.4 ui-monospace, "SF Mono", Menlo, Consolas, monospace; background: var(--riga); padding: 0 2px; border-radius: 2px; overflow-wrap: anywhere; }
+strong { font-weight: 650; }
+.piccolo { font-size: 8.8pt; color: var(--muted); }
+
+/* Copertina */
+.copertina { display: flex; flex-direction: column; background: var(--crema); min-height: 100vh; }
+@media print { .copertina { height: 297mm; min-height: 0; break-after: page; } main { padding: 0; max-width: none; } }
+.copertina__fascia { background: var(--ink); color: var(--crema); padding: 30mm 20mm 14mm; min-height: 134mm; display: flex; flex-direction: column; justify-content: flex-end; }
+.copertina__occhiello { color: var(--oro); font-weight: 650; letter-spacing: .03em; margin: 0 0 8mm; font-size: 11pt; }
+.copertina h1 { color: var(--crema); font-size: 34pt; margin: 0 0 6mm; font-weight: 800; line-height: 1.08; }
+.copertina__sottotitolo { color: var(--crema); font-size: 13.5pt; line-height: 1.38; margin: 0; max-width: 150mm; }
+.copertina__striscia { height: 3mm; background: var(--cta); }
+.copertina__dati { padding: 12mm 20mm; font-size: 11pt; margin: 0; }
+.copertina__dati dt { font-weight: 700; color: #a63f0f; margin-top: 4.5mm; font-size: 9pt; text-transform: uppercase; letter-spacing: .06em; }
+.copertina__dati dd { margin: 1mm 0 0; color: var(--ink); }
+
+/* Indice */
+.indice h2 { break-before: page; }
+.indice ol { list-style: none; padding: 0; margin: 0; }
+.indice li { display: flex; align-items: baseline; gap: 6px; margin: 0; padding: 1.6pt 0; font-size: 9.8pt; }
+.indice li.l2 { font-weight: 650; color: var(--ink); margin-top: 5pt; font-size: 10.4pt; }
+.indice li.l3 { padding-left: 16pt; }
+.indice a { color: inherit; text-decoration: none; }
+.indice .pun { flex: 1; border-bottom: 1px dotted #9c8a7c; transform: translateY(-3px); }
+.indice .pag { font-variant-numeric: tabular-nums; min-width: 1.4em; text-align: right; }
+
+/* Tabelle */
+.tabella { margin: 7pt 0 10pt; }
+table { width: 100%; border-collapse: collapse; font-size: 8.5pt; line-height: 1.34; }
+caption { caption-side: top; text-align: left; font-size: 8.7pt; color: var(--muted); padding-bottom: 3pt; break-after: avoid; }
+caption b, figcaption b { color: var(--ink); font-weight: 700; }
+thead { display: table-header-group; }
+thead th { background: var(--ink); color: #fff; text-align: left; font-weight: 600; padding: 3.5pt 5pt; vertical-align: bottom; border: 1px solid var(--ink); }
+tbody th { text-align: left; font-weight: 650; color: var(--ink); }
+td, tbody th { padding: 3pt 5pt; border: 1px solid var(--bordo); border-width: 0 0 1px; vertical-align: top; overflow-wrap: break-word; }
+tr { break-inside: avoid; }
+tbody tr:nth-child(even) td, tbody tr:nth-child(even) th { background: var(--riga); }
+tr.gruppo th { background: var(--crema) !important; color: var(--brand); font-size: 8.2pt; text-transform: uppercase; letter-spacing: .05em; padding-top: 4pt; }
+td code, th code { font-size: 7.6pt; }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.compatta table { font-size: 7.6pt; line-height: 1.25; }
+.compatta td, .compatta tbody th { padding: 1.5pt 4pt; }
+#sa ~ .tabella td, #sa ~ .tabella tbody th { padding-top: .5pt; padding-bottom: .5pt; }
+.compatta tbody th code { white-space: nowrap; font-size: 7.2pt; }
+td.data { white-space: nowrap; }
+.compatta thead th { padding: 2.5pt 4pt; }
+.migliora { color: #17472e; font-weight: 700; }
+.peggiora { color: #7d1c12; font-weight: 700; }
+
+/* Riquadri */
+.box { margin: 6pt 0 8pt; border: 1px solid var(--bordo); border-left-width: 3.5pt; border-radius: 3px; padding: 6pt 9pt; break-inside: avoid; background: var(--panna); font-size: 9.5pt; }
+.box > :last-child { margin-bottom: 0; }
+.box__tit { display: block; font-weight: 700; color: var(--ink); font-size: 9pt; margin-bottom: 2pt; }
+.box--info { border-color: #b9d3dd; border-left-color: var(--petrolio); background: var(--azzurro); }
+.box--ok { border-color: #b8d7bf; border-left-color: var(--verde); background: var(--verde-soft); }
+.box--problema { border-color: #ecc9b1; border-left-color: var(--cta); background: var(--pesca); }
+.box--todo { border-color: #e2c97a; border-left-color: #a57a10; background: var(--giallo); color: #5c3e00; }
+.box--todo .box__tit { color: #5c3e00; }
+.tre { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6pt; margin: 6pt 0 6pt; }
+.tre .box { margin: 0; font-size: 8.9pt; line-height: 1.4; }
+.todo { background: var(--giallo); color: #5c3e00; font-weight: 650; outline: 1px solid #a57a10; border-radius: 2px; padding: 0 2px; }
+
+/* Badge */
+.badge { display: inline-block; font-size: 7.6pt; font-weight: 700; padding: 0 5px; border-radius: 8px; border: 1px solid currentColor; line-height: 1.5; white-space: nowrap; vertical-align: .05em; }
+.b-ok { color: #17472e; background: var(--verde-soft); }
+.b-parz { color: #5c3e00; background: var(--giallo); }
+.b-no { color: #7d1c12; background: #fbe9e5; }
+.b-c1 { color: #154657; background: var(--azzurro); }
+.b-c2 { color: #8a350c; background: var(--pesca); }
+.b-tool { color: var(--ink); background: var(--riga); }
+.b-wcag { color: #fff; background: var(--ink); border-color: var(--ink); }
+.hash { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 7.6pt; font-weight: 600; color: var(--ink); background: var(--riga); border: 1px solid var(--bordo); border-radius: 8px; padding: 0 5px; white-space: nowrap; }
+.meta { margin: -1pt 0 5pt; line-height: 1.9; }
+.testa { break-inside: avoid; }
+.testa h3 { break-after: auto; }
+
+/* Codice e diff */
+.codice { margin: 5pt 0 8pt; border: 1px solid var(--bordo); border-radius: 3px; background: var(--riga); break-inside: avoid; }
+.codice__tit { display: block; padding: 4pt 8pt 2pt; font-size: 8.2pt; font-weight: 650; color: var(--ink); }
+.codice__tit span { font-weight: 400; color: var(--muted); }
+pre { margin: 0; padding: 2pt 8pt 6pt; font: 8.1pt/1.4 ui-monospace, "SF Mono", Menlo, Consolas, monospace; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--testo); }
+pre .meno, pre .piu { display: block; padding: 0 3pt; margin: 0 -3pt; }
+pre .meno { color: #7d1c12; background: var(--pesca); }
+pre .piu { color: #17472e; background: var(--verde-soft); }
+
+/* Figure */
+figure { margin: 7pt 0 9pt; break-inside: avoid; }
+figure img { display: block; max-width: 100%; height: auto; border: 1px solid var(--bordo); border-radius: 3px; }
+figcaption { font-size: 8.6pt; color: var(--muted); margin-top: 3pt; }
+.coppia { display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; break-inside: avoid; margin: 6pt 0 8pt; }
+.coppia figure { margin: 0; }
+.coppia figcaption b { color: var(--ink); }
+figure.flusso svg, figure.grafico svg { display: block; width: 100%; height: auto; }
+
+@media (max-width: 560px) {
+  .tre, .coppia { grid-template-columns: 1fr; }
+  .tabella { overflow-x: auto; } .tabella table { min-width: 520px; }
+  .copertina__fascia, .copertina__dati { padding-left: 16px; padding-right: 16px; }
+  .copertina h1 { font-size: 26pt; }
+}
+
+/* Piè di pagina nei margin box di @page (Chromium ≥ 131): così la copertina ne resta senza */
+@page {
+  size: A4; margin: 18mm 18mm 19mm 18mm;
+  @bottom-left { content: "Gruppo A · Accessibilità del sito ideaBlume"; font: 7.5pt "Inter", Arial, sans-serif; color: #5f4e45; vertical-align: middle; }
+  @bottom-right { content: "Pagina " counter(page) " di " counter(pages); font: 7.5pt "Inter", Arial, sans-serif; color: #5f4e45; vertical-align: middle; }
+}
+@page :first { margin: 0; @bottom-left { content: none; } @bottom-right { content: none; } }
+.compatta thead th.n { white-space: normal; }

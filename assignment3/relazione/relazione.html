@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relazione sull'accessibilità del sito ideaBlume · Gruppo A</title>
+<meta name="description" content="Analisi, correzione e nuova verifica dell'accessibilità delle 50 pagine del prototipo ideaBlume (Assignment 3)">
+<meta name="author" content="Gruppo A">
+<link rel="stylesheet" href="relazione.css">
+</head>
+<body>
+<header class="copertina">
+  <div class="copertina__fascia">
+    <p class="copertina__occhiello">Human-Computer Interaction · Assignment 3</p>
+    <h1>Relazione sull'accessibilità del sito ideaBlume</h1>
+    <p class="copertina__sottotitolo">Analisi delle 50 pagine del prototipo, correzioni e nuova verifica, in due cicli</p>
+  </div>
+  <div class="copertina__striscia"></div>
+  <dl class="copertina__dati">
+    <dt>Gruppo</dt><dd>Gruppo A</dd>
+    <dt>Componenti</dt><dd>Andrea Canale · Antonio Fallea · Alexandru Ioan Chindris · Lorenzo Rizzolo</dd>
+    <dt>Corso</dt><dd>Human-Computer Interaction · a.a. 2026/27</dd>
+    <dt>Data</dt><dd>12 novembre 2026</dd>
+    <dt>Sito pubblicato</dt><dd>https://andreock.github.io/hci_gruppo_a/</dd>
+    <dt>Versione corretta (anteprima del branch assignment3)</dt><dd>https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/</dd>
+  </dl>
+</header>
+<main>
+<nav class="indice" aria-labelledby="indice">
+<h2 id="indice">Indice</h2>
+<ol>
+<!--INDICE:INIZIO-->
+<li class="l2"><a href="#s1">1  Introduzione</a><span class="pun" aria-hidden="true"></span><span class="pag">3</span></li>
+<li class="l2"><a href="#s2">2  Strumenti e impostazioni</a><span class="pun" aria-hidden="true"></span><span class="pag">4</span></li>
+<li class="l2"><a href="#s3">3  Pagine analizzate</a><span class="pun" aria-hidden="true"></span><span class="pag">5</span></li>
+<li class="l2"><a href="#s4">4  Errori, avvisi e verifiche manuali</a><span class="pun" aria-hidden="true"></span><span class="pag">6</span></li>
+<li class="l3"><a href="#s4-1">Problemi di template contati una volta sola</a><span class="pun" aria-hidden="true"></span><span class="pag">6</span></li>
+<li class="l2"><a href="#s5">5  Le principali tipologie di problema</a><span class="pun" aria-hidden="true"></span><span class="pag">7</span></li>
+<li class="l3"><a href="#s5-1">5.1 Nomi accessibili diversi da ciò che si vede</a><span class="pun" aria-hidden="true"></span><span class="pag">7</span></li>
+<li class="l3"><a href="#s5-2">5.2 Struttura: intestazioni vuote, ruoli sovrapposti e markup presentazionale</a><span class="pun" aria-hidden="true"></span><span class="pag">7</span></li>
+<li class="l3"><a href="#s5-3">5.3 Focus visibile dello skip link</a><span class="pun" aria-hidden="true"></span><span class="pag">8</span></li>
+<li class="l3"><a href="#s5-4">5.4 Bersagli piccoli e ritorno all&#x27;elenco</a><span class="pun" aria-hidden="true"></span><span class="pag">8</span></li>
+<li class="l2"><a href="#s6">6  Falsi positivi e scelte fatte</a><span class="pun" aria-hidden="true"></span><span class="pag">10</span></li>
+<li class="l2"><a href="#s7">7  Validazione HTML e CSS</a><span class="pun" aria-hidden="true"></span><span class="pag">11</span></li>
+<li class="l2"><a href="#s8">8  Nuova verifica</a><span class="pun" aria-hidden="true"></span><span class="pag">12</span></li>
+<li class="l3"><a href="#s8-1">8.1 Validatori online</a><span class="pun" aria-hidden="true"></span><span class="pag">12</span></li>
+<li class="l3"><a href="#s8-2">8.2 Controlli locali</a><span class="pun" aria-hidden="true"></span><span class="pag">12</span></li>
+<li class="l3"><a href="#s8-3">8.3 Nuovi problemi e funzionamento del prototipo</a><span class="pun" aria-hidden="true"></span><span class="pag">12</span></li>
+<li class="l2"><a href="#s9">9  Uso dell&#x27;IA</a><span class="pun" aria-hidden="true"></span><span class="pag">13</span></li>
+<li class="l3"><a href="#s9-1">Che cosa abbiamo verificato noi</a><span class="pun" aria-hidden="true"></span><span class="pag">13</span></li>
+<li class="l2"><a href="#sa">A  Appendice A · Risultati per pagina</a><span class="pun" aria-hidden="true"></span><span class="pag">14</span></li>
+<!--INDICE:FINE-->
+</ol>
+</nav>
+
+<!-- ============================================================ 1 -->
+<section aria-labelledby="s1">
+<h2 id="s1"><span class="num">1</span>Introduzione</h2>
+<p>Con questa relazione documentiamo come abbiamo verificato e migliorato l'accessibilità di <strong>ideaBlume</strong>, il prototipo di crowdfunding per la ricerca realizzato nell'Assignment 2: 25 pagine in italiano e 25 equivalenti in inglese, che condividono header, footer, fogli di stile, JavaScript e testi tradotti.</p>
+<p>Abbiamo lavorato in <strong>due cicli</strong> di analisi, correzione e nuova verifica. Il <span class="badge b-c1">Ciclo 1</span> (5 novembre) è partito dalla versione consegnata con l'Assignment 2 («prima»): MAUVE++ su tutte le pagine pubblicate e la nostra suite locale(html linter). Nel <span class="badge b-c2">Ciclo 2</span> (9 novembre) abbiamo ripetuto l'audit online su tutte le 50 pagine con due servizi (MAUVE++ e ACHECKS), raggruppato le segnalazioni per causa e corretto quelle confermate, una alla volta. La versione finale è quella dell'Assignment 3 («dopo»).</p>
+<figure class="flusso">
+<svg viewBox="0 0 760 196" role="img" aria-labelledby="fl-t fl-d" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Arial, sans-serif">
+<title id="fl-t">Il percorso in due cicli</title>
+<desc id="fl-d">Ciclo 1, 5 novembre: analisi con MAUVE++ e suite locale; correzione dei componenti comuni; nuova verifica locale. Una freccia porta al ciclo 2, 9 novembre: audit online di 50 pagine con due strumenti; tre correzioni, una alla volta; nuova verifica locale e in browser, mentre quella online è da riconfermare.</desc>
+<defs><marker id="fr" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#3b1d2a"/></marker></defs>
+<g font-size="11" fill="#3b1d2a">
+<text x="8" y="44" font-weight="700" font-size="12">Ciclo 1</text><text x="8" y="60" font-size="10.5">5 novembre</text>
+<rect x="96" y="14" width="196" height="62" rx="6" fill="#fbf6ee" stroke="#3b1d2a"/><text x="194" y="36" text-anchor="middle" font-weight="700">Analisi</text><text x="194" y="53" text-anchor="middle" font-size="10">MAUVE++ (50 pagine),</text><text x="194" y="67" text-anchor="middle" font-size="10">suite locale</text>
+<rect x="320" y="14" width="196" height="62" rx="6" fill="#fbeadd" stroke="#bf4a12"/><text x="418" y="36" text-anchor="middle" font-weight="700">Correzione</text><text x="418" y="53" text-anchor="middle" font-size="10">componenti comuni, CSS, JS,</text><text x="418" y="67" text-anchor="middle" font-size="10">testi IT ed EN</text>
+<rect x="544" y="14" width="208" height="62" rx="6" fill="#e3f2e6" stroke="#24603f"/><text x="648" y="36" text-anchor="middle" font-weight="700">Nuova verifica</text><text x="648" y="53" text-anchor="middle" font-size="10">locale; online con l'audit</text><text x="648" y="67" text-anchor="middle" font-size="10">del ciclo 2</text>
+<text x="8" y="144" font-weight="700" font-size="12">Ciclo 2</text><text x="8" y="160" font-size="10.5">9 novembre</text>
+<rect x="96" y="114" width="196" height="62" rx="6" fill="#fbf6ee" stroke="#3b1d2a"/><text x="194" y="136" text-anchor="middle" font-weight="700">Audit online</text><text x="194" y="153" text-anchor="middle" font-size="10">50 pagine ×</text><text x="194" y="167" text-anchor="middle" font-size="10">MAUVE++ e ACHECKS</text>
+<rect x="320" y="114" width="196" height="62" rx="6" fill="#fbeadd" stroke="#bf4a12"/><text x="418" y="136" text-anchor="middle" font-weight="700">Tre correzioni</text><text x="418" y="153" text-anchor="middle" font-size="10">focus dello skip link, marchio,</text><text x="418" y="167" text-anchor="middle" font-size="10">risultati della ricerca</text>
+<rect x="544" y="114" width="208" height="62" rx="6" fill="#e3f2e6" stroke="#24603f"/><text x="648" y="136" text-anchor="middle" font-weight="700">Nuova verifica</text><text x="648" y="153" text-anchor="middle" font-size="10">locale e in browser;</text><text x="648" y="167" text-anchor="middle" font-size="10">online da riconfermare</text>
+</g>
+<g stroke="#3b1d2a" stroke-width="1.5" fill="none">
+<path d="M292 45 H317" marker-end="url(#fr)"/><path d="M516 45 H541" marker-end="url(#fr)"/>
+<path d="M292 145 H317" marker-end="url(#fr)"/><path d="M516 145 H541" marker-end="url(#fr)"/>
+<path d="M648 76 V95 H194 V111" marker-end="url(#fr)" stroke-dasharray="5 3"/>
+</g>
+</svg>
+<figcaption><b>Figura 1.</b> Il percorso seguito: due cicli di analisi, correzione e nuova verifica.</figcaption>
+</figure>
+<p>La relazione sostituisce il resoconto del primo ciclo e la tabella dei risultati MAUVE++, e li integra con il secondo ciclo. Ogni correzione citata corrisponde a una modifica verificabile nel codice del sito. Le segnalazioni che non abbiamo potuto confermare restano in elenco, ciascuna con la sua motivazione.</p>
+</section>
+
+<!-- ============================================================ 2 -->
+<section aria-labelledby="s2">
+<h2 id="s2"><span class="num">2</span>Strumenti e impostazioni</h2>
+<p>Lo strumento principale è MAUVE++, come richiesto dalla consegna. Abbiamo confrontato i suoi risultati con un secondo servizio online (ACHECKS) e con controlli locali che si possono ripetere su qualunque versione del repository.</p>
+<div class="tabella">
+<table>
+<caption><b>Tabella 1.</b> Strumenti, impostazioni e limiti.</caption>
+<thead><tr><th scope="col">Strumento</th><th scope="col">Configurazione</th><th scope="col">Copertura</th><th scope="col">Ciclo</th><th scope="col">Scopo e limiti</th></tr></thead>
+<tbody>
+<tr><th scope="row">MAUVE++ 4.0.2</th><td>WCAG 2.1 AA, pagina singola, <span lang="en">desktop</span>/Windows/Chrome</td><td>50/50 URL pubblicati, in entrambi i cicli</td><td><span class="badge b-c1">1</span> <span class="badge b-c2">2</span></td><td>Strumento principale. Analizza HTML e CSS: non sempre risolve variabili CSS, sfondi trasparenti e <code>color-mix</code>; non esegue la ricerca, quindi su <code>cerca.html</code> valuta solo lo stato iniziale.</td></tr>
+<tr><th scope="row">ACHECKS: AChecker</th><td>WCAG 2.0 AA</td><td>50/50 (ciclo 2)</td><td><span class="badge b-c2">2</span></td><td>Segue WCAG 2.0: non conosce i criteri 2.1 e 2.2. Molti controlli sono euristici e richiedono un giudizio umano.</td></tr>
+<tr><th scope="row">ACHECKS: Lighthouse 13.0.1</th><td>WCAG 2.1 AA, <span lang="en">desktop</span> emulato</td><td>50/50 (ciclo 2)</td><td><span class="badge b-c2">2</span></td><td>Risultato separato offerto da ACHECKS; gli audit «informativi» non pesano sul punteggio.</td></tr>
+<tr><th scope="row">html-validate 9.7.1</th><td>regole <span lang="en">recommended</span> (§7)</td><td>50 pagine HTML</td><td><span class="badge b-c1">1</span> <span class="badge b-c2">2</span></td><td>Struttura, intestazioni vuote, landmark, attributi.</td></tr>
+<tr><th scope="row">Stylelint 16.25.0</th><td>Solo analisi sintattica, nessuna regola di stile</td><td>3 CSS condivisi</td><td><span class="badge b-c1">1</span> <span class="badge b-c2">2</span></td><td>Trova errori di sintassi, non problemi di accessibilità.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ============================================================ 3 -->
+<section aria-labelledby="s3">
+<h2 id="s3"><span class="num">3</span>Pagine analizzate</h2>
+<p>Abbiamo analizzato tutte le pagine del prototipo. Le abbiamo individuate dalla cartella del sito: 25 file HTML in italiano e 25 in inglese nella sottocartella <code>en/</code>. Le varianti con parametri nell'indirizzo (filtri dei progetti, donazioni precompilate) usano gli stessi file e non sono pagine distinte. Il sito non contiene file non HTML (PDF o documenti).</p>
+<div class="tabella">
+<table>
+<caption><b>Tabella 2.</b> Copertura per tipologia di pagina (IT + EN) e strumenti eseguiti.</caption>
+<thead><tr><th scope="col">Tipologia</th><th scope="col">Pagine</th><th scope="col" class="n">IT + EN</th><th scope="col">MAUVE++</th><th scope="col">ACHECKS</th><th scope="col">Locali</th></tr></thead>
+<tbody>
+<tr><th scope="row">Home</th><td><code>index.html</code></td><td class="n">1 + 1</td><td>2/2</td><td>2/2</td><td>tutti</td></tr>
+<tr><th scope="row">Elenco</th><td><code>progetti.html</code></td><td class="n">1 + 1</td><td>2/2</td><td>2/2</td><td>tutti</td></tr>
+<tr><th scope="row">Scheda progetto</th><td>10 progetti (4 in corso con modulo «scrivi»)</td><td class="n">10 + 10</td><td>20/20</td><td>20/20</td><td>tutti</td></tr>
+<tr><th scope="row">Moduli</th><td>donazione, candidatura, collabora, contatti</td><td class="n">4 + 4</td><td>8/8</td><td>8/8</td><td>tutti</td></tr>
+<tr><th scope="row">Contenuto</th><td>programma, come funziona, proponi, FAQ, chi siamo, accessibilità</td><td class="n">6 + 6</td><td>12/12</td><td>12/12</td><td>tutti</td></tr>
+<tr><th scope="row">Ricerca, conferma, errore</th><td>cerca, donazione-conferma, 404</td><td class="n">3 + 3</td><td>6/6</td><td>6/6</td><td>tutti</td></tr>
+<tr><th scope="row">Totale</th><td></td><td class="n"><strong>25 + 25</strong></td><td><strong>50/50</strong></td><td><strong>50/50</strong></td><td><strong>50/50</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p>I servizi online valutano lo stato iniziale della pagina. Gli stati che compaiono solo dopo un'interazione li abbiamo verificati in locale a mano:</p>
+<ul>
+<li>menu mobile aperto e chiuso, <span lang="en">toggletip</span>, cambio di lingua e di tema;</li>
+<li>ricerca con e senza risultati; filtri e ordinamento dei progetti, con ritorno all'elenco tramite il tasto Indietro;</li>
+<li>FAQ aperte, filtrate e raggiunte da ancora;</li>
+<li>moduli vuoti e con errori (riepilogo con focus), donazione in 5 passi con dati conservati, campagna conclusa;</li>
+</ul>
+<div class="box box--info"><span class="box__tit">IT ed EN</span>
+<p>Le versioni inglesi danno quasi sempre gli stessi risultati di quelle italiane: stesso riepilogo MAUVE++ e, in AChecker, al massimo 1–2 avvisi di differenza. Le abbiamo comunque verificate tutte, perché <span lang="en">snippet</span> e attributi <code>lang</code> sono diversi.</p>
+</div>
+</section>
+
+<!-- ============================================================ 4 -->
+<section aria-labelledby="s4">
+<h2 id="s4"><span class="num">4</span>Errori, avvisi e verifiche manuali</h2>
+<p>Ogni strumento usa categorie proprie. Per confrontarli le abbiamo ricondotte a tre: <strong>errori</strong> (lo strumento ritiene il problema certo), <strong>avvisi</strong> (probabile, da controllare) e <strong>verifiche manuali</strong> (lo strumento non può decidere).</p>
+
+<div class="tabella compatta">
+<table>
+<caption><b>Tabella 3.</b> Errori trovati prima delle correzioni, per strumento.</caption>
+<thead><tr><th scope="col" style="width:30%">Strumento e versione analizzata</th><th scope="col" class="n" style="width:9%">Errori</th><th scope="col">Note</th></tr></thead>
+<tbody>
+<tr><th scope="row">MAUVE++ · 50 pagine</th><td class="n">906</td><td>Somma dei criteri WCAG in errore su tutte le pagine(molte duplicate).</td></tr>
+<tr><th scope="row">AChecker · 50 pagine</th><td class="n">122</td><td>Solo due tipi di errore: il tag <code>&lt;b&gt;</code> nel marchio (100 volte, 2 per pagina) e le tabelle senza attributi <code>id</code>/<code>headers</code> (22 volte).</td></tr>
+<tr><th scope="row">Lighthouse · 50 pagine</th><td class="n">0</td><td>Punteggio 100/100 su tutte le pagine. Un'unica segnalazione, solo informativa: il ruolo «status» sull'intestazione dei risultati di ricerca (<code>cerca</code>, IT ed EN).</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="s4-1">Problemi di template contati una volta sola</h3>
+<p>Quasi tutte le segnalazioni si ripetono identiche su ogni pagina, perché vengono da componenti comuni: header, footer, skip link, pulsanti. Contate per causa, le <strong>1.028 occorrenze di errore</strong> del ciclo 2 (906 MAUVE++ e 122 AChecker) si riducono a <strong>9 cause</strong>, più l'audit informativo di Lighthouse.</p>
+<div class="tabella compatta">
+<table>
+<caption><b>Tabella 4.</b></caption>
+<thead><tr><th scope="col" style="width:20%">Componente</th><th scope="col" style="width:11%">Segnalazione</th><th scope="col" style="width:10%">Strumento</th><th scope="col" class="n">Pagine</th><th scope="col" class="n">Occ.</th><th scope="col" style="width:43%">Decisione e motivo</th></tr></thead>
+<tbody>
+<tr><td>Header e footer: <code>svg</code> con <code>aria-hidden</code></td><td>1.1.1 ARIA6</td><td>MAUVE++</td><td class="n">50</td><td class="n">370</td><td><strong>Falso positivo</strong>: sono icone decorative, già escluse con <code>aria-hidden="true"</code> e sempre accanto a un testo. Dare loro un nome farebbe ripetere due volte la stessa cosa al lettore di schermo.</td></tr>
+<tr><td>Interruttore del tema, <code>span.vh</code>, etichette <code>tag</code></td><td>1.4.3 G18</td><td>MAUVE++</td><td class="n">50</td><td class="n">150</td><td><strong>Falso positivo</strong>: <code>span.vh</code> è testo nascosto alla vista, a cui il contrasto non si applica; gli altri elementi, misurati, vanno da 5,6:1 a 16:1. MAUVE++ non legge i colori definiti con variabili CSS.</td></tr>
+<tr><td>Pulsanti <code>a.btn</code> (footer e contenuto)</td><td>1.4.1 F73</td><td>MAUVE++</td><td class="n">50</td><td class="n">148</td><td><strong>Falso positivo</strong>: non sono link dentro un testo ma pulsanti con sfondo pieno o bordo e forma a pillola, riconoscibili anche senza colore.</td></tr>
+<tr><td>Skip link «Salta al contenuto»</td><td>2.4.7 G195, F78</td><td>MAUVE++</td><td class="n">50</td><td class="n">100</td><td><span class="badge b-c2">corretto</span> Problema reale: l'anello di focus aveva contrasto 1,65:1 sullo sfondo della pagina.</td></tr>
+<tr><td>Marchio <code>idea&lt;b&gt;Blume&lt;/b&gt;</code></td><td>1.4.4 #116</td><td>AChecker</td><td class="n">50</td><td class="n">100</td><td><span class="badge b-c2">corretto</span> <code>&lt;b&gt;</code> serviva solo a colorare «Blume»: sostituito con uno <code>span</code>.</td></tr>
+<tr><td>Elemento <code>&lt;html&gt;</code></td><td>1.3.1/1.4.5 G140</td><td>MAUVE++</td><td class="n">50</td><td class="n">50</td><td><strong>Verifica manuale</strong>: non indica un elemento preciso ma chiede di controllare che la struttura regga senza CSS. Le pagine usano HTML semantico e nessuna immagine di testo.</td></tr>
+<tr><td>Campi dei moduli</td><td>1.3.5 H98</td><td>MAUVE++</td><td class="n">16</td><td class="n">48</td><td><strong>Non applicabile</strong>: i campi con dati personali (nome, email, telefono) hanno già <code>autocomplete</code>; quelli segnalati (messaggi, titoli, filtri) non rientrano nel criterio.</td></tr>
+<tr><td>Contenitori <code>div.field</code></td><td>1.4.10 C38</td><td>MAUVE++</td><td class="n">16</td><td class="n">40</td><td><strong>Falso positivo</strong>: a 320 px e con zoom al 200% non c'è scorrimento orizzontale, né prima né dopo le correzioni.</td></tr>
+<tr><td>Tabelle «Uso dei fondi» e programma</td><td>1.3.1 #245</td><td>AChecker</td><td class="n">22</td><td class="n">22</td><td><strong>Falso positivo</strong>: le tabelle hanno un solo livello di intestazioni, con <code>th scope</code> e <code>caption</code>. Gli attributi <code>id</code>/<code>headers</code> servono solo per tabelle con intestazioni su più livelli.</td></tr>
+<tr><td>Intestazione dei risultati di ricerca</td><td><code>aria-allowed-role</code></td><td>Lighthouse (informativo)</td><td class="n">2</td><td class="n">2</td><td><span class="badge b-c2">corretto</span> <code>role="status"</code> cancellava il ruolo di intestazione dell'<code>h2</code>.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ============================================================ 5 -->
+<section aria-labelledby="s5">
+<h2 id="s5"><span class="num">5</span>Le principali tipologie di problema</h2>
+<p>Abbiamo raggruppato i problemi corretti nei due cicli in cinque tipologie. Ogni correzione è stata fatta <strong>nei componenti comuni</strong> (header, footer, moduli, <code>css/ideablume.css</code>, <code>js/ideablume.js</code> e testi tradotti), quindi vale per tutte le 50 pagine e per entrambe le lingue. Gli estratti qui sotto confrontano il codice dell'Assignment 2 e dell'Assignment 3.</p>
+
+<div class="testa">
+<h3 id="s5-1">5.1 Nomi accessibili diversi da ciò che si vede</h3>
+<p class="meta"><span class="badge b-wcag">WCAG 2.5.3 · A</span> <span class="badge b-c1">Ciclo 1</span></p>
+<div class="tre">
+<div class="box box--problema"><span class="box__tit">Che cosa non funziona</span><p>Il collegamento-logo aveva <code>aria-label="ideaBlume, vai alla home"</code>, che sostituisce il testo visibile «ideaBlume · Il crowdfunding per la ricerca dell'Università di Torino». Era il problema più grave emerso nel primo ciclo. Inoltre i moduli <code>role="search"</code> di home, ricerca e 404 erano regioni senza nome.</p></div>
+<div class="box box--info"><span class="box__tit">Quali difficoltà causa</span><p>Chi usa il controllo vocale pronuncia ciò che vede («clic Il crowdfunding per la ricerca»): se il nome accessibile non lo contiene, il comando non trova il collegamento. Davide (P03), che naviga con NVDA per landmark, sentiva «ricerca» senza sapere che cosa cerca quella regione.</p></div>
+<div class="box box--ok"><span class="box__tit">Che cosa abbiamo modificato</span><p>Tolto l'<code>aria-label</code> e aggiunto in coda un testo per tecnologie assistive, localizzato in IT ed EN: il nome ora comincia con l'etichetta visibile. Nome «Cerca un progetto» ai moduli di ricerca.</p></div>
+</div>
+</div>
+<div class="codice"><span class="codice__tit">index.html <span>· header (uguale in tutte le pagine) e modulo di ricerca</span></span>
+<pre><span class="meno">-    &lt;a class="brand" href="index.html" aria-label="ideaBlume, vai alla home"&gt;</span><span class="piu">+    &lt;a class="brand" href="index.html"&gt;</span><span class="piu">+      …&lt;span class="vh"&gt; — vai alla home&lt;/span&gt;</span><span class="meno">-      &lt;form class="search-form search-form--hero" role="search" action="cerca.html" method="get"&gt;</span><span class="piu">+      &lt;form class="search-form search-form--hero" role="search" aria-label="Cerca un progetto" action="cerca.html" method="get"&gt;</span></pre></div>
+
+<div class="testa">
+<h3 id="s5-2">5.2 Struttura: intestazioni vuote, ruoli sovrapposti e markup presentazionale</h3>
+<p class="meta"><span class="badge b-wcag">WCAG 1.3.1 · A</span> <span class="badge b-wcag">1.4.4 · AA (AChecker)</span> <span class="badge b-c1">Ciclo 1</span> <span class="badge b-c2">Ciclo 2</span></p>
+<div class="tre">
+<div class="box box--problema"><span class="box__tit">Che cosa non funziona</span><p>Cinque modelli di pagina avevano intestazioni vuote, riempite solo dal JavaScript: html-validate trovava 12 errori in 10 pagine. In <code>cerca.html</code>, <code>role="status"</code> sull'<code>&lt;h2&gt;</code> del numero di risultati ne annullava il ruolo di intestazione. Infine <code>&lt;br&gt;</code> usati come spaziatori e <code>&lt;b&gt;</code> nel marchio, solo per lo stile.</p></div>
+<div class="box box--info"><span class="box__tit">Quali difficoltà causa</span><p>Davide (P03) si muove per intestazioni con il tasto H: senza JavaScript, o se lo script fallisce, trova titoli vuoti. Dopo una ricerca non trovava l'intestazione «N progetti per…» nell'elenco dei titoli. Il markup presentazionale non crea barriere dirette, ma rende la struttura meno affidabile.</p></div>
+<div class="box box--ok"><span class="box__tit">Che cosa abbiamo modificato</span><p>Testi di fallback localizzati nelle intestazioni dinamiche. <code>role="status"</code> spostato su un <code>&lt;div&gt;</code> che contiene l'<code>&lt;h2&gt;</code> (il JS è invariato). <code>&lt;br&gt;</code> rimossi, perché il layout flex basta. <code>&lt;b&gt;</code> → <code>&lt;span class="brand__accent"&gt;</code>, con aspetto identico.</p></div>
+</div>
+</div>
+<div class="codice"><span class="codice__tit">candidatura.html (uguale in collabora e donazione), cerca.html <span>· e css/ideablume.css</span></span>
+<pre><span class="meno">-&lt;div class="alert alert--error" role="alert" tabindex="-1" data-errori hidden&gt;&lt;h2 data-errori-titolo&gt;&lt;/h2&gt;…</span><span class="piu">+&lt;div class="alert alert--error" role="alert" tabindex="-1" data-errori hidden&gt;&lt;h2 data-errori-titolo&gt;C&amp;#x27;è 1 campo da correggere&lt;/h2&gt;…</span><span class="meno">-&lt;h2 class="result-count" role="status" aria-live="polite" data-risultati-titolo&gt;Scrivi una parola da cercare, per esempio «api».&lt;/h2&gt;</span><span class="piu">+&lt;div role="status"&gt;&lt;h2 class="result-count" data-risultati-titolo&gt;Scrivi una parola da cercare, per esempio «api».&lt;/h2&gt;&lt;/div&gt;</span><span class="meno">-.brand__name b { color: var(--c-brand); font-weight: inherit; }</span><span class="piu">+.brand__accent { color: var(--c-brand); }</span></pre></div>
+
+<div class="testa">
+<h3 id="s5-3">5.3 Focus visibile dello skip link</h3>
+<p class="meta"><span class="badge b-wcag">WCAG 2.4.7 · AA</span> <span class="badge b-c2">Ciclo 2</span> <span class="badge b-tool">MAUVE++ G195, F78</span></p>
+<div class="tre">
+<div class="box box--problema"><span class="box__tit">Che cosa non funziona</span><p>Su <code>.skip-link:focus</code> era dichiarato solo <code>outline-color</code>: stile e spessore arrivavano da <code>:focus-visible</code>, quindi MAUVE++ non trovava un indicatore dichiarato. L'anello giallo #f4b93e cadeva sullo sfondo crema con un contrasto di 1,65:1; nel tema scuro, 2,83:1.</p></div>
+<div class="box box--info"><span class="box__tit">Quali difficoltà causa</span><p>Lo skip link è il primo elemento che si raggiunge con Tab. Amir (P11), che usa la tastiera, ed Elena (P06), che ingrandisce lo schermo, devono capire subito dov'è il focus. Un anello quasi invisibile sullo sfondo lascia come unico segnale il riquadro scuro del link.</p></div>
+<div class="box box--ok"><span class="box__tit">Che cosa abbiamo modificato</span><p>Anello completo dichiarato su <code>:focus</code> (3 px, offset 3 px) e token <code>--c-focus-skip</code> scurito quanto basta per arrivare a 3:1: #bc830b (3,05:1) nel tema chiaro e #b64611 (3,34:1) nel tema scuro. Abbiamo anche aggiunto a <code>contrasto.py</code> la coppia «anello / sfondo della pagina».</p></div>
+</div>
+</div>
+<div class="codice"><span class="codice__tit">css/ideablume.css</span></span>
+<pre><span class="meno">-  --c-focus-skip: #f4b93e;     /* anello del link «Salta al contenuto» (sfondo --c-ink) */</span><span class="piu">+  --c-focus-skip: #bc830b;     /* anello del link «Salta al contenuto»: ≥ 3:1 sullo sfondo della pagina e su --c-ink */</span><span class="meno">-.skip-link:focus { top: var(--s-2); color: var(--c-bg); outline-color: var(--c-focus-skip); }</span><span class="piu">+.skip-link:focus { top: var(--s-2); color: var(--c-bg); outline: 3px solid var(--c-focus-skip); outline-offset: 3px; }</span></pre></div>
+<div class="testa">
+<h3 id="s5-4">5.4 Bersagli piccoli e ritorno all'elenco</h3>
+<p class="meta"><span class="badge b-wcag">WCAG 2.5.8 · AA (2.2)</span> <span class="badge b-c1">Ciclo 1</span> <span class="badge b-tool">responsive.js</span> <span class="badge b-tool">percorsi.js</span></p>
+<div class="tre">
+<div class="box box--problema"><span class="box__tit">Che cosa non funziona</span><p>Sei link d'azione nei passi di «Proponi» erano alti 21 px a 375 px di larghezza: sotto il minimo di 24 px. Inoltre, tornando dalla scheda di un progetto all'elenco filtrato, la posizione nella pagina non veniva ripristinata in modo affidabile.</p></div>
+<div class="box box--info"><span class="box__tit">Quali difficoltà causa</span><p>Giuseppe (P01) usa un tablet e ha tocchi imprecisi; Maria (P12) ha un lieve tremore alle mani: un bersaglio basso aumenta i tocchi a vuoto. Chi ingrandisce come Elena (P06), o naviga da tastiera, tornando all'elenco perde il punto raggiunto e deve ricominciare a scorrere.</p></div>
+<div class="box box--ok"><span class="box__tit">Che cosa abbiamo modificato</span><p>Altezza minima di 24 px per i link isolati dei passi; ora misurano 29 px. Ripristino di filtri e posizione all'evento <code>pageshow</code> anche quando la pagina torna dalla <span lang="en">back-forward cache</span>, usando <code>sessionStorage</code>.</p></div>
+</div>
+</div>
+<div class="codice"><span class="codice__tit">css/ideablume.css e js/ideablume.js</span></span>
+<pre><span class="piu">+.howto &gt; li &gt; p &gt; a:only-child { display: inline-block; min-height: 24px; }</span><span class="meno">-    window.addEventListener("pageshow", function (e) { if (e.persisted) { leggi(); applica(false); } });</span><span class="piu">+        var ritorno = store(chiave()); store(chiave(), null);</span><span class="piu">+        if (ritorno &amp;&amp; ritorno.y) window.requestAnimationFrame(function () { window.scrollTo({ top: ritorno.y, behavior: "instant" }); });</span></pre></div>
+<div class="coppia">
+<figure><img src="img/bersaglio-prima.png" alt="Link «Leggi i requisiti del programma» con un contorno tratteggiato rosso che ne mostra l'area cliccabile, bassa quanto il testo."><figcaption><b>Prima (versione Assignment 2).</b> Area cliccabile 263 × 21 px.</figcaption></figure>
+<figure><img src="img/bersaglio-dopo.png" alt="Lo stesso link: il contorno tratteggiato è più alto del testo e l'area cliccabile è più ampia."><figcaption><b>Dopo (Assignment 3).</b> Area cliccabile 263 × 29 px.</figcaption></figure>
+</div>
+<p class="piccolo"><b>Figura 2.</b> <code>proponi.html</code> a 375 px (Chrome). Il contorno tratteggiato è stato aggiunto per mostrare l'area cliccabile.</p>
+
+</section>
+
+<!-- ============================================================ 6 -->
+
+<!-- ============================================================ 7 -->
+<section aria-labelledby="s6">
+<h2 id="s6"><span class="num">6</span>Falsi positivi e scelte fatte</h2>
+<p>Siamo partiti dalle «segnalazioni residue» del primo ciclo e le abbiamo aggiornate con il secondo. Una classificazione è stata rivista: il focus visibile (2.4.7), che il primo ciclo considerava «non riprodotto».</p>
+<div class="tabella">
+<table>
+<caption><b>Tabella 5.</b> Segnalazioni non corrette: verifica, valutazione ed eventuale revisione.</caption>
+<thead><tr><th scope="col" style="width:20%">Segnalazione</th><th scope="col" style="width:13%">Strumento</th><th scope="col" style="width:37%">Verifica fatta</th><th scope="col" style="width:30%">Valutazione</th></tr></thead>
+<tbody>
+<tr><td>1.1.1 su SVG con <code>aria-hidden="true"</code></td><td>MAUVE++</td><td>Ispezione del DOM: i 370 <code>svg</code> hanno <code>aria-hidden</code> e <code>focusable="false"</code> e accompagnano un testo visibile o nascosto</td><td><span class="badge b-ok">Falso positivo</span>, confermato in entrambi i cicli</td></tr>
+<tr><td>1.4.3 contrasto del testo</td><td>MAUVE++</td><td><code>contrasto.py</code> sui token dei due temi. Gli elementi segnalati vanno da 5,6:1 a 16:1; <code>span.vh</code> è nascosto visivamente</td><td><span class="badge b-ok">Falso positivo</span>: MAUVE++ non risolve variabili CSS, sfondi trasparenti e <code>color-mix</code>. <strong>Precisazione</strong>: le 180 misure del ciclo 1 non includevano l'anello dello skip link sullo sfondo, aggiunto nel ciclo 2 (vedi 2.4.7)</td></tr>
+<tr><td>1.4.1 uso del colore</td><td>MAUVE++, AChecker</td><td>Sono pulsanti <code>a.btn</code> isolati, con sfondo pieno o bordo di 2 px e forma a pillola; i <code>.btn--ghost</code> sono sottolineati</td><td><span class="badge b-ok">Falso positivo</span>: lo stato non dipende solo dal colore</td></tr>
+<tr><td>2.4.7 focus visibile</td><td>MAUVE++</td><td>Ciclo 1: navigazione da tastiera e 105 percorsi. Ciclo 2: lettura del CSS e nuova coppia in <code>contrasto.py</code> (1,65:1 e 2,83:1)</td><td>Problema reale, corretto nel ciclo 2</td></tr>
+<tr><td>1.4.10 reflow</td><td>MAUVE++</td><td>320 px e zoom 200%: nessuno scorrimento orizzontale, sia prima sia dopo</td><td><span class="badge b-ok">Falso positivo</span></td></tr>
+<tr><td>1.3.5 scopo degli input</td><td>MAUVE++</td><td>I campi con dati personali hanno già <code>autocomplete</code> (<code>name</code>, <code>email</code>, <code>tel</code>). Messaggi, titoli, filtri e categorie non rientrano nel criterio</td><td><span class="badge b-ok">Non applicabile</span> alle occorrenze residue</td></tr>
+<tr><td>1.3.1 e 1.4.5 su <code>&lt;html&gt;</code></td><td>MAUVE++</td><td>Controllo manuale ancorato alla radice: HTML semantico, un solo CSS esterno, nessuna immagine di testo</td><td><span class="badge b-ok">Verificato manualmente</span>: la struttura resta comprensibile</td></tr>
+<tr><td>1.3.1 tabelle senza <code>id</code>/<code>headers</code></td><td>AChecker, MAUVE++</td><td>Le tabelle hanno un solo livello di intestazioni per asse, <code>th scope</code> e <code>caption</code>: basta la tecnica H63</td><td><span class="badge b-ok">Falso positivo</span>. È l'unica segnalazione confermata da due strumenti sugli stessi elementi</td></tr>
+<tr><td>3.1.2 lingua delle parti (EN)</td><td>AChecker</td><td>Il link della lingua ha <code>lang="it"</code>; i commenti in italiano hanno <code>&lt;p lang="it"&gt;</code></td><td><span class="badge b-ok">Già rispettato</span></td></tr>
+<tr><td>4.1.3 messaggi di stato</td><td>MAUVE++</td><td>Errori con <code>role="alert"</code>, conferme con <code>role="status"</code></td><td><span class="badge b-ok">Già rispettato</span>; annuncio verificato manualmente</td></tr>
+<tr><td>Avvisi generici (4.574 di AChecker, avvisi MAUVE++)</td><td>AChecker, MAUVE++</td><td>Controllati per tipo sul markup (titolo, script, link, intestazioni, moduli)</td><td><span class="badge b-ok">Verificati manualmente</span>: nessun errore</td></tr>
+</tbody>
+</table>
+</div>
+<div class="box box--info"><span class="box__tit">Perché non diamo un nome agli SVG decorativi</span><p>Un <code>aria-label</code> sulle icone farebbe leggere a Davide «fiore», «freccia», «lente» prima di ogni etichetta che già dice la stessa cosa. Il criterio 1.1.1 chiede di ignorare le immagini decorative, usiamo quindi <code>aria-hidden="true"</code> così lo screen reader non le legge.</p></div>
+</section>
+
+<!-- ============================================================ 8 -->
+<section aria-labelledby="s7">
+<h2 id="s7"><span class="num">7</span>Validazione HTML e CSS</h2>
+<p>Abbiamo eseguito html-validate e Stylelint sulla versione dell'Assignment 2 (prima) e su quella dell'Assignment 3 (dopo). Nell'Assignment 2 i due strumenti non erano ancora installati: abbiamo usato la suite e la configurazione attuali sugli HTML dell'Assignment 2 («controllo eseguito con la suite attuale sulla versione precedente»).</p>
+<div class="tabella">
+<table>
+<caption><b>Tabella 6</b></caption>
+<thead><tr><th scope="col">Regola</th><th scope="col">Tipo</th><th scope="col" class="n">Prima (A2)</th><th scope="col" class="n">Dopo (A3)</th><th scope="col">Note</th></tr></thead>
+<tbody>
+<tr class="gruppo"><th scope="rowgroup" colspan="5">html-validate · configurazione del progetto (<code>.htmlvalidate.json</code>)</th></tr>
+<tr><td><code>empty-heading</code></td><td>errore reale</td><td class="n">10</td><td class="n migliora">0</td><td>Intestazioni dinamiche vuote (§5.2)</td></tr>
+<tr><td><code>unique-landmark</code></td><td>errore reale</td><td class="n">2</td><td class="n migliora">0</td><td><code>section</code> della ricerca etichettata da un <code>h2</code> vuoto</td></tr>
+<tr><td><strong>Totale</strong></td><td></td><td class="n"><strong>12 in 10 file</strong></td><td class="n migliora"><strong>0 · 50/50</strong></td><td></td></tr>
+<tr class="gruppo"><th scope="rowgroup" colspan="5">Stylelint (<code>.stylelintrc.json</code>: solo sintassi)</th></tr>
+<tr><td>3 CSS condivisi</td><td>errori di sintassi</td><td class="n">0</td><td class="n">0</td><td><code>font.css</code>, <code>font-locali.css</code>, <code>ideablume.css</code></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ============================================================ 9 -->
+<section aria-labelledby="s8">
+<h2 id="s8"><span class="num">8</span>Nuova verifica</h2>
+<h3 id="s8-1">8.1 Validatori online</h3>
+<p>Come punteggi finali consideriamo quelli dell'audit online del ciclo 2 (9/11), eseguito sulle 50 pagine pubblicate sull'anteprima con MAUVE++ (WCAG 2.1 AA, <span lang="en">desktop</span>/Windows/Chrome) e ACHECKS. Le tre correzioni del ciclo 2 sono state fatte dopo questo audit.</p>
+<div class="tabella">
+<table>
+<caption><b>Tabella 7.</b></caption>
+<thead><tr><th scope="col">Strumento</th><th scope="col">Risultato</th></tr></thead>
+<tbody>
+<tr><th scope="row">MAUVE++, accessibilità media</th><td>92,7% (da 89% a 96%)</td></tr>
+<tr><th scope="row">MAUVE++, completezza media</th><td>88,0% (da 84% a 93%)</td></tr>
+<tr><th scope="row">Lighthouse (ACHECKS)</th><td>100/100 su tutte le 50 pagine</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="s8-2">8.2 Controlli locali</h3>
+<p>Sulla versione finale (Assignment 3) abbiamo eseguito l'intera suite locale. Gli output sono in <code>relazione/dati/</code>.</p>
+<div class="tabella">
+<table>
+<caption><b>Tabella 8.</b> Esito della nuova verifica locale sulla versione finale.</caption>
+<thead><tr><th scope="col">Controllo</th><th scope="col">Esito (Assignment 3)</th></tr></thead>
+<tbody>
+<tr><th scope="row">HTML (html-validate)</th><td>50/50 senza errori</td></tr>
+<tr><th scope="row">CSS condivisi (Stylelint)</th><td>3/3 senza errori</td></tr>
+<tr><th scope="row">Errori JavaScript o di console</th><td>0</td></tr>
+<tr><th scope="row">Pagine con numero di <code>h1</code> diverso da uno</th><td>0</td></tr>
+<tr><th scope="row">Percorsi e stati interattivi</th><td>105/105</td></tr>
+<tr><th scope="row">Apertura diretta <code>file://</code></th><td>8/8</td></tr>
+<tr><th scope="row">Contrasti (91 coppie × 2 temi)</th><td>182/182</td></tr>
+<tr><th scope="row">Dati</th><td>329/329</td></tr>
+<tr><th scope="row">Responsive 320, 375, 768, 1280 px</th><td>nessun overflow</td></tr>
+<tr><th scope="row">Zoom 200% (3 pagine campione)</th><td>nessun overflow</td></tr>
+<tr><th scope="row">Bersagli interattivi a 375 px</th><td>nessuno sotto 24 px</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="s8-3">8.3 Nuovi problemi e funzionamento del prototipo</h3>
+<p>Nessun controllo segnala nuovi problemi nella versione finale. Percorsi e stati interattivi sono superati, compresa la donazione in 5 passi con i pulsanti del browser. Le correzioni del ciclo 2 le abbiamo controllate anche in Chrome: l'anello è visibile in entrambi i temi, il marchio è identico al pixel e l'intestazione dei risultati compare nell'albero di accessibilità. Con il nuovo colore, il contrasto dell'anello sul fondo scuro del link è 4,58:1, sopra la soglia di 3:1.</p>
+
+</section>
+
+<!-- ============================================================ 11 -->
+<section aria-labelledby="s9">
+<h2 id="s9"><span class="num">9</span>Uso dell'IA</h2>
+<p>La consegna chiede di documentare l'uso dell'intelligenza artificiale. I controlli con i validatori (MAUVE++, ACHECKS, Lighthouse, W3C e la suite locale) li abbiamo eseguiti noi. Poi abbiamo passato all'IA gli errori e gli avvisi che avevamo raccolto: l'IA ha corretto il codice e ci ha spiegato ogni problema, cioè quale criterio WCAG viola, quali difficoltà causa e perché la correzione lo risolve.</p>
+<div class="tabella">
+<table>
+<caption><b>Tabella 9.</b> Strumenti di IA e attività.</caption>
+<thead><tr><th scope="col">Ciclo</th><th scope="col">Strumento</th><th scope="col">Che cosa ha fatto</th></tr></thead>
+<tbody>
+<tr><td><span class="badge b-c1">Ciclo 1</span></td><td>Codex</td><td>A partire dalle segnalazioni MAUVE++ e della suite locale che gli abbiamo fornito: spiegazione dei problemi, correzione dei componenti comuni.</td></tr>
+<tr><td><span class="badge b-c2">Ciclo 2</span></td><td>Claude Code</td><td>A partire dagli errori e dagli avvisi di MAUVE++ e ACHECKS che gli abbiamo passato: raggruppamento in <code>issues.csv</code> e <code>REPORT.md</code>, spiegazione dei problemi, loop di correzione (un fix per iterazione); rilettura di questa relazione, scritta da noi, per controllarne la coerenza con i dati.</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="s9-1">Che cosa abbiamo verificato noi</h3>
+<ul>
+  <li><strong>Il controllo delle pagine tramite checker.</strong> Ogni pagina è stata controllata manualmente usando i checker proposti, chiedendo all'AI la spiegazione e la correzione dell'errore segnalato. In alcuni casi, dopo aver analizzato la risposta dell'AI, gli abbiamo messi come falsi positivi</li>
+
+  <li><strong>Il diff di ogni correzione.</strong> Ogni correzione è separata dalle altre e indica il criterio WCAG; abbiamo controllato che toccasse solo i file attesi.</li>
+<li><strong>Le pagine.</strong> Dopo ogni correzione le pagine sono state confrontate con una copia presa prima della modifica: cambiano solo le righe attese.</li>
+<li><strong>Segnalazioni non confermate.</strong> Le abbiamo mantenute con la loro motivazione invece di «aggiustare» il punteggio (§6). Una classificazione del primo ciclo (2.4.7) è stata rivista ed è dichiarata.</li>
+<li><strong>Scelte non delegate.</strong> Il sito da analizzare non era indicato nel prompt del loop: è stata usata l'anteprima del branch, che abbiamo tenuto perché è la versione su cui correggiamo. I nuovi colori dell'anello sono una proposta da confermare (§6).</li>
+</ul>
+
+</section>
+
+<!-- ============================================================ A -->
+<section aria-labelledby="sa">
+<h2 id="sa"><span class="num">A</span>Appendice A · Risultati per pagina</h2>
+<p class="piccolo">MAUVE++: accessibilità (%), completezza (%) e criteri segnalati. I nomi delle pagine sono indicati senza l'estensione <code>.html</code>.</p>
+<div class="tabella compatta">
+<table>
+<caption><b>Tabella A1.</b> Le 50 pagine.</caption>
+<thead><tr><th scope="col">Pagina</th><th scope="col" class="n">Accessibilità</th><th scope="col" class="n">Completezza</th><th scope="col" class="n">Criteri</th><th scope="col" class="n">AChecker</th><th scope="col" class="n">Lighth.</th></tr></thead>
+<tbody>
+<!--APPENDICE_A:INIZIO-->
+<tr><th scope="row"><code>404</code></th><td class="n">91%</td><td class="n">88%</td><td class="n">6</td><td class="n">2/64</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>accessibilita</code></th><td class="n">91%</td><td class="n">89%</td><td class="n">6</td><td class="n">2/55</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>candidatura</code></th><td class="n">92%</td><td class="n">85%</td><td class="n">8</td><td class="n">2/92</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>cerca</code></th><td class="n">91%</td><td class="n">88%</td><td class="n">6</td><td class="n">2/72</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>chi-siamo</code></th><td class="n">94%</td><td class="n">92%</td><td class="n">6</td><td class="n">2/88</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>collabora</code></th><td class="n">92%</td><td class="n">85%</td><td class="n">8</td><td class="n">2/86</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>come-funziona</code></th><td class="n">94%</td><td class="n">91%</td><td class="n">6</td><td class="n">2/83</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>contatti</code></th><td class="n">91%</td><td class="n">87%</td><td class="n">8</td><td class="n">2/76</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>donazione-conferma</code></th><td class="n">89%</td><td class="n">87%</td><td class="n">6</td><td class="n">2/58</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>donazione</code></th><td class="n">95%</td><td class="n">88%</td><td class="n">6</td><td class="n">2/117</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>faq</code></th><td class="n">96%</td><td class="n">84%</td><td class="n">6</td><td class="n">2/83</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>index</code></th><td class="n">89%</td><td class="n">86%</td><td class="n">6</td><td class="n">2/111</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetti</code></th><td class="n">90%</td><td class="n">84%</td><td class="n">8</td><td class="n">2/146</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetto-alveari-sani</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3/108</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetto-aria-aperta</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3/105</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetto-clima-giovani</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3/106</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetto-dialetti-archivio</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/89</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetto-matematica-accessibile</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/90</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetto-neonati-virus</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3/106</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetto-plastica-batteri</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/90</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetto-rifugi-frane</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/88</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetto-robot-anziani</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/89</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetto-scienza-doposcuola</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/89</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>programma</code></th><td class="n">94%</td><td class="n">92%</td><td class="n">6</td><td class="n">3/84</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>proponi</code></th><td class="n">94%</td><td class="n">93%</td><td class="n">6</td><td class="n">2/101</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/404</code></th><td class="n">91%</td><td class="n">88%</td><td class="n">6</td><td class="n">2/62</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/accessibilita</code></th><td class="n">91%</td><td class="n">89%</td><td class="n">6</td><td class="n">2/56</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/candidatura</code></th><td class="n">92%</td><td class="n">85%</td><td class="n">8</td><td class="n">2/93</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/cerca</code></th><td class="n">91%</td><td class="n">88%</td><td class="n">6</td><td class="n">2/73</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/chi-siamo</code></th><td class="n">94%</td><td class="n">92%</td><td class="n">6</td><td class="n">2/89</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/collabora</code></th><td class="n">92%</td><td class="n">85%</td><td class="n">8</td><td class="n">2/87</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/come-funziona</code></th><td class="n">94%</td><td class="n">91%</td><td class="n">6</td><td class="n">2/84</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/contatti</code></th><td class="n">91%</td><td class="n">87%</td><td class="n">8</td><td class="n">2/77</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/donazione-conferma</code></th><td class="n">89%</td><td class="n">87%</td><td class="n">6</td><td class="n">2/59</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/donazione</code></th><td class="n">95%</td><td class="n">88%</td><td class="n">6</td><td class="n">2/118</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/faq</code></th><td class="n">96%</td><td class="n">84%</td><td class="n">6</td><td class="n">2/84</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/index</code></th><td class="n">89%</td><td class="n">86%</td><td class="n">6</td><td class="n">2/112</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetti</code></th><td class="n">90%</td><td class="n">84%</td><td class="n">8</td><td class="n">2/147</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetto-alveari-sani</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3/109</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetto-aria-aperta</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3/106</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetto-clima-giovani</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3/107</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetto-dialetti-archivio</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/90</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetto-matematica-accessibile</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/91</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetto-neonati-virus</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3/107</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetto-plastica-batteri</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/91</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetto-rifugi-frane</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/89</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetto-robot-anziani</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/90</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetto-scienza-doposcuola</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/90</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/programma</code></th><td class="n">94%</td><td class="n">92%</td><td class="n">6</td><td class="n">3/85</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/proponi</code></th><td class="n">94%</td><td class="n">93%</td><td class="n">6</td><td class="n">2/102</td><td class="n">100</td></tr>
+<!--APPENDICE_A:FINE-->
+</tbody>
+</table>
+</div>
+</section>
+</main>
+</body>
+</html>

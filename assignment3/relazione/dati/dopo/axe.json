@@ -1,0 +1,519 @@
+{
+  "data": "2026-11-12T09:37:48.759Z",
+  "tot": {
+    "pagine": 50,
+    "errori_js": 0,
+    "h1_non_1": 0,
+    "overflow": 0,
+    "titoli_lunghi": 0,
+    "axe": {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 0,
+      "minor": 0
+    }
+  },
+  "duplicati": [],
+  "risultati": [
+    {
+      "pagina": "404.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Pagina non trovata – ideaBlume",
+      "lunghezza_titolo": 30,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "accessibilita.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Accessibilità – ideaBlume",
+      "lunghezza_titolo": 25,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "candidatura.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Candidatura al programma – ideaBlume",
+      "lunghezza_titolo": 36,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "cerca.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "1 progetto per «api» – ideaBlume",
+      "lunghezza_titolo": 32,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "chi-siamo.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Chi siamo – ideaBlume",
+      "lunghezza_titolo": 21,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "collabora.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Proponi una collaborazione – ideaBlume",
+      "lunghezza_titolo": 38,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "come-funziona.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Come funziona – ideaBlume",
+      "lunghezza_titolo": 25,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "contatti.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Contatti – ideaBlume",
+      "lunghezza_titolo": 20,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "donazione-conferma.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Donazione completata – ideaBlume",
+      "lunghezza_titolo": 32,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "donazione.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Donazione a Alveari sani – ideaBlume",
+      "lunghezza_titolo": 36,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/404.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Page not found – ideaBlume",
+      "lunghezza_titolo": 26,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/accessibilita.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Accessibility – ideaBlume",
+      "lunghezza_titolo": 25,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/candidatura.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Apply to the programme – ideaBlume",
+      "lunghezza_titolo": 34,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/cerca.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "1 project for “api” – ideaBlume",
+      "lunghezza_titolo": 31,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/chi-siamo.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "About us – ideaBlume",
+      "lunghezza_titolo": 20,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/collabora.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Propose a partnership – ideaBlume",
+      "lunghezza_titolo": 33,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/come-funziona.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "How it works – ideaBlume",
+      "lunghezza_titolo": 24,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/contatti.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Contact – ideaBlume",
+      "lunghezza_titolo": 19,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/donazione-conferma.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Donation completed – ideaBlume",
+      "lunghezza_titolo": 30,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/donazione.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Donation to Healthy hives – ideaBlume",
+      "lunghezza_titolo": 37,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/faq.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Frequently asked questions – ideaBlume",
+      "lunghezza_titolo": 38,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/index.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Support research at the University of Turin – ideaBlume",
+      "lunghezza_titolo": 55,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/progetti.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Research projects – ideaBlume",
+      "lunghezza_titolo": 29,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/progetto-alveari-sani.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Healthy hives – ideaBlume",
+      "lunghezza_titolo": 25,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/progetto-aria-aperta.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Open air – ideaBlume",
+      "lunghezza_titolo": 20,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/progetto-clima-giovani.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Climate and wellbeing – ideaBlume",
+      "lunghezza_titolo": 33,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/progetto-dialetti-archivio.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Dialect archive – ideaBlume",
+      "lunghezza_titolo": 27,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/progetto-matematica-accessibile.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Accessible maths – ideaBlume",
+      "lunghezza_titolo": 28,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/progetto-neonati-virus.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Newborns and viruses – ideaBlume",
+      "lunghezza_titolo": 32,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/progetto-plastica-batteri.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Bacteria and microplastics – ideaBlume",
+      "lunghezza_titolo": 38,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/progetto-rifugi-frane.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Landslides and huts – ideaBlume",
+      "lunghezza_titolo": 31,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/progetto-robot-anziani.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Social robots – ideaBlume",
+      "lunghezza_titolo": 25,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/progetto-scienza-doposcuola.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Science after school – ideaBlume",
+      "lunghezza_titolo": 32,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/programma.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "University programme – ideaBlume",
+      "lunghezza_titolo": 32,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "en/proponi.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Propose a project – ideaBlume",
+      "lunghezza_titolo": 29,
+      "lang": "en",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "faq.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Domande frequenti – ideaBlume",
+      "lunghezza_titolo": 29,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "index.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Sostieni la ricerca dell'Università di Torino – ideaBlume",
+      "lunghezza_titolo": 57,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "progetti.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Progetti di ricerca – ideaBlume",
+      "lunghezza_titolo": 31,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "progetto-alveari-sani.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Alveari sani – ideaBlume",
+      "lunghezza_titolo": 24,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "progetto-aria-aperta.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Aria aperta – ideaBlume",
+      "lunghezza_titolo": 23,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "progetto-clima-giovani.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Clima e benessere – ideaBlume",
+      "lunghezza_titolo": 29,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "progetto-dialetti-archivio.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Archivio dei dialetti – ideaBlume",
+      "lunghezza_titolo": 33,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "progetto-matematica-accessibile.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Matematica accessibile – ideaBlume",
+      "lunghezza_titolo": 34,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "progetto-neonati-virus.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Neonati e virus – ideaBlume",
+      "lunghezza_titolo": 27,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "progetto-plastica-batteri.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Batteri e microplastiche – ideaBlume",
+      "lunghezza_titolo": 36,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "progetto-rifugi-frane.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Frane e rifugi – ideaBlume",
+      "lunghezza_titolo": 26,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "progetto-robot-anziani.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Robot sociali – ideaBlume",
+      "lunghezza_titolo": 25,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "progetto-scienza-doposcuola.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Scienza nei doposcuola – ideaBlume",
+      "lunghezza_titolo": 34,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "programma.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Il programma dell'Ateneo – ideaBlume",
+      "lunghezza_titolo": 36,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    },
+    {
+      "pagina": "proponi.html",
+      "errori": [],
+      "h1": 1,
+      "titolo": "Proponi un progetto – ideaBlume",
+      "lunghezza_titolo": 31,
+      "lang": "it",
+      "overflow320": 0,
+      "axe": []
+    }
+  ]
+}

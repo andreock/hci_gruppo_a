@@ -1,0 +1,40 @@
+
+/private/tmp/a11y-prima/assignment2/website/candidatura.html
+  41:80  error  <h2> cannot be empty, must have text content  empty-heading
+
+/private/tmp/a11y-prima/assignment2/website/cerca.html
+  55:34  error  Landmarks must have a non-empty and unique accessible name (aria-label or aria-labelledby)  unique-landmark
+  55:62  error  <h2> cannot be empty, must have text content                                                empty-heading
+
+/private/tmp/a11y-prima/assignment2/website/collabora.html
+  42:80  error  <h2> cannot be empty, must have text content  empty-heading
+
+/private/tmp/a11y-prima/assignment2/website/contatti.html
+  46:80  error  <h3> cannot be empty, must have text content  empty-heading
+
+/private/tmp/a11y-prima/assignment2/website/donazione.html
+  51:82  error  <h2> cannot be empty, must have text content  empty-heading
+
+/private/tmp/a11y-prima/assignment2/website/en/candidatura.html
+  41:80  error  <h2> cannot be empty, must have text content  empty-heading
+
+/private/tmp/a11y-prima/assignment2/website/en/cerca.html
+  55:34  error  Landmarks must have a non-empty and unique accessible name (aria-label or aria-labelledby)  unique-landmark
+  55:62  error  <h2> cannot be empty, must have text content                                                empty-heading
+
+/private/tmp/a11y-prima/assignment2/website/en/collabora.html
+  42:80  error  <h2> cannot be empty, must have text content  empty-heading
+
+/private/tmp/a11y-prima/assignment2/website/en/contatti.html
+  46:80  error  <h3> cannot be empty, must have text content  empty-heading
+
+/private/tmp/a11y-prima/assignment2/website/en/donazione.html
+  51:82  error  <h2> cannot be empty, must have text content  empty-heading
+
+✖ 12 problems (12 errors, 0 warnings)
+
+More information:
+  https://html-validate.org/rules/empty-heading.html
+  https://html-validate.org/rules/unique-landmark.html
+
+exit=1

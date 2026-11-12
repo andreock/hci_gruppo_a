@@ -1,0 +1,11 @@
+overflow: nessuno
+zoom: [{"nome":"progetto","ov":0},{"nome":"donazione","ov":0},{"nome":"progetti","ov":0}]
+home 44 
+progetti 44 
+progetto 44 
+donazione 44 
+programma 44 
+faq 44 
+proponi 44 
+home-en 44 
+exit=0

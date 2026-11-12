@@ -1,0 +1,9 @@
+OK  file:// · i filtri si applicano dalla URL
+OK  file:// · la ricerca funziona
+OK  file:// · la donazione si apre con il progetto
+OK  file:// · si passa al passo 2 (history.pushState)
+OK  file:// · i dati restano tornando avanti e indietro (sessionStorage)
+OK  file:// · versione inglese e FAQ aperta da ancora
+OK  file:// · le date relative sono ricalcolate
+OK  file:// · nessun errore JavaScript
+exit=0

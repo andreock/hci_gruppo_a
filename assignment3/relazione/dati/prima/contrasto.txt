@@ -1,0 +1,4 @@
+  NO  [chiaro] focus-skip su page: 1.65 < 3.0 (Anello di focus del link «Salta al contenuto» sullo sfondo della pagina)
+  NO  [scuro] focus-skip su page: 2.83 < 3.0 (Anello di focus del link «Salta al contenuto» sullo sfondo della pagina)
+91 coppie × 2 temi, 2 sotto soglia -> docs/verifiche/contrasti.md
+exit=1

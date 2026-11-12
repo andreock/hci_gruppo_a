@@ -1,0 +1,11 @@
+overflow: nessuno
+zoom: [{"nome":"progetto","ov":0},{"nome":"donazione","ov":0},{"nome":"progetti","ov":0}]
+home 44 
+progetti 44 
+progetto 44 
+donazione 44 
+programma 44 
+faq 44 
+proponi 44 a «Leggi i requisiti del programma» 263×21 | a «Vai al modulo di candidatura» 241×21 | a «Le fasi del programma» 190×21 | a «Come funziona il raddoppio» 235×21 | a «Vai al modulo di collaborazione» 264×21 | a «Leggi il progetto dei doposcuola» 274×21
+home-en 44 
+exit=0

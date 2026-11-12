@@ -1,0 +1,109 @@
+OK  Il primo Tab porta a «Salta al contenuto»
+OK  Il campo di ricerca della home è raggiungibile da tastiera
+OK  La ricerca «api» trova il progetto sulle api (per inizio di parola, non «capire») · 1 progetto per «api»
+OK  Il risultato «Alveari sani» si raggiunge con Tab (link con nome significativo) · Alveari sani: monitorare la salute delle api del Piemonte
+OK  «Sostieni il progetto» si raggiunge da tastiera
+OK  La spiegazione «tutto o niente» si apre con Invio
+OK  La spiegazione si chiude con Esc
+OK  La donazione si apre con il progetto nella URL
+OK  Indicatore dei passi: passo 1 di 5
+OK  Importo sotto il minimo: errore in linea quando si lascia il campo · L'importo minimo è € 5: scrivi 5 o più.
+OK  Il campo con errore ha aria-invalid e aria-describedby
+OK  L'errore sparisce appena l'importo è corretto
+OK  Invio porta al passo 2 e il focus va al titolo del passo
+OK  Il riepilogo mostra 20 €
+OK  Con un errore compare il riepilogo in testa e riceve il focus
+OK  Il riepilogo contiene il link al campo Email
+OK  Il campo email usa type=email e autocomplete=email
+OK  Nessuna scelta di visibilità preselezionata
+OK  Con Indietro del browser si torna al passo 2 e i dati sono ancora lì
+OK  Anche dopo aver ricaricato la pagina i dati restano
+OK  La commissione è mostrata accanto al metodo
+OK  Il riepilogo finale mostra commissione e totale prima della conferma · ProgettoAlveari sani: monitorare la salute delle api del PiemonteRicompensaDonazione liberaDonazione€ 20Commissione del pagamento€ 0,71Totale€ 20,71Metodo di pa
+OK  Nessun campo per numeri di carta
+OK  La conferma mostra il codice di riferimento
+OK  Il filtro aggiorna la URL
+OK  Il conteggio dice quanti progetti sono mostrati · Mostrati 6 di 10 progetti
+OK  Tornando indietro i filtri restano
+OK  Tornando indietro la posizione nella pagina resta · 900 → 900
+OK  Una URL filtrata condivisa mostra solo le campagne in corso con obiettivo raggiunto
+OK  Con filtri senza risultati compare un messaggio con alternative
+OK  Ricerca senza risultati: messaggio e suggerimenti
+OK  La ricerca tollera singolare e plurale («veterinaria» trova Scienze Veterinarie)
+OK  La ricerca trova anche la pagina del programma
+OK  A menu chiuso le voci non sono raggiungibili
+OK  Invio apre il menu e aria-expanded diventa true
+OK  Esc chiude il menu e il focus torna al pulsante
+OK  Il pulsante del menu misura almeno 44×44 px · 48×44
+OK  Aprendo faq.html#faq-tutto-o-niente la risposta è aperta
+OK  La ricerca nelle FAQ filtra e annuncia il numero
+OK  In inglese l'errore sull'importo è in inglese
+OK  Il selettore di lingua porta alla stessa pagina in inglese con gli stessi filtri
+OK  La pagina inglese ha lang=en
+OK  Campagna conclusa: nessun link per donare né campo importo
+OK  Campagna conclusa: stato scritto in testo
+OK  Donazione su campagna conclusa aperta da URL: spiegazione invece del modulo
+OK  Donazione senza progetto: spiegazione e link, nessun reindirizzamento
+OK  «Scrivi al gruppo» mostra subito un indicatore di invio
+OK  …poi una conferma con i tempi di risposta
+OK  Candidatura vuota: riepilogo errori
+OK  I consensi sono caselle di spunta native
+OK  Spuntando il consenso l'errore sparisce
+OK  Senza una scelta salvata il tema è chiaro, anche con il sistema in scuro · rgb(251, 246, 238)
+OK  L'interruttore dice verso quale tema si passa · Passa a:
+Tema scuro
+OK  Da tastiera si passa al tema scuro · rgb(28, 20, 18)
+OK  Il pulsante propone ora il tema chiaro · Passa a:
+Tema chiaro
+OK  Il colore della barra del browser segue il tema
+OK  La scelta resta valida cambiando pagina
+OK  La scelta resta valida cambiando lingua
+OK  Il tema scuro scelto resta valido dopo aver ricaricato la pagina
+OK  Si può tornare al tema chiaro e la scelta resta · rgb(251, 246, 238)
+OK  Senza JavaScript il tema è chiaro e l'interruttore è nascosto · rgb(251, 246, 238)
+OK  A 320 px marchio, lingua, tema e menu stanno su una riga · [12,12,12,12]
+OK  A 320 px l'interruttore del tema è largo e alto almeno 44 px · 44×44
+OK  A 375 px marchio, lingua, tema e menu stanno su una riga · [12,12,12,12]
+OK  A 375 px l'interruttore del tema è largo e alto almeno 44 px · 44×44
+OK  Nessun campo di ricerca nell'intestazione
+OK  L'ordine del menu è quello richiesto
+OK  La didascalia è visibile nell'elenco completo
+OK  Ordinare non nasconde la didascalia
+OK  La ricerca nei filtri riduce l'elenco e va nella URL · Mostrati 1 di 10 progetti
+OK  Con la ricerca la didascalia sparisce
+OK  Ricerca e filtri si combinano
+OK  «Azzera i filtri» svuota anche la ricerca e riporta la didascalia
+OK  Le parole dell'ex glossario sono nelle FAQ, con un'ancora che apre la voce
+OK  La ricerca nelle FAQ trova anche le parole
+OK  Durante la ricerca l'indice delle FAQ è nascosto
+OK  Svuotando la ricerca l'indice delle FAQ torna
+OK  chi-siamo.html: «In questa pagina» presente e ogni voce porta a una sezione · 6 voci
+OK  proponi.html: «In questa pagina» presente e ogni voce porta a una sezione · 7 voci
+OK  faq.html: «In questa pagina» presente e ogni voce porta a una sezione · 5 voci
+OK  en/chi-siamo.html: «In questa pagina» presente e ogni voce porta a una sezione · 6 voci
+OK  en/proponi.html: «In questa pagina» presente e ogni voce porta a una sezione · 7 voci
+OK  en/faq.html: «In questa pagina» presente e ogni voce porta a una sezione · 5 voci
+OK  La descrizione del progetto è divisa con sottotitoli
+OK  Il riquadro «tutto o niente» rimanda alle FAQ
+OK  Nessun link al glossario nel piè di pagina
+OK  Proponi: i due riquadri hanno la stessa altezza · [{"alto":366,"pulsante":786},{"alto":366,"pulsante":859}]
+NO  Proponi: i pulsanti dei due riquadri sono allineati
+OK  Proponi: c'è la sezione per i gruppi con una campagna in corso
+OK  Come funziona: la sezione per i gruppi non c'è più e il passo rimanda a Proponi
+OK  Progetto: gruppo, sede e responsabile hanno ciascuno un'etichetta · Gruppo di ricerca / Sede / Responsabile scientifica
+OK  Progetto: le etichette in alto non hanno puntini di separazione
+OK  progetti.html: nessuna frase introduttiva sotto il titolo
+OK  chi-siamo.html: nessuna frase introduttiva sotto il titolo
+OK  come-funziona.html: nessuna frase introduttiva sotto il titolo
+OK  programma.html: nessuna frase introduttiva sotto il titolo
+OK  proponi.html: nessuna frase introduttiva sotto il titolo
+OK  faq.html: nessuna frase introduttiva sotto il titolo
+OK  contatti.html: nessuna frase introduttiva sotto il titolo
+OK  La home dice ancora che cos'è il sito e chi lo gestisce
+OK  L'elenco mostra 10 progetti, 4 in corso e 6 conclusi
+OK  La pagina di un progetto tolto non esiste più
+OK  «Sfoglia per tema» non propone temi senza progetti
+OK  Inglese allineato all'italiano nel programma
+OK  Nessun errore JavaScript durante i percorsi
+
+104/105 superati

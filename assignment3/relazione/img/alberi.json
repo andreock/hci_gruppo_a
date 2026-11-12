@@ -1,0 +1,88 @@
+{
+ "logo_prima": "- link \"ideaBlume, vai alla home\":\n  - /url: index.html\n  - text: ideaBlume Il crowdfunding per la ricerca dell'Università di Torino",
+ "logo_nome_prima": {
+  "aria_label": "ideaBlume, vai alla home",
+  "testo": "ideaBlumeIl crowdfunding per la ricerca dell'Università di Torino"
+ },
+ "bersaglio_prima": [
+  [
+   "Leggi i requisiti del programma",
+   263,
+   21
+  ],
+  [
+   "Vai al modulo di candidatura",
+   241,
+   21
+  ],
+  [
+   "Le fasi del programma",
+   190,
+   21
+  ],
+  [
+   "Come funziona il raddoppio",
+   235,
+   21
+  ],
+  [
+   "Vai al modulo di collaborazione",
+   264,
+   21
+  ],
+  [
+   "Leggi il progetto dei doposcuola",
+   274,
+   21
+  ]
+ ],
+ "cerca_prima": "- main:\n  - heading \"Cerca un progetto\" [level=1]\n  - paragraph: Cerca nei titoli, nelle descrizioni, nei temi e nei dipartimenti.\n  - search:\n    - text: Cerca un progetto\n    - searchbox \"Cerca un progetto\": api\n    - button \"Cerca\"\n  - status: 1 progetto per «api»\n  - list:\n    - listitem:\n      - article:\n        - paragraph: Animali Anno 2026 Programma dell'Ateneo\n        - 'heading \"Alveari sani: monitorare la salute delle api del Piemonte\" [level=3]':\n          - 'link \"Alveari sani: monitorare la salute delle api del Piemonte\"':\n            - /url: progetto-alveari-sani.html\n        - paragraph:\n          - strong: Gruppo ApiLab\n          - text: Dipartimento di Scienze Veterinarie, Università di Torino\n        - paragraph:\n          - text: Obiettivo raggiunto · puoi ancora sostenerlo per 20 giorni (scade il\n          - time: 02/12/2026\n          - text: )\n        - paragraph:\n          - strong: € 7.800\n          - text: raccolti su € 6.000 (130%) · 142 sostenitori",
+ "cerca_heading_prima": {
+  "role": "status",
+  "parentRole": null,
+  "testo": "1 progetto per «api»"
+ },
+ "logo_dopo": "- link \"ideaBlume Il crowdfunding per la ricerca dell'Università di Torino — vai alla home\":\n  - /url: index.html",
+ "logo_nome_dopo": {
+  "aria_label": null,
+  "testo": "ideaBlumeIl crowdfunding per la ricerca dell'Università di Torino — vai alla home"
+ },
+ "bersaglio_dopo": [
+  [
+   "Leggi i requisiti del programma",
+   263,
+   29
+  ],
+  [
+   "Vai al modulo di candidatura",
+   241,
+   29
+  ],
+  [
+   "Le fasi del programma",
+   190,
+   29
+  ],
+  [
+   "Come funziona il raddoppio",
+   235,
+   29
+  ],
+  [
+   "Vai al modulo di collaborazione",
+   264,
+   29
+  ],
+  [
+   "Leggi il progetto dei doposcuola",
+   274,
+   29
+  ]
+ ],
+ "cerca_dopo": "- main:\n  - heading \"Cerca un progetto\" [level=1]\n  - paragraph: Cerca nei titoli, nelle descrizioni, nei temi e nei dipartimenti.\n  - search \"Cerca un progetto\":\n    - text: Cerca un progetto\n    - searchbox \"Cerca un progetto\": api\n    - button \"Cerca\"\n  - status:\n    - heading \"1 progetto per «api»\" [level=2]\n  - list:\n    - listitem:\n      - article:\n        - paragraph: Animali Anno 2026 Programma dell'Ateneo\n        - 'heading \"Alveari sani: monitorare la salute delle api del Piemonte\" [level=3]':\n          - 'link \"Alveari sani: monitorare la salute delle api del Piemonte\"':\n            - /url: progetto-alveari-sani.html\n        - paragraph:\n          - strong: Gruppo ApiLab\n          - text: Dipartimento di Scienze Veterinarie, Università di Torino\n        - paragraph:\n          - text: Obiettivo raggiunto · puoi ancora sostenerlo per 20 giorni (scade il\n          - time: 02/12/2026\n          - text: )\n        - paragraph:\n          - strong: € 7.800\n          - text: raccolti su € 6.000 (130%) · 142 sostenitori",
+ "cerca_heading_dopo": {
+  "role": null,
+  "parentRole": "status",
+  "testo": "1 progetto per «api»"
+ }
+}
