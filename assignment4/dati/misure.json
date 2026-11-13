@@ -1,0 +1,116 @@
+{
+  "prima": {
+    "p1": {
+      "schermo": "375 px",
+      "passo5": {
+        "larghezza_pagina": 416,
+        "valori_fuori_dal_riquadro": 8
+      },
+      "conferma": {
+        "larghezza_pagina": 416,
+        "valori_fuori_dal_riquadro": 8
+      },
+      "passo5_320": {
+        "larghezza_pagina": 416,
+        "valori_fuori_dal_riquadro": 8
+      }
+    },
+    "p7": {
+      "altezza_indicatore_px": 136,
+      "righe_del_titolo": 4,
+      "y_prima_scelta_px": 636
+    },
+    "p5": {
+      "telefono": {
+        "y_prima_scheda_px": 1047,
+        "schede_che_iniziano_nella_prima_schermata": 0,
+        "altezza_schermo_px": 740
+      },
+      "computer": {
+        "y_prima_scheda_px": 758,
+        "schede_che_iniziano_nella_prima_schermata": 3,
+        "altezza_schermo_px": 800
+      }
+    },
+    "p4": {
+      "dove": "in coda alla riga delle cifre",
+      "corpo_px": 15,
+      "peso": 400,
+      "tra_parentesi": true
+    },
+    "p3": {
+      "frase_sulla_restituzione_visibile_senza_clic": false,
+      "clic_necessari": 1
+    },
+    "p2": {
+      "passo_in_cui_si_legge_il_totale": 5,
+      "passo_in_cui_si_legge_la_commissione": 4
+    },
+    "p8": {
+      "errore_email_vuota": "Compila questo campo.",
+      "errore_nome_vuoto": "Scrivi il tuo nome."
+    },
+    "p6": {
+      "candidatura_rimanda_alla_collaborazione": false,
+      "collaborazione_rimanda_alla_candidatura": false,
+      "contatti_suggerisce_i_moduli": false
+    }
+  },
+  "dopo": {
+    "p1": {
+      "schermo": "375 px",
+      "passo5": {
+        "larghezza_pagina": 375,
+        "valori_fuori_dal_riquadro": 0
+      },
+      "conferma": {
+        "larghezza_pagina": 375,
+        "valori_fuori_dal_riquadro": 0
+      },
+      "passo5_320": {
+        "larghezza_pagina": 320,
+        "valori_fuori_dal_riquadro": 0
+      }
+    },
+    "p7": {
+      "altezza_indicatore_px": 40,
+      "righe_del_titolo": 2,
+      "y_prima_scelta_px": 607
+    },
+    "p5": {
+      "telefono": {
+        "y_prima_scheda_px": 583,
+        "schede_che_iniziano_nella_prima_schermata": 1,
+        "altezza_schermo_px": 740
+      },
+      "computer": {
+        "y_prima_scheda_px": 577,
+        "schede_che_iniziano_nella_prima_schermata": 3,
+        "altezza_schermo_px": 800
+      }
+    },
+    "p4": {
+      "dove": "accanto alla barra",
+      "corpo_px": 18,
+      "peso": 700,
+      "tra_parentesi": false
+    },
+    "p3": {
+      "frase_sulla_restituzione_visibile_senza_clic": true,
+      "clic_necessari": 0
+    },
+    "p2": {
+      "passo_in_cui_si_legge_il_totale": 1,
+      "passo_in_cui_si_legge_la_commissione": 1
+    },
+    "p8": {
+      "errore_email_vuota": "Scrivi la tua email.",
+      "errore_nome_vuoto": "Scrivi il tuo nome."
+    },
+    "p6": {
+      "candidatura_rimanda_alla_collaborazione": true,
+      "collaborazione_rimanda_alla_candidatura": true,
+      "contatti_suggerisce_i_moduli": true
+    }
+  }
+}

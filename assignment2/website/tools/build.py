@@ -164,6 +164,12 @@ def progress(p):
     return f'<div class="progress" aria-hidden="true"><div class="progress__bar" style="width:{w:.0f}%"></div></div>'
 
 
+def progress_card(p, lang):
+    """Barra con la percentuale in evidenza: nelle schede le campagne si confrontano a colpo d'occhio (assignment 4, P4)."""
+    return (f'<div class="card__progress">{progress(p)}<p class="card__perc"><strong>{perc(p["_"]["perc"])}</strong>'
+            f'<span class="vh"> {E(t(lang, "card.perc_of_goal"))}</span></p></div>')
+
+
 def url_progetto(p):
     return f'progetto-{p["slug"]}.html'
 
@@ -189,8 +195,8 @@ def card(p, lang, prefix, h="h3", li=True, cls=""):
     <{h} class="card__title"><a href="{url_progetto(p)}">{E(p["titolo"][lang])}</a></{h}>
     <p class="card__org">{org(p, lang)}</p>
     <p>{stato_html(p, lang)}</p>
-    {progress(p)}
-    <p class="card__figures">{fmt(t(lang, "card.raised"), lang, raccolto=euro(p["raccolto"], lang), obiettivo=euro(p["obiettivo"], lang), perc=perc(c["perc"]))} · {fmt(t(lang, "card.supporters"), lang, n=c["sostenitori"])}</p>
+    {progress_card(p, lang)}
+    <p class="card__figures">{fmt(t(lang, "card.raised"), lang, raccolto=euro(p["raccolto"], lang), obiettivo=euro(p["obiettivo"], lang))} · {fmt(t(lang, "card.supporters"), lang, n=c["sostenitori"])}</p>
   </div>
 </article></li>'''
 
@@ -531,18 +537,21 @@ def pg_progetti(lang):
 </div>
 <form class="filters" action="progetti.html" method="get" aria-labelledby="h-filtri" data-filtri>
   <h2 id="h-filtri" class="vh">{E(g("filters_title"))}</h2>
-  <div class="field filters__search"><label for="f-q">{E(t(lang, "common.search_label"))}</label>
-    <input id="f-q" name="q" type="search" placeholder="{E(t(lang, "common.search_placeholder"))}" autocomplete="off"></div>
-  <div class="filters__grid">
+  <div class="filters__top">
+    <div class="field filters__search"><label for="f-q">{E(t(lang, "common.search_label"))}</label>
+      <input id="f-q" name="q" type="search" placeholder="{E(t(lang, "common.search_placeholder"))}" autocomplete="off"></div>
+    {ordina}
+  </div>
+  <p class="filters__toggle js-only"><button class="btn btn--secondary btn--small" type="button" aria-expanded="false" aria-controls="filtri-altri" data-filtri-toggle>{E(g("toggle"))}<span data-filtri-attivi></span></button></p>
+  <div class="filters__grid" id="filtri-altri">
     {opzioni("stato", g("f_stato"), [("in-corso", g("f_stato_open")), ("raggiunto", g("f_stato_reached")), ("conclusi", g("f_stato_closed"))], g("f_stato_all"))}
     {opzioni("categoria", g("f_cat"), [(k, SITO["categorie"][k][lang]) for k in cats], g("f_cat_all"))}
     {opzioni("dip", g("f_dip"), [(k, SITO["dipartimenti"][k][lang]) for k in dips], g("f_dip_all"))}
     {opzioni("anno", g("f_anno"), [(str(a), str(a)) for a in anni], g("f_anno_all"))}
     {opzioni("programma", g("f_prog"), [("si", g("f_prog_si"))], g("f_prog_all"))}
-    {ordina}
+    <p class="btn-row filters__reset"><button class="btn no-js-only" type="submit">{E(g("apply"))}</button>
+    <a class="btn btn--ghost" href="progetti.html" data-reset>{E(g("reset"))}</a></p>
   </div>
-  <p class="btn-row" style="margin-top:1rem"><button class="btn no-js-only" type="submit">{E(g("apply"))}</button>
-  <a class="btn btn--ghost" href="progetti.html" data-reset>{E(g("reset"))}</a></p>
 </form>
 <noscript><p class="alert alert--info">{E(g("noscript"))}</p></noscript>
 <p class="result-count" role="status" aria-live="polite" data-conteggio>{fmt(g("count"), lang, n=len(PROGETTI), tot=len(PROGETTI))}</p>
@@ -593,7 +602,8 @@ def pg_progetto(p, lang):
              f'<dt>{E(g("deadline") if c["aperto"] else g("closed_on"))}</dt><dd>{time_tag(p["scadenza"], lang)}</dd>']
     mancano = f'<p>{fmt(g("missing"), lang, x=e(p["obiettivo"] - p["raccolto"]))}</p>' if not c["raggiunto"] else ""
     if c["aperto"]:
-        azione = f'<p><a class="btn btn--cta btn--block" href="donazione.html?progetto={p["slug"]}">{E(g("support"))}</a></p>'
+        azione = (f'<p><a class="btn btn--cta btn--block" href="donazione.html?progetto={p["slug"]}">{E(g("support"))}</a></p>'
+                  f'<p class="statusbox__note">{fmt(g("refund_reached" if c["raggiunto"] else "refund_open"), lang)}</p>')
     else:
         azione = (f'<div class="alert alert--info"><h2>{fmt(g("closed_title"), lang, data=time_tag(p["scadenza"], lang))}</h2>'
                   f'<p>{E(p["esito"][lang])}</p></div>'
@@ -768,7 +778,7 @@ def pg_donazione(lang):
     passi = "".join(f'<li data-passo-ind="{i + 1}">{E(s)}</li>' for i, s in enumerate(g("steps")))
     metodi = "".join(
         f'''<label class="choice" for="m-{m["id"]}"><input id="m-{m["id"]}" type="radio" name="metodo" value="{m["id"]}" required>
-        <span class="choice__text">{E(m["nome"][lang])}<small>{E(m["dopo"][lang])}</small><small data-commissione="{m["id"]}"></small></span></label>'''
+        <span class="choice__text">{E(m["nome"][lang])}<small>{E(m["dopo"][lang])}</small><small class="choice__costo" data-commissione="{m["id"]}"></small></span></label>'''
         for m in SITO["metodi_pagamento"])
     nav = lambda primo=False, ultimo=False: (
         f'<p class="btn-row don-nav">'
@@ -778,16 +788,19 @@ def pg_donazione(lang):
     corpo = f'''<h1 data-don-titolo>{E(g("h1"))}</h1>
 <noscript><p class="alert alert--info">{fmt(g("noscript"), lang)}</p></noscript>
 <div data-don-assente hidden><p class="alert alert--info" data-don-assente-testo></p><p class="btn-row" data-don-assente-azioni></p></div>
-<div data-don-app hidden>
-  <section class="summary" aria-labelledby="h-riepilogo" style="visibility: hidden; display: none;">
-    <h2 id="h-riepilogo" class="small" style="margin:0 0 .5rem">{E(g("summary_title"))}</h2>
-    <dl><dt>{E(g("sum_project"))}</dt><dd data-sum-progetto></dd>
-        <dt>{E(g("sum_reward"))}</dt><dd data-sum-ricompensa></dd>
-        <dt>{E(g("sum_amount"))}</dt><dd data-sum-importo></dd></dl>
-    <p class="small" style="margin:.5rem 0 0"><a href="#" data-modifica>{E(g("edit"))}</a></p>
-  </section>
+<div class="don-app" data-don-app hidden>
   <nav aria-label="{E(g("steps_label"))}"><ol class="steps">{passi}</ol></nav>
   <p class="small muted" data-passo-testo aria-live="polite"></p>
+  <section class="summary summary--don" aria-labelledby="h-riepilogo" data-sum>
+    <h2 id="h-riepilogo">{E(g("summary_title"))}</h2>
+    <dl><div class="summary__extra"><dt>{E(g("sum_project"))}</dt><dd data-sum-progetto></dd></div>
+        <div class="summary__extra"><dt>{E(g("sum_reward"))}</dt><dd data-sum-ricompensa></dd></div>
+        <div><dt>{E(g("sum_amount"))}</dt><dd data-sum-importo></dd></div>
+        <div><dt>{E(g("sum_fee"))}</dt><dd data-sum-fee></dd></div>
+        <div class="total"><dt>{E(g("sum_total"))}</dt><dd data-sum-totale></dd></div></dl>
+    <p class="small summary__note" data-sum-nota></p>
+    <p class="small summary__edit" data-sum-modifica><a href="#" data-modifica>{E(g("edit"))}</a></p>
+  </section>
   <div class="alert alert--error" role="alert" tabindex="-1" data-errori hidden><h2 data-errori-titolo>{E(t(lang, "js.err_title_1"))}</h2><ul data-errori-lista></ul></div>
   <form novalidate data-form="donazione">
     <section data-passo="1" aria-labelledby="h-p1">
@@ -795,7 +808,7 @@ def pg_donazione(lang):
       <fieldset data-gruppo="scelta"><legend>{E(g("s1_legend"))}</legend><div data-scelte></div></fieldset>
       <div class="field" data-campo-importo><label for="importo">{E(g("s1_amount"))}</label><span class="hint" id="importo-h" data-importo-hint></span>
         <div class="input-euro"><span aria-hidden="true">€</span><input id="importo" name="importo" type="text" inputmode="decimal" autocomplete="transaction-amount" required aria-describedby="importo-h"></div></div>
-      <div class="infobox"><p>{fmt(g("s1_rule"), lang)}</p><p data-s1-raddoppio></p></div>
+      <div class="infobox"><p>{fmt(g("s1_rule"), lang)}</p><p data-s1-raddoppio></p><p data-s1-commissione></p></div>
       {nav(primo=True)}
     </section>
     <section data-passo="2" aria-labelledby="h-p2" hidden>
@@ -953,6 +966,7 @@ def pg_candidatura(lang):
     ruoli = [(r, r) for r in g("f_role_opts")]
     dips = sorted(((k, v[lang]) for k, v in SITO["dipartimenti"].items()), key=lambda x: x[1])
     corpo = f'''<h1>{E(g("h1"))}</h1>
+<p class="alert alert--info form-who"><strong>{E(g("who_title"))}.</strong> {fmt(g("who"), lang)}</p>
 <div class="infobox"><h2>{E(g("before_title"))}</h2>{lista(g("before"), lang)}</div>
 <noscript><p class="alert alert--info">{E(t(lang, "common.noscript_generic"))}</p></noscript>
 <div class="alert alert--error" role="alert" tabindex="-1" data-errori hidden><h2 data-errori-titolo>{E(t(lang, "js.err_title_1"))}</h2><ul data-errori-lista></ul></div>
@@ -989,6 +1003,7 @@ def pg_collabora(lang):
     corpo = f'''<h1>{E(g("h1"))}</h1>
 <p class="lead">{E(g("intro"))}</p>
 <p class="alert alert--success">{g("no_commit")}</p>
+<p class="alert alert--info form-who">{fmt(g("who"), lang)}</p>
 <noscript><p class="alert alert--info">{E(t(lang, "common.noscript_generic"))}</p></noscript>
 <div class="alert alert--error" role="alert" tabindex="-1" data-errori hidden><h2 data-errori-titolo>{E(t(lang, "js.err_title_1"))}</h2><ul data-errori-lista></ul></div>
 <form novalidate data-form="collabora" data-salva="ib-collabora">
@@ -1085,6 +1100,7 @@ def pg_contatti(lang):
   {campo("ct-nome", g("f_name"), lang=lang, attrs='autocomplete="name"')}
   {campo("ct-email", g("f_email"), "email", lang=lang, attrs='autocomplete="email" inputmode="email"')}
   {select("ct-argomento", g("f_subject"), sogg, lang, t(lang, "pages.candidatura.f_choose"))}
+  <div aria-live="polite"><p class="alert alert--info form-who" data-argomento-aiuto="{E(g("f_subjects")[1])}" hidden>{fmt(g("subject_tip"), lang)}</p></div>
   {campo("ct-msg", g("f_msg"), lang=lang, tag="textarea")}
   <p><button class="btn" type="submit" data-label-invio="{E(g("f_sending"))}">{E(g("f_send"))}</button></p>
 </form>
@@ -1163,7 +1179,7 @@ def dati_js():
         testi = {"js": t(l, "js"), "status": t(l, "status"), "card": t(l, "card"), "mesi": t(l, "mesi"),
                  "external": t(l, "common.external"),
                  "don": t(l, "pages.donazione"), "conferma": t(l, "pages.conferma"), "cerca": t(l, "pages.cerca"),
-                 "progetti": {k: t(l, "pages.progetti." + k) for k in ("count", "end")}, "faq": {k: t(l, "pages.faq." + k) for k in ("count_n", "count_1", "count_0")},
+                 "progetti": {k: t(l, "pages.progetti." + k) for k in ("count", "end", "active_1", "active_n")}, "faq": {k: t(l, "pages.faq." + k) for k in ("count_n", "count_1", "count_0")},
                  "candidatura": t(l, "pages.candidatura"), "collabora": t(l, "pages.collabora"), "contatti": t(l, "pages.contatti"),
                  "progetto": {k: t(l, "pages.progetto." + k) for k in ("form_sent", "from")}, "ctx": ctx_base(l)}
         (ROOT / f"data/testi-{l}.js").write_text("/* Generato da tools/build.py: non modificare a mano. */\nwindow.IB_TESTI = "

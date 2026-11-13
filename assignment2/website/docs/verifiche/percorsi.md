@@ -1,6 +1,6 @@
 # Percorsi interattivi
 
-Generato da `tools/percorsi.js` il 05/11/2026, 11:51:17 (Playwright + Google Chrome, server statico locale con il sito in una sottocartella).
+Generato da `tools/percorsi.js` il 13/11/2026, 16:02:58 (Playwright + Google Chrome, server statico locale con il sito in una sottocartella).
 
 **105 controlli superati su 105.**
 
@@ -33,7 +33,7 @@ Generato da `tools/percorsi.js` il 05/11/2026, 11:51:17 (Playwright + Google Chr
 | 25 | Il filtro aggiorna la URL | superato |  |
 | 26 | Il conteggio dice quanti progetti sono mostrati | superato | Mostrati 6 di 10 progetti |
 | 27 | Tornando indietro i filtri restano | superato |  |
-| 28 | Tornando indietro la posizione nella pagina resta | superato | 945 → 945 |
+| 28 | Tornando indietro la posizione nella pagina resta | superato | 944 → 944 |
 | 29 | Una URL filtrata condivisa mostra solo le campagne in corso con obiettivo raggiunto | superato |  |
 | 30 | Con filtri senza risultati compare un messaggio con alternative | superato |  |
 | 31 | Ricerca senza risultati: messaggio e suggerimenti | superato |  |

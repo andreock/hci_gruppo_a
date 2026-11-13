@@ -141,7 +141,7 @@
     var v = (el.value || "").trim();
     if (el.type === "checkbox") return el.required && !el.checked ? msg(el.id.indexOf("privacy") >= 0 ? "err_privacy" : "err_consent") : "";
     if (el.type === "radio") return "";
-    if (el.required && !v) return el.tagName === "SELECT" ? msg("err_select") : msg(el.getAttribute("data-err") || "err_required");
+    if (el.required && !v) return el.tagName === "SELECT" ? msg("err_select") : msg(el.getAttribute("data-err") || (el.type === "email" ? "err_email_missing" : "err_required"));
     if (!v) return "";
     if (el.type === "email" && !RE_EMAIL.test(v)) return msg("err_email");
     if (el.type === "tel" && !RE_TEL.test(v)) return msg("err_tel");
@@ -296,6 +296,13 @@
     });
   });
 
+  /* Contatti: chi sceglie «Proporre un progetto» vede subito i moduli dedicati (assignment 4, P6) */
+  var aiutoArg = $("[data-argomento-aiuto]"), selArg = $("#ct-argomento");
+  if (aiutoArg && selArg) {
+    var aggiornaAiuto = function () { aiutoArg.hidden = selArg.value !== aiutoArg.getAttribute("data-argomento-aiuto"); };
+    selArg.addEventListener("change", aggiornaAiuto); aggiornaAiuto();
+  }
+
   /* Scrivi al gruppo: indicatore e conferma immediata (P-039) */
   var apri = $("[data-scrivi-apri]"), scrivi = $("[data-scrivi]");
   if (apri && scrivi) {
@@ -336,8 +343,9 @@
       (p.programma ? '<span class="tag tag--programma">' + esc(I.card.programma) + "</span>" : "") + "</p>" +
       '<h3 class="card__title"><a href="progetto-' + p.slug + '.html">' + esc(p.titolo[LANG]) + "</a></h3>" +
       '<p class="card__org">' + tpl(I.card.org, { gruppo: esc(p.gruppo), dip: esc(dip) }) + "</p><p>" + statoHtml(p, c) + "</p>" +
-      '<div class="progress" aria-hidden="true"><div class="progress__bar" style="width:' + Math.min(100, c.perc).toFixed(0) + '%"></div></div>' +
-      '<p class="card__figures">' + tpl(I.card.raised, { raccolto: euro(p.raccolto), obiettivo: euro(p.obiettivo), perc: Math.round(c.perc) + "%" }) + " · " + tpl(I.card.supporters, { n: c.sost }) + "</p></div></article></li>";
+      '<div class="card__progress"><div class="progress" aria-hidden="true"><div class="progress__bar" style="width:' + Math.min(100, c.perc).toFixed(0) + '%"></div></div>' +
+      '<p class="card__perc"><strong>' + Math.round(c.perc) + '%</strong><span class="vh"> ' + esc(I.card.perc_of_goal) + "</span></p></div>" +
+      '<p class="card__figures">' + tpl(I.card.raised, { raccolto: euro(p.raccolto), obiettivo: euro(p.obiettivo) }) + " · " + tpl(I.card.supporters, { n: c.sost }) + "</p></div></article></li>";
   }
 
   /* ---------- ricerca testuale: la stessa logica per l'elenco dei progetti e per «Cerca» ---------- */
@@ -394,13 +402,21 @@
       nessuno.hidden = vis.length > 0; fine.hidden = vis.length === 0;
       var q = new URLSearchParams(); campi.forEach(function (k) { if (f[k]) q.set(k, f[k]); });
       history.replaceState(history.state, "", location.pathname + (q.toString() ? "?" + q : ""));
+      var attivi = ["stato", "categoria", "dip", "anno", "programma"].filter(function (k) { return f[k]; }).length;
+      if (attiviEl) attiviEl.textContent = attivi ? " · " + (attivi === 1 ? I.progetti.active_1 : tpl(I.progetti.active_n, { n: attivi })) : "";
     };
+    var apriFiltri = $("[data-filtri-toggle]", formFiltri), attiviEl = $("[data-filtri-attivi]", formFiltri);
+    if (apriFiltri) apriFiltri.addEventListener("click", function () {
+      var aperto = formFiltri.classList.toggle("is-open");
+      apriFiltri.setAttribute("aria-expanded", aperto ? "true" : "false");
+      if (aperto) formFiltri.elements.stato.focus();
+    });
     leggi(); applica(false);
     var attesaTesto;
     formFiltri.addEventListener("input", function (e) { if (e.target.name === "q") { clearTimeout(attesaTesto); attesaTesto = setTimeout(function () { applica(true); }, 250); } });
     formFiltri.addEventListener("change", function (e) { if (e.target.name !== "q") applica(true); });
     formFiltri.addEventListener("submit", function (e) { e.preventDefault(); applica(true); });
-    $("[data-reset]", formFiltri).addEventListener("click", function (e) { e.preventDefault(); formFiltri.reset(); campi.forEach(function (k) { formFiltri.elements[k].value = ""; }); applica(true); formFiltri.elements.stato.focus(); });
+    $("[data-reset]", formFiltri).addEventListener("click", function (e) { e.preventDefault(); formFiltri.reset(); campi.forEach(function (k) { formFiltri.elements[k].value = ""; }); applica(true); formFiltri.elements.stato.focus(); if (document.activeElement !== formFiltri.elements.stato) formFiltri.elements.q.focus(); });
     /* la posizione si ripristina solo tornando dal progetto aperto dall'elenco; da ogni altra pagina l'elenco parte dall'inizio */
     var chiave = function () { return "ib-scroll:" + location.pathname + location.search; };
     elenco.addEventListener("click", function (e) { var a = e.target.closest("a"); if (a) store(chiave(), { y: window.scrollY, da: a.pathname }); });
@@ -485,7 +501,8 @@
     if (params.get("ricompensa")) s.scelta = params.get("ricompensa");
     var tot = 5, titoloBreve = p.titolo_breve[LANG];
     document.title = tpl(G.title_project, { titolo: titoloBreve });
-    $("[data-don-titolo]").textContent = tpl(G.h1_project, { titolo: p.titolo[LANG] });
+    /* titolo breve: su telefono il titolo completo occupava 4 righe; quello completo è nel riquadro «La tua donazione» */
+    $("[data-don-titolo]").textContent = tpl(G.h1_project, { titolo: titoloBreve });
     $("[data-torna-progetto]").href = "progetto-" + p.slug + ".html";
     app.hidden = false;
 
@@ -532,13 +549,33 @@
     // riepilogo sempre visibile
     function fee(metodo, x) { var m = D.sito.metodi_pagamento.filter(function (q) { return q.id === metodo; })[0]; return m ? Math.round((x * m.percentuale / 100 + m.fisso) * 100) / 100 : 0; }
     function riepilogo() {
-      var r = scelta(), n = numero(importo.value);
+      var r = scelta(), n = numero(importo.value), valido = !isNaN(n) && n > 0;
+      var met = $("input[name=metodo]:checked", form), metodo = met ? met.value : "";
       $("[data-sum-progetto]").textContent = p.titolo[LANG];
       $("[data-sum-ricompensa]").textContent = r ? (r.id === "libera" ? G.sum_free : r.titolo) : "—";
-      $("[data-sum-importo]").textContent = isNaN(n) ? "—" : euro(n);
+      $("[data-sum-importo]").textContent = valido ? euro(n) : "—";
+      /* commissione: finché il metodo non è scelto si mostra l'intervallo tra il metodo meno caro e il più caro */
+      var tutte = D.sito.metodi_pagamento.map(function (m) { return fee(m.id, valido ? n : 0); });
+      var fMin = Math.min.apply(null, tutte), fMax = Math.max.apply(null, tutte);
+      var intervallo = function (a, b) { return a === b ? euro(a) : tpl(G.sum_range, { min: euro(a), max: euro(b) }); };
+      var nota = $("[data-sum-nota]");
+      if (!valido) {
+        $("[data-sum-fee]").textContent = "—"; $("[data-sum-totale]").textContent = "—"; nota.textContent = G.sum_note_pending;
+      } else if (metodo) {
+        var f0 = fee(metodo, n);
+        $("[data-sum-fee]").textContent = f0 ? euro(f0) : I.js.fee_none;
+        $("[data-sum-totale]").textContent = euro(n + f0);
+        nota.textContent = tpl(G.sum_note_method, { metodo: nomeMetodo(metodo) });
+      } else {
+        $("[data-sum-fee]").textContent = intervallo(fMin, fMax);
+        $("[data-sum-totale]").textContent = intervallo(n + fMin, n + fMax);
+        nota.textContent = G.sum_note_pending;
+      }
+      var s1 = $("[data-s1-commissione]");
+      s1.hidden = !valido; if (valido) s1.innerHTML = tpl(G.s1_fee, { min: euro(fMin), max: euro(fMax) });
       $$("[data-commissione]").forEach(function (el) {
-        var f = fee(el.getAttribute("data-commissione"), isNaN(n) ? 0 : n);
-        el.textContent = f ? tpl(G.s4_fee, { fee: euro(f) }) : G.s4_fee_none;
+        var f = fee(el.getAttribute("data-commissione"), valido ? n : 0);
+        el.innerHTML = esc(f ? tpl(G.s4_fee, { fee: euro(f) }) : G.s4_fee_none) + (valido ? (f ? " · " : " ") + "<strong>" + esc(tpl(G.s4_total, { totale: euro(n + f) })) + "</strong>" : "");
       });
     }
     riepilogo();
@@ -565,6 +602,8 @@
       });
       $("[data-passo-testo]").textContent = tpl(G.step_of, { n: n, tot: tot }) + ": " + G.steps[n - 1];
       box.hidden = true;
+      /* al passo 5 la tabella «Controlla e conferma» contiene già tutto: il riquadro sarebbe un doppione */
+      $("[data-sum]").hidden = n === 5; $("[data-sum-modifica]").hidden = n === 1;
       if (n === 5) revisione();
       if (focus) { var h = $("h2", sezioni[n - 1]); h.setAttribute("tabindex", "-1"); h.focus(); }
     }

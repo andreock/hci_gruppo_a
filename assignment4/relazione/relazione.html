@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test di usabilità del sito ideaBlume · Gruppo A</title>
+<meta name="description" content="Test di usabilità in stile Krug sul prototipo ideaBlume con 8 utenti e 4 task, analisi dei problemi e re-design (Assignment 4)">
+<meta name="author" content="Gruppo A">
+<link rel="stylesheet" href="relazione.css">
+</head>
+<body>
+<!-- File generato da tools/genera.py: modificare modello.html e i CSV in ../dati, non questo file. -->
+<header class="copertina">
+  <div class="copertina__fascia">
+    <p class="copertina__occhiello">Human-Computer Interaction · Assignment 4</p>
+    <h1>Test di usabilità del sito ideaBlume</h1>
+    <p class="copertina__sottotitolo">Otto utenti, quattro task, pensiero ad alta voce: che cosa non ha funzionato e come abbiamo ridisegnato il prototipo</p>
+  </div>
+  <div class="copertina__striscia"></div>
+  <dl class="copertina__dati">
+    <dt>Gruppo</dt><dd>Gruppo A</dd>
+    <dt>Componenti</dt><dd>Andrea Canale · Antonio Fallea · Alexandru Ioan Chindris · Lorenzo Rizzolo</dd>
+    <dt>Corso</dt><dd>Human-Computer Interaction · a.a. 2026/27</dd>
+    <dt>Data</dt><dd><span class="todo">data di consegna</span></dd>
+    <dt>Versione provata dagli utenti (Assignment 3)</dt><dd>https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/</dd>
+    <dt>Versione ridisegnata (Assignment 4)</dt><dd>https://andreock.github.io/hci_gruppo_a/anteprime/assignment4/</dd>
+  </dl>
+</header>
+<main>
+<nav class="indice" aria-labelledby="indice">
+<h2 id="indice">Indice</h2>
+<ol>
+<!--INDICE:INIZIO-->
+<li class="l2"><a href="#s1">1  Introduzione</a><span class="pun" aria-hidden="true"></span><span class="pag">3</span></li>
+<li class="l2"><a href="#s2">2  Metodologia</a><span class="pun" aria-hidden="true"></span><span class="pag">4</span></li>
+<li class="l3"><a href="#s2-1">2.1 Un test «in svendita»</a><span class="pun" aria-hidden="true"></span><span class="pag">4</span></li>
+<li class="l3"><a href="#s2-2">2.2 Ruoli</a><span class="pun" aria-hidden="true"></span><span class="pag">4</span></li>
+<li class="l3"><a href="#s2-3">2.3 Contesto e strumenti</a><span class="pun" aria-hidden="true"></span><span class="pag">4</span></li>
+<li class="l3"><a href="#s2-4">2.4 Svolgimento di una sessione</a><span class="pun" aria-hidden="true"></span><span class="pag">4</span></li>
+<li class="l3"><a href="#s2-5">2.5 Che cosa abbiamo misurato</a><span class="pun" aria-hidden="true"></span><span class="pag">5</span></li>
+<li class="l2"><a href="#s3">3  I soggetti</a><span class="pun" aria-hidden="true"></span><span class="pag">6</span></li>
+<li class="l2"><a href="#s4">4  I task</a><span class="pun" aria-hidden="true"></span><span class="pag">7</span></li>
+<li class="l3"><a href="#s4-1">T1 · Esplorare le campagne</a><span class="pun" aria-hidden="true"></span><span class="pag">7</span></li>
+<li class="l3"><a href="#s4-2">T2 · Approfondire un progetto</a><span class="pun" aria-hidden="true"></span><span class="pag">7</span></li>
+<li class="l3"><a href="#s4-3">T3 · Simulare una donazione</a><span class="pun" aria-hidden="true"></span><span class="pag">8</span></li>
+<li class="l3"><a href="#s4-4">T4 · Proporre un&#x27;idea</a><span class="pun" aria-hidden="true"></span><span class="pag">8</span></li>
+<li class="l2"><a href="#s5">5  Risultati quantitativi</a><span class="pun" aria-hidden="true"></span><span class="pag">10</span></li>
+<li class="l3"><a href="#s5-1">5.1 Sintesi per task</a><span class="pun" aria-hidden="true"></span><span class="pag">10</span></li>
+<li class="l3"><a href="#s5-2">5.2 Risultati per singolo utente e task</a><span class="pun" aria-hidden="true"></span><span class="pag">10</span></li>
+<li class="l3"><a href="#s5-3">5.3 Quadro per utente</a><span class="pun" aria-hidden="true"></span><span class="pag">11</span></li>
+<li class="l2"><a href="#s6">6  Risultati qualitativi</a><span class="pun" aria-hidden="true"></span><span class="pag">12</span></li>
+<li class="l2"><a href="#s7">7  Questionario SUS e intervista</a><span class="pun" aria-hidden="true"></span><span class="pag">14</span></li>
+<li class="l3"><a href="#s7-1">7.1 System Usability Scale</a><span class="pun" aria-hidden="true"></span><span class="pag">14</span></li>
+<li class="l3"><a href="#s7-2">7.2 Intervista finale</a><span class="pun" aria-hidden="true"></span><span class="pag">14</span></li>
+<li class="l2"><a href="#s8">8  Problemi emersi e classificazione</a><span class="pun" aria-hidden="true"></span><span class="pag">15</span></li>
+<li class="l3"><a href="#s8-1">I problemi uno per uno</a><span class="pun" aria-hidden="true"></span><span class="pag">16</span></li>
+<li class="l3"><a href="#s8-2">Che cosa ha funzionato</a><span class="pun" aria-hidden="true"></span><span class="pag">18</span></li>
+<li class="l2"><a href="#s9">9  Re-design</a><span class="pun" aria-hidden="true"></span><span class="pag">19</span></li>
+<li class="l3"><a href="#s9-2">Problemi non corretti</a><span class="pun" aria-hidden="true"></span><span class="pag">27</span></li>
+<li class="l2"><a href="#s10">10  Limiti dello studio e conclusioni</a><span class="pun" aria-hidden="true"></span><span class="pag">28</span></li>
+<li class="l3"><a href="#s10-1">Limiti</a><span class="pun" aria-hidden="true"></span><span class="pag">28</span></li>
+<li class="l3"><a href="#s10-2">Conclusioni</a><span class="pun" aria-hidden="true"></span><span class="pag">28</span></li>
+<li class="l3"><a href="#s10-3">Uso dell&#x27;intelligenza artificiale</a><span class="pun" aria-hidden="true"></span><span class="pag">28</span></li>
+<li class="l2"><a href="#sa">A  Appendice · Materiali del test</a><span class="pun" aria-hidden="true"></span><span class="pag">29</span></li>
+<li class="l3"><a href="#sa-1">A.1 Introduzione letta a ogni utente (estratto)</a><span class="pun" aria-hidden="true"></span><span class="pag">29</span></li>
+<li class="l3"><a href="#sa-2">A.2 Affermazioni del SUS (versione italiana usata)</a><span class="pun" aria-hidden="true"></span><span class="pag">29</span></li>
+<li class="l3"><a href="#sa-3">A.3 Domande dell&#x27;intervista</a><span class="pun" aria-hidden="true"></span><span class="pag">29</span></li>
+<li class="l3"><a href="#sa-4">A.4 Dati grezzi</a><span class="pun" aria-hidden="true"></span><span class="pag">29</span></li>
+<!--INDICE:FINE-->
+</ol>
+</nav>
+
+<!-- ============================================================ 1 -->
+<section aria-labelledby="s1">
+<h2 id="s1"><span class="num">1</span>Introduzione</h2>
+<div class="box box--todo"><span class="box__tit">Bozza: la relazione non è ancora completa</span><p>Mancano <strong>452</strong> valori nei file di dati e <strong>21</strong> parti di testo da scrivere (evidenziate in giallo). Le celle gialle con «—» sono dati non ancora raccolti. Questo riquadro sparisce da solo quando tutto è compilato.</p></div>
+<p><strong>ideaBlume</strong> è il prototipo di sito di crowdfunding per la ricerca dell'Università di Torino che abbiamo progettato nell'Assignment 2 e reso più accessibile nell'Assignment 3. Finora lo avevamo valutato solo noi: con le euristiche, con le personas e con gli strumenti automatici. In questo lavoro lo abbiamo fatto usare a <strong>8 persone esterne al gruppo</strong>, con un test di usabilità «in svendita» nello stile di Steve Krug: poche persone, compiti concreti, pensiero ad alta voce e nessun laboratorio.</p>
+<p>Le domande a cui volevamo rispondere sono quattro, una per ciascun percorso chiave del sito:</p>
+<ol>
+<li>Chi arriva sul sito riesce a orientarsi tra le campagne e a confrontarle?</li>
+<li>La pagina di un progetto fa capire come saranno usati i soldi e che cosa succede se l'obiettivo non viene raggiunto?</li>
+<li>La donazione in cinque passi si completa senza errori e senza sorprese sul totale?</li>
+<li>Un ente esterno capisce se e come può proporre un'idea?</li>
+</ol>
+<p>Al test abbiamo affiancato un'<strong>ispezione dei quattro percorsi</strong>, fatta mentre preparavamo i task: li abbiamo eseguiti noi su computer e su telefono, misurando che cosa si vede nella prima schermata, in quale punto compaiono le informazioni decisive e se qualcosa esce dallo schermo. I punti critici trovati sono diventati le ipotesi da verificare nelle sessioni e la base del re-design.</p>
+<p>La relazione segue l'ordine del lavoro: metodo (sezione 2), soggetti (3), task (4), risultati quantitativi e qualitativi per utente e per task (5 e 6), questionario e interviste (7), problemi emersi e loro gravità (8), re-design del prototipo (9), limiti dello studio (10).</p>
+<div class="cifre"><div class="cifra"><b>8</b><span>utenti, 4 task ciascuno</span></div><div class="cifra"><b>—</b><span>task completati senza aiuto</span></div><div class="cifra"><b>—</b><span>punteggio SUS medio (0–100)</span></div><div class="cifra"><b>8</b><span>problemi di usabilità classificati</span></div></div>
+</section>
+
+<!-- ============================================================ 2 -->
+<section aria-labelledby="s2">
+<h2 id="s2"><span class="num">2</span>Metodologia</h2>
+<h3 id="s2-1">2.1 Un test «in svendita»</h3>
+<p>Abbiamo seguito il metodo descritto da Steve Krug in <em>Don't Make Me Think</em> e <em>Rocket Surgery Made Easy</em>: un test qualitativo, con pochi utenti e pochi mezzi, che non serve a dimostrare che il sito funziona ma a <strong>trovare i problemi più gravi e correggerli</strong>. Ogni sessione è individuale e dura circa mezz'ora. L'utente riceve un compito alla volta, lo esegue da solo e intanto <strong>pensa ad alta voce</strong> (think-aloud): dice che cosa guarda, che cosa cerca e che cosa si aspetta.</p>
+<p>Al metodo di Krug, che è soprattutto qualitativo, abbiamo affiancato le misure quantitative viste a lezione (efficacia, efficienza e soddisfazione, secondo ISO 9241-11), raccolte per ogni utente e per ogni task.</p>
+
+<h3 id="s2-2">2.2 Ruoli</h3>
+<p>In ogni sessione erano presenti due componenti del gruppo. Il <strong>facilitatore</strong> accoglie l'utente, legge il copione, consegna i task e lo invita a continuare a parlare, senza mai suggerire dove cliccare. L'<strong>osservatore</strong> cronometra, conta errori, richieste di aiuto e blocchi e trascrive comportamenti e frasi. Ognuno di noi ha condotto due sessioni e ne ha osservate due (tabella 4), così le misure non dipendono da una sola persona.</p>
+
+<h3 id="s2-3">2.3 Contesto e strumenti</h3>
+<p><span class="todo">Da completare con i dati reali: dove e quando si sono svolte le sessioni (per esempio «tra il … e il … novembre 2026, in un'aula studio del Dipartimento e a casa di due partecipanti»), quante in presenza e quante da remoto, con quale computer, sistema operativo e browser, e con quale strumento sono stati registrati schermo e voce.</span></p>
+<p>Tutti gli utenti hanno usato la stessa versione del sito: quella consegnata con l'Assignment 3, pubblicata all'indirizzo riportato in copertina e <strong>lasciata invariata fino alla fine dell'ultima sessione</strong>. Le correzioni sono state fatte su un ramo separato del repository e pubblicate a un indirizzo diverso. Il sito è un prototipo: i progetti sono inventati e il pagamento è simulato; gli utenti hanno usato dati di fantasia forniti da noi.</p>
+
+<h3 id="s2-4">2.4 Svolgimento di una sessione</h3>
+<div class="tabella"><table>
+<caption><b>Tabella 1.</b> Le fasi di una sessione (30–35 minuti)</caption>
+<thead><tr><th>Fase</th><th>Durata</th><th>Che cosa succede</th></tr></thead>
+<tbody>
+<tr><th scope="row">Accoglienza</th><td class="n">3 min</td><td>Il facilitatore legge il copione: si prova il sito e non la persona, non esistono risposte sbagliate, si chiede di pensare ad alta voce. Consenso informato firmato, poi parte la registrazione.</td></tr>
+<tr><th scope="row">Questionario iniziale</th><td class="n">2 min</td><td>Età, occupazione, confidenza con il web, acquisti online, familiarità con il crowdfunding.</td></tr>
+<tr><th scope="row">Prima impressione</th><td class="n">1 min</td><td>L'utente guarda la home senza cliccare e dice di chi è il sito e che cosa ci si può fare. Serve ad abituarlo a parlare; non è misurata.</td></tr>
+<tr><th scope="row">Quattro task</th><td class="n">20 min</td><td>Un cartoncino alla volta, letto ad alta voce dall'utente; ogni task parte dalla home. Dopo ogni task una domanda sulla facilità percepita (da 1 a 7).</td></tr>
+<tr><th scope="row">Questionario SUS</th><td class="n">3 min</td><td>System Usability Scale, 10 affermazioni su scala da 1 a 5.</td></tr>
+<tr><th scope="row">Intervista</th><td class="n">5 min</td><td>Cinque domande aperte; risposte alle domande che l'utente aveva fatto durante i task.</td></tr>
+</tbody></table></div>
+<p>Durante i task il facilitatore poteva dire solo frasi neutre («Che cosa stai pensando?», «Che cosa ti aspetti che succeda?», «Tu che cosa faresti a casa?»). Un solo suggerimento generico era ammesso dopo più di un minuto di blocco e una seconda richiesta di aiuto: in quel caso il task è registrato come completato <em>con aiuto</em>. Il copione, i cartoncini, la scheda dell'osservatore e i questionari sono nell'appendice A e nel file <code>kit/kit_test.pdf</code>.</p>
+
+<h3 id="s2-5">2.5 Che cosa abbiamo misurato</h3>
+<div class="tabella"><table>
+<caption><b>Tabella 2.</b> Metriche raccolte per ogni utente e per ogni task, con la regola usata per contarle</caption>
+<thead><tr><th>Metrica</th><th>Dimensione</th><th>Regola</th></tr></thead>
+<tbody><tr><th scope="row">Tempo</th><td>Efficienza</td><td>Secondi tra la fine della lettura del task ad alta voce e il momento in cui l&#x27;utente dice di aver finito (o rinuncia). Si misura con il cronometro o sulla registrazione.</td></tr><tr><th scope="row">Esito</th><td>Efficacia</td><td>S = completato da solo, con la risposta giusta, entro il tempo limite. A = completato dopo un suggerimento del facilitatore. F = non completato: rinuncia, tempo limite superato oppure risposta sbagliata data come definitiva.</td></tr><tr><th scope="row">Errore</th><td>Efficacia</td><td>Ogni azione che allontana dall&#x27;obiettivo: pagina o link sbagliato, filtro o opzione sbagliata, dato inserito nel campo sbagliato, invio di un modulo con errori di validazione. Passare il mouse, scorrere e leggere non sono errori.</td></tr><tr><th scope="row">Richiesta di aiuto</th><td>Efficacia</td><td>L&#x27;utente chiede in modo esplicito al facilitatore che cosa fare. Si conta anche se il facilitatore risponde solo «Tu che cosa faresti?». Se viene dato un suggerimento, l&#x27;esito è al massimo A.</td></tr><tr><th scope="row">Blocco</th><td>Efficienza</td><td>Almeno 30 secondi senza azioni utili, oppure una frase come «non so come andare avanti».</td></tr><tr><th scope="row">Facilità percepita (SEQ)</th><td>Soddisfazione</td><td>Subito dopo ogni task: «Quanto è stato facile?» da 1 (molto difficile) a 7 (molto facile).</td></tr></tbody></table></div>
+<p>Alla fine della sessione abbiamo raccolto il questionario <strong>SUS</strong> (soddisfazione complessiva, punteggio da 0 a 100) e le risposte all'intervista. Le misure sono state rilevate dall'osservatore durante la sessione e ricontrollate sulla registrazione <span class="todo">confermare: «da un secondo componente del gruppo» oppure togliere</span>.</p>
+<p>Con otto utenti i numeri descrivono <em>questo</em> campione e non permettono inferenze statistiche: per questo riportiamo sempre i valori di ogni singolo utente e, come sintesi, conteggi, mediana e intervallo, non percentuali isolate o test di significatività.</p>
+</section>
+
+<!-- ============================================================ 3 -->
+<section aria-labelledby="s3">
+<h2 id="s3"><span class="num">3</span>I soggetti</h2>
+<p>Abbiamo coinvolto <strong>8 persone</strong>, il numero richiesto per un gruppo di quattro componenti. Nessuna aveva mai visto il sito e nessuna fa parte del corso. Per sceglierle siamo partiti dalle personas dell'Assignment 2: il sito si rivolge sia a chi dona (dallo studente al pensionato) sia a chi propone, quindi abbiamo cercato età, confidenza con il web e familiarità con il crowdfunding diverse tra loro. <span class="todo">Descrivere come sono stati reclutati (conoscenti, familiari, colleghi…) e l'eventuale squilibrio del campione.</span></p>
+<p>I soggetti sono indicati solo con un'etichetta (Utente 1 … Utente 8). I moduli di consenso firmati e le registrazioni restano al gruppo e non fanno parte della consegna.</p>
+<div class="tabella compatta"><table>
+<caption><b>Tabella 3.</b> Caratteristiche dei soggetti (dal questionario iniziale)</caption>
+<thead><tr><th>Utente</th><th>Età</th><th>Genere</th><th>Occupazione</th><th>Titolo di studio</th><th class="n">Confidenza con il web (1–5)</th><th>Acquisti online</th><th>Crowdfunding</th><th>Ha già donato online</th></tr></thead>
+<tbody><tr><th scope="row">Utente 1</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td></tr>
+<tr><th scope="row">Utente 2</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td></tr>
+<tr><th scope="row">Utente 3</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td></tr>
+<tr><th scope="row">Utente 4</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td></tr>
+<tr><th scope="row">Utente 5</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td></tr>
+<tr><th scope="row">Utente 6</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td></tr>
+<tr><th scope="row">Utente 7</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td></tr>
+<tr><th scope="row">Utente 8</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td></tr></tbody></table></div>
+<div class="tabella compatta"><table>
+<caption><b>Tabella 4.</b> Le sessioni: modalità, strumenti e ruoli</caption>
+<thead><tr><th>Utente</th><th>Data</th><th>Modalità</th><th>Dispositivo</th><th>Browser</th><th class="n">Durata (min)</th><th>Facilitatore</th><th>Osservatore</th></tr></thead>
+<tbody><tr><th scope="row">Utente 1</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td>Andrea</td><td>Antonio</td></tr>
+<tr><th scope="row">Utente 2</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td>Antonio</td><td>Alexandru</td></tr>
+<tr><th scope="row">Utente 3</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td>Alexandru</td><td>Lorenzo</td></tr>
+<tr><th scope="row">Utente 4</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td>Lorenzo</td><td>Andrea</td></tr>
+<tr><th scope="row">Utente 5</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td>Andrea</td><td>Antonio</td></tr>
+<tr><th scope="row">Utente 6</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td>Antonio</td><td>Alexandru</td></tr>
+<tr><th scope="row">Utente 7</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td>Alexandru</td><td>Lorenzo</td></tr>
+<tr><th scope="row">Utente 8</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td>Lorenzo</td><td>Andrea</td></tr></tbody></table></div>
+<p><span class="todo">Sintesi del campione: verrà calcolata quando la tabella 3 è completa.</span></p>
+</section>
+
+<!-- ============================================================ 4 -->
+<section aria-labelledby="s4">
+<h2 id="s4"><span class="num">4</span>I task</h2>
+<p>I quattro task coprono i percorsi chiave del sito: esplorare le campagne, approfondire un progetto, donare, proporre un'idea. Sono scritti come <strong>scenari</strong>: dicono che cosa la persona vuole ottenere e perché, mai dove cliccare. Abbiamo evitato di proposito le parole dell'interfaccia: nel testo dei task non compaiono «filtri», «ordina», «ricompensa», «sostieni», «collaborazione» né i nomi delle voci di menu, così l'utente deve riconoscerle da solo.</p>
+<p>Per ogni task abbiamo fissato prima del test il criterio di successo, il percorso più breve e un tempo limite, pari a circa <span class="todo">verificare: «tre volte»</span> il tempo impiegato da un componente del gruppo. Prima delle sessioni abbiamo eseguito i quattro percorsi con uno script automatico (<code>relazione/tools/pilota.js</code>) per essere sicuri che fossero completabili sulla versione provata e che le risposte attese fossero corrette. L'ordine dei task è stato lo stesso per tutti, dal più semplice al più impegnativo.</p>
+<div class="testa"><h3 id="s4-1">T1 · Esplorare le campagne</h3>
+<p class="meta"><span class="badge b-tool">Esplorazione dell&#x27;elenco dei progetti</span> <span class="badge b-tool">Tempo limite 3:00</span> <span class="badge b-tool">Tempo dell'esperto da misurare</span></p>
+<div class="scenario"><p>Hai sentito parlare di ideaBlume, il sito con cui l&#x27;Università di Torino raccoglie fondi per la ricerca. Vuoi dare una mano a chi ne ha più bisogno: tra le raccolte ancora aperte, trova quella che è più indietro rispetto alla cifra che deve raggiungere. Dimmi di quale progetto si tratta e quanto ha raccolto finora.</p></div></div>
+<div class="tre">
+<div class="box box--ok"><span class="box__tit">Completato se</span><p>L&#x27;utente indica «Aria aperta» (sensori per lo smog vicino alle scuole) e la cifra raccolta, € 2.350 su € 5.000 (47%).</p></div>
+<div class="box box--info"><span class="box__tit">Percorso più breve</span><p>Home → Progetti → Stato «In corso» → Ordina per «Più lontani dall&#x27;obiettivo» → primo risultato (3 azioni). È valido anche il confronto a occhio delle 4 schede in corso nella home.</p></div>
+<div class="box box--problema"><span class="box__tit">Contati come errori</span><p>Indicare un progetto concluso; indicare il progetto con la scadenza più vicina; scambiare la cifra raccolta con l&#x27;obiettivo.</p></div>
+</div>
+<div class="testa"><h3 id="s4-2">T2 · Approfondire un progetto</h3>
+<p class="meta"><span class="badge b-tool">Lettura della pagina di un progetto</span> <span class="badge b-tool">Tempo limite 4:00</span> <span class="badge b-tool">Tempo dell'esperto da misurare</span></p>
+<div class="scenario"><p>Un&#x27;amica ti ha consigliato il progetto che studia i virus respiratori nei neonati. Prima di decidere se donare vuoi capire due cose: per che cosa verranno spesi i soldi e che cosa succede alla tua donazione se la raccolta non arriva alla cifra prevista. Trova queste informazioni e raccontamele.</p></div></div>
+<div class="tre">
+<div class="box box--ok"><span class="box__tit">Completato se</span><p>L&#x27;utente apre «Proteggere i neonati dai virus respiratori», cita almeno due voci di spesa della tabella «Come useremo i fondi» (reagenti € 3.800, kit per i tamponi € 1.500, analisi statistica € 2.000, guida e incontri € 700) e dice che la donazione viene restituita (regola «tutto o niente»).</p></div>
+<div class="box box--info"><span class="box__tit">Percorso più breve</span><p>Home → scheda del progetto in evidenza → indice «Come useremo i fondi» (2 azioni); la regola «tutto o niente» è nel riquadro «Stato della raccolta», dentro una spiegazione che si apre con un clic.</p></div>
+<div class="box box--problema"><span class="box__tit">Contati come errori</span><p>Aprire un altro progetto; rispondere a memoria senza trovare l&#x27;informazione; confondere il raddoppio dell&#x27;Ateneo con la restituzione.</p></div>
+</div>
+<div class="testa"><h3 id="s4-3">T3 · Simulare una donazione</h3>
+<p class="meta"><span class="badge b-tool">Donazione in 5 passi</span> <span class="badge b-tool">Tempo limite 7:00</span> <span class="badge b-tool">Tempo dell'esperto da misurare</span></p>
+<div class="scenario"><p>Hai deciso di sostenere il progetto sulle api del Piemonte con 30 euro, e ti piacerebbe ricevere in cambio ciò che il gruppo offre per questa cifra. Non vuoi che il tuo nome sia visibile sul sito e paghi con Satispay. Usa i dati scritti sul cartoncino, non i tuoi. Completa la donazione e dimmi quanto hai speso in tutto.</p></div></div>
+<div class="tre">
+<div class="box box--ok"><span class="box__tit">Completato se</span><p>L&#x27;utente arriva alla pagina di conferma con il codice di riferimento, con ricompensa «Adotta un&#x27;arnia virtuale», nome «Anonimo», metodo Satispay, e dice il totale: € 30,89 (€ 30 + € 0,89 di commissione).</p></div>
+<div class="box box--info"><span class="box__tit">Percorso più breve</span><p>Pagina «Alveari sani» → «Scegli € 30» → 5 passi (importo, dati, privacy, pagamento, riepilogo) → «Paga ora» (9 clic più 3 campi).</p></div>
+<div class="box box--problema"><span class="box__tit">Contati come errori</span><p>Donazione libera senza ricompensa; nome lasciato visibile; metodo di pagamento diverso; rispondere «30 euro» senza notare la commissione; errori di validazione all&#x27;invio di un passo.</p></div>
+</div>
+<div class="testa"><h3 id="s4-4">T4 · Proporre un&#x27;idea</h3>
+<p class="meta"><span class="badge b-tool">Proposta di collaborazione da un ente esterno</span> <span class="badge b-tool">Tempo limite 6:00</span> <span class="badge b-tool">Tempo dell'esperto da misurare</span></p>
+<div class="scenario"><p>Fai parte di un&#x27;associazione di quartiere, «Acqua Chiara», che vorrebbe far analizzare la qualità dell&#x27;acqua delle fontane della zona con l&#x27;aiuto dell&#x27;università. Scopri se un&#x27;associazione come la tua può portare un&#x27;idea su ideaBlume e, se sì, invia la proposta. Poi dimmi entro quando dovreste ricevere una risposta.</p></div></div>
+<div class="tre">
+<div class="box box--ok"><span class="box__tit">Completato se</span><p>L&#x27;utente invia il modulo di collaborazione per enti esterni, vede «Proposta ricevuta» e riferisce il tempo di risposta: 10 giorni lavorativi.</p></div>
+<div class="box box--info"><span class="box__tit">Percorso più breve</span><p>Home → «Proponi un progetto» → «Proponi una collaborazione» → modulo (5 campi obbligatori e consenso) → «Invia la proposta» (4 clic più i campi).</p></div>
+<div class="box box--problema"><span class="box__tit">Contati come errori</span><p>Compilare la candidatura al programma (riservata a chi fa ricerca in UniTo); usare il modulo «Scrivici» dei contatti; concludere che un&#x27;associazione non può proporre.</p></div>
+</div>
+<div class="coppia">
+<figure><img src="img/t0-home.png" alt="Home di ideaBlume: titolo, ricerca, pulsante «Scopri i progetti in corso» e progetto in evidenza"><figcaption><b>Figura 1.</b> La home da cui parte ogni task (versione provata).</figcaption></figure>
+<figure><img src="img/t3-donazione.png" alt="Primo passo della donazione: scelta dell'importo o della ricompensa"><figcaption><b>Figura 2.</b> Il primo dei cinque passi della donazione (T3).</figcaption></figure>
+</div>
+</section>
+
+<!-- ============================================================ 5 -->
+<section aria-labelledby="s5">
+<h2 id="s5"><span class="num">5</span>Risultati quantitativi</h2>
+<h3 id="s5-1">5.1 Sintesi per task</h3>
+<div class="tabella compatta"><table>
+<caption><b>Tabella 5.</b> Sintesi delle misure per task (8 utenti). Tempi in minuti e secondi, calcolati sui task completati (S e A); errori, richieste di aiuto e blocchi sono totali; facilità da 1 a 7</caption>
+<thead><tr><th style="width:17%">Task</th><th class="n">Da soli (S)</th><th class="n">Con aiuto (A)</th><th class="n">Falliti (F)</th><th class="n">Tempo mediano</th><th class="n">Tempo min–max</th><th class="n">Tempo esperto</th><th class="n">Errori</th><th class="n">Aiuti</th><th class="n">Blocchi</th><th class="n">Facilità media</th></tr></thead>
+<tbody><tr><th scope="row">T1 · Esplorare le campagne</th><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr>
+<tr><th scope="row">T2 · Approfondire un progetto</th><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr>
+<tr><th scope="row">T3 · Simulare una donazione</th><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr>
+<tr><th scope="row">T4 · Proporre un&#x27;idea</th><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr></tbody></table></div>
+<div class="box box--todo"><span class="box__tit">Grafici</span><p>I grafici (esito dei task, tempi, errori e SUS) vengono disegnati automaticamente quando <code>dati/sessioni.csv</code> e <code>dati/sus.csv</code> contengono dati.</p></div>
+<p><span class="todo">Commento ai dati, da scrivere dopo le sessioni: quale task ha avuto più insuccessi, dove si concentrano errori e blocchi, quanto i tempi si allontanano da quelli dell'esperto, se la facilità percepita coincide con le prestazioni osservate (spesso non coincide: segnalarlo).</span></p>
+
+<h3 id="s5-2">5.2 Risultati per singolo utente e task</h3>
+<p>Esito: <span class="badge b-s">S</span> completato da solo · <span class="badge b-a">A</span> completato con un suggerimento · <span class="badge b-f">F</span> non completato. La colonna «Facilità» è la risposta alla domanda posta dopo ogni task (1 = molto difficile, 7 = molto facile).</p>
+<div class="tabella compatta"><table>
+<caption><b>Tabella 6.</b> T1 · Esplorare le campagne: misure per utente</caption>
+<thead><tr><th>Utente</th><th>Esito</th><th class="n">Tempo (min:s)</th><th class="n">Errori</th><th class="n">Richieste di aiuto</th><th class="n">Blocchi</th><th class="n">Facilità (1–7)</th></tr></thead>
+<tbody><tr><th scope="row">Utente 1</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 2</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 3</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 4</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 5</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 6</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 7</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 8</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr></tbody></table></div>
+<div class="tabella compatta"><table>
+<caption><b>Tabella 7.</b> T2 · Approfondire un progetto: misure per utente</caption>
+<thead><tr><th>Utente</th><th>Esito</th><th class="n">Tempo (min:s)</th><th class="n">Errori</th><th class="n">Richieste di aiuto</th><th class="n">Blocchi</th><th class="n">Facilità (1–7)</th></tr></thead>
+<tbody><tr><th scope="row">Utente 1</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 2</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 3</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 4</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 5</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 6</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 7</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 8</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr></tbody></table></div>
+<div class="tabella compatta"><table>
+<caption><b>Tabella 8.</b> T3 · Simulare una donazione: misure per utente</caption>
+<thead><tr><th>Utente</th><th>Esito</th><th class="n">Tempo (min:s)</th><th class="n">Errori</th><th class="n">Richieste di aiuto</th><th class="n">Blocchi</th><th class="n">Facilità (1–7)</th></tr></thead>
+<tbody><tr><th scope="row">Utente 1</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 2</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 3</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 4</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 5</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 6</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 7</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 8</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr></tbody></table></div>
+<div class="tabella compatta"><table>
+<caption><b>Tabella 9.</b> T4 · Proporre un&#x27;idea: misure per utente</caption>
+<thead><tr><th>Utente</th><th>Esito</th><th class="n">Tempo (min:s)</th><th class="n">Errori</th><th class="n">Richieste di aiuto</th><th class="n">Blocchi</th><th class="n">Facilità (1–7)</th></tr></thead>
+<tbody><tr><th scope="row">Utente 1</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 2</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 3</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 4</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 5</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 6</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 7</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr><tr><th scope="row">Utente 8</th><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr></tbody></table></div>
+<h3 id="s5-3">5.3 Quadro per utente</h3>
+<div class="tabella"><table>
+<caption><b>Tabella 10.</b> Riepilogo per utente sui quattro task</caption>
+<thead><tr><th>Utente</th><th>T1</th><th>T2</th><th>T3</th><th>T4</th><th class="n">Completati da soli</th><th class="n">Tempo totale</th><th class="n">Errori</th><th class="n">Richieste di aiuto</th><th class="n">Blocchi</th><th class="n">SUS</th></tr></thead>
+<tbody><tr><th scope="row">Utente 1</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr>
+<tr><th scope="row">Utente 2</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr>
+<tr><th scope="row">Utente 3</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr>
+<tr><th scope="row">Utente 4</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr>
+<tr><th scope="row">Utente 5</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr>
+<tr><th scope="row">Utente 6</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr>
+<tr><th scope="row">Utente 7</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr>
+<tr><th scope="row">Utente 8</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr></tbody></table></div>
+</section>
+
+<!-- ============================================================ 6 -->
+<section aria-labelledby="s6">
+<h2 id="s6"><span class="num">6</span>Risultati qualitativi</h2>
+<p>Per ogni utente e per ogni task riportiamo che cosa abbiamo visto (percorso, esitazioni, segni di confusione o frustrazione) e le frasi dette pensando ad alta voce, trascritte dalla scheda dell'osservatore e dalla registrazione.</p>
+<div class="tabella compatta"><table>
+<caption><b>Utente 1</b></caption>
+<thead><tr><th style="width:11%">Task</th><th style="width:50%">Comportamento osservato</th><th>Frasi dette</th></tr></thead>
+<tbody><tr><th scope="row">T1 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T2 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T3 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T4 </th><td class="vuoto">—</td><td>—</td></tr></tbody></table></div>
+<div class="tabella compatta"><table>
+<caption><b>Utente 2</b></caption>
+<thead><tr><th style="width:11%">Task</th><th style="width:50%">Comportamento osservato</th><th>Frasi dette</th></tr></thead>
+<tbody><tr><th scope="row">T1 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T2 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T3 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T4 </th><td class="vuoto">—</td><td>—</td></tr></tbody></table></div>
+<div class="tabella compatta"><table>
+<caption><b>Utente 3</b></caption>
+<thead><tr><th style="width:11%">Task</th><th style="width:50%">Comportamento osservato</th><th>Frasi dette</th></tr></thead>
+<tbody><tr><th scope="row">T1 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T2 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T3 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T4 </th><td class="vuoto">—</td><td>—</td></tr></tbody></table></div>
+<div class="tabella compatta"><table>
+<caption><b>Utente 4</b></caption>
+<thead><tr><th style="width:11%">Task</th><th style="width:50%">Comportamento osservato</th><th>Frasi dette</th></tr></thead>
+<tbody><tr><th scope="row">T1 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T2 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T3 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T4 </th><td class="vuoto">—</td><td>—</td></tr></tbody></table></div>
+<div class="tabella compatta"><table>
+<caption><b>Utente 5</b></caption>
+<thead><tr><th style="width:11%">Task</th><th style="width:50%">Comportamento osservato</th><th>Frasi dette</th></tr></thead>
+<tbody><tr><th scope="row">T1 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T2 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T3 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T4 </th><td class="vuoto">—</td><td>—</td></tr></tbody></table></div>
+<div class="tabella compatta"><table>
+<caption><b>Utente 6</b></caption>
+<thead><tr><th style="width:11%">Task</th><th style="width:50%">Comportamento osservato</th><th>Frasi dette</th></tr></thead>
+<tbody><tr><th scope="row">T1 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T2 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T3 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T4 </th><td class="vuoto">—</td><td>—</td></tr></tbody></table></div>
+<div class="tabella compatta"><table>
+<caption><b>Utente 7</b></caption>
+<thead><tr><th style="width:11%">Task</th><th style="width:50%">Comportamento osservato</th><th>Frasi dette</th></tr></thead>
+<tbody><tr><th scope="row">T1 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T2 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T3 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T4 </th><td class="vuoto">—</td><td>—</td></tr></tbody></table></div>
+<div class="tabella compatta"><table>
+<caption><b>Utente 8</b></caption>
+<thead><tr><th style="width:11%">Task</th><th style="width:50%">Comportamento osservato</th><th>Frasi dette</th></tr></thead>
+<tbody><tr><th scope="row">T1 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T2 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T3 </th><td class="vuoto">—</td><td>—</td></tr><tr><th scope="row">T4 </th><td class="vuoto">—</td><td>—</td></tr></tbody></table></div>
+</section>
+
+<!-- ============================================================ 7 -->
+<section aria-labelledby="s7">
+<h2 id="s7"><span class="num">7</span>Questionario SUS e intervista</h2>
+<h3 id="s7-1">7.1 System Usability Scale</h3>
+<p>Il SUS è un questionario di 10 affermazioni, alternate tra positive e negative, a cui si risponde da 1 («per niente d'accordo») a 5 («del tutto d'accordo»). Il punteggio va da 0 a 100: per le affermazioni dispari si sottrae 1 alla risposta, per le pari si sottrae la risposta da 5, e la somma si moltiplica per 2,5. Non è una percentuale: il valore medio rilevato in letteratura è 68 (Sauro, 2011) e i punteggi sopra 80 corrispondono a un giudizio «eccellente» (Bangor et al., 2009).</p>
+<div class="tabella compatta"><table>
+<caption><b>Tabella 11.</b> Risposte al SUS e punteggio di ogni utente</caption>
+<thead><tr><th>Utente</th><th class="n">1</th><th class="n">2</th><th class="n">3</th><th class="n">4</th><th class="n">5</th><th class="n">6</th><th class="n">7</th><th class="n">8</th><th class="n">9</th><th class="n">10</th><th class="n">Punteggio</th></tr></thead>
+<tbody><tr><th scope="row">Utente 1</th><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr>
+<tr><th scope="row">Utente 2</th><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr>
+<tr><th scope="row">Utente 3</th><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr>
+<tr><th scope="row">Utente 4</th><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr>
+<tr><th scope="row">Utente 5</th><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr>
+<tr><th scope="row">Utente 6</th><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr>
+<tr><th scope="row">Utente 7</th><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr>
+<tr><th scope="row">Utente 8</th><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td><td class="n vuoto">—</td></tr></tbody></table></div>
+<p><span class="todo">Il punteggio medio e il commento compaiono quando tutte le risposte al SUS sono inserite.</span></p>
+<h3 id="s7-2">7.2 Intervista finale</h3>
+<div class="tabella compatta"><table>
+<caption><b>Tabella 12.</b> Risposte all'intervista, con le parole degli utenti</caption>
+<thead><tr><th>Utente</th><th>Che cosa è piaciuto</th><th>Che cosa non è piaciuto</th><th>Che cosa cambierebbe</th><th>Altro (fiducia, cose non trovate)</th></tr></thead>
+<tbody><tr><th scope="row">Utente 1</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td>—</td></tr>
+<tr><th scope="row">Utente 2</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td>—</td></tr>
+<tr><th scope="row">Utente 3</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td>—</td></tr>
+<tr><th scope="row">Utente 4</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td>—</td></tr>
+<tr><th scope="row">Utente 5</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td>—</td></tr>
+<tr><th scope="row">Utente 6</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td>—</td></tr>
+<tr><th scope="row">Utente 7</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td>—</td></tr>
+<tr><th scope="row">Utente 8</th><td class="vuoto">—</td><td class="vuoto">—</td><td class="vuoto">—</td><td>—</td></tr></tbody></table></div>
+<p><span class="todo">Sintesi dell'intervista: temi ricorrenti, su che cosa gli utenti concordano, dove il giudizio a parole contrasta con ciò che abbiamo osservato.</span></p>
+</section>
+
+<!-- ============================================================ 8 -->
+<section aria-labelledby="s8">
+<h2 id="s8"><span class="num">8</span>Problemi emersi e classificazione</h2>
+<p>I problemi di questa sezione hanno due origini, indicate nella tabella 14.</p>
+<ul>
+<li><span class="badge b-c1">ispezione</span> <strong>Ispezione dei percorsi.</strong> Preparando i task abbiamo eseguito i quattro percorsi sulla versione poi provata dagli utenti, a 1280 × 800 px (computer) e a 375 × 740 px (telefono), e per ogni passaggio ci siamo chiesti: l'informazione che serve è visibile senza interagire? Sta nella prima schermata? Qualcosa esce dallo schermo? Il sito dice in tempo quanto si paga e a chi è rivolto un modulo? Ogni risposta negativa è stata misurata con uno script (<code>relazione/tools/prima_dopo.py</code>) e annotata come <em>ipotesi</em> nella scheda dell'osservatore.</li>
+<li><span class="badge b-c2">test</span> <strong>Sessioni con gli utenti.</strong> Dopo l'ultima sessione abbiamo fatto una riunione di sintesi, come suggerisce Krug: ognuno ha elencato i tre problemi più gravi visti nelle proprie sessioni, poi abbiamo unito i doppioni. Per ogni ipotesi dell'ispezione abbiamo segnato quali utenti l'hanno incontrata davvero e con quali conseguenze; i comportamenti che l'ispezione non aveva previsto sono entrati nell'elenco con origine «test».</li>
+</ul>
+<p>Un'ipotesi che nessun utente ha incontrato non viene cancellata, ma la sua gravità scende: l'ispezione dice che un difetto <em>esiste</em>, solo le sessioni dicono quanto <em>pesa</em>. Finché la colonna «Utenti» è vuota la gravità è una stima, e come tale è indicata.</p>
+<p>La gravità segue la scala di Nielsen da 0 a 4 e combina tre fattori:</p>
+<ul>
+<li><strong>frequenza</strong>: quanti utenti su 8 lo hanno incontrato;</li>
+<li><strong>impatto</strong>: 1 = rallenta o infastidisce, 2 = causa errori o richieste di aiuto, 3 = impedisce di completare il task o fa completare la cosa sbagliata senza accorgersene;</li>
+<li><strong>persistenza</strong>: 1 = si supera una volta e non torna, 2 = torna in più punti del percorso, 3 = l'utente non impara a evitarlo.</li>
+</ul>
+<div class="tabella compatta"><table>
+<caption><b>Tabella 13.</b> Scala di gravità (Nielsen)</caption>
+<thead><tr><th>Grado</th><th>Significato</th><th>Che cosa ne facciamo</th></tr></thead>
+<tbody>
+<tr><th scope="row"><span class="badge b-g4">4 · catastrofe</span></th><td>Impedisce di completare un percorso chiave a più utenti</td><td>Da correggere subito</td></tr>
+<tr><th scope="row"><span class="badge b-g3">3 · grave</span></th><td>Causa errori, aiuti o insuccessi; molti utenti coinvolti</td><td>Da correggere in questo re-design</td></tr>
+<tr><th scope="row"><span class="badge b-g2">2 · minore</span></th><td>Rallenta o confonde, ma l'utente ne esce da solo</td><td>Da correggere se il costo è basso</td></tr>
+<tr><th scope="row"><span class="badge b-g1">1 · cosmetico</span></th><td>Fastidio estetico o di formulazione, senza effetti sul task</td><td>Solo se resta tempo</td></tr>
+<tr><th scope="row"><span class="badge b-g0">0 · non è un problema</span></th><td>Osservato una volta, senza conseguenze, legato alla situazione di test</td><td>Annotato e non corretto</td></tr>
+</tbody></table></div>
+<div class="tabella compatta"><table>
+<caption><b>Tabella 14.</b> Problemi di usabilità, dal più grave. Il numero identifica il problema e non cambia se la gravità viene rivista</caption>
+<thead><tr><th>N.</th><th style="width:30%">Problema</th><th>Task</th><th>Origine</th><th>Utenti che lo hanno incontrato</th><th class="n">Frequenza</th><th class="n">Impatto</th><th class="n">Persistenza</th><th>Gravità</th></tr></thead>
+<tbody><tr><th scope="row">P1</th><td>Su telefono il riepilogo della donazione esce dallo schermo</td><td>T3</td><td><span class="badge b-c1">ispezione</span></td><td class="vuoto">—</td><td class="n vuoto">da rilevare</td><td class="n">2</td><td class="n">3</td><td><span class="badge b-g3">3 · grave (stima)</span></td></tr>
+<tr><th scope="row">P2</th><td>Il costo totale si scopre solo all&#x27;ultimo passo</td><td>T3</td><td><span class="badge b-c1">ispezione</span></td><td class="vuoto">—</td><td class="n vuoto">da rilevare</td><td class="n">2</td><td class="n">2</td><td><span class="badge b-g3">3 · grave (stima)</span></td></tr>
+<tr><th scope="row">P3</th><td>La regola «tutto o niente» è nascosta dietro un pulsante</td><td>T2</td><td><span class="badge b-c1">ispezione</span></td><td class="vuoto">—</td><td class="n vuoto">da rilevare</td><td class="n">2</td><td class="n">2</td><td><span class="badge b-g3">3 · grave (stima)</span></td></tr>
+<tr><th scope="row">P6</th><td>I moduli per chi propone non dicono a chi sono riservati</td><td>T4</td><td><span class="badge b-c1">ispezione</span></td><td class="vuoto">—</td><td class="n vuoto">da rilevare</td><td class="n">3</td><td class="n">1</td><td><span class="badge b-g3">3 · grave (stima)</span></td></tr>
+<tr><th scope="row">P4</th><td>Nelle schede la percentuale raggiunta si legge a fatica</td><td>T1</td><td><span class="badge b-c1">ispezione</span></td><td class="vuoto">—</td><td class="n vuoto">da rilevare</td><td class="n">1</td><td class="n">2</td><td><span class="badge b-g2">2 · minore (stima)</span></td></tr>
+<tr><th scope="row">P5</th><td>Nell&#x27;elenco dei progetti i filtri occupano la prima schermata</td><td>T1</td><td><span class="badge b-c1">ispezione</span></td><td class="vuoto">—</td><td class="n vuoto">da rilevare</td><td class="n">1</td><td class="n">2</td><td><span class="badge b-g2">2 · minore (stima)</span></td></tr>
+<tr><th scope="row">P7</th><td>Su telefono titolo e indicatore dei passi spingono in basso il modulo di donazione</td><td>T3</td><td><span class="badge b-c1">ispezione</span></td><td class="vuoto">—</td><td class="n vuoto">da rilevare</td><td class="n">1</td><td class="n">3</td><td><span class="badge b-g1">1 · cosmetico (stima)</span></td></tr>
+<tr><th scope="row">P8</th><td>Messaggio d&#x27;errore generico per l&#x27;email mancante</td><td>T3, T4</td><td><span class="badge b-c1">ispezione</span></td><td class="vuoto">—</td><td class="n vuoto">da rilevare</td><td class="n">1</td><td class="n">1</td><td><span class="badge b-g1">1 · cosmetico (stima)</span></td></tr></tbody></table></div>
+<h3 id="s8-1">I problemi uno per uno</h3>
+<div class="blocco"><div class="testa"><h4>P1 · Su telefono il riepilogo della donazione esce dallo schermo</h4>
+<p class="meta"><span class="badge b-g3">3 · grave (stima)</span> <span class="badge b-c1">ispezione</span> <span class="badge b-tool">T3</span> <span class="badge b-tool">frequenza da rilevare</span> <span class="badge b-tool">donazione.html (passo 5), donazione-conferma.html</span></p></div>
+<p>A 375 px di larghezza, nel passo «Controlla e conferma» e nella pagina di conferma i valori del riepilogo (progetto, ricompensa, email) escono dal riquadro e la pagina scorre in orizzontale. È il punto in cui si controlla il totale prima di pagare. I controlli automatici dell&#x27;Assignment 3 non lo avevano segnalato perché aprivano le pagine così come si caricano: il quinto passo è costruito dallo script con i dati inseriti e, con un&#x27;email lunga, la colonna dei valori non si restringe.</p><p><strong>Misura sulla versione provata.</strong> Pagina larga 416 px su uno schermo di 375; 8 valori su 8 escono dal riquadro (succede anche a 320 px).</p><p><strong>Che cosa è successo nelle sessioni.</strong> <span class="todo">Da scrivere: quali utenti lo hanno incontrato, che cosa hanno fatto e detto, con quali conseguenze (errori, aiuti, tempo). Se nessuno lo ha incontrato, dirlo e abbassare la gravità.</span></p></div>
+<div class="blocco"><div class="testa"><h4>P2 · Il costo totale si scopre solo all&#x27;ultimo passo</h4>
+<p class="meta"><span class="badge b-g3">3 · grave (stima)</span> <span class="badge b-c1">ispezione</span> <span class="badge b-tool">T3</span> <span class="badge b-tool">frequenza da rilevare</span> <span class="badge b-tool">donazione.html (passi 1–4)</span></p></div>
+<p>Chi dona legge la commissione del pagamento per la prima volta al passo 4 e il totale da pagare solo al passo 5, dopo aver già inserito i propri dati. Nei primi tre passi nulla dice che all&#x27;importo scelto si aggiunge una commissione. Il progetto dell&#x27;Assignment 2 prevedeva un riepilogo «sempre visibile», ma nella versione consegnata il riquadro era nascosto e, su schermi larghi, metà della pagina restava vuota.</p><p><strong>Misura sulla versione provata.</strong> Commissione leggibile dal passo 4, totale dal passo 5 su 5.</p><p><strong>Che cosa è successo nelle sessioni.</strong> <span class="todo">Da scrivere: quali utenti lo hanno incontrato, che cosa hanno fatto e detto, con quali conseguenze (errori, aiuti, tempo). Se nessuno lo ha incontrato, dirlo e abbassare la gravità.</span></p></div>
+<div class="blocco"><div class="testa"><h4>P3 · La regola «tutto o niente» è nascosta dietro un pulsante</h4>
+<p class="meta"><span class="badge b-g3">3 · grave (stima)</span> <span class="badge b-c1">ispezione</span> <span class="badge b-tool">T2</span> <span class="badge b-tool">frequenza da rilevare</span> <span class="badge b-tool">progetto-*.html (riquadro di stato)</span></p></div>
+<p>Nella pagina di un progetto la risposta alla domanda «che cosa succede ai miei soldi se l&#x27;obiettivo non viene raggiunto?» non è scritta: compare solo premendo il pulsante «Che cosa significa “tutto o niente”?», in fondo al riquadro sul raddoppio dell&#x27;Ateneo. Chi non conosce l&#x27;espressione non ha motivo di premerlo, e la cerca altrove (domande frequenti, «Come funziona»).</p><p><strong>Misura sulla versione provata.</strong> Frase sulla restituzione leggibile senza interagire: no (serve 1 clic su un pulsante che non la nomina).</p><p><strong>Che cosa è successo nelle sessioni.</strong> <span class="todo">Da scrivere: quali utenti lo hanno incontrato, che cosa hanno fatto e detto, con quali conseguenze (errori, aiuti, tempo). Se nessuno lo ha incontrato, dirlo e abbassare la gravità.</span></p></div>
+<div class="blocco"><div class="testa"><h4>P6 · I moduli per chi propone non dicono a chi sono riservati</h4>
+<p class="meta"><span class="badge b-g3">3 · grave (stima)</span> <span class="badge b-c1">ispezione</span> <span class="badge b-tool">T4</span> <span class="badge b-tool">frequenza da rilevare</span> <span class="badge b-tool">candidatura.html, collabora.html, contatti.html</span></p></div>
+<p>La candidatura al programma è riservata a chi fa ricerca all&#x27;Università di Torino, ma la pagina non lo diceva: chi rappresenta un&#x27;associazione e ci arriva dal piè di pagina («Candidatura al programma») o dalla ricerca se ne accorge solo al campo «Email istituzionale». Il modulo di collaborazione, al contrario, non rimandava alla candidatura. In «Contatti» l&#x27;argomento «Proporre un progetto» portava a scrivere un messaggio generico invece che al modulo giusto.</p><p><strong>Misura sulla versione provata.</strong> Rimando al modulo giusto prima dei campi: assente nella candidatura, nella collaborazione e in «Contatti».</p><p><strong>Che cosa è successo nelle sessioni.</strong> <span class="todo">Da scrivere: quali utenti lo hanno incontrato, che cosa hanno fatto e detto, con quali conseguenze (errori, aiuti, tempo). Se nessuno lo ha incontrato, dirlo e abbassare la gravità.</span></p></div>
+<div class="blocco"><div class="testa"><h4>P4 · Nelle schede la percentuale raggiunta si legge a fatica</h4>
+<p class="meta"><span class="badge b-g2">2 · minore (stima)</span> <span class="badge b-c1">ispezione</span> <span class="badge b-tool">T1</span> <span class="badge b-tool">frequenza da rilevare</span> <span class="badge b-tool">index.html, progetti.html, cerca.html (schede dei progetti)</span></p></div>
+<p>Per confrontare le campagne servono la barra e la percentuale raggiunta. Nelle schede la percentuale era in coda alla riga delle cifre, tra parentesi, in grigio e a 15 px, mentre la barra non aveva alcun numero accanto: per capire quale campagna è più indietro bisognava leggere una riga di testo per ogni scheda.</p><p><strong>Misura sulla versione provata.</strong> Percentuale a 15 px, peso 400, tra parentesi in coda alla riga delle cifre.</p><p><strong>Che cosa è successo nelle sessioni.</strong> <span class="todo">Da scrivere: quali utenti lo hanno incontrato, che cosa hanno fatto e detto, con quali conseguenze (errori, aiuti, tempo). Se nessuno lo ha incontrato, dirlo e abbassare la gravità.</span></p></div>
+<div class="blocco"><div class="testa"><h4>P5 · Nell&#x27;elenco dei progetti i filtri occupano la prima schermata</h4>
+<p class="meta"><span class="badge b-g2">2 · minore (stima)</span> <span class="badge b-c1">ispezione</span> <span class="badge b-tool">T1</span> <span class="badge b-tool">frequenza da rilevare</span> <span class="badge b-tool">progetti.html</span></p></div>
+<p>Aprendo «Progetti» su telefono si vedono solo la ricerca e sei menu a tendina: nessun progetto comincia nella prima schermata. Su computer (1280 × 800) delle schede si vede soltanto il bordo superiore. «Ordina per», che serve a confrontare le campagne, era l&#x27;ultimo dei sei menu.</p><p><strong>Misura sulla versione provata.</strong> Prima scheda a 1047 px su telefono (schermo alto 740) e a 758 px su computer (schermo alto 800).</p><p><strong>Che cosa è successo nelle sessioni.</strong> <span class="todo">Da scrivere: quali utenti lo hanno incontrato, che cosa hanno fatto e detto, con quali conseguenze (errori, aiuti, tempo). Se nessuno lo ha incontrato, dirlo e abbassare la gravità.</span></p></div>
+<div class="blocco"><div class="testa"><h4>P7 · Su telefono titolo e indicatore dei passi spingono in basso il modulo di donazione</h4>
+<p class="meta"><span class="badge b-g1">1 · cosmetico (stima)</span> <span class="badge b-c1">ispezione</span> <span class="badge b-tool">T3</span> <span class="badge b-tool">frequenza da rilevare</span> <span class="badge b-tool">donazione.html</span></p></div>
+<p>A 375 px il titolo con il nome completo del progetto occupa 4 righe e l&#x27;indicatore dei cinque passi altre tre: la prima scelta del modulo comincia a 636 px, quasi in fondo alla prima schermata.</p><p><strong>Misura sulla versione provata.</strong> Titolo su 4 righe, indicatore alto 136 px, prima scelta a 636 px.</p><p><strong>Che cosa è successo nelle sessioni.</strong> <span class="todo">Da scrivere: quali utenti lo hanno incontrato, che cosa hanno fatto e detto, con quali conseguenze (errori, aiuti, tempo). Se nessuno lo ha incontrato, dirlo e abbassare la gravità.</span></p></div>
+<div class="blocco"><div class="testa"><h4>P8 · Messaggio d&#x27;errore generico per l&#x27;email mancante</h4>
+<p class="meta"><span class="badge b-g1">1 · cosmetico (stima)</span> <span class="badge b-c1">ispezione</span> <span class="badge b-tool">T3, T4</span> <span class="badge b-tool">frequenza da rilevare</span> <span class="badge b-tool">tutti i moduli</span></p></div>
+<p>Lasciando vuoti i campi del passo 2, nome e cognome hanno un messaggio che dice che cosa fare («Scrivi il tuo nome.»), l&#x27;email il generico «Compila questo campo.». Lo stesso accadeva in tutti gli altri moduli del sito.</p><p><strong>Misura sulla versione provata.</strong> Email vuota: «Compila questo campo.»</p><p><strong>Che cosa è successo nelle sessioni.</strong> <span class="todo">Da scrivere: quali utenti lo hanno incontrato, che cosa hanno fatto e detto, con quali conseguenze (errori, aiuti, tempo). Se nessuno lo ha incontrato, dirlo e abbassare la gravità.</span></p></div>
+<h3 id="s8-2">Che cosa ha funzionato</h3>
+<p><span class="todo">Due o tre cose che gli utenti hanno usato senza esitare (con il riferimento a utenti e task): servono a decidere che cosa non toccare nel re-design.</span></p>
+</section>
+
+<!-- ============================================================ 9 -->
+<section aria-labelledby="s9">
+<h2 id="s9"><span class="num">9</span>Re-design</h2>
+<p>Abbiamo corretto il prototipo partendo dai problemi più gravi. Per ogni intervento indichiamo il problema da cui nasce, il tipo di modifica (contenuti, architettura dell'informazione, layout, feedback), i file toccati e <strong>la stessa misura rilevata prima e dopo</strong>, con le schermate delle due versioni. Le schermate e le misure sono prodotte dallo stesso script sulle due versioni del sito, quindi sono confrontabili e ripetibili.</p>
+<p>Le pagine sono generate da <code>assignment2/website/tools/build.py</code> a partire dai testi in <code>i18n/</code> e dai dati in <code>data/</code>: ogni modifica vale sia per la versione italiana sia per quella inglese, e per il tema chiaro e scuro. Dopo le modifiche abbiamo rieseguito tutte le verifiche automatiche del sito:</p>
+<ul>
+<li>i quattro task restano completabili con il percorso più breve, prima e dopo (<code>pilota.js</code>);</li>
+<li>accessibilità: 0 violazioni axe-core (WCAG 2.2 A e AA) sulle 50 pagine, in entrambi i temi; contrasti conformi in 91 coppie di colori per tema;</li>
+<li>percorsi da tastiera e interazioni: 105 controlli su 105; nessuno scorrimento orizzontale a 320, 375, 768 e 1280 px; nessun bersaglio sotto 24 px;</li>
+<li>coerenza dei dati (329 controlli) e dei collegamenti interni (1.710 link, 0 problemi).</li>
+</ul>
+<p>Il re-design è pubblicato a un indirizzo diverso da quello della versione provata (entrambi in copertina), così le due versioni restano confrontabili.</p>
+<div class="tabella compatta"><table><caption><b>Tabella 15.</b> Interventi di re-design, problemi da cui nascono e risultato misurato sulle due versioni</caption><thead><tr><th style="width:20%">Problema</th><th>Gravità</th><th>Tipo di intervento</th><th>Prima</th><th>Dopo</th></tr></thead><tbody><tr><th scope="row" style="white-space:normal">P1 · Su telefono il riepilogo della donazione esce dallo schermo</th><td><span class="badge b-g3">3 · grave (stima)</span></td><td>Layout</td><td>Pagina larga 416 px su uno schermo di 375; 8 valori su 8 escono dal riquadro (succede anche a 320 px).</td><td>Pagina larga 375 px; 0 valori fuori dal riquadro, a 375 e a 320 px, nel passo 5 e nella conferma.</td></tr><tr><th scope="row" style="white-space:normal">P2 · Il costo totale si scopre solo all&#x27;ultimo passo</th><td><span class="badge b-g3">3 · grave (stima)</span></td><td>Layout e feedback</td><td>Commissione leggibile dal passo 4, totale dal passo 5 su 5.</td><td>Commissione e totale leggibili dal passo 1, e in ogni passo successivo.</td></tr><tr><th scope="row" style="white-space:normal">P3 · La regola «tutto o niente» è nascosta dietro un pulsante</th><td><span class="badge b-g3">3 · grave (stima)</span></td><td>Contenuti</td><td>Frase sulla restituzione leggibile senza interagire: no (serve 1 clic su un pulsante che non la nomina).</td><td>Frase sulla restituzione leggibile senza interagire: sì (0 clic), subito sotto il pulsante per donare.</td></tr><tr><th scope="row" style="white-space:normal">P6 · I moduli per chi propone non dicono a chi sono riservati</th><td><span class="badge b-g3">3 · grave (stima)</span></td><td>Contenuti e feedback</td><td>Rimando al modulo giusto prima dei campi: assente nella candidatura, nella collaborazione e in «Contatti».</td><td>Rimando al modulo giusto prima dei campi: presente in tutti e tre i punti.</td></tr><tr><th scope="row" style="white-space:normal">P4 · Nelle schede la percentuale raggiunta si legge a fatica</th><td><span class="badge b-g2">2 · minore (stima)</span></td><td>Layout</td><td>Percentuale a 15 px, peso 400, tra parentesi in coda alla riga delle cifre.</td><td>Percentuale a 18 px, peso 700, accanto alla barra.</td></tr><tr><th scope="row" style="white-space:normal">P5 · Nell&#x27;elenco dei progetti i filtri occupano la prima schermata</th><td><span class="badge b-g2">2 · minore (stima)</span></td><td>Architettura dell&#x27;informazione e layout</td><td>Prima scheda a 1047 px su telefono (schermo alto 740) e a 758 px su computer (schermo alto 800).</td><td>Prima scheda a 583 px su telefono e a 577 px su computer: i progetti cominciano nella prima schermata.</td></tr><tr><th scope="row" style="white-space:normal">P7 · Su telefono titolo e indicatore dei passi spingono in basso il modulo di donazione</th><td><span class="badge b-g1">1 · cosmetico (stima)</span></td><td>Layout</td><td>Titolo su 4 righe, indicatore alto 136 px, prima scelta a 636 px.</td><td>Titolo su 2 righe, indicatore alto 40 px, prima scelta a 607 px, compresa la nuova striscia con commissione e totale (P2).</td></tr><tr><th scope="row" style="white-space:normal">P8 · Messaggio d&#x27;errore generico per l&#x27;email mancante</th><td><span class="badge b-g1">1 · cosmetico (stima)</span></td><td>Feedback</td><td>Email vuota: «Compila questo campo.»</td><td>Email vuota: «Scrivi la tua email.»</td></tr></tbody></table></div>
+<div class="blocco"><div class="testa"><h3>P1 · Su telefono il riepilogo della donazione esce dallo schermo</h3>
+<p class="meta"><span class="badge b-g3">3 · grave (stima)</span> <span class="badge b-c2">Layout</span> <span class="badge b-tool">T3</span> <span class="hash">css/ideablume.css</span></p></div>
+<div class="tre">
+<div class="box box--problema"><span class="box__tit">Il problema</span><p>Pagina larga 416 px su uno schermo di 375; 8 valori su 8 escono dal riquadro (succede anche a 320 px).</p></div>
+<div class="box box--info"><span class="box__tit">Che cosa abbiamo cambiato</span><p>Le colonne del riepilogo possono restringersi e i valori lunghi vanno a capo. Sotto 480 px etichetta e valore stanno uno sopra l&#x27;altro, con il totale più grande. La stessa regola vale per i riepiloghi dei moduli di candidatura e di collaborazione.</p></div>
+<div class="box box--ok"><span class="box__tit">Risultato misurato</span><p>Pagina larga 375 px; 0 valori fuori dal riquadro, a 375 e a 320 px, nel passo 5 e nella conferma.</p></div>
+</div><div class="coppia coppia--tel"><figure><img src="img/p1-prima.png" alt="Prima: Su telefono il riepilogo della donazione esce dallo schermo"><figcaption><b>Figura 3.</b> Prima: la versione provata dagli utenti.</figcaption></figure><figure><img src="img/p1-dopo.png" alt="Dopo: Su telefono il riepilogo della donazione esce dallo schermo"><figcaption><b>Figura 4.</b> Dopo il re-design.</figcaption></figure></div></div>
+<div class="blocco"><div class="testa"><h3>P2 · Il costo totale si scopre solo all&#x27;ultimo passo</h3>
+<p class="meta"><span class="badge b-g3">3 · grave (stima)</span> <span class="badge b-c2">Layout e feedback</span> <span class="badge b-tool">T3</span> <span class="hash">tools/build.py, js/ideablume.js, css/ideablume.css, i18n/*.json</span></p></div>
+<div class="tre">
+<div class="box box--problema"><span class="box__tit">Il problema</span><p>Commissione leggibile dal passo 4, totale dal passo 5 su 5.</p></div>
+<div class="box box--info"><span class="box__tit">Che cosa abbiamo cambiato</span><p>Nuovo riquadro «La tua donazione», sempre visibile: donazione, commissione e totale si aggiornano a ogni scelta. Finché il metodo di pagamento non è scelto mostra l&#x27;intervallo possibile (per € 30: da € 30 a € 30,89), poi la cifra esatta. Su schermi larghi è una colonna a destra che resta in vista scorrendo; su telefono è una striscia sotto l&#x27;indicatore dei passi. Al passo 1 una frase avvisa della commissione; al passo 4 ogni metodo mostra anche il totale.</p></div>
+<div class="box box--ok"><span class="box__tit">Risultato misurato</span><p>Commissione e totale leggibili dal passo 1, e in ogni passo successivo.</p></div>
+</div><div class="coppia"><figure><img src="img/p2-prima.png" alt="Prima: Il costo totale si scopre solo all&#x27;ultimo passo"><figcaption><b>Figura 5.</b> Prima: la versione provata dagli utenti.</figcaption></figure><figure><img src="img/p2-dopo.png" alt="Dopo: Il costo totale si scopre solo all&#x27;ultimo passo"><figcaption><b>Figura 6.</b> Dopo il re-design.</figcaption></figure></div></div>
+<div class="blocco"><div class="testa"><h3>P3 · La regola «tutto o niente» è nascosta dietro un pulsante</h3>
+<p class="meta"><span class="badge b-g3">3 · grave (stima)</span> <span class="badge b-c2">Contenuti</span> <span class="badge b-tool">T2</span> <span class="hash">tools/build.py, css/ideablume.css, i18n/*.json</span></p></div>
+<div class="tre">
+<div class="box box--problema"><span class="box__tit">Il problema</span><p>Frase sulla restituzione leggibile senza interagire: no (serve 1 clic su un pulsante che non la nomina).</p></div>
+<div class="box box--info"><span class="box__tit">Che cosa abbiamo cambiato</span><p>Sotto il pulsante «Sostieni il progetto» c&#x27;è una frase sempre visibile: «Regola “tutto o niente”: se alla scadenza l&#x27;obiettivo non è raggiunto, ti restituiamo la donazione». Per le campagne che hanno già raggiunto l&#x27;obiettivo la frase dice invece che la donazione va al progetto. La spiegazione a comparsa resta per chi vuole approfondire.</p></div>
+<div class="box box--ok"><span class="box__tit">Risultato misurato</span><p>Frase sulla restituzione leggibile senza interagire: sì (0 clic), subito sotto il pulsante per donare.</p></div>
+</div><div class="coppia coppia--tel"><figure><img src="img/p3-prima.png" alt="Prima: La regola «tutto o niente» è nascosta dietro un pulsante"><figcaption><b>Figura 7.</b> Prima: la versione provata dagli utenti.</figcaption></figure><figure><img src="img/p3-dopo.png" alt="Dopo: La regola «tutto o niente» è nascosta dietro un pulsante"><figcaption><b>Figura 8.</b> Dopo il re-design.</figcaption></figure></div></div>
+<div class="blocco"><div class="testa"><h3>P6 · I moduli per chi propone non dicono a chi sono riservati</h3>
+<p class="meta"><span class="badge b-g3">3 · grave (stima)</span> <span class="badge b-c2">Contenuti e feedback</span> <span class="badge b-tool">T4</span> <span class="hash">tools/build.py, js/ideablume.js, css/ideablume.css, i18n/*.json</span></p></div>
+<div class="tre">
+<div class="box box--problema"><span class="box__tit">Il problema</span><p>Rimando al modulo giusto prima dei campi: assente nella candidatura, nella collaborazione e in «Contatti».</p></div>
+<div class="box box--info"><span class="box__tit">Che cosa abbiamo cambiato</span><p>In testa alla candidatura un avviso «Per chi è questo modulo» con il collegamento al modulo di collaborazione, e viceversa. Nel modulo di collaborazione il tempo di risposta (10 giorni lavorativi) è scritto prima dei campi. In «Contatti», scegliendo l&#x27;argomento «Proporre un progetto», compare un suggerimento con i due moduli.</p></div>
+<div class="box box--ok"><span class="box__tit">Risultato misurato</span><p>Rimando al modulo giusto prima dei campi: presente in tutti e tre i punti.</p></div>
+</div><div class="coppia"><figure><img src="img/p6-prima.png" alt="Prima: I moduli per chi propone non dicono a chi sono riservati"><figcaption><b>Figura 9.</b> Prima: la versione provata dagli utenti.</figcaption></figure><figure><img src="img/p6-dopo.png" alt="Dopo: I moduli per chi propone non dicono a chi sono riservati"><figcaption><b>Figura 10.</b> Dopo il re-design.</figcaption></figure></div></div>
+<div class="blocco"><div class="testa"><h3>P4 · Nelle schede la percentuale raggiunta si legge a fatica</h3>
+<p class="meta"><span class="badge b-g2">2 · minore (stima)</span> <span class="badge b-c2">Layout</span> <span class="badge b-tool">T1</span> <span class="hash">tools/build.py, js/ideablume.js, css/ideablume.css, i18n/*.json</span></p></div>
+<div class="tre">
+<div class="box box--problema"><span class="box__tit">Il problema</span><p>Percentuale a 15 px, peso 400, tra parentesi in coda alla riga delle cifre.</p></div>
+<div class="box box--info"><span class="box__tit">Che cosa abbiamo cambiato</span><p>La percentuale è accanto alla barra, più grande e in grassetto; la riga sotto resta per le cifre in euro e per i sostenitori. Per chi usa uno screen reader la percentuale è seguita dalle parole «dell&#x27;obiettivo».</p></div>
+<div class="box box--ok"><span class="box__tit">Risultato misurato</span><p>Percentuale a 18 px, peso 700, accanto alla barra.</p></div>
+</div><div class="coppia coppia--tel"><figure><img src="img/p4-prima.png" alt="Prima: Nelle schede la percentuale raggiunta si legge a fatica"><figcaption><b>Figura 11.</b> Prima: la versione provata dagli utenti.</figcaption></figure><figure><img src="img/p4-dopo.png" alt="Dopo: Nelle schede la percentuale raggiunta si legge a fatica"><figcaption><b>Figura 12.</b> Dopo il re-design.</figcaption></figure></div></div>
+<div class="blocco"><div class="testa"><h3>P5 · Nell&#x27;elenco dei progetti i filtri occupano la prima schermata</h3>
+<p class="meta"><span class="badge b-g2">2 · minore (stima)</span> <span class="badge b-c2">Architettura dell&#x27;informazione e layout</span> <span class="badge b-tool">T1</span> <span class="hash">tools/build.py, js/ideablume.js, css/ideablume.css, i18n/*.json</span></p></div>
+<div class="tre">
+<div class="box box--problema"><span class="box__tit">Il problema</span><p>Prima scheda a 1047 px su telefono (schermo alto 740) e a 758 px su computer (schermo alto 800).</p></div>
+<div class="box box--info"><span class="box__tit">Che cosa abbiamo cambiato</span><p>Ricerca e «Ordina per» sono sempre visibili sulla prima riga. Gli altri cinque filtri stanno su una sola riga su computer; su telefono si aprono con il pulsante «Filtri», che dice quanti sono attivi. Senza JavaScript restano tutti visibili.</p></div>
+<div class="box box--ok"><span class="box__tit">Risultato misurato</span><p>Prima scheda a 583 px su telefono e a 577 px su computer: i progetti cominciano nella prima schermata.</p></div>
+</div><div class="coppia coppia--tel"><figure><img src="img/p5m-prima.png" alt="Prima: Nell&#x27;elenco dei progetti i filtri occupano la prima schermata"><figcaption><b>Figura 13.</b> Prima: la versione provata dagli utenti.</figcaption></figure><figure><img src="img/p5m-dopo.png" alt="Dopo: Nell&#x27;elenco dei progetti i filtri occupano la prima schermata"><figcaption><b>Figura 14.</b> Dopo il re-design.</figcaption></figure></div></div>
+<div class="blocco"><div class="testa"><h3>P7 · Su telefono titolo e indicatore dei passi spingono in basso il modulo di donazione</h3>
+<p class="meta"><span class="badge b-g1">1 · cosmetico (stima)</span> <span class="badge b-c2">Layout</span> <span class="badge b-tool">T3</span> <span class="hash">js/ideablume.js, css/ideablume.css</span></p></div>
+<div class="tre">
+<div class="box box--problema"><span class="box__tit">Il problema</span><p>Titolo su 4 righe, indicatore alto 136 px, prima scelta a 636 px.</p></div>
+<div class="box box--info"><span class="box__tit">Che cosa abbiamo cambiato</span><p>Su schermi stretti l&#x27;indicatore sta su una riga: è scritto solo il nome del passo corrente, gli altri passi sono cerchi con il numero o la spunta (il testo resta per le tecnologie assistive). Il titolo usa il nome breve del progetto; quello completo è nel riquadro «La tua donazione». Lo spazio recuperato ospita la striscia con commissione e totale.</p></div>
+<div class="box box--ok"><span class="box__tit">Risultato misurato</span><p>Titolo su 2 righe, indicatore alto 40 px, prima scelta a 607 px, compresa la nuova striscia con commissione e totale (P2).</p></div>
+</div><div class="coppia coppia--tel"><figure><img src="img/p7-prima.png" alt="Prima: Su telefono titolo e indicatore dei passi spingono in basso il modulo di donazione"><figcaption><b>Figura 15.</b> Prima: la versione provata dagli utenti.</figcaption></figure><figure><img src="img/p7-dopo.png" alt="Dopo: Su telefono titolo e indicatore dei passi spingono in basso il modulo di donazione"><figcaption><b>Figura 16.</b> Dopo il re-design.</figcaption></figure></div></div>
+<div class="blocco"><div class="testa"><h3>P8 · Messaggio d&#x27;errore generico per l&#x27;email mancante</h3>
+<p class="meta"><span class="badge b-g1">1 · cosmetico (stima)</span> <span class="badge b-c2">Feedback</span> <span class="badge b-tool">T3, T4</span> <span class="hash">js/ideablume.js, i18n/*.json</span></p></div>
+<div class="tre">
+<div class="box box--problema"><span class="box__tit">Il problema</span><p>Email vuota: «Compila questo campo.»</p></div>
+<div class="box box--info"><span class="box__tit">Che cosa abbiamo cambiato</span><p>Messaggio specifico per l&#x27;email mancante, coerente con quelli degli altri campi, in tutti i moduli e nelle due lingue.</p></div>
+<div class="box box--ok"><span class="box__tit">Risultato misurato</span><p>Email vuota: «Scrivi la tua email.»</p></div>
+</div><div class="coppia"><figure><img src="img/p8-prima.png" alt="Prima: Messaggio d&#x27;errore generico per l&#x27;email mancante"><figcaption><b>Figura 17.</b> Prima: la versione provata dagli utenti.</figcaption></figure><figure><img src="img/p8-dopo.png" alt="Dopo: Messaggio d&#x27;errore generico per l&#x27;email mancante"><figcaption><b>Figura 18.</b> Dopo il re-design.</figcaption></figure></div></div>
+<h3 id="s9-2">Problemi non corretti</h3>
+<p>Tutti i problemi della tabella 14 sono stati corretti. <span class="todo">Se dalle sessioni emergono altri problemi, aggiungerli a <code>problemi.csv</code> con origine «test»: quelli non corretti compaiono qui con il motivo.</span></p>
+</section>
+
+<!-- ============================================================ 10 -->
+<section aria-labelledby="s10">
+<h2 id="s10"><span class="num">10</span>Limiti dello studio e conclusioni</h2>
+<h3 id="s10-1">Limiti</h3>
+<ul>
+<li><strong>Campione piccolo e di convenienza.</strong> Otto persone raggiunte tramite le nostre conoscenze: bastano a far emergere i problemi più frequenti, non a stimare quanto siano diffusi.</li>
+<li><strong>Ordine dei task fisso.</strong> Chi arriva al terzo task conosce già il sito: i tempi di T3 e T4 possono essere migliori di quelli di un primo contatto.</li>
+<li><strong>Pensare ad alta voce rallenta.</strong> I tempi misurati sono più lunghi di quelli d'uso reale e vanno letti come confronto tra task e tra utenti, non come valori assoluti.</li>
+<li><strong>Situazione artificiale.</strong> Dati di fantasia, pagamento simulato, una persona seduta accanto: nessuno ha rischiato denaro proprio, quindi fiducia e abbandono del pagamento sono sottostimati.</li>
+<li><strong>Osservatori coinvolti.</strong> Chi ha osservato ha anche progettato il sito. Abbiamo ridotto il rischio con regole di conteggio scritte prima e con il controllo sulla registrazione.</li>
+<li><strong>Re-design verificato con misure, non con nuovi utenti.</strong> Sappiamo che dopo le modifiche il riepilogo non esce più dallo schermo o che il totale si legge dal primo passo; non sappiamo ancora se le persone se ne accorgono. Il passo successivo sarebbe un secondo giro di test, anche con tre sole persone.</li>
+<li><strong>Ispezione fatta da chi ha progettato il sito.</strong> Chi conosce un'interfaccia fatica a vederne i difetti: per questo l'ispezione produce ipotesi e non conclusioni, e la gravità definitiva dipende da ciò che è successo nelle sessioni.</li>
+</ul>
+<h3 id="s10-2">Conclusioni</h3>
+<p><span class="todo">Da scrivere dopo l'analisi: i due o tre risultati principali, che cosa il test ha mostrato che valutazione euristica, personas e strumenti automatici non avevano fatto emergere, che cosa rifaremmo in modo diverso.</span></p>
+<h3 id="s10-3">Uso dell'intelligenza artificiale</h3>
+<p>Abbiamo usato un assistente basato su IA (Claude Code) per preparare i materiali del test (copione, cartoncini, scheda dell'osservatore), per scrivere gli script che calcolano tabelle, punteggi SUS e grafici a partire dai nostri file di dati, per l'ispezione dei quattro percorsi con le misure e le schermate prima/dopo, e per applicare al codice del prototipo le modifiche del re-design, che abbiamo rivisto e approvato una per una. Le sessioni con gli utenti, la rilevazione delle misure, la trascrizione delle osservazioni, la scelta e la classificazione dei problemi sono opera del gruppo. <span class="todo">Adattare a ciò che è stato fatto davvero.</span></p>
+</section>
+
+<!-- ============================================================ A -->
+<section aria-labelledby="sa">
+<h2 id="sa"><span class="num">A</span>Appendice · Materiali del test</h2>
+<p>Il kit completo usato nelle sessioni (copione del facilitatore, consenso, questionario iniziale, cartoncini, scheda dell'osservatore, SUS, intervista) è nel file <code>kit/kit_test.pdf</code> allegato al prototipo. Qui riportiamo le parti che servono a leggere i risultati.</p>
+<h3 id="sa-1">A.1 Introduzione letta a ogni utente (estratto)</h3>
+<blockquote><p>Stiamo provando il sito, non te. Qui non puoi sbagliare niente: se qualcosa non funziona o non si capisce, è proprio quello che ci serve sapere. Mentre usi il sito ti chiedo di pensare ad alta voce: dimmi che cosa guardi, che cosa cerchi, che cosa ti aspetti, che cosa ti sorprende. Ad alcune domande non potrò rispondere subito, perché ci interessa vedere che cosa fanno le persone quando non hanno nessuno accanto.</p></blockquote>
+<h3 id="sa-2">A.2 Affermazioni del SUS (versione italiana usata)</h3>
+<ol><li>Penso che mi piacerebbe usare questo sito frequentemente.</li><li>Ho trovato il sito inutilmente complesso.</li><li>Ho trovato il sito facile da usare.</li><li>Penso che avrei bisogno dell&#x27;aiuto di una persona esperta per usare questo sito.</li><li>Ho trovato le varie funzioni del sito ben integrate.</li><li>Ho trovato troppe incoerenze nel sito.</li><li>Penso che la maggior parte delle persone imparerebbe a usare questo sito molto rapidamente.</li><li>Ho trovato il sito molto macchinoso da usare.</li><li>Mi sono sentito/a molto sicuro/a nell&#x27;usare il sito.</li><li>Ho dovuto imparare molte cose prima di riuscire a usare il sito.</li></ol>
+<h3 id="sa-3">A.3 Domande dell'intervista</h3>
+<ol>
+<li>Che cosa ti è piaciuto di più del sito?</li>
+<li>Qual è stata la cosa più difficile o fastidiosa?</li>
+<li>Se potessi cambiare una sola cosa, quale cambieresti?</li>
+<li>Ti fideresti a donare davvero su un sito così? Che cosa ti farebbe fidare di più?</li>
+<li>C'è qualcosa che ti aspettavi di trovare e non hai trovato?</li>
+</ol>
+<h3 id="sa-4">A.4 Dati grezzi</h3>
+<p>Tutti i valori di questa relazione sono calcolati dai file CSV nella cartella <code>assignment4/dati/</code> del repository (<code>partecipanti</code>, <code>sessioni</code>, <code>sus</code>, <code>intervista</code>, <code>problemi</code>) con lo script <code>relazione/tools/genera.py</code>.</p>
+</section>
+</main>
+</body>
+</html>

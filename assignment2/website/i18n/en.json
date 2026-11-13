@@ -85,8 +85,9 @@
     "org": "<strong>{gruppo} group</strong><br>{dip}, University of Turin",
     "anno": "Year {anno}",
     "programma": "University programme",
-    "raised": "<strong>{raccolto}</strong> raised of {obiettivo} ({perc})",
-    "supporters": "{n} supporters"
+    "raised": "<strong>{raccolto}</strong> raised of {obiettivo}",
+    "supporters": "{n} supporters",
+    "perc_of_goal": "of the goal"
   },
   "pages": {
     "home": {
@@ -160,7 +161,10 @@
       "end": "You have seen all the projects in this selection.",
       "none": "No projects match your search and filters.",
       "none_hint": "Try clearing the filters or see {link:progetti.html?stato=in-corso|all ongoing projects}.",
-      "noscript": "Without JavaScript, search and filters do not apply: below you will find all projects, ongoing ones first."
+      "noscript": "Without JavaScript, search and filters do not apply: below you will find all projects, ongoing ones first.",
+      "toggle": "Filters",
+      "active_1": "1 active",
+      "active_n": "{n} active"
     },
     "cerca": {
       "title": "Search for a project – ideaBlume",
@@ -261,7 +265,9 @@
       "form_cancel": "Cancel",
       "image_label": "Project illustration",
       "status_title": "Campaign status",
-      "match_more": "How the match works"
+      "match_more": "How the match works",
+      "refund_open": "“All or nothing” rule: if the goal is not reached by the end date, <strong>we return your donation</strong>.",
+      "refund_reached": "The goal has already been reached: <strong>your donation goes to the project</strong> when the campaign closes."
     },
     "donazione": {
       "title": "Support a project – ideaBlume",
@@ -272,12 +278,12 @@
       "missing_cta": "Choose a project",
       "closed": "This campaign is closed: donations are no longer possible.",
       "closed_cta": "See ongoing projects",
-      "summary_title": "You are supporting",
+      "summary_title": "Your donation",
       "sum_project": "Project",
       "sum_reward": "Reward",
       "sum_amount": "Donation",
       "sum_free": "Free donation",
-      "edit": "Change",
+      "edit": "Change amount or reward",
       "steps_label": "Donation steps",
       "step_of": "Step {n} of {tot}",
       "steps": [
@@ -335,7 +341,14 @@
       "back": "Back",
       "back_project": "Back to the project",
       "saved": "Your details stay saved in this browser tab until you close it.",
-      "noscript": "The donation needs JavaScript. You can read all the projects or call us on {tel}."
+      "noscript": "The donation needs JavaScript. You can read all the projects or call us on {tel}.",
+      "sum_fee": "Fee",
+      "sum_total": "Total",
+      "sum_range": "{min} to {max}",
+      "sum_note_pending": "The fee depends on the payment method, which you choose in step 4. It is paid by the donor.",
+      "sum_note_method": "Fee calculated for {metodo}.",
+      "s1_fee": "<strong>Payment fee:</strong> the fee of the method you choose in step 4 is added to the total. For this amount it ranges from {min} to {max}.",
+      "s4_total": "Total {totale}"
     },
     "conferma": {
       "title": "Donation completed – ideaBlume",
@@ -674,13 +687,15 @@
       "sent_title": "Application received",
       "sent": "Thank you, {nome}. Within 10 working days the ideaBlume Office will write to {email} with the result of the check and the training dates.",
       "sent_summary": "Application summary",
-      "goal_range": "The goal must be between €3,000 and €10,000."
+      "goal_range": "The goal must be between €3,000 and €10,000.",
+      "who_title": "Who this form is for",
+      "who": "It is reserved for researchers at the University of Turin. Do you represent an association, a school, an organisation or a company? Use the {link:collabora.html|form to propose a collaboration}."
     },
     "collabora": {
       "title": "Propose a partnership – ideaBlume",
       "h1": "Propose a partnership with a research group",
       "intro": "For local associations, schools, organisations and companies. Tell us your idea: the ideaBlume Office looks for an interested research group at the University of Turin and puts you in touch.",
-      "no_commit": "<strong>Sending this form does not commit your organisation</strong> and is free.",
+      "no_commit": "<strong>Sending this form does not commit your organisation</strong> and is free. We reply within 10 working days.",
       "f_org": "Your organisation",
       "f_org_name": "Name of the organisation",
       "f_org_type": "Type of organisation",
@@ -704,7 +719,8 @@
       "f_send": "Send proposal",
       "sent_title": "Proposal received",
       "sent": "Thank you. Within 10 working days someone from the ideaBlume Office will contact you at {email}{tel}.",
-      "print_hint": "You can print this summary and bring it to your meeting."
+      "print_hint": "You can print this summary and bring it to your meeting.",
+      "who": "Are you a researcher at the University of Turin? This form is not for you: use the {link:candidatura.html|application to the University programme}."
     },
     "chi": {
       "title": "About us – ideaBlume",
@@ -1139,7 +1155,8 @@
       "f_msg": "Message",
       "f_send": "Send message",
       "f_sending": "Sending…",
-      "f_sent": "Message sent. We will reply within {giorni} working days to {email}."
+      "f_sent": "Message sent. We will reply within {giorni} working days to {email}.",
+      "subject_tip": "Do you want to propose a project? The dedicated forms are quicker: the {link:candidatura.html|application to the programme} if you are a researcher at the University of Turin, the {link:collabora.html|collaboration proposal} if you represent an association, a school or an organisation."
     },
     "accessibilita": {
       "title": "Accessibility – ideaBlume",
@@ -1197,6 +1214,7 @@
     "chars": "{n} of {max} characters",
     "processing": "Payment in progress…",
     "sold_out": "Sold out",
-    "fee_none": "none"
+    "fee_none": "none",
+    "err_email_missing": "Enter your email address."
   }
 }

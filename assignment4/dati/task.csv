@@ -1,0 +1,5 @@
+task,tempo_limite_s,tempo_esperto_s,azioni_minime
+T1,180,,3
+T2,240,,2
+T3,420,,9
+T4,360,,4

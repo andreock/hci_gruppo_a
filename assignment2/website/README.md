@@ -4,6 +4,8 @@
 
 Il progetto riparte dai 90 problemi di usabilità trovati su IdeaGinger in assignment1 e dalle 12 personas e dai 12 journey dell'assignment 2. Ogni scelta è tracciata in `docs/05_tracciabilita.md`.
 
+> **Assignment 4 (branch `assignment4`).** Dopo il test di usabilità il prototipo è stato ridisegnato in otto punti (riepilogo della donazione su telefono, riquadro «La tua donazione» con commissione e totale sempre visibili, regola «tutto o niente» in vista, percentuale nelle schede, filtri compatti, avvisi «Per chi è questo modulo», indicatore dei passi su una riga, messaggio per l'email mancante). Problemi, misure prima/dopo e schermate sono in `assignment4/` (relazione e `dati/problemi.csv`); nel CSS le regole sono nella sezione «21b».
+
 ## Come aprirlo
 
 - **Senza server** (come richiesto da `assignment2/Istruzioni.md`): aprire **`index.html`** con un doppio clic. Tutto funziona da `file://`: filtri, ricerca, donazione, moduli, tema chiaro e scuro, versione inglese.

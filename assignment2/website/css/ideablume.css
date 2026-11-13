@@ -946,6 +946,105 @@ code { font-size: .9em; background: var(--c-surface-2); padding: .05em .35em; bo
 .grid > li > .statusbox, .grid > .statusbox { height: 100%; }
 main.container > .statusbox, main.container > section.statusbox { margin: var(--s-6) 0; }
 
+/* ---------- 21b. Re-design dopo il test di usabilità (assignment 4) ------ */
+/* P1 · Riepiloghi (donazione, conferma, moduli inviati): nessun valore esce dal riquadro.
+   Prima: «auto 1fr» lasciava alla colonna dei valori la larghezza della parola più lunga (un'email),
+   che a 375 px superava il riquadro. Ora le colonne possono restringersi, i valori vanno a capo
+   e sotto 480 px etichetta e valore stanno uno sopra l'altro. */
+.summary dl { grid-template-columns: fit-content(45%) minmax(0, 1fr); }
+.summary dt, .summary dd { min-width: 0; overflow-wrap: break-word; }
+.summary dd { overflow-wrap: anywhere; }
+@media (max-width: 479px) {
+  .summary { padding: var(--s-3) var(--s-4); }
+  .summary dl { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .summary dt { font-size: var(--fs-small); padding-top: var(--s-2); }
+  .summary dd { padding-bottom: var(--s-2); border-bottom: 1px solid var(--c-border); }
+  .summary dd:last-child { border-bottom: 0; padding-bottom: 0; }
+  .summary dd.total { border-top: 0; padding-top: 0; font-size: 1.25rem; }
+}
+
+/* P2 · «La tua donazione»: importo, commissione e totale sempre visibili durante i 5 passi.
+   Schermi larghi: colonna a destra del modulo, che resta in vista scorrendo.
+   Schermi stretti: una striscia compatta sotto l'indicatore dei passi (donazione e commissione su una riga, totale sotto). */
+.don-app { display: grid; grid-template-columns: minmax(0, 1fr); }
+.summary--don { max-width: none; padding: var(--s-3) var(--s-4); margin: 0 0 var(--s-5); }
+.summary--don h2 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.summary--don dl { display: flex; flex-wrap: wrap; gap: 0 var(--s-4); }
+.summary--don dl > div { display: flex; gap: .4em; align-items: baseline; min-width: 0; }
+.summary--don dt, .summary--don dd { padding: 0; border: 0; font-size: var(--fs-small); overflow-wrap: normal; }
+.summary--don dd { font-variant-numeric: tabular-nums; }
+.summary--don dl > .total { flex-basis: 100%; border-top: 0; padding-top: var(--s-1); }
+.summary--don .total dt { color: var(--c-ink); font-weight: 700; }
+.summary--don .total dd { color: var(--c-brand); font-size: 1.1875rem; }
+.summary--don dl > .summary__extra { flex-basis: 100%; }
+.summary--don dl > .summary__extra dt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.summary--don dl > .summary__extra dd { font-weight: 600; }
+.summary--don dl > .summary__extra + .summary__extra, .summary--don .summary__note, .summary--don .summary__edit { display: none; }
+.choice__costo strong { color: var(--c-ink); font-weight: 700; white-space: nowrap; }
+@media (min-width: 1024px) {
+  .don-app { grid-template-columns: minmax(0, 1fr) minmax(0, 21rem); column-gap: var(--s-7); align-items: start; }
+  .don-app > * { grid-column: 1; }
+  .don-app > nav { grid-column: 1 / -1; }
+  .don-app > .summary--don { grid-column: 2; grid-row: 2 / span 5; position: sticky; top: 6.5rem; padding: var(--s-5); margin: 0; }
+  .summary--don h2 { position: static; width: auto; height: auto; overflow: visible; clip: auto; white-space: normal;
+    font-size: var(--fs-h4); margin: 0 0 var(--s-3); }
+  .summary--don dl { display: block; }
+  .summary--don dl > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s-4); padding: var(--s-2) 0; border-bottom: 1px solid var(--c-border); }
+  .summary--don dl > .summary__extra, .summary--don dl > .summary__extra + .summary__extra { display: block; }
+  .summary--don dl > .summary__extra dt { position: static; width: auto; height: auto; overflow: visible; clip: auto; white-space: normal; }
+  .summary--don .summary__extra dd { font-weight: 600; }
+  .summary--don dl > .total { border-top: 2px solid var(--c-ink); border-bottom: 0; margin-top: -1px; padding-top: var(--s-3); }
+  .summary--don .total dd { font-size: 1.375rem; }
+  .summary--don .summary__note, .summary--don .summary__edit { display: block; margin: var(--s-3) 0 0; color: var(--c-ink-muted); }
+  .summary--don .summary__edit[hidden] { display: none; }
+}
+
+/* P3 · La regola «tutto o niente» scritta sotto il pulsante «Sostieni il progetto» */
+.statusbox__note { margin: var(--s-3) 0 0; font-size: var(--fs-small); color: var(--c-ink-muted); }
+.statusbox__note strong { color: var(--c-ink); }
+
+/* P4 · Schede: la percentuale sta accanto alla barra, in evidenza */
+.card__progress { display: flex; align-items: center; gap: var(--s-3); margin-top: var(--s-1); }
+.card__progress .progress { flex: 1; margin-top: 0; }
+.card__perc { margin: 0; min-width: 3.25ch; text-align: right; font-size: 1.125rem; line-height: 1; color: var(--c-ink); font-variant-numeric: tabular-nums; }
+
+/* P5 · Filtri dell'elenco: i progetti si vedono già nella prima schermata.
+   Ricerca e ordinamento restano sempre visibili; gli altri cinque filtri stanno su una riga (schermi larghi)
+   oppure si aprono con il pulsante «Filtri» (schermi stretti). Senza JavaScript sono sempre tutti visibili. */
+.filters__top { display: grid; gap: var(--s-4); grid-template-columns: minmax(0, 1fr); margin-bottom: var(--s-4); }
+.filters .filters__top .filters__search { margin-bottom: 0; }
+.filters__toggle { margin: 0; }
+.filters__toggle .btn { min-height: var(--target); }
+.filters__reset { margin: 0; align-self: end; }
+@media (max-width: 599px) {
+  .filters { padding: var(--s-4); }
+  .js .filters:not(.is-open) .filters__grid { display: none; }
+  .filters.is-open .filters__toggle { margin-bottom: var(--s-4); }
+}
+@media (min-width: 600px) {
+  .filters__top { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+  .filters__toggle { display: none; }
+}
+@media (min-width: 1024px) {
+  .filters { padding: var(--s-4) var(--s-5); margin: var(--s-4) 0; }
+  .filters__grid { grid-template-columns: minmax(0, .8fr) minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1.25fr) auto; gap: var(--s-3); }
+  .result-count { margin-top: var(--s-4); }
+}
+
+/* P6 · «Per chi è questo modulo» in testa ai moduli e suggerimento in «Contatti» */
+.form-who { max-width: 44rem; }
+.form-who a { font-weight: 650; }
+
+/* P7 · Indicatore dei passi su schermi stretti: una sola riga.
+   Resta scritto solo il nome del passo corrente; gli altri sono cerchi con numero o spunta
+   (il testo resta per le tecnologie assistive). */
+@media (max-width: 599px) {
+  .steps { flex-wrap: nowrap; gap: var(--s-1); margin-bottom: var(--s-3); }
+  .steps li:not([aria-current="step"]) { font-size: 0; gap: 0; padding: .25rem; }
+  .steps li::before { font-size: .9375rem; flex: none; }
+  .steps li[aria-current="step"] { min-width: 0; }
+}
+
 /* ---------- 22. Stampa --------------------------------------------------- */
 @media print {
   .site-header, .site-footer, .breadcrumb, .skip-link, .back-to-top, .btn, .nav-toggle, .no-print { display: none !important; }

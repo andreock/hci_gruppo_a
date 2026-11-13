@@ -1,6 +1,6 @@
 # Verifica responsive, zoom, daltonismo e aree cliccabili
 
-Generato da `tools/responsive.js` il 05/11/2026, 11:51:40 (Playwright + Google Chrome). Screenshot in `docs/verifiche/screenshot/`.
+Generato da `tools/responsive.js` il 13/11/2026, 16:03:17 (Playwright + Google Chrome). Screenshot in `docs/verifiche/screenshot/`.
 
 ## Scorrimento orizzontale (WCAG 1.4.10)
 

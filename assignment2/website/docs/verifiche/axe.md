@@ -1,6 +1,6 @@
 # Verifica automatica delle pagine
 
-Generato da `tools/verifica-pagine.js` il 05/11/2026, 11:50:57 con Google Chrome (Playwright) e axe-core 4.10.3, regole WCAG 2.0, 2.1 e 2.2 livello A e AA.
+Generato da `tools/verifica-pagine.js` il 13/11/2026, 16:02:46 con Google Chrome (Playwright) e axe-core 4.10.3, regole WCAG 2.0, 2.1 e 2.2 livello A e AA.
 
 ## Sintesi
 

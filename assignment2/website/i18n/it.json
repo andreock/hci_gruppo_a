@@ -85,8 +85,9 @@
     "org": "<strong>Gruppo {gruppo}</strong><br>{dip}, Università di Torino",
     "anno": "Anno {anno}",
     "programma": "Programma dell'Ateneo",
-    "raised": "<strong>{raccolto}</strong> raccolti su {obiettivo} ({perc})",
-    "supporters": "{n} sostenitori"
+    "raised": "<strong>{raccolto}</strong> raccolti su {obiettivo}",
+    "supporters": "{n} sostenitori",
+    "perc_of_goal": "dell'obiettivo"
   },
   "pages": {
     "home": {
@@ -160,7 +161,10 @@
       "end": "Hai visto tutti i progetti di questa selezione.",
       "none": "Nessun progetto corrisponde alla ricerca e ai filtri scelti.",
       "none_hint": "Prova ad azzerare i filtri oppure guarda {link:progetti.html?stato=in-corso|tutti i progetti in corso}.",
-      "noscript": "Senza JavaScript la ricerca e i filtri non si applicano: qui sotto trovi tutti i progetti, prima quelli in corso."
+      "noscript": "Senza JavaScript la ricerca e i filtri non si applicano: qui sotto trovi tutti i progetti, prima quelli in corso.",
+      "toggle": "Filtri",
+      "active_1": "1 attivo",
+      "active_n": "{n} attivi"
     },
     "cerca": {
       "title": "Cerca un progetto – ideaBlume",
@@ -261,7 +265,9 @@
       "form_cancel": "Annulla",
       "image_label": "Illustrazione del progetto",
       "status_title": "Stato della raccolta",
-      "match_more": "Come funziona il raddoppio"
+      "match_more": "Come funziona il raddoppio",
+      "refund_open": "Regola «tutto o niente»: se alla scadenza l'obiettivo non è raggiunto, <strong>ti restituiamo la donazione</strong>.",
+      "refund_reached": "L'obiettivo è già raggiunto: <strong>la tua donazione va al progetto</strong> alla chiusura della raccolta."
     },
     "donazione": {
       "title": "Sostieni un progetto – ideaBlume",
@@ -272,12 +278,12 @@
       "missing_cta": "Scegli un progetto",
       "closed": "La raccolta di questo progetto è conclusa: non si può più donare.",
       "closed_cta": "Scopri i progetti in corso",
-      "summary_title": "Stai sostenendo",
+      "summary_title": "La tua donazione",
       "sum_project": "Progetto",
       "sum_reward": "Ricompensa",
       "sum_amount": "Donazione",
       "sum_free": "Donazione libera",
-      "edit": "Modifica",
+      "edit": "Modifica importo o ricompensa",
       "steps_label": "Passi della donazione",
       "step_of": "Passo {n} di {tot}",
       "steps": [
@@ -335,7 +341,14 @@
       "back": "Indietro",
       "back_project": "Torna al progetto",
       "saved": "I dati restano salvati in questa scheda del browser finché non la chiudi.",
-      "noscript": "La donazione richiede JavaScript. Puoi leggere tutti i progetti oppure chiamarci al {tel}."
+      "noscript": "La donazione richiede JavaScript. Puoi leggere tutti i progetti oppure chiamarci al {tel}.",
+      "sum_fee": "Commissione",
+      "sum_total": "Totale",
+      "sum_range": "da {min} a {max}",
+      "sum_note_pending": "La commissione dipende dal metodo di pagamento, che scegli al passo 4. La paga chi dona.",
+      "sum_note_method": "Commissione calcolata per {metodo}.",
+      "s1_fee": "<strong>Commissione del pagamento:</strong> al totale si aggiunge la commissione del metodo che scegli al passo 4. Per questo importo va da {min} a {max}.",
+      "s4_total": "Totale {totale}"
     },
     "conferma": {
       "title": "Donazione completata – ideaBlume",
@@ -674,13 +687,15 @@
       "sent_title": "Candidatura ricevuta",
       "sent": "Grazie, {nome}. Entro 10 giorni lavorativi l'Ufficio ideaBlume ti scrive a {email} con l'esito della verifica e le date della formazione.",
       "sent_summary": "Riepilogo della candidatura",
-      "goal_range": "L'obiettivo deve essere tra € 3.000 e € 10.000."
+      "goal_range": "L'obiettivo deve essere tra € 3.000 e € 10.000.",
+      "who_title": "Per chi è questo modulo",
+      "who": "È riservato a chi fa ricerca all'Università di Torino. Rappresenti un'associazione, una scuola, un ente o un'impresa? Usa il {link:collabora.html|modulo per proporre una collaborazione}."
     },
     "collabora": {
       "title": "Proponi una collaborazione – ideaBlume",
       "h1": "Proponi una collaborazione con un gruppo di ricerca",
       "intro": "Per associazioni, scuole, enti e imprese del territorio. Raccontaci l'idea: l'Ufficio ideaBlume cerca un gruppo di ricerca dell'Università di Torino interessato e vi mette in contatto.",
-      "no_commit": "<strong>Inviare questo modulo non impegna il vostro ente</strong> e non ha costi.",
+      "no_commit": "<strong>Inviare questo modulo non impegna il vostro ente</strong> e non ha costi. Vi rispondiamo entro 10 giorni lavorativi.",
       "f_org": "Il vostro ente",
       "f_org_name": "Nome dell'ente",
       "f_org_type": "Tipo di ente",
@@ -704,7 +719,8 @@
       "f_send": "Invia la proposta",
       "sent_title": "Proposta ricevuta",
       "sent": "Grazie. Entro 10 giorni lavorativi una persona dell'Ufficio ideaBlume vi contatta a {email}{tel}.",
-      "print_hint": "Potete stampare questo riepilogo e portarlo in riunione."
+      "print_hint": "Potete stampare questo riepilogo e portarlo in riunione.",
+      "who": "Fai ricerca all'Università di Torino? Questo modulo non è per te: usa la {link:candidatura.html|candidatura al programma dell'Ateneo}."
     },
     "chi": {
       "title": "Chi siamo – ideaBlume",
@@ -1139,7 +1155,8 @@
       "f_msg": "Messaggio",
       "f_send": "Invia il messaggio",
       "f_sending": "Invio in corso…",
-      "f_sent": "Messaggio inviato. Ti rispondiamo entro {giorni} giorni lavorativi all'indirizzo {email}."
+      "f_sent": "Messaggio inviato. Ti rispondiamo entro {giorni} giorni lavorativi all'indirizzo {email}.",
+      "subject_tip": "Vuoi proporre un progetto? Con i moduli dedicati fai prima: la {link:candidatura.html|candidatura al programma} se fai ricerca all'Università di Torino, la {link:collabora.html|proposta di collaborazione} se rappresenti un'associazione, una scuola o un ente."
     },
     "accessibilita": {
       "title": "Accessibilità – ideaBlume",
@@ -1197,6 +1214,7 @@
     "chars": "{n} caratteri su {max}",
     "processing": "Pagamento in corso…",
     "sold_out": "Esaurita",
-    "fee_none": "nessuna"
+    "fee_none": "nessuna",
+    "err_email_missing": "Scrivi la tua email."
   }
 }
