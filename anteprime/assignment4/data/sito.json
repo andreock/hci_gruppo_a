@@ -1,0 +1,226 @@
+{
+  "nome": "ideaBlume",
+  "contatti": {
+    "telefono": "+39 011 019 4250",
+    "telefono_visibile": "011 019 4250",
+    "email_aiuto": "aiuto@ideablume.it",
+    "email_programma": "programma@ideablume.it",
+    "email_collaborazioni": "collaborazioni@ideablume.it",
+    "indirizzo": "Corso della Ricerca 12, 10124 Torino",
+    "orari": {
+      "it": "dal lunedì al venerdì, 9:30–13:00 e 14:00–17:00",
+      "en": "Monday to Friday, 9:30–13:00 and 14:00–17:00 (Italian time)"
+    },
+    "orari_brevi": {
+      "it": "lun–ven 9:30–13:00 e 14:00–17:00",
+      "en": "Mon–Fri 9:30–13:00 and 14:00–17:00"
+    },
+    "risposta_giorni": 2,
+    "risposta_gruppi_giorni": 3
+  },
+  "regole": {
+    "minimo_libero": 5,
+    "tetto_cofinanziamento": 10000,
+    "durata_min_giorni": 30,
+    "durata_max_giorni": 60
+  },
+  "metodi_pagamento": [
+    {
+      "id": "carta",
+      "nome": {
+        "it": "Carta di credito, debito o prepagata",
+        "en": "Credit, debit or prepaid card"
+      },
+      "dopo": {
+        "it": "Inserisci i dati della carta nella pagina sicura del circuito di pagamento.",
+        "en": "You enter your card details on the payment provider's secure page."
+      },
+      "percentuale": 1.8,
+      "fisso": 0.35
+    },
+    {
+      "id": "paypal",
+      "nome": {
+        "it": "PayPal",
+        "en": "PayPal"
+      },
+      "dopo": {
+        "it": "Accedi al tuo conto PayPal e confermi il pagamento.",
+        "en": "You log in to PayPal and confirm the payment."
+      },
+      "percentuale": 1.8,
+      "fisso": 0.35
+    },
+    {
+      "id": "satispay",
+      "nome": {
+        "it": "Satispay",
+        "en": "Satispay"
+      },
+      "dopo": {
+        "it": "Confermi il pagamento nell'app Satispay.",
+        "en": "You confirm the payment in the Satispay app."
+      },
+      "percentuale": 1.8,
+      "fisso": 0.35
+    },
+    {
+      "id": "bonifico",
+      "nome": {
+        "it": "Bonifico bancario",
+        "en": "Bank transfer"
+      },
+      "dopo": {
+        "it": "Ricevi via email le coordinate per il bonifico; la donazione vale quando arriva il bonifico.",
+        "en": "You receive the bank details by email; the donation counts when the transfer arrives."
+      },
+      "percentuale": 0,
+      "fisso": 0
+    }
+  ],
+  "categorie": {
+    "salute": {
+      "it": "Salute",
+      "en": "Health"
+    },
+    "ambiente": {
+      "it": "Ambiente",
+      "en": "Environment"
+    },
+    "animali": {
+      "it": "Animali",
+      "en": "Animals"
+    },
+    "tecnologia": {
+      "it": "Tecnologia",
+      "en": "Technology"
+    },
+    "educazione": {
+      "it": "Educazione e inclusione",
+      "en": "Education and inclusion"
+    },
+    "cultura": {
+      "it": "Società e cultura",
+      "en": "Society and culture"
+    },
+    "agricoltura": {
+      "it": "Agricoltura e cibo",
+      "en": "Agriculture and food"
+    }
+  },
+  "dipartimenti": {
+    "veterinarie": {
+      "it": "Dipartimento di Scienze Veterinarie",
+      "en": "Department of Veterinary Sciences"
+    },
+    "sanita-pubblica": {
+      "it": "Dipartimento di Scienze della Sanità Pubblica e Pediatriche",
+      "en": "Department of Public Health and Paediatric Sciences"
+    },
+    "scienze-vita": {
+      "it": "Dipartimento di Scienze della Vita e Biologia dei Sistemi",
+      "en": "Department of Life Sciences and Systems Biology"
+    },
+    "psicologia": {
+      "it": "Dipartimento di Psicologia",
+      "en": "Department of Psychology"
+    },
+    "informatica": {
+      "it": "Dipartimento di Informatica",
+      "en": "Department of Computer Science"
+    },
+    "biotecnologie": {
+      "it": "Dipartimento di Biotecnologie Molecolari e Scienze per la Salute",
+      "en": "Department of Molecular Biotechnology and Health Sciences"
+    },
+    "matematica": {
+      "it": "Dipartimento di Matematica «Giuseppe Peano»",
+      "en": "“Giuseppe Peano” Department of Mathematics"
+    },
+    "studi-umanistici": {
+      "it": "Dipartimento di Studi Umanistici",
+      "en": "Department of Humanities"
+    },
+    "filosofia-educazione": {
+      "it": "Dipartimento di Filosofia e Scienze dell'Educazione",
+      "en": "Department of Philosophy and Education Sciences"
+    },
+    "disafa": {
+      "it": "Dipartimento di Scienze Agrarie, Forestali e Alimentari",
+      "en": "Department of Agricultural, Forest and Food Sciences"
+    },
+    "scienze-terra": {
+      "it": "Dipartimento di Scienze della Terra",
+      "en": "Department of Earth Sciences"
+    }
+  },
+  "nomi_sostenitori": [
+    "Anna R.",
+    "Marco B.",
+    "Giovanna T.",
+    "Paolo F.",
+    "Luisa C.",
+    "Stefano M.",
+    "Elisa G.",
+    "Roberto V.",
+    "Silvia P.",
+    "Fabio D.",
+    "Chiara N.",
+    "Davide S.",
+    "Laura M.",
+    "Alessandro Z.",
+    "Federica O.",
+    "Simone L.",
+    "Martina A.",
+    "Giorgio E.",
+    "Valentina R.",
+    "Nicola P."
+  ],
+  "accessibilita": {
+    "verifiche": {
+      "it": [
+        "axe-core 4.10 su tutte le 58 pagine, in italiano e in inglese: nessuna violazione delle regole WCAG 2.2 di livello A e AA, nel tema chiaro e nel tema scuro.",
+        "Percorso completo solo da tastiera (ricerca, progetto, donazione, conferma), con menu, spiegazioni a comparsa ed errori dei moduli: 66 controlli automatici superati.",
+        "Contrasto di tutte le 90 coppie di colori usate, nel tema chiaro e nel tema scuro: almeno 4,5:1 per il testo e 3:1 per componenti e indicatore di focus.",
+        "Nessuno scorrimento orizzontale a 320 px e con lo zoom del browser al 200%.",
+        "Aree cliccabili di almeno 24×24 px; pulsanti principali alti 44 px.",
+        "Controllo con filtri di deuteranopia e acromatopsia: lo stato delle campagne resta riconoscibile da testo e icona.",
+        "Lighthouse su smartphone: accessibilità 100 su home, elenco dei progetti, pagina progetto e donazione."
+      ],
+      "en": [
+        "axe-core 4.10 on all 58 pages, in Italian and English: no violations of WCAG 2.2 level A and AA rules, in the light and dark themes.",
+        "Complete keyboard-only journey (search, project, donation, confirmation), including menu, toggletips and form errors: 66 automated checks passed.",
+        "Contrast of all 90 colour pairs in use, in the light and dark themes: at least 4.5:1 for text and 3:1 for components and the focus indicator.",
+        "No horizontal scrolling at 320 px wide or with browser zoom at 200%.",
+        "Click targets of at least 24×24 px; main buttons are 44 px high.",
+        "Check with deuteranopia and achromatopsia filters: campaign status stays recognisable from text and icon.",
+        "Lighthouse on mobile: accessibility 100 on the home page, project list, project page and donation."
+      ]
+    },
+    "limiti": {
+      "it": [
+        "Non sono ancora stati fatti test con persone che usano screen reader, ingranditori o comandi vocali: i controlli automatici coprono solo una parte dei criteri WCAG.",
+        "Nomi, ruoli e stati dei controlli (aria-expanded, aria-invalid, aria-current) e l'annuncio dei messaggi di stato (numero di risultati della ricerca, conferme ed errori dei moduli) sono stati verificati con strumenti automatici e sul codice, non con NVDA o VoiceOver.",
+        "Ricerca, filtri e donazione richiedono JavaScript; pagine dei progetti, FAQ e «Come funziona» funzionano anche senza.",
+        "I commenti dei sostenitori sono pubblicati nella lingua in cui sono stati scritti."
+      ],
+      "en": [
+        "No tests have yet been carried out with people using screen readers, magnifiers or voice control: automated checks cover only part of the WCAG criteria.",
+        "Control names, roles and states (aria-expanded, aria-invalid, aria-current) and the announcement of status messages (number of search results, form confirmations and errors) were checked with automated tools and in the code, not with NVDA or VoiceOver.",
+        "Search, filters and the donation need JavaScript; project pages, FAQ and “How it works” work without it.",
+        "Supporters' comments are published in the language they were written in."
+      ]
+    }
+  },
+  "bando": {
+    "edizione": 2027,
+    "periodo": {
+      "it": "dal 1° novembre 2026 al 31 marzo 2027",
+      "en": "from 1 November 2026 to 31 March 2027"
+    },
+    "scadenza": {
+      "it": "31 marzo 2027",
+      "en": "31 March 2027"
+    }
+  }
+}

@@ -1,0 +1,470 @@
+[
+  {
+    "slug": "alveari-sani",
+    "programma": true, "anno": 2026, "categoria": "animali", "dipartimento": "veterinarie", "gruppo": "ApiLab",
+    "titolo": {"it": "Alveari sani: monitorare la salute delle api del Piemonte", "en": "Healthy hives: monitoring the health of bees in Piedmont"},
+    "titolo_breve": {"it": "Alveari sani", "en": "Healthy hives"},
+    "sottotitolo": {"it": "Sensori nelle arnie e analisi di laboratorio per scoprire in tempo le malattie che colpiscono le api.", "en": "Sensors in the hives and lab tests to detect bee diseases early."},
+    "obiettivo": 6000, "raccolto": 7800, "inizio": "rel:-40", "scadenza": "rel:20",
+    "secondo_obiettivo": {"importo": 9000, "scopo": {"it": "aggiungere due apiari di monitoraggio, in Val di Susa e nel Cuneese", "en": "add two more monitoring apiaries, in the Susa Valley and near Cuneo"}},
+    "presentazione": {
+      "it": [
+        {"t": "Il problema", "p": ["Negli ultimi anni molti apicoltori piemontesi hanno perso una parte delle loro colonie. Parassiti, malattie e sbalzi di temperatura indeboliscono le famiglie di api, e spesso il danno si scopre solo quando si apre l'arnia e ormai è tardi.", "Per chi vive di miele è una perdita economica. Per tutti gli altri è un rischio in più per l'impollinazione di frutteti, orti e piante selvatiche."]},
+        {"t": "Che cosa fa il gruppo", "p": ["Il gruppo ApiLab installa sensori di peso, temperatura e suono nelle arnie di apicoltori volontari. Un'arnia che perde peso all'improvviso, si scalda troppo o cambia ronzio può segnalare un problema prima che si veda a occhio nudo.", "Intanto il laboratorio analizza campioni di api e di miele, per capire quali segnali dei sensori corrispondono davvero a una malattia. Le prime due arnie sono già attive e trasmettono i dati ogni ora."]},
+        {"t": "Che cosa resterà", "p": ["Gli apicoltori riceveranno indicazioni pratiche e gratuite, in tempo utile per intervenire, e guide scritte in modo semplice.", "I dati saranno pubblici: chiunque potrà vedere come stanno le api del proprio territorio."]}
+      ],
+      "en": [
+        {"t": "The problem", "p": ["In recent years many beekeepers in Piedmont have lost part of their colonies. Parasites, diseases and sudden changes in temperature weaken bee colonies, and the damage is often discovered only when the hive is opened and it is too late.", "For people who make a living from honey it is a financial loss. For everyone else it is one more risk for the pollination of orchards, vegetable gardens and wild plants."]},
+        {"t": "What the group is doing", "p": ["The ApiLab group installs weight, temperature and sound sensors in the hives of volunteer beekeepers. A hive that suddenly loses weight, gets too warm or changes its hum can signal a problem before it can be seen with the naked eye.", "Meanwhile, the lab tests samples of bees and honey to find out which sensor signals really point to a disease. The first two hives are already active and send data every hour."]},
+        {"t": "What it will leave behind", "p": ["Beekeepers will receive practical, free advice in time to act, along with guides written in simple language.", "The data will be public: anyone will be able to see how the bees in their area are doing."]}
+      ]
+    },
+    "fondi": [
+      {"voce": {"it": "Sensori per 4 arnie di monitoraggio", "en": "Sensors for 4 monitoring hives"}, "importo": 2400},
+      {"voce": {"it": "Analisi di laboratorio dei campioni", "en": "Lab tests on samples"}, "importo": 2200},
+      {"voce": {"it": "Trasferte negli apiari", "en": "Travel to the apiaries"}, "importo": 900},
+      {"voce": {"it": "Guide pratiche per gli apicoltori", "en": "Practical guides for beekeepers"}, "importo": 500}
+    ],
+    "team": [
+      {"nome": "Elena Bruno", "ruolo": {"it": "Responsabile scientifica, professoressa associata di Parassitologia veterinaria", "en": "Principal investigator, associate professor of Veterinary Parasitology"}},
+      {"nome": "Matteo Gili", "ruolo": {"it": "Assegnista di ricerca, analisi dei dati dei sensori", "en": "Research fellow, sensor data analysis"}},
+      {"nome": "Sara Rinaudo", "ruolo": {"it": "Dottoranda, analisi di laboratorio", "en": "PhD student, lab analysis"}},
+      {"nome": "Paolo Viale", "ruolo": {"it": "Tecnico di laboratorio", "en": "Lab technician"}}
+    ],
+    "ricompense": [
+      {"id": "r15", "importo": 15, "titolo": {"it": "Cartolina illustrata degli apiari", "en": "Illustrated postcard of the apiaries"}, "descrizione": {"it": "Una cartolina disegnata da un'illustratrice torinese, spedita a casa.", "en": "A postcard drawn by a Turin illustrator, sent to your home."}, "scelte": 38, "posti": null},
+      {"id": "r30", "importo": 30, "titolo": {"it": "Adotta un'arnia virtuale", "en": "Adopt a virtual hive"}, "descrizione": {"it": "Ogni mese una email con foto e dati dell'arnia che hai adottato.", "en": "A monthly email with photos and data from the hive you adopted."}, "scelte": 44, "posti": null},
+      {"id": "r50", "importo": 50, "titolo": {"it": "Vasetto di miele del progetto e cartolina", "en": "Jar of project honey and postcard"}, "descrizione": {"it": "Miele da un apiaro di monitoraggio, analizzato in laboratorio.", "en": "Honey from a monitoring apiary, tested in the lab."}, "scelte": 21, "posti": 30},
+      {"id": "r120", "importo": 120, "titolo": {"it": "Il tuo nome su un'arnia di monitoraggio", "en": "Your name on a monitoring hive"}, "descrizione": {"it": "Una targhetta con il tuo nome e la ricompensa da € 50.", "en": "A small plate with your name, plus the €50 reward."}, "scelte": 6, "posti": 20},
+      {"id": "r250", "importo": 250, "titolo": {"it": "Visita guidata a un apiario di ricerca", "en": "Guided visit to a research apiary"}, "descrizione": {"it": "Mezza giornata con il gruppo, per 2 persone, in primavera 2027.", "en": "Half a day with the team, for 2 people, in spring 2027."}, "scelte": 0, "posti": 10}
+    ],
+    "libere": 33,
+    "aggiornamenti": [
+      {"data": "rel:-3", "titolo": {"it": "Obiettivo raggiunto: e adesso?", "en": "Goal reached: what now?"}, "testo": {"it": "Grazie! Abbiamo superato i € 6.000. L'Ateneo raddoppierà questa cifra alla chiusura. Le donazioni dei prossimi giorni vanno al secondo obiettivo: € 9.000 per due apiari in più. Queste donazioni non vengono raddoppiate.", "en": "Thank you! We passed €6,000. The University will match this amount when the campaign closes. Donations from now on go to the second goal: €9,000 for two more apiaries. These donations are not matched."}},
+      {"data": "rel:-18", "titolo": {"it": "Primi dati dalle arnie", "en": "First data from the hives"}, "testo": {"it": "Le prime due arnie trasmettono i dati ogni ora. In una abbiamo notato un calo di peso anomalo: l'apicoltore è intervenuto in tempo.", "en": "The first two hives send data every hour. In one we noticed an unusual weight loss: the beekeeper acted in time."}}
+    ],
+    "commenti": [
+      {"autore": "Giorgio E.", "data": "rel:-2", "lingua": "it", "testo": "Sono apicoltore a Pinerolo: finalmente qualcuno che ci aiuta con dati veri."},
+      {"autore": "Laura M.", "data": "rel:-9", "lingua": "it", "testo": "Ho adottato un'arnia per mia figlia, non vede l'ora di ricevere le foto!"},
+      {"autore": "Hannah K.", "data": "rel:-12", "lingua": "en", "testo": "Great project, greetings from Munich."}
+    ],
+    "immagine": {"tema": "api", "alt": {"it": "Illustrazione: un'arnia con un sensore e alcune api che volano intorno.", "en": "Illustration: a hive with a sensor and some bees flying around."}}
+  },
+  {
+    "slug": "neonati-virus",
+    "programma": true, "anno": 2026, "categoria": "salute", "dipartimento": "sanita-pubblica", "gruppo": "NeoVir",
+    "titolo": {"it": "Proteggere i neonati dai virus respiratori", "en": "Protecting newborns from respiratory viruses"},
+    "titolo_breve": {"it": "Neonati e virus", "en": "Newborns and viruses"},
+    "sottotitolo": {"it": "Uno studio per capire come i virus dell'inverno arrivano ai neonati, e come fermarli prima.", "en": "A study to understand how winter viruses reach newborns, and how to stop them earlier."},
+    "obiettivo": 8000, "raccolto": 6720, "inizio": "rel:-55", "scadenza": "rel:5",
+    "presentazione": {
+      "it": [
+        {"t": "Il problema", "p": ["Ogni inverno molti neonati vengono ricoverati per virus respiratori come il virus respiratorio sinciziale, che nei primi mesi di vita può rendere difficile respirare. I più fragili sono i bambini nati prematuri.", "Un neonato non esce di casa da solo: il virus arriva attraverso le persone che gli stanno vicino. Si sa però ancora poco su chi lo porti in famiglia e su quali precauzioni quotidiane servano davvero."]},
+        {"t": "Che cosa farà il gruppo", "p": ["Il gruppo NeoVir seguirà 300 famiglie volontarie per un inverno. Quando qualcuno in casa ha dei sintomi, la famiglia fa un semplice tampone con il kit ricevuto a casa, senza dover andare in ospedale.", "I test molecolari diranno quali virus circolano. L'analisi statistica collegherà poi i risultati alla vita di ogni giorno, per capire chi porta i virus in famiglia e quali precauzioni funzionano."]},
+        {"t": "Che cosa resterà", "p": ["Ogni famiglia riceverà i propri risultati. Insieme ai pediatri di base il gruppo scriverà una guida pratica per i genitori e la presenterà in incontri aperti a tutti."]}
+      ],
+      "en": [
+        {"t": "The problem", "p": ["Every winter many newborns are admitted to hospital with respiratory viruses such as RSV (respiratory syncytial virus), which can make breathing difficult in the first months of life. Babies born prematurely are the most vulnerable.", "A newborn does not leave home alone: the virus arrives through the people close to the baby. But little is known about who brings it into the family and which everyday precautions really help."]},
+        {"t": "What the group will do", "p": ["The NeoVir group will follow 300 volunteer families for one winter. When someone at home has symptoms, the family takes a simple swab with the kit they received, without having to go to hospital.", "Molecular tests will show which viruses are going around. Statistical analysis will then link the results to daily life, to find out who brings viruses into the family and which precautions work."]},
+        {"t": "What it will leave behind", "p": ["Each family will receive its own results. Together with family paediatricians, the group will write a practical guide for parents and present it at meetings open to everyone."]}
+      ]
+    },
+    "fondi": [
+      {"voce": {"it": "Reagenti per i test molecolari", "en": "Reagents for molecular tests"}, "importo": 3800},
+      {"voce": {"it": "Kit per i tamponi a casa", "en": "Home swab kits"}, "importo": 1500},
+      {"voce": {"it": "Analisi statistica (borsa di 2 mesi)", "en": "Statistical analysis (2-month grant)"}, "importo": 2000},
+      {"voce": {"it": "Guida per le famiglie e incontri", "en": "Guide for families and meetings"}, "importo": 700}
+    ],
+    "team": [
+      {"nome": "Andrea Lanza", "ruolo": {"it": "Responsabile scientifico, professore associato di Pediatria", "en": "Principal investigator, associate professor of Paediatrics"}},
+      {"nome": "Marta Cerutti", "ruolo": {"it": "Ricercatrice in Igiene e sanità pubblica", "en": "Researcher in Hygiene and Public Health"}},
+      {"nome": "Luca Pautasso", "ruolo": {"it": "Dottorando, epidemiologia", "en": "PhD student, epidemiology"}},
+      {"nome": "Chiara Bianco", "ruolo": {"it": "Biologa, laboratorio di virologia", "en": "Biologist, virology lab"}}
+    ],
+    "ricompense": [
+      {"id": "r10", "importo": 10, "titolo": {"it": "Il tuo nome tra i sostenitori del rapporto finale", "en": "Your name among the supporters in the final report"}, "descrizione": {"it": "Con una email di ringraziamento del gruppo.", "en": "With a thank-you email from the team."}, "scelte": 70, "posti": null},
+      {"id": "r25", "importo": 25, "titolo": {"it": "Cartolina illustrata e ringraziamento", "en": "Illustrated postcard and thanks"}, "descrizione": {"it": "Una cartolina del progetto spedita a casa.", "en": "A project postcard sent to your home."}, "scelte": 52, "posti": null},
+      {"id": "r50", "importo": 50, "titolo": {"it": "Tazza del progetto", "en": "Project mug"}, "descrizione": {"it": "Tazza in ceramica con il disegno del progetto e la cartolina.", "en": "Ceramic mug with the project drawing, plus the postcard."}, "scelte": 30, "posti": 60},
+      {"id": "r100", "importo": 100, "titolo": {"it": "Incontro online con il gruppo", "en": "Online meeting with the team"}, "descrizione": {"it": "Un'ora per fare domande ai ricercatori sui risultati.", "en": "One hour to ask the researchers about the results."}, "scelte": 8, "posti": 40}
+    ],
+    "libere": 28,
+    "aggiornamenti": [
+      {"data": "rel:-6", "titolo": {"it": "Siamo all'84%: mancano pochi giorni", "en": "We are at 84%: only a few days left"}, "testo": {"it": "Mancano € 1.280 all'obiettivo. Ricordate la regola «tutto o niente»: se non lo raggiungiamo, le donazioni vengono restituite. Se lo raggiungiamo, l'Ateneo aggiunge € 8.000.", "en": "We are €1,280 from the goal. Remember the all-or-nothing rule: if we do not reach it, donations are returned. If we do, the University adds €8,000."}}
+    ],
+    "commenti": [
+      {"autore": "Nonno Gianni", "data": "rel:-4", "lingua": "it", "testo": "Mia nipote è nata prematura. Grazie per quello che fate."},
+      {"autore": "Federica O.", "data": "rel:-20", "lingua": "it", "testo": "Possiamo partecipare anche se abitiamo ad Asti? (Risposta del gruppo: sì, scriveteci!)"}
+    ],
+    "immagine": {"tema": "cuore", "alt": {"it": "Illustrazione: una culla stilizzata protetta da uno scudo.", "en": "Illustration: a stylised cradle protected by a shield."}}
+  },
+  {
+    "slug": "clima-giovani",
+    "programma": true, "anno": 2026, "categoria": "salute", "dipartimento": "psicologia", "gruppo": "EcoMente",
+    "titolo": {"it": "Clima e benessere: come i giovani vivono la crisi climatica", "en": "Climate and wellbeing: how young people experience the climate crisis"},
+    "titolo_breve": {"it": "Clima e benessere", "en": "Climate and wellbeing"},
+    "sottotitolo": {"it": "Un'app-diario per capire come ondate di calore e notizie sul clima influenzano l'umore di studenti e studentesse.", "en": "A diary app to understand how heatwaves and climate news affect students' mood."},
+    "obiettivo": 7500, "raccolto": 4575, "inizio": "rel:-34", "scadenza": "rel:26",
+    "presentazione": {
+      "it": [
+        {"t": "Il problema", "p": ["Molti ragazzi e ragazze dicono di sentirsi preoccupati per il clima. Ma si sa ancora poco su come caldo, notizie e social cambino l'umore giorno per giorno.", "Senza questi dati, scuole e servizi di ascolto faticano a capire quando e come offrire aiuto."]},
+        {"t": "Che cosa farà il gruppo", "p": ["Il gruppo EcoMente svilupperà un'app-diario semplice e anonima. Per tre mesi 400 studenti delle scuole superiori e dell'università risponderanno a due domande al giorno: pochi secondi, per non pesare sulla giornata.", "Il gruppo confronterà poi le risposte con i dati meteo, per vedere se e come l'umore cambia durante le ondate di calore. Trenta studenti hanno già provato la prima versione dell'app e hanno aiutato a semplificare le domande."]},
+        {"t": "Che cosa resterà", "p": ["Con i risultati il gruppo preparerà materiali per insegnanti e servizi di ascolto, per aiutarli a parlare del clima con i giovani e a riconoscere chi ha bisogno di sostegno."]}
+      ],
+      "en": [
+        {"t": "The problem", "p": ["Many young people say they feel worried about the climate. But little is known about how heat, news and social media change their mood from day to day.", "Without this data, schools and support services struggle to know when and how to offer help."]},
+        {"t": "What the group will do", "p": ["The EcoMente group will develop a simple, anonymous diary app. For three months, 400 secondary school and university students will answer two questions a day: a few seconds, so that it does not weigh on their day.", "The group will then compare the answers with weather data, to see whether and how mood changes during heatwaves. Thirty students have already tried the first version of the app and helped to simplify the questions."]},
+        {"t": "What it will leave behind", "p": ["With the results, the group will prepare materials for teachers and support services, to help them talk about the climate with young people and recognise those who need support."]}
+      ]
+    },
+    "fondi": [
+      {"voce": {"it": "Sviluppo dell'app-diario", "en": "Diary app development"}, "importo": 3000},
+      {"voce": {"it": "Borsa di ricerca (3 mesi)", "en": "Research grant (3 months)"}, "importo": 3000},
+      {"voce": {"it": "Buoni libro per chi partecipa", "en": "Book vouchers for participants"}, "importo": 1000},
+      {"voce": {"it": "Materiali per le scuole", "en": "Materials for schools"}, "importo": 500}
+    ],
+    "team": [
+      {"nome": "Valeria Morra", "ruolo": {"it": "Responsabile scientifica, professoressa associata di Psicologia clinica", "en": "Principal investigator, associate professor of Clinical Psychology"}},
+      {"nome": "Tommaso Re", "ruolo": {"it": "Ricercatore, metodi statistici", "en": "Researcher, statistical methods"}},
+      {"nome": "Giada Ferri", "ruolo": {"it": "Dottoranda, psicologia ambientale", "en": "PhD student, environmental psychology"}}
+    ],
+    "ricompense": [
+      {"id": "r15", "importo": 15, "titolo": {"it": "Ringraziamento e sintesi dei risultati", "en": "Thanks and summary of results"}, "descrizione": {"it": "Una sintesi in due pagine, in linguaggio semplice.", "en": "A two-page summary in plain language."}, "scelte": 40, "posti": null},
+      {"id": "r30", "importo": 30, "titolo": {"it": "Taccuino del progetto", "en": "Project notebook"}, "descrizione": {"it": "Taccuino in carta riciclata e la sintesi dei risultati.", "en": "Recycled-paper notebook and the summary."}, "scelte": 35, "posti": null},
+      {"id": "r60", "importo": 60, "titolo": {"it": "Webinar con il gruppo", "en": "Webinar with the team"}, "descrizione": {"it": "Presentazione dei risultati e domande, online.", "en": "Results presentation and Q&A, online."}, "scelte": 12, "posti": 50},
+      {"id": "r200", "importo": 200, "titolo": {"it": "Un laboratorio nella tua scuola", "en": "A workshop at your school"}, "descrizione": {"it": "Due ore in classe sul benessere e il clima (Piemonte).", "en": "Two hours in class on wellbeing and climate (Piedmont)."}, "scelte": 1, "posti": 5}
+    ],
+    "libere": 43,
+    "aggiornamenti": [
+      {"data": "rel:-10", "titolo": {"it": "Prima versione dell'app", "en": "First version of the app"}, "testo": {"it": "Trenta studenti hanno provato l'app e ci hanno aiutato a semplificare le domande.", "en": "Thirty students tried the app and helped us simplify the questions."}}
+    ],
+    "commenti": [
+      {"autore": "Noemi F.", "data": "rel:-3", "lingua": "it", "testo": "Lo vedo ogni giorno con i miei studenti: grazie di studiarlo."},
+      {"autore": "Jorge M.", "data": "rel:-14", "lingua": "en", "testo": "Shared it with my friends in Madrid. Important topic."}
+    ],
+    "immagine": {"tema": "sole", "alt": {"it": "Illustrazione: un sole e un fumetto con un volto sereno.", "en": "Illustration: a sun and a speech bubble with a calm face."}}
+  },
+  {
+    "slug": "aria-aperta",
+    "programma": false, "anno": 2026, "categoria": "tecnologia", "dipartimento": "informatica", "gruppo": "Aria Aperta",
+    "titolo": {"it": "Aria aperta: sensori open source per misurare lo smog vicino alle scuole", "en": "Open air: open-source sensors to measure smog near schools"},
+    "titolo_breve": {"it": "Aria aperta", "en": "Open air"},
+    "sottotitolo": {"it": "Venti sensori costruiti con le classi e una mappa pubblica dei dati, aggiornata ogni ora.", "en": "Twenty sensors built with school classes and a public data map, updated every hour."},
+    "obiettivo": 5000, "raccolto": 2350, "inizio": "rel:-27", "scadenza": "rel:33",
+    "presentazione": {
+      "it": [
+        {"t": "Il problema", "p": ["Le centraline ufficiali sono poche e lontane dalle scuole. Eppure è lì che bambini e ragazzi passano gran parte della giornata, spesso vicino a strade trafficate.", "Oggi quindi molte scuole non sanno quanto sia pulita l'aria davanti al proprio ingresso, soprattutto nelle ore in cui studenti e famiglie arrivano e vanno via."]},
+        {"t": "Che cosa farà il gruppo", "p": ["Il gruppo Aria Aperta costruirà con dieci classi venti sensori a basso costo per le polveri sottili e il biossido di azoto, usando software e progetti liberi. Ragazze e ragazzi monteranno i sensori nei laboratori e li installeranno vicino agli ingressi delle scuole.", "I dati arriveranno su una mappa pubblica, aggiornata ogni ora. I sensori non sostituiscono le centraline ufficiali, ma aggiungono misure nei luoghi dove oggi mancano. Il primo è già acceso: lo ha montato la classe 3B davanti alla propria scuola."]},
+        {"t": "Che cosa resterà", "p": ["La mappa resterà online per un anno. Tutto il materiale sarà disponibile in italiano e in inglese, perché altre scuole e altre città possano ripetere il progetto."]}
+      ],
+      "en": [
+        {"t": "The problem", "p": ["Official monitoring stations are few and far from schools. Yet that is where children and teenagers spend much of their day, often close to busy roads.", "As a result, many schools do not know how clean the air is outside their own entrance, especially at the times when students and families come and go."]},
+        {"t": "What the group will do", "p": ["The Aria Aperta group will work with ten classes to build twenty low-cost sensors for fine particles and nitrogen dioxide, using open software and designs. Students will assemble the sensors in workshops and install them near school entrances.", "The data will go to a public map, updated every hour. The sensors do not replace official stations, but they add measurements where there are none today. The first one is already on: class 3B assembled it in front of their school."]},
+        {"t": "What it will leave behind", "p": ["The map will stay online for one year. All the material will be available in Italian and English, so that other schools and other cities can repeat the project."]}
+      ]
+    },
+    "fondi": [
+      {"voce": {"it": "20 sensori di particolato e NO₂", "en": "20 particulate and NO₂ sensors"}, "importo": 2400},
+      {"voce": {"it": "Schede e contenitori stampati in 3D", "en": "Boards and 3D-printed cases"}, "importo": 900},
+      {"voce": {"it": "Server e mappa pubblica per un anno", "en": "Server and public map for one year"}, "importo": 700},
+      {"voce": {"it": "Laboratori con le classi", "en": "Workshops with classes"}, "importo": 1000}
+    ],
+    "team": [
+      {"nome": "Karim Benali", "ruolo": {"it": "Responsabile scientifico, ricercatore in Sistemi embedded", "en": "Principal investigator, researcher in Embedded Systems"}},
+      {"nome": "Giulia Martini", "ruolo": {"it": "Dottoranda, visualizzazione dei dati", "en": "PhD student, data visualisation"}},
+      {"nome": "Omar Haddou", "ruolo": {"it": "Dottorando, comunicazione e contenuti in due lingue", "en": "PhD student, communication and bilingual content"}}
+    ],
+    "ricompense": [
+      {"id": "r10", "importo": 10, "titolo": {"it": "Il tuo nome nella pagina del progetto", "en": "Your name on the project page"}, "descrizione": {"it": "Tra i sostenitori della mappa pubblica.", "en": "Among the supporters of the public map."}, "scelte": 30, "posti": null},
+      {"id": "r25", "importo": 25, "titolo": {"it": "Adesivo e accesso anticipato alla mappa", "en": "Sticker and early access to the map"}, "descrizione": {"it": "Adesivo del progetto spedito a casa.", "en": "Project sticker sent to your home."}, "scelte": 24, "posti": null},
+      {"id": "r80", "importo": 80, "titolo": {"it": "Kit sensore da montare", "en": "Build-your-own sensor kit"}, "descrizione": {"it": "Tutti i componenti e le istruzioni per un sensore da balcone.", "en": "All parts and instructions for a balcony sensor."}, "scelte": 8, "posti": 25},
+      {"id": "r150", "importo": 150, "titolo": {"it": "Laboratorio per la tua classe", "en": "Workshop for your class"}, "descrizione": {"it": "Tre ore per costruire un sensore con gli studenti (Torino e prima cintura).", "en": "Three hours to build a sensor with students (Turin area)."}, "scelte": 1, "posti": 6}
+    ],
+    "libere": 16,
+    "aggiornamenti": [
+      {"data": "rel:-11", "titolo": {"it": "Il primo sensore è acceso", "en": "The first sensor is on"}, "testo": {"it": "La classe 3B ha montato il primo sensore davanti alla scuola. Ora trasmette ogni ora.", "en": "Class 3B assembled the first sensor in front of the school. It now sends data every hour."}}
+    ],
+    "commenti": [
+      {"autore": "Amina H.", "data": "rel:-6", "lingua": "en", "testo": "Donated from Beirut. Could the sensor kit be shipped abroad?"},
+      {"autore": "Prof. Ricci", "data": "rel:-16", "lingua": "it", "testo": "La nostra scuola è interessata al laboratorio."}
+    ],
+    "immagine": {"tema": "aria", "alt": {"it": "Illustrazione: una scuola con un piccolo sensore e nuvole di aria.", "en": "Illustration: a school with a small sensor and air clouds."}}
+  },
+  {
+    "slug": "matematica-accessibile",
+    "programma": true, "anno": 2025, "categoria": "educazione", "dipartimento": "matematica", "gruppo": "MathAccess",
+    "titolo": {"it": "Matematica accessibile: formule leggibili con lo screen reader", "en": "Accessible maths: formulas readable with a screen reader"},
+    "titolo_breve": {"it": "Matematica accessibile", "en": "Accessible maths"},
+    "sottotitolo": {"it": "Un convertitore gratuito che trasforma gli appunti di matematica in testo leggibile da sintesi vocale e barra braille.", "en": "A free converter that turns maths notes into text readable by speech synthesis and braille displays."},
+    "obiettivo": 6000, "raccolto": 7020, "inizio": "2025-01-10", "scadenza": "2025-02-28",
+    "presentazione": {
+      "it": [
+        {"t": "Il problema", "p": ["Per leggere un testo al computer, chi è cieco usa lo screen reader, il programma che legge ad alta voce ciò che è sullo schermo, oppure una barra braille. Ma in un PDF una formula è spesso un'immagine muta: il programma la salta, o la legge come una fila di simboli senza senso.", "Così seguire un corso scientifico diventa molto più faticoso, e molti studenti rinunciano."]},
+        {"t": "Che cosa ha fatto il gruppo", "p": ["Il gruppo MathAccess ha sviluppato un convertitore libero e gratuito che trasforma le formule degli appunti in una forma che lo screen reader legge in modo chiaro. La formula si può anche esplorare passo per passo: prima la struttura generale, poi i singoli pezzi.", "Nel gruppo lavora una consulente per l'accessibilità, persona cieca. Il software è stato provato con 30 studenti ciechi e ipovedenti di cinque università, e sono stati stampati in braille alcuni esempi."]},
+        {"t": "I risultati", "p": ["Il convertitore è stato pubblicato a settembre 2025, con una documentazione accessibile, ed è stato presentato in tre scuole. Chiunque può usarlo gratuitamente."]}
+      ],
+      "en": [
+        {"t": "The problem", "p": ["To read text on a computer, blind people use a screen reader, the program that reads aloud what is on the screen, or a braille display. But in a PDF a formula is often a silent image: the program skips it, or reads it as a row of meaningless symbols.", "This makes following a science course much harder, and many students give up."]},
+        {"t": "What the group did", "p": ["The MathAccess group developed a free, open converter that turns the formulas in lecture notes into a form that a screen reader reads clearly. The formula can also be explored step by step: first the overall structure, then the individual parts.", "The group includes an accessibility consultant who is blind. The software was tested with 30 blind and visually impaired students from five universities, and some examples were printed in braille."]},
+        {"t": "The results", "p": ["The converter was released in September 2025 with accessible documentation and was presented in three schools. Anyone can use it free of charge."]}
+      ]
+    },
+    "fondi": [
+      {"voce": {"it": "Sviluppo del convertitore", "en": "Converter development"}, "importo": 3600},
+      {"voce": {"it": "Prove con 30 studenti", "en": "Testing with 30 students"}, "importo": 1200},
+      {"voce": {"it": "Stampa braille di esempi", "en": "Braille printing of examples"}, "importo": 700},
+      {"voce": {"it": "Documentazione accessibile", "en": "Accessible documentation"}, "importo": 500}
+    ],
+    "team": [
+      {"nome": "Cristina Abbà", "ruolo": {"it": "Responsabile scientifica, ricercatrice in Didattica della matematica", "en": "Principal investigator, researcher in Mathematics Education"}},
+      {"nome": "Lorenzo Gatti", "ruolo": {"it": "Sviluppatore, assegnista di ricerca", "en": "Developer, research fellow"}},
+      {"nome": "Maria Grazia Pozzo", "ruolo": {"it": "Consulente per l'accessibilità, persona cieca", "en": "Accessibility consultant, blind person"}}
+    ],
+    "ricompense": [
+      {"id": "r10", "importo": 10, "titolo": {"it": "Il tuo nome nei ringraziamenti", "en": "Your name in the acknowledgements"}, "descrizione": {"it": "Nella pagina del software.", "en": "On the software page."}, "scelte": 60, "posti": null},
+      {"id": "r30", "importo": 30, "titolo": {"it": "Segnalibro in braille", "en": "Braille bookmark"}, "descrizione": {"it": "Con una formula famosa in braille e in nero.", "en": "With a famous formula in braille and print."}, "scelte": 50, "posti": null},
+      {"id": "r75", "importo": 75, "titolo": {"it": "Libretto di esempi in braille", "en": "Booklet of examples in braille"}, "descrizione": {"it": "Da donare a una biblioteca o a una scuola.", "en": "To give to a library or a school."}, "scelte": 20, "posti": 40},
+      {"id": "r200", "importo": 200, "titolo": {"it": "Formazione per un docente", "en": "Training for a teacher"}, "descrizione": {"it": "Due ore online per imparare a usare il convertitore.", "en": "Two online hours to learn the converter."}, "scelte": 4, "posti": 10}
+    ],
+    "libere": 32,
+    "esito": {"it": "Obiettivo raggiunto il 21/02/2025. L'Ateneo ha aggiunto € 6.000. Il convertitore è stato pubblicato a settembre 2025.", "en": "Goal reached on 21 Feb 2025. The University added €6,000. The converter was released in September 2025."},
+    "aggiornamenti": [
+      {"data": "2025-09-15", "titolo": {"it": "Resoconto finale: il convertitore è online", "en": "Final report: the converter is online"}, "testo": {"it": "Con i € 13.020 (7.020 raccolti più 6.000 dell'Ateneo) abbiamo completato il convertitore e la documentazione. Spese: sviluppo € 6.900, prove € 2.400, braille € 1.400, documentazione € 1.000, presentazioni in tre scuole € 1.320.", "en": "With €13,020 (7,020 raised plus 6,000 from the University) we completed the converter and its documentation. Spending: development €6,900, testing €2,400, braille €1,400, documentation €1,000, presentations in three schools €1,320."}},
+      {"data": "2025-02-21", "titolo": {"it": "Obiettivo raggiunto!", "en": "Goal reached!"}, "testo": {"it": "Grazie: con il raddoppio dell'Ateneo possiamo fare prove con il doppio degli studenti.", "en": "Thank you: with the University's match we can test with twice as many students."}}
+    ],
+    "commenti": [
+      {"autore": "Enrico T.", "data": "2025-02-10", "lingua": "it", "testo": "Uso NVDA tutti i giorni: un convertitore così mi avrebbe salvato l'esame di Analisi 1."},
+      {"autore": "Anna R.", "data": "2025-01-20", "lingua": "it", "testo": "Insegno matematica, lo proverò con la mia classe."}
+    ],
+    "immagine": {"tema": "formula", "alt": {"it": "Illustrazione: una formula matematica accanto a punti in braille.", "en": "Illustration: a maths formula next to braille dots."}}
+  },
+  {
+    "slug": "plastica-batteri",
+    "programma": true, "anno": 2025, "categoria": "ambiente", "dipartimento": "biotecnologie", "gruppo": "PlastiBio",
+    "titolo": {"it": "Batteri che degradano le microplastiche", "en": "Bacteria that break down microplastics"},
+    "titolo_breve": {"it": "Batteri e microplastiche", "en": "Bacteria and microplastics"},
+    "sottotitolo": {"it": "Cercare nel Po i batteri capaci di demolire le microplastiche e capire come usarli negli impianti di depurazione.", "en": "Searching the river Po for bacteria that break down microplastics, and learning how to use them in water treatment."},
+    "obiettivo": 8000, "raccolto": 11200, "inizio": "2025-03-01", "scadenza": "2025-04-20",
+    "secondo_obiettivo": {"importo": 11000, "scopo": {"it": "estendere i campionamenti al lago di Viverone", "en": "extend sampling to Lake Viverone"}},
+    "presentazione": {
+      "it": [
+        {"t": "Il problema", "p": ["Le microplastiche sono ovunque, anche nei fiumi piemontesi. Sono frammenti così piccoli che gli impianti di depurazione non riescono a trattenerli tutti.", "Alcuni batteri riescono a usarle come cibo, ma sono ancora poco conosciuti: non si sa quali siano i più efficaci, né se possano essere utili fuori dal laboratorio."]},
+        {"t": "Che cosa ha fatto il gruppo", "p": ["Il gruppo PlastiBio ha raccolto campioni lungo il Po, ha isolato i batteri più promettenti e ne ha letto il DNA. Poi li ha messi alla prova in piccoli bioreattori, contenitori in cui si controlla come crescono e quanta plastica consumano.", "Le donazioni oltre l'obiettivo hanno permesso di estendere i campionamenti al lago di Viverone. Al lavoro ha partecipato anche uno studente, con una borsa estiva."]},
+        {"t": "I risultati", "p": ["Il gruppo ha isolato tre ceppi che riducono le microplastiche di polietilene del 12% in 30 giorni. I risultati sono in un articolo in revisione.", "Non è ancora una soluzione pronta: il passo successivo è capire come usare questi batteri negli impianti di depurazione."]}
+      ],
+      "en": [
+        {"t": "The problem", "p": ["Microplastics are everywhere, including the rivers of Piedmont. They are fragments so small that water treatment plants cannot hold them all back.", "Some bacteria can use them as food, but they are still little known: we do not know which are the most effective, or whether they could be useful outside the lab."]},
+        {"t": "What the group did", "p": ["The PlastiBio group collected samples along the Po, isolated the most promising bacteria and read their DNA. It then tested them in small bioreactors, containers in which you can monitor how they grow and how much plastic they consume.", "Donations above the goal made it possible to extend sampling to Lake Viverone. A student also took part in the work, with a summer grant."]},
+        {"t": "The results", "p": ["The group isolated three strains that reduce polyethylene microplastics by 12% in 30 days. The results are in a paper under review.", "This is not a ready-made solution yet: the next step is to find out how to use these bacteria in water treatment plants."]}
+      ]
+    },
+    "fondi": [
+      {"voce": {"it": "Sequenziamento del DNA dei batteri", "en": "Bacterial DNA sequencing"}, "importo": 3000},
+      {"voce": {"it": "Bioreattori da laboratorio", "en": "Lab bioreactors"}, "importo": 2500},
+      {"voce": {"it": "Analisi delle microplastiche", "en": "Microplastics analysis"}, "importo": 1800},
+      {"voce": {"it": "Borsa estiva per uno studente", "en": "Summer grant for a student"}, "importo": 700}
+    ],
+    "team": [
+      {"nome": "Federico Ghione", "ruolo": {"it": "Responsabile scientifico, professore associato di Microbiologia ambientale", "en": "Principal investigator, associate professor of Environmental Microbiology"}},
+      {"nome": "Noemi Arduino", "ruolo": {"it": "Assegnista di ricerca", "en": "Research fellow"}},
+      {"nome": "Edoardo Bosco", "ruolo": {"it": "Studente magistrale", "en": "Master's student"}}
+    ],
+    "ricompense": [
+      {"id": "r10", "importo": 10, "titolo": {"it": "Ringraziamento", "en": "Thank you"}, "descrizione": {"it": "Il tuo nome nel resoconto finale.", "en": "Your name in the final report."}, "scelte": 90, "posti": null},
+      {"id": "r25", "importo": 25, "titolo": {"it": "Borraccia del progetto", "en": "Project water bottle"}, "descrizione": {"it": "Borraccia in acciaio, niente plastica!", "en": "Steel bottle, no plastic!"}, "scelte": 70, "posti": null},
+      {"id": "r50", "importo": 50, "titolo": {"it": "Stampa di una colonia batterica", "en": "Print of a bacterial colony"}, "descrizione": {"it": "Fotografia artistica 20×30 cm.", "en": "Art photo, 20×30 cm."}, "scelte": 40, "posti": 60},
+      {"id": "r150", "importo": 150, "titolo": {"it": "Uscita di campionamento sul Po", "en": "Sampling trip on the Po"}, "descrizione": {"it": "Una mattina con il gruppo, per 1 persona.", "en": "A morning with the team, for 1 person."}, "scelte": 6, "posti": 10}
+    ],
+    "libere": 45,
+    "esito": {"it": "Obiettivo raggiunto il 30/03/2025 e secondo obiettivo raggiunto il 15/04/2025. L'Ateneo ha aggiunto € 8.000.", "en": "Goal reached on 30 Mar 2025 and second goal reached on 15 Apr 2025. The University added €8,000."},
+    "aggiornamenti": [
+      {"data": "2025-11-10", "titolo": {"it": "Resoconto finale", "en": "Final report"}, "testo": {"it": "Abbiamo isolato tre ceppi che riducono le microplastiche di polietilene del 12% in 30 giorni. I risultati sono in un articolo in revisione. Spese: € 19.200 (11.200 raccolti più 8.000 dell'Ateneo).", "en": "We isolated three strains that reduce polyethylene microplastics by 12% in 30 days. The results are in a paper under review. Spending: €19,200 (11,200 raised plus 8,000 from the University)."}},
+      {"data": "2025-04-15", "titolo": {"it": "Secondo obiettivo raggiunto", "en": "Second goal reached"}, "testo": {"it": "Con le donazioni oltre gli € 8.000 andremo anche al lago di Viverone.", "en": "With donations above €8,000 we will also sample Lake Viverone."}}
+    ],
+    "commenti": [
+      {"autore": "Ilaria V.", "data": "2025-04-02", "lingua": "it", "testo": "Si potranno usare anche negli impianti piccoli dei paesi?"}
+    ],
+    "immagine": {"tema": "acqua", "alt": {"it": "Illustrazione: onde di un fiume con piccole particelle e batteri.", "en": "Illustration: river waves with small particles and bacteria."}}
+  },
+  {
+    "slug": "dialetti-archivio",
+    "programma": true, "anno": 2025, "categoria": "cultura", "dipartimento": "studi-umanistici", "gruppo": "Voci del Piemonte",
+    "titolo": {"it": "Un archivio sonoro dei dialetti piemontesi", "en": "A sound archive of Piedmontese dialects"},
+    "titolo_breve": {"it": "Archivio dei dialetti", "en": "Dialect archive"},
+    "sottotitolo": {"it": "Registrare le voci degli anziani di 40 paesi prima che queste parlate scompaiano.", "en": "Recording older people in 40 villages before these dialects disappear."},
+    "obiettivo": 5000, "raccolto": 3100, "inizio": "2025-04-01", "scadenza": "2025-05-31",
+    "presentazione": {
+      "it": [
+        {"t": "Il problema", "p": ["In molti paesi del Piemonte il dialetto lo parlano ormai solo le persone anziane. Con loro rischiano di scomparire parole, modi di dire e racconti che nessuno ha mai scritto.", "Ogni anno che passa ci sono meno voci da ascoltare, e quello che non viene registrato oggi non si potrà recuperare."]},
+        {"t": "Che cosa voleva fare il gruppo", "p": ["Il gruppo Voci del Piemonte voleva registrare 200 interviste in 40 paesi e pubblicarle in un archivio online gratuito, con le trascrizioni. Così chiunque avrebbe potuto ascoltare queste parlate, dagli studiosi alle famiglie.", "Erano previsti anche incontri nei paesi, per trovare le persone da intervistare e restituire loro il lavoro fatto."]},
+        {"t": "Com'è andata", "p": ["La campagna si è fermata al 62% dell'obiettivo e, come prevede la regola «tutto o niente», le donazioni sono state restituite.", "Il lavoro non si è fermato del tutto: con un piccolo fondo del dipartimento il gruppo ha registrato 35 interviste, che si possono trovare nell'archivio della biblioteca."]}
+      ],
+      "en": [
+        {"t": "The problem", "p": ["In many villages in Piedmont, only older people still speak the local dialect. Words, sayings and stories that nobody has ever written down risk disappearing with them.", "Every year there are fewer voices to listen to, and what is not recorded today cannot be recovered."]},
+        {"t": "What the group wanted to do", "p": ["The Voci del Piemonte group wanted to record 200 interviews in 40 villages and publish them in a free online archive, with transcripts. That way anyone could have listened to these dialects, from scholars to families.", "Meetings in the villages were also planned, to find people to interview and to share the work with them."]},
+        {"t": "What happened", "p": ["The campaign stopped at 62% of the goal and, under the all-or-nothing rule, donations were returned.", "The work did not stop completely: with a small departmental fund the group recorded 35 interviews, which can be found in the library archive."]}
+      ]
+    },
+    "fondi": [
+      {"voce": {"it": "Registratori e microfoni", "en": "Recorders and microphones"}, "importo": 1200},
+      {"voce": {"it": "Trascrizioni", "en": "Transcriptions"}, "importo": 2000},
+      {"voce": {"it": "Archivio online", "en": "Online archive"}, "importo": 1300},
+      {"voce": {"it": "Incontri nei paesi", "en": "Meetings in the villages"}, "importo": 500}
+    ],
+    "team": [
+      {"nome": "Bruna Ghigo", "ruolo": {"it": "Responsabile scientifica, ricercatrice in Linguistica", "en": "Principal investigator, researcher in Linguistics"}},
+      {"nome": "Ivan Merlo", "ruolo": {"it": "Dottorando, dialettologia", "en": "PhD student, dialectology"}}
+    ],
+    "ricompense": [
+      {"id": "r10", "importo": 10, "titolo": {"it": "Una parola in dialetto al giorno", "en": "A dialect word a day"}, "descrizione": {"it": "Per un mese, via email.", "en": "For one month, by email."}, "scelte": 40, "posti": null},
+      {"id": "r25", "importo": 25, "titolo": {"it": "Calendario dei modi di dire", "en": "Calendar of sayings"}, "descrizione": {"it": "Calendario illustrato 2026.", "en": "Illustrated 2026 calendar."}, "scelte": 30, "posti": null},
+      {"id": "r60", "importo": 60, "titolo": {"it": "Registrazione dedicata al tuo paese", "en": "A recording dedicated to your village"}, "descrizione": {"it": "Inseriamo il tuo paese tra quelli visitati.", "en": "We add your village to those visited."}, "scelte": 8, "posti": 30},
+      {"id": "r120", "importo": 120, "titolo": {"it": "Serata di racconti nel tuo comune", "en": "Storytelling evening in your town"}, "descrizione": {"it": "Con le registrazioni e i ricercatori.", "en": "With the recordings and the researchers."}, "scelte": 1, "posti": 10}
+    ],
+    "libere": 23,
+    "esito": {"it": "Obiettivo non raggiunto (62%). Come previsto dalla regola «tutto o niente», le donazioni sono state restituite entro giugno 2025.", "en": "Goal not reached (62%). Under the all-or-nothing rule, donations were returned by June 2025."},
+    "aggiornamenti": [
+      {"data": "2025-06-20", "titolo": {"it": "Grazie, anche se non è bastato", "en": "Thank you, even though it was not enough"}, "testo": {"it": "Non abbiamo raggiunto l'obiettivo e tutte le donazioni sono state restituite. Abbiamo comunque registrato 35 interviste con un piccolo fondo del dipartimento: le trovate nell'archivio della biblioteca.", "en": "We did not reach the goal and all donations were returned. We still recorded 35 interviews with a small department fund: you can find them in the library archive."}}
+    ],
+    "commenti": [
+      {"autore": "Luisa C.", "data": "2025-05-12", "lingua": "it", "testo": "Mia nonna parla il dialetto di Mondovì, sarebbe felicissima di partecipare."}
+    ],
+    "immagine": {"tema": "voce", "alt": {"it": "Illustrazione: un microfono e onde sonore.", "en": "Illustration: a microphone and sound waves."}}
+  },
+  {
+    "slug": "scienza-doposcuola",
+    "programma": true, "anno": 2024, "categoria": "educazione", "dipartimento": "filosofia-educazione", "gruppo": "Scienza di quartiere",
+    "titolo": {"it": "Laboratori di scienze nei doposcuola di quartiere", "en": "Science workshops in neighbourhood after-school clubs"},
+    "titolo_breve": {"it": "Scienza nei doposcuola", "en": "Science after school"},
+    "sottotitolo": {"it": "Esperimenti semplici, educatori formati e materiali che restano alle associazioni: un progetto con il territorio.", "en": "Simple experiments, trained educators and materials that stay with local associations: a project with the community."},
+    "obiettivo": 5000, "raccolto": 5450, "inizio": "2024-02-05", "scadenza": "2024-03-31",
+    "presentazione": {
+      "it": [
+        {"t": "Il problema", "p": ["Nei quartieri dove le famiglie hanno meno risorse, i ragazzi delle medie fanno pochi esperimenti scientifici. Spesso nei doposcuola mancano i materiali, e gli educatori non hanno avuto occasione di imparare a usarli.", "Per molti di loro la scienza resta qualcosa da leggere sul libro, non da provare con le proprie mani."]},
+        {"t": "Che cosa ha fatto il gruppo", "p": ["Il gruppo Scienza di quartiere ha portato laboratori settimanali in sei doposcuola gestiti da associazioni di Barriera di Milano e Falchera. Ha preparato kit con esperimenti semplici, ha formato gli educatori e ha fornito tablet ricondizionati.", "Il progetto è nato dalle associazioni, che lo hanno proposto e costruito insieme all'Università: è un esempio di collaborazione con enti esterni, come spiega la pagina «Proponi un progetto»."]},
+        {"t": "I risultati", "p": ["In tutto sono stati coinvolti 140 ragazzi, con 32 laboratori in sei doposcuola. Kit e materiali sono rimasti alle associazioni, che continuano i laboratori con fondi propri."]}
+      ],
+      "en": [
+        {"t": "The problem", "p": ["In neighbourhoods where families have fewer resources, middle school students do few science experiments. After-school clubs often lack the materials, and educators have not had the chance to learn how to use them.", "For many of these students, science remains something to read about in a book, not something to try with their own hands."]},
+        {"t": "What the group did", "p": ["The Scienza di quartiere group brought weekly workshops to six after-school clubs run by associations in Barriera di Milano and Falchera. It prepared kits with simple experiments, trained the educators and provided refurbished tablets.", "The project came from the associations, which proposed it and built it together with the University: it is an example of a partnership with outside organisations, as explained on the «Propose a project» page."]},
+        {"t": "The results", "p": ["In all, 140 students took part, with 32 workshops in six after-school clubs. Kits and materials stayed with the associations, which continue the workshops with their own funds."]}
+      ]
+    },
+    "fondi": [
+      {"voce": {"it": "Kit di laboratorio", "en": "Lab kits"}, "importo": 2200},
+      {"voce": {"it": "Formazione degli educatori", "en": "Educator training"}, "importo": 1300},
+      {"voce": {"it": "Tablet ricondizionati", "en": "Refurbished tablets"}, "importo": 1000},
+      {"voce": {"it": "Materiali di consumo", "en": "Consumables"}, "importo": 500}
+    ],
+    "team": [
+      {"nome": "Silvia Operti", "ruolo": {"it": "Responsabile scientifica, professoressa associata di Pedagogia sperimentale", "en": "Principal investigator, associate professor of Experimental Pedagogy"}},
+      {"nome": "Marco Druetta", "ruolo": {"it": "Educatore, associazione di quartiere partner", "en": "Educator, partner neighbourhood association"}},
+      {"nome": "Alice Ronco", "ruolo": {"it": "Dottoranda, didattica delle scienze", "en": "PhD student, science education"}}
+    ],
+    "ricompense": [
+      {"id": "r10", "importo": 10, "titolo": {"it": "Disegno dei ragazzi", "en": "A drawing by the pupils"}, "descrizione": {"it": "Scansione di un disegno sugli esperimenti.", "en": "Scan of a drawing about the experiments."}, "scelte": 50, "posti": null},
+      {"id": "r25", "importo": 25, "titolo": {"it": "Quaderno degli esperimenti", "en": "Experiment notebook"}, "descrizione": {"it": "Dieci esperimenti da fare in casa.", "en": "Ten experiments to do at home."}, "scelte": 40, "posti": null},
+      {"id": "r50", "importo": 50, "titolo": {"it": "Kit di esperimenti per una famiglia", "en": "Experiment kit for a family"}, "descrizione": {"it": "Da regalare o da donare a un doposcuola.", "en": "To give as a gift or to an after-school club."}, "scelte": 15, "posti": 40},
+      {"id": "r100", "importo": 100, "titolo": {"it": "Laboratorio aperto alla festa di fine anno", "en": "Open workshop at the end-of-year party"}, "descrizione": {"it": "Invito per 2 persone.", "en": "Invitation for 2 people."}, "scelte": 5, "posti": 20}
+    ],
+    "libere": 29,
+    "esito": {"it": "Obiettivo raggiunto il 25/03/2024. L'Ateneo ha aggiunto € 5.000. I laboratori continuano con fondi delle associazioni.", "en": "Goal reached on 25 Mar 2024. The University added €5,000. The workshops continue with the associations' funds."},
+    "aggiornamenti": [
+      {"data": "2024-12-02", "titolo": {"it": "Resoconto finale", "en": "Final report"}, "testo": {"it": "Sei doposcuola, 140 ragazzi, 32 laboratori. Spese: € 10.450 (5.450 raccolti più 5.000 dell'Ateneo), tutte documentate nella relazione inviata ai sostenitori.", "en": "Six after-school clubs, 140 pupils, 32 workshops. Spending: €10,450 (5,450 raised plus 5,000 from the University), all documented in the report sent to supporters."}}
+    ],
+    "commenti": [
+      {"autore": "Rosa D.", "data": "2024-03-10", "lingua": "it", "testo": "Anche la nostra associazione vorrebbe fare qualcosa di simile: a chi possiamo scrivere?"}
+    ],
+    "immagine": {"tema": "provetta", "alt": {"it": "Illustrazione: una provetta e una lente d'ingrandimento.", "en": "Illustration: a test tube and a magnifying glass."}}
+  },
+  {
+    "slug": "rifugi-frane",
+    "programma": false, "anno": 2024, "categoria": "ambiente", "dipartimento": "scienze-terra", "gruppo": "GeoAlp",
+    "titolo": {"it": "Frane e rifugi alpini: una mappa del rischio", "en": "Landslides and mountain huts: a risk map"},
+    "titolo_breve": {"it": "Frane e rifugi", "en": "Landslides and huts"},
+    "sottotitolo": {"it": "Rilievi e sensori per capire quali sentieri e rifugi delle Alpi piemontesi sono più esposti alle frane.", "en": "Surveys and sensors to understand which trails and huts in the Piedmont Alps are most exposed to landslides."},
+    "obiettivo": 6000, "raccolto": 3720, "inizio": "2024-05-02", "scadenza": "2024-06-30",
+    "presentazione": {
+      "it": [
+        {"t": "Il problema", "p": ["Con il ritiro dei ghiacciai alcune pareti diventano instabili. Rifugi e sentieri molto frequentati possono trovarsi esposti a frane e crolli che fino a pochi anni fa erano rari.", "Chi gestisce un rifugio o sceglie un'escursione ha poche informazioni su quali versanti si stiano muovendo."]},
+        {"t": "Che cosa voleva fare il gruppo", "p": ["Il gruppo GeoAlp voleva rilevare con il laser scanner dieci versanti vicini a rifugi alpini e installare sensori di spostamento, capaci di misurare anche piccoli movimenti della roccia.", "Con questi dati avrebbe pubblicato una mappa interattiva del rischio per escursionisti e gestori."]},
+        {"t": "Com'è andata", "p": ["La campagna si è fermata al 62% dell'obiettivo e le donazioni sono state restituite. Il progetto non faceva parte del programma di cofinanziamento.", "Il gruppo ha ringraziato chi lo ha sostenuto e ha annunciato che ripresenterà il progetto."]}
+      ],
+      "en": [
+        {"t": "The problem", "p": ["As glaciers retreat, some rock faces become unstable. Popular mountain huts and trails can end up exposed to landslides and rockfalls that were rare until a few years ago.", "People who run a hut or choose a hike have little information about which slopes are moving."]},
+        {"t": "What the group wanted to do", "p": ["The GeoAlp group wanted to survey ten slopes near mountain huts with a laser scanner and install displacement sensors, which can measure even small movements of the rock.", "With this data it would have published an interactive risk map for hikers and hut managers."]},
+        {"t": "What happened", "p": ["The campaign stopped at 62% of the goal and donations were returned. The project was not part of the co-funding programme.", "The group thanked its supporters and announced that it will propose the project again."]}
+      ]
+    },
+    "fondi": [
+      {"voce": {"it": "Rilievi con laser scanner", "en": "Laser-scanner surveys"}, "importo": 2500},
+      {"voce": {"it": "Sensori di spostamento", "en": "Displacement sensors"}, "importo": 2000},
+      {"voce": {"it": "Mappa interattiva", "en": "Interactive map"}, "importo": 1000},
+      {"voce": {"it": "Trasferte in quota", "en": "High-altitude travel"}, "importo": 500}
+    ],
+    "team": [
+      {"nome": "Ettore Barbero", "ruolo": {"it": "Responsabile scientifico, ricercatore in Geologia applicata", "en": "Principal investigator, researcher in Applied Geology"}},
+      {"nome": "Camilla Vota", "ruolo": {"it": "Assegnista di ricerca, telerilevamento", "en": "Research fellow, remote sensing"}}
+    ],
+    "ricompense": [
+      {"id": "r10", "importo": 10, "titolo": {"it": "Ringraziamento", "en": "Thank you"}, "descrizione": {"it": "Il tuo nome nella mappa pubblica.", "en": "Your name on the public map."}, "scelte": 40, "posti": null},
+      {"id": "r30", "importo": 30, "titolo": {"it": "Poster delle Alpi in 3D", "en": "3D Alps poster"}, "descrizione": {"it": "Stampa da un rilievo laser.", "en": "Print from a laser survey."}, "scelte": 25, "posti": null},
+      {"id": "r70", "importo": 70, "titolo": {"it": "Escursione geologica", "en": "Geology hike"}, "descrizione": {"it": "Una giornata con un geologo, per 1 persona.", "en": "A day with a geologist, for 1 person."}, "scelte": 6, "posti": 30},
+      {"id": "r180", "importo": 180, "titolo": {"it": "Notte in rifugio con i ricercatori", "en": "Night at a hut with the researchers"}, "descrizione": {"it": "Mezza pensione inclusa, per 1 persona.", "en": "Half board included, for 1 person."}, "scelte": 1, "posti": 8}
+    ],
+    "libere": 25,
+    "esito": {"it": "Obiettivo non raggiunto (62%). Le donazioni sono state restituite. Il progetto non faceva parte del programma di cofinanziamento.", "en": "Goal not reached (62%). Donations were returned. The project was not part of the co-funding programme."},
+    "aggiornamenti": [
+      {"data": "2024-07-10", "titolo": {"it": "Campagna conclusa", "en": "Campaign closed"}, "testo": {"it": "Non abbiamo raggiunto l'obiettivo: tutte le donazioni sono state restituite. Grazie a chi ci ha sostenuto; ripresenteremo il progetto.", "en": "We did not reach the goal: all donations have been returned. Thank you to everyone who supported us; we will propose the project again."}}
+    ],
+    "commenti": [
+      {"autore": "Paolo F.", "data": "2024-06-01", "lingua": "it", "testo": "Frequento il rifugio Quintino Sella da anni, progetto utilissimo."}
+    ],
+    "immagine": {"tema": "montagna", "alt": {"it": "Illustrazione: una montagna con una crepa e un piccolo rifugio.", "en": "Illustration: a mountain with a crack and a small hut."}}
+  },
+  {
+    "slug": "robot-anziani",
+    "programma": true, "anno": 2023, "categoria": "tecnologia", "dipartimento": "informatica", "gruppo": "CareBot",
+    "titolo": {"it": "Robot sociali per l'autonomia delle persone anziane", "en": "Social robots for older people's independence"},
+    "titolo_breve": {"it": "Robot sociali", "en": "Social robots"},
+    "sottotitolo": {"it": "Un piccolo robot che ricorda le medicine, propone esercizi di memoria e avvisa i familiari in caso di bisogno.", "en": "A small robot that reminds people of their medicines, suggests memory exercises and alerts relatives if needed."},
+    "obiettivo": 8000, "raccolto": 9040, "inizio": "2023-03-01", "scadenza": "2023-04-30",
+    "presentazione": {
+      "it": [
+        {"t": "Il problema", "p": ["Molte persone anziane vogliono restare a casa propria il più a lungo possibile. A volte però bastano piccole difficoltà, come dimenticare una medicina, per mettere in dubbio questa scelta e preoccupare chi sta loro vicino.", "Molte tecnologie pensate per aiutarle sono troppo complicate da usare proprio per chi ne avrebbe più bisogno."]},
+        {"t": "Che cosa ha fatto il gruppo", "p": ["Il gruppo CareBot ha programmato un robot da tavolo semplice da usare, a voce e con grandi pulsanti. Il robot ricorda le medicine, propone esercizi di memoria e avvisa i familiari in caso di bisogno.", "Il gruppo lo ha provato con 24 persone in tre residenze e a domicilio, e ha preparato materiali per aiutare le famiglie a usarlo."]},
+        {"t": "I risultati", "p": ["18 persone su 24 hanno detto che il robot le ha aiutate a ricordare le medicine.", "Il software è libero, quindi chiunque può usarlo e migliorarlo, e un'azienda torinese lo sta già adattando."]}
+      ],
+      "en": [
+        {"t": "The problem", "p": ["Many older people want to stay in their own home for as long as possible. Sometimes, though, small difficulties such as forgetting a medicine are enough to put this choice in doubt and worry those close to them.", "Many technologies designed to help them are too complicated for the very people who need them most."]},
+        {"t": "What the group did", "p": ["The CareBot group programmed a tabletop robot that is easy to use, by voice and with large buttons. The robot gives medicine reminders, suggests memory exercises and alerts relatives when help is needed.", "The group tested it with 24 people in three care homes and at home, and prepared materials to help families use it."]},
+        {"t": "The results", "p": ["18 out of 24 people said the robot helped them remember their medicines.", "The software is open, so anyone can use and improve it, and a Turin company is already adapting it."]}
+      ]
+    },
+    "fondi": [
+      {"voce": {"it": "Robot e sensori", "en": "Robots and sensors"}, "importo": 3500},
+      {"voce": {"it": "Sviluppo del software", "en": "Software development"}, "importo": 2500},
+      {"voce": {"it": "Sperimentazione in tre residenze", "en": "Trials in three care homes"}, "importo": 1500},
+      {"voce": {"it": "Materiali per le famiglie", "en": "Materials for families"}, "importo": 500}
+    ],
+    "team": [
+      {"nome": "Paola Rinaldo", "ruolo": {"it": "Responsabile scientifica, professoressa associata di Interazione persona-macchina", "en": "Principal investigator, associate professor of Human-Computer Interaction"}},
+      {"nome": "Stefano Ceresa", "ruolo": {"it": "Ricercatore, robotica", "en": "Researcher, robotics"}},
+      {"nome": "Wei Chen", "ruolo": {"it": "Dottoranda, interazione vocale", "en": "PhD student, voice interaction"}}
+    ],
+    "ricompense": [
+      {"id": "r10", "importo": 10, "titolo": {"it": "Ringraziamento", "en": "Thank you"}, "descrizione": {"it": "Il tuo nome nel resoconto.", "en": "Your name in the report."}, "scelte": 70, "posti": null},
+      {"id": "r30", "importo": 30, "titolo": {"it": "Video del robot al lavoro", "en": "Video of the robot at work"}, "descrizione": {"it": "Un video dietro le quinte.", "en": "A behind-the-scenes video."}, "scelte": 60, "posti": null},
+      {"id": "r75", "importo": 75, "titolo": {"it": "Robot in miniatura stampato in 3D", "en": "3D-printed miniature robot"}, "descrizione": {"it": "Da scrivania.", "en": "For your desk."}, "scelte": 25, "posti": 50},
+      {"id": "r200", "importo": 200, "titolo": {"it": "Visita al laboratorio di robotica", "en": "Visit to the robotics lab"}, "descrizione": {"it": "Per 2 persone, con dimostrazione.", "en": "For 2 people, with a demo."}, "scelte": 3, "posti": 10}
+    ],
+    "libere": 46,
+    "esito": {"it": "Obiettivo raggiunto il 18/04/2023. L'Ateneo ha aggiunto € 8.000.", "en": "Goal reached on 18 Apr 2023. The University added €8,000."},
+    "aggiornamenti": [
+      {"data": "2024-01-22", "titolo": {"it": "Resoconto finale", "en": "Final report"}, "testo": {"it": "18 persone su 24 hanno detto che il robot le ha aiutate a ricordare le medicine. Il software è libero e un'azienda torinese lo sta adattando.", "en": "18 people out of 24 said the robot helped them remember their medicines. The software is free and a Turin company is adapting it."}}
+    ],
+    "commenti": [
+      {"autore": "Carlo B.", "data": "2023-04-02", "lingua": "it", "testo": "Mia madre vive da sola a Chieri: seguirò i risultati con attenzione."}
+    ],
+    "immagine": {"tema": "robot", "alt": {"it": "Illustrazione: un piccolo robot da tavolo sorridente.", "en": "Illustration: a small smiling tabletop robot."}}
+  }
+]
