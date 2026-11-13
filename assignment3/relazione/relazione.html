@@ -39,16 +39,15 @@
 <li class="l3"><a href="#s5-1">5.1 Nomi accessibili diversi da ciò che si vede</a><span class="pun" aria-hidden="true"></span><span class="pag">7</span></li>
 <li class="l3"><a href="#s5-2">5.2 Struttura: intestazioni vuote, ruoli sovrapposti e markup presentazionale</a><span class="pun" aria-hidden="true"></span><span class="pag">7</span></li>
 <li class="l3"><a href="#s5-3">5.3 Focus visibile dello skip link</a><span class="pun" aria-hidden="true"></span><span class="pag">8</span></li>
-<li class="l3"><a href="#s5-4">5.4 Bersagli piccoli e ritorno all&#x27;elenco</a><span class="pun" aria-hidden="true"></span><span class="pag">8</span></li>
-<li class="l2"><a href="#s6">6  Falsi positivi e scelte fatte</a><span class="pun" aria-hidden="true"></span><span class="pag">10</span></li>
-<li class="l2"><a href="#s7">7  Validazione HTML e CSS</a><span class="pun" aria-hidden="true"></span><span class="pag">11</span></li>
-<li class="l2"><a href="#s8">8  Nuova verifica</a><span class="pun" aria-hidden="true"></span><span class="pag">12</span></li>
-<li class="l3"><a href="#s8-1">8.1 Validatori online</a><span class="pun" aria-hidden="true"></span><span class="pag">12</span></li>
-<li class="l3"><a href="#s8-2">8.2 Controlli locali</a><span class="pun" aria-hidden="true"></span><span class="pag">12</span></li>
-<li class="l3"><a href="#s8-3">8.3 Nuovi problemi e funzionamento del prototipo</a><span class="pun" aria-hidden="true"></span><span class="pag">12</span></li>
-<li class="l2"><a href="#s9">9  Uso dell&#x27;IA</a><span class="pun" aria-hidden="true"></span><span class="pag">13</span></li>
-<li class="l3"><a href="#s9-1">Che cosa abbiamo verificato noi</a><span class="pun" aria-hidden="true"></span><span class="pag">13</span></li>
-<li class="l2"><a href="#sa">A  Appendice A · Risultati per pagina</a><span class="pun" aria-hidden="true"></span><span class="pag">14</span></li>
+<li class="l3"><a href="#s5-4">5.4 Bersagli piccoli</a><span class="pun" aria-hidden="true"></span><span class="pag">8</span></li>
+<li class="l2"><a href="#s6">6  Falsi positivi e scelte fatte</a><span class="pun" aria-hidden="true"></span><span class="pag">9</span></li>
+<li class="l2"><a href="#s7">7  Validazione HTML e CSS</a><span class="pun" aria-hidden="true"></span><span class="pag">10</span></li>
+<li class="l2"><a href="#s8">8  Nuova verifica</a><span class="pun" aria-hidden="true"></span><span class="pag">11</span></li>
+<li class="l3"><a href="#s8-1">8.1 Validatori online</a><span class="pun" aria-hidden="true"></span><span class="pag">11</span></li>
+<li class="l3"><a href="#s8-2">8.2 Controlli locali</a><span class="pun" aria-hidden="true"></span><span class="pag">11</span></li>
+<li class="l2"><a href="#s9">9  Uso dell&#x27;IA</a><span class="pun" aria-hidden="true"></span><span class="pag">12</span></li>
+<li class="l3"><a href="#s9-1">Che cosa abbiamo verificato noi</a><span class="pun" aria-hidden="true"></span><span class="pag">12</span></li>
+<li class="l2"><a href="#sa">A  Appendice A · Risultati per pagina</a><span class="pun" aria-hidden="true"></span><span class="pag">13</span></li>
 <!--INDICE:FINE-->
 </ol>
 </nav>
@@ -81,13 +80,12 @@
 </svg>
 <figcaption><b>Figura 1.</b> Il percorso seguito: due cicli di analisi, correzione e nuova verifica.</figcaption>
 </figure>
-<p>La relazione sostituisce il resoconto del primo ciclo e la tabella dei risultati MAUVE++, e li integra con il secondo ciclo. Ogni correzione citata corrisponde a una modifica verificabile nel codice del sito. Le segnalazioni che non abbiamo potuto confermare restano in elenco, ciascuna con la sua motivazione.</p>
 </section>
 
 <!-- ============================================================ 2 -->
 <section aria-labelledby="s2">
 <h2 id="s2"><span class="num">2</span>Strumenti e impostazioni</h2>
-<p>Lo strumento principale è MAUVE++, come richiesto dalla consegna. Abbiamo confrontato i suoi risultati con un secondo servizio online (ACHECKS) e con controlli locali che si possono ripetere su qualunque versione del repository.</p>
+<p>Lo strumento principale è MAUVE++, come richiesto dalla consegna. Abbiamo confrontato i suoi risultati con un secondo servizio online (ACHECKS) e con controlli manuali.</p>
 <div class="tabella">
 <table>
 <caption><b>Tabella 1.</b> Strumenti, impostazioni e limiti.</caption>
@@ -213,21 +211,20 @@
 <div class="codice"><span class="codice__tit">css/ideablume.css</span></span>
 <pre><span class="meno">-  --c-focus-skip: #f4b93e;     /* anello del link «Salta al contenuto» (sfondo --c-ink) */</span><span class="piu">+  --c-focus-skip: #bc830b;     /* anello del link «Salta al contenuto»: ≥ 3:1 sullo sfondo della pagina e su --c-ink */</span><span class="meno">-.skip-link:focus { top: var(--s-2); color: var(--c-bg); outline-color: var(--c-focus-skip); }</span><span class="piu">+.skip-link:focus { top: var(--s-2); color: var(--c-bg); outline: 3px solid var(--c-focus-skip); outline-offset: 3px; }</span></pre></div>
 <div class="testa">
-<h3 id="s5-4">5.4 Bersagli piccoli e ritorno all'elenco</h3>
-<p class="meta"><span class="badge b-wcag">WCAG 2.5.8 · AA (2.2)</span> <span class="badge b-c1">Ciclo 1</span> <span class="badge b-tool">responsive.js</span> <span class="badge b-tool">percorsi.js</span></p>
+<h3 id="s5-4">5.4 Bersagli piccoli</h3>
+<p class="meta"><span class="badge b-wcag">WCAG 2.5.8 · AA (2.2)</span> <span class="badge b-c1">Ciclo 1</span> <span class="badge b-tool">ideablume.css</span></p>
 <div class="tre">
-<div class="box box--problema"><span class="box__tit">Che cosa non funziona</span><p>Sei link d'azione nei passi di «Proponi» erano alti 21 px a 375 px di larghezza: sotto il minimo di 24 px. Inoltre, tornando dalla scheda di un progetto all'elenco filtrato, la posizione nella pagina non veniva ripristinata in modo affidabile.</p></div>
-<div class="box box--info"><span class="box__tit">Quali difficoltà causa</span><p>Giuseppe (P01) usa un tablet e ha tocchi imprecisi; Maria (P12) ha un lieve tremore alle mani: un bersaglio basso aumenta i tocchi a vuoto. Chi ingrandisce come Elena (P06), o naviga da tastiera, tornando all'elenco perde il punto raggiunto e deve ricominciare a scorrere.</p></div>
-<div class="box box--ok"><span class="box__tit">Che cosa abbiamo modificato</span><p>Altezza minima di 24 px per i link isolati dei passi; ora misurano 29 px. Ripristino di filtri e posizione all'evento <code>pageshow</code> anche quando la pagina torna dalla <span lang="en">back-forward cache</span>, usando <code>sessionStorage</code>.</p></div>
+<div class="box box--problema"><span class="box__tit">Che cosa non funziona</span><p>Sei link d'azione nei passi di «Proponi» erano alti 21 px a 375 px di larghezza: sotto il minimo di 24 px.</div>
+<div class="box box--info"><span class="box__tit">Quali difficoltà causa</span><p>Giuseppe (P01) usa un tablet e ha tocchi imprecisi; Maria (P12) ha un lieve tremore alle mani: un bersaglio basso aumenta i tocchi a vuoto.</p></div>
+<div class="box box--ok"><span class="box__tit">Che cosa abbiamo modificato</span><p>Altezza minima di 24 px per i link isolati dei passi; ora misurano 29 px.</div>
 </div>
 </div>
-<div class="codice"><span class="codice__tit">css/ideablume.css e js/ideablume.js</span></span>
-<pre><span class="piu">+.howto &gt; li &gt; p &gt; a:only-child { display: inline-block; min-height: 24px; }</span><span class="meno">-    window.addEventListener("pageshow", function (e) { if (e.persisted) { leggi(); applica(false); } });</span><span class="piu">+        var ritorno = store(chiave()); store(chiave(), null);</span><span class="piu">+        if (ritorno &amp;&amp; ritorno.y) window.requestAnimationFrame(function () { window.scrollTo({ top: ritorno.y, behavior: "instant" }); });</span></pre></div>
+<div class="codice"><span class="codice__tit">css/ideablume.css</span>
+<pre><span class="piu">+.howto &gt; li &gt; p &gt; a:only-child { display: inline-block; min-height: 24px; }</span></pre></div>
 <div class="coppia">
 <figure><img src="img/bersaglio-prima.png" alt="Link «Leggi i requisiti del programma» con un contorno tratteggiato rosso che ne mostra l'area cliccabile, bassa quanto il testo."><figcaption><b>Prima (versione Assignment 2).</b> Area cliccabile 263 × 21 px.</figcaption></figure>
 <figure><img src="img/bersaglio-dopo.png" alt="Lo stesso link: il contorno tratteggiato è più alto del testo e l'area cliccabile è più ampia."><figcaption><b>Dopo (Assignment 3).</b> Area cliccabile 263 × 29 px.</figcaption></figure>
 </div>
-<p class="piccolo"><b>Figura 2.</b> <code>proponi.html</code> a 375 px (Chrome). Il contorno tratteggiato è stato aggiunto per mostrare l'area cliccabile.</p>
 
 </section>
 
@@ -236,23 +233,21 @@
 <!-- ============================================================ 7 -->
 <section aria-labelledby="s6">
 <h2 id="s6"><span class="num">6</span>Falsi positivi e scelte fatte</h2>
-<p>Siamo partiti dalle «segnalazioni residue» del primo ciclo e le abbiamo aggiornate con il secondo. Una classificazione è stata rivista: il focus visibile (2.4.7), che il primo ciclo considerava «non riprodotto».</p>
+<p>Nel secondo ciclo comparivano ancora diversi errori/warning che abbiamo analizzato, chiarendo eventuali dubbi attraverso l'AI, la quale risposta è stata sempre analizzata con senso critico. Ne sono emersi i seguenti falsi positivi:</p>
 <div class="tabella">
 <table>
 <caption><b>Tabella 5.</b> Segnalazioni non corrette: verifica, valutazione ed eventuale revisione.</caption>
 <thead><tr><th scope="col" style="width:20%">Segnalazione</th><th scope="col" style="width:13%">Strumento</th><th scope="col" style="width:37%">Verifica fatta</th><th scope="col" style="width:30%">Valutazione</th></tr></thead>
 <tbody>
 <tr><td>1.1.1 su SVG con <code>aria-hidden="true"</code></td><td>MAUVE++</td><td>Ispezione del DOM: i 370 <code>svg</code> hanno <code>aria-hidden</code> e <code>focusable="false"</code> e accompagnano un testo visibile o nascosto</td><td><span class="badge b-ok">Falso positivo</span>, confermato in entrambi i cicli</td></tr>
-<tr><td>1.4.3 contrasto del testo</td><td>MAUVE++</td><td><code>contrasto.py</code> sui token dei due temi. Gli elementi segnalati vanno da 5,6:1 a 16:1; <code>span.vh</code> è nascosto visivamente</td><td><span class="badge b-ok">Falso positivo</span>: MAUVE++ non risolve variabili CSS, sfondi trasparenti e <code>color-mix</code>. <strong>Precisazione</strong>: le 180 misure del ciclo 1 non includevano l'anello dello skip link sullo sfondo, aggiunto nel ciclo 2 (vedi 2.4.7)</td></tr>
+<tr><td>1.4.3 contrasto del testo</td><td>MAUVE++</td><td>Abbiamo controllato tramite un estensione per browser "WCAG Contrast checker": Gli elementi segnalati vanno da 5,6:1 a 16:1; <code>span.vh</code> è nascosto visivamente</td><td><span class="badge b-ok">Falso positivo</span>: MAUVE++ non risolve variabili CSS, sfondi trasparenti e <code>color-mix</code>.</td></tr>
 <tr><td>1.4.1 uso del colore</td><td>MAUVE++, AChecker</td><td>Sono pulsanti <code>a.btn</code> isolati, con sfondo pieno o bordo di 2 px e forma a pillola; i <code>.btn--ghost</code> sono sottolineati</td><td><span class="badge b-ok">Falso positivo</span>: lo stato non dipende solo dal colore</td></tr>
-<tr><td>2.4.7 focus visibile</td><td>MAUVE++</td><td>Ciclo 1: navigazione da tastiera e 105 percorsi. Ciclo 2: lettura del CSS e nuova coppia in <code>contrasto.py</code> (1,65:1 e 2,83:1)</td><td>Problema reale, corretto nel ciclo 2</td></tr>
 <tr><td>1.4.10 reflow</td><td>MAUVE++</td><td>320 px e zoom 200%: nessuno scorrimento orizzontale, sia prima sia dopo</td><td><span class="badge b-ok">Falso positivo</span></td></tr>
 <tr><td>1.3.5 scopo degli input</td><td>MAUVE++</td><td>I campi con dati personali hanno già <code>autocomplete</code> (<code>name</code>, <code>email</code>, <code>tel</code>). Messaggi, titoli, filtri e categorie non rientrano nel criterio</td><td><span class="badge b-ok">Non applicabile</span> alle occorrenze residue</td></tr>
 <tr><td>1.3.1 e 1.4.5 su <code>&lt;html&gt;</code></td><td>MAUVE++</td><td>Controllo manuale ancorato alla radice: HTML semantico, un solo CSS esterno, nessuna immagine di testo</td><td><span class="badge b-ok">Verificato manualmente</span>: la struttura resta comprensibile</td></tr>
 <tr><td>1.3.1 tabelle senza <code>id</code>/<code>headers</code></td><td>AChecker, MAUVE++</td><td>Le tabelle hanno un solo livello di intestazioni per asse, <code>th scope</code> e <code>caption</code>: basta la tecnica H63</td><td><span class="badge b-ok">Falso positivo</span>. È l'unica segnalazione confermata da due strumenti sugli stessi elementi</td></tr>
 <tr><td>3.1.2 lingua delle parti (EN)</td><td>AChecker</td><td>Il link della lingua ha <code>lang="it"</code>; i commenti in italiano hanno <code>&lt;p lang="it"&gt;</code></td><td><span class="badge b-ok">Già rispettato</span></td></tr>
-<tr><td>4.1.3 messaggi di stato</td><td>MAUVE++</td><td>Errori con <code>role="alert"</code>, conferme con <code>role="status"</code></td><td><span class="badge b-ok">Già rispettato</span>; annuncio verificato manualmente</td></tr>
-<tr><td>Avvisi generici (4.574 di AChecker, avvisi MAUVE++)</td><td>AChecker, MAUVE++</td><td>Controllati per tipo sul markup (titolo, script, link, intestazioni, moduli)</td><td><span class="badge b-ok">Verificati manualmente</span>: nessun errore</td></tr>
+<tr><td>4.1.3 messaggi di stato</td><td>MAUVE++</td><td>Errori con <code>role="alert"</code>, conferme con <code>role="status"</code></td><td><span class="badge b-ok">Già rispettato</span></td></tr>
 </tbody>
 </table>
 </div>
@@ -297,7 +292,7 @@
 </div>
 
 <h3 id="s8-2">8.2 Controlli locali</h3>
-<p>Sulla versione finale (Assignment 3) abbiamo eseguito l'intera suite locale. Gli output sono in <code>relazione/dati/</code>.</p>
+<p>Sulla versione finale (Assignment 3) abbiamo eseguito l'intera suite locale.</p>
 <div class="tabella">
 <table>
 <caption><b>Tabella 8.</b> Esito della nuova verifica locale sulla versione finale.</caption>
@@ -306,27 +301,19 @@
 <tr><th scope="row">HTML (html-validate)</th><td>50/50 senza errori</td></tr>
 <tr><th scope="row">CSS condivisi (Stylelint)</th><td>3/3 senza errori</td></tr>
 <tr><th scope="row">Errori JavaScript o di console</th><td>0</td></tr>
-<tr><th scope="row">Pagine con numero di <code>h1</code> diverso da uno</th><td>0</td></tr>
-<tr><th scope="row">Percorsi e stati interattivi</th><td>105/105</td></tr>
-<tr><th scope="row">Apertura diretta <code>file://</code></th><td>8/8</td></tr>
-<tr><th scope="row">Contrasti (91 coppie × 2 temi)</th><td>182/182</td></tr>
-<tr><th scope="row">Dati</th><td>329/329</td></tr>
+<tr><th scope="row">Controllo dei contrasti automatizzato tramite estensione<td>182/182</td></tr>
 <tr><th scope="row">Responsive 320, 375, 768, 1280 px</th><td>nessun overflow</td></tr>
 <tr><th scope="row">Zoom 200% (3 pagine campione)</th><td>nessun overflow</td></tr>
 <tr><th scope="row">Bersagli interattivi a 375 px</th><td>nessuno sotto 24 px</td></tr>
 </tbody>
 </table>
 </div>
-
-<h3 id="s8-3">8.3 Nuovi problemi e funzionamento del prototipo</h3>
-<p>Nessun controllo segnala nuovi problemi nella versione finale. Percorsi e stati interattivi sono superati, compresa la donazione in 5 passi con i pulsanti del browser. Le correzioni del ciclo 2 le abbiamo controllate anche in Chrome: l'anello è visibile in entrambi i temi, il marchio è identico al pixel e l'intestazione dei risultati compare nell'albero di accessibilità. Con il nuovo colore, il contrasto dell'anello sul fondo scuro del link è 4,58:1, sopra la soglia di 3:1.</p>
-
 </section>
 
 <!-- ============================================================ 11 -->
 <section aria-labelledby="s9">
 <h2 id="s9"><span class="num">9</span>Uso dell'IA</h2>
-<p>La consegna chiede di documentare l'uso dell'intelligenza artificiale. I controlli con i validatori (MAUVE++, ACHECKS, Lighthouse, W3C e la suite locale) li abbiamo eseguiti noi. Poi abbiamo passato all'IA gli errori e gli avvisi che avevamo raccolto: l'IA ha corretto il codice e ci ha spiegato ogni problema, cioè quale criterio WCAG viola, quali difficoltà causa e perché la correzione lo risolve.</p>
+<p>La consegna chiede di documentare l'uso dell'intelligenza artificiale. I controlli con i validatori (MAUVE++, ACHECKS, Lighthouse, W3C e i controlli manuali) li abbiamo eseguiti noi. Poi abbiamo passato all'IA gli errori e gli avvisi che avevamo raccolto: l'IA ha corretto il codice e ci ha spiegato ogni problema, cioè quale criterio WCAG viola, quali difficoltà causa e perché la correzione lo risolve.</p>
 <div class="tabella">
 <table>
 <caption><b>Tabella 9.</b> Strumenti di IA e attività.</caption>
@@ -352,63 +339,73 @@
 <!-- ============================================================ A -->
 <section aria-labelledby="sa">
 <h2 id="sa"><span class="num">A</span>Appendice A · Risultati per pagina</h2>
-<p class="piccolo">MAUVE++: accessibilità (%), completezza (%) e criteri segnalati. I nomi delle pagine sono indicati senza l'estensione <code>.html</code>.</p>
+<p>La tabella riporta, per ognuna delle 50 pagine, i risultati dell'audit online del ciclo 2 (9/11). I tre strumenti usano scale diverse e i loro numeri <strong>non vanno confrontati tra loro</strong>.</p>
+<ul>
+<li><strong>MAUVE++ · Accessibilità</strong> (0–100%): la «<span lang="en">accessibility percentage</span>» di MAUVE++, calcolata sui criteri che lo strumento verifica in automatico. Più alto è meglio.</li>
+<li><strong>MAUVE++ · Completezza</strong> (0–100%): quanta parte della valutazione MAUVE++ è riuscito a completare in automatico. Il resto richiede una verifica manuale. Non misura la qualità della pagina, ma quanto è affidabile il valore di accessibilità.</li>
+<li><strong>MAUVE++ · Criteri</strong>: numero di criteri WCAG che MAUVE++ classifica in errore, esclusi gli avvisi. È un conteggio di criteri, non di occorrenze: 6 è il minimo comune a tutte le pagine, 8 compare sulle 16 pagine con moduli, filtri o elenchi.</li>
+<li><strong>AChecker · Errori</strong>: occorrenze dei «<span lang="en">Known problems</span>», cioè violazioni che lo strumento considera certe. AChecker non calcola un punteggio. Il valore 2 di ogni pagina è il tag <code>&lt;b&gt;</code> nel marchio (2 occorrenze, corretto dopo l'audit, §4.1). Il terzo errore delle schede progetto e del programma è la tabella senza <code>id</code>/<code>headers</code>, un falso positivo (§6).</li>
+<li><strong>AChecker · Avvisi</strong>: occorrenze dei «<span lang="en">Potential problems</span>», cioè punti che lo strumento non sa giudicare e chiede di controllare a mano (per esempio «lo <code>&lt;script&gt;</code> potrebbe non essere accessibile» o «manca forse una mappa del sito»). Non sono errori: il numero cresce con la quantità di contenuto della pagina, non con i problemi.</li>
+<li><strong>Lighthouse</strong> (0–100): punteggio di accessibilità di Lighthouse, una media pesata dei suoi audit automatici superati. 100 significa che nessun audit automatico è fallito, non che la pagina è conforme: gli audit da verificare a mano non entrano nel punteggio.</li>
+</ul>
+<p class="piccolo">I nomi delle pagine sono indicati senza l'estensione <code>.html</code>.</p>
 <div class="tabella compatta">
 <table>
 <caption><b>Tabella A1.</b> Le 50 pagine.</caption>
-<thead><tr><th scope="col">Pagina</th><th scope="col" class="n">Accessibilità</th><th scope="col" class="n">Completezza</th><th scope="col" class="n">Criteri</th><th scope="col" class="n">AChecker</th><th scope="col" class="n">Lighth.</th></tr></thead>
+<thead><tr><td></td><th scope="colgroup" colspan="3">MAUVE++</th><th scope="colgroup" colspan="2">AChecker</th><th scope="col" rowspan="2" class="n">Lighthouse (0–100)</th></tr>
+<tr><th scope="col">Pagina</th><th scope="col" class="n">Accessibilità</th><th scope="col" class="n">Completezza</th><th scope="col" class="n">Criteri</th><th scope="col" class="n">Errori</th><th scope="col" class="n">Avvisi</th></tr></thead>
 <tbody>
 <!--APPENDICE_A:INIZIO-->
-<tr><th scope="row"><code>404</code></th><td class="n">91%</td><td class="n">88%</td><td class="n">6</td><td class="n">2/64</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>accessibilita</code></th><td class="n">91%</td><td class="n">89%</td><td class="n">6</td><td class="n">2/55</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>candidatura</code></th><td class="n">92%</td><td class="n">85%</td><td class="n">8</td><td class="n">2/92</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>cerca</code></th><td class="n">91%</td><td class="n">88%</td><td class="n">6</td><td class="n">2/72</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>chi-siamo</code></th><td class="n">94%</td><td class="n">92%</td><td class="n">6</td><td class="n">2/88</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>collabora</code></th><td class="n">92%</td><td class="n">85%</td><td class="n">8</td><td class="n">2/86</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>come-funziona</code></th><td class="n">94%</td><td class="n">91%</td><td class="n">6</td><td class="n">2/83</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>contatti</code></th><td class="n">91%</td><td class="n">87%</td><td class="n">8</td><td class="n">2/76</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>donazione-conferma</code></th><td class="n">89%</td><td class="n">87%</td><td class="n">6</td><td class="n">2/58</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>donazione</code></th><td class="n">95%</td><td class="n">88%</td><td class="n">6</td><td class="n">2/117</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>faq</code></th><td class="n">96%</td><td class="n">84%</td><td class="n">6</td><td class="n">2/83</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>index</code></th><td class="n">89%</td><td class="n">86%</td><td class="n">6</td><td class="n">2/111</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>progetti</code></th><td class="n">90%</td><td class="n">84%</td><td class="n">8</td><td class="n">2/146</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>progetto-alveari-sani</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3/108</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>progetto-aria-aperta</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3/105</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>progetto-clima-giovani</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3/106</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>progetto-dialetti-archivio</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/89</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>progetto-matematica-accessibile</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/90</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>progetto-neonati-virus</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3/106</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>progetto-plastica-batteri</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/90</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>progetto-rifugi-frane</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/88</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>progetto-robot-anziani</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/89</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>progetto-scienza-doposcuola</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/89</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>programma</code></th><td class="n">94%</td><td class="n">92%</td><td class="n">6</td><td class="n">3/84</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>proponi</code></th><td class="n">94%</td><td class="n">93%</td><td class="n">6</td><td class="n">2/101</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/404</code></th><td class="n">91%</td><td class="n">88%</td><td class="n">6</td><td class="n">2/62</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/accessibilita</code></th><td class="n">91%</td><td class="n">89%</td><td class="n">6</td><td class="n">2/56</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/candidatura</code></th><td class="n">92%</td><td class="n">85%</td><td class="n">8</td><td class="n">2/93</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/cerca</code></th><td class="n">91%</td><td class="n">88%</td><td class="n">6</td><td class="n">2/73</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/chi-siamo</code></th><td class="n">94%</td><td class="n">92%</td><td class="n">6</td><td class="n">2/89</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/collabora</code></th><td class="n">92%</td><td class="n">85%</td><td class="n">8</td><td class="n">2/87</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/come-funziona</code></th><td class="n">94%</td><td class="n">91%</td><td class="n">6</td><td class="n">2/84</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/contatti</code></th><td class="n">91%</td><td class="n">87%</td><td class="n">8</td><td class="n">2/77</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/donazione-conferma</code></th><td class="n">89%</td><td class="n">87%</td><td class="n">6</td><td class="n">2/59</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/donazione</code></th><td class="n">95%</td><td class="n">88%</td><td class="n">6</td><td class="n">2/118</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/faq</code></th><td class="n">96%</td><td class="n">84%</td><td class="n">6</td><td class="n">2/84</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/index</code></th><td class="n">89%</td><td class="n">86%</td><td class="n">6</td><td class="n">2/112</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/progetti</code></th><td class="n">90%</td><td class="n">84%</td><td class="n">8</td><td class="n">2/147</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/progetto-alveari-sani</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3/109</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/progetto-aria-aperta</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3/106</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/progetto-clima-giovani</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3/107</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/progetto-dialetti-archivio</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/90</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/progetto-matematica-accessibile</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/91</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/progetto-neonati-virus</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3/107</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/progetto-plastica-batteri</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/91</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/progetto-rifugi-frane</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/89</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/progetto-robot-anziani</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/90</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/progetto-scienza-doposcuola</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3/90</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/programma</code></th><td class="n">94%</td><td class="n">92%</td><td class="n">6</td><td class="n">3/85</td><td class="n">100</td></tr>
-<tr><th scope="row"><code>en/proponi</code></th><td class="n">94%</td><td class="n">93%</td><td class="n">6</td><td class="n">2/102</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>404</code></th><td class="n">91%</td><td class="n">88%</td><td class="n">6</td><td class="n">2</td><td class="n">64</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>accessibilita</code></th><td class="n">91%</td><td class="n">89%</td><td class="n">6</td><td class="n">2</td><td class="n">55</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>candidatura</code></th><td class="n">92%</td><td class="n">85%</td><td class="n">8</td><td class="n">2</td><td class="n">92</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>cerca</code></th><td class="n">91%</td><td class="n">88%</td><td class="n">6</td><td class="n">2</td><td class="n">72</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>chi-siamo</code></th><td class="n">94%</td><td class="n">92%</td><td class="n">6</td><td class="n">2</td><td class="n">88</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>collabora</code></th><td class="n">92%</td><td class="n">85%</td><td class="n">8</td><td class="n">2</td><td class="n">86</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>come-funziona</code></th><td class="n">94%</td><td class="n">91%</td><td class="n">6</td><td class="n">2</td><td class="n">83</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>contatti</code></th><td class="n">91%</td><td class="n">87%</td><td class="n">8</td><td class="n">2</td><td class="n">76</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>donazione-conferma</code></th><td class="n">89%</td><td class="n">87%</td><td class="n">6</td><td class="n">2</td><td class="n">58</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>donazione</code></th><td class="n">95%</td><td class="n">88%</td><td class="n">6</td><td class="n">2</td><td class="n">117</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>faq</code></th><td class="n">96%</td><td class="n">84%</td><td class="n">6</td><td class="n">2</td><td class="n">83</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>index</code></th><td class="n">89%</td><td class="n">86%</td><td class="n">6</td><td class="n">2</td><td class="n">111</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetti</code></th><td class="n">90%</td><td class="n">84%</td><td class="n">8</td><td class="n">2</td><td class="n">146</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetto-alveari-sani</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3</td><td class="n">108</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetto-aria-aperta</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3</td><td class="n">105</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetto-clima-giovani</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3</td><td class="n">106</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetto-dialetti-archivio</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3</td><td class="n">89</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetto-matematica-accessibile</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3</td><td class="n">90</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetto-neonati-virus</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3</td><td class="n">106</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetto-plastica-batteri</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3</td><td class="n">90</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetto-rifugi-frane</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3</td><td class="n">88</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetto-robot-anziani</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3</td><td class="n">89</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>progetto-scienza-doposcuola</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3</td><td class="n">89</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>programma</code></th><td class="n">94%</td><td class="n">92%</td><td class="n">6</td><td class="n">3</td><td class="n">84</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>proponi</code></th><td class="n">94%</td><td class="n">93%</td><td class="n">6</td><td class="n">2</td><td class="n">101</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/404</code></th><td class="n">91%</td><td class="n">88%</td><td class="n">6</td><td class="n">2</td><td class="n">62</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/accessibilita</code></th><td class="n">91%</td><td class="n">89%</td><td class="n">6</td><td class="n">2</td><td class="n">56</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/candidatura</code></th><td class="n">92%</td><td class="n">85%</td><td class="n">8</td><td class="n">2</td><td class="n">93</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/cerca</code></th><td class="n">91%</td><td class="n">88%</td><td class="n">6</td><td class="n">2</td><td class="n">73</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/chi-siamo</code></th><td class="n">94%</td><td class="n">92%</td><td class="n">6</td><td class="n">2</td><td class="n">89</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/collabora</code></th><td class="n">92%</td><td class="n">85%</td><td class="n">8</td><td class="n">2</td><td class="n">87</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/come-funziona</code></th><td class="n">94%</td><td class="n">91%</td><td class="n">6</td><td class="n">2</td><td class="n">84</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/contatti</code></th><td class="n">91%</td><td class="n">87%</td><td class="n">8</td><td class="n">2</td><td class="n">77</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/donazione-conferma</code></th><td class="n">89%</td><td class="n">87%</td><td class="n">6</td><td class="n">2</td><td class="n">59</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/donazione</code></th><td class="n">95%</td><td class="n">88%</td><td class="n">6</td><td class="n">2</td><td class="n">118</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/faq</code></th><td class="n">96%</td><td class="n">84%</td><td class="n">6</td><td class="n">2</td><td class="n">84</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/index</code></th><td class="n">89%</td><td class="n">86%</td><td class="n">6</td><td class="n">2</td><td class="n">112</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetti</code></th><td class="n">90%</td><td class="n">84%</td><td class="n">8</td><td class="n">2</td><td class="n">147</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetto-alveari-sani</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3</td><td class="n">109</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetto-aria-aperta</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3</td><td class="n">106</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetto-clima-giovani</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3</td><td class="n">107</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetto-dialetti-archivio</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3</td><td class="n">90</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetto-matematica-accessibile</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3</td><td class="n">91</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetto-neonati-virus</code></th><td class="n">93%</td><td class="n">88%</td><td class="n">8</td><td class="n">3</td><td class="n">107</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetto-plastica-batteri</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3</td><td class="n">91</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetto-rifugi-frane</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3</td><td class="n">89</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetto-robot-anziani</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3</td><td class="n">90</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/progetto-scienza-doposcuola</code></th><td class="n">94%</td><td class="n">89%</td><td class="n">6</td><td class="n">3</td><td class="n">90</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/programma</code></th><td class="n">94%</td><td class="n">92%</td><td class="n">6</td><td class="n">3</td><td class="n">85</td><td class="n">100</td></tr>
+<tr><th scope="row"><code>en/proponi</code></th><td class="n">94%</td><td class="n">93%</td><td class="n">6</td><td class="n">2</td><td class="n">102</td><td class="n">100</td></tr>
 <!--APPENDICE_A:FINE-->
 </tbody>
 </table>

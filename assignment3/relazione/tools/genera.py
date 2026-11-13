@@ -29,7 +29,7 @@ def appendice_a():
         assert b[2] == l[2], (p, b[2], l[2])  # criteri segnalati uguali nei due cicli: una colonna sola
         righe.append(f'<tr><th scope="row"><code>{html.escape(p[:-5])}</code></th><td class="n">{max(b[0], l[0])}%</td>'
                      f'<td class="n">{max(b[1], l[1])}%</td><td class="n">{l[2]}</td>'
-                     f'<td class="n">{l[3]}</td><td class="n">{l[4]}</td></tr>')
+                     f'<td class="n">{l[3].split("/")[0]}</td><td class="n">{l[3].split("/")[1]}</td><td class="n">{l[4]}</td></tr>')
     return "\n".join(righe)
 
 def voci_indice(testo):
