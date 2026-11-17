@@ -121,7 +121,7 @@ def blocco_task(D):
 <div class="box box--problema"><span class="box__tit">Contati come errori</span><p>{e(t['errori'])}</p></div>
 </div>""")
     out.append(f"""<div class="coppia">
-<figure><img src="img/t0-home.png" alt="Home di ideaBlume: titolo, ricerca, pulsante «Scopri i progetti in corso» e progetto in evidenza"><figcaption><b>Figura 1.</b> La home da cui parte ogni task (versione provata).</figcaption></figure>
+<figure><img src="img/t0-home.png" alt="Home di ideaBlume: titolo, ricerca, pulsante «Scopri i progetti in corso» e progetto in evidenza"><figcaption><b>Figura 1.</b> La home da cui parte ogni task (versione di riferimento, Assignment 3).</figcaption></figure>
 <figure><img src="img/t3-donazione.png" alt="Primo passo della donazione: scelta dell'importo o della ricompensa"><figcaption><b>Figura 2.</b> Il primo dei cinque passi della donazione (T3).</figcaption></figure>
 </div>""")
     return "\n".join(out)
@@ -205,11 +205,16 @@ def sus_commento(D):
     for i in range(10):
         v = [D["susp"][u][0][i] for u in D["utenti"]]; contr.append((statistics.mean((x - 1) if i % 2 == 0 else (5 - x) for x in v), i))
     peggio = sorted(contr)[:2]
+    soli = {u: sum(1 for t in TASK if D["ses"].get((u, t["id"]), {}).get("esito") == "S") for u in D["utenti"]}
+    sopra = [u for u in D["utenti"] if D["susp"][u][1] >= 68]
+    sotto_u = [u for u in D["utenti"] if D["susp"][u][1] < 68]
+    media_sopra = statistics.mean(soli[u] for u in sopra) if sopra else 0
+    media_sotto = statistics.mean(soli[u] for u in sotto_u) if sotto_u else 0
     return (f'<p>Il punteggio medio è <strong>{num(m)}</strong> su 100 (da {num(min(punti))} a {num(max(punti))}), {"sopra" if m >= 68 else "sotto"} la media di riferimento di 68: '
             f'nella scala di aggettivi di Bangor corrisponde a «{giudizio_sus(m)}». '
             + (f'Sotto 68: {", ".join(sotto)}. ' if sotto else "Nessun utente è sotto 68. ")
             + "Le affermazioni con il giudizio medio peggiore sono la " + " e la ".join(f"{i + 1} («{e(SUS[i])}», contributo medio {num(c)} su 4)" for c, i in peggio)
-            + '.</p><p><span class="todo">Commento: il SUS misura la percezione, non la prestazione. Confrontarlo con la tabella 10: chi ha dato un punteggio alto ha anche completato i task da solo?</span></p>')
+            + f'.</p><p>Nel dataset sintetico percezione e prestazione sono coerenti: i {len(sopra)} profili con SUS almeno 68 completano in media {num(media_sopra)} task su 4 senza aiuto, contro {num(media_sotto)} per i {len(sotto_u)} profili sotto 68. Il confronto è descrittivo e andrà ricalcolato sui partecipanti reali.</p>')
 
 def tab_intervista(D):
     righe = []
@@ -299,7 +304,7 @@ def redesign(P):
     for p in fatti:
         fig = ""
         if p["img_prima"] or p["img_dopo"]:
-            a, stretta = figura(p["img_prima"], f"Prima: {p['titolo']}", f"<b>Figura {nf}.</b> Prima: la versione provata dagli utenti.")
+            a, stretta = figura(p["img_prima"], f"Prima: {p['titolo']}", f"<b>Figura {nf}.</b> Prima: la versione di riferimento (Assignment 3).")
             b, _ = figura(p["img_dopo"], f"Dopo: {p['titolo']}", f"<b>Figura {nf + 1}.</b> Dopo il re-design.")
             nf += 2; fig = f'<div class="coppia{" coppia--tel" if stretta else ""}">{a}{b}</div>'
         out.append(f"""<div class="blocco"><div class="testa"><h3>{e(p['id'])} · {e(p['titolo'])}</h3>
@@ -314,7 +319,7 @@ def redesign(P):
 def non_corretti(P):
     resto = [p for p in P if not p["stato"].lower().startswith("fatt")]
     if not P: return '<p><span class="todo">Elenco dei problemi lasciati aperti, con il motivo.</span></p>'
-    if not resto: return '<p>Tutti i problemi della tabella 14 sono stati corretti. <span class="todo">Se dalle sessioni emergono altri problemi, aggiungerli a <code>problemi.csv</code> con origine «test»: quelli non corretti compaiono qui con il motivo.</span></p>'
+    if not resto: return '<p>Tutti i problemi della tabella 14 sono stati corretti. Il dataset sintetico non introduce problemi nuovi: dopo le sessioni reali ogni criticità ulteriore andrà aggiunta a <code>problemi.csv</code> con origine «test», indicando anche se viene corretta o lasciata aperta.</p>'
     return "<ul>" + "".join(f"<li><strong>{e(p['id'])} · {e(p['titolo'])}</strong> ({bgp(p)}): {e(p['soluzione'] or 'motivo da indicare nella colonna «soluzione»')}</li>" for p in resto) + "</ul>"
 
 # ------------------------------------------------------------------ grafici (SVG statici per la stampa)

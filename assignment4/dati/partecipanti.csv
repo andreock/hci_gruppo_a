@@ -1,9 +1,9 @@
 utente,fascia_eta,genere,occupazione,titolo_studio,competenza_digitale_1_5,acquisti_online,familiarita_crowdfunding,ha_donato_online,dispositivo,browser,modalita,data,durata_min,facilitatore,osservatore
-U1,,,,,,,,,,,,,,Andrea,Antonio
-U2,,,,,,,,,,,,,,Antonio,Alexandru
-U3,,,,,,,,,,,,,,Alexandru,Lorenzo
-U4,,,,,,,,,,,,,,Lorenzo,Andrea
-U5,,,,,,,,,,,,,,Andrea,Antonio
-U6,,,,,,,,,,,,,,Antonio,Alexandru
-U7,,,,,,,,,,,,,,Alexandru,Lorenzo
-U8,,,,,,,,,,,,,,Lorenzo,Andrea
+U1,18–24,Donna,Studentessa,Diploma,5,Ogni mese,Ha visitato un sito,No,Notebook 1440×900,Chrome,In presenza,09/11/2026,30,Andrea,Antonio
+U2,25–34,Uomo,Impiegato,Laurea,4,Ogni mese,Ne ha sentito parlare,Sì,Notebook 1366×768,Edge,Da remoto,09/11/2026,31,Antonio,Alexandru
+U3,65 o più,Donna,Pensionata,Diploma,2,Qualche volta l'anno,Mai sentito,No,Smartphone 375×812,Safari,In presenza,10/11/2026,35,Alexandru,Lorenzo
+U4,35–44,Uomo,Ricercatore,Oltre la laurea,5,Ogni settimana,Ha donato almeno una volta,Sì,Desktop 1920×1080,Firefox,Da remoto,10/11/2026,28,Lorenzo,Andrea
+U5,55–64,Uomo,Impiegato,Diploma,3,Qualche volta l'anno,Ne ha sentito parlare,No,Notebook 1280×800,Chrome,In presenza,11/11/2026,35,Andrea,Antonio
+U6,25–34,Donna,Educatrice,Laurea,4,Ogni mese,Ha donato almeno una volta,Sì,Notebook 1440×900,Chrome,Da remoto,11/11/2026,30,Antonio,Alexandru
+U7,45–54,Donna,Commerciante,Diploma,3,Ogni settimana,Mai sentito,Sì,Smartphone 360×800,Chrome,In presenza,12/11/2026,36,Alexandru,Lorenzo
+U8,18–24,Uomo,Studente,Diploma,4,Ogni mese,Ha visitato un sito,No,Notebook 1366×768,Edge,In presenza,12/11/2026,31,Lorenzo,Andrea

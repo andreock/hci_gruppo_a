@@ -1,6 +1,7 @@
 // Stampa relazione.html in relazione.pdf con Chromium headless (Playwright), PDF taggato con segnalibri.
 // Uso: node genera_pdf.js [relazione.html] [relazione.pdf]
 const path = require("path");
+const fs = require("fs");
 function playwright() {
   for (const c of [process.env.PLAYWRIGHT_DIR, "/tmp/a11y-dopo/assignment2/website/tools/node_modules/playwright",
     path.join(__dirname, "..", "..", "..", "assignment2", "website", "tools", "node_modules", "playwright"), "playwright"]) {
@@ -14,8 +15,10 @@ function playwright() {
   const html = path.resolve(process.argv[2] || path.join(dir, "relazione.html"));
   const pdf = path.resolve(process.argv[3] || path.join(dir, "relazione.pdf"));
   const { chromium } = playwright();
+  const browserOptions = process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } :
+    (fs.existsSync("/usr/bin/chromium") ? { executablePath: "/usr/bin/chromium" } : {});
   let browser;
-  try { browser = await chromium.launch(); } catch (e) { browser = await chromium.launch({ channel: "chrome" }); }
+  try { browser = await chromium.launch(browserOptions); } catch (e) { browser = await chromium.launch({ channel: "chrome" }); }
   const page = await browser.newPage();
   await page.goto("file://" + html, { waitUntil: "networkidle" });
   await page.evaluate(() => document.fonts.ready);

@@ -9,10 +9,10 @@ Test «in svendita» alla Krug sul prototipo: **8 utenti × 4 task**, pensiero a
 | Materiali del test (kit, task, schede) | pronti |
 | Ispezione dei 4 percorsi: 8 problemi con misure sulla versione provata | fatta (`dati/problemi.csv`, `dati/misure.json`) |
 | **Re-design** del prototipo per gli 8 problemi, con misure e schermate prima/dopo | **fatto** in `assignment2/website/` su questo branch |
-| Sessioni con gli 8 utenti | **da fare**: i file `sessioni`, `sus`, `intervista`, `partecipanti` sono vuoti di proposito |
-| Relazione | bozza: la parte su task, metodo, problemi e re-design è scritta; i risultati compaiono quando i CSV sono compilati |
+| Sessioni con gli 8 utenti | **da fare**: i CSV contengono ora un dataset sintetico completo per collaudare il flusso, non risultati reali |
+| Relazione | prova generale completa con tabelle, grafici, SUS, analisi e conclusioni basati sui dati sintetici; prima della consegna i CSV vanno sostituiti con dati reali |
 
-Gli 8 problemi vengono da un'**ispezione** (difetti reali, misurati sul sito), non da osservazioni di utenti. Nelle colonne `utenti` ed `evidenza` di `problemi.csv` va scritto **che cosa è successo davvero nelle sessioni**; finché sono vuote, nella relazione la gravità è indicata come «stima» e la frequenza come «da rilevare».
+Gli 8 problemi vengono da un'**ispezione** (difetti reali, misurati sul sito), non da osservazioni di utenti. Le colonne `utenti` ed `evidenza` di `problemi.csv` sono state compilate con evidenze sintetiche per provare classificazione e relazione: dopo i test vanno riscritte con **ciò che è successo davvero nelle sessioni** e la gravità va rivalutata.
 
 ## Che cosa c'è
 
@@ -21,7 +21,7 @@ Gli 8 problemi vengono da un'**ispezione** (difetti reali, misurati sul sito), n
 | `kit/kit_test.pdf` | Da stampare: preparazione, copione del facilitatore, consenso, questionario iniziale, cartoncini dei 4 task, scheda dell'osservatore (una pagina per task, con le ipotesi P1–P8 da verificare), SUS, intervista |
 | `dati/*.csv` | I dati del test: `partecipanti`, `sessioni` (32 righe: utente × task), `sus`, `intervista`, `problemi`, `task` (tempi limite e tempo dell'esperto) |
 | `dati/misure.json` | Misure prima/dopo scritte da `prima_dopo.py` (non modificare a mano) |
-| `relazione/modello.html` | Il testo della relazione. Le parti `{{COSÌ}}` sono calcolate dai dati, quelle `<span class="todo">` sono da scrivere a mano |
+| `relazione/modello.html` | Il testo della relazione. Le parti `{{COSÌ}}` sono calcolate dai dati; la versione attuale contiene già l'analisi del dataset sintetico |
 | `relazione/tools/task.py` | Testo dei 4 task, criteri di successo, affermazioni SUS, regole di conteggio (fonte unica per kit e relazione) |
 | `relazione/tools/genera.py` | Calcola tabelle, punteggi SUS, grafici e indice → `relazione/relazione.html` e `relazione/assignment4_gruppoA.pdf` |
 | `relazione/tools/genera_kit.py` | Rigenera il kit |
@@ -53,7 +53,7 @@ Dopo le modifiche: 4 task ancora completabili, 0 violazioni axe-core su 50 pagin
 
 ## Come procedere
 
-1. **Prima delle sessioni.** Un componente esegue i 4 task cronometrandosi e scrive i secondi in `dati/task.csv` (`tempo_esperto_s`). Stampare il kit. Fare una sessione di prova tra di noi.
+1. **Prima delle sessioni.** I tempi dell'esperto sono già simulati in `dati/task.csv` e rispettano il rapporto 1:3 con i limiti. Prima dei test reali un componente deve ripetere i quattro task con il cronometro, sostituire i tempi se differiscono sensibilmente, stampare il kit e fare una sessione pilota interna.
 2. **Sessioni.** Gli utenti provano la **versione dell'Assignment 3**: <https://andreock.github.io/hci_gruppo_a/anteprime/assignment3/>. Quell'indirizzo cambia solo se si fa un push sul branch `assignment3`: non farlo finché le 8 sessioni non sono finite. Il push di `assignment4` pubblica il re-design a un indirizzo diverso (`…/anteprime/assignment4/`) e non tocca la versione provata. I turni facilitatore/osservatore proposti sono in `dati/partecipanti.csv` (2 sessioni condotte e 2 osservate a testa): cambiarli se diversi.
 3. **Dopo ogni sessione.** Copiare la scheda dell'osservatore nei CSV (si aprono con Excel/Numbers/LibreOffice; salvare sempre come CSV UTF-8 con la virgola come separatore).
    - `sessioni.csv`: `esito` = `S`, `A` o `F`; `tempo_s` in secondi oppure `min:sec`; più frasi in `citazioni` separate da ` | `.
@@ -62,7 +62,7 @@ Dopo le modifiche: 4 task ancora completabili, 0 violazioni axe-core su 50 pagin
    - per P1–P8 compilare `utenti` (per esempio `U1;U3;U6`) ed `evidenza` (che cosa hanno fatto e detto), poi **rivedere** `impatto_1_3`, `persistenza_1_3` e `gravita_0_4`: i valori presenti sono la nostra stima dall'ispezione;
    - aggiungere i problemi nuovi emersi dalle sessioni con `origine` = `test`; se li correggete, `stato` = `fatto` e le colonne del re-design, altrimenti il motivo in `soluzione`.
 5. **Se il re-design cambia ancora.** Modificare il sito in `assignment2/website/` (testi in `i18n/`, dati in `data/`, poi `python3 tools/build.py` e le verifiche del suo README), quindi rilanciare `python3 relazione/tools/prima_dopo.py` per aggiornare misure e schermate.
-6. **Relazione.** Completare i testi `todo` in `relazione/modello.html`, poi:
+6. **Relazione.** Sostituire nei CSV tutti i dati sintetici, riscrivere i paragrafi che commentano i risultati in `relazione/modello.html` e rimuovere gli avvisi sulla simulazione, poi:
 
 ```bash
 cd assignment4

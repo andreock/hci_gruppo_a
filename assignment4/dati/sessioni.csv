@@ -1,33 +1,33 @@
 utente,task,esito,tempo_s,errori,aiuti,blocchi,seq_1_7,osservazioni,citazioni
-U1,T1,,,,,,,,
-U1,T2,,,,,,,,
-U1,T3,,,,,,,,
-U1,T4,,,,,,,,
-U2,T1,,,,,,,,
-U2,T2,,,,,,,,
-U2,T3,,,,,,,,
-U2,T4,,,,,,,,
-U3,T1,,,,,,,,
-U3,T2,,,,,,,,
-U3,T3,,,,,,,,
-U3,T4,,,,,,,,
-U4,T1,,,,,,,,
-U4,T2,,,,,,,,
-U4,T3,,,,,,,,
-U4,T4,,,,,,,,
-U5,T1,,,,,,,,
-U5,T2,,,,,,,,
-U5,T3,,,,,,,,
-U5,T4,,,,,,,,
-U6,T1,,,,,,,,
-U6,T2,,,,,,,,
-U6,T3,,,,,,,,
-U6,T4,,,,,,,,
-U7,T1,,,,,,,,
-U7,T2,,,,,,,,
-U7,T3,,,,,,,,
-U7,T4,,,,,,,,
-U8,T1,,,,,,,,
-U8,T2,,,,,,,,
-U8,T3,,,,,,,,
-U8,T4,,,,,,,,
+U1,T1,S,70,0,0,0,6,"Apre Progetti, ordina per distanza dall'obiettivo e legge correttamente cifra e percentuale.","Qui posso confrontarli abbastanza in fretta."
+U1,T2,S,112,0,0,0,6,"Apre il progetto dalla home, usa l'indice e trova entrambe le informazioni; apre spontaneamente la spiegazione tutto o niente.","La restituzione però era nascosta dietro questa domanda."
+U1,T3,S,210,0,0,0,6,"Seleziona la ricompensa corretta, compila i passi e nota la commissione soltanto al pagamento.","Ah, quindi non sono proprio trenta euro."
+U1,T4,S,155,0,0,0,6,"Passa da Proponi un progetto al modulo per enti e legge il tempo di risposta nella conferma.","Per un'associazione sceglierei questo percorso."
+U2,T1,S,64,0,0,0,6,"Usa subito l'ordinamento e identifica il primo risultato senza esitazioni.","Più lontani dall'obiettivo: è quello che mi serve."
+U2,T2,S,135,1,0,0,5,"Cerca prima nelle FAQ, poi torna alla pagina progetto e apre la spiegazione corretta.","Pensavo che tutto o niente riguardasse il raddoppio."
+U2,T3,S,230,1,0,0,5,"Lascia inizialmente il nome visibile, torna indietro e corregge; reagisce alla commissione al passo 4.","Il totale avrei preferito saperlo prima."
+U2,T4,S,180,1,0,0,5,"Apre prima la candidatura, riconosce il campo email istituzionale e torna al percorso per associazioni.","Non era chiaro quale dei due moduli fosse per me."
+U3,T1,A,172,2,2,1,3,"Scorre a lungo i filtri sul telefono, sceglie prima una campagna conclusa e completa dopo un suggerimento generico.","Vedo tanti menu ma non ancora i progetti. | Mi aiuti a capire quale stato devo scegliere?"
+U3,T2,F,240,2,2,2,2,"Trova la tabella dei fondi ma non la regola di restituzione; cerca in Come funziona e raggiunge il limite.","Non so dove sia scritto che mi ridanno i soldi."
+U3,T3,F,420,3,2,2,2,"Sul telefono il riepilogo esce lateralmente; non controlla tutti i valori e non completa entro il limite.","La parte a destra non la leggo. | Quanto pago davvero?"
+U3,T4,A,340,2,2,1,3,"Apre Contatti e poi la candidatura; completa il modulo corretto dopo il suggerimento di scorrere la pagina Proponi.","Associazione e candidatura per me sembravano la stessa cosa."
+U4,T1,S,58,0,0,0,7,"Riconosce subito ordinamento e stato delle campagne; risposta completa al primo tentativo.","La percentuale mi basta per confrontare."
+U4,T2,S,90,0,0,0,7,"Usa l'indice e apre la spiegazione tutto o niente senza esitazioni.","È tutto nella stessa pagina, bene."
+U4,T3,S,175,0,0,0,7,"Completa il percorso senza errori, ma osserva che la commissione è visibile solo verso la fine.","Flusso chiaro, però il costo aggiuntivo arriva tardi."
+U4,T4,S,130,0,0,0,7,"Distingue i due percorsi dalla pagina Proponi e completa il modulo per enti.","Ricercatori da una parte, enti dall'altra."
+U5,T1,S,125,1,0,1,4,"Scorre oltre i filtri, confronta manualmente tre schede e corregge una prima risposta basata sulla cifra assoluta.","La percentuale è un po' nascosta tra i numeri."
+U5,T2,A,225,2,2,1,3,"Trova i fondi ma confonde il raddoppio con il rimborso; completa dopo un suggerimento generico.","Tutto o niente non mi dice subito che cosa succede ai miei soldi."
+U5,T3,A,390,3,2,2,3,"Salta l'email, riceve il messaggio generico e chiede aiuto; completa dopo aver corretto i dati.","Compila questo campo: quale campo e come? | La commissione compare proprio alla fine."
+U5,T4,F,360,2,2,2,2,"Usa il modulo Contatti e poi la candidatura; conclude che l'associazione non è ammessa prima dello scadere del tempo.","Non trovo un modulo che dica chiaramente associazioni."
+U6,T1,S,62,0,0,0,6,"Usa ordinamento e filtro stato, poi verifica la cifra nella scheda.","La lista risponde come mi aspettavo."
+U6,T2,S,105,0,0,0,6,"Usa l'indice, trova la tabella e apre la spiegazione tutto o niente.","La risposta c'è, ma bisogna sapere di aprire questa voce."
+U6,T3,S,205,0,0,0,6,"Completa senza errori e nota la differenza tra donazione e totale al passo pagamento.","È chiaro alla fine, ma lo mostrerei dall'inizio."
+U6,T4,S,165,0,0,0,6,"Legge la pagina introduttiva e sceglie correttamente il percorso per enti esterni.","La pagina spiega bene le due possibilità."
+U7,T1,A,165,2,2,1,3,"Sul telefono prova ricerca e filtri diversi, apre un progetto concluso e completa dopo un suggerimento.","Devo scorrere troppo prima di vedere una raccolta."
+U7,T2,F,240,3,2,2,2,"Legge le spese ma interpreta tutto o niente come cofinanziamento; non trova il rimborso entro il limite.","Se non raggiungono la cifra, l'Università mette il resto?"
+U7,T3,F,420,4,2,2,2,"Sbaglia ricompensa, lascia il nome visibile e sul riepilogo mobile non vede email e totale completi.","Non riesco a controllare tutta questa riga. | Pensavo di spendere trenta."
+U7,T4,A,330,3,2,2,3,"Passa da Contatti e candidatura, poi completa la collaborazione dopo un suggerimento generico.","Quale pulsante vale per un'associazione?"
+U8,T1,S,78,1,0,0,5,"Apre inizialmente la ricerca generale, poi usa l'elenco Progetti e trova la risposta.","Con l'ordinamento è semplice."
+U8,T2,S,128,1,0,0,5,"Trova subito i fondi ma scorre oltre il riquadro di stato; torna indietro e apre la spiegazione.","La frase sul rimborso dovrebbe stare vicino al bottone."
+U8,T3,S,250,1,0,0,5,"Seleziona prima la donazione libera, poi corregge scegliendo la ricompensa e completa il flusso.","Il totale cambia solo quando scelgo come pagare."
+U8,T4,S,190,1,0,0,5,"Apre la candidatura, torna a Proponi e individua autonomamente il modulo per enti.","I due nomi potrebbero essere più espliciti."
