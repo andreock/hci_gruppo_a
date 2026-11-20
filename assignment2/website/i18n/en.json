@@ -1214,7 +1214,6 @@
     "chars": "{n} of {max} characters",
     "processing": "Payment in progress…",
     "sold_out": "Sold out",
-    "fee_none": "none",
-    "err_email_missing": "Enter your email address."
+    "fee_none": "none"
   }
 }
