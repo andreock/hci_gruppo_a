@@ -1214,7 +1214,6 @@
     "chars": "{n} caratteri su {max}",
     "processing": "Pagamento in corso…",
     "sold_out": "Esaurita",
-    "fee_none": "nessuna",
-    "err_email_missing": "Scrivi la tua email."
+    "fee_none": "nessuna"
   }
 }
