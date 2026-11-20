@@ -7,25 +7,25 @@ Test «in svendita» alla Krug sul prototipo: **8 utenti × 4 task**, pensiero a
 | Parte | Stato |
 |---|---|
 | Materiali del test (kit, task, schede) | pronti |
-| Ispezione dei 4 percorsi: 8 problemi con misure sulla versione provata | fatta (`dati/problemi.csv`, `dati/misure.json`) |
-| **Re-design** del prototipo per gli 8 problemi, con misure e schermate prima/dopo | **fatto** in `assignment2/website/` su questo branch |
+| Ispezione dei 4 percorsi: 7 problemi con misure sulla versione provata | fatta (`dati/problemi.csv`, `dati/misure.json`) |
+| **Re-design** del prototipo per i 7 problemi, con misure e schermate prima/dopo | **fatto** in `assignment2/website/` su questo branch |
 | Sessioni con gli 8 utenti | **da fare**: i CSV contengono ora un dataset sintetico completo per collaudare il flusso, non risultati reali |
 | Relazione | prova generale completa con tabelle, grafici, SUS, analisi e conclusioni basati sui dati sintetici; prima della consegna i CSV vanno sostituiti con dati reali |
 
-Gli 8 problemi vengono da un'**ispezione** (difetti reali, misurati sul sito), non da osservazioni di utenti. Le colonne `utenti` ed `evidenza` di `problemi.csv` sono state compilate con evidenze sintetiche per provare classificazione e relazione: dopo i test vanno riscritte con **ciò che è successo davvero nelle sessioni** e la gravità va rivalutata.
+I 7 problemi vengono da un'**ispezione** (difetti reali, misurati sul sito), non da osservazioni di utenti. Le colonne `utenti` ed `evidenza` di `problemi.csv` sono state compilate con evidenze sintetiche per provare classificazione e relazione: dopo i test vanno riscritte con **ciò che è successo davvero nelle sessioni** e la gravità va rivalutata.
 
 ## Che cosa c'è
 
 | Cartella / file | Contenuto |
 |---|---|
-| `kit/kit_test.pdf` | Da stampare: preparazione, copione del facilitatore, consenso, questionario iniziale, cartoncini dei 4 task, scheda dell'osservatore (una pagina per task, con le ipotesi P1–P8 da verificare), SUS, intervista |
+| `kit/kit_test.pdf` | Da stampare: preparazione, copione del facilitatore, consenso, questionario iniziale, cartoncini dei 4 task, scheda dell'osservatore (una pagina per task, con le ipotesi P1–P7 da verificare), SUS, intervista |
 | `dati/*.csv` | I dati del test: `partecipanti`, `sessioni` (32 righe: utente × task), `sus`, `intervista`, `problemi`, `task` (tempi limite e tempo dell'esperto) |
 | `dati/misure.json` | Misure prima/dopo scritte da `prima_dopo.py` (non modificare a mano) |
 | `relazione/modello.html` | Il testo della relazione. Le parti `{{COSÌ}}` sono calcolate dai dati; la versione attuale contiene già l'analisi del dataset sintetico |
 | `relazione/tools/task.py` | Testo dei 4 task, criteri di successo, affermazioni SUS, regole di conteggio (fonte unica per kit e relazione) |
 | `relazione/tools/genera.py` | Calcola tabelle, punteggi SUS, grafici e indice → `relazione/relazione.html` e `relazione/assignment4_gruppoA.pdf` |
 | `relazione/tools/genera_kit.py` | Rigenera il kit |
-| `relazione/tools/prima_dopo.py` | Ricostruisce la versione provata (branch `assignment3`), esegue i 4 task su entrambe le versioni, misura gli aspetti legati a P1–P8 e salva le schermate `relazione/img/p*-prima.png` e `p*-dopo.png` |
+| `relazione/tools/prima_dopo.py` | Ricostruisce la versione provata (branch `assignment3`), esegue i 4 task su entrambe le versioni, misura gli aspetti legati a P1–P7 e salva le schermate `relazione/img/p*-prima.png` e `p*-dopo.png` |
 
 ## I 4 task
 
@@ -47,7 +47,6 @@ Gli 8 problemi vengono da un'**ispezione** (difetti reali, misurati sul sito), n
 | P5 | In «Progetti» i filtri occupano la prima schermata | Ricerca e ordinamento in vista, filtri compatti | prima scheda a 1047 px (telefono) e 758 px (computer) → 583 e 577 px |
 | P6 | I moduli per chi propone non dicono a chi sono riservati | Avviso «Per chi è questo modulo», suggerimento in Contatti | rimando assente → presente nei 3 punti |
 | P7 | Su telefono titolo e indicatore dei passi spingono giù il modulo | Indicatore su una riga, titolo breve | indicatore 136 px → 40 px |
-| P8 | Errore generico per l'email mancante | Messaggio specifico | «Compila questo campo.» → «Scrivi la tua email.» |
 
 Dopo le modifiche: 4 task ancora completabili, 0 violazioni axe-core su 50 pagine nei due temi, 105/105 percorsi, nessuno scorrimento orizzontale a 320–1280 px.
 
@@ -59,7 +58,7 @@ Dopo le modifiche: 4 task ancora completabili, 0 violazioni axe-core su 50 pagin
    - `sessioni.csv`: `esito` = `S`, `A` o `F`; `tempo_s` in secondi oppure `min:sec`; più frasi in `citazioni` separate da ` | `.
    - `sus.csv`: risposte da 1 a 5 così come sono sul foglio (il punteggio lo calcola lo script).
 4. **Riunione di sintesi.** In `problemi.csv`:
-   - per P1–P8 compilare `utenti` (per esempio `U1;U3;U6`) ed `evidenza` (che cosa hanno fatto e detto), poi **rivedere** `impatto_1_3`, `persistenza_1_3` e `gravita_0_4`: i valori presenti sono la nostra stima dall'ispezione;
+   - per P1–P7 compilare `utenti` (per esempio `U1;U3;U6`) ed `evidenza` (che cosa hanno fatto e detto), poi **rivedere** `impatto_1_3`, `persistenza_1_3` e `gravita_0_4`: i valori presenti sono la nostra stima dall'ispezione;
    - aggiungere i problemi nuovi emersi dalle sessioni con `origine` = `test`; se li correggete, `stato` = `fatto` e le colonne del re-design, altrimenti il motivo in `soluzione`.
 5. **Se il re-design cambia ancora.** Modificare il sito in `assignment2/website/` (testi in `i18n/`, dati in `data/`, poi `python3 tools/build.py` e le verifiche del suo README), quindi rilanciare `python3 relazione/tools/prima_dopo.py` per aggiornare misure e schermate.
 6. **Relazione.** Sostituire nei CSV tutti i dati sintetici, riscrivere i paragrafi che commentano i risultati in `relazione/modello.html` e rimuovere gli avvisi sulla simulazione, poi:

@@ -45,7 +45,7 @@ TASK = [
                   "errori di validazione all'invio di un passo.",
         "osservare": ["Parte dalla ricompensa o dal pulsante «Sostieni il progetto»?", "A quale passo scopre la commissione e il totale? Come reagisce? (ipotesi P2)",
                       "Se usa un telefono o una finestra stretta: legge tutto il riepilogo finale o è tagliato? (ipotesi P1, P7)",
-                      "Lascia campi vuoti? Capisce i messaggi d'errore? (ipotesi P8)",
+                      "Lascia campi vuoti? Capisce i messaggi d'errore?",
                       "Capisce la scelta tra nome visibile e donazione anonima?", "Si accorge di essere arrivato alla fine (conferma, codice)?",
                       "Usa «Indietro» o «Modifica»? I dati restano?"],
     },

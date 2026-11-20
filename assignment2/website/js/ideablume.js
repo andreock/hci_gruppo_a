@@ -141,7 +141,7 @@
     var v = (el.value || "").trim();
     if (el.type === "checkbox") return el.required && !el.checked ? msg(el.id.indexOf("privacy") >= 0 ? "err_privacy" : "err_consent") : "";
     if (el.type === "radio") return "";
-    if (el.required && !v) return el.tagName === "SELECT" ? msg("err_select") : msg(el.getAttribute("data-err") || (el.type === "email" ? "err_email_missing" : "err_required"));
+    if (el.required && !v) return el.tagName === "SELECT" ? msg("err_select") : msg(el.getAttribute("data-err") || "err_required");
     if (!v) return "";
     if (el.type === "email" && !RE_EMAIL.test(v)) return msg("err_email");
     if (el.type === "tel" && !RE_TEL.test(v)) return msg("err_tel");

@@ -2,7 +2,7 @@
 """Confronto «prima / dopo» del re-design.
 Ricostruisce in una cartella temporanea la versione provata dagli utenti (branch assignment3), poi sulle due versioni:
   1. esegue il percorso più breve dei 4 task (pilota.js): devono restare completabili prima e dopo;
-  2. misura gli aspetti legati ai problemi P1–P8 e salva le schermate (prima_dopo.js).
+  2. misura gli aspetti legati ai problemi P1–P7 e salva le schermate (prima_dopo.js).
 Scrive dati/misure.json e relazione/img/p*-prima.png, p*-dopo.png, t*.png.
 Uso (da assignment4):  python3 relazione/tools/prima_dopo.py [--ref assignment3]"""
 import argparse, os, subprocess, sys, tempfile

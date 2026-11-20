@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Genera la relazione dell'Assignment 4 a partire da modello.html e dai CSV in ../dati.
-Uso (da assignment4):  python3 relazione/tools/genera.py [--dati CARTELLA] [--senza-pdf]
-Scrive relazione/relazione.html e relazione/assignment4_gruppoA.pdf e stampa l'elenco di ciò che manca."""
+Uso (da assignment4):  python3 relazione/tools/genera.py [--dati CARTELLA] [--senza-pdf] [--html]
+Scrive relazione/assignment4_gruppoA.pdf e stampa l'elenco di ciò che manca. L'HTML intermedio viene cancellato,
+a meno di --html o --senza-pdf: in quel caso resta in relazione/relazione.html per l'anteprima nel browser."""
 import argparse, csv, html, json, os, re, statistics, struct, subprocess, sys
 QUI = os.path.dirname(os.path.abspath(__file__)); REL = os.path.dirname(QUI); A4 = os.path.dirname(REL)
 sys.path.insert(0, QUI)
@@ -254,7 +255,7 @@ def problemi(D, M):
         if not us: MANCA.append(f"{dove} utenti (chi lo ha incontrato nelle sessioni; se nessuno, rivedere la gravità)")
         if not r["evidenza"]: MANCA.append(f"{dove} evidenza (che cosa hanno fatto o detto gli utenti)")
         if (P[-1]["g"] or 0) >= 2 and not r["soluzione"]: MANCA.append(f"{dove} soluzione")
-    P.sort(key=lambda p: (-(p["g"] if p["g"] is not None else -1), -len(p["us"]), p["id"]))
+    P.sort(key=lambda p: (int(p["id"][1:]) if p["id"][1:].isdigit() else float("inf"), p["id"]))  # in ordine di numero: P1, P2, …
     if not P: MANCA.append("problemi.csv: nessun problema inserito")
     return P, n
 
@@ -421,7 +422,8 @@ def pagine_pdf(voci, pdf):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--dati", default=os.path.join(A4, "dati")); ap.add_argument("--senza-pdf", action="store_true")
-    ap.add_argument("--uscita", default=REL, help="cartella in cui scrivere relazione.html e il PDF")
+    ap.add_argument("--uscita", default=REL, help="cartella in cui scrivere il PDF")
+    ap.add_argument("--html", action="store_true", help="conserva relazione.html per l'anteprima nel browser")
     a = ap.parse_args()
     D = carica(a.dati); P, n = problemi(D, misure(a.dati))
     testo = open(os.path.join(REL, "modello.html"), encoding="utf-8").read()
@@ -446,18 +448,22 @@ def main():
     if resto: ERRORI.append("segnaposto non sostituiti: " + ", ".join(resto))
     testo = testo.replace("<p></p>\n", "")
     os.makedirs(a.uscita, exist_ok=True)
-    out_html = os.path.join(a.uscita, "relazione.html"); out_pdf = os.path.join(a.uscita, "assignment4_gruppoA.pdf")
+    tieni_html = a.html or a.senza_pdf
+    out_html = os.path.join(a.uscita, "relazione.html" if tieni_html else ".relazione_tmp.html"); out_pdf = os.path.join(a.uscita, "assignment4_gruppoA.pdf")
     if os.path.abspath(a.uscita) != REL:  # uscita di prova: i percorsi relativi di CSS e immagini puntano alla cartella vera
         testo = testo.replace('href="relazione.css"', f'href="file://{REL}/relazione.css"').replace('src="img/', f'src="file://{REL}/img/')
     voci = voci_indice(testo); pagine = {}
-    for giro in range(6):
-        testo = sostituisci(testo, "INDICE", indice(voci, pagine))
-        open(out_html, "w", encoding="utf-8").write(testo)
-        if a.senza_pdf: break
-        subprocess.run(["node", os.path.join(QUI, "genera_pdf.js"), out_html, out_pdf], check=True, capture_output=True)
-        nuove, np_ = pagine_pdf(voci, out_pdf)
-        if nuove == pagine: print(f"PDF: {out_pdf} ({np_} pagine)"); break
-        pagine = nuove
+    try:
+        for giro in range(6):
+            testo = sostituisci(testo, "INDICE", indice(voci, pagine))
+            open(out_html, "w", encoding="utf-8").write(testo)
+            if a.senza_pdf: break
+            subprocess.run(["node", os.path.join(QUI, "genera_pdf.js"), out_html, out_pdf], check=True, capture_output=True)
+            nuove, np_ = pagine_pdf(voci, out_pdf)
+            if nuove == pagine: print(f"PDF: {out_pdf} ({np_} pagine)"); break
+            pagine = nuove
+    finally:
+        if not tieni_html and os.path.exists(out_html): os.remove(out_html)
     if ERRORI:
         print(f"\nERRORI nei dati ({len(ERRORI)}):"); [print("  ✗", x) for x in ERRORI]
     print(f"\nDa completare: {len(MANCA)} valori nei CSV, {da_scrivere} testi nel modello (cercare class=\"todo\").")

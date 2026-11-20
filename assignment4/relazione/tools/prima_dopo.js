@@ -1,4 +1,4 @@
-// Confronto «prima / dopo» del re-design: per ogni problema P1–P8 misura lo stesso aspetto sulle due versioni
+// Confronto «prima / dopo» del re-design: per ogni problema P1–P7 misura lo stesso aspetto sulle due versioni
 // del sito e salva le schermate. Non va lanciato a mano: lo usa prima_dopo.py, che prepara la versione «prima».
 // Uso: node prima_dopo.js <sito prima> <sito dopo> <cartella immagini> <misure.json>
 const fs = require("fs");
@@ -79,13 +79,6 @@ async function versione(b, sito, nome) {
     if (n === 1) await p.screenshot({ path: img("p2") });
     if (n === 4) { await p.locator("#m-satispay").setChecked(true); await p.waitForTimeout(150); await p.evaluate(() => scrollTo(0, 0)); await p.screenshot({ path: img("p2b") }); }
   }
-  // P8: messaggio per l'email vuota
-  await finoAlPasso(p, 2);
-  for (const id of ["#nome", "#cognome", "#email"]) await p.locator(id).fill("");   // i dati dei passaggi precedenti restano salvati: qui servono i campi vuoti
-  await avanti(p).click(); await p.waitForTimeout(200);
-  m.p8 = { errore_email_vuota: (await p.locator("#email-e").innerText()).trim(), errore_nome_vuoto: (await p.locator("#nome-e").innerText()).trim() };
-  const e = await p.evaluate(() => { const r = document.querySelector("[data-errori]").getBoundingClientRect(); return { x: r.left + scrollX, y: r.top + scrollY, h: r.height }; });
-  await p.screenshot({ path: img("p8"), fullPage: true, clip: { x: e.x - 12, y: e.y - 12, width: 760, height: e.h + 24 } });
   // P6: a chi è riservato il modulo
   const avviso = (file, dest) => p.goto(u(file)).then(() => p.evaluate((d) => { const f = document.querySelector("form[data-form]"); const prima = [...document.querySelectorAll(`main a[href="${d}"]`)].filter((x) => x.offsetParent && (f.compareDocumentPosition(x) & Node.DOCUMENT_POSITION_PRECEDING)); return prima.length > 0; }, dest));
   m.p6 = { candidatura_rimanda_alla_collaborazione: await avviso("candidatura.html", "collabora.html") };

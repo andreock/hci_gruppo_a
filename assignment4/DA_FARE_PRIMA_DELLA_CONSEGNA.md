@@ -26,7 +26,7 @@ La pipeline dell'Assignment 4 è completa e collaudata con dati sintetici. Quest
 
 ## 4. Riunione di sintesi e re-design finale
 
-- Per P1–P8 riscrivere `utenti` ed `evidenza` in `dati/problemi.csv` usando soltanto ciò che è accaduto davvero.
+- Per P1–P7 riscrivere `utenti` ed `evidenza` in `dati/problemi.csv` usando soltanto ciò che è accaduto davvero.
 - Rivedere impatto, persistenza e gravità; abbassare la gravità dei problemi non incontrati.
 - Aggiungere eventuali problemi nuovi con `origine=test`.
 - Se emerge un problema nuovo rilevante, implementare la correzione nel prototipo e documentare file modificati, soluzione e misura prima/dopo.

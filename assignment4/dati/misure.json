@@ -46,10 +46,6 @@
       "passo_in_cui_si_legge_il_totale": 5,
       "passo_in_cui_si_legge_la_commissione": 4
     },
-    "p8": {
-      "errore_email_vuota": "Compila questo campo.",
-      "errore_nome_vuoto": "Scrivi il tuo nome."
-    },
     "p6": {
       "candidatura_rimanda_alla_collaborazione": false,
       "collaborazione_rimanda_alla_candidatura": false,
@@ -102,10 +98,6 @@
     "p2": {
       "passo_in_cui_si_legge_il_totale": 1,
       "passo_in_cui_si_legge_la_commissione": 1
-    },
-    "p8": {
-      "errore_email_vuota": "Scrivi la tua email.",
-      "errore_nome_vuoto": "Scrivi il tuo nome."
     },
     "p6": {
       "candidatura_rimanda_alla_collaborazione": true,
