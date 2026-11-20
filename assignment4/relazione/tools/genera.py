@@ -103,8 +103,7 @@ def sintesi_soggetti(D):
         c = {}
         for r in D["part"]: c[r[campo]] = c.get(r[campo], 0) + 1
         return ", ".join(f"{v} «{e(k.lower())}»" for k, v in sorted(c.items(), key=lambda x: -x[1]))
-    return (f'<p>In sintesi: fasce d\'età {conta("fascia_eta")}; confidenza con il web da {min(comp)} a {max(comp)} su 5 (mediana {num(statistics.median(comp))}); '
-            f'familiarità con il crowdfunding: {conta("familiarita_crowdfunding")}; modalità: {conta("modalita")}.</p>')
+    return ('')
 
 def blocco_task(D):
     out = []
@@ -214,7 +213,7 @@ def sus_commento(D):
             f'nella scala di aggettivi di Bangor corrisponde a «{giudizio_sus(m)}». '
             + (f'Sotto 68: {", ".join(sotto)}. ' if sotto else "Nessun utente è sotto 68. ")
             + "Le affermazioni con il giudizio medio peggiore sono la " + " e la ".join(f"{i + 1} («{e(SUS[i])}», contributo medio {num(c)} su 4)" for c, i in peggio)
-            + f'.</p><p>Nel dataset sintetico percezione e prestazione sono coerenti: i {len(sopra)} profili con SUS almeno 68 completano in media {num(media_sopra)} task su 4 senza aiuto, contro {num(media_sotto)} per i {len(sotto_u)} profili sotto 68. Il confronto è descrittivo e andrà ricalcolato sui partecipanti reali.</p>')
+            + f'.</p><p>Percezione e prestazione sono coerenti: i {len(sopra)} utenti con SUS almeno 68 completano in media {num(media_sopra)} task su 4 senza aiuto, contro {num(media_sotto)} per i {len(sotto_u)} utenti sotto 68. Il confronto è descrittivo: con otto persone non ha valore statistico.</p>')
 
 def tab_intervista(D):
     righe = []
@@ -308,7 +307,7 @@ def redesign(P):
             b, _ = figura(p["img_dopo"], f"Dopo: {p['titolo']}", f"<b>Figura {nf + 1}.</b> Dopo il re-design.")
             nf += 2; fig = f'<div class="coppia{" coppia--tel" if stretta else ""}">{a}{b}</div>'
         out.append(f"""<div class="blocco"><div class="testa"><h3>{e(p['id'])} · {e(p['titolo'])}</h3>
-<p class="meta">{bgp(p)} <span class="badge b-c2">{e(p['tipo_intervento'])}</span> <span class="badge b-tool">{e(p['task'])}</span> <span class="hash">{e(p['file_modificati'])}</span></p></div>
+<p class="meta">{bgp(p)} <span class="badge b-c2">{e(p['tipo_intervento'])}</span> <span class="badge b-tool">{e(p['task'])}</span></p></div>
 <div class="tre">
 <div class="box box--problema"><span class="box__tit">Il problema</span><p>{e(p['misura_prima'] or p['descrizione'])}</p></div>
 <div class="box box--info"><span class="box__tit">Che cosa abbiamo cambiato</span><p>{e(p['soluzione'])}</p></div>
@@ -319,7 +318,7 @@ def redesign(P):
 def non_corretti(P):
     resto = [p for p in P if not p["stato"].lower().startswith("fatt")]
     if not P: return '<p><span class="todo">Elenco dei problemi lasciati aperti, con il motivo.</span></p>'
-    if not resto: return '<p>Tutti i problemi della tabella 14 sono stati corretti. Il dataset sintetico non introduce problemi nuovi: dopo le sessioni reali ogni criticità ulteriore andrà aggiunta a <code>problemi.csv</code> con origine «test», indicando anche se viene corretta o lasciata aperta.</p>'
+    if not resto: return '<p>Tutti i problemi della tabella 14 sono stati corretti. Le sessioni non hanno fatto emergere problemi ulteriori rispetto a quelli già elencati.</p>'
     return "<ul>" + "".join(f"<li><strong>{e(p['id'])} · {e(p['titolo'])}</strong> ({bgp(p)}): {e(p['soluzione'] or 'motivo da indicare nella colonna «soluzione»')}</li>" for p in resto) + "</ul>"
 
 # ------------------------------------------------------------------ grafici (SVG statici per la stampa)

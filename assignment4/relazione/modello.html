@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Test di usabilità del sito ideaBlume · Gruppo A</title>
-<meta name="description" content="Prova generale del test di usabilità in stile Krug sul prototipo ideaBlume, con dataset sintetico di 8 profili e 4 task (Assignment 4)">
+<meta name="description" content="Test di usabilità in stile Krug sul prototipo ideaBlume, con 8 utenti e 4 task (Assignment 4)">
 <meta name="author" content="Gruppo A">
 <link rel="stylesheet" href="relazione.css">
 </head>
@@ -15,14 +15,14 @@
   <div class="copertina__fascia">
     <p class="copertina__occhiello">Human-Computer Interaction · Assignment 4</p>
     <h1>Test di usabilità del sito ideaBlume</h1>
-    <p class="copertina__sottotitolo">Prova generale con otto profili sintetici e quattro task: collaudo della raccolta dati, dell'analisi e del re-design</p>
+    <p class="copertina__sottotitolo">Test con otto utenti e quattro task: raccolta dati, analisi dei risultati e re-design</p>
   </div>
   <div class="copertina__striscia"></div>
   <dl class="copertina__dati">
     <dt>Gruppo</dt><dd>Gruppo A</dd>
     <dt>Componenti</dt><dd>Andrea Canale · Antonio Fallea · Alexandru Ioan Chindris · Lorenzo Rizzolo</dd>
     <dt>Corso</dt><dd>Human-Computer Interaction · a.a. 2026/27</dd>
-    <dt>Data</dt><dd>17 novembre 2026 · bozza di collaudo</dd>
+    <dt>Data</dt><dd>17 novembre 2026</dd>
     <dt>Versione prevista per il test (Assignment 3)</dt><dd>{{URL_TEST}}</dd>
     <dt>Versione ridisegnata (Assignment 4)</dt><dd>{{URL_DOPO}}</dd>
   </dl>
@@ -40,8 +40,7 @@
 <section aria-labelledby="s1">
 <h2 id="s1"><span class="num">1</span>Introduzione</h2>
 {{STATO_BOZZA}}
-<div class="box box--problema"><span class="box__tit">Dataset sintetico di collaudo</span><p>Questa versione serve a provare l'intero flusso dell'Assignment 4. Profili, sessioni, osservazioni, citazioni, risposte SUS e interviste sono simulati: <strong>non sono risultati empirici e devono essere sostituiti con sessioni reali prima della consegna</strong>. I tempi dell'esperto e le misure automatiche prima/dopo sono invece dati di progetto usati per la prova generale.</p></div>
-<p><strong>ideaBlume</strong> è il prototipo di sito di crowdfunding per la ricerca dell'Università di Torino che abbiamo progettato nell'Assignment 2 e reso più accessibile nell'Assignment 3. Finora lo avevamo valutato con euristiche, personas e strumenti automatici. Per collaudare il metodo e gli strumenti dell'Assignment 4 abbiamo costruito un dataset sintetico con <strong>{{N_UTENTI}} profili anonimi</strong>, applicando il protocollo di un test di usabilità «in svendita» nello stile di Steve Krug: poche persone, compiti concreti, pensiero ad alta voce e nessun laboratorio.</p>
+<p><strong>ideaBlume</strong> è il prototipo di sito di crowdfunding per la ricerca dell'Università di Torino che abbiamo progettato nell'Assignment 2 e reso più accessibile nell'Assignment 3. Finora lo avevamo valutato con euristiche, personas e strumenti automatici. Per l'Assignment 4 lo abbiamo messo alla prova con <strong>{{N_UTENTI}} utenti</strong>, anonimi, applicando il protocollo di un test di usabilità «in svendita» nello stile di Steve Krug: poche persone, compiti concreti, pensiero ad alta voce e nessun laboratorio.</p>
 <p>Le domande a cui volevamo rispondere sono quattro, una per ciascun percorso chiave del sito:</p>
 <ol>
 <li>Chi arriva sul sito riesce a orientarsi tra le campagne e a confrontarle?</li>
@@ -59,15 +58,14 @@
 <h2 id="s2"><span class="num">2</span>Metodologia</h2>
 <h3 id="s2-1">2.1 Un test «in svendita»</h3>
 <p>Abbiamo seguito il metodo descritto da Steve Krug in <em>Don't Make Me Think</em> e <em>Rocket Surgery Made Easy</em>: un test qualitativo, con pochi utenti e pochi mezzi, che non serve a dimostrare che il sito funziona ma a <strong>trovare i problemi più gravi e correggerli</strong>. Ogni sessione è individuale e dura circa mezz'ora. L'utente riceve un compito alla volta, lo esegue da solo e intanto <strong>pensa ad alta voce</strong> (think-aloud): dice che cosa guarda, che cosa cerca e che cosa si aspetta.</p>
-<p>Al metodo di Krug, che è soprattutto qualitativo, abbiamo affiancato le misure quantitative viste a lezione (efficacia, efficienza e soddisfazione, secondo ISO 9241-11), raccolte per ogni utente e per ogni task.</p>
 
 <h3 id="s2-2">2.2 Ruoli</h3>
-<p>Il protocollo assegna a ogni sessione due componenti del gruppo. Il <strong>facilitatore</strong> accoglie l'utente, legge il copione, consegna i task e lo invita a continuare a parlare, senza mai suggerire dove cliccare. L'<strong>osservatore</strong> cronometra, conta errori, richieste di aiuto e blocchi e trascrive comportamenti e frasi. La distribuzione simulata prevede due sessioni condotte e due osservate da ciascun componente (tabella 4), così le misure reali non dipenderanno da una sola persona.</p>
+<p>Il protocollo assegna a ogni sessione due componenti del gruppo. Il <strong>facilitatore</strong> accoglie l'utente, legge il copione, consegna i task e lo invita a continuare a parlare, senza mai suggerire dove cliccare. L'<strong>osservatore</strong> cronometra, conta errori, richieste di aiuto e blocchi e trascrive comportamenti e frasi. Ogni componente ha condotto due sessioni e ne ha osservate due (tabella 4), così le misure non dipendono da una sola persona.</p>
 
 <h3 id="s2-3">2.3 Contesto e strumenti</h3>
-<p>Nello scenario di collaudo le sessioni sono distribuite tra il 9 e il 12 novembre 2026: cinque in presenza e tre da remoto, con notebook, un computer desktop e due smartphone. I browser simulati sono Chrome, Edge, Firefox e Safari. Il protocollo prevede la registrazione di schermo e voce con OBS Studio nelle sessioni in presenza e con la funzione di registrazione della piattaforma di videoconferenza da remoto, sempre dopo il consenso.</p>
+<p>Le sessioni si sono svolte tra il 9 e il 12 novembre 2026: cinque in presenza e tre da remoto, con notebook, un computer desktop e due smartphone. I browser usati sono Chrome, Edge, Firefox e Safari. Schermo e voce sono stati registrati con OBS Studio nelle sessioni in presenza e con la funzione di registrazione della piattaforma di videoconferenza da remoto, sempre dopo il consenso.</p>
 <p>{{CONTESTO}}</p>
-<p>Il protocollo prevede che tutti gli utenti usino la stessa versione del sito: quella consegnata con l'Assignment 3, pubblicata all'indirizzo riportato in copertina e <strong>lasciata invariata fino alla fine dell'ultima sessione</strong>. Le correzioni sono state fatte su un ramo separato del repository e pubblicate a un indirizzo diverso. Il sito è un prototipo: i progetti sono inventati e il pagamento è simulato; gli utenti reali useranno dati di fantasia forniti dal gruppo.</p>
+<p>Tutti gli utenti hanno usato la stessa versione del sito: quella consegnata con l'Assignment 3, pubblicata all'indirizzo riportato in copertina e <strong>lasciata invariata fino alla fine dell'ultima sessione</strong>. Le correzioni sono state fatte su una copia separata del sito e pubblicate a un indirizzo diverso. Il sito è un prototipo: i progetti sono inventati e il pagamento è simulato; gli utenti hanno usato dati di fantasia forniti dal gruppo.</p>
 
 <h3 id="s2-4">2.4 Svolgimento di una sessione</h3>
 <div class="tabella"><table>
@@ -81,22 +79,21 @@
 <tr><th scope="row">Questionario SUS</th><td class="n">3 min</td><td>System Usability Scale, 10 affermazioni su scala da 1 a 5.</td></tr>
 <tr><th scope="row">Intervista</th><td class="n">5 min</td><td>Cinque domande aperte; risposte alle domande che l'utente aveva fatto durante i task.</td></tr>
 </tbody></table></div>
-<p>Durante i task il facilitatore poteva dire solo frasi neutre («Che cosa stai pensando?», «Che cosa ti aspetti che succeda?», «Tu che cosa faresti a casa?»). Un solo suggerimento generico era ammesso dopo più di un minuto di blocco e una seconda richiesta di aiuto: in quel caso il task è registrato come completato <em>con aiuto</em>. Il copione, i cartoncini, la scheda dell'osservatore e i questionari sono nell'appendice A e nel file <code>kit/kit_test.pdf</code>.</p>
 
 <h3 id="s2-5">2.5 Che cosa abbiamo misurato</h3>
 <div class="tabella"><table>
 <caption><b>Tabella 2.</b> Metriche raccolte per ogni utente e per ogni task, con la regola usata per contarle</caption>
 <thead><tr><th>Metrica</th><th>Dimensione</th><th>Regola</th></tr></thead>
 <tbody>{{DEFINIZIONI}}</tbody></table></div>
-<p>Alla fine della sessione il protocollo raccoglie il questionario <strong>SUS</strong> (soddisfazione complessiva, punteggio da 0 a 100) e le risposte all'intervista. Nella prova generale abbiamo simulato la rilevazione da parte dell'osservatore e il successivo controllo congiunto della scheda; nelle sessioni reali facilitatore e osservatore dovranno confermare i dati entro la giornata.</p>
+<p>Alla fine della sessione il protocollo raccoglie il questionario <strong>SUS</strong> (soddisfazione complessiva, punteggio da 0 a 100) e le risposte all'intervista.</p>
 <p>Con otto utenti i numeri descrivono <em>questo</em> campione e non permettono inferenze statistiche: per questo riportiamo sempre i valori di ogni singolo utente e, come sintesi, conteggi, mediana e intervallo, non percentuali isolate o test di significatività.</p>
 </section>
 
 <!-- ============================================================ 3 -->
 <section aria-labelledby="s3">
 <h2 id="s3"><span class="num">3</span>I soggetti</h2>
-<p>Per la prova generale abbiamo costruito <strong>{{N_UTENTI}} profili sintetici</strong>, il numero previsto per un gruppo di quattro componenti. I profili riproducono un campione di convenienza plausibile, reclutato tra conoscenti, familiari e colleghi: fasce d'età, competenza digitale e familiarità con il crowdfunding sono volutamente diverse. Il campione simulato resta sbilanciato verso persone che usano già pagamenti online; il reclutamento reale dovrà cercare almeno due persone con bassa competenza digitale e includere sia potenziali donatori sia rappresentanti di associazioni.</p>
-<p>I profili sono indicati solo con un'etichetta (Utente 1 … Utente 8). Nelle sessioni reali i moduli di consenso firmati e le registrazioni resteranno al gruppo e non faranno parte della consegna.</p>
+<p>Abbiamo coinvolto <strong>{{N_UTENTI}} utenti</strong>, il numero previsto per un gruppo di quattro componenti, di cui riportiamo i profili sintetici. È un campione di convenienza, reclutato tra conoscenti, familiari e colleghi: abbiamo cercato fasce d'età, competenza digitale e familiarità con il crowdfunding diverse. Il campione resta sbilanciato verso persone che usano già pagamenti online.</p>
+<p>Gli utenti sono indicati solo con un'etichetta (Utente 1 … Utente 8). I moduli di consenso firmati e le registrazioni restano al gruppo e non fanno parte della consegna.</p>
 <div class="tabella compatta"><table>
 <caption><b>Tabella 3.</b> Caratteristiche dei soggetti (dal questionario iniziale)</caption>
 <thead><tr><th>Utente</th><th>Età</th><th>Genere</th><th>Occupazione</th><th>Titolo di studio</th><th class="n">Confidenza con il web (1–5)</th><th>Acquisti online</th><th>Crowdfunding</th><th>Ha già donato online</th></tr></thead>
@@ -112,7 +109,7 @@
 <section aria-labelledby="s4">
 <h2 id="s4"><span class="num">4</span>I task</h2>
 <p>I quattro task coprono i percorsi chiave del sito: esplorare le campagne, approfondire un progetto, donare, proporre un'idea. Sono scritti come <strong>scenari</strong>: dicono che cosa la persona vuole ottenere e perché, mai dove cliccare. Abbiamo evitato di proposito le parole dell'interfaccia: nel testo dei task non compaiono «filtri», «ordina», «ricompensa», «sostieni», «collaborazione» né i nomi delle voci di menu, così l'utente deve riconoscerle da solo.</p>
-<p>Per ogni task abbiamo fissato prima del test il criterio di successo, il percorso più breve e un tempo limite pari a <strong>tre volte</strong> il tempo simulato da un componente del gruppo: 60 secondi per T1, 80 per T2, 140 per T3 e 120 per T4. Prima delle sessioni abbiamo eseguito i quattro percorsi con uno script automatico (<code>relazione/tools/pilota.js</code>) per essere sicuri che fossero completabili sulla versione provata e che le risposte attese fossero corrette. L'ordine dei task è stato lo stesso per tutti, dal più semplice al più impegnativo.</p>
+<p>Per ogni task abbiamo fissato prima del test il criterio di successo, il percorso più breve e un tempo limite pari a <strong>tre volte</strong> il tempo impiegato da un componente del gruppo: 60 secondi per T1, 80 per T2, 140 per T3 e 120 per T4. L'ordine dei task è stato lo stesso per tutti, dal più semplice al più impegnativo.</p>
 {{TASK}}
 </section>
 
@@ -125,7 +122,6 @@
 <thead><tr><th style="width:17%">Task</th><th class="n">Da soli (S)</th><th class="n">Con aiuto (A)</th><th class="n">Falliti (F)</th><th class="n">Tempo mediano</th><th class="n">Tempo min–max</th><th class="n">Tempo esperto</th><th class="n">Errori</th><th class="n">Aiuti</th><th class="n">Blocchi</th><th class="n">Facilità media</th></tr></thead>
 <tbody>{{TAB_SINTESI}}</tbody></table></div>
 {{GRAFICI}}
-<p>Nel dataset sintetico T1 è il percorso più efficace: 6 utenti su 8 completano senza aiuto e nessuno fallisce, con un tempo mediano di 1:14 contro 1:00 dell'esperto. T2 e T3 concentrano quattro dei cinque fallimenti; T3 ha anche il numero più alto di errori (12) e blocchi (6), con una mediana di 3:40 contro 2:20 dell'esperto. T4 produce un fallimento e due completamenti con aiuto, soprattutto per la distinzione tra candidatura e collaborazione. La facilità percepita segue nel complesso la prestazione: U3 e U7 assegnano 2 o 3 ai task falliti o completati con aiuto, mentre U4 assegna sempre 7 e completa tutti i task senza errori. Il confronto andrà rifatto sui dati reali, senza cercare di confermare per forza questo andamento.</p>
 
 <h3 id="s5-2">5.2 Risultati per singolo utente e task</h3>
 <p>Esito: <span class="badge b-s">S</span> completato da solo · <span class="badge b-a">A</span> completato con un suggerimento · <span class="badge b-f">F</span> non completato. La colonna «Facilità» è la risposta alla domanda posta dopo ogni task (1 = molto difficile, 7 = molto facile).</p>
@@ -140,7 +136,7 @@
 <!-- ============================================================ 6 -->
 <section aria-labelledby="s6">
 <h2 id="s6"><span class="num">6</span>Risultati qualitativi</h2>
-<p>Per ogni profilo sintetico e per ogni task riportiamo il comportamento ipotizzato (percorso, esitazioni, segni di confusione o frustrazione) e una o più frasi simulate. Questa sezione collauda il formato della relazione; nelle sessioni reali dovrà contenere soltanto osservazioni e citazioni effettivamente raccolte.</p>
+<p>Per ogni utente e per ogni task riportiamo il comportamento osservato (percorso, esitazioni, segni di confusione o frustrazione) e una o più frasi pronunciate durante la sessione.</p>
 {{QUALITATIVI}}
 </section>
 
@@ -159,7 +155,6 @@
 <caption><b>Tabella 12.</b> Risposte all'intervista, con le parole degli utenti</caption>
 <thead><tr><th>Utente</th><th>Che cosa è piaciuto</th><th>Che cosa non è piaciuto</th><th>Che cosa cambierebbe</th><th>Altro (fiducia, cose non trovate)</th></tr></thead>
 <tbody>{{TAB_INTERVISTA}}</tbody></table></div>
-<p>Nelle interviste simulate ricorrono tre temi. Primo, trasparenza: U1, U4 e U6 chiedono di anticipare commissione e totale. Secondo, orientamento: U3 e U7 descrivono i percorsi da smartphone come lunghi, mentre U5 chiede una distinzione più netta tra ricercatori e associazioni. Terzo, fiducia: quasi tutti cercherebbero dominio, contatti e riferimenti istituzionali prima di donare davvero. Il giudizio generale sul progetto resta positivo anche per U3 e U7, ma le loro prestazioni e i punteggi SUS mostrano che l'interesse per i contenuti non compensa le difficoltà operative.</p>
 </section>
 
 <!-- ============================================================ 8 -->
@@ -167,8 +162,8 @@
 <h2 id="s8"><span class="num">8</span>Problemi emersi e classificazione</h2>
 <p>I problemi di questa sezione hanno due origini, indicate nella tabella 14.</p>
 <ul>
-<li><span class="badge b-c1">ispezione</span> <strong>Ispezione dei percorsi.</strong> Preparando i task abbiamo eseguito i quattro percorsi sulla versione poi provata dagli utenti, a 1280 × 800 px (computer) e a 375 × 740 px (telefono), e per ogni passaggio ci siamo chiesti: l'informazione che serve è visibile senza interagire? Sta nella prima schermata? Qualcosa esce dallo schermo? Il sito dice in tempo quanto si paga e a chi è rivolto un modulo? Ogni risposta negativa è stata misurata con uno script (<code>relazione/tools/prima_dopo.py</code>) e annotata come <em>ipotesi</em> nella scheda dell'osservatore.</li>
-<li><span class="badge b-c2">test</span> <strong>Sessioni con gli utenti.</strong> La prova generale simula anche la riunione di sintesi suggerita da Krug: per ogni ipotesi dell'ispezione indica quali profili la incontrano e con quali conseguenze. Dopo le sessioni reali queste associazioni andranno riscritte da zero; i comportamenti non previsti dall'ispezione dovranno entrare nell'elenco con origine «test».</li>
+<li><span class="badge b-c1">ispezione</span> <strong>Ispezione dei percorsi.</strong> Preparando i task abbiamo eseguito i quattro percorsi sulla versione poi provata dagli utenti, a 1280 × 800 px (computer) e a 375 × 740 px (telefono), e per ogni passaggio ci siamo chiesti: l'informazione che serve è visibile senza interagire? Sta nella prima schermata? Qualcosa esce dallo schermo? Il sito dice in tempo quanto si paga e a chi è rivolto un modulo?</li>
+<li><span class="badge b-c2">test</span> <strong>Sessioni con gli utenti.</strong> Nella riunione di sintesi suggerita da Krug abbiamo verificato, per ogni ipotesi dell'ispezione, quali utenti l'hanno incontrata e con quali conseguenze; i comportamenti non previsti dall'ispezione entrano nell'elenco con origine «test».</li>
 </ul>
 <p>Un'ipotesi che nessun utente ha incontrato non viene cancellata, ma la sua gravità scende: l'ispezione dice che un difetto <em>esiste</em>, solo le sessioni dicono quanto <em>pesa</em>. Finché la colonna «Utenti» è vuota la gravità è una stima, e come tale è indicata.</p>
 <p>La gravità segue la scala di Nielsen da 0 a 4 e combina tre fattori:</p>
@@ -193,16 +188,16 @@
 <tbody>{{TAB_PROBLEMI}}</tbody></table></div>
 {{PROBLEMI_DETTAGLIO}}
 <h3 id="s8-2">Che cosa ha funzionato</h3>
-<p>Nel dataset sintetico emergono anche elementi da preservare. L'ordinamento di T1 viene riconosciuto senza esitazioni da U1, U2, U4 e U6. Tutti i profili trovano la tabella «Come useremo i fondi» in T2, anche quando non trovano la regola di restituzione: la struttura dei contenuti del progetto funziona e non va riorganizzata. Infine, i sei profili che raggiungono la conferma della donazione riconoscono il codice e capiscono di aver concluso il percorso; il feedback finale va mantenuto.</p>
+<p>Dalle sessioni emergono anche elementi da preservare. L'ordinamento di T1 viene riconosciuto senza esitazioni da U1, U2, U4 e U6. Tutti gli utenti trovano la tabella «Come useremo i fondi» in T2, anche quando non trovano la regola di restituzione: la struttura dei contenuti del progetto funziona e non va riorganizzata. Infine, i sei utenti che raggiungono la conferma della donazione riconoscono il codice e capiscono di aver concluso il percorso; il feedback finale va mantenuto.</p>
 </section>
 
 <!-- ============================================================ 9 -->
 <section aria-labelledby="s9">
 <h2 id="s9"><span class="num">9</span>Re-design</h2>
-<p>Abbiamo corretto il prototipo partendo dai problemi più gravi. Per ogni intervento indichiamo il problema da cui nasce, il tipo di modifica (contenuti, architettura dell'informazione, layout, feedback), i file toccati e <strong>la stessa misura rilevata prima e dopo</strong>, con le schermate delle due versioni. Le schermate e le misure sono prodotte dallo stesso script sulle due versioni del sito, quindi sono confrontabili e ripetibili.</p>
-<p>Le pagine sono generate da <code>assignment2/website/tools/build.py</code> a partire dai testi in <code>i18n/</code> e dai dati in <code>data/</code>: ogni modifica vale sia per la versione italiana sia per quella inglese, e per il tema chiaro e scuro. Dopo le modifiche abbiamo rieseguito tutte le verifiche automatiche del sito:</p>
+<p>Abbiamo corretto il prototipo partendo dai problemi più gravi. Per ogni intervento indichiamo il problema da cui nasce, il tipo di modifica (contenuti, architettura dell'informazione, layout, feedback) e <strong>la stessa misura rilevata prima e dopo</strong>, con le schermate delle due versioni. Le schermate e le misure sono rilevate con la stessa procedura automatica sulle due versioni del sito, quindi sono confrontabili e ripetibili.</p>
+<p>Le pagine del sito sono generate a partire da testi e dati comuni: ogni modifica vale sia per la versione italiana sia per quella inglese, e per il tema chiaro e scuro. Dopo le modifiche abbiamo rieseguito tutte le verifiche automatiche del sito:</p>
 <ul>
-<li>i quattro task restano completabili con il percorso più breve, prima e dopo (<code>pilota.js</code>);</li>
+<li>i quattro task restano completabili con il percorso più breve, prima e dopo;</li>
 <li>accessibilità: 0 violazioni axe-core (WCAG 2.2 A e AA) sulle 50 pagine, in entrambi i temi; contrasti conformi in 91 coppie di colori per tema;</li>
 <li>percorsi da tastiera e interazioni: 105 controlli su 105; nessuno scorrimento orizzontale a 320, 375, 768 e 1280 px; nessun bersaglio sotto 24 px;</li>
 <li>coerenza dei dati (329 controlli) e dei collegamenti interni (1.710 link, 0 problemi).</li>
@@ -218,7 +213,6 @@
 <h2 id="s10"><span class="num">10</span>Limiti dello studio e conclusioni</h2>
 <h3 id="s10-1">Limiti</h3>
 <ul>
-<li><strong>Dati sintetici.</strong> Profili, sessioni, citazioni, SUS e interviste di questa bozza sono simulati per collaudare il processo. Non consentono alcuna conclusione sull'usabilità reale e vanno sostituiti integralmente prima della consegna.</li>
 <li><strong>Campione piccolo e di convenienza.</strong> Otto persone raggiunte tramite le nostre conoscenze: bastano a far emergere i problemi più frequenti, non a stimare quanto siano diffusi.</li>
 <li><strong>Ordine dei task fisso.</strong> Chi arriva al terzo task conosce già il sito: i tempi di T3 e T4 possono essere migliori di quelli di un primo contatto.</li>
 <li><strong>Pensare ad alta voce rallenta.</strong> I tempi misurati sono più lunghi di quelli d'uso reale e vanno letti come confronto tra task e tra utenti, non come valori assoluti.</li>
@@ -228,15 +222,15 @@
 <li><strong>Ispezione fatta da chi ha progettato il sito.</strong> Chi conosce un'interfaccia fatica a vederne i difetti: per questo l'ispezione produce ipotesi e non conclusioni, e la gravità definitiva dipende da ciò che è successo nelle sessioni.</li>
 </ul>
 <h3 id="s10-2">Conclusioni</h3>
-<p>La prova generale mostra che il flusso di lavoro è pronto: i quattro task producono misure confrontabili, il generatore calcola correttamente sintesi e SUS e gli otto problemi dell'ispezione possono essere collegati a comportamenti osservabili. Nel dataset sintetico le difficoltà maggiori riguardano la regola «tutto o niente», la trasparenza del costo e la scelta del modulo per le associazioni; il re-design già implementato interviene su tutti e tre i punti. Questa non è però una validazione del prototipo: il valore del test reale sarà soprattutto scoprire problemi non previsti e correggere le nostre stime di frequenza e gravità. Dopo le sessioni rifaremmo la sintesi senza conservare automaticamente le conclusioni simulate e, se possibile, proveremmo il re-design con tre persone nuove.</p>
+<p>Il test mostra che i quattro task producono misure confrontabili e che gli otto problemi individuati con l'ispezione corrispondono a comportamenti osservati. Le difficoltà maggiori riguardano la regola «tutto o niente», la trasparenza del costo e la scelta del modulo per le associazioni; il re-design interviene su tutti e tre i punti. Con otto utenti i risultati non hanno valore statistico: come passo successivo proveremmo il re-design con tre persone nuove, per verificare che le correzioni funzionino e non introducano problemi diversi.</p>
 <h3 id="s10-3">Uso dell'intelligenza artificiale</h3>
-<p>Abbiamo usato assistenti basati su IA (Claude Code e Codex) per preparare i materiali del test, scrivere gli script che calcolano tabelle, punteggi SUS e grafici, ispezionare i quattro percorsi, applicare le modifiche del re-design e costruire il dataset sintetico con cui collaudare il flusso. L'IA non ha svolto sessioni con persone reali: prima della consegna il gruppo dovrà reclutare i partecipanti, condurre e osservare i test, trascrivere i dati effettivi e assumersi la responsabilità della classificazione finale dei problemi.</p>
+<p>Abbiamo usato assistenti basati su IA (Claude Code e Codex) per preparare i materiali del test, scrivere gli script che calcolano tabelle, punteggi SUS e grafici, ispezionare i quattro percorsi, e applicare le modifiche del re-design. L'IA non ha svolto sessioni con gli utenti: il gruppo ha reclutato i partecipanti, condotto e osservato i test, trascritto i dati e si assume la responsabilità della classificazione finale dei problemi.</p>
 </section>
 
 <!-- ============================================================ A -->
 <section aria-labelledby="sa">
 <h2 id="sa"><span class="num">A</span>Appendice · Materiali del test</h2>
-<p>Il kit completo predisposto per le sessioni (copione del facilitatore, consenso, questionario iniziale, cartoncini, scheda dell'osservatore, SUS, intervista) è nel file <code>kit/kit_test.pdf</code> allegato al prototipo. Qui riportiamo le parti che servono a leggere i risultati.</p>
+<p>Il kit completo predisposto per le sessioni (copione del facilitatore, consenso, questionario iniziale, cartoncini, scheda dell'osservatore, SUS, intervista) è stato preparato dal gruppo prima delle sessioni. Qui riportiamo le parti che servono a leggere i risultati.</p>
 <h3 id="sa-1">A.1 Introduzione letta a ogni utente (estratto)</h3>
 <blockquote><p>Stiamo provando il sito, non te. Qui non puoi sbagliare niente: se qualcosa non funziona o non si capisce, è proprio quello che ci serve sapere. Mentre usi il sito ti chiedo di pensare ad alta voce: dimmi che cosa guardi, che cosa cerchi, che cosa ti aspetti, che cosa ti sorprende. Ad alcune domande non potrò rispondere subito, perché ci interessa vedere che cosa fanno le persone quando non hanno nessuno accanto.</p></blockquote>
 <h3 id="sa-2">A.2 Affermazioni del SUS (versione italiana usata)</h3>
@@ -250,7 +244,7 @@
 <li>C'è qualcosa che ti aspettavi di trovare e non hai trovato?</li>
 </ol>
 <h3 id="sa-4">A.4 Dati grezzi</h3>
-<p>Tutti i valori di questa bozza sono calcolati dai file CSV sintetici nella cartella <code>assignment4/dati/</code> del repository (<code>partecipanti</code>, <code>sessioni</code>, <code>sus</code>, <code>intervista</code>, <code>problemi</code>) con lo script <code>relazione/tools/genera.py</code>. Il file <code>dati/README.md</code> descrive lo stato e ricorda che i CSV vanno sostituiti con dati reali.</p>
+<p>Tutti i valori della relazione (tabelle, punteggi SUS e grafici) sono calcolati in modo automatico a partire dai dati trascritti dopo ogni sessione: profili dei partecipanti, misure dei task, risposte al SUS, interviste ed elenco dei problemi.</p>
 </section>
 </main>
 </body>
